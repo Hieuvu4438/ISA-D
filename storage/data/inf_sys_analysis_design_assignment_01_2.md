@@ -49,7 +49,7 @@ length                dices
 
 ### Cropped visual(s) from PDF page 1
 
-![page01 assignment metadata box](images/page01_assignment_metadata_box.png)
+![page01 assignment metadata box](../img/page01_assignment_metadata_box.png)
 
 ---
 
@@ -112,7 +112,7 @@ After completing this assignment, students should be able to:
 
 ### Cropped visual(s) from PDF page 2
 
-![page02 central question callout](images/page02_central_question_callout.png)
+![page02 central question callout](../img/page02_central_question_callout.png)
 
 ---
 
@@ -178,7 +178,7 @@ The company manages several major business activities, including:
 
 ### Cropped visual(s) from PDF page 3
 
-![page03 expected learning progression](images/page03_expected_learning_progression.png)
+![page03 expected learning progression](../img/page03_expected_learning_progression.png)
 
 ---
 
@@ -243,7 +243,7 @@ The report should answer the following six questions:
 
 ### Cropped visual(s) from PDF page 4
 
-![page04 analysis guidance callout](images/page04_analysis_guidance_callout.png)
+![page04 analysis guidance callout](../img/page04_analysis_guidance_callout.png)
 
 ---
 
@@ -311,7 +311,7 @@ At a high level, the business may include:
 
 ### Cropped visual(s) from PDF page 5
 
-![page05 major business activities](images/page05_major_business_activities.png)
+![page05 major business activities](../img/page05_major_business_activities.png)
 
 ---
 
@@ -489,7 +489,7 @@ Students must identify information that is:
 
 ### Cropped visual(s) from PDF page 8
 
-![page08 simplified business flow](images/page08_simplified_business_flow.png)
+![page08 simplified business flow](../img/page08_simplified_business_flow.png)
 
 ---
 
@@ -607,7 +607,7 @@ For example:
 
 ### Cropped visual(s) from PDF page 10
 
-![page10 problem cause consequence](images/page10_problem_cause_consequence.png)
+![page10 problem cause consequence](../img/page10_problem_cause_consequence.png)
 
 ---
 
@@ -670,7 +670,7 @@ The proposed system may support:
 
 ### Cropped visual(s) from PDF page 11
 
-![page11 problem tree](images/page11_problem_tree.png)
+![page11 problem tree](../img/page11_problem_tree.png)
 
 ---
 
@@ -811,7 +811,7 @@ For example:
 
 ### Cropped visual(s) from PDF page 13
 
-![page13 preliminary context diagram](images/page13_preliminary_context_diagram.png)
+![page13 preliminary context diagram](../img/page13_preliminary_context_diagram.png)
 
 ---
 
@@ -994,7 +994,7 @@ Students should use the following structure.
 
 ### Cropped visual(s) from PDF page 16
 
-![page16 important callout](images/page16_important_callout.png)
+![page16 important callout](../img/page16_important_callout.png)
 
 ---
 
@@ -1231,7 +1231,7 @@ A common mistake is:
 
 ### Cropped visual(s) from PDF page 20
 
-![page20 analysis before design flow](images/page20_analysis_before_design_flow.png)
+![page20 analysis before design flow](../img/page20_analysis_before_design_flow.png)
 
 ---
 
@@ -1294,9 +1294,9 @@ Before submitting, students should verify the following.
 
 ### Cropped visual(s) from PDF page 21
 
-![page21 assignment01 to assignment02](images/page21_assignment01_to_assignment02.png)
+![page21 assignment01 to assignment02](../img/page21_assignment01_to_assignment02.png)
 
-![page21 traceable development flow](images/page21_traceable_development_flow.png)
+![page21 traceable development flow](../img/page21_traceable_development_flow.png)
 
 ---
 
@@ -1388,8 +1388,8 @@ initial Use Case Model.
 
 ### Cropped visual(s) from PDF page 23
 
-![page23 investigation progression](images/page23_investigation_progression.png)
+![page23 investigation progression](../img/page23_investigation_progression.png)
 
-![page23 final guidance callout](images/page23_final_guidance_callout.png)
+![page23 final guidance callout](../img/page23_final_guidance_callout.png)
 
 ---

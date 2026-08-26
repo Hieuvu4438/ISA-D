@@ -1,0 +1,42 @@
+{
+  "source": "https://mockflow.com/blog/context-diagram",
+  "note": "Direct standalone image assets referenced by the article. The sandbox could not download the binary files, so the Markdown embeds the original image URLs.",
+  "images": [
+    {
+      "filename": "01-hero.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/hero/Mefbb4ceecd16757091cf1a3e60df67aa1766486734432.webp"
+    },
+    {
+      "filename": "02-ecommerce-context-diagram.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/file/M4e13b7eccd5fda65e6c85d85a68fc8c01766480378532.webp"
+    },
+    {
+      "filename": "03-banking-system-context-diagram.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/file/Md0be54a3f24a96c41a442e904830b37e1766481884289.webp"
+    },
+    {
+      "filename": "04-healthcare-system-context-diagram.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/file/Ma898d3af3ab648505efe4dc7199f66e21766481921008.webp"
+    },
+    {
+      "filename": "05-ideaboard-templates.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/file/M6231c34ba0c16833fa35f21141180f091766482060579.webp"
+    },
+    {
+      "filename": "06-context-vs-dfd.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/file/Ma6c9cb99a20346ee70656b802cfd82b21766481968510.webp"
+    },
+    {
+      "filename": "07-how-to-create-context-diagrams.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/file/M9e2709f25579cde6fddf5e52e75c1e771766486846738.webp"
+    },
+    {
+      "filename": "08-ideaboard-diagramming-templates.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/file/M631d68f7b0689dc36b824d71cabb67f81766482141826.webp"
+    },
+    {
+      "filename": "09-ideaboard-ai-toolbox.webp",
+      "url": "https://view.subpage.app/app/company/C532b8873cc5442e2b1f2265b77a7d7dc/domain/MTiT0jFlGh/page/Ma9aQb2DGh/article/M001b5e5d5c7c11af40a24c6464695d0c1766469656850/file/M7999518ead4e98f6881ef53f378957011766482180433.webp"
+    }
+  ]
+}
