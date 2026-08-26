@@ -1,0 +1,2 @@
+# Ignore PDF files in data folder
+storage/data/*.pdf
