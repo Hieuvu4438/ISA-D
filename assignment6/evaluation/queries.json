@@ -1,0 +1,27 @@
+{
+  "version": "ground-truth-v1-before-implementation",
+  "criterion": "top-1 product belongs to relevant_ids; order exact id; robustness evaluated separately",
+  "queries": [
+    {"id":"T01","group":"primary","mode":"text","query":"black shoes","relevant_ids":[1,5]},
+    {"id":"T02","group":"primary","mode":"text","query":"blue shoes","relevant_ids":[4]},
+    {"id":"T03","group":"primary","mode":"text","query":"black leather bag","relevant_ids":[3]},
+    {"id":"T04","group":"primary","mode":"text","query":"find Nike shoes under 100 dollars","relevant_ids":[5]},
+    {"id":"V01","group":"primary","mode":"voice","query":"find running shoes","relevant_ids":[1,2,5]},
+    {"id":"V02","group":"primary","mode":"voice","query":"show me a white shoe","relevant_ids":[2,7]},
+    {"id":"V03","group":"primary","mode":"voice","query":"black leather bag","relevant_ids":[3]},
+    {"id":"V04","group":"primary","mode":"voice","query":"green backpack","relevant_ids":[12]},
+    {"id":"I01","group":"primary","mode":"image","image":"data/images/p001.png","relevant_ids":[1],"note":"Exact duplicate sanity case"},
+    {"id":"I02","group":"primary","mode":"image","image":"data/queries/black_shoe_query.png","relevant_ids":[1,5],"note":"Mildly transformed independent query image"},
+    {"id":"I03","group":"primary","mode":"image","image":"data/queries/blue_shoe_query.png","relevant_ids":[4],"note":"Mildly transformed blue shoe"},
+    {"id":"I04","group":"primary","mode":"image","image":"data/queries/brown_bag_query.png","relevant_ids":[8],"note":"Mildly transformed different category"},
+    {"id":"F01","group":"extension","mode":"multimodal","query":"black shoes","image":"data/queries/black_shoe_query.png","relevant_ids":[1,5]},
+    {"id":"O01","group":"extension","mode":"order","order_id":"O001","customer_id":"C001","expected_order":"O001"},
+    {"id":"C01","group":"challenge","mode":"text","query":"sneakers","relevant_ids":[1,2,4,5,6,7],"note":"Unimplemented semantic synonym"},
+    {"id":"C02","group":"challenge","mode":"text","query":"shoes not black","relevant_ids":[2,4,6,7],"note":"Negation unsupported by lexical OR matching"},
+    {"id":"R01","group":"robustness","mode":"text","query":"unobtainium","expected_empty":true},
+    {"id":"R02","group":"robustness","mode":"text","query":"","expected_error":true},
+    {"id":"R03","group":"robustness","mode":"image","image":"data/queries/corrupt.png","expected_error":true},
+    {"id":"R04","group":"robustness","mode":"image","embedding_zero":true,"expected_zero_scores":true},
+    {"id":"R05","group":"robustness","mode":"order","order_id":"O002","customer_id":"C001","expected_empty_order":true}
+  ]
+}
