@@ -64,6 +64,7 @@ def selected_files(root):
         "artifacts/automation/model_inventory.json",
         "artifacts/automation/reopened_inventory.json",
         "artifacts/automation/verify_result.txt",
+        "artifacts/automation/refine_result.txt",
     ]:
         path = root / relative
         if path.is_file():

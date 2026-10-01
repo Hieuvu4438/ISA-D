@@ -22,3 +22,10 @@ Tối đa 3 agent: root tích hợp/desktop/VP/nghiệm thu; prototype phụ tr�
 Kết quả gate cuối và clean ZIP extraction được ghi bởi scripts/package_submission.py trong docs/FINAL_VERIFICATION.md, artifacts/tests/submission_validation.json và clean_extraction.json. ZIP/manifest được tạo sau khi PDF và tài liệu đã freeze; chỉ file Assignment06, không kèm .venv/backup/VPseed/workspace/ảnh bài khác. Goal chỉ complete sau khi ZIP/hash/review cuối đạt.
 
 Sinh viên/MSSV/lớp: Chưa cung cấp. Voice mô phỏng STT; synthetic images/pixel descriptor; order context không phải production authentication. Chưa nộp LMS.
+# Cập nhật theo review UML của người dùng — 2026-10-01
+
+Đã sao lưu project trước chỉnh tại `artifacts/backups/Assignment_06_before_UML_refinement.vpp`. Khôi phục màu từ native factory của VP cho đúng loại shape: fill default quan sát `#7ACFF5`, nét/chữ đen. Không dùng palette tự chọn, không đổi model IDs hoặc nội dung quan hệ. Guide đã bỏ hướng dẫn cho phép tô màu phân tầng và yêu cầu giữ VP default.
+
+Đã căn hàng/cột, chia điểm bám và hành lang riêng ở use case/component; 7 connector use case và 15 dependency component đều ngang/dọc, không giao cắt/chồng nét hay xuyên node không liên quan. Sequence giữ 14 message và các self-call góc vuông. `artifacts/tests/uml_layout_audit.json` đối chiếu IDs và semantics trước/sau, kiểm tra geometry/style, PASS. Lifeline giao message trong sequence là UML hợp lệ.
+
+Đã phát hiện và sửa lỗi VP lưu connector bounds trước rendering làm mũi tên bị clipping sau reopen. Refiner render trước lần lưu cuối; project đã được mở lại qua process API độc lập và cả ba diagram trong GUI, sau đó lưu, đóng và verify lần nữa. Các `vp_*.png`, diagram exports, PDF và ZIP được cập nhật theo bản đã kiểm chứng.

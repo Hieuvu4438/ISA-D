@@ -36,3 +36,8 @@ Trung bình: **4.2/5**. Đánh giá này phù hợp đầu ra người dùng có
 Cải thiện ưu tiên: (1) điền họ tên/MSSV/lớp sau khi người dùng cung cấp; (2) khi cần đọc notation nhỏ, mở original exports hoặc native VP; (3) mở rộng independent query dataset cho nghiên cứu tiếp, không phải blocker bài prototype hiện tại. Không có lỗi layout còn cần sửa trong phạm vi report worker.
 
 Trạng thái: **report/docs frozen để đóng gói**. Nếu source, metrics, images hoặc report thay đổi, rebuild PDF và review các trang bị ảnh hưởng trước cập nhật package/hash.
+# Review sau chỉnh UML theo người dùng — 2026-10-01
+
+Root đã rebuild báo cáo 12 trang với diagram exports và screenshots mới từ native VP đã lưu/mở lại. Đã xem trực tiếp các trang bị ảnh hưởng 4, 5, 6: đủ actors/use cases, ba tầng/16 components/15 dependencies và 14 sequence messages; default cyan của VP cùng chữ/nét đen, đường ngang/dọc tách biệt, không bị cắt hình hay tràn trang. Screenshot VP xác nhận connector hiện đủ sau reopen. Nội dung report, số liệu, demo và các trang còn lại giữ nguyên nguồn.
+
+`build_audit.json` đã kiểm tra lại SHA-256 của toàn bộ đầu vào/PDF, 12 trang A4, font Arial tiếng Việt nhúng, text bounds và các số liệu trong PDF. Notation nhỏ ở component/sequence vẫn nên xem trong PNG gốc hoặc zoom native VP.

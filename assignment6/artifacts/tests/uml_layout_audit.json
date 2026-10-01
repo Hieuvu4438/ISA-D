@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "native_semantics_compared": true,
+  "native_semantics_unchanged": true,
+  "fill_default_observed_in_VP": "#7ACFF5",
+  "outline_and_text_default": "#000000",
+  "diagrams": [
+    {
+      "diagram": "UC_Multimodal_Ecommerce_Search",
+      "shapes": 9,
+      "connectors": 7,
+      "connector_conflicts": []
+    },
+    {
+      "diagram": "SEQ_Voice_Product_Search",
+      "shapes": 14,
+      "connectors": 14,
+      "connector_conflicts": []
+    },
+    {
+      "diagram": "CMP_Three_Layer_Architecture",
+      "shapes": 20,
+      "connectors": 15,
+      "connector_conflicts": []
+    }
+  ],
+  "findings": [],
+  "scope": "Axis-aligned connectors in all diagrams; intersections and nonendpoint box penetration in UC/CMP. Sequence lifeline intersections are intentional.",
+  "inventory_sha256": "a3fc49d958510dc042fcf215f3d5b4c9b9215f3f8ba400a8690f6126b0d182be",
+  "native_project_sha256": "5d04986f91b3a1373c5c0e951a7ed52d25222bba9ad97f0fb3f664e886091bd4"
+}

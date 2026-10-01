@@ -17,7 +17,6 @@ public final class ModelBuilder {
     private static final ApplicationManager APP = ApplicationManager.instance();
     private static final DiagramManager DM = APP.getDiagramManager();
     private static final IModelElementFactory F = IModelElementFactory.instance();
-    private static final Color INK = new Color(32, 45, 65);
     private static IModel rootModel;
     private static IActor customer;
     private static Map<String, IComponent> components = new LinkedHashMap<String, IComponent>();
@@ -40,6 +39,7 @@ public final class ModelBuilder {
         Files.createDirectories(root.resolve("artifacts/diagrams"));
         File projectFile = root.resolve("models/Assignment_06_Multimodal_Search.vpp").toFile();
         if (!pm.saveProjectAs(projectFile)) throw new IllegalStateException("Cannot save native project");
+        UmlRefiner.apply();
         export(uc, root.resolve("artifacts/diagrams/use_case.png"));
         export(cmp, root.resolve("artifacts/diagrams/three_layer_architecture.png"));
         export(seq, root.resolve("artifacts/diagrams/voice_sequence.png"));
@@ -52,23 +52,22 @@ public final class ModelBuilder {
 
     private static IDiagramUIModel diagram(String type, String name) {
         IDiagramUIModel d = DM.createDiagram(type);
-        d.setName(name); d.setDiagramBackground(Color.WHITE); d.setGridVisible(false);
+        d.setName(name); d.setGridVisible(false);
         d.setAlignToGrid(false); d.setAutoFitShapesSize(false); d.setZoomRatio(0.75);
         rootModel.addSubDiagram(d);
         return d;
     }
 
-    private static IShapeUIModel shape(IDiagramUIModel d, IModelElement m, int x, int y, int w, int h, Color fill, int size) {
+    private static IShapeUIModel shape(IDiagramUIModel d, IModelElement m, int x, int y, int w, int h, int size) {
         IShapeUIModel s = (IShapeUIModel) DM.createDiagramElement(d, m);
-        s.setBounds(x, y, w, h); s.getElementFont().setValues("Arial", Font.PLAIN, size, INK);
-        s.getFillColor().setColor1(fill, false); s.getLineModel().setColor(new Color(92, 111, 132), false);
+        s.setBounds(x, y, w, h); s.getElementFont().setSize(size);
         s.resetCaption(); return s;
     }
 
     private static IConnectorUIModel connector(IDiagramUIModel d, IModelElement relation, IShapeUIModel from, IShapeUIModel to, Point[] points, int size) {
         IConnectorUIModel c = (IConnectorUIModel) DM.createConnector(d, relation, from, to, points);
-        c.getElementFont().setValues("Arial", Font.PLAIN, size, INK);
-        c.getLineModel().setColor(new Color(88, 103, 124), false); c.resetCaption(); return c;
+        c.getElementFont().setSize(size);
+        c.resetCaption(); return c;
     }
 
     private static void associate(IDiagramUIModel d, IShapeUIModel actor, IShapeUIModel uc, Point[] points) {
@@ -81,15 +80,15 @@ public final class ModelBuilder {
     private static IDiagramUIModel useCases() {
         IDiagramUIModel d = diagram(DiagramManager.DIAGRAM_TYPE_USE_CASE_DIAGRAM, "UC_Multimodal_Ecommerce_Search");
         ISystem system = F.createSystem(); system.setName("Multimodal E-Commerce Search System"); rootModel.addChild(system);
-        IShapeUIModel boundary = shape(d, system, 220, 50, 1090, 720, new Color(246, 249, 253), 26);
+        IShapeUIModel boundary = shape(d, system, 220, 50, 1090, 720, 26);
         boundary.sendToBack();
-        IShapeUIModel actor = shape(d, customer, 45, 330, 105, 155, Color.WHITE, 23);
+        IShapeUIModel actor = shape(d, customer, 45, 330, 105, 155, 23);
         String[] names = {"Search Product", "Search by Keyword", "Search by Voice", "Search by Image", "Search Order", "View Product", "View Order"};
         int[][] boxes = {{650,145,245,85},{320,335,255,85},{650,335,245,85},{980,335,245,85},{330,560,245,85},{650,560,245,85},{980,560,245,85}};
         IShapeUIModel[] cases = new IShapeUIModel[names.length];
         for (int i=0;i<names.length;i++) {
             IUseCase u=F.createUseCase(); u.setName(names[i]); system.addChild(u);
-            cases[i]=shape(d,u,boxes[i][0],boxes[i][1],boxes[i][2],boxes[i][3],Color.WHITE,23);
+            cases[i]=shape(d,u,boxes[i][0],boxes[i][1],boxes[i][2],boxes[i][3],23);
             boundary.addChild(cases[i]);
         }
         for (int i=1;i<=3;i++) {
@@ -104,9 +103,9 @@ public final class ModelBuilder {
         return d;
     }
 
-    private static IShapeUIModel component(IDiagramUIModel d, IPackage pkg, IShapeUIModel p, String name, int x, int y, Color fill) {
+    private static IShapeUIModel component(IDiagramUIModel d, IPackage pkg, IShapeUIModel p, String name, int x, int y) {
         IComponent c=F.createComponent(); c.setName(name); pkg.addChild(c);
-        IShapeUIModel s=shape(d,c,x,y,350,84,fill,25); p.addChild(s);
+        IShapeUIModel s=shape(d,c,x,y,350,84,25); p.addChild(s);
         components.put(name,c); views.put(name,s); return s;
     }
 
@@ -127,14 +126,13 @@ public final class ModelBuilder {
         IDiagramUIModel d=diagram(DiagramManager.DIAGRAM_TYPE_COMPONENT_DIAGRAM,"CMP_Three_Layer_Architecture");
         String[] packageNames={"Presentation Layer","Application / Intelligence Layer","Data Layer"};
         String[][] names={{"VoiceInput","SearchUI","ImageUpload","SearchResultView"},{"SpeechService","QueryService","ImageService","SearchService","RankingService","OrderService"},{"ProductRepository","ProductDatabase","VectorIndex","ImageStorage","OrderRepository","OrderDatabase"}};
-        Color[] colors={new Color(231,241,251),new Color(235,245,238),new Color(253,243,227)};
         for(int col=0;col<3;col++) {
             IPackage p=F.createPackage(); p.setName(packageNames[col]); rootModel.addChild(p);
             int x=60+col*570;
-            IShapeUIModel ps=shape(d,p,x,50,500,1080,colors[col],27); ps.sendToBack();
+            IShapeUIModel ps=shape(d,p,x,50,500,1080,27); ps.sendToBack();
             for(int row=0;row<names[col].length;row++) {
                 int y=col==0 ? 195+row*230 : 155+row*158;
-                component(d,p,ps,names[col][row],x+75,y,Color.WHITE);
+                component(d,p,ps,names[col][row],x+75,y);
             }
         }
         dependency(d,"VoiceInput","SearchUI",null);
@@ -154,7 +152,7 @@ public final class ModelBuilder {
         dependency(d,"OrderRepository","OrderDatabase",null);
         INOTE note=F.createNOTE(); note.setName("Prototype storage: JSON products/orders, PNG images, in-memory VectorIndex.\nPresentation calls Application only; no direct Presentation-to-Data dependency.");
         note.setDocumentation(note.getName());note.setName("");
-        shape(d,note,85,1170,1650,110,new Color(248,248,248),23);
+        shape(d,note,85,1170,1650,110,23);
         return d;
     }
 
@@ -166,14 +164,14 @@ public final class ModelBuilder {
         int[] xs={50,280,520,760,1000,1240,1510};
         IShapeUIModel[] lifeShapes=new IShapeUIModel[7]; IModelElement[] lifelines=new IModelElement[7]; IActivation[] acts=new IActivation[7];
         IInteractionActor actor=F.createInteractionActor();actor.setName("Customer");actor.setReferencedActor(customer);frame.addChild(actor);
-        lifelines[0]=actor;lifeShapes[0]=shape(d,actor,xs[0],50,175,1030,Color.WHITE,22);
+        lifelines[0]=actor;lifeShapes[0]=shape(d,actor,xs[0],50,175,1030,22);
         for(int i=1;i<7;i++) {
             IInteractionLifeLine life=F.createInteractionLifeLine();life.setName("");life.setBaseClassifier(components.get(names[i]));frame.addChild(life);
-            lifelines[i]=life;lifeShapes[i]=shape(d,life,xs[i],50,220,1030,Color.WHITE,22);
+            lifelines[i]=life;lifeShapes[i]=shape(d,life,xs[i],50,220,1030,22);
             IActivation activation=F.createActivation();life.addActivation(activation);acts[i]=activation;
             int start=i==1?180:i==2?240:i==3?350:i==4?460:i==5?580:750;
             int end=i==1?980:i==2?305:i==3?415:i==4?925:i==5?640:805;
-            IShapeUIModel a=shape(d,activation,xs[i]+104,start,12,end-start,Color.WHITE,16);
+            IShapeUIModel a=shape(d,activation,xs[i]+104,start,12,end-start,16);
             lifeShapes[i].addChild(a);
         }
         String[] labels={"search_voice(transcriptInput)","transcribe(transcriptInput)","transcript","voice_query(transcript)","query","search(query)","_retrieve(query)","all_products()","products","match tokens / filter candidates","rank(candidates, query)","ranked_results","search_result","display products + scores"};
@@ -195,7 +193,7 @@ public final class ModelBuilder {
         messages[1].setReturnMessage(messages[2]);messages[3].setReturnMessage(messages[4]);messages[7].setReturnMessage(messages[8]);messages[10].setReturnMessage(messages[11]);messages[5].setReturnMessage(messages[12]);
         INOTE note=F.createNOTE();note.setName("Simulated speech-to-text: transcript string is already provided.\nAll voice queries use the common query, retrieval and ranking pipeline.");
         note.setDocumentation(note.getName());note.setName("");
-        shape(d,note,490,1100,1120,105,new Color(246,249,253),22);
+        shape(d,note,490,1100,1120,105,22);
         return d;
     }
 
@@ -230,7 +228,9 @@ public final class ModelBuilder {
             for(IShapeUIModel s:d.toShapeUIModelArray()) {
                 IModelElement m=s.getModelElement();if(m==null)continue;
                 if(!first)b.append(',');first=false;
-                b.append("{\"id\":").append(q(m.getId())).append(",\"type\":").append(q(m.getModelType())).append(",\"name\":").append(q(m.getName())).append(",\"parent\":").append(q(m.getParent()==null?"":m.getParent().getName())).append(",\"shape_type\":").append(q(s.getShapeType())).append('}');
+                b.append("{\"id\":").append(q(m.getId())).append(",\"type\":").append(q(m.getModelType())).append(",\"name\":").append(q(m.getName())).append(",\"parent\":").append(q(m.getParent()==null?"":m.getParent().getName())).append(",\"shape_type\":").append(q(s.getShapeType()));
+                b.append(",\"bounds\":[").append(s.getX()).append(',').append(s.getY()).append(',').append(s.getWidth()).append(',').append(s.getHeight()).append(']');
+                b.append(",\"fill\":").append(q(String.valueOf(s.getFillColor().getColor1()))).append(",\"line_color\":").append(q(String.valueOf(s.getLineModel().getColor()))).append(",\"font_color\":").append(q(String.valueOf(s.getElementFont().getColor()))).append('}');
             }
             b.append("],\"connectors\":[");first=true;
             for(IConnectorUIModel c:d.toConnectorUIModelArray()) {
@@ -239,7 +239,10 @@ public final class ModelBuilder {
                 String from="",to="";
                 if(m instanceof IRelationship) {IRelationship r=(IRelationship)m;from=r.getFrom()==null?"":r.getFrom().getName();to=r.getTo()==null?"":r.getTo().getName();}
                 else if(m instanceof IEndRelationship) {IEndRelationship r=(IEndRelationship)m;from=r.getFromEnd().getModelElement().getName();to=r.getToEnd().getModelElement().getName();}
-                b.append("{\"id\":").append(q(m.getId())).append(",\"type\":").append(q(m.getModelType())).append(",\"name\":").append(q(m.getName())).append(",\"from\":").append(q(from)).append(",\"to\":").append(q(to)).append(",\"shape_type\":").append(q(c.getShapeType())).append('}');
+                b.append("{\"id\":").append(q(m.getId())).append(",\"type\":").append(q(m.getModelType())).append(",\"name\":").append(q(m.getName())).append(",\"from\":").append(q(from)).append(",\"to\":").append(q(to)).append(",\"shape_type\":").append(q(c.getShapeType()));
+                b.append(",\"route_style\":").append(c.getConnectorStyle()).append(",\"points\":[");
+                Point[] points=c.getPoints();for(int i=0;i<points.length;i++){if(i>0)b.append(',');b.append('[').append(points[i].x).append(',').append(points[i].y).append(']');}
+                b.append("],\"line_color\":").append(q(String.valueOf(c.getLineModel().getColor()))).append(",\"font_color\":").append(q(String.valueOf(c.getElementFont().getColor()))).append('}');
             }
             b.append("]}");
         }

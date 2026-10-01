@@ -41,8 +41,10 @@ public class BuildPlugin implements VPPlugin, VPPluginCommandLineSupport {
                 ModelBuilder.build(ROOT);
             } else if (args.length > 0 && args[0].equals("verify")) {
                 ModelBuilder.verify(ROOT);
+            } else if (args.length > 0 && args[0].equals("refine")) {
+                UmlRefiner.refine(ROOT);
             } else {
-                throw new IllegalArgumentException("Expected smoke, build or verify");
+                throw new IllegalArgumentException("Expected smoke, build, verify or refine");
             }
         } catch (Throwable e) {
             e.printStackTrace();

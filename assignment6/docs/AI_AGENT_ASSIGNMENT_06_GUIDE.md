@@ -424,7 +424,7 @@ SearchUI → OrderService → OrderRepository        # Khi có order extension
 
 Mũi tên dependency từ bên dùng đến bên được dùng, dùng đường nét đứt/đầu mũi tên đúng UML. Các dependency nội bộ một tầng hợp lệ; không được có dependency Presentation → Data. Thể hiện package ownership và vị trí components thật, không chỉ đặt shapes nhìn có vẻ nằm trong khung.
 
-Ưu tiên bố cục ba hàng hoặc ba cột, connector dễ theo dõi, ít giao cắt, font nhất quán. Màu tầng có thể khác nhẹ nhưng không thay thế tên package hay notation.
+Ưu tiên bố cục ba hàng hoặc ba cột, font nhất quán. Giữ màu mặc định của Visual Paradigm đang cài cho mọi UML; không tự chọn palette, tô màu phân tầng hay đổi màu đường nối. Lấy style từ model element mới do VP tạo nếu cần khôi phục default. Nối ngang/dọc với góc vuông, chia điểm bám và hành lang riêng; tránh chồng nét, giao cắt hoặc đi xuyên qua node không liên quan. Kiểm tra ảnh xuất và mở lại file `.vpp` trong GUI để xác nhận đường nối vẫn hiện đầy đủ sau lưu.
 
 ### 8.3. Sequence Diagram: `SEQ_Voice_Product_Search`
 

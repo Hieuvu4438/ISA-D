@@ -135,15 +135,25 @@
     "artifacts/demo/demo_results.json": "7e6c9b76d112e9c4ad0fd02fae9d13a27c6e797e9595ed978d88471fb2776f95",
     "artifacts/tests/junit.xml": "b3f8638e024d83b435e5c798924a7fbae555f8e653607837a7e3bbbdd529787c",
     "artifacts/tests/coverage.json": "f1b604c19c24dde79467a1c57673aaf05de41a28b15c2b88e410432d2306a36e",
-    "artifacts/diagrams/three_layer_architecture.png": "823fc6c4c7b661b35a943892c82dc76aac7f5751c7ff8c381a5dbbeb19ffba7f",
-    "artifacts/diagrams/use_case.png": "5c472c87bd59c1eb4a1bedcae2c212a4e79e18867510aecb7111eac8026e581a",
-    "artifacts/diagrams/voice_sequence.png": "97c8542af4f747de2d22c8f017eeb1bea21abac0979dac086831a21c9fdf35fe",
-    "artifacts/screenshots/vp_use_case.png": "dfc0cda06faaa0fb925a20ad2659fecc26bddd31849a6606c6ab182977f60a5f",
-    "artifacts/screenshots/vp_architecture.png": "79aa8352eac4a343f48f531eeacc886f335ff7d2bb61644500b80ae35b2ae426",
-    "artifacts/screenshots/vp_sequence.png": "77ba33eeccdfbe5a803a6e6e11afeea295ed143510b92c69e690f8cfcda31a75",
+    "artifacts/diagrams/three_layer_architecture.png": "503ffea80df6ea4896bc867dd1ca19337879ecd1dc22d006c37ca948fa93e40e",
+    "artifacts/diagrams/use_case.png": "a3e56a19d590be3eb755c6a79719c965530a2c717e4b7ec388af690a27c13307",
+    "artifacts/diagrams/voice_sequence.png": "33c99af94d7778186c11674ef04700cf37067feb3c666e675ca7155e8ee89b24",
+    "artifacts/screenshots/vp_use_case.png": "ab82e86617dc086aa4ede9052d3c2a61d4585330c0c1d3341d3003120e3bf83b",
+    "artifacts/screenshots/vp_architecture.png": "52a283118bf728976310f98d366c00e72e2862cf5972e65a1de7e8e70fa96c03",
+    "artifacts/screenshots/vp_sequence.png": "a15b916c7643a8b1d71f3f95f2e407a02ec6def5ace309ca39a8cb5bb1dd6b2a",
     "artifacts/screenshots/demo_text.png": "dc9fca4b354b22d33813d0d5371b0bb15eada16bf84ad8f91ee88de73c8dd893",
     "artifacts/screenshots/demo_voice.png": "d1a7bf11b64336a7e2a27ebaa59eccf493a2fc64026618ab3910c0fef0657799",
     "artifacts/screenshots/demo_image.png": "c93564fe24875d0a4f0b7aabee05175d99d1cbbd65d6e20f7a8ebb1c402bf6c0"
   },
-  "pdf_sha256": "da76118733ea01e9f5bf4b15b61cb58dd1f610ff8596eda29073da97f93d483b"
+  "pdf_sha256": "11c6342f7c34dcb5d2fccefcdd965ffcb073e3598ea6ac915d33572a30ae38c2",
+  "UML_refinement_review": {
+    "changed_pages_visually_reviewed": [
+      4,
+      5,
+      6
+    ],
+    "native_default_palette": true,
+    "native_reopen_and_GUI_checked": true,
+    "layout_audit": "artifacts/tests/uml_layout_audit.json"
+  }
 }

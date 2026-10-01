@@ -17,7 +17,7 @@ PLUGIN_ID = "edu.assignment06.multimodal"
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["smoke", "build", "verify"])
+    parser.add_argument("action", choices=["smoke", "build", "verify", "refine"])
     parser.add_argument("--project", type=Path)
     args = parser.parse_args()
     classes = PLUGIN / "classes"

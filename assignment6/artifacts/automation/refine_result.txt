@@ -1,0 +1,1 @@
+PASS original UML objects retained; VP-created default colors; orthogonal connectors
