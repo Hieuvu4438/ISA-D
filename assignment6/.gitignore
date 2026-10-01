@@ -6,3 +6,10 @@ __pycache__/
 .coverage
 artifacts/tests/coverage/
 artifacts/backups/
+artifacts/automation/vp_workspace/
+artifacts/automation/*.png
+artifacts/automation/*.vpp*
+artifacts/automation/*.lck
+scripts/desktop/vp_plugin/classes/
+models/*.bak*
+models/*.lck

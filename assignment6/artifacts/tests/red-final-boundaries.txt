@@ -1,0 +1,29 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+__________________ test_extracted_price_overflow_is_rejected __________________
+
+    def test_extracted_price_overflow_is_rejected():
+>       with pytest.raises(ValueError, match='finite'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_data_boundaries.py:110: Failed
+______________ test_dataset_generator_rejects_paths_outside_root ______________
+
+tmp_path = WindowsPath('C:/Users/Hieu Vu/AppData/Local/Temp/pytest-of-Hieu Vu/pytest-6/test_dataset_generator_rejects0')
+
+    def test_dataset_generator_rejects_paths_outside_root(tmp_path):
+        products = json.loads((ROOT / 'data/products.json').read_text())
+        products[0]['image'] = '../escaped.png'
+        catalogue = tmp_path / 'data/products.json'
+        catalogue.parent.mkdir()
+        write(catalogue, products)
+>       with pytest.raises(ValueError, match='inside'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_data_boundaries.py:120: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_data_boundaries.py::test_extracted_price_overflow_is_rejected
+FAILED tests/test_data_boundaries.py::test_dataset_generator_rejects_paths_outside_root
+2 failed, 32 deselected in 0.23s

@@ -1,0 +1,7 @@
+Command: D:\PROJECTS\ISA-D\assignment6\.venv\Scripts\python.exe -m ruff check scripts/validate_submission.py scripts/package_submission.py
+Exit: 0
+All checks passed!
+
+Command: D:\PROJECTS\ISA-D\assignment6\.venv\Scripts\python.exe -m pyright scripts/validate_submission.py scripts/package_submission.py
+Exit: 0
+0 errors, 0 warnings, 0 informations

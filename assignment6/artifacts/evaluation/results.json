@@ -1,0 +1,1035 @@
+[
+  {
+    "id": "T01",
+    "group": "primary",
+    "mode": "text",
+    "input": {
+      "mode": "text",
+      "query": "black shoes"
+    },
+    "relevant_ids": [
+      1,
+      5
+    ],
+    "top_1_product_id": 1,
+    "top_k_ids": [
+      1,
+      5,
+      2,
+      4,
+      6
+    ],
+    "scores": [
+      1.0,
+      1.0,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.40510017424821854,
+    "error": null,
+    "processing": {
+      "modality": "text",
+      "normalized_query": "black shoes",
+      "tokens": [
+        "black",
+        "shoes"
+      ],
+      "filters": {
+        "category": "shoes",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 9,
+      "candidates_after_filter": 6,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "T02",
+    "group": "primary",
+    "mode": "text",
+    "input": {
+      "mode": "text",
+      "query": "blue shoes"
+    },
+    "relevant_ids": [
+      4
+    ],
+    "top_1_product_id": 4,
+    "top_k_ids": [
+      4,
+      1,
+      2,
+      5,
+      6
+    ],
+    "scores": [
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.18560001626610756,
+    "error": null,
+    "processing": {
+      "modality": "text",
+      "normalized_query": "blue shoes",
+      "tokens": [
+        "blue",
+        "shoes"
+      ],
+      "filters": {
+        "category": "shoes",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 7,
+      "candidates_after_filter": 6,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "T03",
+    "group": "primary",
+    "mode": "text",
+    "input": {
+      "mode": "text",
+      "query": "black leather bag"
+    },
+    "relevant_ids": [
+      3
+    ],
+    "top_1_product_id": 3,
+    "top_k_ids": [
+      3,
+      8,
+      9,
+      12
+    ],
+    "scores": [
+      1.0,
+      0.6666666666666666,
+      0.6666666666666666,
+      0.3333333333333333
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.16069994308054447,
+    "error": null,
+    "processing": {
+      "modality": "text",
+      "normalized_query": "black leather bag",
+      "tokens": [
+        "black",
+        "leather",
+        "bag"
+      ],
+      "filters": {
+        "category": "bag",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 7,
+      "candidates_after_filter": 4,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "T04",
+    "group": "primary",
+    "mode": "text",
+    "input": {
+      "mode": "text",
+      "query": "find Nike shoes under 100 dollars"
+    },
+    "relevant_ids": [
+      5
+    ],
+    "top_1_product_id": 5,
+    "top_k_ids": [
+      5,
+      4,
+      6,
+      7
+    ],
+    "scores": [
+      1.0,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.15789992175996304,
+    "error": null,
+    "processing": {
+      "modality": "text",
+      "normalized_query": "find nike shoes under 100 dollars",
+      "tokens": [
+        "nike",
+        "shoes"
+      ],
+      "filters": {
+        "category": "shoes",
+        "max_price_exclusive": 100.0,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 6,
+      "candidates_after_filter": 4,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "V01",
+    "group": "primary",
+    "mode": "voice",
+    "input": {
+      "mode": "voice",
+      "query": "find running shoes"
+    },
+    "relevant_ids": [
+      1,
+      2,
+      5
+    ],
+    "top_1_product_id": 1,
+    "top_k_ids": [
+      1,
+      2,
+      5,
+      4,
+      6
+    ],
+    "scores": [
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      0.5
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.1705000177025795,
+    "error": null,
+    "processing": {
+      "modality": "voice",
+      "normalized_query": "find running shoes",
+      "tokens": [
+        "running",
+        "shoes"
+      ],
+      "filters": {
+        "category": "shoes",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 6,
+      "candidates_after_filter": 6,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": true,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "V02",
+    "group": "primary",
+    "mode": "voice",
+    "input": {
+      "mode": "voice",
+      "query": "show me a white shoe"
+    },
+    "relevant_ids": [
+      2,
+      7
+    ],
+    "top_1_product_id": 2,
+    "top_k_ids": [
+      2,
+      7,
+      1,
+      4,
+      5
+    ],
+    "scores": [
+      1.0,
+      1.0,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.16549997963011265,
+    "error": null,
+    "processing": {
+      "modality": "voice",
+      "normalized_query": "show me a white shoe",
+      "tokens": [
+        "white",
+        "shoes"
+      ],
+      "filters": {
+        "category": "shoes",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 6,
+      "candidates_after_filter": 6,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": true,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "V03",
+    "group": "primary",
+    "mode": "voice",
+    "input": {
+      "mode": "voice",
+      "query": "black leather bag"
+    },
+    "relevant_ids": [
+      3
+    ],
+    "top_1_product_id": 3,
+    "top_k_ids": [
+      3,
+      8,
+      9,
+      12
+    ],
+    "scores": [
+      1.0,
+      0.6666666666666666,
+      0.6666666666666666,
+      0.3333333333333333
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.15169987455010414,
+    "error": null,
+    "processing": {
+      "modality": "voice",
+      "normalized_query": "black leather bag",
+      "tokens": [
+        "black",
+        "leather",
+        "bag"
+      ],
+      "filters": {
+        "category": "bag",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 7,
+      "candidates_after_filter": 4,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": true,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "V04",
+    "group": "primary",
+    "mode": "voice",
+    "input": {
+      "mode": "voice",
+      "query": "green backpack"
+    },
+    "relevant_ids": [
+      12
+    ],
+    "top_1_product_id": 12,
+    "top_k_ids": [
+      12,
+      9
+    ],
+    "scores": [
+      1.0,
+      0.5
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.13560010120272636,
+    "error": null,
+    "processing": {
+      "modality": "voice",
+      "normalized_query": "green backpack",
+      "tokens": [
+        "green",
+        "backpack"
+      ],
+      "filters": {
+        "category": "bag",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 2,
+      "candidates_after_filter": 2,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": true,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "I01",
+    "group": "primary",
+    "mode": "image",
+    "input": {
+      "mode": "image",
+      "image": "data/images/p001.png",
+      "note": "Exact duplicate sanity case"
+    },
+    "relevant_ids": [
+      1
+    ],
+    "top_1_product_id": 1,
+    "top_k_ids": [
+      1,
+      5,
+      4,
+      6,
+      2
+    ],
+    "scores": [
+      1.0,
+      0.9999832967720268,
+      0.9911788151247924,
+      0.9907216037990977,
+      0.9794530929092469
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 6.6154999658465385,
+    "error": null,
+    "processing": {
+      "modality": "image",
+      "normalized_query": "",
+      "tokens": [],
+      "filters": {
+        "category": null,
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 12,
+      "candidates_after_filter": 12,
+      "encoder": {
+        "name": "rgbhist-gray-thumbnail",
+        "version": "1.0",
+        "dimension": 88
+      },
+      "ranking_weights": {
+        "text": 0.0,
+        "image": 1.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": "Exact duplicate sanity case"
+  },
+  {
+    "id": "I02",
+    "group": "primary",
+    "mode": "image",
+    "input": {
+      "mode": "image",
+      "image": "data/queries/black_shoe_query.png",
+      "note": "Mildly transformed independent query image"
+    },
+    "relevant_ids": [
+      1,
+      5
+    ],
+    "top_1_product_id": 5,
+    "top_k_ids": [
+      5,
+      1,
+      6,
+      4,
+      2
+    ],
+    "scores": [
+      0.9980887041878072,
+      0.9980420883627943,
+      0.9906050609872308,
+      0.9885635615706351,
+      0.9793878208161381
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 3.0789999291300774,
+    "error": null,
+    "processing": {
+      "modality": "image",
+      "normalized_query": "",
+      "tokens": [],
+      "filters": {
+        "category": null,
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 12,
+      "candidates_after_filter": 12,
+      "encoder": {
+        "name": "rgbhist-gray-thumbnail",
+        "version": "1.0",
+        "dimension": 88
+      },
+      "ranking_weights": {
+        "text": 0.0,
+        "image": 1.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": "Mildly transformed independent query image"
+  },
+  {
+    "id": "I03",
+    "group": "primary",
+    "mode": "image",
+    "input": {
+      "mode": "image",
+      "image": "data/queries/blue_shoe_query.png",
+      "note": "Mildly transformed blue shoe"
+    },
+    "relevant_ids": [
+      4
+    ],
+    "top_1_product_id": 4,
+    "top_k_ids": [
+      4,
+      5,
+      1,
+      6,
+      2
+    ],
+    "scores": [
+      0.9978811492253568,
+      0.991666198910267,
+      0.9915675544519431,
+      0.9891687906631886,
+      0.9876721818270419
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 2.2406999487429857,
+    "error": null,
+    "processing": {
+      "modality": "image",
+      "normalized_query": "",
+      "tokens": [],
+      "filters": {
+        "category": null,
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 12,
+      "candidates_after_filter": 12,
+      "encoder": {
+        "name": "rgbhist-gray-thumbnail",
+        "version": "1.0",
+        "dimension": 88
+      },
+      "ranking_weights": {
+        "text": 0.0,
+        "image": 1.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": "Mildly transformed blue shoe"
+  },
+  {
+    "id": "I04",
+    "group": "primary",
+    "mode": "image",
+    "input": {
+      "mode": "image",
+      "image": "data/queries/brown_bag_query.png",
+      "note": "Mildly transformed different category"
+    },
+    "relevant_ids": [
+      8
+    ],
+    "top_1_product_id": 8,
+    "top_k_ids": [
+      8,
+      5,
+      1,
+      6,
+      4
+    ],
+    "scores": [
+      0.9817101339999776,
+      0.9617996404267946,
+      0.9617882926682922,
+      0.9562892576402073,
+      0.9549539557674898
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 2.0022999960929155,
+    "error": null,
+    "processing": {
+      "modality": "image",
+      "normalized_query": "",
+      "tokens": [],
+      "filters": {
+        "category": null,
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 12,
+      "candidates_after_filter": 12,
+      "encoder": {
+        "name": "rgbhist-gray-thumbnail",
+        "version": "1.0",
+        "dimension": 88
+      },
+      "ranking_weights": {
+        "text": 0.0,
+        "image": 1.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": "Mildly transformed different category"
+  },
+  {
+    "id": "F01",
+    "group": "extension",
+    "mode": "multimodal",
+    "input": {
+      "mode": "multimodal",
+      "query": "black shoes",
+      "image": "data/queries/black_shoe_query.png"
+    },
+    "relevant_ids": [
+      1,
+      5
+    ],
+    "top_1_product_id": 5,
+    "top_k_ids": [
+      5,
+      1,
+      6,
+      4,
+      2
+    ],
+    "scores": [
+      0.9990443520939036,
+      0.9990210441813971,
+      0.7453025304936154,
+      0.7442817807853175,
+      0.7396939104080691
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 1.882700016722083,
+    "error": null,
+    "processing": {
+      "modality": "multimodal",
+      "normalized_query": "black shoes",
+      "tokens": [
+        "black",
+        "shoes"
+      ],
+      "filters": {
+        "category": "shoes",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 12,
+      "candidates_after_filter": 6,
+      "encoder": {
+        "name": "rgbhist-gray-thumbnail",
+        "version": "1.0",
+        "dimension": 88
+      },
+      "ranking_weights": {
+        "text": 0.5,
+        "image": 0.5
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "O01",
+    "group": "extension",
+    "mode": "order",
+    "input": {
+      "mode": "order",
+      "order_id": "O001",
+      "customer_id": "C001",
+      "expected_order": "O001"
+    },
+    "relevant_ids": [],
+    "top_1_product_id": null,
+    "top_k_ids": [],
+    "scores": [],
+    "actual_order_id": "O001",
+    "success": true,
+    "processing_ms": 0.1004999503493309,
+    "error": null,
+    "processing": {
+      "customer_scope": "C001",
+      "authentication": "simulated customer context"
+    },
+    "note": ""
+  },
+  {
+    "id": "C01",
+    "group": "challenge",
+    "mode": "text",
+    "input": {
+      "mode": "text",
+      "query": "sneakers",
+      "note": "Unimplemented semantic synonym"
+    },
+    "relevant_ids": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "top_1_product_id": null,
+    "top_k_ids": [],
+    "scores": [],
+    "actual_order_id": null,
+    "success": false,
+    "processing_ms": 0.17889984883368015,
+    "error": null,
+    "processing": {
+      "modality": "text",
+      "normalized_query": "sneakers",
+      "tokens": [
+        "sneakers"
+      ],
+      "filters": {
+        "category": null,
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 0,
+      "candidates_after_filter": 0,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": "Unimplemented semantic synonym"
+  },
+  {
+    "id": "C02",
+    "group": "challenge",
+    "mode": "text",
+    "input": {
+      "mode": "text",
+      "query": "shoes not black",
+      "note": "Negation unsupported by lexical OR matching"
+    },
+    "relevant_ids": [
+      2,
+      4,
+      6,
+      7
+    ],
+    "top_1_product_id": 1,
+    "top_k_ids": [
+      1,
+      5,
+      2,
+      4,
+      6
+    ],
+    "scores": [
+      0.6666666666666666,
+      0.6666666666666666,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "actual_order_id": null,
+    "success": false,
+    "processing_ms": 0.15380000695586205,
+    "error": null,
+    "processing": {
+      "modality": "text",
+      "normalized_query": "shoes not black",
+      "tokens": [
+        "shoes",
+        "not",
+        "black"
+      ],
+      "filters": {
+        "category": "shoes",
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 9,
+      "candidates_after_filter": 6,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": "Negation unsupported by lexical OR matching"
+  },
+  {
+    "id": "R01",
+    "group": "robustness",
+    "mode": "text",
+    "input": {
+      "mode": "text",
+      "query": "unobtainium",
+      "expected_empty": true
+    },
+    "relevant_ids": [],
+    "top_1_product_id": null,
+    "top_k_ids": [],
+    "scores": [],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.10239984840154648,
+    "error": null,
+    "processing": {
+      "modality": "text",
+      "normalized_query": "unobtainium",
+      "tokens": [
+        "unobtainium"
+      ],
+      "filters": {
+        "category": null,
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 0,
+      "candidates_after_filter": 0,
+      "encoder": null,
+      "ranking_weights": {
+        "text": 1.0,
+        "image": 0.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "R02",
+    "group": "robustness",
+    "mode": "text",
+    "input": {
+      "mode": "text",
+      "query": "",
+      "expected_error": true
+    },
+    "relevant_ids": [],
+    "top_1_product_id": null,
+    "top_k_ids": [],
+    "scores": [],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.004400033503770828,
+    "error": "query must contain 1\u20132000 characters",
+    "processing": null,
+    "note": ""
+  },
+  {
+    "id": "R03",
+    "group": "robustness",
+    "mode": "image",
+    "input": {
+      "mode": "image",
+      "image": "data/queries/corrupt.png",
+      "expected_error": true
+    },
+    "relevant_ids": [],
+    "top_1_product_id": null,
+    "top_k_ids": [],
+    "scores": [],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 37.65149996615946,
+    "error": "cannot read image: D:\\PROJECTS\\ISA-D\\assignment6\\data\\queries\\corrupt.png",
+    "processing": null,
+    "note": ""
+  },
+  {
+    "id": "R04",
+    "group": "robustness",
+    "mode": "image",
+    "input": {
+      "mode": "image",
+      "embedding_zero": true,
+      "expected_zero_scores": true
+    },
+    "relevant_ids": [],
+    "top_1_product_id": 1,
+    "top_k_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.44180010445415974,
+    "error": null,
+    "processing": {
+      "modality": "image",
+      "normalized_query": "",
+      "tokens": [],
+      "filters": {
+        "category": null,
+        "max_price_exclusive": null,
+        "max_price_inclusive": null
+      },
+      "candidates_before_filter": 12,
+      "candidates_after_filter": 12,
+      "encoder": {
+        "name": "rgbhist-gray-thumbnail",
+        "version": "1.0",
+        "dimension": 88
+      },
+      "ranking_weights": {
+        "text": 0.0,
+        "image": 1.0
+      },
+      "top_k": 5,
+      "simulated_stt": false,
+      "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+      "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+    },
+    "note": ""
+  },
+  {
+    "id": "R05",
+    "group": "robustness",
+    "mode": "order",
+    "input": {
+      "mode": "order",
+      "order_id": "O002",
+      "customer_id": "C001",
+      "expected_empty_order": true
+    },
+    "relevant_ids": [],
+    "top_1_product_id": null,
+    "top_k_ids": [],
+    "scores": [],
+    "actual_order_id": null,
+    "success": true,
+    "processing_ms": 0.010400079190731049,
+    "error": null,
+    "processing": {
+      "customer_scope": "C001",
+      "authentication": "simulated customer context"
+    },
+    "note": ""
+  }
+]

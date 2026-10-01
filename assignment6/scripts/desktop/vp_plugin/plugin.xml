@@ -1,0 +1,5 @@
+<plugin id="edu.assignment06.multimodal" name="Assignment 06 Multimodal Builder"
+        description="Build and inspect the native UML model for Assignment 06"
+        provider="Assignment 06" class="edu.assignment06.vp.BuildPlugin">
+  <runtime><library path="classes" relativePath="true"/></runtime>
+</plugin>

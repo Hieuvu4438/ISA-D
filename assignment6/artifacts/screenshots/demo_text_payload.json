@@ -1,0 +1,112 @@
+{
+  "query": {
+    "type": "text",
+    "raw_input": "black shoes",
+    "query": "black shoes",
+    "tokens": [
+      "black",
+      "shoes"
+    ],
+    "embedding": null,
+    "filters": {
+      "category": "shoes",
+      "max_price_exclusive": null,
+      "max_price_inclusive": null
+    },
+    "top_k": 3,
+    "weights": {
+      "text": 1.0,
+      "image": 0.0
+    },
+    "customer_id": null,
+    "encoder": null
+  },
+  "processing": {
+    "modality": "text",
+    "normalized_query": "black shoes",
+    "tokens": [
+      "black",
+      "shoes"
+    ],
+    "filters": {
+      "category": "shoes",
+      "max_price_exclusive": null,
+      "max_price_inclusive": null
+    },
+    "candidates_before_filter": 9,
+    "candidates_after_filter": 6,
+    "encoder": null,
+    "ranking_weights": {
+      "text": 1.0,
+      "image": 0.0
+    },
+    "top_k": 3,
+    "simulated_stt": false,
+    "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+    "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+  },
+  "results": [
+    {
+      "product_id": 1,
+      "name": "Nike Running Shoes",
+      "brand": "Nike",
+      "category": "shoes",
+      "color": "black",
+      "price": 120,
+      "stock": 10,
+      "description": "Black running shoes for everyday training.",
+      "image_path": "data/images/p001.png",
+      "raw_text_score": 2,
+      "text_score": 1.0,
+      "image_score": 0.0,
+      "business_score": 0.0,
+      "matched_terms": [
+        "black",
+        "shoes"
+      ],
+      "final_score": 1.0,
+      "rank": 1
+    },
+    {
+      "product_id": 5,
+      "name": "Nike Budget Running Shoes",
+      "brand": "Nike",
+      "category": "shoes",
+      "color": "black",
+      "price": 95,
+      "stock": 8,
+      "description": "Affordable black running shoes for training.",
+      "image_path": "data/images/p005.png",
+      "raw_text_score": 2,
+      "text_score": 1.0,
+      "image_score": 0.0,
+      "business_score": 0.0,
+      "matched_terms": [
+        "black",
+        "shoes"
+      ],
+      "final_score": 1.0,
+      "rank": 2
+    },
+    {
+      "product_id": 2,
+      "name": "Adidas Running Shoes",
+      "brand": "Adidas",
+      "category": "shoes",
+      "color": "white",
+      "price": 100,
+      "stock": 15,
+      "description": "White running shoes for daily exercise.",
+      "image_path": "data/images/p002.png",
+      "raw_text_score": 1,
+      "text_score": 0.5,
+      "image_score": 0.0,
+      "business_score": 0.0,
+      "matched_terms": [
+        "shoes"
+      ],
+      "final_score": 0.5,
+      "rank": 3
+    }
+  ]
+}

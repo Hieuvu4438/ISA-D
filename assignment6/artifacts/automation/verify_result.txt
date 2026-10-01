@@ -1,0 +1,1 @@
+PASS reopened native diagrams=3 project=D:\PROJECTS\ISA-D\assignment6\models\Assignment_06_Multimodal_Search.vpp

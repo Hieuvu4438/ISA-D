@@ -15,16 +15,18 @@ class SearchUI:
     def search_voice(self, transcript, **kwargs):
         text = self.speech_service.transcribe(transcript)
         query = self.query_service.voice_query(text, **kwargs)
-        query['raw_input'] = transcript
+        query["raw_input"] = transcript
         return self.search_service.search(query)
 
     def search_image(self, path, **kwargs):
         embedding = self.image_service.encode(path)
         return self.search_service.search(self.query_service.image_query(embedding, raw_input=str(path), **kwargs))
 
-    def search_multimodal(self, text, path, text_weight=.5, **kwargs):
+    def search_multimodal(self, text, path, text_weight=0.5, **kwargs):
         embedding = self.image_service.encode(path)
-        query = self.query_service.multimodal_query(text, embedding, raw_input=f'{text} | {path}', text_weight=text_weight, **kwargs)
+        query = self.query_service.multimodal_query(
+            text, embedding, raw_input=f"{text} | {path}", text_weight=text_weight, **kwargs
+        )
         return self.search_service.search(query)
 
     def search_order(self, order_id, customer_id):

@@ -1,0 +1,66 @@
+=== TEXT SEARCH ===
+Input: black shoes
+Normalized: black shoes | tokens=['black', 'shoes']
+Filters: {'category': 'shoes', 'max_price_exclusive': None, 'max_price_inclusive': None}
+Candidates: 9 -> 6 | weights={'text': 1.0, 'image': 0.0}
+1. [01] Nike Running Shoes | $120.00 | stock=10 | text=1.000000 image=0.000000 final=1.000000
+2. [05] Nike Budget Running Shoes | $95.00 | stock=8 | text=1.000000 image=0.000000 final=1.000000
+3. [02] Adidas Running Shoes | $100.00 | stock=15 | text=0.500000 image=0.000000 final=0.500000
+4. [04] Blue Sports Shoes | $75.00 | stock=12 | text=0.500000 image=0.000000 final=0.500000
+5. [06] Red Canvas Shoes | $60.00 | stock=18 | text=0.500000 image=0.000000 final=0.500000
+
+=== VOICE SEARCH ===
+Input: find black running shoes
+Voice mode: simulated speech-to-text (transcript supplied)
+Normalized: find black running shoes | tokens=['black', 'running', 'shoes']
+Filters: {'category': 'shoes', 'max_price_exclusive': None, 'max_price_inclusive': None}
+Candidates: 9 -> 6 | weights={'text': 1.0, 'image': 0.0}
+1. [01] Nike Running Shoes | $120.00 | stock=10 | text=1.000000 image=0.000000 final=1.000000
+2. [05] Nike Budget Running Shoes | $95.00 | stock=8 | text=1.000000 image=0.000000 final=1.000000
+3. [02] Adidas Running Shoes | $100.00 | stock=15 | text=0.666667 image=0.000000 final=0.666667
+4. [04] Blue Sports Shoes | $75.00 | stock=12 | text=0.333333 image=0.000000 final=0.333333
+5. [06] Red Canvas Shoes | $60.00 | stock=18 | text=0.333333 image=0.000000 final=0.333333
+
+=== IMAGE SEARCH ===
+Input: D:\PROJECTS\ISA-D\assignment6\data\queries\black_shoe_query.png
+Normalized:  | tokens=[]
+Filters: {'category': None, 'max_price_exclusive': None, 'max_price_inclusive': None}
+Candidates: 12 -> 12 | weights={'text': 0.0, 'image': 1.0}
+Pixel encoder: {'name': 'rgbhist-gray-thumbnail', 'version': '1.0', 'dimension': 88}
+1. [05] Nike Budget Running Shoes | $95.00 | stock=8 | text=0.000000 image=0.998089 final=0.998089
+2. [01] Nike Running Shoes | $120.00 | stock=10 | text=0.000000 image=0.998042 final=0.998042
+3. [06] Red Canvas Shoes | $60.00 | stock=18 | text=0.000000 image=0.990605 final=0.990605
+4. [04] Blue Sports Shoes | $75.00 | stock=12 | text=0.000000 image=0.988564 final=0.988564
+5. [02] Adidas Running Shoes | $100.00 | stock=15 | text=0.000000 image=0.979388 final=0.979388
+
+=== MULTIMODAL SEARCH ===
+Input: black shoes | D:\PROJECTS\ISA-D\assignment6\data\queries\black_shoe_query.png
+Normalized: black shoes | tokens=['black', 'shoes']
+Filters: {'category': 'shoes', 'max_price_exclusive': None, 'max_price_inclusive': None}
+Candidates: 12 -> 6 | weights={'text': 0.5, 'image': 0.5}
+Pixel encoder: {'name': 'rgbhist-gray-thumbnail', 'version': '1.0', 'dimension': 88}
+1. [05] Nike Budget Running Shoes | $95.00 | stock=8 | text=1.000000 image=0.998089 final=0.999044
+2. [01] Nike Running Shoes | $120.00 | stock=10 | text=1.000000 image=0.998042 final=0.999021
+3. [06] Red Canvas Shoes | $60.00 | stock=18 | text=0.500000 image=0.990605 final=0.745303
+4. [04] Blue Sports Shoes | $75.00 | stock=12 | text=0.500000 image=0.988564 final=0.744282
+5. [02] Adidas Running Shoes | $100.00 | stock=15 | text=0.500000 image=0.979388 final=0.739694
+
+{
+  "query": {
+    "type": "order",
+    "order_id": "O001",
+    "customer_id": "C001"
+  },
+  "processing": {
+    "customer_scope": "C001",
+    "authentication": "simulated customer context"
+  },
+  "order": {
+    "order_id": "O001",
+    "customer_id": "C001",
+    "date": "2026-09-29",
+    "status": "Shipped",
+    "total": 150.0
+  },
+  "message": "Order found"
+}

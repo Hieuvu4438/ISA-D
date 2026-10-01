@@ -1,0 +1,15 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________________________ test_p95_uses_nearest_rank __________________________
+
+    def test_p95_uses_nearest_rank():
+        times = list(range(1, 13))
+        expected = times[math.ceil(.95 * len(times)) - 1]
+>       assert run_evaluation.percentile_nearest_rank(times, .95) == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'scripts.run_evaluation' has no attribute 'percentile_nearest_rank'
+
+tests\test_evaluation.py:10: AttributeError
+=========================== short test summary info ===========================
+FAILED tests/test_evaluation.py::test_p95_uses_nearest_rank - AttributeError:...
+1 failed in 0.18s

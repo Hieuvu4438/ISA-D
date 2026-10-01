@@ -1,0 +1,24 @@
+........................................................................ [ 92%]
+......                                                                   [100%]
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.12.8-final-0 _______________
+
+Name                             Stmts   Miss  Cover   Missing
+--------------------------------------------------------------
+application\__init__.py              0      0   100%
+application\image_service.py        24      0   100%
+application\order_service.py        11      0   100%
+application\query_service.py        65      0   100%
+application\ranking_service.py      12      0   100%
+application\search_service.py       38      0   100%
+application\speech_service.py        6      0   100%
+data\__init__.py                     0      0   100%
+data\order_repository.py            27      0   100%
+data\product_repository.py          40      0   100%
+data\vector_index.py                41      0   100%
+--------------------------------------------------------------
+TOTAL                              264      0   100%
+Coverage HTML written to dir artifacts/tests/coverage
+Coverage JSON written to file artifacts/tests/coverage.json
+Required test coverage of 80% reached. Total coverage: 100.00%
+78 passed in 2.84s

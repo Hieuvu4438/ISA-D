@@ -1,0 +1,149 @@
+{
+  "pdf": "artifacts\\report\\Assignment_06_Report.pdf",
+  "pages": 12,
+  "page_sizes": [
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ],
+    [
+      0.0,
+      0.0,
+      595.2755737304688,
+      841.8897705078125
+    ]
+  ],
+  "drawn_fonts": [
+    "Arial-BoldMT",
+    "Arial-ItalicMT",
+    "ArialMT"
+  ],
+  "embedded_unicode_fonts": {
+    "AAAAAA+ArialMT": true,
+    "AAAAAA+Arial-BoldMT": true,
+    "AAAAAA+Arial-ItalicMT": true
+  },
+  "text_outside_safe_bounds": [],
+  "metrics_in_pdf": {
+    "primary_queries": 12,
+    "successful_primary": 12,
+    "groups": {
+      "primary": {
+        "total": 12,
+        "successful": 12,
+        "success_rate": 1.0
+      },
+      "extension": {
+        "total": 2,
+        "successful": 2,
+        "success_rate": 1.0
+      },
+      "challenge": {
+        "total": 2,
+        "successful": 0,
+        "success_rate": 0.0
+      },
+      "robustness": {
+        "total": 5,
+        "successful": 5,
+        "success_rate": 1.0
+      }
+    },
+    "timing_ms": {
+      "mean": 1.2891749890210729,
+      "p95": 6.6154999658465385,
+      "max": 6.6154999658465385,
+      "percentile_method": "nearest rank ceil(p*n)",
+      "startup_excluded": true,
+      "samples": 12
+    },
+    "mean_text_present": true,
+    "p95_text_present": true
+  },
+  "test_summary_in_pdf": {
+    "78_tests": true,
+    "264_statements": true,
+    "100pct": true
+  },
+  "input_sha256": {
+    "docs/report.md": "1ad7fa566fc7459fc1387845cae58831ae135d0c324348e780abc536ed0e2aa0",
+    "scripts/build_report.py": "9207e0a528954f351dc75ccbff4cd43e700c8edab6f1cbadb1aa990106c4e9af",
+    "artifacts/evaluation/metrics.json": "26cb4bd6442ba5911f2f8f12f5eb2f89935ee9a46cd69d097efcc153e0fa4849",
+    "artifacts/evaluation/results.json": "fc43e610599335920c29c834d1969cec67584928b3becc79af43e4541c60bd61",
+    "artifacts/demo/demo_results.json": "7e6c9b76d112e9c4ad0fd02fae9d13a27c6e797e9595ed978d88471fb2776f95",
+    "artifacts/tests/junit.xml": "b3f8638e024d83b435e5c798924a7fbae555f8e653607837a7e3bbbdd529787c",
+    "artifacts/tests/coverage.json": "f1b604c19c24dde79467a1c57673aaf05de41a28b15c2b88e410432d2306a36e",
+    "artifacts/diagrams/three_layer_architecture.png": "823fc6c4c7b661b35a943892c82dc76aac7f5751c7ff8c381a5dbbeb19ffba7f",
+    "artifacts/diagrams/use_case.png": "5c472c87bd59c1eb4a1bedcae2c212a4e79e18867510aecb7111eac8026e581a",
+    "artifacts/diagrams/voice_sequence.png": "97c8542af4f747de2d22c8f017eeb1bea21abac0979dac086831a21c9fdf35fe",
+    "artifacts/screenshots/vp_use_case.png": "dfc0cda06faaa0fb925a20ad2659fecc26bddd31849a6606c6ab182977f60a5f",
+    "artifacts/screenshots/vp_architecture.png": "79aa8352eac4a343f48f531eeacc886f335ff7d2bb61644500b80ae35b2ae426",
+    "artifacts/screenshots/vp_sequence.png": "77ba33eeccdfbe5a803a6e6e11afeea295ed143510b92c69e690f8cfcda31a75",
+    "artifacts/screenshots/demo_text.png": "dc9fca4b354b22d33813d0d5371b0bb15eada16bf84ad8f91ee88de73c8dd893",
+    "artifacts/screenshots/demo_voice.png": "d1a7bf11b64336a7e2a27ebaa59eccf493a2fc64026618ab3910c0fef0657799",
+    "artifacts/screenshots/demo_image.png": "c93564fe24875d0a4f0b7aabee05175d99d1cbbd65d6e20f7a8ebb1c402bf6c0"
+  },
+  "pdf_sha256": "da76118733ea01e9f5bf4b15b61cb58dd1f610ff8596eda29073da97f93d483b"
+}

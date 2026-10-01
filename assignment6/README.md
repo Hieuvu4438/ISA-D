@@ -86,3 +86,13 @@ Failure quan sát: `sneakers` không trả kết quả vì không có alias/sema
 | `submission/` | ZIP bàn giao và manifest |
 
 Xem `docs/requirements.md` cho nguồn đề, `docs/architecture.md` cho component contracts, `docs/traceability.md` cho mapping yêu cầu–code–test–diagram, `docs/decisions_and_limitations.md` cho phạm vi. Đề gốc nằm trong `storage/`, không bị sửa. Việc chuẩn bị local không đồng nghĩa đã nộp LMS.
+
+Mở native UML và tái tạo bằng VP API: xem `docs/VP_AUTOMATION.md`. Gate bàn giao/hash và clean extraction: xem `docs/FINAL_VERIFICATION.md`.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/build_report.py --input docs/report.md --output artifacts/report/Assignment_06_Report.pdf
+.\.venv\Scripts\python.exe scripts/validate_submission.py
+.\.venv\Scripts\python.exe scripts/package_submission.py
+```
+
+Report builder cần artifacts/screenshot thật có sẵn; ZIP bàn giao chứa các evidence này. Không rebuild report trước khi hoàn tất dataset/demo/evaluation/test/screenshot stages. Report cover chưa có họ tên/MSSV/lớp; sửa đúng thông tin trong `docs/report.md` rồi build lại PDF và package nếu cần cá nhân hóa.
