@@ -1,0 +1,23 @@
+[
+  {
+    "order_id": "O001",
+    "customer_id": "C001",
+    "date": "2026-09-29",
+    "status": "Shipped",
+    "total": 150.0
+  },
+  {
+    "order_id": "O002",
+    "customer_id": "C002",
+    "date": "2026-09-28",
+    "status": "Delivered",
+    "total": 80.0
+  },
+  {
+    "order_id": "O003",
+    "customer_id": "C001",
+    "date": "2026-10-01",
+    "status": "Processing",
+    "total": 95.0
+  }
+]

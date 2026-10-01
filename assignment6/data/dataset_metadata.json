@@ -1,0 +1,10 @@
+{
+  "origin": "Original synthetic Pillow illustrations authored for this assignment; not product photographs.",
+  "brands": "Names are educational sample metadata; no brand affiliation implied.",
+  "generator": "scripts/prepare_dataset.py",
+  "deterministic": true,
+  "currency": "USD",
+  "products": 12,
+  "query_transform": "brightness 0.97, resize 224x224",
+  "corrupt_fixture": "data/queries/corrupt.png intentionally invalid"
+}
