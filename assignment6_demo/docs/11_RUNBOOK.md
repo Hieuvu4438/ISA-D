@@ -125,6 +125,24 @@ Set-Location -LiteralPath 'D:\PROJECTS\ISA-D\assignment6_demo'
 
 Đọc workflow và các flags thực tế trong AZURE_LIVE_CHECK; chạy preflight trước, arm shared budget khi đủ fixtures, rồi xác nhận live chủ động. `evaluation/voice_cases.json` và ledger không thay thế audio thật. Tối đa 5 SDK calls, không auto retry; reload/restart không reset quota. Report original transcript semantic matches và retrieval sau xác nhận riêng; ≥4/5 theo 10. Report số calls/duration, không suy giá dịch vụ. Resource region/auth mismatch phải sửa cấu hình theo resource thật; không thử hàng loạt regions/keys.
 
+## Triển khai bằng Docker Compose
+
+Hệ thống có thể chạy toàn bộ trong Docker (Backend CPU + Nginx Frontend SPA):
+
+```powershell
+# Build images
+docker compose build
+
+# Khởi chạy trong background
+docker compose up -d
+
+# Kiểm tra trạng thái
+docker compose ps
+docker compose logs -f
+```
+
+Chi tiết hướng dẫn quản lý và debug container xem tại [DOCKER.md](DOCKER.md).
+
 ## Cập nhật catalog và phục hồi
 
 1. Dừng API; sửa JSON/ảnh/manifest trong demo. Validate metadata và real photo review; nếu thay ảnh phải giữ source/credit/hash đúng.

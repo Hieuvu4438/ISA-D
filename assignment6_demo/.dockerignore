@@ -1,0 +1,39 @@
+# Version control and agent metadata
+.git/
+.gitignore
+.agent/
+.agents/
+.impeccable/
+
+# Python virtual environment and caches
+backend/.venv/
+**/__pycache__/
+**/*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Frontend dependencies and build artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+frontend/.vite/
+frontend/test-results/
+frontend/playwright-report/
+
+# Test and run artifacts
+artifacts/backend/coverage.sqlite
+artifacts/frontend/playwright/
+artifacts/frontend/screenshots/
+
+# Environment files with sensitive credentials
+.env
+.env.*
+!.env.example
+
+# Heavy pre-downloaded models (mounted via volume in docker-compose)
+models/
+runtime/models/
+runtime/index/

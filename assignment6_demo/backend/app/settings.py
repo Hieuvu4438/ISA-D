@@ -39,7 +39,8 @@ class Settings:
 
     @classmethod
     def from_env(cls):
-        root = Path(__file__).resolve().parents[2]
+        app_root = os.getenv("APP_ROOT", "").strip()
+        root = Path(app_root).resolve() if app_root else Path(__file__).resolve().parents[2]
         load_dotenv(root / ".env", override=False)
         return cls(
             root=root,

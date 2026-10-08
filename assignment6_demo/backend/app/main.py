@@ -1,5 +1,6 @@
 import json
 import math
+import os
 import re
 from contextlib import asynccontextmanager
 from types import SimpleNamespace
@@ -180,9 +181,14 @@ def create_app(settings=None, container=None):
         lifespan=lifespan,
         description="Tìm sản phẩm bằng tiếng Việt, ảnh, text + ảnh; Azure Speech và tra đơn hàng demo.",
     )
+    cors_origins_raw = os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173,http://localhost:80,http://127.0.0.1:80,http://localhost,http://127.0.0.1,http://localhost:3000,http://127.0.0.1:3000",
+    )
+    cors_origins = [o.strip() for o in cors_origins_raw.split(",") if o.strip()]
     application.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+        allow_origins=cors_origins,
         allow_methods=["GET", "POST"],
         allow_headers=["Content-Type"],
         expose_headers=["X-Request-ID"],

@@ -43,6 +43,22 @@ npm run test:e2e
 
 `npm run preview` phục vụ bản build trên port 5173 và dùng cùng proxy backend; dừng dev server trước khi chạy preview. Model/runtime, env, node_modules và dist nằm ngoài Git; clean checkout cần setup backend và tải model theo hướng dẫn. Các gate nghiệm thu đầy đủ được đối chiếu riêng trong [docs/10_TESTING_ACCEPTANCE.md](docs/10_TESTING_ACCEPTANCE.md).
 
+## Chạy bằng Docker Compose
+
+Hệ thống hỗ trợ đóng gói và chạy trọn gói qua Docker Compose (FastAPI backend CPU + Nginx React frontend):
+
+```bash
+docker compose build
+docker compose up -d
+```
+
+- **Frontend Cortis**: [http://localhost:5173](http://localhost:5173)
+- **Backend API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **Health check**: [http://localhost:5173/health/ready](http://localhost:5173/health/ready)
+
+Chi tiết cấu hình, biến môi trường và scripts trong container xem tại [docs/DOCKER.md](docs/DOCKER.md).
+
+
 Nhập lại demo có validation, preview trước khi áp dụng và giữ dữ liệu gốc:
 
 ```powershell

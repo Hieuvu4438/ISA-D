@@ -1,0 +1,53 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: cortis-backend
+    restart: unless-stopped
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    environment:
+      - APP_ROOT=/app
+      - DEMO_CUSTOMER_ID=${DEMO_CUSTOMER_ID:-C001}
+      - AZURE_SPEECH_REGION=${AZURE_SPEECH_REGION:-southeastasia}
+      - AZURE_SPEECH_LANGUAGE=${AZURE_SPEECH_LANGUAGE:-vi-VN}
+      - SPEECH_PROVIDER=${SPEECH_PROVIDER:-azure}
+      - GROQ_SPEECH_MODEL=${GROQ_SPEECH_MODEL:-whisper-large-v3}
+      - GROQ_SPEECH_TIMEOUT=${GROQ_SPEECH_TIMEOUT:-30}
+      - LOCAL_SPEECH_CPU_THREADS=${LOCAL_SPEECH_CPU_THREADS:-4}
+      - LOCAL_SPEECH_TIMEOUT=${LOCAL_SPEECH_TIMEOUT:-90}
+      - SEARCH_TIMEOUT=${SEARCH_TIMEOUT:-10.0}
+      - HF_HUB_OFFLINE=1
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./data:/app/data:ro
+      - ./runtime:/app/runtime
+      - ./models:/app/models:ro
+      - ./artifacts:/app/artifacts
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8000/health/live"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cortis-frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-5173}:80"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:80/"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
