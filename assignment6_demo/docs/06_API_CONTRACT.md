@@ -81,7 +81,7 @@ Catalog, media và order phải hoạt động khi model/index/Azure unavailable
 }
 ```
 
-- `mode` bắt buộc, chỉ `text|voice`; `text` bắt buộc string. Với text mode, không được gửi `voice_source`, kể cả null. Với voice mode, `voice_source` bắt buộc và chỉ `azure|manual_transcript`.
+- `mode` bắt buộc, chỉ `text|voice`; `text` bắt buộc string. Với text mode, không được gửi `voice_source`, kể cả null. Với voice mode, `voice_source` bắt buộc và chỉ `azure|local|manual_transcript`.
 - Chuẩn hóa `text`: Unicode NFC, trim, gộp các whitespace thành một dấu cách; giữ dấu/chữ hoa chữ thường để hiển thị. Sau chuẩn hóa phải 1–500 Unicode code points và tối đa **128 tokenizer tokens kể cả special tokens**, dùng tokenizer của multilingual model với `truncation=False`. Frontend đếm ký tự bằng code points, không dùng UTF-16 `.length` để kết luận hợp lệ. Backend có quyền quyết định cuối.
 - Quá ký tự/token trả 422 `TEXT_TOO_LONG`, field `text`, trước inference. Không silent truncate. Tokenizer unavailable là 503 `MODEL_UNAVAILABLE`, không bỏ qua giới hạn token.
 - Voice text đi cùng pipeline encoder text. `voice_source` là thông tin workflow do client khai báo, có thể sửa transcript; **không phải chứng thực** rằng Azure đã nhận dạng và không ảnh hưởng quyền truy cập. UI chỉ gắn nhãn Azure khi chính phiên đó nhận transcript thật. Không có receipt/token Azure trong SearchRequest.
@@ -183,7 +183,7 @@ Quy tắc fields:
 | --- | --- |
 | `query.mode` | `text|voice|image|multimodal` |
 | `query.text` | Normalized string cho text/voice/multimodal; null cho image |
-| `query.voice_source` | `azure|manual_transcript` ở voice; null ở các mode khác |
+| `query.voice_source` | `azure|local|manual_transcript` ở voice; null ở các mode khác |
 | `query.image_summary` | `{format:"JPEG"|"PNG"|"WEBP",width:integer,height:integer,byte_size:integer}` cho image/multimodal; null cho text/voice; dimensions gốc đã validate |
 | `query.text_weight` | Number [0.1,0.9] ở multimodal; null ở mode khác |
 | `results` | Array, có thể `[]`; không null. Rank liên tiếp từ 1, product_id không trùng |
@@ -302,7 +302,7 @@ Repository lookup kết hợp `customer_context` server và ID; cả O002 thuộ
 | `capabilities.catalog`, `.orders`, `.search` | Object `{available:boolean,reason_code:string|null}`; available false phải có reason an toàn |
 | `capabilities.manual_transcript` | Object `{available:true,reason_code:null}`: nhập tay không cần Azure; gọi search vẫn cần search readiness |
 | `capabilities.relevant` | Object `{available:boolean,modes:string[],multimodal_weights:number[],reason_code:string|null}` theo policy hiện tại; modes chỉ text/voice/image/multimodal có policy |
-| `speech` | `{provider:"azure",configuration_state:"unconfigured"|"configured_unverified",language:"vi-VN",region:"southeastasia"|null,accepted_formats:["wav_pcm16_mono_16000"],max_duration_seconds:15,max_bytes:1048576}` |
+| `speech` | `{provider:"azure"|"local",configuration_state:"unconfigured"|"configured_unverified",language:"vi-VN",region:"southeastasia"|null,accepted_formats:["wav_pcm16_mono_16000"],max_duration_seconds:15,max_bytes:1048576}` |
 | `model` | `{text_model_id:string,image_model_id:string,text_revision:string|null,image_revision:string|null,dimension:512,model_fingerprint:string|null}`; revisions/fingerprint null khi chưa có artifact hợp lệ |
 | `index` | `{available:boolean,index_fingerprint:string|null,catalog_fingerprint:string|null,product_count:integer}` |
 | `filters` | `{available:boolean,categories:string[],brands:string[],min_price:integer|null,max_price:integer|null}`; arrays sort ổn định, min/max từ catalog hoặc null khi rỗng/unavailable |
@@ -358,3 +358,7 @@ Tất cả fields bắt buộc; `field_errors=[]` nếu không gắn field. Fiel
 - Test products/credits/order không cần model; credits khớp toàn catalog/manifest; foreign/missing order cùng envelope; forbidden context ở body/query/header không đổi scope.
 - Test health degrade và meta không gọi Azure tại startup/readiness; no secrets/vectors/path/raw provider payload trong response/log.
 - Giữ tests xử lý NoMatch/timeout/rate/auth bằng adapter stub được ghi nhãn test. Live Azure smoke riêng là evidence bắt buộc trước nghiệm thu FR-03, không chạy mặc định CI.
+
+## Mở rộng STT local theo yêu cầu 08/10/2026
+
+`POST /speech/transcriptions` giữ WAV/language/timing/error contract; response `provider` là `azure|local`. `/meta.speech.provider` phản ánh adapter đã chọn, local có `region=null`; trạng thái `configured_unverified` chỉ xác nhận model đã nạp/cấu hình, không bảo đảm độ chính xác. Client timeout speech95s, backend local tối đa90s; không auto retry, native slot giữ đến khi inference kết thúc. Search voice nhận và trả `voice_source=local`. Settings chọn một adapter rõ ràng, local không gọi Azure/budget; xem [LOCAL_SPEECH](LOCAL_SPEECH.md).

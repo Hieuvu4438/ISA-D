@@ -105,7 +105,7 @@ Quy trình bổ sung ảnh:
 
 ## Query và Candidate trong bộ nhớ
 
-Query có `mode:text|voice|image|multimodal`, `vector:float32[512]`, `text_vector|null`, `image_vector|null`, `input_summary`, `options`, `text_weight|null`, `voice_source|null`. Query không phải entity persisted và vector không trả browser. Candidate có product_id, score, component_scores. SearchResult ghép đúng Product với Candidate; không composition làm xóa Product khi xóa result.
+Query có `mode:text|voice|image|multimodal`, `vector:float32[512]`, `text_vector|null`, `image_vector|null`, `input_summary`, `options`, `text_weight|null`, `voice_source:azure|local|manual_transcript|null`. Query không phải entity persisted và vector không trả browser. Candidate có product_id, score, component_scores. SearchResult ghép đúng Product với Candidate; không composition làm xóa Product khi xóa result.
 
 `options` wire schema ở 06: top_k, result_policy, filters. Thay options không được sửa catalog. Tiền, tồn kho được lọc bằng metadata; chỉ có text/image signals trong cosine, không thêm business score ngầm.
 

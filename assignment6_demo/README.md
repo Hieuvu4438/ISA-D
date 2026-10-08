@@ -9,13 +9,13 @@ Chạy tại thư mục này bằng PowerShell:
 ./scripts/run_backend.ps1
 ```
 
-Mở **http://127.0.0.1:8000/docs** để thử các API. Setup tải hai model một lần; lượt khởi động và tìm kiếm dùng model local CPU. Speech cần `AZURE_SPEECH_KEY` ở environment hoặc `.env` riêng; region `southeastasia`, language `vi-VN`. Không chạy Azure trả phí trong setup hoặc smoke mặc định.
+Mở **http://127.0.0.1:8000/docs** để thử các API. Setup tải hai model tìm kiếm một lần; inference dùng model local CPU. Voice hỗ trợ model local không cần key hoặc Azure; xem [cài model speech](docs/LOCAL_SPEECH.md). Không chạy Azure trả phí trong setup hoặc smoke mặc định.
 
 Sau mở rộng dữ liệu, **103 tests backend đạt** sau bổ sung guard Azure và chuyển index builder về Application; coverage statements và branches được công bố riêng trong [coverage.json](artifacts/backend/coverage.json). [API verification](artifacts/backend/expanded-demo.json) có **271/271 kiểm tra đạt**. [Benchmark](artifacts/backend/performance.json) đo 90 requests không lỗi; p95 text **81,69 ms**, ảnh **380,78 ms**, kết hợp **455,44 ms** trên CPU local. Cold start chưa đo. [Báo cáo cũ](artifacts/backend/RUN_REPORT.md) thuộc catalog 12 sản phẩm, không dùng để xác nhận kết quả hiện tại.
 
 Chất lượng tìm kiếm có giới hạn: các truy vấn danh mục tổng quát đúng category trong Top 3 ở **7/12** trường hợp; calibration text nhỏ đạt **5/6 Hit@3**, còn một OOD false positive. Một số kỳ vọng Top 1 trước đây không còn đạt trên catalog 60 sản phẩm. Các bộ này chưa phải frozen test độc lập; xem raw ranks trong artifacts. Azure SDK/adapter được kiểm tra bằng stub; nhận dạng Azure thật vẫn chờ key và 5 bản ghi âm thực tế, tối đa 5 lượt theo quyền người dùng đã xác nhận.
 
-Website mục tiêu: tìm sản phẩm bằng mô tả tiếng Việt, giọng nói tiếng Việt, ảnh thật và text + ảnh; lọc kết quả; xem sản phẩm; tìm và xem đơn hàng của khách hàng demo. AI chạy CPU, voice dùng Azure Speech. Mọi ảnh sản phẩm phải là ảnh chụp thực tế từ mạng, có nguồn, tác giả và giấy phép; không tạo ảnh bằng AI.
+Website mục tiêu: tìm sản phẩm bằng mô tả tiếng Việt, giọng nói tiếng Việt, ảnh thật và text + ảnh; lọc kết quả; xem sản phẩm; tìm và xem đơn hàng của khách hàng demo. AI chạy CPU, voice chọn local hoặc Azure Speech. Mọi ảnh sản phẩm phải là ảnh chụp thực tế từ mạng, có nguồn, tác giả và giấy phép; không tạo ảnh bằng AI.
 
 Frontend Cortis đã cài sạch, typecheck/lint/17 unit tests/build đạt và 19/19 browser wiring tests đạt trên production preview; hai quality tests vẫn fail với labels giữ nguyên. Cortis chạy bằng React/TypeScript, hướng showroom với ảnh thật, màu đá sáng và đỏ rượu. Có tìm bằng mô tả tiếng Việt, transcript/voice, ảnh, kết hợp; bộ lọc, chi tiết sản phẩm, tra đơn scoped C001 và nguồn ảnh qua API thật. Bộ 15 query hiện tại dùng calibration/smoke nhỏ, không chứng minh chất lượng trên dữ liệu độc lập. Azure thật chưa được nghiệm thu từ các test adapter.
 

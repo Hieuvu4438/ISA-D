@@ -24,3 +24,7 @@ Smoke thử text tiếng Việt, transcript nhập tay, ảnh thật, multimodal
 Speech dùng `AZURE_SPEECH_KEY` trong environment hoặc `.env` local, region `southeastasia`, language `vi-VN`. Không ghi key vào source/Markdown/fixture. WAV hợp lệ phải PCM16, mono, 16 kHz, dài 1–15 giây. `POST /api/v1/speech/transcriptions` trả transcript để chỉnh rồi gửi `POST /api/v1/search` mode `voice` với `voice_source="azure"`. Transcript nhập tay dùng `manual_transcript`; không ghi nhận như Azure đã chạy thật.
 
 Ảnh catalog ở `docs/IMAGE_CREDITS.md`; ảnh query pizza ngoài catalog có credit riêng ở `evaluation/IMAGE_CREDITS.md`. `nearest` luôn trả gần nhất sau filter; `relevant` áp ngưỡng theo mode đã calibration. Ngưỡng demo không phải confidence hoặc xác suất đúng.
+
+## Voice local CPU
+
+Theo yêu cầu mới, có thể dùng model local không cần key. Đọc [LOCAL_SPEECH](LOCAL_SPEECH.md), chạy provision model, đặt `SPEECH_PROVIDER=local` trong `.env` rồi restart backend. Không tự tải model lúc startup; adapter local không gọi Azure. UI và API trả đúng providerlocal, transcript chỉnh được trước search.

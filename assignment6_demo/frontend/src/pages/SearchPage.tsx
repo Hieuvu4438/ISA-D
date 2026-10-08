@@ -155,7 +155,7 @@ export function SearchPage() {
     try {
       const result = await transcribe(draft.audio, abort.signal);
       if (token !== sequence.current || abort.signal.aborted || modeRef.current !== 'voice') return;
-      state.updateDraft('voice', { text: result.transcript, voiceSource: 'azure', transcriptModified: false });
+      state.updateDraft('voice', { text: result.transcript, voiceSource: result.provider, transcriptModified: false });
       textRef.current?.focus(); setNotice('Đã nhận dạng. Bạn có thể sửa lời nói trước khi tìm sản phẩm.');
     } catch (reason) { if (token === sequence.current) showError(reason); }
     finally { if (token === sequence.current) setPending(null); }
@@ -192,7 +192,7 @@ export function SearchPage() {
       <form className="search-desk" onSubmit={submit} aria-label="Tìm sản phẩm">
         <div className="mode-tabs" role="tablist" aria-label="Cách tìm sản phẩm">{modes.map((item, index) => <button key={item.id} id={`tab-${item.id}`} type="button" role="tab" aria-selected={mode === item.id} aria-controls={`panel-${item.id}`} tabIndex={mode === item.id ? 0 : -1} onClick={() => switchMode(item.id)} onKeyDown={event => tabKey(event, index)}><item.icon size={17} aria-hidden="true" />{item.label}</button>)}</div>
         <div id={`panel-${mode}`} role="tabpanel" aria-labelledby={`tab-${mode}`} className="search-input-panel">
-          {mode === 'voice' && <div className="voice-workspace"><p className="voice-intro">Nói một câu tiếng Việt, tối đa 15 giây. Âm thanh chỉ được gửi đến Azure khi bạn bấm nhận dạng.</p>
+          {mode === 'voice' && <div className="voice-workspace"><p className="voice-intro">Nói một câu tiếng Việt, tối đa 15 giây. {catalog.meta?.speech.provider === 'local' ? 'Nhận dạng trên máy chủ bằng Whisper CPU; không gửi âm thanh đến Azure.' : 'Âm thanh chỉ được gửi đến Azure khi bạn bấm nhận dạng.'}</p>
             <div className="record-row">{micPhase === 'recording' ? <button className="secondary-button recording-button" type="button" onClick={() => void stopRecording()}><Square size={15} fill="currentColor" aria-hidden="true" />Dừng ghi âm</button>
               : <button className="secondary-button" type="button" disabled={micPhase === 'permission' || !!pending} onClick={() => void startRecording()}><Mic size={17} aria-hidden="true" />{micPhase === 'permission' ? 'Đang xin quyền…' : 'Bắt đầu ghi âm'}</button>}
               <span className="record-timer">{duration.toFixed(1)} / 15 giây</span>
@@ -201,12 +201,12 @@ export function SearchPage() {
             <label className="audio-upload"><Upload size={16} aria-hidden="true" /> Hoặc tải WAV PCM16, mono 16 kHz<input type="file" accept=".wav,audio/wav" data-testid="voice-audio-input" onChange={event => chooseAudio(event.target.files?.[0])} /></label>
             {draft.audio && audioUrl && <div className="audio-preview"><audio src={audioUrl} controls aria-label="Nghe bản ghi âm" /><a className="text-link audio-download" href={audioUrl} download="cortis-voice.wav"><Download size={16} aria-hidden="true" />Lưu bản ghi WAV</a><button type="button" className="icon-button" aria-label="Xóa âm thanh" onClick={() => update({ audio: null })}><X size={17} /></button></div>}
             <button type="button" className="secondary-button recognize-button" disabled={!draft.audio || !speechAvailable || !!pending || micPhase !== 'idle' || cooldown > 0} onClick={() => void recognize()}>{pending === 'speech' ? <LoaderCircle className="spin" size={16} aria-hidden="true" /> : <AudioLines size={17} aria-hidden="true" />}Nhận dạng lời nói</button>
-            {!speechAvailable && <p className="voice-unavailable">Nhận dạng Azure chưa sẵn sàng. Bạn vẫn có thể nhập lời nói bên dưới để thử tìm kiếm.</p>}
-            <div className="transcript-origin"><span>{draft.voiceSource === 'azure' ? 'Azure Speech · tiếng Việt' : 'Transcript nhập tay · mô phỏng'}</span>{draft.transcriptModified && draft.voiceSource === 'azure' && <span>Đã chỉnh sửa transcript</span>}
-              {draft.voiceSource === 'azure' && <button type="button" className="text-link" onClick={() => update({ voiceSource: 'manual_transcript', transcriptModified: false })}>Chuyển sang nhập tay</button>}</div>
+            {!speechAvailable && <p className="voice-unavailable">Nhận dạng lời nói chưa sẵn sàng. Bạn vẫn có thể nhập lời nói bên dưới để thử tìm kiếm.</p>}
+            <div className="transcript-origin"><span>{draft.voiceSource === 'local' ? 'Whisper CPU · tiếng Việt' : draft.voiceSource === 'azure' ? 'Azure Speech · tiếng Việt' : 'Transcript nhập tay · mô phỏng'}</span>{draft.transcriptModified && draft.voiceSource !== 'manual_transcript' && <span>Đã chỉnh sửa transcript</span>}
+              {draft.voiceSource !== 'manual_transcript' && <button type="button" className="text-link" onClick={() => update({ voiceSource: 'manual_transcript', transcriptModified: false })}>Chuyển sang nhập tay</button>}</div>
           </div>}
           {mode !== 'image' && <div className="text-input-group"><label htmlFor="search-text">{mode === 'voice' ? 'Lời nói của bạn' : 'Bạn đang tìm điều gì?'}</label>
-            <textarea ref={textRef} id="search-text" data-testid={mode === 'voice' ? 'voice-transcript' : 'search-text'} value={draft.text} aria-invalid={field === 'text'} aria-describedby={field === 'text' ? 'search-error' : 'text-count'} placeholder={mode === 'voice' ? 'Nhập hoặc chỉnh sửa lời nói trước khi tìm…' : 'Ví dụ: giày Converse màu đỏ, cổ cao…'} rows={2} onChange={event => update({ text: event.target.value, transcriptModified: draft.voiceSource === 'azure' })} />
+            <textarea ref={textRef} id="search-text" data-testid={mode === 'voice' ? 'voice-transcript' : 'search-text'} value={draft.text} aria-invalid={field === 'text'} aria-describedby={field === 'text' ? 'search-error' : 'text-count'} placeholder={mode === 'voice' ? 'Nhập hoặc chỉnh sửa lời nói trước khi tìm…' : 'Ví dụ: giày Converse màu đỏ, cổ cao…'} rows={2} onChange={event => update({ text: event.target.value, transcriptModified: draft.voiceSource !== 'manual_transcript' })} />
             <span id="text-count" className={`text-counter ${Array.from(draft.text).length > 500 ? 'invalid' : ''}`}>{Array.from(draft.text).length}/500 ký tự</span>
           </div>}
           {(mode === 'image' || mode === 'multimodal') && <div className={`image-drop ${draft.image ? 'has-image' : ''}`} onDragOver={event => event.preventDefault()} onDrop={event => { event.preventDefault(); chooseImage(event.dataTransfer.files[0]); }}>

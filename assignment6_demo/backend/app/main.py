@@ -351,9 +351,10 @@ def create_app(settings=None, container=None):
                 "text_weight_max": 0.9,
             },
             "speech": {
-                "provider": "azure",
+                "provider": getattr(svc.speech, "provider", "azure"),
                 "configuration_state": svc.speech.configuration_state,
-                "region": settings.speech_region if settings.speech_region == "southeastasia" else None,
+                "region": settings.speech_region if getattr(svc.speech, "provider", "azure") == "azure"
+                and settings.speech_region == "southeastasia" else None,
                 "language": "vi-VN",
                 "accepted_formats": ["wav_pcm16_mono_16000"],
                 "max_duration_seconds": 15,

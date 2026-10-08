@@ -12,6 +12,7 @@
 | Offline index orchestration | `app/application/index_builder.py`, `scripts/build_index.py` | Đã chuyển điều phối encode khỏi Data; giữ nguyên fingerprint và thuật toán. |
 | Repositories / index | `app/data/product_repository.py`, `order_repository.py`, `vector_index.py` | Data đọc/validate/retrieve; không gọi inference. |
 | Live acceptance budget | `app/data/speech_budget.py` | Ledger persistent, không lưu audio/transcript/key. |
+| Local Vietnamese STT fallback | `app/application/local_speech.py`, `SpeechService` | Yêu cầu mới cho phép CPU local; adapter chọn rõ bằng settings, không dùng ledger Azure. |
 | OrderService / ImageStorage | helper order trong `main.py`; image storage trong ProductRepository | Chưa tách thành hai class như sơ đồ đích. |
 | Domain protocols | `app/domain.py` có schemas/errors | Chưa có formal repository/encoder Protocol classes; DI bằng constructor và test doubles. |
 

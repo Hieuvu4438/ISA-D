@@ -1,0 +1,164 @@
+{
+  "provider": "local",
+  "device": "cpu",
+  "compute_type": "int8",
+  "cpu_threads": 4,
+  "model": {
+    "model_id": "Systran/faster-whisper-small",
+    "revision": "2ec96c5472da50d38d40c0cfe0602af2e94b4c8a",
+    "device": "cpu",
+    "compute_type": "int8",
+    "files": {
+      "config.json": {
+        "bytes": 2370,
+        "sha256": "b55496ac7940a7ae47d2c01eab40edfd8701feec1229d9cce3b40014383fb828"
+      },
+      "manifest.json": {
+        "bytes": 735,
+        "sha256": "4dfc8bfdd0783a090629a878bbcbc94213f3d8f1b6e24271ff018a2d770e5408"
+      },
+      "model.bin": {
+        "bytes": 483546902,
+        "sha256": "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671"
+      },
+      "tokenizer.json": {
+        "bytes": 2203239,
+        "sha256": "fb7b63191e9bb045082c79fd742a3106a12c99513ab30df4a0d47fa6cb6fd0ab"
+      },
+      "vocabulary.txt": {
+        "bytes": 459861,
+        "sha256": "34ce3fe1c5041027b3f8d42912270993f986dbc4bb34cf27f951e34a1e453913"
+      }
+    }
+  },
+  "dataset": {
+    "dataset": "google/fleurs",
+    "configuration": "vi_vn",
+    "split": "test",
+    "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "audio_archive_url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/vi_vn/audio/test.tar.gz",
+    "reference_url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/vi_vn/test.tsv",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Conneau et al., FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech (2022), Google FLEURS dataset.",
+    "purpose": "Independent real Vietnamese STT smoke test; not shop-specific microphone acceptance",
+    "downloaded_archive_bytes": 2775040
+  },
+  "load_seconds": 8.175,
+  "cases": [
+    {
+      "id": "FLEURS-VI-01",
+      "audio_path": "fleurs-vi-01.wav",
+      "reference": "Văn hóa và bộ lạc cổ xưa đã bắt đầu giữ những con vật này để dễ lấy sữa, tóc, thịt, và da.",
+      "normalized_reference": "văn hóa và bộ lạc cổ xưa đã bắt đầu giữ những con vật này để dễ lấy sữa tóc thịt và da",
+      "speaker_gender": "MALE",
+      "original_filename": "10057024225045006889.wav",
+      "duration_seconds": 11.34,
+      "sha256": "0e7433f8275d79809a8aa8de7343752e354c00d3981adfcff08e08376124601f",
+      "original_sha256": "33318a8f837de6c2953248729f658292c31520b57aa36ee0fe55c234d55c4b54",
+      "format": "PCM16 mono 16000 Hz",
+      "synthesized": false,
+      "transcript": "Văn hóa và mộ lạc cổ xưa đã bắt đầu giữ những con bật này để dễ lấy sữa tóc, thịt và da.",
+      "word_errors": 2,
+      "reference_words": 23,
+      "timing_ms": {
+        "validation": 0.219,
+        "provider": 9598.46,
+        "total": 9598.693
+      },
+      "provider": "local"
+    },
+    {
+      "id": "FLEURS-VI-02",
+      "audio_path": "fleurs-vi-02.wav",
+      "reference": "Đối với Springboks, trận này đã giúp đội tuyển kết thúc chuỗi thua 5 trận liền.",
+      "normalized_reference": "đối với springboks trận này đã giúp đội tuyển kết thúc chuỗi thua 5 trận liền",
+      "speaker_gender": "MALE",
+      "original_filename": "10072308967409148015.wav",
+      "duration_seconds": 7.26,
+      "sha256": "2b3c19826e1bca99c3cb77b10d03f2a0c61cbe169a46c4d79a08b91c3a6c0d84",
+      "original_sha256": "3211626fb751053176762108ee6825501ddd4400aff42ce9633f83c71b07d1de",
+      "format": "PCM16 mono 16000 Hz",
+      "synthesized": false,
+      "transcript": "Đối với Spring Book, trạng này đã giúp đổi tiễn cơ thúc chuổi thua 5 trạng liền.",
+      "word_errors": 8,
+      "reference_words": 16,
+      "timing_ms": {
+        "validation": 0.063,
+        "provider": 6486.442,
+        "total": 6486.512
+      },
+      "provider": "local"
+    },
+    {
+      "id": "FLEURS-VI-03",
+      "audio_path": "fleurs-vi-03.wav",
+      "reference": "Nó cũng tấn công mọi thứ trong nước; ngay cả khủng long khổng lồ như T. rex cũng không phải là đối thủ với nó.",
+      "normalized_reference": "nó cũng tấn công mọi thứ trong nước ngay cả khủng long khổng lồ như t rex cũng không phải là đối thủ với nó",
+      "speaker_gender": "MALE",
+      "original_filename": "10078277432407694754.wav",
+      "duration_seconds": 10.02,
+      "sha256": "1822a1ef81da61bc38aedd32c92ce02fa79abc7c0e3636bf19375e59fda51be3",
+      "original_sha256": "43febdf828f97a7efc3a45180a99d76747d3c45bf9143fbf8bf62d7c0adedc26",
+      "format": "PCM16 mono 16000 Hz",
+      "synthesized": false,
+      "transcript": "Nó cũng tấn công mọi thứ trong nước, ngay cả khủng lòng khổng lồ như Tibet, cũng không phải là đối thụ với nó.",
+      "word_errors": 4,
+      "reference_words": 25,
+      "timing_ms": {
+        "validation": 0.479,
+        "provider": 6449.255,
+        "total": 6449.743
+      },
+      "provider": "local"
+    },
+    {
+      "id": "FLEURS-VI-04",
+      "audio_path": "fleurs-vi-04.wav",
+      "reference": "Số người có mặt quá lớn nên việc mọi người tới được nơi tổ chức lễ tang tại Quảng trường Thánh Peter là không thể.",
+      "normalized_reference": "số người có mặt quá lớn nên việc mọi người tới được nơi tổ chức lễ tang tại quảng trường thánh peter là không thể",
+      "speaker_gender": "MALE",
+      "original_filename": "10093159547857080890.wav",
+      "duration_seconds": 11.16,
+      "sha256": "dd49eb71f53b3b6a5bac94c289368aad34fa98607d2ff87ac380f3b8e2cdd814",
+      "original_sha256": "cca46c77040d86068a55feef4ef95b21289afba255b4a8db8b00d878545cf33f",
+      "format": "PCM16 mono 16000 Hz",
+      "synthesized": false,
+      "transcript": "Số người có mặt quá lớn nên việc mọi người tới được nơi tổ chức lễ tan tại quảng trường Thanh Vita là không thể.",
+      "word_errors": 3,
+      "reference_words": 25,
+      "timing_ms": {
+        "validation": 0.174,
+        "provider": 7172.62,
+        "total": 7172.802
+      },
+      "provider": "local"
+    },
+    {
+      "id": "FLEURS-VI-05",
+      "audio_path": "fleurs-vi-05.wav",
+      "reference": "Châu Âu là lục địa tương đối nhỏ nhưng có nhiều quốc gia độc lập. Thông thường, việc đi qua nhiều quốc gia đồng nghĩa với việc phải xin thị thực và xét hộ chiếu nhiều lần.",
+      "normalized_reference": "châu âu là lục địa tương đối nhỏ nhưng có nhiều quốc gia độc lập thông thường việc đi qua nhiều quốc gia đồng nghĩa với việc phải xin thị thực và xét hộ chiếu nhiều lần",
+      "speaker_gender": "MALE",
+      "original_filename": "1015279164912843543.wav",
+      "duration_seconds": 14.88,
+      "sha256": "63f1ea630d5522426e97d2b7de560fad7d9397fcae5eae6d328735e3dc0061f7",
+      "original_sha256": "37e2cb772dbdc7c4cc70aece3e508a3c56ff2cf7519f8e28d2b7e310d77fdeda",
+      "format": "PCM16 mono 16000 Hz",
+      "synthesized": false,
+      "transcript": "Châu Âu là luật địa tương nói nhỏ, nhưng có nhiều quốc gia độc lập. Thông thường, việc đi qua nhiều quốc gia đồng nghĩa với việc phải sinh, thị thức và xét, họ chiếu nhiều lần.",
+      "word_errors": 5,
+      "reference_words": 37,
+      "timing_ms": {
+        "validation": 0.375,
+        "provider": 8665.275,
+        "total": 8665.657
+      },
+      "provider": "local"
+    }
+  ],
+  "wer": 0.1746031746031746,
+  "azure_recognition_calls": 0,
+  "limitations": "Five fixed public samples; not user microphone, accents, noisy audio or product names acceptance."
+}

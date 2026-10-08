@@ -6,6 +6,8 @@ Ngày 08/10/2026 người dùng mở rộng yêu cầu sang xây dựng frontend
 
 ## Phạm vi làm việc
 
+Ngày 08/10/2026 người dùng cho phép dùng model STT tiếng Việt CPU local thay Azure khi Azure lỗi. Adapter local được chọn rõ bằng `SPEECH_PROVIDER=local`; không tự gọi Azure, không tiêu ledger5lượt. Evidence local và Azure ghi riêng; xem `docs/LOCAL_SPEECH.md`. Không coi local là Azure verified.
+
 Chỉ tạo/chỉnh sửa file trong `assignment6_demo`. Không sửa `assignment6`, cấu hình Codex, thư mục sibling hoặc private state. Không đưa thư mục công cụ agent cục bộ, env, model/runtime, node_modules hoặc build output vào commit của ứng dụng.
 
 ## Trình tự bắt buộc khi implement

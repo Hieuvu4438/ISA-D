@@ -1,4 +1,4 @@
-"""Bounded Azure Speech adapter. Audio is validated and kept only in memory."""
+"""Bounded speech adapters. Audio is validated and kept only in memory."""
 
 import asyncio
 import importlib
@@ -7,10 +7,12 @@ import struct
 import threading
 import time
 import unicodedata
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
 from app.domain import AppError
 from app.data.speech_budget import SpeechBudget
+from app.application.local_speech import LocalSpeechRecognizer
 
 
 def decode_wav(blob: bytes) -> tuple[bytes, int]:
@@ -66,17 +68,33 @@ class SpeechService:
         self._region = settings.speech_region
         self._language = settings.speech_language
         self._timeout = settings.speech_timeout
-        self._sdk = None if provider is not None else _load_sdk()
-        valid_key = isinstance(self._key, str) and bool(self._key.strip()) and not re.search(r"\s", self._key)
-        self.available = bool(
-            valid_key
-            and self._region == "southeastasia"
-            and self._language == "vi-VN"
-            and (provider is not None or self._sdk is not None)
-        )
+        self.provider = getattr(settings, "speech_provider", "azure")
+        self._sdk = None
+        self._provider = provider
+        if self.provider == "local":
+            self._timeout = getattr(settings, "local_speech_timeout", 90.0)
+            if provider is None:
+                path = getattr(settings, "local_speech_model_path", None)
+                path = path or Path(getattr(settings, "root", ".")) / "models" / "speech-whisper-small"
+                try:
+                    self._provider = LocalSpeechRecognizer(
+                        path, cpu_threads=getattr(settings, "local_speech_cpu_threads", 4)
+                    )
+                except Exception:
+                    self._provider = None
+            self.available = self._provider is not None and self._language == "vi-VN"
+        elif self.provider == "azure":
+            self._sdk = None if provider is not None else _load_sdk()
+            valid_key = isinstance(self._key, str) and bool(self._key.strip()) and not re.search(r"\s", self._key)
+            self.available = bool(
+                valid_key and self._region == "southeastasia" and self._language == "vi-VN"
+                and (provider is not None or self._sdk is not None)
+            )
+            self._provider = provider or self._recognize_azure
+        else:
+            self.available = False
         self.configuration_state = "configured_unverified" if self.available else "unconfigured"
-        self._provider = provider or self._recognize_azure
-        self._budget = SpeechBudget(getattr(settings, "root", None))
+        self._budget = SpeechBudget(getattr(settings, "root", None)) if self.provider == "azure" else None
         self._executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="demo-speech")
         self._lock = threading.Lock()
         self._busy = False
@@ -100,7 +118,7 @@ class SpeechService:
         pcm, duration_ms = decode_wav(audio_bytes)
         validation_ms = (time.perf_counter() - started) * 1000
         if not self.available:
-            raise AppError(503, "SPEECH_UNAVAILABLE", "Azure Speech chưa được cấu hình hoặc SDK không khả dụng.")
+            raise AppError(503, "SPEECH_UNAVAILABLE", "Dịch vụ nhận dạng chưa được cấu hình hoặc model không khả dụng.")
         with self._lock:
             if self._busy:
                 raise AppError(429, "SPEECH_BUSY", "Nhận dạng đang bận. Vui lòng thử lại sau.", retryable=True)
@@ -135,7 +153,7 @@ class SpeechService:
         return {
             "transcript": transcript,
             "language": language,
-            "provider": "azure",
+            "provider": self.provider,
             "audio_duration_ms": duration_ms,
             "timing_ms": {
                 "validation": round(validation_ms, 3),
@@ -145,6 +163,8 @@ class SpeechService:
         }
 
     def _run_provider(self, audio, pcm, language, duration_ms):
+        if self.provider == "local":
+            return self._provider(pcm, language)
         attempt = self._budget.reserve(audio, duration_ms)
         try:
             transcript = self._provider(pcm, language)

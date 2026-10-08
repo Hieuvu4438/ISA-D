@@ -36,7 +36,7 @@ class QueryService:
         start = perf_counter()
         if (
             mode not in ("text", "voice")
-            or (mode == "voice" and voice_source not in ("azure", "manual_transcript"))
+            or (mode == "voice" and voice_source not in ("azure", "local", "manual_transcript"))
             or (mode == "text" and voice_source is not None)
         ):
             raise AppError(422, "VALIDATION_ERROR", "Nguồn truy vấn không hợp lệ.")

@@ -112,5 +112,5 @@ export function transcribe(file: File, signal?: AbortSignal): Promise<Transcript
   const body = new FormData()
   body.append('audio', file)
   body.append('language', 'vi-VN')
-  return request('/speech/transcriptions', { method: 'POST', body }, signal, 30_000)
+  return request('/speech/transcriptions', { method: 'POST', body }, signal, 95_000)
 }
