@@ -12,8 +12,9 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def test_catalog_real_images_credits_and_immutable_snapshot():
     repo = ProductRepository(ROOT)
-    assert len(repo.products) == 12
-    assert len(repo.credits()) == 12
+    expected_ids = {p["product_id"] for p in json.loads((ROOT / "data/products.json").read_text(encoding="utf-8"))}
+    assert {p["product_id"] for p in repo.products} == expected_ids
+    assert {credit["product_id"] for credit in repo.credits()} == expected_ids
     for product in repo.products:
         path, mime, checksum = repo.image_file(product["product_id"])
         assert path.is_file() and mime == "image/jpeg" and len(checksum) == 64

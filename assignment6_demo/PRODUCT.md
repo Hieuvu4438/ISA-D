@@ -36,7 +36,7 @@ Người dùng xác nhận tên Cortis, giao diện tiếng Việt, học hỏi 
 
 ## Evidence on Hand
 
-Người dùng chốt 60 sản phẩm, khoảng 30 đơn và ưu tiên nhiều danh mục, mỗi danh mục vài mẫu: giày, túi, quần áo, đồng hồ, kính. Đang mở rộng từ 12 sản phẩm/3 đơn seed; ảnh thật có credits/hash, API CLIP CPU thật. artifacts/backend lưu tests/model/index/HTTP evidence. Giá/tồn kho là dữ liệu minh họa, không là giá bán thực tế của các thương hiệu.
+Đã nhập 60 sản phẩm thuộc 12 danh mục (4–6 mẫu mỗi danh mục) và 30 đơn: giày, túi, quần áo, đồng hồ, kính. Ảnh thật có credits/hash, API CLIP CPU thật. artifacts/backend lưu tests/model/index/HTTP và benchmark evidence. Generic category Hit@3 hiện 7/12; chưa xác minh chất lượng bằng frozen test độc lập. Giá/tồn kho là dữ liệu minh họa, không là giá bán thực tế của các thương hiệu.
 
 ## Product Principles
 

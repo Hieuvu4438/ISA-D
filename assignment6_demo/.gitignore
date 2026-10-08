@@ -22,3 +22,4 @@ artifacts/backend/coverage.sqlite
 artifacts/frontend/playwright/
 artifacts/frontend/screenshots/initial/
 .impeccable/direction-question.json
+data/.*.tmp

@@ -3,20 +3,20 @@
   "independent_quality_verified": false,
   "policy": {
     "schema_version": 1,
-    "index_fingerprint": "c7e6d0a0dbd1a4ecc87428f411b7e88e0ff910e38ee49cd8bc98bf925f623005",
+    "index_fingerprint": "fbb823590b942a7432948c7482b97b9fa7323f33f866b563ba34a7bdcf98bd13",
     "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
     "scoring_version": "cosine_fusion_v1",
     "policies": [
       {
         "mode": "text",
         "text_weight": null,
-        "threshold": 0.6286426186561584,
+        "threshold": 0.7050926983356476,
         "metrics": {
           "positive_count": 6,
           "ood_count": 3,
-          "hit_at_3_count": 6,
+          "hit_at_3_count": 5,
           "ood_rejection_count": 2,
-          "positive_hit_at_3": 1.0,
+          "positive_hit_at_3": 0.8333333333333334,
           "ood_rejection_rate": 0.6666666666666666
         },
         "evidence_scope": "small_demo_calibration_not_independent_test"
@@ -24,7 +24,7 @@
       {
         "mode": "image",
         "text_weight": null,
-        "threshold": 0.5184400379657745,
+        "threshold": 0.5636351406574249,
         "metrics": {
           "positive_count": 2,
           "ood_count": 1,
@@ -38,7 +38,7 @@
       {
         "mode": "multimodal",
         "text_weight": 0.5,
-        "threshold": 0.718015730381012,
+        "threshold": 0.7635247707366943,
         "metrics": {
           "positive_count": 2,
           "ood_count": 1,
@@ -51,8 +51,8 @@
       }
     ],
     "calibration_split_sha256": "4b4bb6bc22bf9f146d0a2c8541158e5fd5e8d227a23de0e83174020a0d85877b",
-    "created_at": "2026-10-08T04:31:34.519667Z",
-    "fingerprint": "83c065ed99d4c00348e9fefa49485c6254596c20bd26c5a3bc7c8400888f868d"
+    "created_at": "2026-10-08T05:32:14.358623Z",
+    "fingerprint": "dbffe99f3578ce4d30b789c7f7f5d69c9be4d51c99a53cfe2348cc8c11d947ef"
   },
   "unavailable_modes": [],
   "queries": [
@@ -76,48 +76,80 @@
           "score": 0.7788400650024414
         },
         {
+          "product_id": "P023",
+          "score": 0.7696973085403442
+        },
+        {
+          "product_id": "P021",
+          "score": 0.7564805150032043
+        },
+        {
+          "product_id": "P024",
+          "score": 0.7539047002792358
+        },
+        {
+          "product_id": "P016",
+          "score": 0.753036618232727
+        },
+        {
+          "product_id": "P025",
+          "score": 0.7498051524162292
+        },
+        {
+          "product_id": "P022",
+          "score": 0.748373806476593
+        },
+        {
+          "product_id": "P030",
+          "score": 0.7406147122383118
+        },
+        {
+          "product_id": "P018",
+          "score": 0.7370455861091614
+        },
+        {
+          "product_id": "P013",
+          "score": 0.7320857048034668
+        },
+        {
+          "product_id": "P041",
+          "score": 0.7297842502593994
+        },
+        {
           "product_id": "P002",
-          "score": 0.7279263734817505
+          "score": 0.7279264330863953
         },
         {
           "product_id": "P010",
           "score": 0.7252247333526611
         },
         {
+          "product_id": "P028",
+          "score": 0.723585844039917
+        },
+        {
+          "product_id": "P055",
+          "score": 0.723385214805603
+        },
+        {
+          "product_id": "P026",
+          "score": 0.7228041887283325
+        },
+        {
+          "product_id": "P033",
+          "score": 0.718993604183197
+        },
+        {
           "product_id": "P008",
           "score": 0.7180121541023254
         },
         {
+          "product_id": "P034",
+          "score": 0.7166720628738403
+        },
+        {
           "product_id": "P005",
-          "score": 0.716199517250061
-        },
-        {
-          "product_id": "P004",
-          "score": 0.7116093635559082
-        },
-        {
-          "product_id": "P006",
-          "score": 0.7108005285263062
-        },
-        {
-          "product_id": "P003",
-          "score": 0.7039117813110352
-        },
-        {
-          "product_id": "P007",
-          "score": 0.6975950002670288
-        },
-        {
-          "product_id": "P012",
-          "score": 0.6658607721328735
-        },
-        {
-          "product_id": "P011",
-          "score": 0.6652950048446655
-        },
-        {
-          "product_id": "P009",
-          "score": 0.6416786313056946
+          "score": 0.7161994576454163
         }
       ]
     },
@@ -141,48 +173,80 @@
           "score": 0.7645174264907837
         },
         {
+          "product_id": "P014",
+          "score": 0.7562044858932495
+        },
+        {
+          "product_id": "P017",
+          "score": 0.7476039528846741
+        },
+        {
+          "product_id": "P021",
+          "score": 0.743545413017273
+        },
+        {
+          "product_id": "P026",
+          "score": 0.7328047156333923
+        },
+        {
+          "product_id": "P024",
+          "score": 0.7318034172058105
+        },
+        {
+          "product_id": "P013",
+          "score": 0.7293487191200256
+        },
+        {
+          "product_id": "P046",
+          "score": 0.7267419695854187
+        },
+        {
           "product_id": "P002",
-          "score": 0.7262879014015198
+          "score": 0.726287841796875
+        },
+        {
+          "product_id": "P047",
+          "score": 0.7251145839691162
         },
         {
           "product_id": "P004",
           "score": 0.7250246405601501
         },
         {
+          "product_id": "P025",
+          "score": 0.7243279814720154
+        },
+        {
+          "product_id": "P030",
+          "score": 0.7224758267402649
+        },
+        {
+          "product_id": "P043",
+          "score": 0.7214326858520508
+        },
+        {
           "product_id": "P010",
           "score": 0.7158792018890381
         },
         {
+          "product_id": "P060",
+          "score": 0.7149819731712341
+        },
+        {
           "product_id": "P008",
-          "score": 0.7135298252105713
+          "score": 0.7135298848152161
         },
         {
           "product_id": "P007",
           "score": 0.7135250568389893
         },
         {
+          "product_id": "P023",
+          "score": 0.7131635546684265
+        },
+        {
           "product_id": "P001",
           "score": 0.7109410762786865
-        },
-        {
-          "product_id": "P006",
-          "score": 0.698409378528595
-        },
-        {
-          "product_id": "P005",
-          "score": 0.6838606595993042
-        },
-        {
-          "product_id": "P009",
-          "score": 0.6611270308494568
-        },
-        {
-          "product_id": "P011",
-          "score": 0.6564739942550659
-        },
-        {
-          "product_id": "P012",
-          "score": 0.6497176289558411
         }
       ]
     },
@@ -202,8 +266,36 @@
       "evidence_kind": "demo_text",
       "ranking": [
         {
+          "product_id": "P028",
+          "score": 0.7758405804634094
+        },
+        {
           "product_id": "P006",
           "score": 0.7749330401420593
+        },
+        {
+          "product_id": "P022",
+          "score": 0.7484372854232788
+        },
+        {
+          "product_id": "P021",
+          "score": 0.7415776252746582
+        },
+        {
+          "product_id": "P024",
+          "score": 0.7404875755310059
+        },
+        {
+          "product_id": "P025",
+          "score": 0.7325716018676758
+        },
+        {
+          "product_id": "P030",
+          "score": 0.7290615439414978
+        },
+        {
+          "product_id": "P023",
+          "score": 0.7213706374168396
         },
         {
           "product_id": "P012",
@@ -211,11 +303,15 @@
         },
         {
           "product_id": "P005",
-          "score": 0.7176397442817688
+          "score": 0.717639684677124
         },
         {
           "product_id": "P010",
-          "score": 0.7097027897834778
+          "score": 0.709702730178833
+        },
+        {
+          "product_id": "P042",
+          "score": 0.7025947570800781
         },
         {
           "product_id": "P002",
@@ -226,28 +322,28 @@
           "score": 0.6986135244369507
         },
         {
-          "product_id": "P007",
-          "score": 0.6838552951812744
+          "product_id": "P033",
+          "score": 0.698470950126648
         },
         {
-          "product_id": "P008",
-          "score": 0.6834599375724792
+          "product_id": "P026",
+          "score": 0.6969845294952393
         },
         {
-          "product_id": "P009",
-          "score": 0.6807094812393188
+          "product_id": "P057",
+          "score": 0.6961044669151306
         },
         {
-          "product_id": "P004",
-          "score": 0.6762301921844482
+          "product_id": "P016",
+          "score": 0.6936168074607849
         },
         {
-          "product_id": "P011",
-          "score": 0.6606385707855225
+          "product_id": "P055",
+          "score": 0.6927199363708496
         },
         {
-          "product_id": "P003",
-          "score": 0.6583404541015625
+          "product_id": "P047",
+          "score": 0.6922397017478943
         }
       ]
     },
@@ -271,6 +367,10 @@
           "score": 0.7977653741836548
         },
         {
+          "product_id": "P013",
+          "score": 0.7199534177780151
+        },
+        {
           "product_id": "P010",
           "score": 0.7178975343704224
         },
@@ -280,11 +380,35 @@
         },
         {
           "product_id": "P008",
-          "score": 0.7119935750961304
+          "score": 0.7119936347007751
+        },
+        {
+          "product_id": "P042",
+          "score": 0.7113300561904907
+        },
+        {
+          "product_id": "P021",
+          "score": 0.6987862586975098
         },
         {
           "product_id": "P003",
           "score": 0.6960834264755249
+        },
+        {
+          "product_id": "P026",
+          "score": 0.69443279504776
+        },
+        {
+          "product_id": "P016",
+          "score": 0.6915597319602966
+        },
+        {
+          "product_id": "P024",
+          "score": 0.6876779794692993
+        },
+        {
+          "product_id": "P025",
+          "score": 0.6863516569137573
         },
         {
           "product_id": "P004",
@@ -295,24 +419,28 @@
           "score": 0.6841564774513245
         },
         {
+          "product_id": "P014",
+          "score": 0.6840487718582153
+        },
+        {
           "product_id": "P009",
           "score": 0.6770674586296082
         },
         {
+          "product_id": "P030",
+          "score": 0.6748170256614685
+        },
+        {
+          "product_id": "P045",
+          "score": 0.6742953658103943
+        },
+        {
+          "product_id": "P023",
+          "score": 0.672359824180603
+        },
+        {
           "product_id": "P005",
-          "score": 0.6714535355567932
-        },
-        {
-          "product_id": "P006",
-          "score": 0.6619567275047302
-        },
-        {
-          "product_id": "P012",
-          "score": 0.5893849730491638
-        },
-        {
-          "product_id": "P011",
-          "score": 0.572282075881958
+          "score": 0.671453595161438
         }
       ]
     },
@@ -332,52 +460,84 @@
       "evidence_kind": "demo_text",
       "ranking": [
         {
+          "product_id": "P045",
+          "score": 0.7658241987228394
+        },
+        {
+          "product_id": "P033",
+          "score": 0.7657133340835571
+        },
+        {
+          "product_id": "P041",
+          "score": 0.7611984014511108
+        },
+        {
+          "product_id": "P047",
+          "score": 0.7604218125343323
+        },
+        {
+          "product_id": "P043",
+          "score": 0.7579681873321533
+        },
+        {
+          "product_id": "P046",
+          "score": 0.7494319677352905
+        },
+        {
+          "product_id": "P036",
+          "score": 0.7489021420478821
+        },
+        {
+          "product_id": "P018",
+          "score": 0.7433858513832092
+        },
+        {
+          "product_id": "P055",
+          "score": 0.7418023347854614
+        },
+        {
+          "product_id": "P021",
+          "score": 0.7372434139251709
+        },
+        {
+          "product_id": "P032",
+          "score": 0.7357986569404602
+        },
+        {
+          "product_id": "P049",
+          "score": 0.735077440738678
+        },
+        {
+          "product_id": "P060",
+          "score": 0.734276294708252
+        },
+        {
+          "product_id": "P024",
+          "score": 0.7310020327568054
+        },
+        {
+          "product_id": "P034",
+          "score": 0.7295122146606445
+        },
+        {
+          "product_id": "P039",
+          "score": 0.7290703654289246
+        },
+        {
+          "product_id": "P019",
+          "score": 0.7288094162940979
+        },
+        {
+          "product_id": "P025",
+          "score": 0.7253424525260925
+        },
+        {
           "product_id": "P011",
           "score": 0.7221536636352539
         },
         {
-          "product_id": "P012",
-          "score": 0.6980304718017578
-        },
-        {
-          "product_id": "P001",
-          "score": 0.677334725856781
-        },
-        {
-          "product_id": "P010",
-          "score": 0.6720913648605347
-        },
-        {
-          "product_id": "P008",
-          "score": 0.6669024229049683
-        },
-        {
-          "product_id": "P006",
-          "score": 0.6616067290306091
-        },
-        {
-          "product_id": "P002",
-          "score": 0.6502518653869629
-        },
-        {
-          "product_id": "P004",
-          "score": 0.6466177105903625
-        },
-        {
-          "product_id": "P007",
-          "score": 0.644691526889801
-        },
-        {
-          "product_id": "P003",
-          "score": 0.6396872401237488
-        },
-        {
-          "product_id": "P005",
-          "score": 0.6247965693473816
-        },
-        {
-          "product_id": "P009",
-          "score": 0.5967227816581726
+          "product_id": "P048",
+          "score": 0.7095181345939636
         }
       ]
     },
@@ -401,48 +561,80 @@
           "score": 0.7613554000854492
         },
         {
+          "product_id": "P028",
+          "score": 0.7058946490287781
+        },
+        {
+          "product_id": "P047",
+          "score": 0.6990237832069397
+        },
+        {
+          "product_id": "P045",
+          "score": 0.6922884583473206
+        },
+        {
+          "product_id": "P033",
+          "score": 0.6912863254547119
+        },
+        {
+          "product_id": "P043",
+          "score": 0.6903391480445862
+        },
+        {
+          "product_id": "P041",
+          "score": 0.6892298460006714
+        },
+        {
+          "product_id": "P057",
+          "score": 0.6872671842575073
+        },
+        {
+          "product_id": "P046",
+          "score": 0.679343044757843
+        },
+        {
+          "product_id": "P022",
+          "score": 0.6756007075309753
+        },
+        {
+          "product_id": "P018",
+          "score": 0.6748576760292053
+        },
+        {
+          "product_id": "P042",
+          "score": 0.6740821599960327
+        },
+        {
           "product_id": "P006",
           "score": 0.6739552617073059
+        },
+        {
+          "product_id": "P055",
+          "score": 0.6729421019554138
         },
         {
           "product_id": "P011",
           "score": 0.6723888516426086
         },
         {
-          "product_id": "P005",
-          "score": 0.6480239033699036
+          "product_id": "P060",
+          "score": 0.6676163673400879
         },
         {
-          "product_id": "P010",
-          "score": 0.6123852133750916
+          "product_id": "P021",
+          "score": 0.6675078272819519
         },
         {
-          "product_id": "P009",
-          "score": 0.6059722304344177
+          "product_id": "P036",
+          "score": 0.66530442237854
         },
         {
-          "product_id": "P001",
-          "score": 0.5980085134506226
+          "product_id": "P048",
+          "score": 0.6626864075660706
         },
         {
-          "product_id": "P008",
-          "score": 0.5882447957992554
-        },
-        {
-          "product_id": "P002",
-          "score": 0.5844674706459045
-        },
-        {
-          "product_id": "P003",
-          "score": 0.5794857144355774
-        },
-        {
-          "product_id": "P004",
-          "score": 0.5715675950050354
-        },
-        {
-          "product_id": "P007",
-          "score": 0.5656624436378479
+          "product_id": "P049",
+          "score": 0.6619423031806946
         }
       ]
     },
@@ -460,52 +652,84 @@
       "evidence_kind": "demo_text",
       "ranking": [
         {
+          "product_id": "P033",
+          "score": 0.6408141255378723
+        },
+        {
+          "product_id": "P028",
+          "score": 0.6349983215332031
+        },
+        {
+          "product_id": "P055",
+          "score": 0.6336082220077515
+        },
+        {
+          "product_id": "P057",
+          "score": 0.6314837336540222
+        },
+        {
           "product_id": "P012",
           "score": 0.6282894611358643
         },
         {
+          "product_id": "P041",
+          "score": 0.623243510723114
+        },
+        {
+          "product_id": "P021",
+          "score": 0.6209695339202881
+        },
+        {
+          "product_id": "P045",
+          "score": 0.6208476424217224
+        },
+        {
+          "product_id": "P043",
+          "score": 0.6192200779914856
+        },
+        {
+          "product_id": "P047",
+          "score": 0.6139830350875854
+        },
+        {
+          "product_id": "P042",
+          "score": 0.6125512719154358
+        },
+        {
+          "product_id": "P051",
+          "score": 0.6121518611907959
+        },
+        {
+          "product_id": "P032",
+          "score": 0.6111693382263184
+        },
+        {
+          "product_id": "P018",
+          "score": 0.606023907661438
+        },
+        {
           "product_id": "P006",
-          "score": 0.6052991151809692
+          "score": 0.6052990555763245
         },
         {
-          "product_id": "P005",
-          "score": 0.5855470299720764
+          "product_id": "P046",
+          "score": 0.6049044728279114
         },
         {
-          "product_id": "P011",
-          "score": 0.5827748775482178
+          "product_id": "P024",
+          "score": 0.604072093963623
         },
         {
-          "product_id": "P010",
-          "score": 0.5732644200325012
+          "product_id": "P022",
+          "score": 0.6026490330696106
         },
         {
-          "product_id": "P001",
-          "score": 0.570574939250946
+          "product_id": "P034",
+          "score": 0.6004388928413391
         },
         {
-          "product_id": "P004",
-          "score": 0.5481855273246765
-        },
-        {
-          "product_id": "P007",
-          "score": 0.5436654090881348
-        },
-        {
-          "product_id": "P002",
-          "score": 0.5422186255455017
-        },
-        {
-          "product_id": "P008",
-          "score": 0.5381891131401062
-        },
-        {
-          "product_id": "P003",
-          "score": 0.5256100296974182
-        },
-        {
-          "product_id": "P009",
-          "score": 0.5165101885795593
+          "product_id": "P030",
+          "score": 0.5960760116577148
         }
       ]
     },
@@ -523,52 +747,84 @@
       "evidence_kind": "demo_text",
       "ranking": [
         {
+          "product_id": "P033",
+          "score": 0.7042907476425171
+        },
+        {
+          "product_id": "P032",
+          "score": 0.6818163394927979
+        },
+        {
+          "product_id": "P018",
+          "score": 0.6682025790214539
+        },
+        {
+          "product_id": "P045",
+          "score": 0.662371814250946
+        },
+        {
+          "product_id": "P021",
+          "score": 0.6618900299072266
+        },
+        {
+          "product_id": "P034",
+          "score": 0.6613824367523193
+        },
+        {
+          "product_id": "P041",
+          "score": 0.6577945947647095
+        },
+        {
+          "product_id": "P043",
+          "score": 0.6575250625610352
+        },
+        {
+          "product_id": "P055",
+          "score": 0.6533747911453247
+        },
+        {
+          "product_id": "P051",
+          "score": 0.6497730016708374
+        },
+        {
+          "product_id": "P047",
+          "score": 0.6466209292411804
+        },
+        {
+          "product_id": "P046",
+          "score": 0.645440399646759
+        },
+        {
+          "product_id": "P036",
+          "score": 0.6408600807189941
+        },
+        {
+          "product_id": "P060",
+          "score": 0.6368305683135986
+        },
+        {
+          "product_id": "P059",
+          "score": 0.6362087726593018
+        },
+        {
+          "product_id": "P049",
+          "score": 0.6360516548156738
+        },
+        {
+          "product_id": "P024",
+          "score": 0.6332985758781433
+        },
+        {
+          "product_id": "P057",
+          "score": 0.6328855752944946
+        },
+        {
           "product_id": "P011",
           "score": 0.6257702708244324
         },
         {
-          "product_id": "P012",
-          "score": 0.6158138513565063
-        },
-        {
-          "product_id": "P010",
-          "score": 0.6034035682678223
-        },
-        {
-          "product_id": "P001",
-          "score": 0.5996078848838806
-        },
-        {
-          "product_id": "P003",
-          "score": 0.5931510329246521
-        },
-        {
-          "product_id": "P008",
-          "score": 0.5903487205505371
-        },
-        {
-          "product_id": "P004",
-          "score": 0.5807150602340698
-        },
-        {
-          "product_id": "P005",
-          "score": 0.5740513801574707
-        },
-        {
-          "product_id": "P002",
-          "score": 0.5674314498901367
-        },
-        {
-          "product_id": "P006",
-          "score": 0.5654349327087402
-        },
-        {
-          "product_id": "P007",
-          "score": 0.5638344883918762
-        },
-        {
-          "product_id": "P009",
-          "score": 0.5385679006576538
+          "product_id": "P050",
+          "score": 0.6242725253105164
         }
       ]
     },
@@ -586,52 +842,84 @@
       "evidence_kind": "demo_text",
       "ranking": [
         {
+          "product_id": "P043",
+          "score": 0.719737708568573
+        },
+        {
+          "product_id": "P046",
+          "score": 0.7192116379737854
+        },
+        {
+          "product_id": "P033",
+          "score": 0.712883472442627
+        },
+        {
+          "product_id": "P047",
+          "score": 0.7061465978622437
+        },
+        {
+          "product_id": "P060",
+          "score": 0.6949456930160522
+        },
+        {
+          "product_id": "P032",
+          "score": 0.6924650073051453
+        },
+        {
+          "product_id": "P045",
+          "score": 0.6910807490348816
+        },
+        {
+          "product_id": "P049",
+          "score": 0.6910223364830017
+        },
+        {
+          "product_id": "P048",
+          "score": 0.686434805393219
+        },
+        {
+          "product_id": "P018",
+          "score": 0.6849417090415955
+        },
+        {
+          "product_id": "P021",
+          "score": 0.684039294719696
+        },
+        {
+          "product_id": "P055",
+          "score": 0.683041512966156
+        },
+        {
+          "product_id": "P041",
+          "score": 0.6827824711799622
+        },
+        {
+          "product_id": "P051",
+          "score": 0.6784738898277283
+        },
+        {
+          "product_id": "P059",
+          "score": 0.6777669787406921
+        },
+        {
           "product_id": "P003",
           "score": 0.6712889671325684
         },
         {
-          "product_id": "P011",
-          "score": 0.6481139063835144
+          "product_id": "P034",
+          "score": 0.6680293083190918
         },
         {
-          "product_id": "P012",
-          "score": 0.6386597156524658
+          "product_id": "P036",
+          "score": 0.6677930951118469
         },
         {
-          "product_id": "P001",
-          "score": 0.630726158618927
+          "product_id": "P024",
+          "score": 0.6627141237258911
         },
         {
-          "product_id": "P010",
-          "score": 0.6296297311782837
-        },
-        {
-          "product_id": "P004",
-          "score": 0.6289957761764526
-        },
-        {
-          "product_id": "P008",
-          "score": 0.6273554563522339
-        },
-        {
-          "product_id": "P006",
-          "score": 0.6184122562408447
-        },
-        {
-          "product_id": "P002",
-          "score": 0.614612340927124
-        },
-        {
-          "product_id": "P007",
-          "score": 0.6045176982879639
-        },
-        {
-          "product_id": "P005",
-          "score": 0.5978813171386719
-        },
-        {
-          "product_id": "P009",
-          "score": 0.5568333268165588
+          "product_id": "P017",
+          "score": 0.6579773426055908
         }
       ]
     },
@@ -663,6 +951,26 @@
           "score": 0.6068153381347656
         },
         {
+          "product_id": "P016",
+          "score": 0.6048371195793152
+        },
+        {
+          "product_id": "P024",
+          "score": 0.5963628888130188
+        },
+        {
+          "product_id": "P013",
+          "score": 0.5918028354644775
+        },
+        {
+          "product_id": "P021",
+          "score": 0.590232253074646
+        },
+        {
+          "product_id": "P015",
+          "score": 0.5879351496696472
+        },
+        {
           "product_id": "P003",
           "score": 0.5711134672164917
         },
@@ -672,7 +980,7 @@
         },
         {
           "product_id": "P007",
-          "score": 0.567887544631958
+          "score": 0.5678874850273132
         },
         {
           "product_id": "P008",
@@ -683,20 +991,32 @@
           "score": 0.556894838809967
         },
         {
-          "product_id": "P009",
-          "score": 0.5066367387771606
+          "product_id": "P023",
+          "score": 0.5372955799102783
         },
         {
-          "product_id": "P012",
-          "score": 0.44046199321746826
+          "product_id": "P017",
+          "score": 0.5322664976119995
         },
         {
-          "product_id": "P006",
-          "score": 0.4294932782649994
+          "product_id": "P034",
+          "score": 0.530692458152771
         },
         {
-          "product_id": "P011",
-          "score": 0.4181613326072693
+          "product_id": "P026",
+          "score": 0.5304482579231262
+        },
+        {
+          "product_id": "P059",
+          "score": 0.5281969308853149
+        },
+        {
+          "product_id": "P027",
+          "score": 0.5242447853088379
+        },
+        {
+          "product_id": "P014",
+          "score": 0.5203132629394531
         }
       ]
     },
@@ -720,48 +1040,80 @@
           "score": 0.8036186695098877
         },
         {
+          "product_id": "P036",
+          "score": 0.6540259718894958
+        },
+        {
           "product_id": "P011",
           "score": 0.6186460256576538
         },
         {
-          "product_id": "P005",
-          "score": 0.5188615322113037
+          "product_id": "P055",
+          "score": 0.6083356738090515
         },
         {
-          "product_id": "P006",
-          "score": 0.5155195593833923
+          "product_id": "P019",
+          "score": 0.6073909401893616
         },
         {
-          "product_id": "P002",
-          "score": 0.5128954648971558
+          "product_id": "P018",
+          "score": 0.5922815203666687
         },
         {
-          "product_id": "P003",
-          "score": 0.4831182360649109
+          "product_id": "P038",
+          "score": 0.5867989659309387
         },
         {
-          "product_id": "P001",
-          "score": 0.47022169828414917
+          "product_id": "P056",
+          "score": 0.584144115447998
         },
         {
-          "product_id": "P010",
-          "score": 0.46983885765075684
+          "product_id": "P032",
+          "score": 0.574292778968811
         },
         {
-          "product_id": "P004",
-          "score": 0.46118786931037903
+          "product_id": "P059",
+          "score": 0.5707894563674927
         },
         {
-          "product_id": "P008",
-          "score": 0.4521719515323639
+          "product_id": "P020",
+          "score": 0.5707847476005554
         },
         {
-          "product_id": "P007",
-          "score": 0.44907745718955994
+          "product_id": "P058",
+          "score": 0.5693185329437256
         },
         {
-          "product_id": "P009",
-          "score": 0.4150853753089905
+          "product_id": "P060",
+          "score": 0.5682023167610168
+        },
+        {
+          "product_id": "P034",
+          "score": 0.5671412944793701
+        },
+        {
+          "product_id": "P035",
+          "score": 0.5574569702148438
+        },
+        {
+          "product_id": "P021",
+          "score": 0.5539094805717468
+        },
+        {
+          "product_id": "P041",
+          "score": 0.5514686107635498
+        },
+        {
+          "product_id": "P047",
+          "score": 0.5500451922416687
+        },
+        {
+          "product_id": "P052",
+          "score": 0.5496023297309875
+        },
+        {
+          "product_id": "P030",
+          "score": 0.5456864237785339
         }
       ]
     },
@@ -779,52 +1131,84 @@
       "evidence_kind": "network_photo_ood",
       "ranking": [
         {
+          "product_id": "P055",
+          "score": 0.5601289868354797
+        },
+        {
           "product_id": "P012",
           "score": 0.5180185437202454
+        },
+        {
+          "product_id": "P059",
+          "score": 0.5155501365661621
+        },
+        {
+          "product_id": "P058",
+          "score": 0.4804055690765381
+        },
+        {
+          "product_id": "P038",
+          "score": 0.47485989332199097
+        },
+        {
+          "product_id": "P054",
+          "score": 0.4662531614303589
+        },
+        {
+          "product_id": "P060",
+          "score": 0.465961754322052
+        },
+        {
+          "product_id": "P043",
+          "score": 0.46505606174468994
+        },
+        {
+          "product_id": "P056",
+          "score": 0.46302807331085205
+        },
+        {
+          "product_id": "P036",
+          "score": 0.46150174736976624
+        },
+        {
+          "product_id": "P046",
+          "score": 0.4561963975429535
+        },
+        {
+          "product_id": "P034",
+          "score": 0.4556439518928528
+        },
+        {
+          "product_id": "P023",
+          "score": 0.45077842473983765
+        },
+        {
+          "product_id": "P045",
+          "score": 0.45075657963752747
+        },
+        {
+          "product_id": "P041",
+          "score": 0.44940462708473206
+        },
+        {
+          "product_id": "P032",
+          "score": 0.44773760437965393
+        },
+        {
+          "product_id": "P048",
+          "score": 0.44753870368003845
+        },
+        {
+          "product_id": "P028",
+          "score": 0.4437521696090698
         },
         {
           "product_id": "P011",
           "score": 0.4422706663608551
         },
         {
-          "product_id": "P006",
-          "score": 0.4225599765777588
-        },
-        {
-          "product_id": "P005",
-          "score": 0.4174577593803406
-        },
-        {
-          "product_id": "P010",
-          "score": 0.4064018428325653
-        },
-        {
-          "product_id": "P003",
-          "score": 0.40445342659950256
-        },
-        {
-          "product_id": "P008",
-          "score": 0.4000729024410248
-        },
-        {
-          "product_id": "P004",
-          "score": 0.3855457305908203
-        },
-        {
-          "product_id": "P002",
-          "score": 0.38502752780914307
-        },
-        {
-          "product_id": "P007",
-          "score": 0.38277533650398254
-        },
-        {
-          "product_id": "P001",
-          "score": 0.3704467713832855
-        },
-        {
-          "product_id": "P009",
-          "score": 0.34711432456970215
+          "product_id": "P047",
+          "score": 0.4411742687225342
         }
       ]
     },
@@ -848,48 +1232,80 @@
           "score": 0.9734773635864258
         },
         {
+          "product_id": "P028",
+          "score": 0.8387198448181152
+        },
+        {
+          "product_id": "P030",
+          "score": 0.8045804500579834
+        },
+        {
           "product_id": "P012",
           "score": 0.7917183637619019
         },
         {
+          "product_id": "P023",
+          "score": 0.7763161063194275
+        },
+        {
+          "product_id": "P021",
+          "score": 0.7750235199928284
+        },
+        {
+          "product_id": "P024",
+          "score": 0.7735077738761902
+        },
+        {
+          "product_id": "P022",
+          "score": 0.7719890475273132
+        },
+        {
+          "product_id": "P046",
+          "score": 0.7695290446281433
+        },
+        {
+          "product_id": "P026",
+          "score": 0.7686589956283569
+        },
+        {
           "product_id": "P002",
-          "score": 0.766677975654602
+          "score": 0.7666780352592468
+        },
+        {
+          "product_id": "P029",
+          "score": 0.7639915943145752
+        },
+        {
+          "product_id": "P055",
+          "score": 0.7578149437904358
+        },
+        {
+          "product_id": "P025",
+          "score": 0.7513870000839233
+        },
+        {
+          "product_id": "P057",
+          "score": 0.7442560791969299
+        },
+        {
+          "product_id": "P047",
+          "score": 0.7423862218856812
+        },
+        {
+          "product_id": "P015",
+          "score": 0.741198718547821
         },
         {
           "product_id": "P005",
           "score": 0.7390409111976624
         },
         {
-          "product_id": "P010",
-          "score": 0.721038281917572
+          "product_id": "P027",
+          "score": 0.7371031045913696
         },
         {
-          "product_id": "P001",
-          "score": 0.7073713541030884
-        },
-        {
-          "product_id": "P009",
-          "score": 0.7041988372802734
-        },
-        {
-          "product_id": "P008",
-          "score": 0.703205943107605
-        },
-        {
-          "product_id": "P007",
-          "score": 0.701917290687561
-        },
-        {
-          "product_id": "P004",
-          "score": 0.6965673565864563
-        },
-        {
-          "product_id": "P011",
-          "score": 0.6932355165481567
-        },
-        {
-          "product_id": "P003",
-          "score": 0.6867853999137878
+          "product_id": "P016",
+          "score": 0.7365374565124512
         }
       ]
     },
@@ -913,48 +1329,80 @@
           "score": 0.96796053647995
         },
         {
+          "product_id": "P019",
+          "score": 0.8745144605636597
+        },
+        {
+          "product_id": "P036",
+          "score": 0.8708140254020691
+        },
+        {
+          "product_id": "P034",
+          "score": 0.844650149345398
+        },
+        {
+          "product_id": "P055",
+          "score": 0.8303731679916382
+        },
+        {
+          "product_id": "P041",
+          "score": 0.829175591468811
+        },
+        {
+          "product_id": "P018",
+          "score": 0.829046905040741
+        },
+        {
+          "product_id": "P038",
+          "score": 0.827319860458374
+        },
+        {
           "product_id": "P012",
           "score": 0.8259647488594055
         },
         {
-          "product_id": "P010",
-          "score": 0.7220779061317444
+          "product_id": "P045",
+          "score": 0.8222039341926575
         },
         {
-          "product_id": "P008",
-          "score": 0.7186914086341858
+          "product_id": "P060",
+          "score": 0.817119836807251
         },
         {
-          "product_id": "P001",
-          "score": 0.7051830887794495
+          "product_id": "P047",
+          "score": 0.8148823380470276
         },
         {
-          "product_id": "P002",
-          "score": 0.7005174160003662
+          "product_id": "P059",
+          "score": 0.8106723427772522
         },
         {
-          "product_id": "P006",
-          "score": 0.7003055810928345
+          "product_id": "P025",
+          "score": 0.8061574697494507
         },
         {
-          "product_id": "P004",
-          "score": 0.6986708045005798
+          "product_id": "P033",
+          "score": 0.8059539794921875
         },
         {
-          "product_id": "P005",
-          "score": 0.6931055784225464
+          "product_id": "P043",
+          "score": 0.8052638173103333
         },
         {
-          "product_id": "P003",
-          "score": 0.6846302151679993
+          "product_id": "P058",
+          "score": 0.8020414710044861
         },
         {
-          "product_id": "P007",
-          "score": 0.6590060591697693
+          "product_id": "P032",
+          "score": 0.7931392788887024
         },
         {
-          "product_id": "P009",
-          "score": 0.6474557518959045
+          "product_id": "P024",
+          "score": 0.7919714450836182
+        },
+        {
+          "product_id": "P048",
+          "score": 0.7869974970817566
         }
       ]
     },
@@ -972,52 +1420,84 @@
       "evidence_kind": "network_photo_ood",
       "ranking": [
         {
+          "product_id": "P055",
+          "score": 0.7630579471588135
+        },
+        {
+          "product_id": "P059",
+          "score": 0.7189053893089294
+        },
+        {
           "product_id": "P012",
           "score": 0.7173400521278381
         },
         {
-          "product_id": "P011",
-          "score": 0.6612481474876404
+          "product_id": "P043",
+          "score": 0.7008615136146545
         },
         {
-          "product_id": "P006",
-          "score": 0.646771252155304
+          "product_id": "P045",
+          "score": 0.6925061345100403
         },
         {
-          "product_id": "P010",
-          "score": 0.6348655819892883
+          "product_id": "P041",
+          "score": 0.6907216906547546
         },
         {
-          "product_id": "P005",
-          "score": 0.6333714127540588
+          "product_id": "P058",
+          "score": 0.690320611000061
         },
         {
-          "product_id": "P008",
-          "score": 0.6107860207557678
+          "product_id": "P032",
+          "score": 0.685215413570404
         },
         {
-          "product_id": "P001",
-          "score": 0.6085127592086792
+          "product_id": "P046",
+          "score": 0.684330940246582
         },
         {
-          "product_id": "P004",
-          "score": 0.60595703125
+          "product_id": "P034",
+          "score": 0.6834728717803955
         },
         {
-          "product_id": "P003",
-          "score": 0.6025206446647644
+          "product_id": "P033",
+          "score": 0.681808352470398
         },
         {
-          "product_id": "P007",
-          "score": 0.5989252328872681
+          "product_id": "P036",
+          "score": 0.6804974675178528
         },
         {
-          "product_id": "P002",
-          "score": 0.5927913188934326
+          "product_id": "P047",
+          "score": 0.6800757050514221
         },
         {
-          "product_id": "P009",
-          "score": 0.5500853657722473
+          "product_id": "P028",
+          "score": 0.6782037019729614
+        },
+        {
+          "product_id": "P057",
+          "score": 0.6769768595695496
+        },
+        {
+          "product_id": "P021",
+          "score": 0.6749616861343384
+        },
+        {
+          "product_id": "P060",
+          "score": 0.6747896671295166
+        },
+        {
+          "product_id": "P056",
+          "score": 0.6736514568328857
+        },
+        {
+          "product_id": "P038",
+          "score": 0.6727210879325867
+        },
+        {
+          "product_id": "P054",
+          "score": 0.6705107092857361
         }
       ]
     }

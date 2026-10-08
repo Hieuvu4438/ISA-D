@@ -1,0 +1,1708 @@
+{
+  "status": "passed",
+  "timestamp_utc": "2026-10-08T05:39:20.085950+00:00",
+  "command": "python scripts/benchmark_backend.py --requests-per-mode 30 --base-url http://127.0.0.1:8000",
+  "code_commit": "0f84ff4679e079271a1ded2f50820511b4dd3f9f",
+  "hardware": {
+    "system": "Windows",
+    "release": "11",
+    "architecture": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "logical_cpu_count": 16,
+    "physical_memory_bytes": 16858959872,
+    "python_version": "3.12.8",
+    "packages": {
+      "torch": "2.14.1+cpu",
+      "transformers": "5.19.0",
+      "sentence-transformers": "6.1.0",
+      "numpy": "2.5.3",
+      "httpx": "0.28.1",
+      "fastapi": "0.142.4"
+    }
+  },
+  "models": {
+    "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+    "image_model_id": "sentence-transformers/clip-ViT-B-32",
+    "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+    "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+    "dimension": 512,
+    "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+  },
+  "index": {
+    "available": true,
+    "index_fingerprint": "fbb823590b942a7432948c7482b97b9fa7323f33f866b563ba34a7bdcf98bd13",
+    "catalog_fingerprint": "c9b5af5c1e863226730b51aa21212086927b318419c70e9df087ffab5478645d",
+    "product_count": 60
+  },
+  "products_sha256": "e9c0bc9ffe6bc86fa1b59ef659206ab4c744e13c08f33a9ad19a454d255969bb",
+  "requirements_lock_sha256": "d9c2c6c04b5ede9f1e56ebdccc9bc7bfc034f6afe9ce65fd06f83cbcd626f466",
+  "benchmark_script_sha256": "a112ecdc400179cc0a0b571ddc9751e751c44faf12254bdcd17cc351e49f2840",
+  "execution": "sequential HTTP on localhost; actual CPU encoders; nearest top_k=5; no concurrent QA during run",
+  "snapshot_stable": true,
+  "measured_request_count": 90,
+  "unmeasured_warmup_request_count": 3,
+  "cold_start": {
+    "status": "not_measured",
+    "reason": "Existing backend process was already loaded; no restart included in this benchmark"
+  },
+  "azure_live_called": false,
+  "duration_seconds": 25.84,
+  "percentile_method": "linear interpolation at (N-1)*p/100; no outlier removal; errors retained separately and fail the gate",
+  "modes": {
+    "text": {
+      "request_count": 30,
+      "successful_count": 30,
+      "failure_count": 0,
+      "warmup": {
+        "source_product_id": "P001",
+        "category": "running_shoes",
+        "http_status": 200,
+        "wall_ms": 47.41390002891421,
+        "passed": true,
+        "request_id": "d5084aff-a151-4b0a-bb57-66310eceba44",
+        "server_ms": 42.40640002535656,
+        "actual_ids": [
+          "P001",
+          "P016",
+          "P023",
+          "P021",
+          "P024"
+        ]
+      },
+      "wall_ms_successful": {
+        "min": 40.31340003712103,
+        "mean": 53.71022999946339,
+        "p50": 47.119549970375374,
+        "p95": 81.6931899957126,
+        "p99": 90.34277100174224,
+        "max": 93.6140000121668
+      },
+      "wall_ms_all_requests": {
+        "p95": 81.6931899957126,
+        "max": 93.6140000121668
+      },
+      "server_ms_successful": {
+        "p95": 74.14542003243696
+      },
+      "p95_target_ms": 5000,
+      "passed": true,
+      "samples": [
+        {
+          "number": 1,
+          "source_product_id": "P001",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 44.23489997861907,
+          "passed": true,
+          "request_id": "44bc4260-60d6-4fd4-b5fe-2f005cef5369",
+          "server_ms": 39.45400001248345,
+          "actual_ids": [
+            "P001",
+            "P016",
+            "P023",
+            "P021",
+            "P024"
+          ]
+        },
+        {
+          "number": 2,
+          "source_product_id": "P008",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 45.185099996160716,
+          "passed": true,
+          "request_id": "c096af9e-9c5d-4fcd-867b-3c4f01deee51",
+          "server_ms": 40.44640000211075,
+          "actual_ids": [
+            "P008",
+            "P010",
+            "P021",
+            "P025",
+            "P009"
+          ]
+        },
+        {
+          "number": 3,
+          "source_product_id": "P015",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 49.782600020989776,
+          "passed": true,
+          "request_id": "a88ccd9a-b974-45cb-b64a-942da419b32d",
+          "server_ms": 45.11619999539107,
+          "actual_ids": [
+            "P015",
+            "P016",
+            "P027",
+            "P004",
+            "P005"
+          ]
+        },
+        {
+          "number": 4,
+          "source_product_id": "P022",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 48.62630000570789,
+          "passed": true,
+          "request_id": "289b8429-6c12-4e5e-84e5-a0a14bb24e5a",
+          "server_ms": 43.91489998670295,
+          "actual_ids": [
+            "P022",
+            "P023",
+            "P021",
+            "P001",
+            "P024"
+          ]
+        },
+        {
+          "number": 5,
+          "source_product_id": "P029",
+          "category": "sandals",
+          "http_status": 200,
+          "wall_ms": 43.736200022976846,
+          "passed": true,
+          "request_id": "efc68036-815d-44b9-bb5b-9b46614838b0",
+          "server_ms": 38.508899975568056,
+          "actual_ids": [
+            "P029",
+            "P027",
+            "P030",
+            "P025",
+            "P028"
+          ]
+        },
+        {
+          "number": 6,
+          "source_product_id": "P036",
+          "category": "tote_bag",
+          "http_status": 200,
+          "wall_ms": 42.306499963160604,
+          "passed": true,
+          "request_id": "0ca172d6-9f04-43d8-8c90-65ffa377e93e",
+          "server_ms": 37.796400021761656,
+          "actual_ids": [
+            "P036",
+            "P018",
+            "P034",
+            "P041",
+            "P033"
+          ]
+        },
+        {
+          "number": 7,
+          "source_product_id": "P043",
+          "category": "t_shirt",
+          "http_status": 200,
+          "wall_ms": 46.331999998074025,
+          "passed": true,
+          "request_id": "dced31f0-5b6e-4ba5-ae7e-6d52e71cbe16",
+          "server_ms": 41.09499999321997,
+          "actual_ids": [
+            "P047",
+            "P043",
+            "P046",
+            "P060",
+            "P045"
+          ]
+        },
+        {
+          "number": 8,
+          "source_product_id": "P050",
+          "category": "watch",
+          "http_status": 200,
+          "wall_ms": 44.35030004242435,
+          "passed": true,
+          "request_id": "29f2d55f-3772-4d6f-9cb7-deabecb6f986",
+          "server_ms": 38.42370002530515,
+          "actual_ids": [
+            "P050",
+            "P054",
+            "P051",
+            "P045",
+            "P043"
+          ]
+        },
+        {
+          "number": 9,
+          "source_product_id": "P057",
+          "category": "sunglasses",
+          "http_status": 200,
+          "wall_ms": 43.88089996064082,
+          "passed": true,
+          "request_id": "df0daf2f-3c98-4f88-9566-d14280e580a6",
+          "server_ms": 39.13779999129474,
+          "actual_ids": [
+            "P057",
+            "P045",
+            "P043",
+            "P033",
+            "P042"
+          ]
+        },
+        {
+          "number": 10,
+          "source_product_id": "P004",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 49.37780002364889,
+          "passed": true,
+          "request_id": "86f32bb1-2e5d-4f70-bb52-a9b9ee3591db",
+          "server_ms": 44.78100000414997,
+          "actual_ids": [
+            "P004",
+            "P021",
+            "P024",
+            "P030",
+            "P022"
+          ]
+        },
+        {
+          "number": 11,
+          "source_product_id": "P011",
+          "category": "bag",
+          "http_status": 200,
+          "wall_ms": 47.61609999695793,
+          "passed": true,
+          "request_id": "3b9441eb-0aae-4505-a161-02cf2f8693e2",
+          "server_ms": 42.94389998540282,
+          "actual_ids": [
+            "P011",
+            "P036",
+            "P033",
+            "P047",
+            "P041"
+          ]
+        },
+        {
+          "number": 12,
+          "source_product_id": "P018",
+          "category": "bag",
+          "http_status": 200,
+          "wall_ms": 41.672400024253875,
+          "passed": true,
+          "request_id": "d16cf97f-dd71-4a37-8270-4fa58bfbbb3d",
+          "server_ms": 36.753299995325506,
+          "actual_ids": [
+            "P018",
+            "P036",
+            "P033",
+            "P034",
+            "P041"
+          ]
+        },
+        {
+          "number": 13,
+          "source_product_id": "P025",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 47.071299981325865,
+          "passed": true,
+          "request_id": "b543e3eb-a734-493b-9fe1-263b6baa437e",
+          "server_ms": 42.147799977101386,
+          "actual_ids": [
+            "P025",
+            "P024",
+            "P021",
+            "P030",
+            "P023"
+          ]
+        },
+        {
+          "number": 14,
+          "source_product_id": "P032",
+          "category": "backpack",
+          "http_status": 200,
+          "wall_ms": 40.31340003712103,
+          "passed": true,
+          "request_id": "dbc08770-7f45-4717-aa13-f09fcf616aa9",
+          "server_ms": 34.32439995231107,
+          "actual_ids": [
+            "P041",
+            "P034",
+            "P032",
+            "P018",
+            "P059"
+          ]
+        },
+        {
+          "number": 15,
+          "source_product_id": "P039",
+          "category": "tote_bag",
+          "http_status": 200,
+          "wall_ms": 43.158499989658594,
+          "passed": true,
+          "request_id": "25a0340b-00f1-4fb4-8515-95e1d1efdfde",
+          "server_ms": 37.5478999922052,
+          "actual_ids": [
+            "P039",
+            "P019",
+            "P018",
+            "P036",
+            "P034"
+          ]
+        },
+        {
+          "number": 16,
+          "source_product_id": "P046",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 43.5793999931775,
+          "passed": true,
+          "request_id": "5728e1b3-8d77-43f2-ab78-ff08613619e1",
+          "server_ms": 37.95410000020638,
+          "actual_ids": [
+            "P046",
+            "P047",
+            "P060",
+            "P043",
+            "P033"
+          ]
+        },
+        {
+          "number": 17,
+          "source_product_id": "P053",
+          "category": "watch",
+          "http_status": 200,
+          "wall_ms": 42.06469998462126,
+          "passed": true,
+          "request_id": "dee1b8b2-feac-43ea-9f15-2ca851ed0fcb",
+          "server_ms": 37.21669997321442,
+          "actual_ids": [
+            "P053",
+            "P050",
+            "P054",
+            "P051",
+            "P045"
+          ]
+        },
+        {
+          "number": 18,
+          "source_product_id": "P060",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 45.63170002074912,
+          "passed": true,
+          "request_id": "7a213c3b-76ef-49f5-8e50-f9af75749e35",
+          "server_ms": 41.224999993573874,
+          "actual_ids": [
+            "P060",
+            "P047",
+            "P046",
+            "P045",
+            "P043"
+          ]
+        },
+        {
+          "number": 19,
+          "source_product_id": "P007",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 43.456099985633045,
+          "passed": true,
+          "request_id": "9d8b2023-e184-4ea1-b352-33d5b2219ef8",
+          "server_ms": 38.83860004134476,
+          "actual_ids": [
+            "P007",
+            "P013",
+            "P042",
+            "P002",
+            "P010"
+          ]
+        },
+        {
+          "number": 20,
+          "source_product_id": "P014",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 47.16779995942488,
+          "passed": true,
+          "request_id": "4b750fd3-5077-4793-bcd7-56d129eea62a",
+          "server_ms": 42.47210000175983,
+          "actual_ids": [
+            "P003",
+            "P014",
+            "P017",
+            "P013",
+            "P004"
+          ]
+        },
+        {
+          "number": 21,
+          "source_product_id": "P021",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 57.99030000343919,
+          "passed": true,
+          "request_id": "7ee9949f-3472-4044-b188-45c8b4933887",
+          "server_ms": 52.701600012369454,
+          "actual_ids": [
+            "P021",
+            "P024",
+            "P025",
+            "P030",
+            "P033"
+          ]
+        },
+        {
+          "number": 22,
+          "source_product_id": "P028",
+          "category": "sandals",
+          "http_status": 200,
+          "wall_ms": 74.79240000247955,
+          "passed": true,
+          "request_id": "54ee6d6b-6878-4440-bdec-454577f904de",
+          "server_ms": 67.75159999961033,
+          "actual_ids": [
+            "P028",
+            "P030",
+            "P006",
+            "P022",
+            "P024"
+          ]
+        },
+        {
+          "number": 23,
+          "source_product_id": "P035",
+          "category": "backpack",
+          "http_status": 200,
+          "wall_ms": 67.33549997443333,
+          "passed": true,
+          "request_id": "499b40ab-ac50-40bd-9b9a-4670148cde1f",
+          "server_ms": 61.461899953428656,
+          "actual_ids": [
+            "P035",
+            "P034",
+            "P033",
+            "P041",
+            "P032"
+          ]
+        },
+        {
+          "number": 24,
+          "source_product_id": "P042",
+          "category": "t_shirt",
+          "http_status": 200,
+          "wall_ms": 47.497899970039725,
+          "passed": true,
+          "request_id": "47948b97-3cc9-4acc-8ce9-ff61c475ffa8",
+          "server_ms": 40.86090001510456,
+          "actual_ids": [
+            "P007",
+            "P042",
+            "P045",
+            "P002",
+            "P008"
+          ]
+        },
+        {
+          "number": 25,
+          "source_product_id": "P049",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 67.68690003082156,
+          "passed": true,
+          "request_id": "aaf7ad43-9950-4d9d-9194-fd01fcb8f9cd",
+          "server_ms": 61.91629997920245,
+          "actual_ids": [
+            "P049",
+            "P047",
+            "P048",
+            "P041",
+            "P033"
+          ]
+        },
+        {
+          "number": 26,
+          "source_product_id": "P056",
+          "category": "sunglasses",
+          "http_status": 200,
+          "wall_ms": 67.35140003729612,
+          "passed": true,
+          "request_id": "cfbefe61-d1ad-4e6c-b5ae-e0ce71412f10",
+          "server_ms": 60.6763000250794,
+          "actual_ids": [
+            "P056",
+            "P041",
+            "P055",
+            "P034",
+            "P059"
+          ]
+        },
+        {
+          "number": 27,
+          "source_product_id": "P003",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 82.33389997621998,
+          "passed": true,
+          "request_id": "b4f2ba0f-198a-422b-b726-ff436a33a015",
+          "server_ms": 74.72070003859699,
+          "actual_ids": [
+            "P003",
+            "P014",
+            "P017",
+            "P004",
+            "P013"
+          ]
+        },
+        {
+          "number": 28,
+          "source_product_id": "P010",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 80.91010001953691,
+          "passed": true,
+          "request_id": "db2f5472-c136-485b-804f-669e72ff8199",
+          "server_ms": 73.44230002490804,
+          "actual_ids": [
+            "P010",
+            "P008",
+            "P024",
+            "P021",
+            "P022"
+          ]
+        },
+        {
+          "number": 29,
+          "source_product_id": "P017",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 93.6140000121668,
+          "passed": true,
+          "request_id": "f3287d9e-e45e-4c2c-bba5-d0213494c3f0",
+          "server_ms": 85.75770002789795,
+          "actual_ids": [
+            "P017",
+            "P021",
+            "P058",
+            "P014",
+            "P003"
+          ]
+        },
+        {
+          "number": 30,
+          "source_product_id": "P024",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 72.25049997214228,
+          "passed": true,
+          "request_id": "cc700a51-27df-475a-af66-732891bc48f1",
+          "server_ms": 65.46949996845797,
+          "actual_ids": [
+            "P024",
+            "P030",
+            "P021",
+            "P025",
+            "P023"
+          ]
+        }
+      ]
+    },
+    "image": {
+      "request_count": 30,
+      "successful_count": 30,
+      "failure_count": 0,
+      "warmup": {
+        "source_product_id": "P001",
+        "category": "running_shoes",
+        "http_status": 200,
+        "wall_ms": 357.69979999167845,
+        "passed": true,
+        "request_id": "47080ed1-c005-471f-9cc1-f5df5bdf17cf",
+        "server_ms": 347.7652000146918,
+        "actual_ids": [
+          "P001",
+          "P010",
+          "P005",
+          "P016",
+          "P024"
+        ]
+      },
+      "wall_ms_successful": {
+        "min": 246.29019998246804,
+        "mean": 338.7361633319718,
+        "p50": 351.9161999865901,
+        "p95": 380.7840900175506,
+        "p99": 399.6769649791531,
+        "max": 405.9935999684967
+      },
+      "wall_ms_all_requests": {
+        "p95": 380.7840900175506,
+        "max": 405.9935999684967
+      },
+      "server_ms_successful": {
+        "p95": 370.7890250138007
+      },
+      "p95_target_ms": 5000,
+      "passed": true,
+      "samples": [
+        {
+          "number": 1,
+          "source_product_id": "P001",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 352.5898000225425,
+          "passed": true,
+          "request_id": "167f2e56-259c-43db-a6a0-edf4ff7020e2",
+          "server_ms": 342.3446000088006,
+          "actual_ids": [
+            "P001",
+            "P010",
+            "P005",
+            "P016",
+            "P024"
+          ]
+        },
+        {
+          "number": 2,
+          "source_product_id": "P008",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 362.61309997644275,
+          "passed": true,
+          "request_id": "d4aa0d95-65df-4aed-b26f-f7f744b650ad",
+          "server_ms": 352.79680002713576,
+          "actual_ids": [
+            "P008",
+            "P009",
+            "P010",
+            "P007",
+            "P004"
+          ]
+        },
+        {
+          "number": 3,
+          "source_product_id": "P015",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 376.5943000325933,
+          "passed": true,
+          "request_id": "302799bc-4cc7-4e4a-9d72-a87b53453fe4",
+          "server_ms": 366.3321000058204,
+          "actual_ids": [
+            "P015",
+            "P017",
+            "P004",
+            "P014",
+            "P005"
+          ]
+        },
+        {
+          "number": 4,
+          "source_product_id": "P022",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 309.13449998479337,
+          "passed": true,
+          "request_id": "e440144d-d0f7-44a4-bc5f-31cbeb941d20",
+          "server_ms": 300.75379996560514,
+          "actual_ids": [
+            "P022",
+            "P025",
+            "P002",
+            "P024",
+            "P030"
+          ]
+        },
+        {
+          "number": 5,
+          "source_product_id": "P029",
+          "category": "sandals",
+          "http_status": 200,
+          "wall_ms": 246.29019998246804,
+          "passed": true,
+          "request_id": "178c360b-6f98-4113-aecb-6c9d8552de42",
+          "server_ms": 238.6440999689512,
+          "actual_ids": [
+            "P029",
+            "P027",
+            "P030",
+            "P055",
+            "P028"
+          ]
+        },
+        {
+          "number": 6,
+          "source_product_id": "P036",
+          "category": "tote_bag",
+          "http_status": 200,
+          "wall_ms": 256.510499981232,
+          "passed": true,
+          "request_id": "d17e509c-d610-4dbc-85ec-ebbaaaa47f2d",
+          "server_ms": 249.07349998829886,
+          "actual_ids": [
+            "P036",
+            "P019",
+            "P038",
+            "P011",
+            "P012"
+          ]
+        },
+        {
+          "number": 7,
+          "source_product_id": "P043",
+          "category": "t_shirt",
+          "http_status": 200,
+          "wall_ms": 252.18210002640262,
+          "passed": true,
+          "request_id": "3da0d123-980a-48db-b2e6-17992a71cdd8",
+          "server_ms": 244.6125000133179,
+          "actual_ids": [
+            "P043",
+            "P041",
+            "P060",
+            "P059",
+            "P038"
+          ]
+        },
+        {
+          "number": 8,
+          "source_product_id": "P050",
+          "category": "watch",
+          "http_status": 200,
+          "wall_ms": 343.82769995136186,
+          "passed": true,
+          "request_id": "038e717f-ece0-4f04-803d-f0f6a3700ec0",
+          "server_ms": 333.79159995820373,
+          "actual_ids": [
+            "P050",
+            "P053",
+            "P052",
+            "P051",
+            "P054"
+          ]
+        },
+        {
+          "number": 9,
+          "source_product_id": "P057",
+          "category": "sunglasses",
+          "http_status": 200,
+          "wall_ms": 298.5744000179693,
+          "passed": true,
+          "request_id": "7f13db15-5991-4024-9363-dee54394ba19",
+          "server_ms": 291.1766999750398,
+          "actual_ids": [
+            "P057",
+            "P058",
+            "P059",
+            "P014",
+            "P017"
+          ]
+        },
+        {
+          "number": 10,
+          "source_product_id": "P004",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 306.255700008478,
+          "passed": true,
+          "request_id": "067c6492-794d-4d22-83d5-e2f846e8bfd7",
+          "server_ms": 297.96300001908094,
+          "actual_ids": [
+            "P004",
+            "P003",
+            "P014",
+            "P005",
+            "P017"
+          ]
+        },
+        {
+          "number": 11,
+          "source_product_id": "P011",
+          "category": "bag",
+          "http_status": 200,
+          "wall_ms": 356.63599998224527,
+          "passed": true,
+          "request_id": "11692ecb-673d-4aa9-b9c9-c929df93664f",
+          "server_ms": 344.43019999889657,
+          "actual_ids": [
+            "P011",
+            "P019",
+            "P036",
+            "P012",
+            "P038"
+          ]
+        },
+        {
+          "number": 12,
+          "source_product_id": "P018",
+          "category": "bag",
+          "http_status": 200,
+          "wall_ms": 405.9935999684967,
+          "passed": true,
+          "request_id": "f1178c90-9265-4150-ad67-df3001f09b78",
+          "server_ms": 395.3458000323735,
+          "actual_ids": [
+            "P018",
+            "P036",
+            "P012",
+            "P011",
+            "P019"
+          ]
+        },
+        {
+          "number": 13,
+          "source_product_id": "P025",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 351.48309997748584,
+          "passed": true,
+          "request_id": "c9525449-5ba3-4655-aa98-33544e82b617",
+          "server_ms": 341.65740001481026,
+          "actual_ids": [
+            "P025",
+            "P024",
+            "P022",
+            "P030",
+            "P036"
+          ]
+        },
+        {
+          "number": 14,
+          "source_product_id": "P032",
+          "category": "backpack",
+          "http_status": 200,
+          "wall_ms": 384.212100005243,
+          "passed": true,
+          "request_id": "69f12fe2-ccf8-4653-a0a0-defbc0ebfb16",
+          "server_ms": 373.8757999963127,
+          "actual_ids": [
+            "P032",
+            "P033",
+            "P034",
+            "P018",
+            "P038"
+          ]
+        },
+        {
+          "number": 15,
+          "source_product_id": "P039",
+          "category": "tote_bag",
+          "http_status": 200,
+          "wall_ms": 319.21410001814365,
+          "passed": true,
+          "request_id": "a582c276-c4c5-455b-b3da-317014cb8482",
+          "server_ms": 312.04089999664575,
+          "actual_ids": [
+            "P039",
+            "P019",
+            "P038",
+            "P036",
+            "P034"
+          ]
+        },
+        {
+          "number": 16,
+          "source_product_id": "P046",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 358.3797999890521,
+          "passed": true,
+          "request_id": "416e57f0-1f39-44fd-af77-f3aff940e10f",
+          "server_ms": 348.1337000266649,
+          "actual_ids": [
+            "P046",
+            "P048",
+            "P060",
+            "P045",
+            "P027"
+          ]
+        },
+        {
+          "number": 17,
+          "source_product_id": "P053",
+          "category": "watch",
+          "http_status": 200,
+          "wall_ms": 339.9473000317812,
+          "passed": true,
+          "request_id": "e8ed8aa0-88af-43f1-9823-ff53fd3a4924",
+          "server_ms": 329.8071000026539,
+          "actual_ids": [
+            "P053",
+            "P050",
+            "P051",
+            "P052",
+            "P054"
+          ]
+        },
+        {
+          "number": 18,
+          "source_product_id": "P060",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 352.3492999956943,
+          "passed": true,
+          "request_id": "a9b3d390-08dc-4027-9106-9e4dbe8d46f5",
+          "server_ms": 341.51649998966604,
+          "actual_ids": [
+            "P060",
+            "P048",
+            "P049",
+            "P036",
+            "P038"
+          ]
+        },
+        {
+          "number": 19,
+          "source_product_id": "P007",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 356.6665999824181,
+          "passed": true,
+          "request_id": "feedcef5-98f3-4ed9-9a8a-25038fbd5dce",
+          "server_ms": 348.29930000705644,
+          "actual_ids": [
+            "P007",
+            "P002",
+            "P008",
+            "P010",
+            "P024"
+          ]
+        },
+        {
+          "number": 20,
+          "source_product_id": "P014",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 353.1107999733649,
+          "passed": true,
+          "request_id": "efd52427-e14b-4eb0-963e-183591baa5d3",
+          "server_ms": 344.0097999991849,
+          "actual_ids": [
+            "P014",
+            "P004",
+            "P003",
+            "P017",
+            "P013"
+          ]
+        },
+        {
+          "number": 21,
+          "source_product_id": "P021",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 326.84240001253784,
+          "passed": true,
+          "request_id": "2157e325-1e44-4ae0-a9f7-650009e785f3",
+          "server_ms": 317.0958999544382,
+          "actual_ids": [
+            "P021",
+            "P024",
+            "P033",
+            "P001",
+            "P027"
+          ]
+        },
+        {
+          "number": 22,
+          "source_product_id": "P028",
+          "category": "sandals",
+          "http_status": 200,
+          "wall_ms": 376.14560005022213,
+          "passed": true,
+          "request_id": "275f71fb-5150-424d-9aa3-5eda37e53d43",
+          "server_ms": 367.01630003517494,
+          "actual_ids": [
+            "P028",
+            "P030",
+            "P023",
+            "P026",
+            "P006"
+          ]
+        },
+        {
+          "number": 23,
+          "source_product_id": "P035",
+          "category": "backpack",
+          "http_status": 200,
+          "wall_ms": 333.1012999988161,
+          "passed": true,
+          "request_id": "66298412-c11c-47cb-9e7a-5f16a480e39c",
+          "server_ms": 323.8084999611601,
+          "actual_ids": [
+            "P035",
+            "P034",
+            "P011",
+            "P038",
+            "P055"
+          ]
+        },
+        {
+          "number": 24,
+          "source_product_id": "P042",
+          "category": "t_shirt",
+          "http_status": 200,
+          "wall_ms": 352.57410001941025,
+          "passed": true,
+          "request_id": "13ba5e4b-9ff8-4108-9f84-87660231ecbb",
+          "server_ms": 343.2236000080593,
+          "actual_ids": [
+            "P042",
+            "P057",
+            "P060",
+            "P045",
+            "P021"
+          ]
+        },
+        {
+          "number": 25,
+          "source_product_id": "P049",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 331.062099954579,
+          "passed": true,
+          "request_id": "edae1a8d-87f1-40a6-9e4d-f1bb8e6acb67",
+          "server_ms": 321.8430000124499,
+          "actual_ids": [
+            "P049",
+            "P048",
+            "P060",
+            "P045",
+            "P041"
+          ]
+        },
+        {
+          "number": 26,
+          "source_product_id": "P056",
+          "category": "sunglasses",
+          "http_status": 200,
+          "wall_ms": 364.77450001984835,
+          "passed": true,
+          "request_id": "94836059-0022-4a37-bc45-f7ddd86ea5e8",
+          "server_ms": 355.32059997785836,
+          "actual_ids": [
+            "P056",
+            "P059",
+            "P055",
+            "P012",
+            "P058"
+          ]
+        },
+        {
+          "number": 27,
+          "source_product_id": "P003",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 347.13829995598644,
+          "passed": true,
+          "request_id": "a7589b15-975a-47e7-905c-a0d3a98b1d5c",
+          "server_ms": 338.31339998869225,
+          "actual_ids": [
+            "P003",
+            "P004",
+            "P014",
+            "P005",
+            "P013"
+          ]
+        },
+        {
+          "number": 28,
+          "source_product_id": "P010",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 367.32810002285987,
+          "passed": true,
+          "request_id": "665b9c7d-e435-464d-bef0-2b296954385b",
+          "server_ms": 358.744699973613,
+          "actual_ids": [
+            "P010",
+            "P001",
+            "P007",
+            "P008",
+            "P024"
+          ]
+        },
+        {
+          "number": 29,
+          "source_product_id": "P017",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 326.2809999869205,
+          "passed": true,
+          "request_id": "46042904-3642-4906-9823-d138ddf7241a",
+          "server_ms": 317.0617000432685,
+          "actual_ids": [
+            "P017",
+            "P014",
+            "P003",
+            "P004",
+            "P013"
+          ]
+        },
+        {
+          "number": 30,
+          "source_product_id": "P024",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 354.27250002976507,
+          "passed": true,
+          "request_id": "dc50c60d-206b-4851-a2a0-c516736a5f7c",
+          "server_ms": 343.9700999879278,
+          "actual_ids": [
+            "P024",
+            "P025",
+            "P002",
+            "P021",
+            "P015"
+          ]
+        }
+      ]
+    },
+    "multimodal": {
+      "request_count": 30,
+      "successful_count": 30,
+      "failure_count": 0,
+      "warmup": {
+        "source_product_id": "P001",
+        "category": "running_shoes",
+        "http_status": 200,
+        "wall_ms": 395.97329997923225,
+        "passed": true,
+        "request_id": "9a3f9a1e-6a1e-4de9-9c15-fe8f2f7c0e94",
+        "server_ms": 386.20509998872876,
+        "actual_ids": [
+          "P001",
+          "P016",
+          "P010",
+          "P024",
+          "P021"
+        ]
+      },
+      "wall_ms_successful": {
+        "min": 350.8945999783464,
+        "mean": 415.1197766652331,
+        "p50": 414.2758999951184,
+        "p95": 455.4355699860025,
+        "p99": 471.93221801309846,
+        "max": 477.2235000273213
+      },
+      "wall_ms_all_requests": {
+        "p95": 455.4355699860025,
+        "max": 477.2235000273213
+      },
+      "server_ms_successful": {
+        "p95": 445.28730000020005
+      },
+      "p95_target_ms": 5000,
+      "passed": true,
+      "samples": [
+        {
+          "number": 1,
+          "source_product_id": "P001",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 408.78040000097826,
+          "passed": true,
+          "request_id": "2a76e204-27ec-49da-aa98-19e643dbcf4c",
+          "server_ms": 399.53850000165403,
+          "actual_ids": [
+            "P001",
+            "P016",
+            "P010",
+            "P024",
+            "P021"
+          ]
+        },
+        {
+          "number": 2,
+          "source_product_id": "P008",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 397.1315000089817,
+          "passed": true,
+          "request_id": "59664544-623c-4fa6-a199-cbf1defe1a33",
+          "server_ms": 386.93740003509447,
+          "actual_ids": [
+            "P008",
+            "P010",
+            "P009",
+            "P007",
+            "P004"
+          ]
+        },
+        {
+          "number": 3,
+          "source_product_id": "P015",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 399.5506999781355,
+          "passed": true,
+          "request_id": "4adeae7f-2729-4ab7-a001-290d00ececde",
+          "server_ms": 391.1384000093676,
+          "actual_ids": [
+            "P015",
+            "P004",
+            "P005",
+            "P017",
+            "P016"
+          ]
+        },
+        {
+          "number": 4,
+          "source_product_id": "P022",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 435.2434999891557,
+          "passed": true,
+          "request_id": "30d8f6c0-98a9-4f20-af9a-68b36f28fc1f",
+          "server_ms": 427.06350004300475,
+          "actual_ids": [
+            "P022",
+            "P025",
+            "P024",
+            "P002",
+            "P030"
+          ]
+        },
+        {
+          "number": 5,
+          "source_product_id": "P029",
+          "category": "sandals",
+          "http_status": 200,
+          "wall_ms": 425.4421999794431,
+          "passed": true,
+          "request_id": "d60611a0-2db2-4dba-a332-f54853a3a2f1",
+          "server_ms": 415.87329999310896,
+          "actual_ids": [
+            "P029",
+            "P027",
+            "P030",
+            "P028",
+            "P055"
+          ]
+        },
+        {
+          "number": 6,
+          "source_product_id": "P036",
+          "category": "tote_bag",
+          "http_status": 200,
+          "wall_ms": 443.1004000362009,
+          "passed": true,
+          "request_id": "bde1a796-9316-4b9d-a5b9-0348b8d46735",
+          "server_ms": 431.79400003282353,
+          "actual_ids": [
+            "P036",
+            "P019",
+            "P011",
+            "P018",
+            "P041"
+          ]
+        },
+        {
+          "number": 7,
+          "source_product_id": "P043",
+          "category": "t_shirt",
+          "http_status": 200,
+          "wall_ms": 402.67779998248443,
+          "passed": true,
+          "request_id": "8b84be27-f587-4ac4-9949-ab935297f8f0",
+          "server_ms": 392.59669999592006,
+          "actual_ids": [
+            "P043",
+            "P060",
+            "P041",
+            "P047",
+            "P045"
+          ]
+        },
+        {
+          "number": 8,
+          "source_product_id": "P050",
+          "category": "watch",
+          "http_status": 200,
+          "wall_ms": 417.5305000389926,
+          "passed": true,
+          "request_id": "fbda1258-2a7b-499f-964d-4c74f50316fb",
+          "server_ms": 405.32210003584623,
+          "actual_ids": [
+            "P050",
+            "P054",
+            "P053",
+            "P051",
+            "P052"
+          ]
+        },
+        {
+          "number": 9,
+          "source_product_id": "P057",
+          "category": "sunglasses",
+          "http_status": 200,
+          "wall_ms": 362.53350001061335,
+          "passed": true,
+          "request_id": "b832c55e-fa07-40f7-bede-4092a67d1b89",
+          "server_ms": 352.680700016208,
+          "actual_ids": [
+            "P057",
+            "P058",
+            "P059",
+            "P045",
+            "P014"
+          ]
+        },
+        {
+          "number": 10,
+          "source_product_id": "P004",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 409.3474000110291,
+          "passed": true,
+          "request_id": "7a4c3c8b-f440-47c2-b2e3-57c3612a379f",
+          "server_ms": 399.98780004680157,
+          "actual_ids": [
+            "P004",
+            "P014",
+            "P003",
+            "P005",
+            "P017"
+          ]
+        },
+        {
+          "number": 11,
+          "source_product_id": "P011",
+          "category": "bag",
+          "http_status": 200,
+          "wall_ms": 397.8062000242062,
+          "passed": true,
+          "request_id": "7207067b-2874-4367-ba75-2885d35c64ca",
+          "server_ms": 387.58570002391934,
+          "actual_ids": [
+            "P011",
+            "P036",
+            "P019",
+            "P034",
+            "P012"
+          ]
+        },
+        {
+          "number": 12,
+          "source_product_id": "P018",
+          "category": "bag",
+          "http_status": 200,
+          "wall_ms": 402.38260000478476,
+          "passed": true,
+          "request_id": "b2d49796-558e-46a4-bde0-7c54f18855c6",
+          "server_ms": 392.7667000098154,
+          "actual_ids": [
+            "P018",
+            "P036",
+            "P032",
+            "P034",
+            "P019"
+          ]
+        },
+        {
+          "number": 13,
+          "source_product_id": "P025",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 379.25900000846013,
+          "passed": true,
+          "request_id": "871fb3a9-5995-4cfb-87e4-627b6a6b3122",
+          "server_ms": 370.6813000026159,
+          "actual_ids": [
+            "P025",
+            "P024",
+            "P022",
+            "P030",
+            "P021"
+          ]
+        },
+        {
+          "number": 14,
+          "source_product_id": "P032",
+          "category": "backpack",
+          "http_status": 200,
+          "wall_ms": 350.8945999783464,
+          "passed": true,
+          "request_id": "8678f847-c3b8-450e-bd55-e58b16d27b28",
+          "server_ms": 341.4996000356041,
+          "actual_ids": [
+            "P032",
+            "P034",
+            "P033",
+            "P018",
+            "P041"
+          ]
+        },
+        {
+          "number": 15,
+          "source_product_id": "P039",
+          "category": "tote_bag",
+          "http_status": 200,
+          "wall_ms": 373.2429000083357,
+          "passed": true,
+          "request_id": "08ea2096-0383-4ae1-8098-b55b3a8d753a",
+          "server_ms": 363.23939997237176,
+          "actual_ids": [
+            "P039",
+            "P019",
+            "P036",
+            "P034",
+            "P041"
+          ]
+        },
+        {
+          "number": 16,
+          "source_product_id": "P046",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 447.62419996550307,
+          "passed": true,
+          "request_id": "f7458c0f-07f7-4752-b134-138883765744",
+          "server_ms": 435.949599952437,
+          "actual_ids": [
+            "P046",
+            "P060",
+            "P047",
+            "P048",
+            "P043"
+          ]
+        },
+        {
+          "number": 17,
+          "source_product_id": "P053",
+          "category": "watch",
+          "http_status": 200,
+          "wall_ms": 411.02129995124415,
+          "passed": true,
+          "request_id": "27d8967d-3590-4190-8d04-4ce75ff3c66a",
+          "server_ms": 398.34509999491274,
+          "actual_ids": [
+            "P053",
+            "P050",
+            "P054",
+            "P051",
+            "P052"
+          ]
+        },
+        {
+          "number": 18,
+          "source_product_id": "P060",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 426.58979998668656,
+          "passed": true,
+          "request_id": "3d7d5ebd-1cd0-4ae3-9f7d-5c6b59db2614",
+          "server_ms": 414.61370000615716,
+          "actual_ids": [
+            "P060",
+            "P048",
+            "P047",
+            "P045",
+            "P043"
+          ]
+        },
+        {
+          "number": 19,
+          "source_product_id": "P007",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 417.815699998755,
+          "passed": true,
+          "request_id": "86cd375e-a37d-4b22-9dd6-4f079b7043ee",
+          "server_ms": 406.38170001329854,
+          "actual_ids": [
+            "P007",
+            "P002",
+            "P008",
+            "P010",
+            "P013"
+          ]
+        },
+        {
+          "number": 20,
+          "source_product_id": "P014",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 385.816199996043,
+          "passed": true,
+          "request_id": "c8f9411e-502f-4924-ac29-3a3e7e317d5c",
+          "server_ms": 375.2839000080712,
+          "actual_ids": [
+            "P014",
+            "P003",
+            "P004",
+            "P017",
+            "P013"
+          ]
+        },
+        {
+          "number": 21,
+          "source_product_id": "P021",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 420.8857999765314,
+          "passed": true,
+          "request_id": "83e65685-5f73-42a8-800a-6ddb4df63732",
+          "server_ms": 409.74370000185445,
+          "actual_ids": [
+            "P021",
+            "P024",
+            "P033",
+            "P001",
+            "P025"
+          ]
+        },
+        {
+          "number": 22,
+          "source_product_id": "P028",
+          "category": "sandals",
+          "http_status": 200,
+          "wall_ms": 458.9776999782771,
+          "passed": true,
+          "request_id": "964f8746-45db-4bb8-be9a-598103471d65",
+          "server_ms": 449.6037000208162,
+          "actual_ids": [
+            "P028",
+            "P030",
+            "P006",
+            "P023",
+            "P025"
+          ]
+        },
+        {
+          "number": 23,
+          "source_product_id": "P035",
+          "category": "backpack",
+          "http_status": 200,
+          "wall_ms": 390.4379000305198,
+          "passed": true,
+          "request_id": "6c27dc08-38cf-43ac-a42a-85322763b04e",
+          "server_ms": 381.54520001262426,
+          "actual_ids": [
+            "P035",
+            "P034",
+            "P055",
+            "P032",
+            "P033"
+          ]
+        },
+        {
+          "number": 24,
+          "source_product_id": "P042",
+          "category": "t_shirt",
+          "http_status": 200,
+          "wall_ms": 431.04090000269935,
+          "passed": true,
+          "request_id": "1e08f013-6a07-404b-8296-c3093ae63d2e",
+          "server_ms": 420.42769998079166,
+          "actual_ids": [
+            "P042",
+            "P007",
+            "P045",
+            "P057",
+            "P060"
+          ]
+        },
+        {
+          "number": 25,
+          "source_product_id": "P049",
+          "category": "jacket",
+          "http_status": 200,
+          "wall_ms": 445.614900032524,
+          "passed": true,
+          "request_id": "2a458ea8-f48b-4d40-af97-87098235455b",
+          "server_ms": 435.0317999487743,
+          "actual_ids": [
+            "P049",
+            "P048",
+            "P060",
+            "P047",
+            "P041"
+          ]
+        },
+        {
+          "number": 26,
+          "source_product_id": "P056",
+          "category": "sunglasses",
+          "http_status": 200,
+          "wall_ms": 446.9092999934219,
+          "passed": true,
+          "request_id": "175f8771-a820-41e1-9901-8b047b482b28",
+          "server_ms": 435.06849999539554,
+          "actual_ids": [
+            "P056",
+            "P059",
+            "P055",
+            "P034",
+            "P036"
+          ]
+        },
+        {
+          "number": 27,
+          "source_product_id": "P003",
+          "category": "running_shoes",
+          "http_status": 200,
+          "wall_ms": 433.7728999671526,
+          "passed": true,
+          "request_id": "51d5aaec-a818-4393-a6be-312f91ed5510",
+          "server_ms": 425.598900008481,
+          "actual_ids": [
+            "P003",
+            "P004",
+            "P014",
+            "P013",
+            "P017"
+          ]
+        },
+        {
+          "number": 28,
+          "source_product_id": "P010",
+          "category": "casual_shoes",
+          "http_status": 200,
+          "wall_ms": 477.2235000273213,
+          "passed": true,
+          "request_id": "eb27259a-ec26-4636-b3f9-bb41737571a5",
+          "server_ms": 466.4461999782361,
+          "actual_ids": [
+            "P010",
+            "P008",
+            "P024",
+            "P001",
+            "P007"
+          ]
+        },
+        {
+          "number": 29,
+          "source_product_id": "P017",
+          "category": "trail_shoes",
+          "http_status": 200,
+          "wall_ms": 451.1062999954447,
+          "passed": true,
+          "request_id": "d9e9c810-b918-4300-a04b-68e63a550bd2",
+          "server_ms": 440.01169997500256,
+          "actual_ids": [
+            "P017",
+            "P014",
+            "P003",
+            "P004",
+            "P015"
+          ]
+        },
+        {
+          "number": 30,
+          "source_product_id": "P024",
+          "category": "boots",
+          "http_status": 200,
+          "wall_ms": 403.8336999947205,
+          "passed": true,
+          "request_id": "9fc63b46-84f0-4f21-b3cb-3b3daef431ff",
+          "server_ms": 393.9243999775499,
+          "actual_ids": [
+            "P024",
+            "P025",
+            "P021",
+            "P023",
+            "P022"
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Measures this local hardware and catalog, not production capacity",
+    "Photo queries reuse catalog assets for performance only, not a held-out relevance claim",
+    "Includes HTTP serialization, upload and server queue/inference; excludes microphone recording, file read and Azure transcription"
+  ]
+}

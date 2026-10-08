@@ -114,7 +114,12 @@ def test_hard_filters_and_empty_response(api):
     body = assert_search(
         client.post("/api/v1/search/image", files=upload(), data={"options": json.dumps(options)}), "image"
     )
-    assert [r["product"]["product_id"] for r in body["results"]] == ["P011"]
+    catalog = json.loads((ROOT / "data/products.json").read_text(encoding="utf-8"))
+    eligible = {
+        p["product_id"] for p in catalog
+        if p["category"] == "bag" and p["stock_quantity"] > 0 and p["price_vnd"] <= 1500000
+    }
+    assert {r["product"]["product_id"] for r in body["results"]} == eligible
     empty = client.post(
         "/api/v1/search", json={"mode": "text", "text": "giày", "options": {"filters": {"max_price": 1}}}
     )

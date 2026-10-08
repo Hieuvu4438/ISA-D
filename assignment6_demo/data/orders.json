@@ -1,19 +1,762 @@
 [
   {
-    "order_id":"O001","customer_id":"C001","date":"2026-10-01T08:30:00Z","status":"shipped",
-    "items":[
-      {"product_id":"P001","product_name":"Giày chạy bộ On Cloud màu đen","quantity":1,"unit_price_vnd":1800000,"line_total_vnd":1800000},
-      {"product_id":"P006","product_name":"Giày Converse All Star đỏ cổ cao","quantity":1,"unit_price_vnd":1100000,"line_total_vnd":1100000}
-    ],"total_vnd":2900000
+    "order_id": "O001",
+    "customer_id": "C001",
+    "date": "2026-10-01T08:30:00Z",
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": "P001",
+        "product_name": "Giày chạy bộ On Cloud màu đen",
+        "quantity": 1,
+        "unit_price_vnd": 1800000,
+        "line_total_vnd": 1800000
+      },
+      {
+        "product_id": "P006",
+        "product_name": "Giày Converse All Star đỏ cổ cao",
+        "quantity": 1,
+        "unit_price_vnd": 1100000,
+        "line_total_vnd": 1100000
+      }
+    ],
+    "total_vnd": 2900000
   },
   {
-    "order_id":"O002","customer_id":"C002","date":"2026-09-28T09:00:00Z","status":"delivered",
-    "items":[{"product_id":"P002","product_name":"Giày Adidas Stan Smith trắng đen","quantity":1,"unit_price_vnd":1600000,"line_total_vnd":1600000}],
-    "total_vnd":1600000
+    "order_id": "O002",
+    "customer_id": "C002",
+    "date": "2026-09-28T09:00:00Z",
+    "status": "delivered",
+    "items": [
+      {
+        "product_id": "P002",
+        "product_name": "Giày Adidas Stan Smith trắng đen",
+        "quantity": 1,
+        "unit_price_vnd": 1600000,
+        "line_total_vnd": 1600000
+      }
+    ],
+    "total_vnd": 1600000
   },
   {
-    "order_id":"O003","customer_id":"C001","date":"2026-10-04T02:15:00Z","status":"processing",
-    "items":[{"product_id":"P011","product_name":"Túi da Les cuirs d'Agathe màu nâu","quantity":2,"unit_price_vnd":1200000,"line_total_vnd":2400000}],
-    "total_vnd":2400000
+    "order_id": "O003",
+    "customer_id": "C001",
+    "date": "2026-10-04T02:15:00Z",
+    "status": "processing",
+    "items": [
+      {
+        "product_id": "P011",
+        "product_name": "Túi da Les cuirs d'Agathe màu nâu",
+        "quantity": 2,
+        "unit_price_vnd": 1200000,
+        "line_total_vnd": 2400000
+      }
+    ],
+    "total_vnd": 2400000
+  },
+  {
+    "order_id": "O004",
+    "customer_id": "C001",
+    "date": "2026-09-15T07:30:00Z",
+    "status": "processing",
+    "items": [
+      {
+        "product_id": "P013",
+        "product_name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+        "quantity": 2,
+        "unit_price_vnd": 755000,
+        "line_total_vnd": 1510000
+      }
+    ],
+    "total_vnd": 1510000
+  },
+  {
+    "order_id": "O005",
+    "customer_id": "C001",
+    "date": "2026-09-16T07:30:00Z",
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": "P014",
+        "product_name": "Giày chạy bộ Asics Hyperspeed tím xanh lá",
+        "quantity": 3,
+        "unit_price_vnd": 790000,
+        "line_total_vnd": 2370000
+      },
+      {
+        "product_id": "P015",
+        "product_name": "Giày địa hình Asics Gel-Sonoma 6 GTX đen tím",
+        "quantity": 1,
+        "unit_price_vnd": 825000,
+        "line_total_vnd": 825000
+      }
+    ],
+    "total_vnd": 3195000
+  },
+  {
+    "order_id": "O006",
+    "customer_id": "C001",
+    "date": "2026-09-17T07:30:00Z",
+    "status": "delivered",
+    "items": [
+      {
+        "product_id": "P016",
+        "product_name": "Giày địa hình Salomon XA PRO 3D màu đen",
+        "quantity": 1,
+        "unit_price_vnd": 860000,
+        "line_total_vnd": 860000
+      },
+      {
+        "product_id": "P017",
+        "product_name": "Giày địa hình Asics Gel-Trabuco 9 xám xanh vàng",
+        "quantity": 2,
+        "unit_price_vnd": 895000,
+        "line_total_vnd": 1790000
+      },
+      {
+        "product_id": "P018",
+        "product_name": "Túi xách mini màu đen quai đôi",
+        "quantity": 3,
+        "unit_price_vnd": 930000,
+        "line_total_vnd": 2790000
+      }
+    ],
+    "total_vnd": 5440000
+  },
+  {
+    "order_id": "O007",
+    "customer_id": "C001",
+    "date": "2026-09-18T07:30:00Z",
+    "status": "cancelled",
+    "items": [
+      {
+        "product_id": "P019",
+        "product_name": "Túi đeo vai hoa văn cam đen",
+        "quantity": 2,
+        "unit_price_vnd": 965000,
+        "line_total_vnd": 1930000
+      },
+      {
+        "product_id": "P020",
+        "product_name": "Túi đeo vai Skunkfunk xám nâu",
+        "quantity": 3,
+        "unit_price_vnd": 1000000,
+        "line_total_vnd": 3000000
+      },
+      {
+        "product_id": "P021",
+        "product_name": "Giày bốt Chelsea màu be",
+        "quantity": 1,
+        "unit_price_vnd": 1035000,
+        "line_total_vnd": 1035000
+      },
+      {
+        "product_id": "P022",
+        "product_name": "Giày bốt Beatle màu đen",
+        "quantity": 2,
+        "unit_price_vnd": 1070000,
+        "line_total_vnd": 2140000
+      }
+    ],
+    "total_vnd": 8105000
+  },
+  {
+    "order_id": "O008",
+    "customer_id": "C002",
+    "date": "2026-09-19T07:30:00Z",
+    "status": "processing",
+    "items": [
+      {
+        "product_id": "P023",
+        "product_name": "Giày bốt cổ ngắn gót cao màu đen",
+        "quantity": 3,
+        "unit_price_vnd": 1105000,
+        "line_total_vnd": 3315000
+      }
+    ],
+    "total_vnd": 3315000
+  },
+  {
+    "order_id": "O009",
+    "customer_id": "C001",
+    "date": "2026-09-20T07:30:00Z",
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": "P024",
+        "product_name": "Giày bốt buộc dây màu nâu",
+        "quantity": 1,
+        "unit_price_vnd": 1140000,
+        "line_total_vnd": 1140000
+      },
+      {
+        "product_id": "P025",
+        "product_name": "Giày bốt cao bồi màu nâu thêu họa tiết",
+        "quantity": 2,
+        "unit_price_vnd": 1175000,
+        "line_total_vnd": 2350000
+      }
+    ],
+    "total_vnd": 3490000
+  },
+  {
+    "order_id": "O010",
+    "customer_id": "C001",
+    "date": "2026-09-21T07:30:00Z",
+    "status": "delivered",
+    "items": [
+      {
+        "product_id": "P026",
+        "product_name": "Dép Adidas Adilette xanh đen sọc trắng",
+        "quantity": 2,
+        "unit_price_vnd": 1210000,
+        "line_total_vnd": 2420000
+      },
+      {
+        "product_id": "P027",
+        "product_name": "Dép Birkenstock Arizona quai đen",
+        "quantity": 3,
+        "unit_price_vnd": 1245000,
+        "line_total_vnd": 3735000
+      },
+      {
+        "product_id": "P028",
+        "product_name": "Sandal cao gót quai mảnh màu đỏ",
+        "quantity": 1,
+        "unit_price_vnd": 1280000,
+        "line_total_vnd": 1280000
+      }
+    ],
+    "total_vnd": 7435000
+  },
+  {
+    "order_id": "O011",
+    "customer_id": "C001",
+    "date": "2026-09-22T07:30:00Z",
+    "status": "cancelled",
+    "items": [
+      {
+        "product_id": "P029",
+        "product_name": "Sandal Birkenstock Mayari màu nâu",
+        "quantity": 3,
+        "unit_price_vnd": 1315000,
+        "line_total_vnd": 3945000
+      },
+      {
+        "product_id": "P030",
+        "product_name": "Sandal thủ công đính hạt nhiều màu",
+        "quantity": 1,
+        "unit_price_vnd": 1350000,
+        "line_total_vnd": 1350000
+      },
+      {
+        "product_id": "P031",
+        "product_name": "Balo Fjällräven Kånken màu vàng",
+        "quantity": 2,
+        "unit_price_vnd": 1385000,
+        "line_total_vnd": 2770000
+      },
+      {
+        "product_id": "P032",
+        "product_name": "Balo Minaal màu xám đen",
+        "quantity": 3,
+        "unit_price_vnd": 1420000,
+        "line_total_vnd": 4260000
+      }
+    ],
+    "total_vnd": 12325000
+  },
+  {
+    "order_id": "O012",
+    "customer_id": "C001",
+    "date": "2026-09-23T07:30:00Z",
+    "status": "processing",
+    "items": [
+      {
+        "product_id": "P033",
+        "product_name": "Balo XD Design Bobby Urban màu xám",
+        "quantity": 1,
+        "unit_price_vnd": 1455000,
+        "line_total_vnd": 1455000
+      }
+    ],
+    "total_vnd": 1455000
+  },
+  {
+    "order_id": "O013",
+    "customer_id": "C002",
+    "date": "2026-09-24T07:30:00Z",
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": "P034",
+        "product_name": "Balo Qwstion Washed Black màu đen",
+        "quantity": 2,
+        "unit_price_vnd": 1490000,
+        "line_total_vnd": 2980000
+      },
+      {
+        "product_id": "P035",
+        "product_name": "Balo Fjällräven Kånken màu đen",
+        "quantity": 3,
+        "unit_price_vnd": 1525000,
+        "line_total_vnd": 4575000
+      }
+    ],
+    "total_vnd": 7555000
+  },
+  {
+    "order_id": "O014",
+    "customer_id": "C001",
+    "date": "2026-09-25T07:30:00Z",
+    "status": "delivered",
+    "items": [
+      {
+        "product_id": "P036",
+        "product_name": "Túi tote Adele Dejak đen bạc",
+        "quantity": 3,
+        "unit_price_vnd": 1560000,
+        "line_total_vnd": 4680000
+      },
+      {
+        "product_id": "P037",
+        "product_name": "Túi tote Cebu màu xanh rêu",
+        "quantity": 1,
+        "unit_price_vnd": 1595000,
+        "line_total_vnd": 1595000
+      },
+      {
+        "product_id": "P038",
+        "product_name": "Túi tote Qwstion Natural White Heron",
+        "quantity": 2,
+        "unit_price_vnd": 1630000,
+        "line_total_vnd": 3260000
+      }
+    ],
+    "total_vnd": 9535000
+  },
+  {
+    "order_id": "O015",
+    "customer_id": "C001",
+    "date": "2026-09-26T07:30:00Z",
+    "status": "cancelled",
+    "items": [
+      {
+        "product_id": "P039",
+        "product_name": "Túi tote màu đen in chữ vàng",
+        "quantity": 1,
+        "unit_price_vnd": 1665000,
+        "line_total_vnd": 1665000
+      },
+      {
+        "product_id": "P040",
+        "product_name": "Túi tote Wikimania màu xanh tím",
+        "quantity": 2,
+        "unit_price_vnd": 1700000,
+        "line_total_vnd": 3400000
+      },
+      {
+        "product_id": "P041",
+        "product_name": "Áo thun trơn màu đen",
+        "quantity": 3,
+        "unit_price_vnd": 1735000,
+        "line_total_vnd": 5205000
+      },
+      {
+        "product_id": "P042",
+        "product_name": "Áo thun Nike Jordan màu trắng",
+        "quantity": 1,
+        "unit_price_vnd": 1770000,
+        "line_total_vnd": 1770000
+      }
+    ],
+    "total_vnd": 12040000
+  },
+  {
+    "order_id": "O016",
+    "customer_id": "C001",
+    "date": "2026-09-27T07:30:00Z",
+    "status": "processing",
+    "items": [
+      {
+        "product_id": "P043",
+        "product_name": "Áo thun tay dài màu xanh đậm",
+        "quantity": 2,
+        "unit_price_vnd": 1805000,
+        "line_total_vnd": 3610000
+      }
+    ],
+    "total_vnd": 3610000
+  },
+  {
+    "order_id": "O017",
+    "customer_id": "C001",
+    "date": "2026-09-28T07:30:00Z",
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": "P044",
+        "product_name": "Áo thun Hard Rock Cafe Buenos Aires màu nâu",
+        "quantity": 3,
+        "unit_price_vnd": 1840000,
+        "line_total_vnd": 5520000
+      },
+      {
+        "product_id": "P045",
+        "product_name": "Áo thun polo trắng cổ bẻ",
+        "quantity": 1,
+        "unit_price_vnd": 1875000,
+        "line_total_vnd": 1875000
+      }
+    ],
+    "total_vnd": 7395000
+  },
+  {
+    "order_id": "O018",
+    "customer_id": "C002",
+    "date": "2026-09-29T07:30:00Z",
+    "status": "delivered",
+    "items": [
+      {
+        "product_id": "P046",
+        "product_name": "Áo khoác denim màu xanh",
+        "quantity": 1,
+        "unit_price_vnd": 1910000,
+        "line_total_vnd": 1910000
+      },
+      {
+        "product_id": "P047",
+        "product_name": "Áo khoác tay raglan màu xám xanh",
+        "quantity": 2,
+        "unit_price_vnd": 1945000,
+        "line_total_vnd": 3890000
+      },
+      {
+        "product_id": "P048",
+        "product_name": "Áo khoác Polo Ralph Lauren denim cờ Mỹ",
+        "quantity": 3,
+        "unit_price_vnd": 1980000,
+        "line_total_vnd": 5940000
+      }
+    ],
+    "total_vnd": 11740000
+  },
+  {
+    "order_id": "O019",
+    "customer_id": "C001",
+    "date": "2026-09-30T07:30:00Z",
+    "status": "cancelled",
+    "items": [
+      {
+        "product_id": "P049",
+        "product_name": "Áo khoác Polo Ralph Lauren denim hình gấu",
+        "quantity": 2,
+        "unit_price_vnd": 2015000,
+        "line_total_vnd": 4030000
+      },
+      {
+        "product_id": "P050",
+        "product_name": "Đồng hồ Candino mặt trắng dây nâu",
+        "quantity": 3,
+        "unit_price_vnd": 2050000,
+        "line_total_vnd": 6150000
+      },
+      {
+        "product_id": "P051",
+        "product_name": "Đồng hồ Junghans mặt vuông dây xanh",
+        "quantity": 1,
+        "unit_price_vnd": 2085000,
+        "line_total_vnd": 2085000
+      },
+      {
+        "product_id": "P052",
+        "product_name": "Đồng hồ Marshal màu vàng",
+        "quantity": 2,
+        "unit_price_vnd": 2120000,
+        "line_total_vnd": 4240000
+      }
+    ],
+    "total_vnd": 16505000
+  },
+  {
+    "order_id": "O020",
+    "customer_id": "C001",
+    "date": "2026-10-01T07:30:00Z",
+    "status": "processing",
+    "items": [
+      {
+        "product_id": "P053",
+        "product_name": "Đồng hồ Seiko 5 mặt trắng dây xanh",
+        "quantity": 3,
+        "unit_price_vnd": 2155000,
+        "line_total_vnd": 6465000
+      }
+    ],
+    "total_vnd": 6465000
+  },
+  {
+    "order_id": "O021",
+    "customer_id": "C001",
+    "date": "2026-10-02T07:30:00Z",
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": "P054",
+        "product_name": "Đồng hồ mặt trắng dây đen",
+        "quantity": 1,
+        "unit_price_vnd": 2190000,
+        "line_total_vnd": 2190000
+      },
+      {
+        "product_id": "P055",
+        "product_name": "Kính mát gọng đen tròng tròn",
+        "quantity": 2,
+        "unit_price_vnd": 2225000,
+        "line_total_vnd": 4450000
+      }
+    ],
+    "total_vnd": 6640000
+  },
+  {
+    "order_id": "O022",
+    "customer_id": "C001",
+    "date": "2026-10-03T07:30:00Z",
+    "status": "delivered",
+    "items": [
+      {
+        "product_id": "P056",
+        "product_name": "Kính mát mắt mèo gọng đen",
+        "quantity": 2,
+        "unit_price_vnd": 2260000,
+        "line_total_vnd": 4520000
+      },
+      {
+        "product_id": "P057",
+        "product_name": "Kính mát thể thao gọng trắng đỏ",
+        "quantity": 3,
+        "unit_price_vnd": 2295000,
+        "line_total_vnd": 6885000
+      },
+      {
+        "product_id": "P058",
+        "product_name": "Kính mát Opta Laura 80 gọng vàng",
+        "quantity": 1,
+        "unit_price_vnd": 2330000,
+        "line_total_vnd": 2330000
+      }
+    ],
+    "total_vnd": 13735000
+  },
+  {
+    "order_id": "O023",
+    "customer_id": "C002",
+    "date": "2026-10-04T07:30:00Z",
+    "status": "cancelled",
+    "items": [
+      {
+        "product_id": "P059",
+        "product_name": "Kính mát Ray-Ban Original Wayfarer màu đen",
+        "quantity": 3,
+        "unit_price_vnd": 2365000,
+        "line_total_vnd": 7095000
+      },
+      {
+        "product_id": "P060",
+        "product_name": "Áo khoác denim xanh bạc màu cổ điển",
+        "quantity": 1,
+        "unit_price_vnd": 950000,
+        "line_total_vnd": 950000
+      },
+      {
+        "product_id": "P001",
+        "product_name": "Giày chạy bộ On Cloud màu đen",
+        "quantity": 2,
+        "unit_price_vnd": 1800000,
+        "line_total_vnd": 3600000
+      },
+      {
+        "product_id": "P002",
+        "product_name": "Giày Adidas Stan Smith trắng đen",
+        "quantity": 3,
+        "unit_price_vnd": 1600000,
+        "line_total_vnd": 4800000
+      }
+    ],
+    "total_vnd": 16445000
+  },
+  {
+    "order_id": "O024",
+    "customer_id": "C001",
+    "date": "2026-10-05T07:30:00Z",
+    "status": "processing",
+    "items": [
+      {
+        "product_id": "P003",
+        "product_name": "Giày chạy bộ Asics Gel-Cumulus 22 xanh",
+        "quantity": 1,
+        "unit_price_vnd": 1900000,
+        "line_total_vnd": 1900000
+      }
+    ],
+    "total_vnd": 1900000
+  },
+  {
+    "order_id": "O025",
+    "customer_id": "C001",
+    "date": "2026-10-06T07:30:00Z",
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": "P004",
+        "product_name": "Giày chạy địa hình Mizuno Wave Ibuki 2",
+        "quantity": 2,
+        "unit_price_vnd": 1700000,
+        "line_total_vnd": 3400000
+      },
+      {
+        "product_id": "P005",
+        "product_name": "Giày chạy bộ Brooks Ghost 14 GTX đen đỏ",
+        "quantity": 3,
+        "unit_price_vnd": 2100000,
+        "line_total_vnd": 6300000
+      }
+    ],
+    "total_vnd": 9700000
+  },
+  {
+    "order_id": "O026",
+    "customer_id": "C001",
+    "date": "2026-09-15T07:30:00Z",
+    "status": "delivered",
+    "items": [
+      {
+        "product_id": "P006",
+        "product_name": "Giày Converse All Star đỏ cổ cao",
+        "quantity": 3,
+        "unit_price_vnd": 1100000,
+        "line_total_vnd": 3300000
+      },
+      {
+        "product_id": "P007",
+        "product_name": "Giày Nike Air Force 1 trắng",
+        "quantity": 1,
+        "unit_price_vnd": 2300000,
+        "line_total_vnd": 2300000
+      },
+      {
+        "product_id": "P008",
+        "product_name": "Giày New Balance 574 màu xám",
+        "quantity": 2,
+        "unit_price_vnd": 1500000,
+        "line_total_vnd": 3000000
+      }
+    ],
+    "total_vnd": 8600000
+  },
+  {
+    "order_id": "O027",
+    "customer_id": "C001",
+    "date": "2026-09-16T07:30:00Z",
+    "status": "cancelled",
+    "items": [
+      {
+        "product_id": "P009",
+        "product_name": "Giày New Balance 550 trắng đỏ sẫm",
+        "quantity": 1,
+        "unit_price_vnd": 2200000,
+        "line_total_vnd": 2200000
+      },
+      {
+        "product_id": "P010",
+        "product_name": "Giày New Balance 2002R nâu xám",
+        "quantity": 2,
+        "unit_price_vnd": 2400000,
+        "line_total_vnd": 4800000
+      },
+      {
+        "product_id": "P011",
+        "product_name": "Túi da Les cuirs d'Agathe màu nâu",
+        "quantity": 3,
+        "unit_price_vnd": 1200000,
+        "line_total_vnd": 3600000
+      },
+      {
+        "product_id": "P012",
+        "product_name": "Túi Hermès Kelly màu đỏ",
+        "quantity": 1,
+        "unit_price_vnd": 3000000,
+        "line_total_vnd": 3000000
+      }
+    ],
+    "total_vnd": 13600000
+  },
+  {
+    "order_id": "O028",
+    "customer_id": "C002",
+    "date": "2026-09-17T07:30:00Z",
+    "status": "processing",
+    "items": [
+      {
+        "product_id": "P013",
+        "product_name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+        "quantity": 2,
+        "unit_price_vnd": 755000,
+        "line_total_vnd": 1510000
+      }
+    ],
+    "total_vnd": 1510000
+  },
+  {
+    "order_id": "O029",
+    "customer_id": "C001",
+    "date": "2026-09-18T07:30:00Z",
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": "P014",
+        "product_name": "Giày chạy bộ Asics Hyperspeed tím xanh lá",
+        "quantity": 3,
+        "unit_price_vnd": 790000,
+        "line_total_vnd": 2370000
+      },
+      {
+        "product_id": "P015",
+        "product_name": "Giày địa hình Asics Gel-Sonoma 6 GTX đen tím",
+        "quantity": 1,
+        "unit_price_vnd": 825000,
+        "line_total_vnd": 825000
+      }
+    ],
+    "total_vnd": 3195000
+  },
+  {
+    "order_id": "O030",
+    "customer_id": "C001",
+    "date": "2026-09-19T07:30:00Z",
+    "status": "delivered",
+    "items": [
+      {
+        "product_id": "P016",
+        "product_name": "Giày địa hình Salomon XA PRO 3D màu đen",
+        "quantity": 1,
+        "unit_price_vnd": 860000,
+        "line_total_vnd": 860000
+      },
+      {
+        "product_id": "P017",
+        "product_name": "Giày địa hình Asics Gel-Trabuco 9 xám xanh vàng",
+        "quantity": 2,
+        "unit_price_vnd": 895000,
+        "line_total_vnd": 1790000
+      },
+      {
+        "product_id": "P018",
+        "product_name": "Túi xách mini màu đen quai đôi",
+        "quantity": 3,
+        "unit_price_vnd": 930000,
+        "line_total_vnd": 2790000
+      }
+    ],
+    "total_vnd": 5440000
   }
 ]

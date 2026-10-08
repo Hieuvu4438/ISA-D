@@ -1,8 +1,8 @@
 {
   "status": "passed",
-  "product_count": 12,
-  "order_count": 3,
-  "catalog_fingerprint": "7684225cca6612b179cfa67b9356d2a23554783b260adb4370b64e72dcb8586b",
+  "product_count": 60,
+  "order_count": 30,
+  "catalog_fingerprint": "c9b5af5c1e863226730b51aa21212086927b318419c70e9df087ffab5478645d",
   "photos": [
     {
       "product_id": "P001",
@@ -51,6 +51,198 @@
     {
       "product_id": "P012",
       "sha256": "c3ec0e6e1d82d2114b361e15d22a49f3bef75ae55c1676c7b5130eae6dd14aee"
+    },
+    {
+      "product_id": "P013",
+      "sha256": "f5e34f24483771cdc4ebd4e6d0d08b2fd55bfbffce6af3650733d41e72ac48b5"
+    },
+    {
+      "product_id": "P014",
+      "sha256": "e0bf843dc6137eafe98689d7870ace0a4b98472dcc05219f71a607181deaefb7"
+    },
+    {
+      "product_id": "P015",
+      "sha256": "442fa0a3fb56b0fad0134133f759d167ef90bb2838ddaaae5082d83b6fc17ce3"
+    },
+    {
+      "product_id": "P016",
+      "sha256": "55dffd851cad943582a118d25504fb83b50ed1d4fd2f1145048c803f90eddd20"
+    },
+    {
+      "product_id": "P017",
+      "sha256": "b9cc859ac5c6f0a03dd519da6dfaa3f8be9ee608e1e519b776201dfded4a2e01"
+    },
+    {
+      "product_id": "P018",
+      "sha256": "a9be5cf0c3bb9945b66e106a66af36703981d4008c2a3102a1aeef5942a43caf"
+    },
+    {
+      "product_id": "P019",
+      "sha256": "ea2e08f5aea8eb76c861bcc6335dfb25ebd14b584e7037913f4a8d0014431d53"
+    },
+    {
+      "product_id": "P020",
+      "sha256": "9902cae9d9d032d398daa70c490f5105da9554b75b75507b3c34a9291a62943c"
+    },
+    {
+      "product_id": "P021",
+      "sha256": "9b71c27e654ec3bfc974dfbe83796e986ccd9e56f562220a29ee5eeb9d3041ff"
+    },
+    {
+      "product_id": "P022",
+      "sha256": "572f4ec2ec71fb2d9395bc85cbcae470873a359ce228093dabc3b2ef6a470a1b"
+    },
+    {
+      "product_id": "P023",
+      "sha256": "b43c616e326e81886c800d0d9f2971b56369ebff2f60c0e69a9f8c10ef50fdba"
+    },
+    {
+      "product_id": "P024",
+      "sha256": "81ffa6ab0fac9fd01f8c2c294aab6d33ad94cbbfe5d5cf84e916816e4b5cd936"
+    },
+    {
+      "product_id": "P025",
+      "sha256": "f2d976b644db44ebc4b0a15c42ccd3e588cc6815272a1ea3300041becdee3f4e"
+    },
+    {
+      "product_id": "P026",
+      "sha256": "abb63041b327d0d906472adfc9597196925f404c356729570a65138910b03130"
+    },
+    {
+      "product_id": "P027",
+      "sha256": "8a3941ab7a5e173e2e25d8c49c2068bee9be95e8608f6d46925d7889d8c87996"
+    },
+    {
+      "product_id": "P028",
+      "sha256": "cef11d47adab4cd013dae590293b99aff82e61197dcc9bde4ad78580da7189b0"
+    },
+    {
+      "product_id": "P029",
+      "sha256": "abc6bd9ebe46beefce86cbfc88799a7b5e6a1c31be61117f473bc8b4a6ae5498"
+    },
+    {
+      "product_id": "P030",
+      "sha256": "ab658264e32e1f7c7adf0ad188d34ac3b4d67d1b75ca14a2f4ba9c03a6df415d"
+    },
+    {
+      "product_id": "P031",
+      "sha256": "38d078e9d6c70e2e2f4763466ab6bf6f3dffb1e7ff05187f05456ecb904654dc"
+    },
+    {
+      "product_id": "P032",
+      "sha256": "0e3d26322aa58f86cab119697e34bda2bbd24a74f3e5bc10a95bff25dbf11be9"
+    },
+    {
+      "product_id": "P033",
+      "sha256": "45677a8d2cfabd90569e012c49290881536c697c6450aec10397f40ff983419a"
+    },
+    {
+      "product_id": "P034",
+      "sha256": "6dc495a8751033cdc118377c397ffbd5b22d5adffe9461116658274680774332"
+    },
+    {
+      "product_id": "P035",
+      "sha256": "37a715cf868c5523544a35c22600859963d498db6ac6e4a29afcce2dff1a0a7c"
+    },
+    {
+      "product_id": "P036",
+      "sha256": "e4f1749d1369817b909a9f60aa2d16d1dbbe73520fa23ccf03b274bf9f61f067"
+    },
+    {
+      "product_id": "P037",
+      "sha256": "20bbc10013e402b67dc86f3c99b12f65a9e74d8028e565b2d1b9dbac358ecff0"
+    },
+    {
+      "product_id": "P038",
+      "sha256": "cf903e50aae7f185c1ab95534cd7e63d6806e5cdd5aa189fa86080135b52567a"
+    },
+    {
+      "product_id": "P039",
+      "sha256": "e2d8865338a846eb7d9bbaf16c40ae2a8191b8a88042b2cf4be2df364fa3b19c"
+    },
+    {
+      "product_id": "P040",
+      "sha256": "d94024629752feab9914c1d74d76e394b8680d2ac49c39b54d7c5964ba5ab375"
+    },
+    {
+      "product_id": "P041",
+      "sha256": "fa52a0ddfa9f172fb93481063cdd932f3683cc557b28f7ba0b03007ded0d0b7e"
+    },
+    {
+      "product_id": "P042",
+      "sha256": "b17b127723018f503291b93e4dfa8c010662a3150c0cb64992f3048ec587bdb7"
+    },
+    {
+      "product_id": "P043",
+      "sha256": "e0e9c9bd13fd1cf598e14c56061711fababd452db4de586c7e96f6bc2d61a4fa"
+    },
+    {
+      "product_id": "P044",
+      "sha256": "4bef1af4a04eef9fcee0b6af1642fc531fd01c6c84961451b8638a83aee11a0d"
+    },
+    {
+      "product_id": "P045",
+      "sha256": "a043a18ba663889bde415cbf9fde03ead38b247822e178acee48ca7ba3c52115"
+    },
+    {
+      "product_id": "P046",
+      "sha256": "c09a473fddd46af24edc8718d05cedb0b08bff43eb19ed839fad1531105c1e67"
+    },
+    {
+      "product_id": "P047",
+      "sha256": "14b3da773f7a44bcd03dfbfa69c63c12291790e1e4b035c58a9c9aa6a6dc2e8f"
+    },
+    {
+      "product_id": "P048",
+      "sha256": "77a6ea3440c604feb3819a08488f36a284caf99669a8b2a6b479346dd09e311c"
+    },
+    {
+      "product_id": "P049",
+      "sha256": "56e741d21ade441d5c5e14b830b99a814c8934273262dc81fd0a66891d7ce3bf"
+    },
+    {
+      "product_id": "P050",
+      "sha256": "c7c497655902e0dc3bf3a4cbdde4dcdf5c840ca08531d22f9ad282a03d4d1aad"
+    },
+    {
+      "product_id": "P051",
+      "sha256": "3f2d3de6fe20871d16c0ca7a63c8d99fd4793104233ab8cd8d8461a32ff8a186"
+    },
+    {
+      "product_id": "P052",
+      "sha256": "a2be1f1b160c8d86b586dc130b3b6bafff2ab37b685116c401a3c2590a7c0e4d"
+    },
+    {
+      "product_id": "P053",
+      "sha256": "508b894a9af0835e176f6c702c7d975dea955c7e51436ce4a47eee9312c3d8ef"
+    },
+    {
+      "product_id": "P054",
+      "sha256": "e380da131245b8012f2d6650924911c334286e7bb46a71466864eaed68b6425f"
+    },
+    {
+      "product_id": "P055",
+      "sha256": "0b871ed477c8c31ff12f2ab41b9f219dc8a01eb40b85e5e41bdb1cd52a696329"
+    },
+    {
+      "product_id": "P056",
+      "sha256": "b6faa7a9b0967766cdd7f8ac0c84a019c308afba02f9168deea3c4b6c05a452b"
+    },
+    {
+      "product_id": "P057",
+      "sha256": "8279f99409919a8ac4e8fb7cb32d3ab8d5f74438c617984c0e1a9ef7b35ca69f"
+    },
+    {
+      "product_id": "P058",
+      "sha256": "daf9136536a70e7eec792b340c8ab5614f83a1243bba5582e4c836ace830e4ab"
+    },
+    {
+      "product_id": "P059",
+      "sha256": "1a510f7ab6635995401bd8a43c6be70dfd53bebac5ffeeb31ec6c83637c3c97e"
+    },
+    {
+      "product_id": "P060",
+      "sha256": "a7279590cd37a069a910e76f6e01d39f1f847b7243e0f6a0bf5513344c84ba2c"
     }
   ],
   "query_photo_count": 1

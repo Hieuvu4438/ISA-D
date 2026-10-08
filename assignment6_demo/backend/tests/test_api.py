@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 from fastapi.testclient import TestClient
 import pytest
@@ -19,12 +20,14 @@ def test_catalog_orders_and_credits_work_without_models():
         assert api.get("/health/live").status_code == 200
         assert api.get("/health/ready").status_code == 503
         products = api.get("/api/v1/products").json()
-        assert products["total"] == 12
+        catalog_size = len(json.loads((ROOT / "data/products.json").read_text(encoding="utf-8")))
+        assert products["total"] == catalog_size
+        assert len(products["products"]) == min(12, catalog_size)
         assert products["products"][0]["product_id"] == "P001"
         detail = api.get("/api/v1/products/P001").json()["product"]
         assert detail["image_credit"]["license_url"].startswith("https://")
         assert api.get("/api/v1/media/products/P001").headers["content-type"] == "image/jpeg"
-        assert len(api.get("/api/v1/credits").json()["credits"]) == 12
+        assert len(api.get("/api/v1/credits").json()["credits"]) == catalog_size
         assert api.get("/api/v1/orders?order_id=O001").status_code == 200
         own = api.get("/api/v1/orders/O001").json()["order"]
         assert own["total_vnd"] == sum(i["line_total_vnd"] for i in own["items"])

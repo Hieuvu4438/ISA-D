@@ -61,12 +61,13 @@ def main() -> None:
         assert meta["model"]["dimension"] == 512 and meta["capabilities"]["search"]["available"]
         assert meta["speech"]["language"] == "vi-VN"
         products = request("catalog", "GET", "/api/v1/products")
-        assert products["total"] == 12 and len(products["products"]) == 12
-        assert request("catalog empty page", "GET", "/api/v1/products?offset=12")["products"] == []
+        catalog_size = len(json.loads((root / "data/products.json").read_text(encoding="utf-8")))
+        assert products["total"] == catalog_size and len(products["products"]) == min(12, catalog_size)
+        assert request("catalog empty page", "GET", f"/api/v1/products?offset={catalog_size}")["products"] == []
         detail = request("product detail", "GET", "/api/v1/products/P001")
         assert detail["product"]["image_credit"]["source_page"].startswith("https://")
         credits = request("real-photo credits", "GET", "/api/v1/credits")
-        assert len(credits["credits"]) == 12 and all(c["author"] and c["license"] for c in credits["credits"])
+        assert len(credits["credits"]) == catalog_size and all(c["author"] and c["license"] for c in credits["credits"])
         image = request("local original media", "GET", "/api/v1/media/products/P001")
         assert (
             hashlib.sha256(image.content).hexdigest()
