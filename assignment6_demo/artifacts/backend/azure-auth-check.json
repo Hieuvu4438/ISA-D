@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-08T06:03:37.581216+00:00",
+  "region": "southeastasia",
+  "language": "vi-VN",
+  "key_configured": true,
+  "probe": "Azure Speech STS issueToken authorization; no audio",
+  "authentication_http_status": 401,
+  "token_received": false,
+  "recognition_calls_used": 0,
+  "conclusion": "Key not accepted for this regional endpoint; confirm Speech resource key and exact region. No assumption that credentials are valid."
+}
