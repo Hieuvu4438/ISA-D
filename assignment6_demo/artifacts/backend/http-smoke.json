@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "base_url": "http://127.0.0.1:8000",
+  "check_count": 30,
+  "checks": [
+    {
+      "name": "liveness",
+      "status": 200
+    },
+    {
+      "name": "search readiness",
+      "status": 200
+    },
+    {
+      "name": "capabilities",
+      "status": 200
+    },
+    {
+      "name": "catalog",
+      "status": 200
+    },
+    {
+      "name": "catalog empty page",
+      "status": 200
+    },
+    {
+      "name": "product detail",
+      "status": 200
+    },
+    {
+      "name": "real-photo credits",
+      "status": 200
+    },
+    {
+      "name": "local original media",
+      "status": 200
+    },
+    {
+      "name": "Vietnamese text",
+      "status": 200
+    },
+    {
+      "name": "manual voice transcript",
+      "status": 200
+    },
+    {
+      "name": "hard filters",
+      "status": 200
+    },
+    {
+      "name": "empty filters",
+      "status": 200
+    },
+    {
+      "name": "image upload search",
+      "status": 200
+    },
+    {
+      "name": "multimodal weighted search",
+      "status": 200
+    },
+    {
+      "name": "relevant text OOD empty",
+      "status": 200
+    },
+    {
+      "name": "relevant image OOD empty",
+      "status": 200
+    },
+    {
+      "name": "relevant multimodal OOD empty",
+      "status": 200
+    },
+    {
+      "name": "own order summary",
+      "status": 200
+    },
+    {
+      "name": "own order detail",
+      "status": 200
+    },
+    {
+      "name": "second own order",
+      "status": 200
+    },
+    {
+      "name": "foreign order hidden",
+      "status": 404
+    },
+    {
+      "name": "missing order",
+      "status": 404
+    },
+    {
+      "name": "customer header forbidden",
+      "status": 422
+    },
+    {
+      "name": "customer query forbidden",
+      "status": 422
+    },
+    {
+      "name": "strict invalid top-k",
+      "status": 422
+    },
+    {
+      "name": "invalid bounds",
+      "status": 422
+    },
+    {
+      "name": "malformed JSON",
+      "status": 400
+    },
+    {
+      "name": "duplicate JSON fields",
+      "status": 400
+    },
+    {
+      "name": "fake JPEG rejected",
+      "status": 422
+    },
+    {
+      "name": "invalid WAV rejected before Azure",
+      "status": 422
+    }
+  ],
+  "duration_seconds": 0.884,
+  "azure_live_called": false,
+  "index_fingerprint": "c7e6d0a0dbd1a4ecc87428f411b7e88e0ff910e38ee49cd8bc98bf925f623005"
+}

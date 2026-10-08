@@ -1,0 +1,19 @@
+[
+  {
+    "order_id":"O001","customer_id":"C001","date":"2026-10-01T08:30:00Z","status":"shipped",
+    "items":[
+      {"product_id":"P001","product_name":"Giày chạy bộ On Cloud màu đen","quantity":1,"unit_price_vnd":1800000,"line_total_vnd":1800000},
+      {"product_id":"P006","product_name":"Giày Converse All Star đỏ cổ cao","quantity":1,"unit_price_vnd":1100000,"line_total_vnd":1100000}
+    ],"total_vnd":2900000
+  },
+  {
+    "order_id":"O002","customer_id":"C002","date":"2026-09-28T09:00:00Z","status":"delivered",
+    "items":[{"product_id":"P002","product_name":"Giày Adidas Stan Smith trắng đen","quantity":1,"unit_price_vnd":1600000,"line_total_vnd":1600000}],
+    "total_vnd":1600000
+  },
+  {
+    "order_id":"O003","customer_id":"C001","date":"2026-10-04T02:15:00Z","status":"processing",
+    "items":[{"product_id":"P011","product_name":"Túi da Les cuirs d'Agathe màu nâu","quantity":2,"unit_price_vnd":1200000,"line_total_vnd":2400000}],
+    "total_vnd":2400000
+  }
+]

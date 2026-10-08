@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "asset_id": "Q001",
+      "product_id": null,
+      "local_path": "data/queries/Q001.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Pizza_Margherita_stu_spivack.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg",
+      "author": "stu_spivack",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "retrieved_at": "2026-10-08",
+      "sha256": "3780404b0e5a3e3c15f7f1f7873dad62127d3b9f0e5985d0616331ea293e9ed0",
+      "bytes": 1133664,
+      "width": 3008,
+      "height": 2000,
+      "format": "JPEG",
+      "transformations": "Downloaded current Wikimedia file unchanged; Commons revision includes color balance adjustment by Ubcule.",
+      "real_photo_review": "passed",
+      "review_notes": "Inspected downloaded local image: photograph of real pizza, tomatoes, cheese and basil on a plate. Negative image query: catalog contains only shoes/bags."
+    }
+  ]
+}

@@ -1,0 +1,1016 @@
+{
+  "scope": "Small demo calibration/sanity fixtures. Labels fixed before executing the encoder. Image positives reuse catalog photos and only prove mechanics; no independent test-split quality claim.",
+  "independent_quality_verified": false,
+  "index_fingerprint": "c7e6d0a0dbd1a4ecc87428f411b7e88e0ff910e38ee49cd8bc98bf925f623005",
+  "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+  "fixture_sha256": "c9dd26b532d7a56cfaf612493b69c6652cc982a95818f0804c877bc0b23c6e7c",
+  "modes": [
+    {
+      "mode": "text",
+      "threshold": 0.6286426186561584,
+      "metrics": {
+        "positive_count": 6,
+        "ood_count": 3,
+        "hit_at_3_count": 6,
+        "ood_rejection_count": 2,
+        "positive_hit_at_3": 1.0,
+        "ood_rejection_rate": 0.6666666666666666
+      },
+      "passed": true
+    },
+    {
+      "mode": "image",
+      "threshold": 0.5184400379657745,
+      "metrics": {
+        "positive_count": 2,
+        "ood_count": 1,
+        "hit_at_3_count": 2,
+        "ood_rejection_count": 1,
+        "positive_hit_at_3": 1.0,
+        "ood_rejection_rate": 1.0
+      },
+      "passed": true
+    },
+    {
+      "mode": "multimodal",
+      "threshold": 0.718015730381012,
+      "metrics": {
+        "positive_count": 2,
+        "ood_count": 1,
+        "hit_at_3_count": 2,
+        "ood_rejection_count": 1,
+        "positive_hit_at_3": 1.0,
+        "ood_rejection_rate": 1.0
+      },
+      "passed": true
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "T01",
+      "family_id": "on-black",
+      "split": "calibration",
+      "mode": "text",
+      "text": "giày chạy bộ On màu đen",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [
+        "P001"
+      ],
+      "is_ood": false,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P001",
+          "score": 0.7788400650024414
+        },
+        {
+          "product_id": "P002",
+          "score": 0.7279263734817505
+        },
+        {
+          "product_id": "P010",
+          "score": 0.7252247333526611
+        },
+        {
+          "product_id": "P008",
+          "score": 0.7180121541023254
+        },
+        {
+          "product_id": "P005",
+          "score": 0.716199517250061
+        },
+        {
+          "product_id": "P004",
+          "score": 0.7116093635559082
+        },
+        {
+          "product_id": "P006",
+          "score": 0.7108005285263062
+        },
+        {
+          "product_id": "P003",
+          "score": 0.7039117813110352
+        },
+        {
+          "product_id": "P007",
+          "score": 0.6975950002670288
+        },
+        {
+          "product_id": "P012",
+          "score": 0.6658607721328735
+        },
+        {
+          "product_id": "P011",
+          "score": 0.6652950048446655
+        },
+        {
+          "product_id": "P009",
+          "score": 0.6416786313056946
+        }
+      ]
+    },
+    {
+      "query_id": "T02",
+      "family_id": "asics-blue",
+      "split": "calibration",
+      "mode": "text",
+      "text": "giày chạy bộ Asics màu xanh đậm",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [
+        "P003"
+      ],
+      "is_ood": false,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P003",
+          "score": 0.7645174264907837
+        },
+        {
+          "product_id": "P002",
+          "score": 0.7262879014015198
+        },
+        {
+          "product_id": "P004",
+          "score": 0.7250246405601501
+        },
+        {
+          "product_id": "P010",
+          "score": 0.7158792018890381
+        },
+        {
+          "product_id": "P008",
+          "score": 0.7135298252105713
+        },
+        {
+          "product_id": "P007",
+          "score": 0.7135250568389893
+        },
+        {
+          "product_id": "P001",
+          "score": 0.7109410762786865
+        },
+        {
+          "product_id": "P006",
+          "score": 0.698409378528595
+        },
+        {
+          "product_id": "P005",
+          "score": 0.6838606595993042
+        },
+        {
+          "product_id": "P009",
+          "score": 0.6611270308494568
+        },
+        {
+          "product_id": "P011",
+          "score": 0.6564739942550659
+        },
+        {
+          "product_id": "P012",
+          "score": 0.6497176289558411
+        }
+      ]
+    },
+    {
+      "query_id": "T03",
+      "family_id": "converse-red",
+      "split": "calibration",
+      "mode": "text",
+      "text": "giày Converse đỏ cổ cao",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [
+        "P006"
+      ],
+      "is_ood": false,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P006",
+          "score": 0.7749330401420593
+        },
+        {
+          "product_id": "P012",
+          "score": 0.7177932262420654
+        },
+        {
+          "product_id": "P005",
+          "score": 0.7176397442817688
+        },
+        {
+          "product_id": "P010",
+          "score": 0.7097027897834778
+        },
+        {
+          "product_id": "P002",
+          "score": 0.6986234188079834
+        },
+        {
+          "product_id": "P001",
+          "score": 0.6986135244369507
+        },
+        {
+          "product_id": "P007",
+          "score": 0.6838552951812744
+        },
+        {
+          "product_id": "P008",
+          "score": 0.6834599375724792
+        },
+        {
+          "product_id": "P009",
+          "score": 0.6807094812393188
+        },
+        {
+          "product_id": "P004",
+          "score": 0.6762301921844482
+        },
+        {
+          "product_id": "P011",
+          "score": 0.6606385707855225
+        },
+        {
+          "product_id": "P003",
+          "score": 0.6583404541015625
+        }
+      ]
+    },
+    {
+      "query_id": "T04",
+      "family_id": "nike-white",
+      "split": "calibration",
+      "mode": "text",
+      "text": "giày Nike Air Force trắng",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [
+        "P007"
+      ],
+      "is_ood": false,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P007",
+          "score": 0.7977653741836548
+        },
+        {
+          "product_id": "P010",
+          "score": 0.7178975343704224
+        },
+        {
+          "product_id": "P002",
+          "score": 0.716663658618927
+        },
+        {
+          "product_id": "P008",
+          "score": 0.7119935750961304
+        },
+        {
+          "product_id": "P003",
+          "score": 0.6960834264755249
+        },
+        {
+          "product_id": "P004",
+          "score": 0.6850219368934631
+        },
+        {
+          "product_id": "P001",
+          "score": 0.6841564774513245
+        },
+        {
+          "product_id": "P009",
+          "score": 0.6770674586296082
+        },
+        {
+          "product_id": "P005",
+          "score": 0.6714535355567932
+        },
+        {
+          "product_id": "P006",
+          "score": 0.6619567275047302
+        },
+        {
+          "product_id": "P012",
+          "score": 0.5893849730491638
+        },
+        {
+          "product_id": "P011",
+          "score": 0.572282075881958
+        }
+      ]
+    },
+    {
+      "query_id": "T05",
+      "family_id": "bag-brown",
+      "split": "calibration",
+      "mode": "text",
+      "text": "túi da màu nâu có dây đeo",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [
+        "P011"
+      ],
+      "is_ood": false,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P011",
+          "score": 0.7221536636352539
+        },
+        {
+          "product_id": "P012",
+          "score": 0.6980304718017578
+        },
+        {
+          "product_id": "P001",
+          "score": 0.677334725856781
+        },
+        {
+          "product_id": "P010",
+          "score": 0.6720913648605347
+        },
+        {
+          "product_id": "P008",
+          "score": 0.6669024229049683
+        },
+        {
+          "product_id": "P006",
+          "score": 0.6616067290306091
+        },
+        {
+          "product_id": "P002",
+          "score": 0.6502518653869629
+        },
+        {
+          "product_id": "P004",
+          "score": 0.6466177105903625
+        },
+        {
+          "product_id": "P007",
+          "score": 0.644691526889801
+        },
+        {
+          "product_id": "P003",
+          "score": 0.6396872401237488
+        },
+        {
+          "product_id": "P005",
+          "score": 0.6247965693473816
+        },
+        {
+          "product_id": "P009",
+          "score": 0.5967227816581726
+        }
+      ]
+    },
+    {
+      "query_id": "T06",
+      "family_id": "bag-red",
+      "split": "calibration",
+      "mode": "text",
+      "text": "túi Hermès Kelly màu đỏ",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [
+        "P012"
+      ],
+      "is_ood": false,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P012",
+          "score": 0.7613554000854492
+        },
+        {
+          "product_id": "P006",
+          "score": 0.6739552617073059
+        },
+        {
+          "product_id": "P011",
+          "score": 0.6723888516426086
+        },
+        {
+          "product_id": "P005",
+          "score": 0.6480239033699036
+        },
+        {
+          "product_id": "P010",
+          "score": 0.6123852133750916
+        },
+        {
+          "product_id": "P009",
+          "score": 0.6059722304344177
+        },
+        {
+          "product_id": "P001",
+          "score": 0.5980085134506226
+        },
+        {
+          "product_id": "P008",
+          "score": 0.5882447957992554
+        },
+        {
+          "product_id": "P002",
+          "score": 0.5844674706459045
+        },
+        {
+          "product_id": "P003",
+          "score": 0.5794857144355774
+        },
+        {
+          "product_id": "P004",
+          "score": 0.5715675950050354
+        },
+        {
+          "product_id": "P007",
+          "score": 0.5656624436378479
+        }
+      ]
+    },
+    {
+      "query_id": "T07",
+      "family_id": "pizza",
+      "split": "calibration",
+      "mode": "text",
+      "text": "bánh pizza cà chua và phô mai",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [],
+      "is_ood": true,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P012",
+          "score": 0.6282894611358643
+        },
+        {
+          "product_id": "P006",
+          "score": 0.6052991151809692
+        },
+        {
+          "product_id": "P005",
+          "score": 0.5855470299720764
+        },
+        {
+          "product_id": "P011",
+          "score": 0.5827748775482178
+        },
+        {
+          "product_id": "P010",
+          "score": 0.5732644200325012
+        },
+        {
+          "product_id": "P001",
+          "score": 0.570574939250946
+        },
+        {
+          "product_id": "P004",
+          "score": 0.5481855273246765
+        },
+        {
+          "product_id": "P007",
+          "score": 0.5436654090881348
+        },
+        {
+          "product_id": "P002",
+          "score": 0.5422186255455017
+        },
+        {
+          "product_id": "P008",
+          "score": 0.5381891131401062
+        },
+        {
+          "product_id": "P003",
+          "score": 0.5256100296974182
+        },
+        {
+          "product_id": "P009",
+          "score": 0.5165101885795593
+        }
+      ]
+    },
+    {
+      "query_id": "T08",
+      "family_id": "laptop",
+      "split": "calibration",
+      "mode": "text",
+      "text": "máy tính xách tay màn hình 15 inch",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [],
+      "is_ood": true,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P011",
+          "score": 0.6257702708244324
+        },
+        {
+          "product_id": "P012",
+          "score": 0.6158138513565063
+        },
+        {
+          "product_id": "P010",
+          "score": 0.6034035682678223
+        },
+        {
+          "product_id": "P001",
+          "score": 0.5996078848838806
+        },
+        {
+          "product_id": "P003",
+          "score": 0.5931510329246521
+        },
+        {
+          "product_id": "P008",
+          "score": 0.5903487205505371
+        },
+        {
+          "product_id": "P004",
+          "score": 0.5807150602340698
+        },
+        {
+          "product_id": "P005",
+          "score": 0.5740513801574707
+        },
+        {
+          "product_id": "P002",
+          "score": 0.5674314498901367
+        },
+        {
+          "product_id": "P006",
+          "score": 0.5654349327087402
+        },
+        {
+          "product_id": "P007",
+          "score": 0.5638344883918762
+        },
+        {
+          "product_id": "P009",
+          "score": 0.5385679006576538
+        }
+      ]
+    },
+    {
+      "query_id": "T09",
+      "family_id": "car",
+      "split": "calibration",
+      "mode": "text",
+      "text": "ô tô bốn chỗ màu xanh",
+      "image_path": null,
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [],
+      "is_ood": true,
+      "evidence_kind": "demo_text",
+      "ranking": [
+        {
+          "product_id": "P003",
+          "score": 0.6712889671325684
+        },
+        {
+          "product_id": "P011",
+          "score": 0.6481139063835144
+        },
+        {
+          "product_id": "P012",
+          "score": 0.6386597156524658
+        },
+        {
+          "product_id": "P001",
+          "score": 0.630726158618927
+        },
+        {
+          "product_id": "P010",
+          "score": 0.6296297311782837
+        },
+        {
+          "product_id": "P004",
+          "score": 0.6289957761764526
+        },
+        {
+          "product_id": "P008",
+          "score": 0.6273554563522339
+        },
+        {
+          "product_id": "P006",
+          "score": 0.6184122562408447
+        },
+        {
+          "product_id": "P002",
+          "score": 0.614612340927124
+        },
+        {
+          "product_id": "P007",
+          "score": 0.6045176982879639
+        },
+        {
+          "product_id": "P005",
+          "score": 0.5978813171386719
+        },
+        {
+          "product_id": "P009",
+          "score": 0.5568333268165588
+        }
+      ]
+    },
+    {
+      "query_id": "I01",
+      "family_id": "on-black",
+      "split": "calibration",
+      "mode": "image",
+      "text": null,
+      "image_path": "data/images/P001.jpg",
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [
+        "P001"
+      ],
+      "is_ood": false,
+      "evidence_kind": "catalog_self_match",
+      "ranking": [
+        {
+          "product_id": "P001",
+          "score": 0.8025829792022705
+        },
+        {
+          "product_id": "P010",
+          "score": 0.6309612989425659
+        },
+        {
+          "product_id": "P005",
+          "score": 0.6068153381347656
+        },
+        {
+          "product_id": "P003",
+          "score": 0.5711134672164917
+        },
+        {
+          "product_id": "P002",
+          "score": 0.5708407163619995
+        },
+        {
+          "product_id": "P007",
+          "score": 0.567887544631958
+        },
+        {
+          "product_id": "P008",
+          "score": 0.5572625398635864
+        },
+        {
+          "product_id": "P004",
+          "score": 0.556894838809967
+        },
+        {
+          "product_id": "P009",
+          "score": 0.5066367387771606
+        },
+        {
+          "product_id": "P012",
+          "score": 0.44046199321746826
+        },
+        {
+          "product_id": "P006",
+          "score": 0.4294932782649994
+        },
+        {
+          "product_id": "P011",
+          "score": 0.4181613326072693
+        }
+      ]
+    },
+    {
+      "query_id": "I02",
+      "family_id": "bag-red",
+      "split": "calibration",
+      "mode": "image",
+      "text": null,
+      "image_path": "data/images/P012.jpg",
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [
+        "P012"
+      ],
+      "is_ood": false,
+      "evidence_kind": "catalog_self_match",
+      "ranking": [
+        {
+          "product_id": "P012",
+          "score": 0.8036186695098877
+        },
+        {
+          "product_id": "P011",
+          "score": 0.6186460256576538
+        },
+        {
+          "product_id": "P005",
+          "score": 0.5188615322113037
+        },
+        {
+          "product_id": "P006",
+          "score": 0.5155195593833923
+        },
+        {
+          "product_id": "P002",
+          "score": 0.5128954648971558
+        },
+        {
+          "product_id": "P003",
+          "score": 0.4831182360649109
+        },
+        {
+          "product_id": "P001",
+          "score": 0.47022169828414917
+        },
+        {
+          "product_id": "P010",
+          "score": 0.46983885765075684
+        },
+        {
+          "product_id": "P004",
+          "score": 0.46118786931037903
+        },
+        {
+          "product_id": "P008",
+          "score": 0.4521719515323639
+        },
+        {
+          "product_id": "P007",
+          "score": 0.44907745718955994
+        },
+        {
+          "product_id": "P009",
+          "score": 0.4150853753089905
+        }
+      ]
+    },
+    {
+      "query_id": "I03",
+      "family_id": "pizza",
+      "split": "calibration",
+      "mode": "image",
+      "text": null,
+      "image_path": "data/queries/Q001.jpg",
+      "text_weight": null,
+      "filters": {},
+      "expected_product_ids": [],
+      "is_ood": true,
+      "evidence_kind": "network_photo_ood",
+      "ranking": [
+        {
+          "product_id": "P012",
+          "score": 0.5180185437202454
+        },
+        {
+          "product_id": "P011",
+          "score": 0.4422706663608551
+        },
+        {
+          "product_id": "P006",
+          "score": 0.4225599765777588
+        },
+        {
+          "product_id": "P005",
+          "score": 0.4174577593803406
+        },
+        {
+          "product_id": "P010",
+          "score": 0.4064018428325653
+        },
+        {
+          "product_id": "P003",
+          "score": 0.40445342659950256
+        },
+        {
+          "product_id": "P008",
+          "score": 0.4000729024410248
+        },
+        {
+          "product_id": "P004",
+          "score": 0.3855457305908203
+        },
+        {
+          "product_id": "P002",
+          "score": 0.38502752780914307
+        },
+        {
+          "product_id": "P007",
+          "score": 0.38277533650398254
+        },
+        {
+          "product_id": "P001",
+          "score": 0.3704467713832855
+        },
+        {
+          "product_id": "P009",
+          "score": 0.34711432456970215
+        }
+      ]
+    },
+    {
+      "query_id": "M01",
+      "family_id": "converse-red",
+      "split": "calibration",
+      "mode": "multimodal",
+      "text": "giày vải đỏ cổ cao",
+      "image_path": "data/images/P006.jpg",
+      "text_weight": 0.5,
+      "filters": {},
+      "expected_product_ids": [
+        "P006"
+      ],
+      "is_ood": false,
+      "evidence_kind": "catalog_self_match",
+      "ranking": [
+        {
+          "product_id": "P006",
+          "score": 0.9734773635864258
+        },
+        {
+          "product_id": "P012",
+          "score": 0.7917183637619019
+        },
+        {
+          "product_id": "P002",
+          "score": 0.766677975654602
+        },
+        {
+          "product_id": "P005",
+          "score": 0.7390409111976624
+        },
+        {
+          "product_id": "P010",
+          "score": 0.721038281917572
+        },
+        {
+          "product_id": "P001",
+          "score": 0.7073713541030884
+        },
+        {
+          "product_id": "P009",
+          "score": 0.7041988372802734
+        },
+        {
+          "product_id": "P008",
+          "score": 0.703205943107605
+        },
+        {
+          "product_id": "P007",
+          "score": 0.701917290687561
+        },
+        {
+          "product_id": "P004",
+          "score": 0.6965673565864563
+        },
+        {
+          "product_id": "P011",
+          "score": 0.6932355165481567
+        },
+        {
+          "product_id": "P003",
+          "score": 0.6867853999137878
+        }
+      ]
+    },
+    {
+      "query_id": "M02",
+      "family_id": "bag-brown",
+      "split": "calibration",
+      "mode": "multimodal",
+      "text": "túi da màu nâu",
+      "image_path": "data/images/P011.jpg",
+      "text_weight": 0.5,
+      "filters": {},
+      "expected_product_ids": [
+        "P011"
+      ],
+      "is_ood": false,
+      "evidence_kind": "catalog_self_match",
+      "ranking": [
+        {
+          "product_id": "P011",
+          "score": 0.96796053647995
+        },
+        {
+          "product_id": "P012",
+          "score": 0.8259647488594055
+        },
+        {
+          "product_id": "P010",
+          "score": 0.7220779061317444
+        },
+        {
+          "product_id": "P008",
+          "score": 0.7186914086341858
+        },
+        {
+          "product_id": "P001",
+          "score": 0.7051830887794495
+        },
+        {
+          "product_id": "P002",
+          "score": 0.7005174160003662
+        },
+        {
+          "product_id": "P006",
+          "score": 0.7003055810928345
+        },
+        {
+          "product_id": "P004",
+          "score": 0.6986708045005798
+        },
+        {
+          "product_id": "P005",
+          "score": 0.6931055784225464
+        },
+        {
+          "product_id": "P003",
+          "score": 0.6846302151679993
+        },
+        {
+          "product_id": "P007",
+          "score": 0.6590060591697693
+        },
+        {
+          "product_id": "P009",
+          "score": 0.6474557518959045
+        }
+      ]
+    },
+    {
+      "query_id": "M03",
+      "family_id": "pizza",
+      "split": "calibration",
+      "mode": "multimodal",
+      "text": "bánh pizza phô mai cà chua",
+      "image_path": "data/queries/Q001.jpg",
+      "text_weight": 0.5,
+      "filters": {},
+      "expected_product_ids": [],
+      "is_ood": true,
+      "evidence_kind": "network_photo_ood",
+      "ranking": [
+        {
+          "product_id": "P012",
+          "score": 0.7173400521278381
+        },
+        {
+          "product_id": "P011",
+          "score": 0.6612481474876404
+        },
+        {
+          "product_id": "P006",
+          "score": 0.646771252155304
+        },
+        {
+          "product_id": "P010",
+          "score": 0.6348655819892883
+        },
+        {
+          "product_id": "P005",
+          "score": 0.6333714127540588
+        },
+        {
+          "product_id": "P008",
+          "score": 0.6107860207557678
+        },
+        {
+          "product_id": "P001",
+          "score": 0.6085127592086792
+        },
+        {
+          "product_id": "P004",
+          "score": 0.60595703125
+        },
+        {
+          "product_id": "P003",
+          "score": 0.6025206446647644
+        },
+        {
+          "product_id": "P007",
+          "score": 0.5989252328872681
+        },
+        {
+          "product_id": "P002",
+          "score": 0.5927913188934326
+        },
+        {
+          "product_id": "P009",
+          "score": 0.5500853657722473
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

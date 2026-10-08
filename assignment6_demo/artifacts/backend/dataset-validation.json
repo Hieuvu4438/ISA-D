@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "product_count": 12,
+  "order_count": 3,
+  "catalog_fingerprint": "7684225cca6612b179cfa67b9356d2a23554783b260adb4370b64e72dcb8586b",
+  "photos": [
+    {
+      "product_id": "P001",
+      "sha256": "e280ab31c36cdd00aa96afed173ad789c8fc4cc54f2e9ce45b8e32a3b587b8d4"
+    },
+    {
+      "product_id": "P002",
+      "sha256": "fdeadc46345aba59e80b4f59e66552adbb78c95fe2dffd5c48a01f43d478ceb1"
+    },
+    {
+      "product_id": "P003",
+      "sha256": "960c241b38a630064b7ccad66924e597564cc1722d73fd06328ab5ea8763f1f2"
+    },
+    {
+      "product_id": "P004",
+      "sha256": "8c2672f88cbf0d7ecccc6c7ecf248d0ebca94a032f51b466a7e9e2483a8025b8"
+    },
+    {
+      "product_id": "P005",
+      "sha256": "6b4a72cae2e05a0383bcb6c9d85ec29ea0508a53f9683cc499f0ec3e1bc455ab"
+    },
+    {
+      "product_id": "P006",
+      "sha256": "4737a54e5564cd11e6bab65726b62b22be4eab95bb73ce66de69b039c56593a8"
+    },
+    {
+      "product_id": "P007",
+      "sha256": "21f647a3bc5f7126c2694f099260189da173c05d4603a9d904b57cb3e5139047"
+    },
+    {
+      "product_id": "P008",
+      "sha256": "794901d02253ba7f712371f9f82d37fbcb1b3ded7833db00bc495fe907b8a731"
+    },
+    {
+      "product_id": "P009",
+      "sha256": "5a481e6bf37182dd63738494db7e5f89b3e780601fd70af9de60f60535c09f09"
+    },
+    {
+      "product_id": "P010",
+      "sha256": "7423ab91bf5fd57e8225e47794788098361f6b4bfd40ba808119cb1f64d2e7c8"
+    },
+    {
+      "product_id": "P011",
+      "sha256": "9772f46037469d8e3203f62bcec03ba23a2aaf21da1e0298473399b2aeb6a11c"
+    },
+    {
+      "product_id": "P012",
+      "sha256": "c3ec0e6e1d82d2114b361e15d22a49f3bef75ae55c1676c7b5130eae6dd14aee"
+    }
+  ],
+  "query_photo_count": 1
+}

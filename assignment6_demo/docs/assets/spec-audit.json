@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-08",
+  "scope": "Delivered docs tree + top-level README/AGENTS, excluding temporary third-party repositories; not rendered diagrams/app/model/SDK runtime",
+  "markdown_files": 19,
+  "local_links_checked": 62,
+  "broken_local_links": [],
+  "json_examples_checked": 13,
+  "json_errors": [],
+  "unbalanced_fences": [],
+  "utf8_errors": [],
+  "populated_speech_key_assignments": [],
+  "functional_requirements": 13,
+  "use_cases": 8,
+  "nonfunctional_requirements": 8,
+  "acceptance_criteria": 46,
+  "missing_requirement_mapping": [],
+  "changes_outside_requested_folder": [],
+  "fusion_formula_analytical_check": "passed",
+  "website_runtime": "not_implemented",
+  "independent_review": "ready_for_user_review_after_targeted_fixes"
+}

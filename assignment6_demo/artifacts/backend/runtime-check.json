@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "check_count": 15,
+  "azure_live_called": false,
+  "checks": [
+    {
+      "name": "/health/ready",
+      "actual_status": 200,
+      "expected_status": 200,
+      "passed": true,
+      "error_code": null
+    },
+    {
+      "name": "/docs",
+      "actual_status": 200,
+      "expected_status": 200,
+      "passed": true,
+      "error_code": null
+    },
+    {
+      "name": "/openapi.json",
+      "actual_status": 200,
+      "expected_status": 200,
+      "passed": true,
+      "error_code": null
+    },
+    {
+      "name": "deeply nested JSON",
+      "actual_status": 422,
+      "expected_status": [
+        400,
+        422
+      ],
+      "passed": true,
+      "error_code": "VALIDATION_ERROR"
+    },
+    {
+      "name": "overflow JSON float",
+      "actual_status": 400,
+      "expected_status": 400,
+      "passed": true,
+      "error_code": "INVALID_JSON"
+    },
+    {
+      "name": "invalid Unicode escape",
+      "actual_status": 400,
+      "expected_status": 400,
+      "passed": true,
+      "error_code": "INVALID_JSON"
+    },
+    {
+      "name": "invalid JSON object",
+      "actual_status": 422,
+      "expected_status": 422,
+      "passed": true,
+      "error_code": "VALIDATION_ERROR"
+    },
+    {
+      "name": "real tokenizer limit",
+      "actual_status": 422,
+      "expected_status": 422,
+      "passed": true,
+      "error_code": "TEXT_TOO_LONG"
+    },
+    {
+      "name": "oversized JSON envelope",
+      "actual_status": 413,
+      "expected_status": 413,
+      "passed": true,
+      "error_code": "REQUEST_TOO_LARGE"
+    },
+    {
+      "name": "unsupported request type",
+      "actual_status": 415,
+      "expected_status": 415,
+      "passed": true,
+      "error_code": "MEDIA_TYPE_UNSUPPORTED"
+    },
+    {
+      "name": "wrong method",
+      "actual_status": 405,
+      "expected_status": 405,
+      "passed": true,
+      "error_code": "METHOD_NOT_ALLOWED"
+    },
+    {
+      "name": "duplicate query fields",
+      "actual_status": 422,
+      "expected_status": 422,
+      "passed": true,
+      "error_code": "VALIDATION_ERROR"
+    },
+    {
+      "name": "empty speech language",
+      "actual_status": 422,
+      "expected_status": 422,
+      "passed": true,
+      "error_code": "VALIDATION_ERROR"
+    },
+    {
+      "name": "valid WAV without Azure key",
+      "actual_status": 503,
+      "expected_status": 503,
+      "passed": true,
+      "error_code": "SPEECH_UNAVAILABLE"
+    },
+    {
+      "name": "health after invalid requests",
+      "actual_status": 200,
+      "expected_status": 200,
+      "passed": true,
+      "error_code": null
+    }
+  ]
+}

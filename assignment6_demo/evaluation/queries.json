@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "purpose": "Small demo calibration/sanity fixtures. Labels fixed before executing the encoder. Image positives reuse catalog photos and only prove mechanics; no independent test-split quality claim.",
+  "queries": [
+    {"query_id":"T01","family_id":"on-black","split":"calibration","mode":"text","text":"giày chạy bộ On màu đen","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":["P001"],"is_ood":false,"evidence_kind":"demo_text"},
+    {"query_id":"T02","family_id":"asics-blue","split":"calibration","mode":"text","text":"giày chạy bộ Asics màu xanh đậm","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":["P003"],"is_ood":false,"evidence_kind":"demo_text"},
+    {"query_id":"T03","family_id":"converse-red","split":"calibration","mode":"text","text":"giày Converse đỏ cổ cao","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":["P006"],"is_ood":false,"evidence_kind":"demo_text"},
+    {"query_id":"T04","family_id":"nike-white","split":"calibration","mode":"text","text":"giày Nike Air Force trắng","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":["P007"],"is_ood":false,"evidence_kind":"demo_text"},
+    {"query_id":"T05","family_id":"bag-brown","split":"calibration","mode":"text","text":"túi da màu nâu có dây đeo","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":["P011"],"is_ood":false,"evidence_kind":"demo_text"},
+    {"query_id":"T06","family_id":"bag-red","split":"calibration","mode":"text","text":"túi Hermès Kelly màu đỏ","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":["P012"],"is_ood":false,"evidence_kind":"demo_text"},
+    {"query_id":"T07","family_id":"pizza","split":"calibration","mode":"text","text":"bánh pizza cà chua và phô mai","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":[],"is_ood":true,"evidence_kind":"demo_text"},
+    {"query_id":"T08","family_id":"laptop","split":"calibration","mode":"text","text":"máy tính xách tay màn hình 15 inch","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":[],"is_ood":true,"evidence_kind":"demo_text"},
+    {"query_id":"T09","family_id":"car","split":"calibration","mode":"text","text":"ô tô bốn chỗ màu xanh","image_path":null,"text_weight":null,"filters":{},"expected_product_ids":[],"is_ood":true,"evidence_kind":"demo_text"},
+    {"query_id":"I01","family_id":"on-black","split":"calibration","mode":"image","text":null,"image_path":"data/images/P001.jpg","text_weight":null,"filters":{},"expected_product_ids":["P001"],"is_ood":false,"evidence_kind":"catalog_self_match"},
+    {"query_id":"I02","family_id":"bag-red","split":"calibration","mode":"image","text":null,"image_path":"data/images/P012.jpg","text_weight":null,"filters":{},"expected_product_ids":["P012"],"is_ood":false,"evidence_kind":"catalog_self_match"},
+    {"query_id":"I03","family_id":"pizza","split":"calibration","mode":"image","text":null,"image_path":"data/queries/Q001.jpg","text_weight":null,"filters":{},"expected_product_ids":[],"is_ood":true,"evidence_kind":"network_photo_ood"},
+    {"query_id":"M01","family_id":"converse-red","split":"calibration","mode":"multimodal","text":"giày vải đỏ cổ cao","image_path":"data/images/P006.jpg","text_weight":0.5,"filters":{},"expected_product_ids":["P006"],"is_ood":false,"evidence_kind":"catalog_self_match"},
+    {"query_id":"M02","family_id":"bag-brown","split":"calibration","mode":"multimodal","text":"túi da màu nâu","image_path":"data/images/P011.jpg","text_weight":0.5,"filters":{},"expected_product_ids":["P011"],"is_ood":false,"evidence_kind":"catalog_self_match"},
+    {"query_id":"M03","family_id":"pizza","split":"calibration","mode":"multimodal","text":"bánh pizza phô mai cà chua","image_path":"data/queries/Q001.jpg","text_weight":0.5,"filters":{},"expected_product_ids":[],"is_ood":true,"evidence_kind":"network_photo_ood"}
+  ]
+}
