@@ -49,7 +49,7 @@ describe('real API contract and cancellation', () => {
     expect(remove).toHaveBeenCalledWith('abort', expect.any(Function))
   })
 
-  it('caps search at 15 seconds and transcription at 30 seconds', async () => {
+  it('caps search at 15 seconds and allows CPU transcription 95 seconds', async () => {
     vi.useFakeTimers()
     vi.stubGlobal('fetch', (_url: string, init: RequestInit) => new Promise((_resolve, reject) => {
       init.signal?.addEventListener('abort', () => reject(new DOMException('abort', 'AbortError')))
@@ -63,6 +63,8 @@ describe('real API contract and cancellation', () => {
     await Promise.resolve()
     expect(settled).toBe(false)
     await vi.advanceTimersByTimeAsync(15_000)
+    expect(settled).toBe(false)
+    await vi.advanceTimersByTimeAsync(65_000)
     expect(await speech).toMatchObject({ code: 'CLIENT_TIMEOUT' })
   })
 
