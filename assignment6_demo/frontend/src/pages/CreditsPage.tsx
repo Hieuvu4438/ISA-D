@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { ApiError, getCredits } from '../lib/api'
 import type { Credit } from '../lib/types'
-import { ErrorPanel, ProductImage } from '../ui'
+import { ErrorPanel, ProductImage, formatTransformation } from '../ui'
 
 export function CreditsPage() {
   const [credits, setCredits] = useState<Credit[]>([])
@@ -41,7 +41,7 @@ export function CreditsPage() {
           <a className="text-link" href={credit.source_page} target="_blank" rel="noopener noreferrer">Nguồn ảnh <ArrowUpRight size={15} aria-hidden="true" /></a>
           <a className="text-link" href={credit.license_url} target="_blank" rel="noopener noreferrer">{credit.license} <ArrowUpRight size={15} aria-hidden="true" /></a>
         </div>
-        {credit.transformations.length > 0 && <p>Điều chỉnh: {credit.transformations.join('; ')}.</p>}
+        {credit.transformations.length > 0 && <p>Điều chỉnh: {credit.transformations.map(formatTransformation).join('; ')}</p>}
       </div>
     </li>)}</ul>}
   </div>

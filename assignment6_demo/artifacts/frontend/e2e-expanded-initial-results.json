@@ -1,0 +1,969 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--grep-invert",
+      "@visual"
+    ],
+    "configFile": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\playwright.config.ts",
+    "rootDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/PROJECTS/ISA-D/assignment6_demo/artifacts/frontend/playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "snapshotDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/frontend/e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "flows.spec.ts",
+      "file": "flows.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real API: Vietnamese search, submitted state and detail return",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4390,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m06\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m28\u001b[27m\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m06\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m28\u001b[27m\"\u001b[39m\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:19:50",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                      "column": 50,
+                      "line": 19
+                    },
+                    "snippet": "  17 |   await page.getByTestId('search-text').fill('giày Converse đỏ cổ cao');\n  18 |   const response = await submitSearch(page);\n> 19 |   expect(response.results[0].product.product_id).toBe('P006');\n     |                                                  ^\n  20 |   await expectRealRankedResults(page, response);\n  21 |   await expect(page.getByTestId('result-card').first()).toContainText(/Cosine/i);\n  22 |   await page.getByTestId('search-text').fill('túi da màu nâu');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                        "column": 50,
+                        "line": 19
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m06\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m28\u001b[27m\"\u001b[39m\n\n  17 |   await page.getByTestId('search-text').fill('giày Converse đỏ cổ cao');\n  18 |   const response = await submitSearch(page);\n> 19 |   expect(response.results[0].product.product_id).toBe('P006');\n     |                                                  ^\n  20 |   await expectRealRankedResults(page, response);\n  21 |   await expect(page.getByTestId('result-card').first()).toContainText(/Cosine/i);\n  22 |   await page.getByTestId('search-text').fill('túi da màu nâu');\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:19:50"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:35:38.199Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-Vietnamese--9c2e2-ted-state-and-detail-return\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-Vietnamese--9c2e2-ted-state-and-detail-return\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-Vietnamese--9c2e2-ted-state-and-detail-return\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                    "column": 50,
+                    "line": 19
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-a144c3da7b5147293e1c",
+          "file": "flows.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "real API: all six curated Vietnamese descriptions have the expected first result",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5651,
+                  "error": {
+                    "message": "Error: giày Converse đỏ cổ cao\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m06\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m28\u001b[27m\"\u001b[39m",
+                    "stack": "Error: giày Converse đỏ cổ cao\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m06\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m28\u001b[27m\"\u001b[39m\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:54:58",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                      "column": 58,
+                      "line": 54
+                    },
+                    "snippet": "  52 |     await page.getByTestId('search-text').fill(text);\n  53 |     const response = await submitSearch(page);\n> 54 |     expect(response.results[0].product.product_id, text).toBe(expected);\n     |                                                          ^\n  55 |     await expectRealRankedResults(page, response);\n  56 |   }\n  57 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                        "column": 58,
+                        "line": 54
+                      },
+                      "message": "Error: giày Converse đỏ cổ cao\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m06\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m28\u001b[27m\"\u001b[39m\n\n  52 |     await page.getByTestId('search-text').fill(text);\n  53 |     const response = await submitSearch(page);\n> 54 |     expect(response.results[0].product.product_id, text).toBe(expected);\n     |                                                          ^\n  55 |     await expectRealRankedResults(page, response);\n  56 |   }\n  57 | });\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:54:58"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:35:46.310Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-all-six-cur-170f9-e-the-expected-first-result\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-all-six-cur-170f9-e-the-expected-first-result\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-all-six-cur-170f9-e-the-expected-first-result\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                    "column": 58,
+                    "line": 54
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-7e877c758b50624e9eee",
+          "file": "flows.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "real API: image bytes and multimodal fusion preserve user inputs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6308,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:35:56.194Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-b101796fc0f7a4a5ed0b",
+          "file": "flows.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "real API: price/brand/stock filters, zero price and relevant OOD recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8830,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:36:03.116Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-b1374a4229fe58fa9794",
+          "file": "flows.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "real API: manual voice transcript is labelled and sent honestly",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4371,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m11\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m33\u001b[27m\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m11\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m33\u001b[27m\"\u001b[39m\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:133:50",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                      "column": 50,
+                      "line": 133
+                    },
+                    "snippet": "  131 |   expect(response.query.mode).toBe('voice');\n  132 |   expect(response.query.voice_source).toBe('manual_transcript');\n> 133 |   expect(response.results[0].product.product_id).toBe('P011');\n      |                                                  ^\n  134 |   await expect(page.getByText(/Transcript nhập tay.*mô phỏng/)).toBeVisible();\n  135 |   await expectRealRankedResults(page, response);\n  136 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                        "column": 50,
+                        "line": 133
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"P0\u001b[7m11\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"P0\u001b[7m33\u001b[27m\"\u001b[39m\n\n  131 |   expect(response.query.mode).toBe('voice');\n  132 |   expect(response.query.voice_source).toBe('manual_transcript');\n> 133 |   expect(response.results[0].product.product_id).toBe('P011');\n      |                                                  ^\n  134 |   await expect(page.getByText(/Transcript nhập tay.*mô phỏng/)).toBeVisible();\n  135 |   await expectRealRankedResults(page, response);\n  136 | });\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:133:50"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:36:11.979Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-manual-voic-337ad--labelled-and-sent-honestly\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-manual-voic-337ad--labelled-and-sent-honestly\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-manual-voic-337ad--labelled-and-sent-honestly\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                    "column": 50,
+                    "line": 133
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-ceededaf0db126e55876",
+          "file": "flows.spec.ts",
+          "line": 126,
+          "column": 1
+        },
+        {
+          "title": "real API: direct product route/reload, honest demo fields and photo credits",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2083,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:36:20.160Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-cb2d30da48b65ff5905b",
+          "file": "flows.spec.ts",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "real API: own order detail and indistinguishable foreign/missing orders",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2805,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:36:22.880Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-da9788fcb102a00fdd70",
+          "file": "flows.spec.ts",
+          "line": 153,
+          "column": 1
+        },
+        {
+          "title": "real API: all catalog credits and unknown-route recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5967,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:36:25.713Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-1d3df2fa66ec6e4e33b4",
+          "file": "flows.spec.ts",
+          "line": 173,
+          "column": 1
+        },
+        {
+          "title": "keyboard tab arrows and serious/critical accessibility checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20511,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:36:31.716Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-0551c141c87c099e98cc",
+          "file": "flows.spec.ts",
+          "line": 189,
+          "column": 1
+        },
+        {
+          "title": "responsive routes remain usable at 360, 768 and 1440 pixels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11683,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:36:52.258Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-752212b02f7a20db9f5b",
+          "file": "flows.spec.ts",
+          "line": 207,
+          "column": 1
+        },
+        {
+          "title": "expanded catalog: twelve category filters expose four to six real products each",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14600,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[href=\"/products/P006\"]').first()\nExpected substring: \u001b[32m\"\u001b[7mGiày \u001b[27mConverse\u001b[7m All Star đỏ cổ cao\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Converse\u001b[7mđỏ và trắng\u001b[27m\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('a[href=\"/products/P006\"]').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[href=\"/products/P006\"]').first()\u001b[22m\n\u001b[2m    23 × locator resolved to <a class=\"hero-sample\" data-discover=\"true\" href=\"/products/P006\">…</a>\u001b[22m\n\u001b[2m       - unexpected value \"Converseđỏ và trắng\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[href=\"/products/P006\"]').first()\nExpected substring: \u001b[32m\"\u001b[7mGiày \u001b[27mConverse\u001b[7m All Star đỏ cổ cao\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Converse\u001b[7mđỏ và trắng\u001b[27m\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('a[href=\"/products/P006\"]').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[href=\"/products/P006\"]').first()\u001b[22m\n\u001b[2m    23 × locator resolved to <a class=\"hero-sample\" data-discover=\"true\" href=\"/products/P006\">…</a>\u001b[22m\n\u001b[2m       - unexpected value \"Converseđỏ và trắng\"\u001b[22m\n\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:231:87",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                      "column": 87,
+                      "line": 231
+                    },
+                    "snippet": "  229 |     await expect(page.getByTestId('product-card')).toHaveCount(expected.length);\n  230 |     for (const product of expected) {\n> 231 |       await expect(page.locator(`a[href=\"/products/${product.product_id}\"]`).first()).toContainText(product.name);\n      |                                                                                       ^\n  232 |     }\n  233 |   }\n  234 |   await page.getByTestId('filter-category').selectOption('');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                        "column": 87,
+                        "line": 231
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[href=\"/products/P006\"]').first()\nExpected substring: \u001b[32m\"\u001b[7mGiày \u001b[27mConverse\u001b[7m All Star đỏ cổ cao\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Converse\u001b[7mđỏ và trắng\u001b[27m\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('a[href=\"/products/P006\"]').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[href=\"/products/P006\"]').first()\u001b[22m\n\u001b[2m    23 × locator resolved to <a class=\"hero-sample\" data-discover=\"true\" href=\"/products/P006\">…</a>\u001b[22m\n\u001b[2m       - unexpected value \"Converseđỏ và trắng\"\u001b[22m\n\n\n  229 |     await expect(page.getByTestId('product-card')).toHaveCount(expected.length);\n  230 |     for (const product of expected) {\n> 231 |       await expect(page.locator(`a[href=\"/products/${product.product_id}\"]`).first()).toContainText(product.name);\n      |                                                                                       ^\n  232 |     }\n  233 |   }\n  234 |   await page.getByTestId('filter-category').selectOption('');\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:231:87"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:03.983Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-expanded-catalog-twe-6687c-r-to-six-real-products-each\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-expanded-catalog-twe-6687c-r-to-six-real-products-each\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-expanded-catalog-twe-6687c-r-to-six-real-products-each\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                    "column": 87,
+                    "line": 231
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-7dfe4fa41991e251845e",
+          "file": "flows.spec.ts",
+          "line": 218,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "microphone.spec.ts",
+      "file": "microphone.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "synthetic native microphone + provider stub: converts WAV PCM16 mono 16 kHz before upload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:53.908Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "130d2110c2e25538841c-2ad9f5c7a61012febc3a",
+          "file": "microphone.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "synthetic native microphone: changing mode while recording stops every track",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:38:01.855Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "130d2110c2e25538841c-9bde58cce1528dee87bd",
+          "file": "microphone.spec.ts",
+          "line": 65,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "recovery.spec.ts",
+      "file": "recovery.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "deterministic error stub: rejected query retains the draft and can retry against real API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3506,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:22.250Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef78f3da5c9c24fceacf-ce923f9286fe60e08091",
+          "file": "recovery.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "deterministic race: an old real text response cannot overwrite a newer image search",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4416,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:26.147Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef78f3da5c9c24fceacf-76b60ac0a80ba37939e3",
+          "file": "recovery.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "unsupported image recovery and unconfigured Azure preserve manual voice fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5300,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:30.592Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef78f3da5c9c24fceacf-8f1a379c1d4b9f59a086",
+          "file": "recovery.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "real API WAV validation: malformed PCM header returns 422 before any Azure recognition",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3478,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:35.920Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef78f3da5c9c24fceacf-a576983d9f1e256ed469",
+          "file": "recovery.spec.ts",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "deterministic speech provider stub: editable transcript requires explicit real voice search",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4149,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:39.433Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef78f3da5c9c24fceacf-2cedf95016b6ad3f9fa5",
+          "file": "recovery.spec.ts",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "deterministic permission denial: microphone error keeps manual voice fallback usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4246,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:43.623Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef78f3da5c9c24fceacf-f38c949ae6921e9104d2",
+          "file": "recovery.spec.ts",
+          "line": 129,
+          "column": 1
+        },
+        {
+          "title": "deterministic readiness stub: unavailable AI still permits the real catalog and orders",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3412,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T05:37:47.902Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef78f3da5c9c24fceacf-2bed5ac27faa25b75119",
+          "file": "recovery.spec.ts",
+          "line": 145,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T05:35:35.830Z",
+    "duration": 149371.161,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

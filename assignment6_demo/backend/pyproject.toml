@@ -7,7 +7,7 @@ name = "assignment6-demo-backend"
 version = "0.1.0"
 description = "CPU Vietnamese multimodal search demo API"
 requires-python = ">=3.12"
-dependencies = ["fastapi", "uvicorn", "python-multipart", "numpy", "Pillow", "pydantic", "python-dotenv", "sentence-transformers", "azure-cognitiveservices-speech"]
+dependencies = ["fastapi", "uvicorn", "python-multipart", "numpy", "Pillow", "pydantic", "python-dotenv", "sentence-transformers", "azure-cognitiveservices-speech", "filelock"]
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -1,0 +1,127 @@
+{
+  "checked_at": "2026-10-08T04:40:28.573290+00:00",
+  "readiness_status": 200,
+  "readiness": {
+    "request_id": "992297d9-a38f-4297-9f30-b875dc44c4a4",
+    "status": "ready",
+    "search_available": true,
+    "reason_codes": []
+  },
+  "meta": {
+    "request_id": "44e22ed7-4601-495f-9530-e914135d8d87",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": true,
+        "reason_code": null,
+        "modes": [
+          "image",
+          "multimodal",
+          "text",
+          "voice"
+        ],
+        "multimodal_weights": [
+          0.5
+        ]
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "c7e6d0a0dbd1a4ecc87428f411b7e88e0ff910e38ee49cd8bc98bf925f623005",
+      "catalog_fingerprint": "7684225cca6612b179cfa67b9356d2a23554783b260adb4370b64e72dcb8586b",
+      "product_count": 12
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "bag",
+        "casual_shoes",
+        "running_shoes",
+        "trail_shoes"
+      ],
+      "brands": [
+        "Adidas",
+        "Asics",
+        "Brooks",
+        "Converse",
+        "Hermès",
+        "Les cuirs d'Agathe",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On"
+      ],
+      "min_price": 1100000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "azure",
+      "configuration_state": "unconfigured",
+      "region": "southeastasia",
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "live_encoder_checks": [
+    {
+      "mode": "text",
+      "http_status": 200,
+      "first_product_id": "P010",
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+      "index_fingerprint": "c7e6d0a0dbd1a4ecc87428f411b7e88e0ff910e38ee49cd8bc98bf925f623005"
+    },
+    {
+      "mode": "image",
+      "http_status": 200,
+      "first_product_id": "P001",
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+      "index_fingerprint": "c7e6d0a0dbd1a4ecc87428f411b7e88e0ff910e38ee49cd8bc98bf925f623005"
+    },
+    {
+      "mode": "multimodal",
+      "http_status": 200,
+      "first_product_id": "P001",
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+      "index_fingerprint": "c7e6d0a0dbd1a4ecc87428f411b7e88e0ff910e38ee49cd8bc98bf925f623005"
+    }
+  ],
+  "azure_called": false
+}

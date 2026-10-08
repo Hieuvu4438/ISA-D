@@ -157,8 +157,8 @@ export class MicrophoneRecorder {
         this.phase = 'idle'
       }
       if (token !== this.generation) throw abortError()
-      if (error instanceof DOMException && error.name === 'NotAllowedError') throw new Error('Bạn chưa cho phép dùng microphone. Hãy cấp quyền hoặc tải tệp WAV.')
-      if (error instanceof DOMException && error.name === 'NotFoundError') throw new Error('Không tìm thấy microphone. Hãy kết nối thiết bị hoặc tải tệp WAV.')
+      if (error instanceof DOMException && error.name === 'NotAllowedError') throw new Error('Bạn chưa cho phép dùng microphone. Hãy cấp quyền hoặc tải tệp WAV.', { cause: error })
+      if (error instanceof DOMException && error.name === 'NotFoundError') throw new Error('Không tìm thấy microphone. Hãy kết nối thiết bị hoặc tải tệp WAV.', { cause: error })
       throw error
     }
   }

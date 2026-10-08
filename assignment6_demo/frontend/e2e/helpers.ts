@@ -47,7 +47,18 @@ export async function initialCatalog(page: Page) {
   await expect(page.getByTestId('product-card')).toHaveCount(total);
 }
 
+export async function waitForRouteHydration(page: Page, route: string) {
+  const ready = route === '/' ? page.getByTestId('product-card').first()
+    : route.startsWith('/products/') ? page.locator('.detail-copy h1')
+    : route.startsWith('/orders/') ? page.locator('.order-detail-heading h1')
+    : route === '/credits' ? page.locator('.credit-item').first()
+    : page.locator('main h1');
+  await expect(ready).toBeVisible();
+  await expect(page.getByText(/Đang tải/)).toHaveCount(0);
+}
+
 export async function waitForAllImages(page: Page) {
+  await page.evaluate(async () => { await document.fonts.ready; });
   const images = page.locator('main img');
   for (const image of await images.all()) {
     await image.scrollIntoViewIfNeeded();

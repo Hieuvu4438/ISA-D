@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowRight, ArrowUpRight, AudioLines, Camera, Check, ChevronDown, Clock3, ImagePlus, LoaderCircle, Mic, SlidersHorizontal, Square, Type, Upload, X } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUpRight, AudioLines, Camera, Check, ChevronDown, Clock3, Download, ImagePlus, LoaderCircle, Mic, SlidersHorizontal, Square, Type, Upload, X } from 'lucide-react';
 import { useCatalog } from '../catalog';
 import { useSearchState, initialOptions, type Draft } from '../state';
 import { ApiError, searchText, searchImage, searchMultimodal, transcribe } from '../lib/api';
@@ -81,7 +81,9 @@ export function SearchPage() {
   }, [cooldownUntil]);
   useEffect(() => {
     const frame = requestAnimationFrame(() => window.scrollTo(0, savedScroll.current));
-    return () => { cancelAnimationFrame(frame); sequence.current++; micSequence.current++; controller.current?.abort(); void recorder.current?.cancel(); state.setScroll(window.scrollY); };
+    // Product links save their position before navigation. Cleanup runs after
+    // the next route can reset scroll, so it must not overwrite that snapshot.
+    return () => { cancelAnimationFrame(frame); sequence.current++; micSequence.current++; controller.current?.abort(); void recorder.current?.cancel(); };
   }, []);
   useEffect(() => {
     if (draft.options.result_policy === 'relevant' && catalog.meta && !relevantAvailable) {
@@ -111,6 +113,7 @@ export function SearchPage() {
       setField(reason.field_errors[0]?.field ?? '');
       if (reason.retryAfter) setCooldownUntil(Date.now() + reason.retryAfter * 1000);
       if (reason.field_errors.some(item => item.field === 'text')) textRef.current?.focus();
+      if (reason.field_errors.some(item => item.field === 'image')) imageRef.current?.focus();
     }
   }
   function chooseImage(file?: File) {
@@ -196,7 +199,7 @@ export function SearchPage() {
               {micPhase !== 'idle' && <button className="icon-button" aria-label="Hủy ghi âm" type="button" onClick={cancel}><X size={18} /></button>}
             </div>
             <label className="audio-upload"><Upload size={16} aria-hidden="true" /> Hoặc tải WAV PCM16, mono 16 kHz<input type="file" accept=".wav,audio/wav" data-testid="voice-audio-input" onChange={event => chooseAudio(event.target.files?.[0])} /></label>
-            {draft.audio && audioUrl && <div className="audio-preview"><audio src={audioUrl} controls aria-label="Nghe bản ghi âm" /><button type="button" className="icon-button" aria-label="Xóa âm thanh" onClick={() => update({ audio: null })}><X size={17} /></button></div>}
+            {draft.audio && audioUrl && <div className="audio-preview"><audio src={audioUrl} controls aria-label="Nghe bản ghi âm" /><a className="text-link audio-download" href={audioUrl} download="cortis-voice.wav"><Download size={16} aria-hidden="true" />Lưu bản ghi WAV</a><button type="button" className="icon-button" aria-label="Xóa âm thanh" onClick={() => update({ audio: null })}><X size={17} /></button></div>}
             <button type="button" className="secondary-button recognize-button" disabled={!draft.audio || !speechAvailable || !!pending || micPhase !== 'idle' || cooldown > 0} onClick={() => void recognize()}>{pending === 'speech' ? <LoaderCircle className="spin" size={16} aria-hidden="true" /> : <AudioLines size={17} aria-hidden="true" />}Nhận dạng lời nói</button>
             {!speechAvailable && <p className="voice-unavailable">Nhận dạng Azure chưa sẵn sàng. Bạn vẫn có thể nhập lời nói bên dưới để thử tìm kiếm.</p>}
             <div className="transcript-origin"><span>{draft.voiceSource === 'azure' ? 'Azure Speech · tiếng Việt' : 'Transcript nhập tay · mô phỏng'}</span>{draft.transcriptModified && draft.voiceSource === 'azure' && <span>Đã chỉnh sửa transcript</span>}
@@ -209,7 +212,7 @@ export function SearchPage() {
           {(mode === 'image' || mode === 'multimodal') && <div className={`image-drop ${draft.image ? 'has-image' : ''}`} onDragOver={event => event.preventDefault()} onDrop={event => { event.preventDefault(); chooseImage(event.dataTransfer.files[0]); }}>
             {draft.image ? <>{imageUrl && <img className="query-preview" src={imageUrl} alt="Hình ảnh bạn dùng để tìm sản phẩm" />}<div><strong>{draft.image.name}</strong><p>{(draft.image.size / 1024).toFixed(0)} KB · chỉ dùng cho lượt tìm</p><button className="text-link" type="button" onClick={() => imageRef.current?.click()}>Thay ảnh</button><button className="text-link" type="button" onClick={() => update({ image: null })}>Xóa ảnh</button></div></>
               : <><Camera size={27} strokeWidth={1.5} aria-hidden="true" /><label htmlFor="image-input"><strong>Thả một ảnh vào đây</strong><span>hoặc chọn ảnh từ thiết bị</span></label><p>JPEG, PNG, WebP · tối đa 5 MiB</p></>}
-            <input ref={imageRef} type="file" id="image-input" data-testid="image-input" accept="image/jpeg,image/png,image/webp" aria-label="Chọn ảnh sản phẩm" onChange={event => { chooseImage(event.target.files?.[0]); event.target.value = ''; }} />
+            <input ref={imageRef} type="file" id="image-input" data-testid="image-input" accept="image/jpeg,image/png,image/webp" aria-label="Chọn ảnh sản phẩm" aria-invalid={field === 'image'} aria-describedby={field === 'image' ? 'search-error' : undefined} onChange={event => { chooseImage(event.target.files?.[0]); event.target.value = ''; }} />
           </div>}
           {mode === 'multimodal' && <div className="weight-control"><label htmlFor="text-weight">Ưu tiên mô tả <strong>{Math.round(draft.weight * 100)}%</strong></label><input id="text-weight" data-testid="text-weight" type="range" min="0.1" max="0.9" step="0.1" value={draft.weight} onChange={event => update({ weight: Number(event.target.value) })} /><span>Ảnh {Math.round((1 - draft.weight) * 100)}%</span></div>}
           {(mode === 'text' || mode === 'multimodal') && <div className="suggestions"><span>Thử tìm</span>{['Giày Converse màu đỏ', 'Túi da màu nâu', 'Giày chạy bộ màu đen'].map(text => <button key={text} type="button" onClick={() => { update({ text }); textRef.current?.focus(); }}>{text}<ArrowUpRight size={12} aria-hidden="true" /></button>)}</div>}

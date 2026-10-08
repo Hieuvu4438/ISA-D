@@ -1,6 +1,6 @@
 # Runbook Windows cho website sau triển khai
 
-**Hiện tại chỉ có bộ đặc tả và dữ liệu được chuẩn bị; chưa có ứng dụng để chạy.** Các commands dưới đây là hợp đồng triển khai của Agent ở 09. Không thực hiện chúng rồi kết luận website đã tồn tại. Khi Agent implement xong, phải chạy đúng các bước và cập nhật kết quả thực vào README/report.
+**Backend CPU và frontend Cortis đã chạy local với 60 sản phẩm/12 danh mục và 30 đơn hàng.** Commands bên dưới dùng các script đã triển khai. Bằng chứng và giới hạn chất lượng được ghi trong README, DEMO_DATA và FRONTEND_VERIFICATION; live Azure và frozen test độc lập vẫn cần nghiệm thu riêng.
 
 ## Điều kiện trước khi chạy
 
@@ -20,11 +20,11 @@ py -3.12 --version
 node --version
 npm --version
 py -3.12 -m venv backend\.venv
-& .\backend\.venv\Scripts\python.exe -m pip install -r backend\requirements.lock
+& .\backend\.venv\Scripts\python.exe -m pip install -r backend\requirements.lock.txt
 & .\backend\.venv\Scripts\python.exe -m pip install --no-deps -e .\backend
 ```
 
-Không cần activate venv hoặc đổi ExecutionPolicy. `requirements.lock` phải chứa versions tương thích Windows, torch CPU và SDK; `pyproject.toml` định nghĩa package `app` để scripts import được sau editable install. Mọi dependency update phải tạo lock mới và chạy gate; không tự upgrade packages giữa buổi demo.
+Không cần activate venv hoặc đổi ExecutionPolicy. `requirements.lock.txt` phải chứa versions tương thích Windows, torch CPU và SDK; `pyproject.toml` định nghĩa package `app` để scripts import được sau editable install. Mọi dependency update phải tạo lock mới và chạy gate; không tự upgrade packages giữa buổi demo.
 
 ## 2. Tải model, validate và build offline index
 
@@ -32,13 +32,12 @@ Không cần activate venv hoặc đổi ExecutionPolicy. `requirements.lock` ph
 & .\backend\.venv\Scripts\python.exe scripts\download_models.py
 & .\backend\.venv\Scripts\python.exe scripts\validate_dataset.py
 & .\backend\.venv\Scripts\python.exe scripts\build_index.py
-& .\backend\.venv\Scripts\python.exe scripts\calibrate_thresholds.py --split calibration
-& .\backend\.venv\Scripts\python.exe scripts\verify_contracts.py
+& .\backend\.venv\Scripts\python.exe scripts\calibrate_thresholds.py
 ```
 
 Xác nhận `runtime/models/model_manifest.json` chứa hai model IDs/commit revisions ở 05; index NPZ/sidecar nằm trong `runtime/index`, policy trong `runtime/policies`. Không publish threshold khi calibration không đạt. Nếu calibration chưa có fixture hoặc fail, `nearest` vẫn có thể chạy khi index hợp lệ; relevant capability unavailable và website chưa đạt quality gate.
 
-`evaluation/queries.json` và query image thật có nguồn riêng phải được xây/label/freeze trước calibration, không tạo labels từ model ranks. Build là thao tác offline; không hot-reload JSON/index trong process API.
+`evaluation/queries.json` hiện có 15 demo calibration/sanity cases; ảnh positive là catalog self-match, chưa phải test độc lập. Frozen quality protocol ở 10 vẫn pending; không dùng report demo để tuyên bố gate quality đạt. Build là thao tác offline; không hot-reload JSON/index trong process API.
 
 ## 3. Khởi động backend
 
@@ -49,12 +48,12 @@ $env:DEMO_CUSTOMER_ID = 'C001'
 $env:AZURE_SPEECH_REGION = 'southeastasia'
 $env:AZURE_SPEECH_LANGUAGE = 'vi-VN'
 $env:HF_HUB_OFFLINE = '1'
-& .\backend\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1
+& .\backend\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
 ```
 
 Không dùng nhiều workers: mỗi worker nhân model memory và phá giả định giới hạn inference của demo. Startup chỉ đọc model/cache local; không gọi Azure. Không đặt key ở `VITE_*`, frontend `.env`, command-line arguments hoặc source. `127.0.0.1` là phạm vi demo local; chưa mở public khi chỉ có customer context C001.
 
-Nếu cần Azure thật, dừng backend bằng Ctrl+C, đặt key vào **terminal backend này** bằng prompt bảo mật rồi chạy lại uvicorn. Lệnh tương lai sau chỉ đọc nhập của người dùng vào process environment, không hiển thị key:
+Nếu cần Azure thật, đặt key vào `assignment6_demo/.env` đã ignore rồi khởi động lại backend; không gửi key qua chat. Có thể dùng prompt bảo mật trong terminal backend thay cho file `.env`. Lệnh sau chỉ đọc nhập của người dùng vào process environment, không hiển thị key:
 
 ```powershell
 $speechKeySecure = Read-Host -Prompt 'Azure Speech key' -AsSecureString
@@ -92,12 +91,14 @@ Mở terminal kiểm tra trong root demo, backend/frontend đang chạy:
 Set-Location -LiteralPath 'D:\PROJECTS\ISA-D\assignment6_demo'
 Invoke-RestMethod -Uri 'http://127.0.0.1:8000/health/live'
 Invoke-RestMethod -Uri 'http://127.0.0.1:8000/health/ready'
-& .\backend\.venv\Scripts\python.exe -m pytest backend\tests --cov=backend/app --cov-branch --cov-report=term-missing
-& .\backend\.venv\Scripts\python.exe scripts\evaluate.py --split test
-& .\backend\.venv\Scripts\python.exe scripts\benchmark.py --base-url http://127.0.0.1:8000 --requests-per-mode 30
+Push-Location backend
+& .\.venv\Scripts\python.exe -m pytest tests --cov=app --cov-branch --cov-report=term-missing
+Pop-Location
+& .\backend\.venv\Scripts\python.exe scripts\evaluate.py
+& .\backend\.venv\Scripts\python.exe scripts\benchmark_backend.py --base-url http://127.0.0.1:8000 --requests-per-mode 30
 ```
 
-Health nằm ngoài `/api/v1` theo06. `/health/ready` có thể503 nếu index/model thiếu; PowerShell sẽ báo HTTP error và cần đọc sanitized response body, đây là dependency lỗi cần xử lý. Live200 không chứng minh search readiness hoặc Azure availability. Readiness và policy/speech capabilities riêng trong `/api/v1/meta` phải được kiểm tra, không chỉ HTTP status.
+Health nằm ngoài `/api/v1` theo06. `/health/ready` có thể503 nếu index/model thiếu; PowerShell sẽ báo HTTP error và cần đọc sanitized response body, đây là dependency lỗi cần xử lý. Live200 không chứng minh search readiness hoặc Azure availability. `evaluate.py` chỉ kiểm tra lại demo fixtures, không chạy frozen test. `smoke_backend.py` phải chạy sau khi API đã khởi động. Readiness và policy/speech capabilities riêng trong `/api/v1/meta` phải được kiểm tra, không chỉ HTTP status.
 
 Frontend terminal kiểm tra riêng:
 
@@ -115,14 +116,14 @@ npm run test:e2e
 
 ## 6. Gate Azure có giới hạn, chạy thủ công
 
-**Không chạy trong giai đoạn viết đặc tả hiện tại.** Sau triển khai, cần dịch vụ thật sẵn sàng và quyền gọi đã được xác nhận. Backend environment phải có key, region, language; script gọi endpoint local, không đọc key phía frontend. Nếu fixture chưa đủ5 files, không thực hiện một lượt partial rồi báo gate đạt.
+**Người dùng đã cho phép tối đa 5 lượt nhận dạng cho đợt nghiệm thu này.** Chỉ chạy khi cấu hình và đủ 5 WAV thật đã được chuẩn bị theo [AZURE_LIVE_CHECK.md](AZURE_LIVE_CHECK.md). Backend environment phải có key, region, language; script gọi endpoint local, không đọc key phía frontend. Nếu fixture chưa đủ5 files, không thực hiện một lượt partial rồi báo gate đạt.
 
 ```powershell
 Set-Location -LiteralPath 'D:\PROJECTS\ISA-D\assignment6_demo'
-& .\backend\.venv\Scripts\python.exe scripts\verify_speech_live.py --base-url http://127.0.0.1:8000 --max-calls 5 --confirm-live
+& .\backend\.venv\Scripts\python.exe scripts\verify_speech_live.py --help
 ```
 
-Script đọc `evaluation/voice_cases.json`; tối đa5 SDK calls, không auto-retry. Report original transcript semantic matches và retrieval sau xác nhận riêng; ≥4/5 theo 10. Report số calls/duration, không suy giá dịch vụ. Resource region/auth mismatch phải sửa cấu hình theo resource thật; không thử hàng loạt regions/keys.
+Đọc workflow và các flags thực tế trong AZURE_LIVE_CHECK; chạy preflight trước, arm shared budget khi đủ fixtures, rồi xác nhận live chủ động. `evaluation/voice_cases.json` và ledger không thay thế audio thật. Tối đa 5 SDK calls, không auto retry; reload/restart không reset quota. Report original transcript semantic matches và retrieval sau xác nhận riêng; ≥4/5 theo 10. Report số calls/duration, không suy giá dịch vụ. Resource region/auth mismatch phải sửa cấu hình theo resource thật; không thử hàng loạt regions/keys.
 
 ## Cập nhật catalog và phục hồi
 

@@ -10,6 +10,7 @@ import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 
 from app.domain import AppError
+from app.data.speech_budget import SpeechBudget
 
 
 def decode_wav(blob: bytes) -> tuple[bytes, int]:
@@ -75,6 +76,7 @@ class SpeechService:
         )
         self.configuration_state = "configured_unverified" if self.available else "unconfigured"
         self._provider = provider or self._recognize_azure
+        self._budget = SpeechBudget(getattr(settings, "root", None))
         self._executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="demo-speech")
         self._lock = threading.Lock()
         self._busy = False
@@ -105,7 +107,7 @@ class SpeechService:
             self._busy = True
         provider_start = time.perf_counter()
         try:
-            native = self._executor.submit(self._provider, pcm, language)
+            native = self._executor.submit(self._run_provider, audio_bytes, pcm, language, duration_ms)
         except Exception:
             self._release(None)
             raise AppError(503, "SPEECH_UNAVAILABLE", "Dịch vụ nhận dạng chưa sẵn sàng.") from None
@@ -141,6 +143,20 @@ class SpeechService:
                 "total": round((ended - started) * 1000, 3),
             },
         }
+
+    def _run_provider(self, audio, pcm, language, duration_ms):
+        attempt = self._budget.reserve(audio, duration_ms)
+        try:
+            transcript = self._provider(pcm, language)
+        except AppError as error:
+            self._budget.finish(attempt, error.code)
+            raise
+        except Exception:
+            self._budget.finish(attempt, "SPEECH_UPSTREAM_FAILED")
+            raise
+        self._budget.finish(attempt, "recognized" if isinstance(transcript, str) and transcript.strip()
+                            else "SPEECH_NO_MATCH")
+        return transcript
 
     def _recognize_azure(self, pcm, language):
         sdk = self._sdk

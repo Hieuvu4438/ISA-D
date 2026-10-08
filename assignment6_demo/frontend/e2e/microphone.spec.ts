@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { readFile } from 'node:fs/promises';
 import { initialCatalog, fakeMicrophone } from './helpers';
 
 // Synthetic native device + provider stub: no Azure call or speech-accuracy claim.
@@ -18,6 +19,14 @@ test('synthetic native microphone + provider stub: converts WAV PCM16 mono 16 kH
       const stream = await original(constraints);
       (window as any).__e2eStreams.push(stream);
       return stream;
+    };
+  });
+  await page.addInitScript(() => {
+    const revoke = URL.revokeObjectURL.bind(URL);
+    (window as any).__e2eRevoked = [];
+    URL.revokeObjectURL = value => {
+      (window as any).__e2eRevoked.push(value);
+      revoke(value);
     };
   });
   await page.route('**/api/v1/meta', async route => {
@@ -45,6 +54,14 @@ test('synthetic native microphone + provider stub: converts WAV PCM16 mono 16 kH
   // Native recording must gather at least one second of real browser PCM frames.
   await page.waitForTimeout(1500);
   await page.getByRole('button', { name: /Dừng/ }).click();
+  const savedLink = page.getByRole('link', { name: 'Lưu bản ghi WAV', exact: true });
+  await expect(savedLink).toBeVisible();
+  const blobUrl = (await savedLink.getAttribute('href'))!;
+  const downloadEvent = page.waitForEvent('download');
+  await savedLink.click();
+  const download = await downloadEvent;
+  expect(download.suggestedFilename()).toBe('cortis-voice.wav');
+  const savedWav = await readFile((await download.path())!);
   await page.getByRole('button', { name: 'Nhận dạng lời nói', exact: true }).click();
   await expect(page.getByText(/Provider stub/)).toBeVisible();
   expect(receivedWav.toString('ascii', 0, 4)).toBe('RIFF');
@@ -55,6 +72,10 @@ test('synthetic native microphone + provider stub: converts WAV PCM16 mono 16 kH
   expect(receivedWav.readUInt16LE(34)).toBe(16);
   expect(receivedWav.readUInt32LE(40)).toBeGreaterThanOrEqual(32000);
   expect(receivedWav.readUInt32LE(40)).toBeLessThanOrEqual(480000);
+  expect(savedWav.equals(receivedWav)).toBe(true);
+  await page.getByRole('button', { name: 'Xóa âm thanh', exact: true }).click();
+  await expect(savedLink).toHaveCount(0);
+  await expect.poll(() => page.evaluate(url => (window as any).__e2eRevoked.includes(url), blobUrl)).toBe(true);
   await page.getByRole('tab', { name: 'Mô tả', exact: true }).click();
   const tracks = await page.evaluate(() =>
     (window as any).__e2eStreams.flatMap((stream: MediaStream) => stream.getTracks().map(track => track.readyState)));

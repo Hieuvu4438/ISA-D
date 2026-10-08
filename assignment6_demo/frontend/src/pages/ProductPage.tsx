@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowUpRight, ChevronRight } from 'lucide-react'
 import { ApiError, getProduct } from '../lib/api'
 import type { ProductDetail } from '../lib/types'
-import { ProductImage, ErrorPanel, formatMoney, categoryLabels } from '../ui'
+import { ProductImage, ErrorPanel, formatMoney, categoryLabels, formatTransformation } from '../ui'
 
 export function ProductPage() {
   const { productId = '' } = useParams()
@@ -66,7 +66,7 @@ export function ProductPage() {
               {product.image_credit.license} <ArrowUpRight size={15} aria-hidden="true" />
             </a>
           </div>
-          {product.image_credit.transformations.length > 0 && <p>Điều chỉnh ảnh: {product.image_credit.transformations.join('; ')}.</p>}
+          {product.image_credit.transformations.length > 0 && <p>Điều chỉnh ảnh: {product.image_credit.transformations.map(formatTransformation).join('; ')}</p>}
           <Link className="text-link" to="/credits">Nguồn ảnh của bộ sưu tập</Link>
         </section>
       </div>

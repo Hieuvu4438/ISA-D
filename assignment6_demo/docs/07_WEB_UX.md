@@ -89,7 +89,7 @@ Search fetch có timeout 15s; 504 `SEARCH_TIMEOUT` hoặc browser timeout kết 
 
 ## Thiết kế, responsive và accessibility
 
-Giao diện gọn cho laptop demo: nền sáng, chữ tối, một màu hành động, rõ focus. Font system hỗ trợ dấu Việt (`Segoe UI`, Arial, sans-serif), không cần tải font bên ngoài. 8px spacing scale; search form tối đa960px, grid 1/2/3–4 cột tùy viewport; filter xuống dòng trên mobile. Touch targets≥44px, readable body≥16px.
+Người dùng xác nhận Cortis theo hướng showroom mẫu vật: ảnh chụp thật, nền đá sáng #f6f5f3, chữ #211c22, màu hành động đỏ rượu #60283b và nền đất nhạt #eddfda. Be Vietnam Pro có dấu Việt được đóng gói local qua Fontsource, không phụ thuộc tải font từ mạng lúc sử dụng. Form trong bố cục showroom hai cột desktop; mobile chuyển một cột, filter thu gọn, grid 2–3 cột tùy viewport. Controls chính≥44px, body16px; chi tiết phụ có cấp chữ nhỏ hơn và contrast rõ.
 
 Tabs có role/tablist, keyboard trái/phải, aria-selected và label; form control có label thật; lỗi aria-describedby. Loading/results announce `aria-live=polite`; modal nếu có focus trap/escape/return focus. Preview có alt mô tả sản phẩm; drag-drop luôn có file picker tương đương. Không phân biệt stock/error chỉ bằng màu; contrast text≥4.5:1; tôn trọng reduced-motion.
 

@@ -1,6 +1,6 @@
 # Kiểm thử và điều kiện nghiệm thu
 
-**Trạng thái hiện tại:** backend CPU và frontend Cortis đã triển khai. Backend có 85 tests, coverage 87,3% và HTTP smoke thật; frontend có build/typecheck và 17 tests đạt, browser verification đang thực hiện. Các acceptance case dưới đây là yêu cầu kiểm chứng, không tự động được đánh dấu đạt từ việc có code. Báo cáo thực chạy ở `artifacts/backend/` và `artifacts/frontend/`; Azure live và frozen quality split vẫn cần evidence riêng.
+**Trạng thái hiện tại:** backend CPU và frontend Cortis chạy với 60 sản phẩm/12 danh mục và 30 đơn. Backend có 103 tests đạt, HTTP verification 271/271 và benchmark 90 requests không lỗi; frontend clean install/typecheck/lint/17 tests/build đạt, browser production confirmation đang thực hiện. Coverage statements và branches phải đọc riêng trong `coverage.json`, không xem 87,3% statements là branch coverage. Các acceptance case dưới đây vẫn cần evidence đúng phạm vi; Azure live và frozen quality split chưa đạt.
 
 ## Nguyên tắc và evidence
 
@@ -109,29 +109,34 @@ Thiếu key, không xác nhận được region, network fail hoặc chưa đư�
 
 ## Lệnh gate sau triển khai
 
-Working directory `assignment6_demo`, xem env/setup chi tiết ở [11](11_RUNBOOK.md). Các lệnh dưới đây là **target CLI chưa có implementation**.
+Working directory `assignment6_demo`, xem env/setup ở [11](11_RUNBOOK.md). Các lệnh dưới đây đã triển khai; smoke/verify/benchmark cần backend đang chạy. `evaluate.py` hiện chỉ đánh giá lại 15 demo calibration cases, **không nhận `--split test` và không thay frozen test độc lập**.
 
 ```powershell
 & .\backend\.venv\Scripts\python.exe scripts\validate_dataset.py
-& .\backend\.venv\Scripts\python.exe scripts\verify_contracts.py
-& .\backend\.venv\Scripts\python.exe -m pytest backend\tests --cov=backend/app --cov-branch --cov-report=term-missing
-& .\backend\.venv\Scripts\python.exe scripts\calibrate_thresholds.py --split calibration
-& .\backend\.venv\Scripts\python.exe scripts\evaluate.py --split test
-& .\backend\.venv\Scripts\python.exe scripts\benchmark.py --requests-per-mode 30
+& .\backend\.venv\Scripts\python.exe scripts\smoke_backend.py
+& .\backend\.venv\Scripts\python.exe scripts\verify_expanded_demo.py
+Push-Location backend
+& .\.venv\Scripts\python.exe -m pytest tests --cov=app --cov-branch --cov-report=term-missing
+Pop-Location
+& .\backend\.venv\Scripts\python.exe scripts\calibrate_thresholds.py
+& .\backend\.venv\Scripts\python.exe scripts\evaluate.py
+& .\backend\.venv\Scripts\python.exe scripts\benchmark_backend.py --requests-per-mode 30
 ```
 
 Frontend commands chạy trong `frontend`: `npm ci`, `npm run typecheck`, `npm run lint`, `npm test`, `npm run build`, `npm run test:e2e`. E2E chạy server thật local; intercept chỉ dùng các error/race scenarios có nhãn và không thay full live happy path.
 
 ## Tracker website
 
-- [ ] G1: clean install, dataset/contracts, không secret.
-- [ ] G2: backend unit/integration/architecture và coverage report.
-- [ ] G3: CPU encoder/index thật, freeze splits, calibration hợp lệ.
-- [ ] G4: quality test riêng từng mode và reproducibility đạt.
-- [ ] G5: frontend typecheck/lint/test/build + E2E happy/error/race/order/viewport.
-- [ ] G6: security/cache/concurrency/corruption gates.
-- [ ] G7: benchmark từng mode; metrics thực công khai.
-- [ ] G8: 5 bounded Azure vi-VN calls + transcript confirm→search thật.
-- [ ] G9: UML mapping, demo artifacts và runbook tái hiện bằng môi trường sạch.
+| Gate | Trạng thái hiện tại | Evidence / phần còn thiếu |
+| --- | --- | --- |
+| G1 | Partial | Dataset và 271 API checks đạt; frontend `npm ci` sạch đạt, npm audit 0. Backend lock/pip check đạt; pip-audit không audit được torch `+cpu` qua PyPI. Secret/runtime/env được ignore; clean-install tổng thể cần hồ sơ tái hiện riêng. |
+| G2 | Partial | 103 unit/integration tests đạt; coverage report có statements/branches riêng. Branch coverage chưa đạt mục tiêu đề xuất 80%; architecture mapping được kiểm tra riêng. |
+| G3 | Partial | CPU models/index và 3 policy mới khớp catalog 60 sản phẩm; demo calibration đạt mục tiêu nhỏ. Chưa freeze bộ 60 cases độc lập theo protocol trên. |
+| G4 | Partial / quality regression | Text demo Hit@3 5/6, category probes 7/12; một số Top1 baseline cũ không đạt. Không coi self-match ảnh là quality test. [reproducibility.json](../artifacts/backend/reproducibility.json) xác nhận rank/score ba mode ổn định qua hai restart, tolerance1e-5. |
+| G5 | Passed wiring / quality failed riêng | Clean install/typecheck/lint/17 unit/build và 19/19 production wiring tests đạt. Hai quality tests vẫn fail; xem `FRONTEND_VERIFICATION.md`. Visual reviewer xác nhận một fix resolved, không nghiệm thu model/Azure. |
+| G6 | Passed trong phạm vi tests hiện có | Boundary, owner isolation, cache/corruption và native concurrency được kiểm tra bằng tests; chưa thay các tình huống Azure thật hoặc audit production có danh tính. |
+| G7 | Passed warm CPU | [performance.json](../artifacts/backend/performance.json): 90 measured requests, 0 errors, p95 text81,69 / image380,78 / multimodal455,44ms. Cold start chưa đo. |
+| G8 | Pending dependency | Quyền tối đa5 lượt đã được người dùng xác nhận. Shared ledger còn0 lượt dùng, thiếu5 WAV giọng người thật, mic evidence và Azure config/live results; xem [AZURE_LIVE_CHECK.md](AZURE_LIVE_CHECK.md). |
+| G9 | Partial | Runbook đã cập nhật commands thực; UML↔code mapping ở12 cần nêu rõ những class đích chưa tách. Chưa có file Visual Paradigm `.vpp` và frozen quality/live speech artifacts. |
 
-Tất cả đang pending ở giai đoạn đặc tả. Báo cáo bàn giao website sau này phải liệt kê từng G/AC passed/failed/pending và link evidence, không chỉ ghi “tests passed”.
+Tracker mô tả evidence hiện có, không tuyên bố website được nghiệm thu toàn bộ. Mỗi lần chạy mới phải đọc report/hash thực tế; không nâng failed/pending thành passed từ việc có code hoặc screenshot.

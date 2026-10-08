@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "backend"))
 
 def main() -> None:
     from app.application.embedding_service import AIEmbeddingService
-    from app.data.vector_index import build_index
+    from app.application.index_builder import build_index
     from app.data.product_repository import ProductRepository
 
     parser = argparse.ArgumentParser(description=__doc__)

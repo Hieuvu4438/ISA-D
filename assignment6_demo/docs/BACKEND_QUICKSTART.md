@@ -1,6 +1,6 @@
 # Chạy backend demo
 
-Đợt hiện tại triển khai backend theo yêu cầu demo nhanh: giữ các chức năng API, dùng CLIP CPU thật và ảnh chụp thật đã tải. Frontend không nằm trong đợt này. Benchmark 60 cases, bộ ảnh query độc lập và gate frontend trong tài liệu đặc tả được hoãn; 15 fixtures hiện tại chỉ kiểm tra/calibration demo, không là bằng chứng chất lượng production. Voice adapter Azure được implement, test lỗi bằng stub; gọi API Azure thật cần cấu hình key riêng và thao tác chủ động, không chạy trong setup/smoke mặc định.
+Backend và frontend Cortis đã kết nối trên catalog 60 sản phẩm/12 danh mục và 30 đơn. 271 API checks và 90 warm CPU benchmark requests đã chạy; xem DEMO_DATA. 15 fixtures hiện tại chỉ kiểm tra/calibration demo, chưa là frozen test độc lập. Voice adapter Azure và persistent budget đã triển khai; quyền tối đa5 lượt đã xác nhận nhưng còn thiếu key/5 WAV thật, xem AZURE_LIVE_CHECK. Setup/startup/test mặc định không gọi Azure.
 
 Từ PowerShell tại `assignment6_demo`, dùng Python 3.12:
 

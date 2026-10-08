@@ -1,0 +1,448 @@
+{
+  "scope": "same nearest queries across two manually verified local backend restarts",
+  "tolerance": 1e-05,
+  "runs": [
+    {
+      "run": 0,
+      "model": {
+        "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+        "image_model_id": "sentence-transformers/clip-ViT-B-32",
+        "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+        "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+        "dimension": 512,
+        "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+      },
+      "index": {
+        "available": true,
+        "index_fingerprint": "fbb823590b942a7432948c7482b97b9fa7323f33f866b563ba34a7bdcf98bd13",
+        "catalog_fingerprint": "c9b5af5c1e863226730b51aa21212086927b318419c70e9df087ffab5478645d",
+        "product_count": 60
+      },
+      "results": [
+        {
+          "mode": "text",
+          "text": "giày Converse đỏ cổ cao",
+          "ranking": [
+            {
+              "id": "P028",
+              "score": 0.7758405804634094
+            },
+            {
+              "id": "P006",
+              "score": 0.7749330401420593
+            },
+            {
+              "id": "P022",
+              "score": 0.7484372854232788
+            },
+            {
+              "id": "P021",
+              "score": 0.7415776252746582
+            },
+            {
+              "id": "P024",
+              "score": 0.7404875755310059
+            }
+          ]
+        },
+        {
+          "mode": "text",
+          "text": "túi da màu nâu",
+          "ranking": [
+            {
+              "id": "P033",
+              "score": 0.7610177397727966
+            },
+            {
+              "id": "P045",
+              "score": 0.7567194104194641
+            },
+            {
+              "id": "P043",
+              "score": 0.7542918920516968
+            },
+            {
+              "id": "P047",
+              "score": 0.7509797215461731
+            },
+            {
+              "id": "P041",
+              "score": 0.7496833205223083
+            }
+          ]
+        },
+        {
+          "mode": "text",
+          "text": "đồng hồ mặt trắng",
+          "ranking": [
+            {
+              "id": "P054",
+              "score": 0.7618780732154846
+            },
+            {
+              "id": "P050",
+              "score": 0.7610573172569275
+            },
+            {
+              "id": "P051",
+              "score": 0.7440653443336487
+            },
+            {
+              "id": "P045",
+              "score": 0.7425446510314941
+            },
+            {
+              "id": "P043",
+              "score": 0.7298444509506226
+            }
+          ]
+        },
+        {
+          "mode": "image",
+          "ranking": [
+            {
+              "id": "P001",
+              "score": 0.8025829792022705
+            },
+            {
+              "id": "P010",
+              "score": 0.6309612989425659
+            },
+            {
+              "id": "P005",
+              "score": 0.6068153381347656
+            },
+            {
+              "id": "P016",
+              "score": 0.6048371195793152
+            },
+            {
+              "id": "P024",
+              "score": 0.5963628888130188
+            }
+          ]
+        },
+        {
+          "mode": "multimodal",
+          "ranking": [
+            {
+              "id": "P001",
+              "score": 0.9866642951965332
+            },
+            {
+              "id": "P016",
+              "score": 0.8479892015457153
+            },
+            {
+              "id": "P010",
+              "score": 0.8406152129173279
+            },
+            {
+              "id": "P024",
+              "score": 0.8364713788032532
+            },
+            {
+              "id": "P021",
+              "score": 0.8343358635902405
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 1,
+      "model": {
+        "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+        "image_model_id": "sentence-transformers/clip-ViT-B-32",
+        "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+        "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+        "dimension": 512,
+        "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+      },
+      "index": {
+        "available": true,
+        "index_fingerprint": "fbb823590b942a7432948c7482b97b9fa7323f33f866b563ba34a7bdcf98bd13",
+        "catalog_fingerprint": "c9b5af5c1e863226730b51aa21212086927b318419c70e9df087ffab5478645d",
+        "product_count": 60
+      },
+      "results": [
+        {
+          "mode": "text",
+          "text": "giày Converse đỏ cổ cao",
+          "ranking": [
+            {
+              "id": "P028",
+              "score": 0.7758405804634094
+            },
+            {
+              "id": "P006",
+              "score": 0.7749330401420593
+            },
+            {
+              "id": "P022",
+              "score": 0.7484372854232788
+            },
+            {
+              "id": "P021",
+              "score": 0.7415776252746582
+            },
+            {
+              "id": "P024",
+              "score": 0.7404875755310059
+            }
+          ]
+        },
+        {
+          "mode": "text",
+          "text": "túi da màu nâu",
+          "ranking": [
+            {
+              "id": "P033",
+              "score": 0.7610177397727966
+            },
+            {
+              "id": "P045",
+              "score": 0.7567194104194641
+            },
+            {
+              "id": "P043",
+              "score": 0.7542918920516968
+            },
+            {
+              "id": "P047",
+              "score": 0.7509797215461731
+            },
+            {
+              "id": "P041",
+              "score": 0.7496833205223083
+            }
+          ]
+        },
+        {
+          "mode": "text",
+          "text": "đồng hồ mặt trắng",
+          "ranking": [
+            {
+              "id": "P054",
+              "score": 0.7618780732154846
+            },
+            {
+              "id": "P050",
+              "score": 0.7610573172569275
+            },
+            {
+              "id": "P051",
+              "score": 0.7440653443336487
+            },
+            {
+              "id": "P045",
+              "score": 0.7425446510314941
+            },
+            {
+              "id": "P043",
+              "score": 0.7298444509506226
+            }
+          ]
+        },
+        {
+          "mode": "image",
+          "ranking": [
+            {
+              "id": "P001",
+              "score": 0.8025829792022705
+            },
+            {
+              "id": "P010",
+              "score": 0.6309612989425659
+            },
+            {
+              "id": "P005",
+              "score": 0.6068153381347656
+            },
+            {
+              "id": "P016",
+              "score": 0.6048371195793152
+            },
+            {
+              "id": "P024",
+              "score": 0.5963628888130188
+            }
+          ]
+        },
+        {
+          "mode": "multimodal",
+          "ranking": [
+            {
+              "id": "P001",
+              "score": 0.9866642951965332
+            },
+            {
+              "id": "P016",
+              "score": 0.8479892015457153
+            },
+            {
+              "id": "P010",
+              "score": 0.8406152129173279
+            },
+            {
+              "id": "P024",
+              "score": 0.8364713788032532
+            },
+            {
+              "id": "P021",
+              "score": 0.8343358635902405
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "model": {
+        "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+        "image_model_id": "sentence-transformers/clip-ViT-B-32",
+        "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+        "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+        "dimension": 512,
+        "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+      },
+      "index": {
+        "available": true,
+        "index_fingerprint": "fbb823590b942a7432948c7482b97b9fa7323f33f866b563ba34a7bdcf98bd13",
+        "catalog_fingerprint": "c9b5af5c1e863226730b51aa21212086927b318419c70e9df087ffab5478645d",
+        "product_count": 60
+      },
+      "results": [
+        {
+          "mode": "text",
+          "text": "giày Converse đỏ cổ cao",
+          "ranking": [
+            {
+              "id": "P028",
+              "score": 0.7758405804634094
+            },
+            {
+              "id": "P006",
+              "score": 0.7749330401420593
+            },
+            {
+              "id": "P022",
+              "score": 0.7484372854232788
+            },
+            {
+              "id": "P021",
+              "score": 0.7415776252746582
+            },
+            {
+              "id": "P024",
+              "score": 0.7404875755310059
+            }
+          ]
+        },
+        {
+          "mode": "text",
+          "text": "túi da màu nâu",
+          "ranking": [
+            {
+              "id": "P033",
+              "score": 0.7610177397727966
+            },
+            {
+              "id": "P045",
+              "score": 0.7567194104194641
+            },
+            {
+              "id": "P043",
+              "score": 0.7542918920516968
+            },
+            {
+              "id": "P047",
+              "score": 0.7509797215461731
+            },
+            {
+              "id": "P041",
+              "score": 0.7496833205223083
+            }
+          ]
+        },
+        {
+          "mode": "text",
+          "text": "đồng hồ mặt trắng",
+          "ranking": [
+            {
+              "id": "P054",
+              "score": 0.7618780732154846
+            },
+            {
+              "id": "P050",
+              "score": 0.7610573172569275
+            },
+            {
+              "id": "P051",
+              "score": 0.7440653443336487
+            },
+            {
+              "id": "P045",
+              "score": 0.7425446510314941
+            },
+            {
+              "id": "P043",
+              "score": 0.7298444509506226
+            }
+          ]
+        },
+        {
+          "mode": "image",
+          "ranking": [
+            {
+              "id": "P001",
+              "score": 0.8025829792022705
+            },
+            {
+              "id": "P010",
+              "score": 0.6309612989425659
+            },
+            {
+              "id": "P005",
+              "score": 0.6068153381347656
+            },
+            {
+              "id": "P016",
+              "score": 0.6048371195793152
+            },
+            {
+              "id": "P024",
+              "score": 0.5963628888130188
+            }
+          ]
+        },
+        {
+          "mode": "multimodal",
+          "ranking": [
+            {
+              "id": "P001",
+              "score": 0.9866642951965332
+            },
+            {
+              "id": "P016",
+              "score": 0.8479892015457153
+            },
+            {
+              "id": "P010",
+              "score": 0.8406152129173279
+            },
+            {
+              "id": "P024",
+              "score": 0.8364713788032532
+            },
+            {
+              "id": "P021",
+              "score": 0.8343358635902405
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

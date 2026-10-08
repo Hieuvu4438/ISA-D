@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "language": "vi-VN",
+  "region": "southeastasia",
+  "authorized_max_calls": 5,
+  "labels_review": {
+    "status": "approved",
+    "reviewer": "primary-agent",
+    "basis": "Catalog metadata and primary agent approval before any speech calls; no model ranks used."
+  },
+  "labels_frozen": false,
+  "frozen_at": null,
+  "cases": [
+    {
+      "case_id": "V001",
+      "phrase_label": "Tìm giày chạy bộ On Cloud màu đen.",
+      "expected_product_ids": ["P001"],
+      "input_source": "browser_real_microphone",
+      "execution_path": "browser",
+      "audio_path": "runtime/speech/audio/V001.wav",
+      "audio_sha256": null,
+      "audio_duration_ms": null,
+      "human_audio_review": null,
+      "capture_evidence_path": null
+    },
+    {
+      "case_id": "V002",
+      "phrase_label": "Tìm túi da Les cuirs d'Agathe màu nâu.",
+      "expected_product_ids": ["P011"],
+      "input_source": "human_recorded_wav_upload",
+      "execution_path": "upload",
+      "audio_path": "runtime/speech/audio/V002.wav",
+      "audio_sha256": null,
+      "audio_duration_ms": null,
+      "human_audio_review": null,
+      "capture_evidence_path": null
+    },
+    {
+      "case_id": "V003",
+      "phrase_label": "Tìm áo thun trơn màu đen.",
+      "expected_product_ids": ["P041"],
+      "input_source": "human_recorded_wav_upload",
+      "execution_path": "upload",
+      "audio_path": "runtime/speech/audio/V003.wav",
+      "audio_sha256": null,
+      "audio_duration_ms": null,
+      "human_audio_review": null,
+      "capture_evidence_path": null
+    },
+    {
+      "case_id": "V004",
+      "phrase_label": "Tìm đồng hồ Candino mặt trắng dây nâu.",
+      "expected_product_ids": ["P050"],
+      "input_source": "human_recorded_wav_upload",
+      "execution_path": "upload",
+      "audio_path": "runtime/speech/audio/V004.wav",
+      "audio_sha256": null,
+      "audio_duration_ms": null,
+      "human_audio_review": null,
+      "capture_evidence_path": null
+    },
+    {
+      "case_id": "V005",
+      "phrase_label": "Tìm kính mát Ray-Ban Original Wayfarer màu đen.",
+      "expected_product_ids": ["P059"],
+      "input_source": "human_recorded_wav_upload",
+      "execution_path": "upload",
+      "audio_path": "runtime/speech/audio/V005.wav",
+      "audio_sha256": null,
+      "audio_duration_ms": null,
+      "human_audio_review": null,
+      "capture_evidence_path": null
+    }
+  ]
+}

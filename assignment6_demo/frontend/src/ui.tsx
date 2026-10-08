@@ -3,6 +3,8 @@ import { AlertCircle, ImageOff, RotateCcw } from 'lucide-react';
 import type { Category } from './lib/types';
 
 export const formatMoney = (value: number) => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
+export const formatTransformation = (value: string) => value.startsWith('Wikimedia thumbnail when available; no local visual edits')
+  ? 'Ảnh thu nhỏ do Wikimedia cung cấp (nếu có); không chỉnh sửa ảnh tại máy.' : value;
 export const categoryLabels: Record<Category, string> = {
   running_shoes: 'Giày chạy bộ', trail_shoes: 'Giày địa hình', casual_shoes: 'Giày thường ngày',
   boots: 'Giày boots', sandals: 'Dép và sandal', bag: 'Túi xách', backpack: 'Balo', tote_bag: 'Túi tote',

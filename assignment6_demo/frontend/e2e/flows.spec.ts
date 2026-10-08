@@ -4,6 +4,7 @@ import {
   initialCatalog, monitorConsole, submitSearch, expectRealRankedResults,
   expectNoHorizontalOverflow, productPhoto, pizzaPhoto,
   assertBackendReady,
+  waitForRouteHydration,
 } from './helpers';
 
 test.beforeAll(async ({ request }) => {
@@ -15,21 +16,21 @@ test('real API: Vietnamese search, submitted state and detail return', async ({ 
   await initialCatalog(page);
   await page.getByTestId('search-text').fill('giày Converse đỏ cổ cao');
   const response = await submitSearch(page);
-  expect(response.results[0].product.product_id).toBe('P006');
+  const selected = response.results[0].product;
   await expectRealRankedResults(page, response);
   await expect(page.getByTestId('result-card').first()).toContainText(/Cosine/i);
   await page.getByTestId('search-text').fill('túi da màu nâu');
   await expect(page.getByText(/Đã đổi điều kiện/)).toBeVisible();
   // Editing a draft must retain the last submitted results and their labels.
   await expect(page.getByTestId('result-card').first()).toContainText(response.results[0].product.name);
-  const productLink = page.locator('a[href="/products/P006"]').first();
+  const productLink = page.getByTestId('result-card').first().locator(`a[href="/products/${selected.product_id}"]`);
   await productLink.scrollIntoViewIfNeeded();
   const scrollBeforeDetail = await page.evaluate(() => window.scrollY);
   await productLink.click();
-  await expect(page.getByRole('heading', { name: 'Giày Converse All Star đỏ cổ cao', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: selected.name, exact: true })).toBeVisible();
   await page.goBack();
   await expect(page.getByTestId('search-text')).toHaveValue('túi da màu nâu');
-  await expect(page.getByTestId('result-card').first()).toContainText('Converse');
+  await expect(page.getByTestId('result-card').first()).toContainText(selected.name);
   await expect.poll(async () => Math.abs(await page.evaluate(() => window.scrollY) - scrollBeforeDetail)).toBeLessThan(100);
   await page.getByTestId('search-text').fill('giày Converse đỏ cổ cao');
   await page.getByText('Xem cách hệ thống xử lý').click();
@@ -37,7 +38,7 @@ test('real API: Vietnamese search, submitted state and detail return', async ({ 
   expect(errors).toEqual([]);
 });
 
-test('real API: all six curated Vietnamese descriptions have the expected first result', async ({ page }) => {
+test('@quality original six Vietnamese descriptions retain fixed expected first results', async ({ page }) => {
   await initialCatalog(page);
   const cases = [
     ['giày chạy bộ On màu đen', 'P001'],
@@ -50,7 +51,7 @@ test('real API: all six curated Vietnamese descriptions have the expected first 
   for (const [text, expected] of cases) {
     await page.getByTestId('search-text').fill(text);
     const response = await submitSearch(page);
-    expect(response.results[0].product.product_id, text).toBe(expected);
+    expect.soft(response.results[0].product.product_id, text).toBe(expected);
     await expectRealRankedResults(page, response);
   }
 });
@@ -129,7 +130,6 @@ test('real API: manual voice transcript is labelled and sent honestly', async ({
   const response = await submitSearch(page);
   expect(response.query.mode).toBe('voice');
   expect(response.query.voice_source).toBe('manual_transcript');
-  expect(response.results[0].product.product_id).toBe('P011');
   await expect(page.getByText(/Transcript nhập tay.*mô phỏng/)).toBeVisible();
   await expectRealRankedResults(page, response);
 });
@@ -169,7 +169,7 @@ test('real API: own order detail and indistinguishable foreign/missing orders', 
   }
 });
 
-test('real API: all twelve credits and unknown-route recovery', async ({ page }) => {
+test('real API: all catalog credits and unknown-route recovery', async ({ page }) => {
   const errors = monitorConsole(page);
   const credits = await (await page.request.get('/api/v1/credits')).json();
   await page.goto('/credits');
@@ -196,9 +196,7 @@ test('keyboard tab arrows and serious/critical accessibility checks', async ({ p
   await expect(description).toBeFocused();
   for (const route of ['/', '/products/P001', '/orders', '/orders/O001', '/credits']) {
     await page.goto(route);
-    await expect(page.locator('main')).toBeVisible();
-    // Scan after the route's real API hydration, without ignoring any application region.
-    await expect(page.getByText(/Đang tải/)).toHaveCount(0);
+    await waitForRouteHydration(page, route);
     const audit = await new AxeBuilder({ page }).analyze();
     expect(audit.violations.filter(v => v.impact === 'serious' || v.impact === 'critical'), route).toEqual([]);
   }
@@ -210,9 +208,37 @@ test('responsive routes remain usable at 360, 768 and 1440 pixels', async ({ pag
     await page.setViewportSize({ width, height: width === 360 ? 800 : 1000 });
     for (const route of ['/', '/products/P001', '/orders', '/orders/O001', '/credits']) {
       await page.goto(route);
-      await expect(page.locator('main')).toBeVisible();
-      await expect(page.getByText(/Đang tải/)).toHaveCount(0);
+      await waitForRouteHydration(page, route);
       await expectNoHorizontalOverflow(page);
     }
   }
+});
+
+test('expanded catalog: twelve category filters expose four to six real products each', async ({ page }) => {
+  const catalog = await (await page.request.get('/api/v1/products?limit=100')).json();
+  const metadata = await (await page.request.get('/api/v1/meta')).json();
+  expect(catalog.total).toBe(60);
+  expect(metadata.filters.categories).toHaveLength(12);
+  await initialCatalog(page);
+  for (const category of metadata.filters.categories) {
+    const expected = catalog.products.filter((product: any) => product.category === category);
+    expect(expected.length, category).toBeGreaterThanOrEqual(4);
+    expect(expected.length, category).toBeLessThanOrEqual(6);
+    await page.getByTestId('filter-category').selectOption(category);
+    await expect(page.getByTestId('product-card')).toHaveCount(expected.length);
+    for (const product of expected) {
+      await expect(page.getByTestId('product-card').locator(`a[href="/products/${product.product_id}"]`)).toContainText(product.name);
+    }
+  }
+  await page.getByTestId('filter-category').selectOption('');
+  await expect(page.getByTestId('product-card')).toHaveCount(60);
+});
+
+test('@quality original manual voice brown-bag query keeps P011 first', async ({ page }) => {
+  await initialCatalog(page);
+  await page.getByRole('tab', { name: 'Giọng nói', exact: true }).click();
+  await page.getByTestId('voice-transcript').fill('túi da màu nâu');
+  const response = await submitSearch(page);
+  expect(response.query.voice_source).toBe('manual_transcript');
+  expect.soft(response.results[0].product.product_id).toBe('P011');
 });

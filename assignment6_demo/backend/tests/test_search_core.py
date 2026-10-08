@@ -10,7 +10,8 @@ from app.application.query_service import QueryService
 from app.application.search_service import SearchService
 from app.data.product_repository import ProductRepository
 from app.data.product_repository import digest
-from app.data.vector_index import VectorIndex, build_index, unit
+from app.data.vector_index import VectorIndex, unit
+from app.application.index_builder import build_index
 from app.domain import AppError, SearchOptions
 
 ROOT = Path(__file__).resolve().parents[2]

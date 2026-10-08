@@ -1,6 +1,6 @@
-# Assignment 6 Demo — backend tìm kiếm đa phương thức
+# Cortis — demo tìm kiếm thời trang đa phương thức
 
-Backend FastAPI đã triển khai cho đợt demo nhanh: text tiếng Việt, ảnh, text + ảnh, transcript voice, Azure Speech adapter, lọc, sản phẩm, ảnh/credits và đơn hàng khách demo. Frontend chưa triển khai. Xem [hướng dẫn chạy backend](docs/BACKEND_QUICKSTART.md) và [bằng chứng kiểm tra](artifacts/backend/).
+Frontend React/TypeScript và backend FastAPI đã kết nối cho tìm kiếm tiếng Việt, ảnh, text + ảnh, transcript voice, lọc, chi tiết sản phẩm, nguồn ảnh và đơn hàng khách demo. Catalog có **60 sản phẩm / 12 danh mục**, mỗi danh mục 4–6 mẫu, và **30 đơn hàng**. Toàn bộ ảnh là ảnh chụp thật tải từ mạng, có nguồn và giấy phép. Xem [hướng dẫn chạy backend](docs/BACKEND_QUICKSTART.md) và [dữ liệu demo](docs/DEMO_DATA.md).
 
 Chạy tại thư mục này bằng PowerShell:
 
@@ -11,11 +11,13 @@ Chạy tại thư mục này bằng PowerShell:
 
 Mở **http://127.0.0.1:8000/docs** để thử các API. Setup tải hai model một lần; lượt khởi động và tìm kiếm dùng model local CPU. Speech cần `AZURE_SPEECH_KEY` ở environment hoặc `.env` riêng; region `southeastasia`, language `vi-VN`. Không chạy Azure trả phí trong setup hoặc smoke mặc định.
 
-Đã chạy lại setup và khởi động backend: **85 tests đạt**, coverage **87,3%**, lint/compile/dependency check đạt; build index/calibration bằng model CPU thật đạt; **45 lượt kiểm tra HTTP đạt**. Đã sửa lỗi Unicode escape bất hợp lệ gây 500 và JSON float tràn bị phân loại sai. Xem [báo cáo chạy thử](artifacts/backend/RUN_REPORT.md). Sáu query tiếng Việt demo đúng top 1. Bộ calibration nhỏ còn một query text ngoài catalog trả false positive; không coi đây là benchmark chất lượng độc lập. Azure SDK/adapter đã kiểm tra bằng stub và cấu hình local, chưa gọi nhận dạng Azure thật.
+Sau mở rộng dữ liệu, **103 tests backend đạt** sau bổ sung guard Azure và chuyển index builder về Application; coverage statements và branches được công bố riêng trong [coverage.json](artifacts/backend/coverage.json). [API verification](artifacts/backend/expanded-demo.json) có **271/271 kiểm tra đạt**. [Benchmark](artifacts/backend/performance.json) đo 90 requests không lỗi; p95 text **81,69 ms**, ảnh **380,78 ms**, kết hợp **455,44 ms** trên CPU local. Cold start chưa đo. [Báo cáo cũ](artifacts/backend/RUN_REPORT.md) thuộc catalog 12 sản phẩm, không dùng để xác nhận kết quả hiện tại.
+
+Chất lượng tìm kiếm có giới hạn: các truy vấn danh mục tổng quát đúng category trong Top 3 ở **7/12** trường hợp; calibration text nhỏ đạt **5/6 Hit@3**, còn một OOD false positive. Một số kỳ vọng Top 1 trước đây không còn đạt trên catalog 60 sản phẩm. Các bộ này chưa phải frozen test độc lập; xem raw ranks trong artifacts. Azure SDK/adapter được kiểm tra bằng stub; nhận dạng Azure thật vẫn chờ key và 5 bản ghi âm thực tế, tối đa 5 lượt theo quyền người dùng đã xác nhận.
 
 Website mục tiêu: tìm sản phẩm bằng mô tả tiếng Việt, giọng nói tiếng Việt, ảnh thật và text + ảnh; lọc kết quả; xem sản phẩm; tìm và xem đơn hàng của khách hàng demo. AI chạy CPU, voice dùng Azure Speech. Mọi ảnh sản phẩm phải là ảnh chụp thực tế từ mạng, có nguồn, tác giả và giấy phép; không tạo ảnh bằng AI.
 
-Frontend Cortis đang chạy bằng React/TypeScript, hướng showroom với ảnh thật, màu đá sáng và đỏ rượu. Có tìm bằng mô tả tiếng Việt, transcript/voice, ảnh, kết hợp; bộ lọc, chi tiết sản phẩm, tra đơn scoped C001 và nguồn ảnh qua API thật. Bộ 15 query hiện tại dùng calibration/smoke nhỏ, không chứng minh chất lượng trên dữ liệu độc lập. Azure thật chưa được nghiệm thu từ các test adapter.
+Frontend Cortis đã cài sạch, typecheck/lint/17 unit tests/build đạt và 19/19 browser wiring tests đạt trên production preview; hai quality tests vẫn fail với labels giữ nguyên. Cortis chạy bằng React/TypeScript, hướng showroom với ảnh thật, màu đá sáng và đỏ rượu. Có tìm bằng mô tả tiếng Việt, transcript/voice, ảnh, kết hợp; bộ lọc, chi tiết sản phẩm, tra đơn scoped C001 và nguồn ảnh qua API thật. Bộ 15 query hiện tại dùng calibration/smoke nhỏ, không chứng minh chất lượng trên dữ liệu độc lập. Azure thật chưa được nghiệm thu từ các test adapter.
 
 ## Chạy frontend
 
@@ -31,6 +33,7 @@ Mở **http://127.0.0.1:5173/**. Swagger: **http://127.0.0.1:8000/docs**. Fronte
 
 ```powershell
 npm run typecheck
+npm run lint
 npm test
 npm run build
 $env:PLAYWRIGHT_BROWSERS_PATH = 'D:/PROJECTS/ISA-D/assignment6_demo/runtime/browsers'
@@ -39,6 +42,15 @@ npm run test:e2e
 ```
 
 `npm run preview` phục vụ bản build trên port 5173 và dùng cùng proxy backend; dừng dev server trước khi chạy preview. Model/runtime, env, node_modules và dist nằm ngoài Git; clean checkout cần setup backend và tải model theo hướng dẫn. Các gate nghiệm thu đầy đủ được đối chiếu riêng trong [docs/10_TESTING_ACCEPTANCE.md](docs/10_TESTING_ACCEPTANCE.md).
+
+Nhập lại demo có validation, preview trước khi áp dụng và giữ dữ liệu gốc:
+
+```powershell
+& .\backend\.venv\Scripts\python.exe scripts\import_catalog.py --help
+& .\backend\.venv\Scripts\python.exe scripts\apply_catalog.py --help
+& .\backend\.venv\Scripts\python.exe scripts\seed_orders.py --apply
+& .\backend\.venv\Scripts\python.exe scripts\verify_expanded_demo.py
+```
 
 Các quyết định chính:
 

@@ -1,6 +1,21 @@
 # Kịch bản demo và bàn giao UML
 
-**Hiện tại:** đây là kịch bản/UML đích để Agent triển khai, không phải evidence website đã hoạt động. Khi app hoàn thành, export sơ đồ và artifacts theo phần cuối, kiểm tra chúng khớp code thật.
+**Hiện tại:** frontend và backend chạy local; các sơ đồ dưới đây vẫn là kiến trúc đích, chưa phải file Visual Paradigm được bàn giao. Mapping code thực và các khác biệt được ghi ngay dưới đây. Không coi PlantUML trong Markdown là `.vpp` đã hoàn thành.
+
+## Mapping code hiện tại
+
+| Trách nhiệm | Code thực | Khác biệt so với sơ đồ đích |
+| --- | --- | --- |
+| Presentation / composition | `frontend/src/pages/*`, `backend/app/main.py` | Routes và DI composition dùng cùng module main. |
+| Query / image / ranking / speech | `app/application/query_service.py`, `image_service.py`, `ranking_service.py`, `speech_service.py` | Các class đã có; Azure live vẫn chưa nghiệm thu. |
+| Encoder / search | `app/application/embedding_service.py`, `search_service.py` | CPU model thật, không dựng model mỗi request. |
+| Offline index orchestration | `app/application/index_builder.py`, `scripts/build_index.py` | Đã chuyển điều phối encode khỏi Data; giữ nguyên fingerprint và thuật toán. |
+| Repositories / index | `app/data/product_repository.py`, `order_repository.py`, `vector_index.py` | Data đọc/validate/retrieve; không gọi inference. |
+| Live acceptance budget | `app/data/speech_budget.py` | Ledger persistent, không lưu audio/transcript/key. |
+| OrderService / ImageStorage | helper order trong `main.py`; image storage trong ProductRepository | Chưa tách thành hai class như sơ đồ đích. |
+| Domain protocols | `app/domain.py` có schemas/errors | Chưa có formal repository/encoder Protocol classes; DI bằng constructor và test doubles. |
+
+`scripts/verify_architecture.py` kiểm tra AST dependency directions/domain independence và không điều phối inference trong Data; hai negative fixtures chứng minh checker bắt reverse import và encode call. Evidence ở [architecture.json](../artifacts/backend/architecture.json). Check này không thay conformance toàn bộ sơ đồ, `.vpp` hoặc kiểm chứng Azure thật.
 
 ## Demo end to end, khoảng 8–12 phút
 

@@ -1,12 +1,12 @@
 # Azure Speech tiếng Việt và bảo vệ dữ liệu demo
 
-Revision 1. Tài liệu này hướng dẫn Agent implement STT thật, giới hạn request và bảo vệ các boundary. Chỉ đặc tả trong đợt hiện tại; chưa xác minh key/resource bằng lời gọi Azure và chưa có website chạy. Contract HTTP ở 06; UX/state ở 07.
+Revision 2. Adapter và frontend voice đã triển khai; tests mặc định dùng provider/microphone giả có nhãn. Website local đã chạy nhưng chưa có evidence Azure live. Người dùng đã cho phép tối đa 5 lượt nhận dạng và sẽ cấu hình `.env`; key chưa sẵn sàng ở lần kiểm tra gần nhất. Workflow thực tế ở [AZURE_LIVE_CHECK.md](AZURE_LIVE_CHECK.md), contract HTTP ở 06, UX/state ở 07.
 
 ## Cấu hình Azure bắt buộc
 
 Người dùng trả lời `southeastasis`; mã hợp lệ được chuẩn hóa thành **`southeastasia`**. Microsoft yêu cầu region trùng resource của key; việc sửa lỗi gõ không xác minh resource thực tế. Vietnamese speech-to-text dùng **`vi-VN`**. Baseline không cần Azure OpenAI, deployment name, Whisper local hoặc TTS. [Azure regions](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/regions), [language support](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt).
 
-Đặc tả `.env.example` tương lai chỉ có:
+`.env.example` chỉ có:
 
 ```dotenv
 AZURE_SPEECH_KEY=
@@ -15,7 +15,7 @@ AZURE_SPEECH_LANGUAGE=vi-VN
 DEMO_CUSTOMER_ID=C001
 ```
 
-Key thật đã được người dùng cung cấp trong hội thoại; **không chép nó vào bất kỳ file bàn giao, sample, transcript fixture, command line, test, screenshot hoặc log nào**. Người chạy điền key trong env backend/local `.env` đã ignore. Vite không có `VITE_AZURE_SPEECH_KEY`; không truyền secret vào frontend build. Không print config object/`os.environ` khi kiểm tra.
+**Không chép key vào file bàn giao, sample, transcript fixture, command line, test, screenshot hoặc log.** Người chạy điền key trong env backend/local `.env` đã ignore, không gửi key qua chat. Vite không có `VITE_AZURE_SPEECH_KEY`; không truyền secret vào frontend build. Không print config object/`os.environ` khi kiểm tra.
 
 Agent implement cần tạo `.gitignore` trong `assignment6_demo` cho `.env`, `.env.*` ngoại trừ `.env.example`, uploads/temp, model cache/index artifacts theo 09; check ignore trước dùng secret. Nếu key không có, thiếu SDK, region/language sai hoặc config không hợp lệ, speech capability unavailable và `/speech/transcriptions` trả 503 `SPEECH_UNAVAILABLE`; text/image/order không bị ảnh hưởng. Với demo này region allowlist chỉ `southeastasia`, language chỉ `vi-VN`; đổi region sau này phải cập nhật config và đặc tả rõ, không tự thử tuần tự các regions bằng key.
 

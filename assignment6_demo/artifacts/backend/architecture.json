@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "AST import directions and Data inference orchestration; not full architecture conformance",
+  "files_checked": 18,
+  "negative_fixtures_rejected": 2,
+  "findings": [],
+  "limitations": [
+    "No formal repository Protocol classes",
+    "Order lookup remains in presentation helper",
+    "Image storage remains inside ProductRepository",
+    "No Visual Paradigm .vpp artifact"
+  ]
+}
