@@ -19,3 +19,6 @@ frontend/playwright-report/
 artifacts/backend/coverage.sqlite
 .agent/
 .agents/
+artifacts/frontend/playwright/
+artifacts/frontend/screenshots/initial/
+.impeccable/direction-question.json
