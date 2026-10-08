@@ -1,2 +1,28 @@
 # Ignore PDF files in data folder
 storage/data/*.pdf
+
+# Local environments, caches and private configuration
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+
+# Visual Paradigm backups and generated Java files
+*.vpp.bak*
+*.lck
+*.class
+
+# LaTeX compilation intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Downloaded tools, backups and nested sample repository
+/VDHIEU/work/tools/
+/VDHIEU/work/backups/
+/VDHIEU/work/vp-plugin-sample/

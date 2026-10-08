@@ -28,6 +28,8 @@ REQUIRED = [
     "docs/architecture.md",
     "docs/traceability.md",
     "docs/report.md",
+    "docs/report.tex",
+    "docs/report_requirements_audit.md",
     "docs/decisions_and_limitations.md",
     "docs/testing/prototype.tdd.md",
     "data/products.json",
@@ -63,6 +65,7 @@ REQUIRED = [
     "scripts/build_index.py",
     "scripts/run_evaluation.py",
     "scripts/build_report.py",
+    "scripts/report_facts.py",
     "scripts/validate_submission.py",
     "scripts/package_submission.py",
 ]
@@ -120,14 +123,31 @@ def validate(root=ROOT):
         report_path = root / "artifacts/report/Assignment_06_Report.pdf"
         assert report_path.is_file(), "Final PDF is not present yet"
         with fitz.open(report_path) as pdf:
-            assert len(pdf) == 12, f"Report must have 12 pages; found {len(pdf)}"
+            assert len(pdf) >= 11, f"Detailed report is unexpectedly short: {len(pdf)} pages"
             empty = [i + 1 for i in range(len(pdf)) if not str(pdf[i].get_text("text")).strip()]
             assert not empty, f"Empty report pages: {empty}"
             embedded_images = sum(len(pdf[i].get_images()) for i in range(len(pdf)))
-            assert embedded_images >= 6, f"Report evidence images missing: {embedded_images}"
-            return {"pages": len(pdf), "embedded_images": embedded_images, "nonempty_text_pages": True}
+            audit = load_json(root, "artifacts/report/build_audit.json")
+            assert audit["format"] == "assignment06-latex-report-v2", "Expected the complete LaTeX report"
+            assert audit["pages"] == len(pdf) and audit["language"] == "English"
+            assert hashlib.sha256(report_path.read_bytes()).hexdigest() == audit["pdf_sha256"], "Stale PDF audit"
+            for relative, expected in audit["input_sha256"].items():
+                assert hashlib.sha256((root / relative).read_bytes()).hexdigest() == expected, f"Stale report source: {relative}"
+            assert audit["all_required_sections_present"] and len(audit["section_pages"]) == 11
+            assert audit["approved_UML_and_images_unchanged"] and audit["latex_layout_and_references_clean"]
+            assert audit["all_approved_image_pixels_matched"] and len(audit["figure_xrefs"]) == 25
+            assert not audit["nonblack_text"] and not audit["text_outside_safe_bounds"]
+            assert all(audit["embedded_fonts"].values()), "Unembedded report font"
+            assert embedded_images >= 25 and audit["unique_embedded_images"] >= 25, "Missing approved figures"
+            paths = {r["path"] for r in audit["python_listings"]}
+            actual = {p.relative_to(root).as_posix() for folder in ["application", "presentation", "data", "scripts", "tests"]
+                      for p in (root / folder).rglob("*.py") if "__pycache__" not in p.parts}
+            actual.add("main.py")
+            assert paths == actual, "Complete Python listing inventory is missing files"
+            return {"pages": len(pdf), "embedded_images": embedded_images, "nonempty_text_pages": True,
+                    "English_LaTeX": True, "full_Python_files": len(paths), "page_limit": None}
 
-    check("Final PDF has 12 readable pages and embedded visual evidence", report)
+    check("Complete English LaTeX PDF, full Python listings and approved visual evidence", report)
 
     def diagrams_and_screenshots():
         relatives = [p for p in REQUIRED if p.endswith(".png")]

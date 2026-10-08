@@ -1,6 +1,5 @@
-% Assignment 01 submission source.
-% Replace the two identity macros below before final submission.
-% All report content and diagram semantics are condensed from
+% ABC Fashion Online Shop information-system investigation.
+% Report content and diagram semantics are condensed from
 % storage/data/A01_Fashion_ECommerce_Information_System_Investigation.md.
 \documentclass[10pt,a4paper]{article}
 
@@ -19,9 +18,9 @@
 \usepackage{caption}
 \usepackage[hidelinks]{hyperref}
 \usepackage{ragged2e}
-% ---------- Identity (replace before submission) ----------
-\newcommand{\studentid}{[Insert Student ID]}
-\newcommand{\studentname}{[Insert Student Name]}
+% ---------- Student identity ----------
+\newcommand{\studentid}{B23DCCE036}
+\newcommand{\studentname}{Vũ Đình Hiếu}
 \hypersetup{
   pdftitle={ABC Fashion Online Shop -- E-Commerce Information System Investigation},
   pdfsubject={Information System Analysis and Design -- Assignment 01},
@@ -142,18 +141,13 @@
 \section*{Executive Summary}
 ABC Fashion Online Shop is modeled as a medium-sized B2C retailer that owns and sells apparel, footwear, and accessories online. The investigation identifies one focal problem: fragmented and unreliable information prevents the business from coordinating Product Variants, stock, Orders, payment results, delivery, returns, customers, and reporting as one end-to-end process. In fashion, the stocked and fulfilled unit is the exact size/color \keyterm{Product Variant}, not its parent Product Style.
 
-The proposed \keyterm{ABC Fashion Commerce Information System (AFCIS)} establishes a controlled information backbone for catalog, customer, cart, Order, promotion, variant-level inventory, fulfillment, after-sales, review, and operational reporting. Payment execution, carrier operations, and message delivery remain external services. Six problems are established by the assignment case; return/exchange and promotion-control concerns remain hypotheses for validation before Assignment 02.
-
-\vfill
-\begin{center}
-\small Required submission filename: \texttt{A01\_StudentID\_Name.pdf}
-\end{center}
+The proposed \keyterm{ABC Fashion Commerce Information System (AFCIS)} establishes a controlled information backbone for catalog, customer, cart, Order, promotion, variant-level inventory, fulfillment, after-sales, review, and operational reporting. Payment execution, carrier operations, and message delivery remain external services. Six problems are supported by the available evidence; return/exchange and promotion-control concerns remain hypotheses for validation.
 \end{titlepage}
 \hypersetup{pageanchor=true}
 
 % ============================== PAGE 2 ==============================
 \section{Introduction}
-This report answers the assignment's central question: \emph{What problem should the information system solve?} It follows the required progression from organization and activities through stakeholders, information, problems, scope, boundary, and objectives. It is a desk-based investigation grounded in the Assignment 01 case and the completed fashion-domain analysis; detailed UML, database, interface, and implementation design are intentionally deferred.
+This report investigates the information problem ABC Fashion Online Shop should solve. It examines the organization and activities, stakeholders, information, problems, system scope, system boundary, and objectives. The analysis focuses on business and information needs; detailed software and database design are outside its scope.
 
 \textbf{Assumptions and limits.} ABC is treated as one medium-sized, owned-inventory B2C retailer with one initial warehouse and an online storefront. Payment authorization, physical transport, and message delivery are performed by external providers. The case supplies no interviews, logs, policies, or measured baselines; therefore, fashion-specific failure modes and numeric targets are explicitly preliminary.
 
@@ -213,17 +207,17 @@ Notification Service & Message delivery & Valid destination/content and correlat
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{stakeholder_map.png}
-\caption{Core Diagram 1 --- Stakeholder Map for ABC Fashion Online Shop.}
+\caption{Stakeholder Map for ABC Fashion Online Shop.}
 \label{fig:stakeholder-map}
 \end{figure}
 
-The map contains all and only the stakeholder groups analyzed above. Branch connectors indicate classification, not authorization or data flow; therefore, UML actors and Use Cases are not used.
+The branches classify the stakeholder groups as internal or external to ABC Fashion Online Shop.
 \newpage
 
 % ============================== PAGE 4 ==============================
 \section{Business Activity Analysis}
 \begin{tabularx}{\textwidth}{L{29mm}Y L{43mm}}
-\rowcolor{TableGray}\textbf{Required activity} & \textbf{Role in the business} & \textbf{Principal information}\\
+\rowcolor{TableGray}\textbf{Activity} & \textbf{Role in the business} & \textbf{Principal information}\\
 \textbf{4.1 Product Management} & Maintains categories, Styles, Variants, images, size/fit/care, lifecycle, prices and publication. & Style/Variant, media, price, promotion, supplier facts\\
 \textbf{4.2 Customer Management} & Maintains one controlled identity, contact, address, consent and service timeline. & Customer, consent, address, service history\\
 \textbf{4.3 Order Processing} & Validates cart, price, promotion and ATS; snapshots exact SKU lines; reserves stock and controls status. & Cart, Order, Order Line, reservation, status event\\
@@ -233,7 +227,7 @@ The map contains all and only the stakeholder groups analyzed above. Branch conn
 \textbf{4.7 Reporting} & Produces defined sales, stock, fulfillment, return/refund, promotion and exception views. & Governed operational data, period/status filters, refresh time\\
 \end{tabularx}
 
-Browsing and fit support, cart and checkout, promotions, reviews, cancellation, return, exchange, refund, and supplier receipt complete the required fashion journey.
+Browsing and fit support, cart and checkout, promotions, reviews, cancellation, return, exchange, refund, and supplier receipt complete the fashion-commerce journey.
 
 \iffalse
 \begin{figure}[!h]
@@ -301,17 +295,17 @@ Browsing and fit support, cart and checkout, promotions, reviews, cancellation, 
   \draw[message] (pack.south) -- node[flowlabel,below,sloped,pos=.48]{shipment request} (carrier.west);
   \draw[message] (carrier.north) -- node[flowlabel,right,pos=.50]{tracking status} (19.00,3.35) |- (status.east);
 \end{tikzpicture}}
-\caption{Core Diagram 2 --- High-Level Fashion Order-to-After-Sales Process (BPMN 2.0).}
+\caption{High-Level Fashion Order-to-After-Sales Process (BPMN 2.0).}
 \end{figure}
 \fi
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{bpmn_2.0.png}
-\caption{Core Diagram 2 --- High-Level Fashion Order-to-After-Sales Process (BPMN 2.0).}
+\caption{High-Level Fashion Order-to-After-Sales Process (BPMN 2.0).}
 \label{fig:business-process}
 \end{figure}
 
-Solid Sequence Flows remain inside a pool; dashed Message Flows cross participant boundaries. External providers are black-box pools. Alternative validation, payment-failure, review, and return/exchange paths are shown without introducing detailed Use Cases.
+Solid Sequence Flows remain inside a pool; dashed Message Flows cross participant boundaries. External providers are represented as black-box pools. The process includes validation, payment-failure, review, and return/exchange paths.
 \newpage
 
 % ============================== PAGE 5 ==============================
@@ -342,7 +336,7 @@ I-16--17 & KPI/report and status/audit event & AFCIS / actors & Decisions, excep
 \end{tabularx}
 \footnotesize P = produced/updated; C = consumed; S = stored; X = exchanged across the AFCIS boundary.
 
-\normalsize\textbf{Preliminary information-quality rules}
+\normalsize\textbf{Information-quality rules}
 \begin{enumerate}
 \item Every active Product Variant belongs to one Product Style and has a unique SKU; the Style itself is not stocked or ordered.
 \item Published Variants contain applicable size/system, color, material/pattern/fit, approved media, price, state and availability source.
@@ -395,13 +389,13 @@ The combined effects are inaccurate promise or cancellation; overselling, unders
   \foreach \c in {c1,c2,c3,c4}{\draw[causal] (\c)--(p);}
   \foreach \k in {k1,k2,k3,k4}{\draw[causal] (p)--(\k);}
 \end{tikzpicture}}
-\caption*{\textbf{PT-1.} Mandatory supporting Problem Tree. Causes appear below the focal problem and consequences above it; arrows mean ``contributes to.''}
+\caption*{\textbf{Problem Tree.} Causes appear below the focal problem and consequences above it; arrows mean ``contributes to.''}
 \end{figure}
 \fi
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.88\textwidth]{problem_tree.png}
-\caption*{\textbf{PT-1.} Mandatory supporting Problem Tree. Causes appear below the focal problem and consequences above it; arrows mean ``contributes to.''}
+\caption*{\textbf{Problem Tree.} Causes appear below the focal problem and consequences above it; arrows mean ``contributes to.''}
 \label{fig:problem-tree}
 \end{figure}
 
@@ -411,7 +405,7 @@ P-01--P-04 are investigated first because they determine whether the exact Varia
 % ============================== PAGE 7 ==============================
 \section{Proposed Information System}
 \subsection{System Purpose}
-The proposed \keyterm{ABC Fashion Commerce Information System (AFCIS)} provides one controlled operational backbone for Style/Variant, customer, price/promotion, Order, payment-reference, inventory, fulfillment, shipment, after-sales, review and reporting information. It is justified by P-01--P-06, not by a solution-first desire to build a website.
+The proposed \keyterm{ABC Fashion Commerce Information System (AFCIS)} provides one controlled operational backbone for Style/Variant, customer, price/promotion, Order, payment-reference, inventory, fulfillment, shipment, after-sales, review and reporting information. Its scope directly addresses problems P-01--P-06.
 
 \subsection{System Scope}
 \begin{tabularx}{\textwidth}{L{12mm}Y L{36mm}}
@@ -485,13 +479,13 @@ Figure 3 uses one black-box DFD process, seven external entities, sixteen direct
   \draw[dataflow] (sys.-30) to[bend left=5] node[flowlabel,above,sloped,pos=.65]{F-15 notification request data} (n.west);
   \draw[dataflow] (n.west) to[bend left=5] node[flowlabel,below,sloped,pos=.35]{F-16 delivery outcome} (sys.-45);
 \end{tikzpicture}}
-\caption{Core Diagram 3 --- AFCIS System Context Diagram (Yourdon--DeMarco DFD convention).}
+\caption{AFCIS System Context Diagram (Yourdon--DeMarco DFD convention).}
 \end{figure}
 \fi
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{context_diagram.png}
-\caption{Core Diagram 3 --- AFCIS System Context Diagram (Yourdon--DeMarco DFD convention).}
+\caption{AFCIS System Context Diagram (Yourdon--DeMarco DFD convention).}
 \label{fig:context-diagram}
 \end{figure}
 
@@ -514,7 +508,7 @@ Every context entity has at least one named incoming and outgoing flow. Payment,
 % ============================== PAGE 9 ==============================
 \subsection{System Objectives}
 \begin{tabularx}{\textwidth}{L{10mm}Y L{39mm}}
-\rowcolor{TableGray}\textbf{ID} & \textbf{Preliminary objective} & \textbf{Candidate measure / target}\\
+\rowcolor{TableGray}\textbf{ID} & \textbf{Objective} & \textbf{Measure / target}\\
 O-01 & One governed Style/Variant catalog with complete fashion attributes and controlled publication. & 100\% of published Variants pass mandatory-field and unique-SKU validation.\\
 O-02 & Timely, traceable SKU-level inventory, reservations, movements and ATS. & At least 99\% physical-to-record accuracy; accepted event visible within 60 seconds.\\
 O-03 & Coordinate routine Orders from checkout through payment, stock, fulfillment and shipment without re-keying. & At least 90\% of routine paid Orders enter warehouse work without manual re-entry.\\
@@ -524,12 +518,12 @@ O-06 & Controlled customer data and secure external payment coordination without
 O-07 & Timely, reproducible operational reports and exception views. & Agreed dashboards refresh within 15 minutes; standard reports need no manual source consolidation.\\
 \end{tabularx}
 
-Targets are provisional until ABC measures the current baseline and approves definitions in Assignment 02. Together, O-01--O-07 trace to every case-established problem P-01--P-06; O-02/O-05 and O-01/O-07 also cover P-07/P-08 if those hypotheses are confirmed.
+Targets are provisional until ABC measures the current baseline and approves their definitions. Together, O-01--O-07 trace to problems P-01--P-06; O-02/O-05 and O-01/O-07 also cover P-07/P-08 if those hypotheses are confirmed.
 
 \section{Conclusion}
 ABC does not primarily need ``a website.'' It needs to solve a more fundamental information problem: fragmented and unreliable Style/Variant, inventory, customer, Order, external-service status, after-sales and reporting information prevents the business from promising, fulfilling, explaining and learning from the lifecycle of the exact fashion Product Variant.
 
-AFCIS responds with a bounded, traceable information-system proposal. It governs the Style/Variant distinction and coordinates catalog, customer, cart, Order, payment-reference, stock, fulfillment, shipment, return/exchange/refund, review and reporting information. Payment execution, physical transport, message delivery, supplier systems and accounting stay outside with named crossings. Before Assignment 02, ABC should validate candidate causes and P-07/P-08, baseline objective measures, confirm policies/status vocabularies, and verify provider interfaces. Only then should stakeholders, problems, activities and information flows become formal actors, requirements and Use Cases.
+AFCIS responds with a bounded, traceable information-system proposal. It governs the Style/Variant distinction and coordinates catalog, customer, cart, Order, payment-reference, stock, fulfillment, shipment, return/exchange/refund, review and reporting information. Payment execution, physical transport, message delivery, supplier systems and accounting stay outside with named crossings. ABC should validate candidate causes and P-07/P-08, establish baseline objective measures, confirm policies and status vocabularies, and verify provider interfaces before detailed system design begins.
 
 \section{References}
 \begin{enumerate}[label={[R\arabic*]},leftmargin=8mm,itemsep=.3pt]
@@ -542,11 +536,5 @@ AFCIS responds with a bounded, traceable information-system proposal. It governs
 \item Object Management Group. \emph{Business Process Model and Notation (BPMN), Version 2.0.2}.
 \item Visual Paradigm. \emph{Mind Mapping, BPMN Pool/Lane, System Context Diagram and Data Flow Diagram guidance}.
 \end{enumerate}
-
-\vfill
-\begin{center}
-\colorbox{TableGray}{\parbox{0.93\textwidth}{\centering\footnotesize
-\textbf{Submission check:} three numbered core diagrams + supporting PT-1; no UML Use Case Diagram; consistent Product Style/Product Variant terminology; seven objectives; nine total PDF pages. Replace identity placeholders before submission.}}
-\end{center}
 
 \end{document}

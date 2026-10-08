@@ -147,7 +147,7 @@ def write_final_verification(root, validation, smoke):
     lines.extend(
         [
             "",
-            f"Tests: **{tests['tests']} PASS**, failures/errors={tests['failures']}, skipped={tests['skipped']}; application/data line coverage **{tests['application_data_line_coverage']:.2f}%**. Ruff/typecheck/pip-check evidence PASS. PDF exactly 12 nonempty pages; required 3 UML exports and 6 screenshots exist and decode.",
+            f"Tests: **{tests['tests']} PASS**, failures/errors={tests['failures']}, skipped={tests['skipped']}; application/data line coverage **{tests['application_data_line_coverage']:.2f}%**. Ruff/typecheck/pip-check evidence PASS. Complete English LaTeX PDF has no page limit, includes all Python files and all 25 approved images; required UML exports and screenshots exist and decode.",
             "",
             "Clean extraction smoke dùng interpreter `.venv` của workspace để reuse dependency, nhưng chạy source từ ZIP snapshot giải nén trong cwd riêng, không dùng PYTHONPATH workspace. Đây là portable-source smoke, không tuyên bố clean dependency installation.",
             "",

@@ -1,0 +1,1 @@
+PASS native project=D:\PROJECTS\ISA-D\assignment6\artifacts\automation\smoke.vpp diagrams=1 actor=iaHLrwWAUtAAFQnG shape=Actor

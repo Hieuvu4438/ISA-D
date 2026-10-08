@@ -6,14 +6,14 @@ Bản bàn giao được kiểm tra từ file thật, service output, native mod
 |---|---|
 | Required submission groups and evidence | PASS |
 | Dataset, real images, and matching pixel index | PASS |
-| Final PDF has 12 readable pages and embedded visual evidence | PASS |
+| Complete English LaTeX PDF, full Python listings and approved visual evidence | PASS |
 | UML exports and real screenshot image files | PASS |
 | Native VP model inventory and required UML semantics | PASS |
 | Three mandatory demo modes, fusion, order, and scores | PASS |
 | Frozen ground truth, metrics, separate denominators, and failures | PASS |
 | Test, coverage, lint, typecheck, and dependency consistency evidence | PASS |
 
-Tests: **78 PASS**, failures/errors=0, skipped=0; application/data line coverage **100.00%**. Ruff/typecheck/pip-check evidence PASS. PDF exactly 12 nonempty pages; required 3 UML exports and 6 screenshots exist and decode.
+Tests: **78 PASS**, failures/errors=0, skipped=0; application/data line coverage **100.00%**. Ruff/typecheck/pip-check evidence PASS. Complete English LaTeX PDF has no page limit, includes all Python files and all 25 approved images; required UML exports and screenshots exist and decode.
 
 Clean extraction smoke dùng interpreter `.venv` của workspace để reuse dependency, nhưng chạy source từ ZIP snapshot giải nén trong cwd riêng, không dùng PYTHONPATH workspace. Đây là portable-source smoke, không tuyên bố clean dependency installation.
 

@@ -1,0 +1,19 @@
+<plugin id="edu.vdhieu.ecommerce.assignment" name="E-Commerce Assignment Builder"
+        description="Create corrected native analysis, data and MVC class diagrams"
+        provider="Vu Dinh Hieu" class="edu.vdhieu.vp.AssignmentPlugin">
+  <actionSets>
+    <actionSet id="edu.vdhieu.ecommerce.assignment.actions">
+      <toolbar id="edu.vdhieu.ecommerce.assignment.toolbar" orientation="north" index="last"/>
+      <action id="edu.vdhieu.ecommerce.assignment.build" actionType="generalAction"
+              label="Build Assignment Diagrams" tooltip="Create corrected e-commerce diagrams"
+              style="normal" toolbarPath="edu.vdhieu.ecommerce.assignment.toolbar/#">
+        <actionController class="edu.vdhieu.vp.BuildAction"/>
+      </action>
+      <action id="edu.vdhieu.ecommerce.assignment.repair" actionType="generalAction"
+              label="Repair Design 04 Connectors" tooltip="Rebuild attached connectors"
+              style="normal" toolbarPath="edu.vdhieu.ecommerce.assignment.toolbar/#">
+        <actionController class="edu.vdhieu.vp.RepairAction"/>
+      </action>
+    </actionSet>
+  </actionSets>
+</plugin>

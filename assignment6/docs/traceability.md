@@ -19,15 +19,17 @@ Nguồn yêu cầu: PDF trang 17–19 (T1–T6), 20–21 (evaluation/report/subm
 
 ## Cross-cutting mappings
 
+Cột Report trong bảng FR trên ghi trang bản Markdown 12 trang trước đây. Bản hiện tại dùng Sections 1–11 và Appendix A–D: Section 7 implementation, Section 8 method, Section 9 evaluation/demo; Appendix B toàn bộ Python, Appendix C images/data và Appendix D full fixtures/config. Dùng TOC PDF hoặc `build_audit.json::section_pages` để tra cứu trang hiện tại.
+
 | Requirement / gate | Evidence phải có |
 |---|---|
 | Native UML | `models/Assignment_06_Multimodal_Search.vpp`; reopen/select/edit qua VP; `vp_use_case`, `vp_architecture`, `vp_sequence` screenshots và ba diagram exports |
 | Layer dependencies | Source imports: Presentation → Application → Data; composition root riêng; architecture test; native package ownership/dependency review |
 | Retrieval khác ranking | `retrieve_candidates` chưa sort/cắt top-k cuối; `RankingService.rank` owns final order; code review + tests |
 | Simulation trung thực | SpeechService nhận transcript; descriptor encode pixels 88 chiều; README/report/UI nhãn đúng; không CLIP/vectorDB/realASR claims |
-| Report 10–12 trang / 11 nội dung | PDF mở được có 12 trang, screenshots VP/Python thật, metrics đối chiếu results; render toàn bộ pages và review |
+| Report LaTeX English / 11 nội dung | `docs/report.tex` → XeLaTeX, không giới hạn trang, đủ 25 ảnh và mọi file Python; input hashes, build audit và visual review |
 | Bảy nhóm bài nộp | Report, .vpp, source, dataset, sample images, README, demo results; submission validation + ZIP manifest + extracted smoke test |
-| Thiếu student identity | Cover `Chưa cung cấp`; không suy ra từ license/tài khoản |
+| Thiếu student identity | Cover `Not supplied`; không suy ra từ license/tài khoản |
 
 ## Nguồn số liệu và cách diễn giải
 

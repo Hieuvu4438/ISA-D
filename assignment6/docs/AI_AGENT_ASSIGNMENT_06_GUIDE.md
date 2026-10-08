@@ -18,7 +18,7 @@ Người dùng có thể giao cho Agent:
 Đọc docs/AI_AGENT_ASSIGNMENT_06_GUIDE.md và PDF nguồn. Thực hiện toàn bộ
 Assignment 06 theo hướng dẫn, đến khi có Python prototype chạy được,
 project Visual Paradigm .vpp với đủ 3 sơ đồ UML native, dataset, sample images,
-demo thực tế, đánh giá, README, báo cáo PDF 10–12 trang và gói bàn giao.
+demo thực tế, đánh giá, README, báo cáo LaTeX English đầy đủ không giới hạn trang và gói bàn giao.
 
 Tôi cho phép bạn tự chủ đọc, tạo, sửa file; viết và chạy code; cài dependency
 phục vụ bài tập; chụp/đọc màn hình; điều khiển chuột/bàn phím; trực tiếp
@@ -164,7 +164,7 @@ Yêu cầu đi kèm:
 | M3 — Baseline | Python ba tầng, ≥10 products, text/voice/image, ranking, CLI | Ba chế độ chạy end to end; tests cốt lõi pass |
 | M4 — Hoàn thiện | Fusion text+image, lọc giá/category, order lookup đơn giản | Extension có test, phù hợp UML/code và được mô tả đúng |
 | M5 — Thực nghiệm | Evaluation set, chạy demo, đo số liệu, thu screenshot | Log và metrics được sinh từ chương trình thật |
-| M6 — Báo cáo | Report 10–12 trang, README, traceability, discussion | PDF dễ đọc, có ảnh thật và số liệu khớp artifact |
+| M6 — Báo cáo | Report LaTeX English chi tiết, README, traceability, discussion | PDF đủ ảnh/code, dễ đọc, số liệu khớp artifact |
 | M7 — Bàn giao | Kiểm tra project, clean install/run, ZIP, manifest, final review | Mọi gate ở phần 16 đạt; nêu rõ phần chưa đạt nếu có |
 
 Để có bản V01 sớm, hoàn tất M0–M3 và tạo bộ report/demo baseline có thể kiểm tra. Để có bản V02, hoàn thiện M4–M7. Dùng thư mục phiên bản khi cần, tránh ghi đè bản đã chuẩn bị.
@@ -893,11 +893,11 @@ artifacts/screenshots/demo_image.png
 artifacts/screenshots/demo_multimodal.png         # Nếu có extension
 ```
 
-## 13. Báo cáo PDF khoảng 10–12 trang
+## 13. Báo cáo PDF LaTeX English chi tiết
 
 ### 13.1. Nội dung và phân bổ trang
 
-Tạo `docs/report.md` làm source và PDF tại `artifacts/report/Assignment_06_Report.pdf`. Hướng tới 12 trang tổng gồm cover; điều chỉnh bố cục theo nội dung thật, không ép số trang bằng chữ quá nhỏ hoặc trang gần trống.
+Cập nhật theo yêu cầu mới của người dùng: source hiện tại là `docs/report.tex`, output là `artifacts/report/Assignment_06_Report.pdf`, toàn bộ nội dung giải thích bằng tiếng Anh, chữ đen trên nền trắng, không giới hạn số trang. Giữ nguyên UML và mọi ảnh đã duyệt. Phần chính giải thích Python; phụ lục chứa đầy đủ mọi file Python, fixtures và cấu hình. `docs/report.md` chỉ hướng dẫn build. Bảng phân bổ trang cũ dưới đây giữ làm tham khảo cấu trúc của đề; không áp đặt page count cho bản hiện tại. Giữ đúng thứ tự 11 phần đề khuyến nghị.
 
 | Trang mục tiêu | Nội dung |
 |---|---|
@@ -920,6 +920,8 @@ Thiếu tên/MSSV/class không được bịa. Đọc dữ liệu người dùng
 
 ### 13.2. Xuất PDF local
 
+Pipeline hiện tại: `scripts/build_report.py` tạo tables từ saved evidence và snapshot nguyên file code, sau đó compile bằng XeLaTeX ba passes. Cần MiKTeX/TeX Live, các packages của source và font Times New Roman/Arial/Consolas. Kiểm tra `build_audit.json`, hash input, 25 ảnh nhúng nguyên pixels, full source inventory, references, text màu đen/fonts/bounds và visual review. Không rerun evaluation hoặc chỉnh UML để build report. Các pipeline khác dưới đây là tham khảo cũ và không thay yêu cầu LaTeX hiện tại.
+
 Agent lựa chọn một pipeline có thể chạy và kiểm chứng, ví dụ:
 
 - Markdown → HTML có print CSS → Chromium/Playwright print PDF local.
@@ -931,14 +933,14 @@ Nếu dùng ReportLab, đăng ký và embed font Unicode hỗ trợ tiếng Vi�
 Interface builder mục tiêu:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/build_report.py --input docs/report.md --output artifacts/report/Assignment_06_Report.pdf
+.\.venv\Scripts\python.exe scripts/build_report.py --input docs/report.tex --output artifacts/report/Assignment_06_Report.pdf
 ```
 
 Builder phải đọc nguồn và artifact thật; không sinh bảng số liệu riêng trái với evaluation CSV. Có thể tạo bảng report tự động từ metrics/results để tránh lệch số liệu.
 
 ### 13.3. Review PDF
 
-- Mở PDF bằng trình đọc; đếm trang bằng PyMuPDF/pypdf, hướng tới 10–12 trang.
+- Mở PDF bằng trình đọc; đếm trang để kiểm chứng output, không áp đặt giới hạn trang; xác minh 11 phần, mọi ảnh/code và bố cục.
 - Render toàn bộ trang để inspect bố cục, đặc biệt trang chứa UML, bảng và screenshot.
 - Kiểm tra dấu tiếng Việt, font embedding, clipping, overflow, ảnh mờ và dòng bị cắt.
 - Có caption và dẫn chiếu Figure/Table; diagram đủ lớn để đọc tên/mũi tên ở zoom thông thường.
@@ -986,7 +988,7 @@ Viết `scripts/validate_submission.py` kiểm tra bằng file thật:
 - Tồn tại đủ bảy nhóm artifact, các file không rỗng.
 - Product count ≥10, unique ids, paths tồn tại, vectors/index khớp encoder/dimension/product ids.
 - README/CLI examples trỏ tới sample files có thật.
-- Report PDF mở được, khoảng 10–12 trang; PDF parser không chứng minh bố cục tốt nên vẫn cần inspect ảnh.
+- Report PDF LaTeX English mở được, không giới hạn trang, đủ ảnh/code; PDF parser không chứng minh bố cục tốt nên vẫn cần inspect ảnh.
 - `.vpp` có thật; bước mở lại trong VP được ghi bằng screenshot/progress, không tự suy ra nội dung native từ file size.
 - Demo ba modes có inputs/processing/result/scores; evaluation metrics nhất quán với results.
 - Tests đã chạy sau lần sửa logic cuối; log/exit code được lưu.
@@ -1064,7 +1066,7 @@ Trong lượt thực thi, cập nhật ngắn bằng tiếng Việt ở mỗi m�
 
 ### 16.3. Báo cáo và bàn giao
 
-- [ ] Report PDF khoảng 10–12 trang, đủ nội dung đề, font/ảnh/bảng đọc được.
+- [ ] Report PDF LaTeX English chữ đen/trắng, không giới hạn trang, đủ 11 phần/ảnh/full Python code và font/ảnh/bảng đọc được.
 - [ ] Report có screenshot VP và Python chạy thật; số liệu khớp logs/metrics.
 - [ ] README có Python/packages/run/structure/examples/limitations.
 - [ ] Có đủ bảy nhóm sản phẩm bài nộp.

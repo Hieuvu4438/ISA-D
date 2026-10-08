@@ -1,0 +1,177 @@
+{
+  "total_queries": 12,
+  "successful_queries": 12,
+  "success_rate": 1.0,
+  "criterion": "top-1 product belongs to relevant_ids; order exact id; robustness evaluated separately",
+  "by_mode": {
+    "text": {
+      "total": 4,
+      "successful": 4,
+      "success_rate": 1.0
+    },
+    "voice": {
+      "total": 4,
+      "successful": 4,
+      "success_rate": 1.0
+    },
+    "image": {
+      "total": 4,
+      "successful": 4,
+      "success_rate": 1.0
+    }
+  },
+  "groups": {
+    "primary": {
+      "total": 12,
+      "successful": 12,
+      "success_rate": 1.0
+    },
+    "extension": {
+      "total": 2,
+      "successful": 2,
+      "success_rate": 1.0
+    },
+    "challenge": {
+      "total": 2,
+      "successful": 0,
+      "success_rate": 0.0
+    },
+    "robustness": {
+      "total": 5,
+      "successful": 5,
+      "success_rate": 1.0
+    }
+  },
+  "encoder": {
+    "name": "rgbhist-gray-thumbnail",
+    "version": "1.0",
+    "dimension": 88
+  },
+  "ranking": "weighted normalized text/image scores; ties product_id ascending; business weight 0",
+  "ground_truth_version": "ground-truth-v1-before-implementation",
+  "ground_truth_sha256": "85c1b7477b1b2f645ba865ebad160f9882b77b8309342a11a5292247017d3dea",
+  "timing_ms": {
+    "mean": 1.2891749890210729,
+    "p95": 6.6154999658465385,
+    "max": 6.6154999658465385,
+    "percentile_method": "nearest rank ceil(p*n)",
+    "startup_excluded": true,
+    "samples": 12
+  },
+  "environment": {
+    "python": "3.12.8",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "incorrect_examples": [
+    {
+      "id": "C01",
+      "group": "challenge",
+      "mode": "text",
+      "input": {
+        "mode": "text",
+        "query": "sneakers",
+        "note": "Unimplemented semantic synonym"
+      },
+      "relevant_ids": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "top_1_product_id": null,
+      "top_k_ids": [],
+      "scores": [],
+      "actual_order_id": null,
+      "success": false,
+      "processing_ms": 0.17889984883368015,
+      "error": null,
+      "processing": {
+        "modality": "text",
+        "normalized_query": "sneakers",
+        "tokens": [
+          "sneakers"
+        ],
+        "filters": {
+          "category": null,
+          "max_price_exclusive": null,
+          "max_price_inclusive": null
+        },
+        "candidates_before_filter": 0,
+        "candidates_after_filter": 0,
+        "encoder": null,
+        "ranking_weights": {
+          "text": 1.0,
+          "image": 0.0
+        },
+        "top_k": 5,
+        "simulated_stt": false,
+        "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+        "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+      },
+      "note": "Unimplemented semantic synonym"
+    },
+    {
+      "id": "C02",
+      "group": "challenge",
+      "mode": "text",
+      "input": {
+        "mode": "text",
+        "query": "shoes not black",
+        "note": "Negation unsupported by lexical OR matching"
+      },
+      "relevant_ids": [
+        2,
+        4,
+        6,
+        7
+      ],
+      "top_1_product_id": 1,
+      "top_k_ids": [
+        1,
+        5,
+        2,
+        4,
+        6
+      ],
+      "scores": [
+        0.6666666666666666,
+        0.6666666666666666,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "actual_order_id": null,
+      "success": false,
+      "processing_ms": 0.15380000695586205,
+      "error": null,
+      "processing": {
+        "modality": "text",
+        "normalized_query": "shoes not black",
+        "tokens": [
+          "shoes",
+          "not",
+          "black"
+        ],
+        "filters": {
+          "category": "shoes",
+          "max_price_exclusive": null,
+          "max_price_inclusive": null
+        },
+        "candidates_before_filter": 9,
+        "candidates_after_filter": 6,
+        "encoder": null,
+        "ranking_weights": {
+          "text": 1.0,
+          "image": 0.0
+        },
+        "top_k": 5,
+        "simulated_stt": false,
+        "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+        "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+      },
+      "note": "Negation unsupported by lexical OR matching"
+    }
+  ]
+}

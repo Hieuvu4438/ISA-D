@@ -1,0 +1,545 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm,headheight=15pt,headsep=8mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}[Scale=0.87]
+\usepackage{amsmath,amssymb,graphicx,booktabs,longtable,tabularx,array}
+\usepackage{listings,fvextra,fancyhdr,hyperref,eso-pic}
+\hypersetup{hidelinks,pdftitle={Assignment 06: Multimodal Search System for E-Commerce},pdfauthor={Vu Dinh Hieu},bookmarksnumbered=true,bookmarksdepth=3}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Assignment 06}
+\fancyhead[R]{\small Multimodal E-Commerce Search}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\lstset{basicstyle=\ttfamily\footnotesize,keywordstyle=\bfseries,commentstyle=\itshape,stringstyle=\ttfamily,
+ numbers=left,numberstyle=\tiny,numbersep=7pt,frame=single,framerule=0.3pt,
+ breaklines=true,breakatwhitespace=false,columns=fullflexible,keepspaces=true,
+ showstringspaces=false,tabsize=4,xleftmargin=14pt,xrightmargin=3pt,aboveskip=10pt,belowskip=10pt,
+ captionpos=t,literate={–}{{\textendash}}1 {—}{{\textemdash}}1 {→}{{$\rightarrow$}}1 {≤}{{$\leq$}}1 {≥}{{$\geq$}}1 {×}{{$\times$}}1}
+\newcommand{\assetfigure}[3]{\begin{figure}[htbp]\centering
+ \includegraphics[width=\linewidth,height=0.77\textheight,keepaspectratio]{#1}
+ \caption{#2}\label{#3}\end{figure}}
+\newcommand{\reporttable}[1]{\input{artifacts/report/latex_build/#1}}
+\newcommand{\CodeFile}[2]{\refstepcounter{lstlisting}\par\vspace{7pt}
+ \noindent Listing \thelstlisting: \texttt{#1}\par\vspace{4pt}
+ \VerbatimInput[fontsize=\footnotesize,breaklines=true,breakanywhere=true,
+ numbers=left,numbersep=7pt,frame=single,framerule=0.3pt,
+ xleftmargin=14pt,xrightmargin=3pt,breaksymbolleft={},breaksymbolright={}]{#2}\par\vspace{5pt}}
+\input{artifacts/report/latex_build/facts.tex}
+\begin{document}
+\begin{titlepage}
+\AddToShipoutPictureBG*{\AtPageLowerLeft{\includegraphics[width=\paperwidth,height=\paperheight]{docs/cover/background.png}}}
+\centering
+\vspace*{10mm}
+{\large\bfseries POSTS AND TELECOMMUNICATIONS\par INSTITUTE OF TECHNOLOGY\par}
+\vspace{10mm}
+\includegraphics[width=30mm]{docs/cover/logo.png}\par
+\vspace{17mm}
+{\Large\bfseries ASSIGNMENT 06 REPORT\par}
+\vspace{7mm}
+{\LARGE\bfseries INFORMATION SYSTEM ANALYSIS\par AND DESIGN\par}
+\vspace{7mm}
+{\Large\bfseries Multimodal Search System for E-Commerce\par}
+\vspace{6mm}
+{\large Requirements, UML Architecture, Python Implementation\par and Experimental Evaluation\par}
+\vspace{18mm}
+\rule{0.66\textwidth}{0.5pt}\par
+\vspace{8mm}
+\begin{minipage}{0.80\textwidth}
+\large
+\begin{tabular}{@{}p{47mm}p{76mm}@{}}
+Instructor: & \textbf{Tran Dinh Que}\\[3mm]
+Student name: & \textbf{Vu Dinh Hieu}\\[3mm]
+Student ID: & \textbf{B23DCCE036}\\[3mm]
+Class: & \textbf{E23TTNT02}
+\end{tabular}
+\end{minipage}\par
+\vfill
+{\normalsize October 2026\par}
+\vspace*{8mm}
+\end{titlepage}
+\thispagestyle{plain}
+\begin{abstract}
+This report connects requirements analysis, three-layer architecture, native UML modeling and an executable search prototype. Text queries, simulated voice transcripts and image files are converted into a common query contract, processed by candidate retrieval and filtering, and ordered by a separate ranking service. The implementation uses a validated catalogue of \ProductCount{} products, an 88-dimensional handcrafted image descriptor, cosine similarity and normalized score fusion. Twelve primary queries pass their declared top-1 relevance criterion; two extension cases and five robustness cases pass, while two challenge cases expose unsupported synonym and negation behavior. The report explains the complete Python implementation, records the actual demonstration outputs, preserves the approved UML and screenshots, and includes every project Python source file in full. The results demonstrate architectural consistency on a small synthetic dataset, rather than production readiness or general visual understanding.
+\end{abstract}
+\vspace{4mm}{\small The report follows the assignment's eleven-section structure. Complete implementation listings, dataset fixtures and evidence inventories are provided in the appendices.}
+\clearpage
+{\small\setlength{\parskip}{0pt}\tableofcontents}\clearpage
+\listoffigures\clearpage
+
+\section{Introduction}\label{sec:introduction}
+E-commerce customers describe the same shopping intent through different interfaces. A customer may type ``black running shoes'', provide a spoken request or supply an image of a desired product. These inputs have different formats, but the application should offer a consistent retrieval and result-presentation process. Treating each input mode as a disconnected program would duplicate filtering, ranking and error handling, making later changes harder to maintain.
+
+Assignment 06 asks for a small prototype that demonstrates the relationship between system design and executable code~\cite{assignment}. Its central principle is
+\begin{equation}
+\text{Different inputs}\rightarrow\text{Common query}\rightarrow\text{Retrieval}\rightarrow\text{Ranking}\rightarrow\text{Results}.
+\end{equation}
+This project follows that principle through a Python dictionary contract and injected services. It implements keyword search, voice search using supplied transcripts, pixel-based image similarity, a text--image fusion extension, price/category filters, product details and customer-scoped order lookup.
+
+The contributions are concrete: twelve validated product records and their illustrations; three editable UML diagrams created in Visual Paradigm; a Presentation--Application--Data implementation; observable score components and deterministic ranking; repeatable demonstrations; and an evaluation that retains incorrect results. The full source appendix makes the relationship between these deliverables inspectable.
+
+This report uses the assignment's recommended structure in the prescribed order. The native UML exports and application screenshots are preserved as evidence of the implemented system. Appendix listings and data tables allow the design claims to be checked against the complete executable source.
+
+\section{Problem Description}\label{sec:problem}
+\subsection{Customer problem and system boundary}
+The primary actor is a \textbf{Customer}. The customer wants to discover suitable products, inspect their details and locate an existing order. The system receives an input through the presentation layer, constructs a query, retrieves eligible candidates and returns a ranked list containing product metadata and score explanations. Product details and order lookup are distinct read-only interactions.
+
+The prototype has no checkout, payment, account registration, inventory updates or external deployment. Product prices are educational sample values in USD. Brand names are sample metadata and do not imply affiliation. Order data contain fictional customer identifiers; there are no real customer records. The CLI customer identifier is a simulated context, not an authenticated identity.
+
+\subsection{Input modalities and outputs}
+\begin{longtable}{@{}P{1.9cm}P{4.0cm}P{5.3cm}P{4.2cm}@{}}
+\toprule\textbf{Mode}&\textbf{Actual input}&\textbf{Processing}&\textbf{Output}\\\midrule\endhead
+Text&Keyword or limited English natural-language string&Normalize, tokenize, extract filters, retrieve and rank&Ranked products and text/final scores\\
+Voice&Already transcribed text string&Simulated SpeechService, then the same textual pipeline&Voice provenance and explicit simulation label\\
+Image&Readable image file path&Encode pixels, compare to the vector index, filter and rank&Image/final scores and encoder metadata\\
+Multimodal&Text and one image&Common query, candidate union, hard filtering and score fusion&Text/image/final score components\\
+Order&Exact order ID and customer context&Scoped lookup through OrderService&Order status, date and total, or not-found\\
+Product&Positive product ID&Application-mediated metadata lookup&Product details or not-found\\\bottomrule
+\end{longtable}
+The main search response has three keys: \texttt{query}, \texttt{processing} and \texttt{results}. Processing metadata expose tokens, filters, candidate counts, weights, encoder identity and top-$k$. A valid no-match query returns an empty list; it is not classified as an execution error.
+
+\subsection{Interpreting the assignment consistently}
+The document cover identifies Assignment 06, although several examples retain ``Assignment 05'' and an older directory name. This implementation consistently uses Assignment 06. The earlier demonstration section mentions at least two modes, whereas Task 6 explicitly requires text, voice and image; all three are demonstrated. Order search is named in the required use-case model and presented as an implementation extension, so a minimal exact-ID lookup is included. Multimodal fusion is an extension and also appears in the rubric; it is implemented.
+
+Artificial vectors are allowed by the assignment. This prototype instead computes deterministic features from image pixels, while clearly identifying them as handcrafted descriptors. The brief's example ``where is my latest order?'' illustrates broader system intent; natural-language latest-order reasoning is not implemented. OrderItem management is not implemented because the selected order extension only requires lookup/status display.
+
+\section{Requirements Analysis}\label{sec:requirements}
+\subsection{Functional requirements}
+The requirements below are implementation commitments derived from Tasks 1--6 and the extensions. A requirement's evidence is the observable behavior and its implementation, rather than an assumed rubric score.
+\begin{longtable}{@{}P{1.2cm}P{5.3cm}P{8.9cm}@{}}
+\toprule\textbf{ID}&\textbf{Requirement}&\textbf{Acceptance criterion}\\\midrule\endhead
+FR-01&Search products by text&Nonempty keywords are normalized; relevant candidates receive lexical scores; unknown words may produce an empty list.\\
+FR-02&Search by simulated voice&The transcript passes through SpeechService, retains voice provenance and uses the same retrieval/ranking behavior as equivalent text.\\
+FR-03&Search by image&Image bytes are decoded and encoded; cosine similarity against matching product vectors determines visual scores.\\
+FR-04&Use a common query representation&Every product-search modality provides the same schema for filters, top-$k$, weights and provenance.\\
+FR-05&Rank and display results&Sort final score descending, then product ID ascending; apply top-$k$ only after ranking and show score components.\\
+FR-06&View product details&An existing ID returns name, category, color, price, stock, description and image path; absent IDs return not-found.\\
+FR-07&Search/view an order&OrderService requires customer context; a wrong owner or unknown ID returns no order.\\
+FR-08&Provide a valid catalogue&At least ten unique products have valid fields and real readable image files; index IDs, dimension and fingerprint match the catalogue.\\
+FR-09&Handle invalid input and no-match&Reject empty text, invalid parameters, corrupt/missing images and invalid vectors clearly; valid empty results remain successful execution.\\
+FR-10&Fuse text and image&Use both modalities in one query, preserve candidate union and publish normalized component/final scores.\\
+FR-11&Support price/category filters&``Under/below'' are exclusive and ``at most'' inclusive; conflicting explicit/inferred categories are rejected.\\
+FR-12&Provide reproducible evidence&Preserve CLI commands, demo outputs, screenshots, frozen relevance judgments, result rows and derived metrics.\\\bottomrule
+\end{longtable}
+FR-01--06, FR-08 and FR-09 refine the baseline. FR-07 and FR-10--11 cover implemented extensions. FR-12 supports demonstration and evaluation. Twelve functional requirements exceed the assignment's minimum of five.
+
+\subsection{Non-functional requirements}
+\begin{longtable}{@{}P{1.35cm}P{3.5cm}P{10.55cm}@{}}
+\toprule\textbf{ID}&\textbf{Quality objective}&\textbf{Evidence and limitation}\\\midrule\endhead
+NFR-01&Maintainability&Presentation has no direct Data imports; application logic and repositories are injected. Architecture tests check import boundaries.\\
+NFR-02&Reproducibility&Deterministic fixture generation, explicit encoder/version, stable tie-break and frozen ground truth. SHA-256 identifies inputs.\\
+NFR-03&Robustness&Boundary tests cover NaN/infinity, malformed schemas, stale index, image failures, zero vectors and invalid configuration.\\
+NFR-04&Usability&Help, readable output, pure JSON option, explicit errors and honest simulation labels are available.\\
+NFR-05&Performance&A proposed local target is under one second per query after loading this small dataset; recorded times are much lower, but do not measure concurrent or production load.\\
+NFR-06&Portability&Paths are resolved with pathlib and the CLI works from a different current directory. The runtime requires Python and pinned packages, not VP.\\
+NFR-07&Data isolation&Application lookup enforces the supplied customer context. No authenticated user identity or production authorization is claimed.\\
+NFR-08&Offline operation&Runtime search requires no network, API key, microphone or remote model. VP and XeLaTeX are separate modeling/report tools.\\\bottomrule
+\end{longtable}
+These objectives deliberately distinguish demonstrated qualities from future production requirements. The one-second target is a project choice, not a hard constraint stated by the assignment.
+
+\subsection{Data and validation requirements}
+Products require positive unique integer IDs, nonempty textual metadata, a supported category, finite nonnegative price, nonnegative integer stock and an image inside the project root. Boolean values do not count as numeric IDs, price or stock. ProductRepository returns deep copies so callers cannot mutate stored records accidentally.
+
+QueryService accepts top-$k$ from 1 to 100 and textual input from 1 to 2000 characters. Filter values and weights must be finite. A query image vector must contain exactly 88 finite numbers. ImageService rejects images larger than twenty million pixels. The index checks encoder metadata, product-ID coverage, vector shape and a fingerprint of catalogue content plus image bytes. Changing catalogue data or image content requires rebuilding the index.
+
+\subsection{Requirement traceability}
+FR-01/02/04/11 map to QueryService and SearchUI; FR-03 maps to ImageService and VectorIndex; FR-05 maps to RankingService and SearchResultView; FR-06 maps to SearchService.view\_product; FR-07 maps to OrderService and OrderRepository; FR-08/09 map to repositories and boundary validation; FR-10 maps to multimodal query construction, retrieval and ranking; FR-12 maps to demonstration and evaluation utilities. Detailed task-to-evidence mapping appears in Appendix~\ref{app:compliance} and \path{docs/traceability.md}.
+
+\section{Use Case Model}\label{sec:usecase}
+\subsection{Native model and relationship choices}
+The approved native diagram contains Customer and all seven named use cases. The system boundary is ``Multimodal E-Commerce Search System''. Customer associates with Search Product, Search Order, View Product and View Order. Search by Keyword, Search by Voice and Search by Image specialize Search Product; the hollow generalization triangle points toward that general use case.
+
+This specialization represents alternative input choices. An include relationship that forces all three modalities on every search would be incorrect. Viewing a detail is a separate customer goal; it is not automatically required whenever a search executes. Fusion is an extension of Search Product and does not replace any required use case.
+\assetfigure{artifacts/diagrams/use_case.png}{Approved native Use Case Diagram exported from Visual Paradigm. The default VP colors and orthogonal connectors are preserved.}{fig:usecase}
+\assetfigure{artifacts/screenshots/vp_use_case.png}{Actual Visual Paradigm screenshot of the editable use-case model. The export in Figure~\ref{fig:usecase} provides the larger reading view.}{fig:vp-usecase}
+\clearpage
+\subsection{UC-01: Search Product}
+\textbf{Goal and preconditions.} Customer discovers matching products. Valid repositories and index are loaded and at least one supported modality is supplied. \textbf{Main flow.} SearchUI receives input, the application constructs a common query, SearchService retrieves and filters candidates, RankingService orders them, and the result view displays metadata and scores. \textbf{Alternatives.} Invalid input is rejected; a valid no-match query returns an empty list; a stale index produces a rebuild message. \textbf{Postcondition.} A result envelope is returned without modifying catalogue or index records.
+
+\subsection{UC-02: Search by Keyword}
+\textbf{Trigger.} \texttt{--mode text --query "black shoes"}. \textbf{Main flow.} Normalize case/whitespace, extract supported price filters, tokenize with stopwords and aliases, infer category, retrieve products with at least one matching term, apply hard filters and rank. \textbf{Alternatives.} Unknown vocabulary returns empty results; filter-only queries examine the whole catalogue; conflicting categories or invalid top-$k$ are rejected. \textbf{Postcondition.} Text and final scores, matched terms and filter decisions are observable.
+
+\subsection{UC-03: Search by Voice}
+\textbf{Precondition.} Input is already a transcript, not a microphone recording. \textbf{Main flow.} SearchUI calls SpeechService.transcribe, constructs a voice query and invokes the same search/ranking pipeline. \textbf{Alternatives.} Empty/non-string/overlong transcripts fail validation; valid transcripts without a lexical match return empty results. \textbf{Postcondition.} Query type remains voice, and processing marks simulated STT. Equivalent transcript/text configurations yield equivalent product rankings.
+
+\subsection{UC-04: Search by Image}
+\textbf{Precondition.} The supplied file is readable and compatible encoder/index metadata are available. \textbf{Main flow.} ImageService reads pixels and encodes them; QueryService validates the common image query; VectorIndex calculates cosine scores; SearchService associates scores with metadata; RankingService orders and truncates. \textbf{Alternatives.} Missing/corrupt/oversized images and invalid vectors are rejected; zero-norm vectors receive zero similarities. \textbf{Postcondition.} Image and final scores plus encoder identity are returned. There is no semantic-confidence threshold.
+
+\subsection{UC-05: Search Order}
+\textbf{Trigger.} Exact order ID with supplied customer context, for example O001/C001. \textbf{Main flow.} SearchUI calls OrderService, which validates identifiers and requests scoped repository lookup. \textbf{Alternatives.} Unknown orders and orders belonging to another context both return no order. \textbf{Postcondition.} A matching order or a clear not-found response is returned. This path does not use product ranking.
+
+\subsection{UC-06: View Product}
+\textbf{Trigger.} A positive product ID, supplied by CLI or selected from search results. \textbf{Main flow.} SearchUI calls the Application service; ProductRepository retrieves a copy; ResultView shows details. \textbf{Alternatives.} Invalid identifiers are errors and absent valid identifiers are not-found. \textbf{Postcondition.} Metadata are exposed without direct presentation-layer database access or mutation.
+
+\subsection{UC-07: View Order}
+\textbf{Precondition.} Order ID and customer context are supplied. \textbf{Main flow.} The scoped lookup path returns status, date and total for display. Search Order and View Order share the same application operation in this minimal CLI. \textbf{Alternatives.} Invalid context fails validation; wrong-owner and absent records produce the same not-found response. \textbf{Postcondition.} An order in the supplied context is visible, without modifying it. Supplying another customer ID is still possible; authenticated identity remains future work.
+
+\section{Three-Layer Architecture}\label{sec:architecture}
+\subsection{Layer responsibilities}
+The design separates interaction, application behavior and persisted information:
+\begin{equation}
+\text{Presentation}\rightarrow\text{Application / Intelligence}\rightarrow\text{Data}.
+\end{equation}
+The Presentation layer contains SearchUI, logical VoiceInput and ImageUpload adapters, and SearchResultView. It collects arguments and formats results; it does not load JSON, compute cosine similarity or rank candidates. VoiceInput and ImageUpload are implemented as SearchUI methods rather than additional standalone Python classes. These are logical UML responsibilities, not claims that every component has its own file.
+
+The Application layer contains QueryService, SpeechService, ImageService, SearchService, RankingService and the OrderService extension. It validates requests, converts modalities, performs retrieval/filtering, ranks and scopes order lookup. The Data layer contains ProductRepository, OrderRepository and VectorIndex, backed by product/order JSON, the image folder and a persisted vector file.
+
+\assetfigure{artifacts/diagrams/three_layer_architecture.png}{Approved component/package architecture: three native packages, sixteen components and fifteen dependencies. Arrows run from a client to the component it uses.}{fig:architecture}
+\assetfigure{artifacts/screenshots/vp_architecture.png}{Actual VP screenshot of the three-layer architecture. Native package ownership and dependencies remain editable in the delivered project.}{fig:vp-architecture}
+\clearpage
+\subsection{Physical mapping and dependency injection}
+\begin{longtable}{@{}P{3.4cm}P{5.3cm}P{6.7cm}@{}}
+\toprule\textbf{Logical component}&\textbf{Physical implementation}&\textbf{Responsibility}\\\midrule\endhead
+SearchUI / input adapters&\path{presentation/search_ui.py}&Route text, transcript, image, fusion, order and detail requests through injected services.\\
+SearchResultView&\path{presentation/result_view.py}&Readable CLI output without repository access or score recalculation.\\
+QueryService&\path{application/query_service.py}&Common query, tokens, filters, weights and bounds.\\
+SpeechService&\path{application/speech_service.py}&Validate and return the supplied transcript.\\
+ImageService&\path{application/image_service.py}&Read image files and calculate the 88D descriptor.\\
+SearchService&\path{application/search_service.py}&Candidate generation, filtering, response metadata and product details.\\
+RankingService&\path{application/ranking_service.py}&Final scores, stable ordering and top-$k$.\\
+OrderService&\path{application/order_service.py}&Require customer context and perform exact order lookup.\\
+ProductRepository&\path{data/product_repository.py}&Validated product JSON and copy-safe access.\\
+OrderRepository&\path{data/order_repository.py}&Validated order JSON and scoped lookup.\\
+VectorIndex&\path{data/vector_index.py}&Index validation, fingerprint and unsorted cosine scores.\\
+Product / Order storage&\path{data/products.json}, \path{data/orders.json}&Local JSON storage, not relational databases.\\
+ImageStorage&\path{data/images/}, \path{data/queries/}&Original illustrations and reproducible image inputs.\\\bottomrule
+\end{longtable}
+\path{main.py} is the composition root. It creates repositories and index, injects them into application services, and injects those services into SearchUI. Importing all layers at this wiring point is intentional. Presentation modules themselves do not import Data, and Data modules do not import upper layers. This rule is checked by the architecture test.
+
+\subsection{Why retrieval and ranking are separate}
+Retrieval answers which records are candidates and gathers component scores. Ranking answers their final order and the selected top-$k$. SearchService.\texttt{\_retrieve} returns unsorted candidates and pre-filter statistics; its public \texttt{retrieve\_candidates} wrapper exposes the list. SearchService.search uses the private helper to retain statistics before delegating to RankingService.rank. The separation prevents early truncation from discarding a product that becomes strong under a combined score.
+
+\subsection{Storage and replacement boundaries}
+ProductDatabase and OrderDatabase in UML denote storage responsibilities implemented with JSON. VectorIndex is an in-memory exact scan loaded from a JSON vector file; it is not a vector database or approximate-nearest-neighbor engine. ImageStorage is the local filesystem. SpeechService and ImageService provide replacement points for real ASR or learned encoders, but replacing a model also requires rebuilding its index, maintaining contracts and reevaluating relevance.
+
+\section{UML Sequence Diagram}\label{sec:sequence}
+\subsection{Voice-search collaboration}
+The approved voice sequence contains the seven required participants: Customer, SearchUI, SpeechService, QueryService, SearchService, ProductRepository and RankingService. Calls and dashed returns communicate the order of collaboration. Activation bars indicate active execution, and self-calls identify internal retrieval/filtering work.
+
+The conceptual brief sends audio to speech recognition. The actual prototype sends \texttt{transcriptInput} because simulated recognition is explicitly permitted. This distinction is recorded in the diagram note and user-facing output. No audio recording or recognition accuracy is claimed.
+\assetfigure{artifacts/diagrams/voice_sequence.png}{Approved voice-search sequence, with seven participants and fourteen native messages. The note identifies simulated STT and the common downstream pipeline.}{fig:sequence}
+\assetfigure{artifacts/screenshots/vp_sequence.png}{Actual Visual Paradigm screenshot of the saved voice sequence. Existing lifelines, message order, activations and self-call geometry are preserved.}{fig:vp-sequence}
+\clearpage
+\subsection{Message-to-code explanation}
+\begin{longtable}{@{}P{0.8cm}P{6.1cm}P{8.5cm}@{}}
+\toprule\textbf{Step}&\textbf{Message / return}&\textbf{Meaning in the implementation}\\\midrule\endhead
+1&Customer to SearchUI: search\_voice&CLI supplies an already transcribed request.\\
+2&SearchUI to SpeechService: transcribe&Validate transcript type, emptiness and length.\\
+3&SpeechService returns transcript&Return stripped text; no external recognizer runs.\\
+4&SearchUI to QueryService: voice\_query&Construct validated common query with voice provenance.\\
+5&QueryService returns query&Return tokens, filters, top-$k$, weights and type.\\
+6&SearchUI to SearchService: search&Orchestrate retrieval and ranking.\\
+7&SearchService self-call: \_retrieve&Prepare tokens, similarity map and candidate statistics.\\
+8&SearchService to ProductRepository: all\_products&Read validated product copies.\\
+9&ProductRepository returns products&Supply catalogue records without exposing mutable originals.\\
+10&SearchService self-call: match/filter&Calculate text matches and apply category/price constraints.\\
+11&SearchService to RankingService: rank&Calculate final scores, sort with stable tie-break and select top-$k$.\\
+12&RankingService returns ranked results&Supply product records with final scores and rank.\\
+13&SearchService returns search result&Return the query/processing/results envelope.\\
+14&SearchUI displays products and scores&CLI ResultView formats returned values; rendering does not rerank.\\\bottomrule
+\end{longtable}
+For an empty or invalid transcript, execution stops at validation and the CLI reports a clear error. A valid transcript with no lexical match reaches ranking with an empty list and returns normal empty results. No additional UML was created to represent these alternatives; their behavior is documented and tested.
+
+\section{Python Implementation}\label{sec:implementation}
+\subsection{Repository structure and execution environment}
+Runtime verification uses Python 3.12.8 on Windows 11. The runtime requirements pin NumPy 2.5.3 and Pillow 12.3.0. Test/report dependencies are separate from runtime packages; desktop automation dependencies are only needed for optional evidence/model tooling. XeLaTeX is an external report-building tool and is not required to run search.
+\begin{lstlisting}[language={},caption={Project structure and responsibility boundaries}]
+assignment6/
+  main.py                     # CLI and composition root
+  presentation/               # input routing and result rendering
+  application/                # queries, modalities, retrieval, ranking, orders
+  data/                       # repositories, vector index and fixtures
+    products.json  orders.json  embeddings.json
+    images/  queries/
+  tests/                      # acceptance and boundary regression tests
+  evaluation/queries.json     # fixed relevance and robustness judgments
+  scripts/                    # preparation, evaluation, reporting and delivery
+  models/                     # approved native VP project
+  docs/report.tex             # complete English report source
+  artifacts/                  # outputs, screenshots, metrics and report
+\end{lstlisting}
+Appendix~\ref{app:source} contains every Python file in these source directories, including initialization files, utilities, desktop launchers and tests. Listings are generated from exact file snapshots, not rewritten examples or selected fragments.
+
+\subsection{Composition root and command dispatch}
+\texttt{build\_services} in \path{main.py} creates ProductRepository, a matching VectorIndex, QueryService, SpeechService, ImageService, SearchService with RankingService, and OrderService with OrderRepository. It returns SearchUI with these dependencies injected. Services are built once per CLI invocation, before query execution.
+
+Argparse selects text, voice, image, multimodal, order or product mode. No mode, or \texttt{--demo}, runs the complete five-interaction demonstration. Relative image paths are resolved against the project root, so they do not depend on the caller's current directory. \texttt{--json} emits only a JSON response to stdout; \texttt{--output} writes UTF-8 JSON. ValueError and OSError produce a readable error on stderr and exit code 2. Valid no-match execution returns code 0.
+
+\subsection{Presentation adapters and result rendering}
+SearchUI.search\_text creates a text query and delegates to search. SearchUI.search\_voice first invokes the speech adapter and preserves the original transcript as provenance. Image and fusion methods call ImageService.encode before query construction. Order and product details route through application services. None of these methods loads storage directly.
+
+SearchResultView formats an envelope into input, normalized tokens, filters, candidate counts, weights and ranked records. Product rows include ID, name, price, stock and component/final scores. A simulation line is added for voice. Detail and order responses are rendered as JSON. The separate screenshot helper uses a Python Tkinter viewer populated from a fresh CLI JSON result; it does not invent scores or act as a web interface.
+
+\subsection{Product and order repositories}
+ProductRepository loads the JSON catalogue and validates every required field. It verifies unique IDs, categories, finite numeric prices, integer stock and image containment. \texttt{all\_products} returns deep copies and \texttt{get\_by\_id} selects a copied record. This prevents search or rendering from adding score/rank fields to the stored product itself.
+
+OrderRepository validates list shape, required identifiers/date/status strings, distinct order IDs and finite nonnegative totals. Its optional customer parameter is a low-level lookup capability; the public application path always requires a validated context. OrderService accepts IDs matching \texttt{O\textbackslash d\{3\}} and \texttt{C\textbackslash d\{3\}} and passes both to the repository. A response explicitly describes authentication as a simulated customer context. It is incorrect to equate this context filter with authenticated authorization.
+
+\subsection{Query normalization and common representation}
+Text is lowercased and trimmed. Price phrases are extracted before tokenization: ``under'' and ``below'' give exclusive upper limits, and ``at most'' gives an inclusive upper limit. Multiple limits of the same kind keep the minimum; if both kinds exist, both are enforced. A separate \texttt{--max-price} argument is exclusive.
+
+Tokenization uses lowercase alphanumeric word boundaries, removes a small explicit stopword set and preserves unique tokens. Supported aliases include shoe to shoes, bags to bag, backpacks to backpack, and shirts to shirt. Category inference detects shoes, bag/backpack, or shirt/jacket/clothing terms; category becomes a hard constraint. An explicit category conflicting with that inferred category is rejected. Unknown synonyms and negation are not interpreted.
+
+\begin{longtable}{@{}P{3.2cm}P{5.1cm}P{7.1cm}@{}}
+\toprule\textbf{Field}&\textbf{Role}&\textbf{Validation / behavior}\\\midrule\endhead
+type / raw\_input&Modality and original input&Text, voice, image or multimodal; provenance remains visible.\\
+query / tokens&Normalized lexical representation&Textual modes require 1--2000 characters; unique searchable terms or a supported filter.\\
+embedding&Visual representation&Null for text/voice; exactly 88 finite numbers for image/fusion.\\
+filters&Category and price constraints&Supported category; separate exclusive/inclusive bounds; finite nonnegative values.\\
+top\_k&Requested result count&Integer from 1 to 100; booleans are rejected.\\
+weights&Text/image fusion policy&Two nonnegative finite values summing to one.\\
+customer\_id&Reserved customer context&Product query field may be null; orders use their separate validated contract.\\
+encoder&Image-vector provenance&Name, version and dimension whenever an image vector is present.\\\bottomrule
+\end{longtable}
+Using one schema permits retrieval, filtering and ranking to operate without separate modality-specific result contracts. Orders intentionally retain their own response because an exact scoped lookup is not a product relevance ranking problem.
+\lstinputlisting[language={},caption={Actual common text-query object from the saved demonstration}]{artifacts/report/latex_build/query_example.json}
+\lstinputlisting[language={},caption={Actual first ranked product record from the same demonstration}]{artifacts/report/latex_build/result_example.json}
+
+\subsection{Simulated speech service}
+SpeechService.transcribe accepts a nonempty transcript string no longer than 2000 characters and returns stripped text. Non-string inputs, including raw audio bytes, are rejected. The class exposes \texttt{simulated=True}; the search response exposes \texttt{simulated\_stt=True}. The implementation demonstrates the adapter location and downstream reuse, not speech recognition. A real ASR adapter would additionally require audio capture/decoding, model execution, failure policy and evaluation on independent speech data.
+
+\subsection{Image encoding and index integrity}
+ImageService opens the file through Pillow, applies EXIF orientation, converts to RGB and rejects oversized input. It creates a 24-dimensional RGB histogram and a 64-dimensional grayscale thumbnail, normalizes the blocks and their concatenation, and returns a numeric list. File errors, unrecognized formats and decompression-bomb failures become clear application validation errors.
+
+VectorIndex loads encoder metadata and product vectors from \path{data/embeddings.json}. It validates the encoder identity/version/dimension, checks every vector, verifies that product IDs equal catalogue IDs and confirms a SHA-256 fingerprint over normalized catalogue JSON and original image bytes. Similarity scoring produces an ID-to-score mapping without sorting. Its exact algorithm and limitations are explained in Section~\ref{sec:method}.
+
+\subsection{Candidate retrieval and hard filtering}
+SearchService tokenizes the concatenation of product name, brand, category, color and description. It intersects product terms with query terms and records matched terms in sorted order. Text/voice requests with lexical terms require at least one match. A filter-only request examines the whole catalogue. Image and fusion requests consider every product represented by the matching index, including those with no lexical match.
+
+Pre-filter candidates are counted first. Category equality, exclusive price and inclusive price constraints are then applied. Remaining candidates contain copied metadata and raw/normalized text, image and business scores. Business score is explicitly zero. The unsorted list is passed to the ranking service; no modality-specific top-$k$ is selected before fusion.
+
+\subsection{Ranking and response contract}
+RankingService validates exactly the text/image weights, their types and sum. It copies candidate records, calculates final score, sorts by \texttt{(-final\_score, product\_id)}, applies top-$k$ and attaches one-based rank. Copying prevents result construction from changing retrieval candidates or catalogue data. Equal scores are reproducible rather than dependent on filesystem or dictionary iteration order.
+
+SearchService returns the common query, processing statistics and ranked products. Both candidate counts are visible, and the processing description states lexical OR matching, category inference, image candidate union and absence of business boosts. Scores are heuristic relevance signals, not confidence probabilities.
+
+\subsection{Dataset preparation and reproducible index construction}
+\path{scripts/prepare_dataset.py} produces original Pillow illustrations and metadata. Existing outputs are preserved unless \texttt{--force} explicitly requests regeneration. Query samples use fixed brightness 0.97 and resize to $224\times224$ on selected product illustrations. They differ in pixels from catalogue files but are derived from the same source, so they are not independent real-world photographs. One intentionally invalid file tests image error handling.
+
+\path{scripts/build_index.py} computes product descriptors through the same ImageService used at query time and writes encoder metadata, vectors and a source fingerprint. Rebuilding is required when products, image bytes or encoder identity change. The fixed dataset contains \ProductCount{} products and \OrderCount{} orders; the catalogue and sample images appear in Appendix~\ref{app:data}.
+
+\subsection{Running and reproducing the program}
+Execute the commands below from the assignment root. Data/index are already supplied, so regeneration is optional when inputs have not changed.
+\begin{lstlisting}[language={},caption={Runtime setup and supported interactions}]
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe main.py --help
+.venv\Scripts\python.exe main.py --demo
+.venv\Scripts\python.exe main.py --mode text --query "black shoes"
+.venv\Scripts\python.exe main.py --mode voice --query "find black running shoes"
+.venv\Scripts\python.exe main.py --mode image --image data/queries/black_shoe_query.png
+.venv\Scripts\python.exe main.py --mode multimodal --query "black shoes" --image data/queries/black_shoe_query.png --text-weight 0.5
+.venv\Scripts\python.exe main.py --mode text --query "find Nike shoes under 100 dollars"
+.venv\Scripts\python.exe main.py --mode order --order-id O001 --customer-id C001
+.venv\Scripts\python.exe main.py --mode product --product-id 1
+\end{lstlisting}
+For machine-readable evidence add \texttt{--json}; for a saved artifact add \texttt{--output path.json}. Missing image arguments, invalid parameters and invalid data fail explicitly. A request such as ``unobtainium'' is a valid search with no results and returns normal execution status.
+
+\section{Multimodal Search Method}\label{sec:method}
+\subsection{Lexical representation and text score}
+Let $T(q)$ be the set of unique query terms after normalization/aliases/stopwords, and $T(p)$ the token set derived from searchable product metadata. The raw lexical score and normalized text score are
+\begin{align}
+s_{\mathrm{raw}}(p,q)&=|T(q)\cap T(p)|,\\
+s_t(p,q)&=\begin{cases}|T(q)\cap T(p)|/|T(q)|,& |T(q)|>0,\\0,& |T(q)|=0.\end{cases}
+\end{align}
+This is whole-word OR retrieval followed by hard filters, not semantic language understanding. A product matching either ``black'' or ``shoes'' is a preliminary lexical candidate, but inferred category shoes excludes non-shoe products. Duplicated query words do not inflate the score. Filter-only queries receive zero text score and use the deterministic ID tie-break among eligible products.
+
+\subsection{Handcrafted image representation}
+For an image $I$, let $h(I)\in\mathbb{R}^{24}$ be eight-bin histograms for each RGB channel after resizing to $128\times128$, and $g(I)\in\mathbb{R}^{64}$ the flattened $8\times8$ grayscale thumbnail divided by 255. The implementation normalizes each block and then the concatenation:
+\begin{equation}
+\hat h=\frac{h}{\|h\|_2},\qquad
+\hat g=\begin{cases}g/\|g\|_2,&\|g\|_2>0,\\g,&\text{otherwise},\end{cases}\qquad
+z(I)=\frac{[\hat h;\hat g]}{\|[\hat h;\hat g]\|_2}\in\mathbb{R}^{88}.
+\end{equation}
+For nonzero blocks the final normalization gives each block equal squared-norm contribution. A completely black thumbnail remains zero, while the nonzero histogram still provides a valid descriptor. RGB distributions capture coarse appearance and the grayscale thumbnail captures simple spatial structure. The encoder identity is \texttt{rgbhist-gray-thumbnail}, version 1.0, dimension 88.
+
+These vectors are derived from actual pixels rather than product IDs or filenames. Nevertheless, they are not learned embeddings, CLIP features or object recognition. Background, dominant color and layout can dominate similarity, so visually close descriptors need not mean semantically equivalent products.
+
+\subsection{Cosine similarity and index scoring}
+For query/product descriptors $z_q$ and $z_p$,
+\begin{equation}
+\operatorname{cos}(z_q,z_p)=\begin{cases}\dfrac{z_q^\top z_p}{\|z_q\|_2\|z_p\|_2},&\|z_q\|_2\|z_p\|_2>0,\\0,&\text{otherwise}.\end{cases}
+\end{equation}
+The helper rejects nonnumeric, nonfinite or incompatible vectors, clips the computed cosine to $[-1,1]$ for numerical stability and handles zero norm as zero. Index scoring then uses $s_i=\max(0,\operatorname{cos})$ so its fusion input is nonnegative. This clamp is an explicit policy, not evidence that cosine is a probability. Every indexed product is scored in an exact scan.
+
+\subsection{Candidate union, filtering and fusion}
+Let $C_t(q)$ be lexical candidates and $C_i(q)$ indexed image candidates. Multimodal retrieval uses
+\begin{equation}
+C(q)=\operatorname{Filter}\big(C_t(q)\cup C_i(q)\big).
+\end{equation}
+The current image index covers the whole catalogue, so fusion examines the full catalogue before hard filters. It does not intersect modalities or take the top few from each modality first. Final ranking is
+\begin{equation}
+S(p\mid q)=w_t s_t(p,q)+w_i s_i(p,q),\qquad w_t,w_i\geq0,\quad w_t+w_i=1.
+\end{equation}
+Text/voice use $(1,0)$, image uses $(0,1)$ and fusion defaults to $(0.5,0.5)$. A valid fusion text-weight sets $w_t$ and $w_i=1-w_t$. Business score remains zero: stock is displayed but gives no hidden promotion or exclusion. The brief's general business-weight term is a future extension, not an implemented signal.
+
+The implementation combines \emph{scores}, not a text token vector and an image pixel vector. Those representations have incompatible spaces, so directly summing them would be unjustified. A voice transcript uses the textual score; a simultaneous separate third audio input is not implemented. Products are finally sorted by decreasing $S$ and increasing ID, then top-$k$ is applied.
+
+\subsection{Worked examples and complexity}
+For ``black shoes'', tokens are black and shoes, and category shoes is inferred. Products 1 and 5 match both terms and obtain text score 1; other shoes matching only the category term receive 0.5. The score tie places product 1 before 5. For ``find Nike shoes under 100 dollars'', stopwords and the price phrase are removed, category shoes and price $<100$ are enforced, and the Nike budget shoes at USD 95 become the expected top result. A product at exactly USD 100 is excluded by ``under'' but may pass ``at most''.
+
+In fusion, a candidate with strong image similarity but no lexical overlap is retained until filters/ranking; a weight can emphasize either modality without redefining the candidate set. Appendix and demonstration tables report actual component scores rather than substituting rounded scores into the algorithm.
+
+For $N$ products and descriptor dimension $d=88$, image scoring is an $O(Nd)$ exact scan. Text retrieval also scans product metadata; there is no inverted text index. Ranking $M$ surviving candidates uses $O(M\log M)$ sorting followed by slicing. Loading services/index occurs before measured query time. These choices are appropriate for twelve products but do not demonstrate large-catalogue scalability.
+
+\section{Experimental Results}\label{sec:results}
+\subsection{Evaluation design and ground truth}
+The evaluation runs the actual injected application pipeline against \path{evaluation/queries.json}. The frozen file declares relevance IDs and expected behavior before implementation/evaluation. Its SHA-256 is recorded in metrics. The report generator verifies matching case IDs and group summaries against the saved result rows rather than manufacturing a success table.
+
+There are \EvaluationRowCount{} cases: twelve primary retrieval cases, two extension cases, two challenge cases and five robustness cases. Primary cases are balanced across text, voice and image (four each). A product query succeeds when its top-ranked product belongs to that case's declared relevant-ID set; order success requires the expected exact order; robustness uses explicit empty/error/zero-score/scoping criteria. An execution error is never counted as ordinary retrieval success.
+
+\begin{equation}
+\operatorname{SuccessRate}(G)=\frac{\sum_{q\in G}\mathbf{1}[\text{criterion satisfied}]}{|G|}.
+\end{equation}
+The twelve-case primary denominator is not the count of all twenty-one rows. Extension, challenge and robustness summaries are reported separately because they assess different behaviors.
+
+\subsection{Aggregate results}
+\reporttable{metrics_table.tex}
+\reporttable{mode_table.tex}
+All twelve primary cases pass the stated top-1 criterion. Both extension cases pass: the fused product query and scoped order lookup. Both challenge cases fail, and their judgments remain unchanged. All five robustness cases meet their expected outcomes. The successful primary image cases include an exact duplicate sanity query and mild transformations of catalogue illustrations; this makes them useful implementation checks but weak evidence of generalization.
+
+\subsection{Complete query-level evaluation}
+The table below includes every saved case. ``Relevant/expected'' lists acceptable IDs or a behavior criterion. ``Actual top-1'' is a product ID, returned order, validation error or no result. For R04 the success criterion concerns zero scores even though deterministic ranking still selects an ID.
+\reporttable{evaluation_table.tex}
+Image paths are fixture identifiers; the three readable transformed samples are shown in Appendix~\ref{app:data}. The intentionally corrupt fixture cannot be displayed as an image, because its purpose is to fail image decoding.
+
+\subsection{Demonstration outputs and score visibility}
+Task 6 requires text, simulated voice and image demonstrations with input, processing steps, returned products and ranking scores. The saved demo artifact contains all three, plus fusion and order. The tables below are generated from that artifact and include every returned product, not only the top result. Screenshots use top-$k=3$ for legibility; the complete CLI demo uses top-$k=5$, so the tables contain more rows without a contradiction.
+\reporttable{demo_tables.tex}
+\assetfigure{artifacts/screenshots/demo_text.png}{Actual Python result-viewer screenshot for text input ``black shoes''. It shows tokens, category filtering and scores read from a fresh CLI JSON response.}{fig:demo-text}
+\assetfigure{artifacts/screenshots/demo_voice.png}{Actual Python viewer for the voice transcript ``find black running shoes''. The displayed simulation label is part of the evidence.}{fig:demo-voice}
+\assetfigure{artifacts/screenshots/demo_image.png}{Actual Python viewer for the black-shoe query image, using an 88D pixel descriptor and cosine similarity.}{fig:demo-image}
+\assetfigure{artifacts/screenshots/demo_multimodal.png}{Actual Python viewer for text--image fusion, with separate text, image and final scores. Existing screenshot pixels are preserved.}{fig:demo-fusion}
+\clearpage
+These screenshots were produced by \path{scripts/desktop/capture_demo.py}, which executes the real CLI, reads JSON and displays the returned values in Tkinter. They are program-running evidence, not terminal screenshots, not a production storefront and not fabricated UI mockups. Their raw payloads remain in \path{artifacts/screenshots/demo_*_payload.json}.
+
+\subsection{Tests, coverage and verification scope}
+The JUnit evidence records \TestCount{} passing test cases, with zero failures, errors or skips. Application/Data line coverage is \CoveragePercent{} over \StatementCount{} statements. This is line coverage for the specified packages; it is not branch coverage, coverage of all UI/scripts or a numerical guarantee of correctness.
+
+Tests verify normalized whole-word matching, aliases, strict versus inclusive prices, filter-only requests, deterministic tie-breaks, retrieval/ranking separation, no mutation, simulated voice equivalence, descriptor dimension/path independence, cosine boundaries, corrupt/oversized images, schema errors, stale/invalid indexes, customer-scoped orders and CLI behavior from another working directory. Architecture tests inspect import boundaries; percentile testing checks the nearest-rank definition. Full test source is included in Appendix~\ref{app:source}.
+
+Ruff, Pyright, Python compilation and dependency consistency evidence supplement tests. Native inventory and saved VP screenshots establish modeling evidence; source tests alone cannot establish native UML quality. Report compilation and visual review separately check presentation. ZIP validation/extraction addresses delivery rather than relevance quality.
+
+\subsection{Latency measurement}
+The preserved evaluation reports mean primary-query time \MeanLatency{} ms and nearest-rank p95 \PninetyfiveLatency{} ms. With twelve samples, $\lceil0.95\cdot12\rceil=12$, so p95 equals the maximum observed primary latency. Timing starts after \texttt{build\_services}; dataset/index loading and process startup are excluded. Image encoding remains part of an image request's timed application call.
+
+The environment is Python 3.12.8 on Windows 11. This is one small local run, without concurrent requests, cold-start analysis or repetitions for statistical confidence. Timing values are reproduced from the recorded experiment; compilation of this report does not rerun evaluation or overwrite its timing evidence.
+
+\subsection{Observed incorrect results}
+\textbf{C01: ``sneakers''.} Relevant shoe IDs are declared in ground truth, but the tokenizer has no sneakers alias and no semantic text model. There are no lexical matches, so the query returns no products. The failure exposes vocabulary limits.
+
+\textbf{C02: ``shoes not black''.} The declared relevant set excludes black shoes. The lexical method treats ``not'' as another word without negation scope and rewards black/shoes overlap. It returns black product 1 first, giving a failed relevance judgment. The report retains this failure rather than modifying labels or calling the ranking semantically correct.
+
+These two cases explain why 100\% success on the primary set must not be generalized to unrestricted natural language. The relevant-ID judgments, output IDs, scores and processing metadata are all available in saved results.
+
+\section{Discussion}\label{sec:discussion}
+\subsection{What the prototype demonstrates}
+The implementation demonstrates architecture before model sophistication. A common query lets services reuse filtering and ranking across text, transcripts and image inputs. Logical UML components have identifiable code responsibilities, while repositories protect storage boundaries. Explicit candidate/component statistics make score behavior inspectable, and deterministic ranking makes demonstrations repeatable.
+
+The project exceeds the minimal text/voice example by including actual pixel encoding, index integrity checks, multimodal score fusion, filter semantics, exact scoped orders and extensive invalid-input handling. These additions remain within the same three-layer architecture. They are implementation coverage statements, not claimed assessment marks.
+
+\subsection{Validity limits of the experiments}
+The dataset has twelve educational illustrations and a small set of authored queries. The transformed image queries originate from catalogue illustrations, while one primary image case is an exact duplicate. Differences in pixels do not make these independent photographic test data. A strong score therefore measures consistency on familiar distributions, not robustness to unseen cameras, lighting, backgrounds, viewpoints or product identities.
+
+Top-1 success against a declared relevant set does not measure full ranking quality or calibrated confidence. The relevant IDs are limited author judgments; precision/recall over a commercial catalogue are not established. Primary, challenge and robustness cases are deliberately separated rather than collapsed into one flattering number. The two failures are informative evidence, and the frozen criterion should remain fixed during future comparison.
+
+\subsection{Simulation and omitted production features}
+Voice receives an existing transcript; there is no microphone, speech model or word-error-rate experiment. Image descriptors are handcrafted, not semantic learned representations. Storage is JSON/filesystem with exact scans, not transactional SQL or a vector database. Stock is metadata, not an active ranking signal. An optional web UI, independent real photographs, real ASR, learned image/text embeddings and stock-aware ranking remain unimplemented advanced work.
+
+The application checks order ownership against a caller-supplied context, but a caller can supply another customer's identifier. No login, signed session, authenticated authorization, encryption policy, payment processing or concurrent inventory consistency is present. Products/orders are fixtures. Data separation is useful engineering, but it must not be marketed as production privacy or security.
+
+\subsection{Design choices and trade-offs}
+JSON and exact scans keep the implementation offline, easy to inspect and reproducible. Copy-safe repository access and strict index fingerprints reduce silent errors at the cost of extra copying and required regeneration. Simple lexical OR matching provides clear scores but cannot resolve semantic synonyms or negation. Histogram/thumbnail features are inexpensive but are sensitive to visual appearance rather than object meaning.
+
+Hard category/price filters precede ranking so ineligible products cannot become top results through similarity alone. Equal-weight default fusion is a declared heuristic, not an empirically optimized parameter. Candidate union avoids discarding useful modality evidence, but an image index spanning the whole catalogue also broadens the candidate pool. These trade-offs should be reevaluated using held-out data before changing weights or claiming quality gains.
+
+\subsection{Future improvements in a controlled order}
+First, expand relevance judgments and query samples independently of implementation outputs, including real photographs and difficult linguistic cases. Second, compare a semantic text encoder and learned image encoder against the transparent baseline with matching retrieval/filter contracts. Third, introduce a real ASR adapter and measure transcription errors separately from retrieval. Fourth, evaluate scalable indexes, concurrency and cold starts when catalogue size warrants them. Finally, authenticated customer context and production data policies are prerequisites for handling real orders.
+
+Every encoder change requires new product vectors and a new fingerprint/version. Every retrieval-policy change requires comparable frozen tests and explicit score interpretation. Extensions should preserve the rule that UI does not query storage directly, and should keep failures visible rather than changing acceptance labels after observing outputs.
+
+\section{Conclusion}\label{sec:conclusion}
+Assignment 06 is fulfilled by a connected requirements model, native Visual Paradigm diagrams and an executable Python prototype. Text, simulated voice and image inputs share a validated query contract and a retrieval/filter/ranking pipeline. Separate application services and repositories make the three-layer design observable in code. The demonstration includes all required modes, product metadata and ranking scores, while fusion and scoped order lookup provide coherent extensions.
+
+The primary benchmark passes twelve of twelve declared top-1 cases; both extensions and all five robustness criteria pass, while synonym and negation challenges fail. These outcomes establish local prototype behavior and disclose its limits. They do not establish general AI understanding, independent photographic accuracy, speech recognition quality or production readiness.
+
+This complete English LaTeX report preserves all approved visual assets, includes the required task evidence and all Python source, and supplies data/configuration appendices for review. The delivered native project, source, fixtures, README and demonstration results remain the authoritative accompanying artifacts. The cover identifies Vu Dinh Hieu (B23DCCE036), class E23TTNT02, under the guidance of Tran Dinh Que at the Posts and Telecommunications Institute of Technology.
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{assignment} Information System Analysis and Design. \emph{Assignment 06: Multimodal Search System for E-Commerce}. Local assignment brief, 23 pages. Tasks: pp.~17--19; evaluation/report: pp.~20--21; rubric/principles: p.~22.
+\bibitem{implementation} Project source. \path{main.py}, \path{presentation/}, \path{application/}, \path{data/}, \path{scripts/}, \path{tests/}. Complete file snapshots reproduced in Appendix~\ref{app:source}.
+\bibitem{evaluation} Frozen benchmark and recorded experiment. \path{evaluation/queries.json}; \path{artifacts/evaluation/metrics.json}, \path{results.json} and \path{results.csv} within the evaluation artifact folder.
+\bibitem{evidence} Native model and verification evidence. \path{models/Assignment_06_Multimodal_Search.vpp}; UML exports, VP/Python screenshots, JUnit and coverage artifacts included in the submission.
+\end{thebibliography}
+
+\appendix
+\clearpage\section{Assignment Coverage and Deliverables}\label{app:compliance}
+The assignment was reread in full, including its six tasks, evaluation requirements, recommended report structure, submission list, rubric and design principles. The table records coverage and identifies recommended advanced work that is intentionally outside the implemented prototype.
+\begin{longtable}{@{}P{3.15cm}P{3.1cm}P{9.15cm}@{}}
+\toprule\textbf{Brief item}&\textbf{Report location}&\textbf{Evidence / outcome}\\\midrule\endhead
+Task 1: requirements&Sections 2--3&Customer, twelve functional and eight non-functional requirements, inputs, outputs and validation.\\
+Task 2: use cases&Section 4&Customer and all seven required goals; native VP model, export, screenshot and seven textual specifications.\\
+Task 3: architecture&Section 5&Three native packages, sixteen components, dependency explanation, physical mapping and no direct Presentation-to-Data dependency.\\
+Task 4: voice sequence&Section 6&Seven required participants, fourteen native messages, message-to-code explanation and explicit simulated-STT note.\\
+Task 5: Python&Sections 7--8; Appendix B&Repository, text retrieval, simulated voice, image cosine, ranking, common query, complete executable source.\\
+Task 6: demonstrations&Section 9&Text/voice/image inputs, processing, returned products and scores; four actual Python screenshots plus fusion/order outputs.\\
+Evaluation, brief \S22&Section 9&All 21 rows; 12 primary; successful counts/rates, separate denominators and two incorrect cases.\\
+Recommended eleven parts&Sections 1--11&Each named part appears in order. Detailed source and dataset appendices supplement the main report.\\
+Screenshots&Sections 4--6, 9&All three VP screenshots and all four Python viewer screenshots, plus the three native exports.\\
+Multimodal rubric item&Section 8&Normalized score fusion, candidate union, hard filters and explicit weights. No incompatible-vector summation.\\
+Order extension&Sections 4, 7, 9&Exact customer-context lookup with status/date/total. Natural-language latest-order and OrderItem management are not implemented.\\
+UI/business separation&Sections 5, 7&Injected services, protected repository boundary and architecture test; composition root is the wiring exception.\\
+Common representation&Sections 7--8&One validated dictionary contract for all product-search modalities.\\
+Retrieval vs ranking&Sections 5, 7--8&Unsorted candidates before separate final score/order/top-$k$ operation.\\
+Start-simple principle&Sections 8, 10&Interpretable lexical/pixel baseline and explicit production/AI limitations.\\
+Seven submission groups&Delivery below&PDF, native VP, source, catalogue, sample images, README and demo results.\\
+Optional advanced work&Section 10&Implemented fusion, price/category filtering and order status. Real ASR, learned embeddings, vector DB, semantic text, stock boost and web UI are not claimed.\\\bottomrule
+\end{longtable}
+The rubric assigns 10 points to requirements, 15 to use case, 20 to architecture, 10 to sequence, 20 to Python, 10 to multimodal search, 5 to evaluation, 5 to report and 5 to demonstration (100 total). Coverage in this report is not a self-awarded mark.
+
+\subsection{Submission inventory and reproducibility}
+The canonical report is \path{artifacts/report/Assignment_06_Report.pdf} and its source is \path{docs/report.tex}. The native model is \path{models/Assignment_06_Multimodal_Search.vpp}. Python packages, dataset/index, catalogue/query images, README, saved demo outputs and evaluation/test artifacts accompany them. A curated ZIP and SHA-256 manifest provide byte-level delivery verification; local preparation does not claim an LMS submission.
+
+The report builder regenerates tables from saved JSON/JUnit/coverage evidence, snapshots every Python file, compiles three XeLaTeX passes and audits fonts, black text, bounds, bookmarks, embedded images and original-asset hashes. It requires MiKTeX/TeX Live with the used standard packages and Times New Roman, Arial and Consolas fonts. Search runtime remains independent of report/VP tooling.
+\begin{lstlisting}[language={},caption={Testing, evaluation and report reproduction commands}]
+.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.venv\Scripts\python.exe -m pytest -q --cov=application --cov=data --cov-report=json:artifacts/tests/coverage.json --junitxml=artifacts/tests/junit.xml
+.venv\Scripts\python.exe -m ruff check main.py application data presentation scripts tests
+.venv\Scripts\python.exe -m pyright
+.venv\Scripts\python.exe scripts/run_evaluation.py --queries evaluation/queries.json --output artifacts/evaluation
+.venv\Scripts\python.exe scripts/build_report.py --input docs/report.tex --output artifacts/report/Assignment_06_Report.pdf
+.venv\Scripts\python.exe scripts/validate_submission.py
+.venv\Scripts\python.exe scripts/package_submission.py
+\end{lstlisting}
+Re-running evaluation measures a new timing run; do so deliberately and rebuild the report afterward. The completed report uses the preserved evaluated snapshot. Report-building inputs and full Python listings are identified by hashes in \path{artifacts/report/build_audit.json}. Full source files remain authoritative for copying/execution; printed listings are a review aid.
+
+\clearpage\section{Complete Python Source Code}\label{app:source}
+This appendix reproduces all project Python files in full, covering the runtime, data layer, tools and tests. Each file is snapshotted without changing its content. Long lines wrap visually and keep line numbering. Original literal strings/comments, including any non-English helper text, are preserved as source; the surrounding explanation remains English.
+\reporttable{python_listings.tex}
+
+\clearpage\section{Dataset and Approved Image Catalogue}\label{app:data}
+The catalogue has \ProductCount{} products in shoes, bag and clothing categories. Prices are USD and stock is metadata, not a boost. The table records every product; full descriptions, brands and image paths are reproduced in Appendix~\ref{app:fixtures}.
+\reporttable{products_table.tex}
+\reporttable{orders_table.tex}
+\reporttable{catalogue_gallery.tex}\clearpage
+\begin{figure}[htbp]\centering
+\begin{minipage}{0.31\textwidth}\centering\includegraphics[width=\linewidth]{data/queries/black_shoe_query.png}\\\small Black-shoe query\end{minipage}\hfill
+\begin{minipage}{0.31\textwidth}\centering\includegraphics[width=\linewidth]{data/queries/blue_shoe_query.png}\\\small Blue-shoe query\end{minipage}\hfill
+\begin{minipage}{0.31\textwidth}\centering\includegraphics[width=\linewidth]{data/queries/brown_bag_query.png}\\\small Brown-bag query\end{minipage}
+\caption{All three readable transformed image-query fixtures. Brightness and resolution differ from their source illustration; these are derived synthetic samples, not independent photographs.}\label{fig:query-images}
+\end{figure}
+\path{data/queries/corrupt.png} deliberately contains invalid image bytes. It is included as a robustness fixture in the source package and is intentionally not embedded as a figure. Product vectors in \path{data/embeddings.json} contain 88 values per product with encoder metadata and a source fingerprint. The complete numeric index accompanies the submission; the report explains its format and reproduces the code that constructs and validates it.
+
+\clearpage\section{Complete Data Fixtures and Configuration}\label{app:fixtures}
+These exact files record catalogue/owner metadata, frozen benchmark judgments and pinned environment configuration. They are reproduced without rewriting their contents. JSON vector arrays remain in the delivered index file rather than adding repetitive numeric pages; every Python file that computes or consumes them is included in Appendix~\ref{app:source}.
+\reporttable{fixture_listings.tex}
+\end{document}

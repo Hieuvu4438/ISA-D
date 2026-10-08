@@ -1,0 +1,6 @@
+Requested rebuild of 37 connectors
+Saved repaired project: true
+Requested rebuild of 37 connectors
+Saved repaired project: true
+Redirected 14 dependencies and rebuilt 37 connectors
+Saved repaired project: true

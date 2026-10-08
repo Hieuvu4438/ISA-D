@@ -1,0 +1,26 @@
+Build started
+Analysis created
+Data model created
+Methods created
+Usage created
+DAO created
+MVC created
+Customer detail created
+Item/order detail created
+Build finished. Save project in Visual Paradigm.
+Build started
+Analysis created
+Data model created
+Methods created
+Usage created
+DAO created
+MVC created
+Customer detail created
+Item/order detail created
+Build finished. Save project in Visual Paradigm.
+Build started
+Reference-inspired final diagram created
+Build finished. Save project in Visual Paradigm.
+Build started
+Reference-inspired final diagram created
+Build finished. Save project in Visual Paradigm.

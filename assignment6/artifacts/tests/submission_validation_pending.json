@@ -1,0 +1,176 @@
+{
+  "passed": true,
+  "root": "D:\\PROJECTS\\ISA-D\\assignment6",
+  "checks": [
+    {
+      "name": "Required submission groups and evidence",
+      "passed": true,
+      "details": {
+        "required_files": 47
+      }
+    },
+    {
+      "name": "Dataset, real images, and matching pixel index",
+      "passed": true,
+      "details": {
+        "products": 12,
+        "encoder": {
+          "name": "rgbhist-gray-thumbnail",
+          "version": "1.0",
+          "dimension": 88
+        },
+        "source_fingerprint_valid": true
+      }
+    },
+    {
+      "name": "Final PDF has 12 readable pages and embedded visual evidence",
+      "passed": true,
+      "details": {
+        "pages": 12,
+        "embedded_images": 9,
+        "nonempty_text_pages": true
+      }
+    },
+    {
+      "name": "UML exports and real screenshot image files",
+      "passed": true,
+      "details": {
+        "artifacts/diagrams/use_case.png": [
+          2558,
+          1452
+        ],
+        "artifacts/diagrams/three_layer_architecture.png": [
+          3362,
+          2472
+        ],
+        "artifacts/diagrams/voice_sequence.png": [
+          3372,
+          2322
+        ],
+        "artifacts/screenshots/vp_use_case.png": [
+          1920,
+          1018
+        ],
+        "artifacts/screenshots/vp_architecture.png": [
+          1920,
+          1018
+        ],
+        "artifacts/screenshots/vp_sequence.png": [
+          1920,
+          1018
+        ],
+        "artifacts/screenshots/demo_text.png": [
+          1030,
+          349
+        ],
+        "artifacts/screenshots/demo_voice.png": [
+          1030,
+          385
+        ],
+        "artifacts/screenshots/demo_image.png": [
+          1030,
+          349
+        ]
+      }
+    },
+    {
+      "name": "Native VP model inventory and required UML semantics",
+      "passed": true,
+      "details": {
+        "native_diagram_names": [
+          "CMP_Three_Layer_Architecture",
+          "SEQ_Voice_Product_Search",
+          "UC_Multimodal_Ecommerce_Search"
+        ],
+        "use_case_elements": 9,
+        "generalizations": 3,
+        "customer_associations": 4,
+        "component_package_ownership": {
+          "VoiceInput": "Presentation Layer",
+          "SearchUI": "Presentation Layer",
+          "ImageUpload": "Presentation Layer",
+          "SearchResultView": "Presentation Layer",
+          "SpeechService": "Application / Intelligence Layer",
+          "QueryService": "Application / Intelligence Layer",
+          "ImageService": "Application / Intelligence Layer",
+          "SearchService": "Application / Intelligence Layer",
+          "RankingService": "Application / Intelligence Layer",
+          "OrderService": "Application / Intelligence Layer",
+          "ProductRepository": "Data Layer",
+          "ProductDatabase": "Data Layer",
+          "VectorIndex": "Data Layer",
+          "ImageStorage": "Data Layer",
+          "OrderRepository": "Data Layer",
+          "OrderDatabase": "Data Layer"
+        },
+        "presentation_to_data_dependencies": 0,
+        "voice_messages": 14,
+        "voice_participant_counts": {
+          "InteractionActor": 1,
+          "Activation": 6,
+          "InteractionLifeLine": 6,
+          "NOTE": 1
+        },
+        "note": "Inventory verifies native model types; GUI reopen/layout verification is recorded separately by root."
+      }
+    },
+    {
+      "name": "Three mandatory demo modes, fusion, order, and scores",
+      "passed": true,
+      "details": {
+        "modes": [
+          "image",
+          "multimodal",
+          "order",
+          "text",
+          "voice"
+        ],
+        "queries": 5
+      }
+    },
+    {
+      "name": "Frozen ground truth, metrics, separate denominators, and failures",
+      "passed": true,
+      "details": {
+        "primary": {
+          "total": 12,
+          "successful": 12,
+          "success_rate": 1.0
+        },
+        "separate_groups": {
+          "primary": {
+            "total": 12,
+            "successful": 12,
+            "success_rate": 1.0
+          },
+          "extension": {
+            "total": 2,
+            "successful": 2,
+            "success_rate": 1.0
+          },
+          "challenge": {
+            "total": 2,
+            "successful": 0,
+            "success_rate": 0.0
+          },
+          "robustness": {
+            "total": 5,
+            "successful": 5,
+            "success_rate": 1.0
+          }
+        },
+        "ground_truth_sha256": "85c1b7477b1b2f645ba865ebad160f9882b77b8309342a11a5292247017d3dea"
+      }
+    },
+    {
+      "name": "Test, coverage, lint, typecheck, and dependency consistency evidence",
+      "passed": true,
+      "details": {
+        "tests": 78,
+        "failures": 0,
+        "skipped": 0,
+        "application_data_line_coverage": 100.0
+      }
+    }
+  ]
+}

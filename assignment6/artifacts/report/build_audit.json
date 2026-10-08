@@ -1,94 +1,834 @@
 {
-  "pdf": "artifacts\\report\\Assignment_06_Report.pdf",
-  "pages": 12,
+  "format": "assignment06-latex-report-v2",
+  "pdf": "artifacts/report/Assignment_06_Report.pdf",
+  "language": "English",
+  "engine": "XeLaTeX",
+  "page_limit": null,
+  "pages": 92,
+  "section_pages": {
+    "Introduction": 6,
+    "Problem Description": 6,
+    "Requirements Analysis": 7,
+    "Use Case Model": 9,
+    "Three-Layer Architecture": 12,
+    "UML Sequence Diagram": 15,
+    "Python Implementation": 17,
+    "Multimodal Search Method": 22,
+    "Experimental Results": 23,
+    "Discussion": 29,
+    "Conclusion": 30
+  },
+  "all_required_sections_present": true,
   "page_sizes": [
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
     ],
     [
       0.0,
       0.0,
-      595.2755737304688,
-      841.8897705078125
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
+    ],
+    [
+      0.0,
+      0.0,
+      595.280029296875,
+      841.8900146484375
     ]
   ],
   "drawn_fonts": [
-    "Arial-BoldMT",
-    "Arial-ItalicMT",
-    "ArialMT"
+    "CMEX10",
+    "CMMI10",
+    "CMMI8",
+    "CMR10",
+    "CMR8",
+    "CMSY10",
+    "CMSY6",
+    "CMSY8",
+    "Consolas",
+    "Consolas-Bold",
+    "MSBM10",
+    "TimesNewRomanPS-BoldMT",
+    "TimesNewRomanPS-ItalicMT",
+    "TimesNewRomanPSMT"
   ],
-  "embedded_unicode_fonts": {
-    "AAAAAA+ArialMT": true,
-    "AAAAAA+Arial-BoldMT": true,
-    "AAAAAA+Arial-ItalicMT": true
+  "embedded_fonts": {
+    "NMDECJ+TimesNewRomanPS-BoldMT": true,
+    "OFBGLX+TimesNewRomanPSMT": true,
+    "CALXNL+Consolas": true,
+    "PBFUZO+CMSY10": true,
+    "WGFXKG+CMMI10": true,
+    "TIDABR+CMR10": true,
+    "WNAQEW+CMMI8": true,
+    "ZZSXAZ+CMEX10": true,
+    "GWHESC+MSBM10": true,
+    "ZFGUFW+CMR8": true,
+    "RPZGUA+CMSY8": true,
+    "OMAXBB+TimesNewRomanPS-ItalicMT": true,
+    "PXHPWO+Consolas-Bold": true,
+    "ZYDKXB+CMSY6": true
   },
+  "nonblack_text": [],
   "text_outside_safe_bounds": [],
-  "metrics_in_pdf": {
-    "primary_queries": 12,
-    "successful_primary": 12,
+  "unique_embedded_images": 27,
+  "figures": [
+    "artifacts/diagrams/use_case.png",
+    "artifacts/diagrams/three_layer_architecture.png",
+    "artifacts/diagrams/voice_sequence.png",
+    "artifacts/screenshots/demo_image.png",
+    "artifacts/screenshots/demo_multimodal.png",
+    "artifacts/screenshots/demo_text.png",
+    "artifacts/screenshots/demo_voice.png",
+    "artifacts/screenshots/vp_architecture.png",
+    "artifacts/screenshots/vp_sequence.png",
+    "artifacts/screenshots/vp_use_case.png",
+    "data/images/p001.png",
+    "data/images/p002.png",
+    "data/images/p003.png",
+    "data/images/p004.png",
+    "data/images/p005.png",
+    "data/images/p006.png",
+    "data/images/p007.png",
+    "data/images/p008.png",
+    "data/images/p009.png",
+    "data/images/p010.png",
+    "data/images/p011.png",
+    "data/images/p012.png",
+    "data/queries/black_shoe_query.png",
+    "data/queries/blue_shoe_query.png",
+    "data/queries/brown_bag_query.png"
+  ],
+  "all_approved_image_pixels_matched": true,
+  "figure_xrefs": {
+    "artifacts/diagrams/use_case.png": 154,
+    "artifacts/diagrams/three_layer_architecture.png": 166,
+    "artifacts/diagrams/voice_sequence.png": 174,
+    "artifacts/screenshots/demo_image.png": 226,
+    "artifacts/screenshots/demo_multimodal.png": 227,
+    "artifacts/screenshots/demo_text.png": 221,
+    "artifacts/screenshots/demo_voice.png": 222,
+    "artifacts/screenshots/vp_architecture.png": 167,
+    "artifacts/screenshots/vp_sequence.png": 178,
+    "artifacts/screenshots/vp_use_case.png": 155,
+    "data/images/p001.png": 408,
+    "data/images/p002.png": 409,
+    "data/images/p003.png": 410,
+    "data/images/p004.png": 411,
+    "data/images/p005.png": 412,
+    "data/images/p006.png": 413,
+    "data/images/p007.png": 418,
+    "data/images/p008.png": 419,
+    "data/images/p009.png": 420,
+    "data/images/p010.png": 421,
+    "data/images/p011.png": 422,
+    "data/images/p012.png": 423,
+    "data/queries/black_shoe_query.png": 427,
+    "data/queries/blue_shoe_query.png": 428,
+    "data/queries/brown_bag_query.png": 429
+  },
+  "python_listings": [
+    {
+      "path": "main.py",
+      "lines": 94,
+      "sha256": "dd563510309c1624782f822a632ec24bc8b497d3282280893a012fc40bb6afa7"
+    },
+    {
+      "path": "presentation/__init__.py",
+      "lines": 1,
+      "sha256": "105dde9e1601c186f58a567d4bf0a22a42b36ca261a271a5457daa616a530779"
+    },
+    {
+      "path": "presentation/result_view.py",
+      "lines": 31,
+      "sha256": "be49a2dba33d427e616a8ff5587021eaaa92a446a3e015294af53353a2bc42f1"
+    },
+    {
+      "path": "presentation/search_ui.py",
+      "lines": 36,
+      "sha256": "5a1b4865e992a05fecb8ed5b7f03f4ee133363949b0faeb74ae843e1b02e0135"
+    },
+    {
+      "path": "application/__init__.py",
+      "lines": 1,
+      "sha256": "ca1511fe83ee49fa4450493183dd7fbe770918ff3cce01d7cb347003703509bf"
+    },
+    {
+      "path": "application/image_service.py",
+      "lines": 34,
+      "sha256": "18579558fbe497f9fa7cd142a9d57ce8e04fe025e8e616c0a5c0330392c6c803"
+    },
+    {
+      "path": "application/order_service.py",
+      "lines": 21,
+      "sha256": "3ad1fdc95ec4c5fa1f3f483a517bd124ebe999f119f228574db6a9e8fd768b3f"
+    },
+    {
+      "path": "application/query_service.py",
+      "lines": 120,
+      "sha256": "a602f1d7c0316133850a57d92a951b6c7231a8ab9ff06bdf5bfa6fdc6ee318c8"
+    },
+    {
+      "path": "application/ranking_service.py",
+      "lines": 23,
+      "sha256": "06210b10b3800d2aeffd66ecd8eba600ccd735a735845a1b1b5f56001cd13a93"
+    },
+    {
+      "path": "application/search_service.py",
+      "lines": 79,
+      "sha256": "f2a5e37735d6611f868f5e20388b433000cd732bd0f0d22f1f208e58eb2e5f0c"
+    },
+    {
+      "path": "application/speech_service.py",
+      "lines": 10,
+      "sha256": "ba645af90d666f1b4c15daad4649e0eb80b4649df37dd73a0a366f7b4a7110ae"
+    },
+    {
+      "path": "data/__init__.py",
+      "lines": 1,
+      "sha256": "11088ffd0c4edba9f5991a8592adf2c56f813afbeb3aac13aefa965020c7b1b8"
+    },
+    {
+      "path": "data/order_repository.py",
+      "lines": 39,
+      "sha256": "ad9249cf7daa24a393787c701ca143199e8fd4ffdb94e5c9eb1563df8f8956ee"
+    },
+    {
+      "path": "data/product_repository.py",
+      "lines": 49,
+      "sha256": "969f93b2e7e1297c940b4c621f8733ff990cd20011529c2007e046ea800f5c4c"
+    },
+    {
+      "path": "data/vector_index.py",
+      "lines": 53,
+      "sha256": "ad4947180080ecf0361a85d43dd4a185a409db8afd1b311bf8814d922c98af87"
+    },
+    {
+      "path": "scripts/build_index.py",
+      "lines": 40,
+      "sha256": "2e3abcdab2680d9a228d9906a12f031b61fd692a522b20c5aaf99ffa42e3b356"
+    },
+    {
+      "path": "scripts/build_report.py",
+      "lines": 160,
+      "sha256": "8a733543c18aed235ac9c8a471978ec14291de3b09099f2a7a165e7c7066e383"
+    },
+    {
+      "path": "scripts/package_submission.py",
+      "lines": 258,
+      "sha256": "e8f347a5d830b44a3398ae12cbcda40ccba1ba37b89fb796b97d14c8cfacb74e"
+    },
+    {
+      "path": "scripts/prepare_dataset.py",
+      "lines": 180,
+      "sha256": "b5e627f2ae4f14794788bc0328c4a85c36f94391908d50d90a0a8caa7116429e"
+    },
+    {
+      "path": "scripts/report_facts.py",
+      "lines": 195,
+      "sha256": "0a40a43a9d87c938aab9ae266ae7cb29c89c67688d28915516148b28f8fe926d"
+    },
+    {
+      "path": "scripts/run_evaluation.py",
+      "lines": 151,
+      "sha256": "4da0ef024c85306db47a3e858c235bebea5d1628ad4d60daafd44bc3717bb8db"
+    },
+    {
+      "path": "scripts/validate_submission.py",
+      "lines": 348,
+      "sha256": "06b0e0ab2f85769287959e52bf768a9fbcc1deb4403e2cfc2575aeae22aede50"
+    },
+    {
+      "path": "scripts/verify_uml_layout.py",
+      "lines": 155,
+      "sha256": "1858d7541d034a9a1e572feb344c43e65406dfb4cf3eaa1dfd1d8bf658a18fc0"
+    },
+    {
+      "path": "scripts/desktop/capture_demo.py",
+      "lines": 65,
+      "sha256": "c4fbb42bc3ade5fe9f2fad4d066b8f7a225d6e9c77950f6735a38caaed1dadb1"
+    },
+    {
+      "path": "scripts/desktop/run_vp_plugin.py",
+      "lines": 64,
+      "sha256": "13c4181a74c8ab9752b4409cbe09cae968f0cc8d3e0e798ff8b8e151ea2eb182"
+    },
+    {
+      "path": "tests/test_data_boundaries.py",
+      "lines": 184,
+      "sha256": "035800a6637812a6a13b2a84553c881eeb1ffd232baba29885a38bb955dc1ac4"
+    },
+    {
+      "path": "tests/test_evaluation.py",
+      "lines": 11,
+      "sha256": "8ecae7e0c723831b427a20681c5cae149bcf6ff3b337b382a7f4004de5035a00"
+    },
+    {
+      "path": "tests/test_prototype.py",
+      "lines": 242,
+      "sha256": "a61a365d58f01405e5c56e41a78748a9ca2e4c6deb6f8470a4fe588e2f847bf0"
+    }
+  ],
+  "python_listing_count": 28,
+  "complete_python_line_count": 2645,
+  "evaluation": {
+    "total_queries": 12,
+    "successful_queries": 12,
+    "success_rate": 1.0,
+    "criterion": "top-1 product belongs to relevant_ids; order exact id; robustness evaluated separately",
+    "by_mode": {
+      "text": {
+        "total": 4,
+        "successful": 4,
+        "success_rate": 1.0
+      },
+      "voice": {
+        "total": 4,
+        "successful": 4,
+        "success_rate": 1.0
+      },
+      "image": {
+        "total": 4,
+        "successful": 4,
+        "success_rate": 1.0
+      }
+    },
     "groups": {
       "primary": {
         "total": 12,
@@ -111,6 +851,14 @@
         "success_rate": 1.0
       }
     },
+    "encoder": {
+      "name": "rgbhist-gray-thumbnail",
+      "version": "1.0",
+      "dimension": 88
+    },
+    "ranking": "weighted normalized text/image scores; ties product_id ascending; business weight 0",
+    "ground_truth_version": "ground-truth-v1-before-implementation",
+    "ground_truth_sha256": "85c1b7477b1b2f645ba865ebad160f9882b77b8309342a11a5292247017d3dea",
     "timing_ms": {
       "mean": 1.2891749890210729,
       "p95": 6.6154999658465385,
@@ -119,41 +867,241 @@
       "startup_excluded": true,
       "samples": 12
     },
-    "mean_text_present": true,
-    "p95_text_present": true
+    "environment": {
+      "python": "3.12.8",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "incorrect_examples": [
+      {
+        "id": "C01",
+        "group": "challenge",
+        "mode": "text",
+        "input": {
+          "mode": "text",
+          "query": "sneakers",
+          "note": "Unimplemented semantic synonym"
+        },
+        "relevant_ids": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7
+        ],
+        "top_1_product_id": null,
+        "top_k_ids": [],
+        "scores": [],
+        "actual_order_id": null,
+        "success": false,
+        "processing_ms": 0.17889984883368015,
+        "error": null,
+        "processing": {
+          "modality": "text",
+          "normalized_query": "sneakers",
+          "tokens": [
+            "sneakers"
+          ],
+          "filters": {
+            "category": null,
+            "max_price_exclusive": null,
+            "max_price_inclusive": null
+          },
+          "candidates_before_filter": 0,
+          "candidates_after_filter": 0,
+          "encoder": null,
+          "ranking_weights": {
+            "text": 1.0,
+            "image": 0.0
+          },
+          "top_k": 5,
+          "simulated_stt": false,
+          "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+          "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+        },
+        "note": "Unimplemented semantic synonym"
+      },
+      {
+        "id": "C02",
+        "group": "challenge",
+        "mode": "text",
+        "input": {
+          "mode": "text",
+          "query": "shoes not black",
+          "note": "Negation unsupported by lexical OR matching"
+        },
+        "relevant_ids": [
+          2,
+          4,
+          6,
+          7
+        ],
+        "top_1_product_id": 1,
+        "top_k_ids": [
+          1,
+          5,
+          2,
+          4,
+          6
+        ],
+        "scores": [
+          0.6666666666666666,
+          0.6666666666666666,
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "actual_order_id": null,
+        "success": false,
+        "processing_ms": 0.15380000695586205,
+        "error": null,
+        "processing": {
+          "modality": "text",
+          "normalized_query": "shoes not black",
+          "tokens": [
+            "shoes",
+            "not",
+            "black"
+          ],
+          "filters": {
+            "category": "shoes",
+            "max_price_exclusive": null,
+            "max_price_inclusive": null
+          },
+          "candidates_before_filter": 9,
+          "candidates_after_filter": 6,
+          "encoder": null,
+          "ranking_weights": {
+            "text": 1.0,
+            "image": 0.0
+          },
+          "top_k": 5,
+          "simulated_stt": false,
+          "retrieval": "whole-word OR matching; explicit category inferred; image candidates union",
+          "ranking": "weighted normalized scores; product_id ascending breaks ties; no business boost"
+        },
+        "note": "Negation unsupported by lexical OR matching"
+      }
+    ]
   },
-  "test_summary_in_pdf": {
-    "78_tests": true,
-    "264_statements": true,
-    "100pct": true
+  "tests": {
+    "tests": 78,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "application_data_coverage": 100.0,
+    "statements": 264
   },
   "input_sha256": {
-    "docs/report.md": "1ad7fa566fc7459fc1387845cae58831ae135d0c324348e780abc536ed0e2aa0",
-    "scripts/build_report.py": "9207e0a528954f351dc75ccbff4cd43e700c8edab6f1cbadb1aa990106c4e9af",
+    "data/products.json": "7dd5ba8f1100f89c6d0e0336a1999d44f894aa02776b43360ee041b2d1ad3be6",
+    "data/orders.json": "e93c8eeae38b6d4cc63fe7c91bbc77a2fab9860001830fdba67799899642b58b",
     "artifacts/evaluation/metrics.json": "26cb4bd6442ba5911f2f8f12f5eb2f89935ee9a46cd69d097efcc153e0fa4849",
     "artifacts/evaluation/results.json": "fc43e610599335920c29c834d1969cec67584928b3becc79af43e4541c60bd61",
+    "evaluation/queries.json": "85c1b7477b1b2f645ba865ebad160f9882b77b8309342a11a5292247017d3dea",
     "artifacts/demo/demo_results.json": "7e6c9b76d112e9c4ad0fd02fae9d13a27c6e797e9595ed978d88471fb2776f95",
-    "artifacts/tests/junit.xml": "b3f8638e024d83b435e5c798924a7fbae555f8e653607837a7e3bbbdd529787c",
     "artifacts/tests/coverage.json": "f1b604c19c24dde79467a1c57673aaf05de41a28b15c2b88e410432d2306a36e",
-    "artifacts/diagrams/three_layer_architecture.png": "503ffea80df6ea4896bc867dd1ca19337879ecd1dc22d006c37ca948fa93e40e",
+    "main.py": "dd563510309c1624782f822a632ec24bc8b497d3282280893a012fc40bb6afa7",
+    "presentation/__init__.py": "105dde9e1601c186f58a567d4bf0a22a42b36ca261a271a5457daa616a530779",
+    "presentation/result_view.py": "be49a2dba33d427e616a8ff5587021eaaa92a446a3e015294af53353a2bc42f1",
+    "presentation/search_ui.py": "5a1b4865e992a05fecb8ed5b7f03f4ee133363949b0faeb74ae843e1b02e0135",
+    "application/__init__.py": "ca1511fe83ee49fa4450493183dd7fbe770918ff3cce01d7cb347003703509bf",
+    "application/image_service.py": "18579558fbe497f9fa7cd142a9d57ce8e04fe025e8e616c0a5c0330392c6c803",
+    "application/order_service.py": "3ad1fdc95ec4c5fa1f3f483a517bd124ebe999f119f228574db6a9e8fd768b3f",
+    "application/query_service.py": "a602f1d7c0316133850a57d92a951b6c7231a8ab9ff06bdf5bfa6fdc6ee318c8",
+    "application/ranking_service.py": "06210b10b3800d2aeffd66ecd8eba600ccd735a735845a1b1b5f56001cd13a93",
+    "application/search_service.py": "f2a5e37735d6611f868f5e20388b433000cd732bd0f0d22f1f208e58eb2e5f0c",
+    "application/speech_service.py": "ba645af90d666f1b4c15daad4649e0eb80b4649df37dd73a0a366f7b4a7110ae",
+    "data/__init__.py": "11088ffd0c4edba9f5991a8592adf2c56f813afbeb3aac13aefa965020c7b1b8",
+    "data/order_repository.py": "ad9249cf7daa24a393787c701ca143199e8fd4ffdb94e5c9eb1563df8f8956ee",
+    "data/product_repository.py": "969f93b2e7e1297c940b4c621f8733ff990cd20011529c2007e046ea800f5c4c",
+    "data/vector_index.py": "ad4947180080ecf0361a85d43dd4a185a409db8afd1b311bf8814d922c98af87",
+    "scripts/build_index.py": "2e3abcdab2680d9a228d9906a12f031b61fd692a522b20c5aaf99ffa42e3b356",
+    "scripts/build_report.py": "8a733543c18aed235ac9c8a471978ec14291de3b09099f2a7a165e7c7066e383",
+    "scripts/package_submission.py": "e8f347a5d830b44a3398ae12cbcda40ccba1ba37b89fb796b97d14c8cfacb74e",
+    "scripts/prepare_dataset.py": "b5e627f2ae4f14794788bc0328c4a85c36f94391908d50d90a0a8caa7116429e",
+    "scripts/report_facts.py": "0a40a43a9d87c938aab9ae266ae7cb29c89c67688d28915516148b28f8fe926d",
+    "scripts/run_evaluation.py": "4da0ef024c85306db47a3e858c235bebea5d1628ad4d60daafd44bc3717bb8db",
+    "scripts/validate_submission.py": "06b0e0ab2f85769287959e52bf768a9fbcc1deb4403e2cfc2575aeae22aede50",
+    "scripts/verify_uml_layout.py": "1858d7541d034a9a1e572feb344c43e65406dfb4cf3eaa1dfd1d8bf658a18fc0",
+    "scripts/desktop/capture_demo.py": "c4fbb42bc3ade5fe9f2fad4d066b8f7a225d6e9c77950f6735a38caaed1dadb1",
+    "scripts/desktop/run_vp_plugin.py": "13c4181a74c8ab9752b4409cbe09cae968f0cc8d3e0e798ff8b8e151ea2eb182",
+    "tests/test_data_boundaries.py": "035800a6637812a6a13b2a84553c881eeb1ffd232baba29885a38bb955dc1ac4",
+    "tests/test_evaluation.py": "8ecae7e0c723831b427a20681c5cae149bcf6ff3b337b382a7f4004de5035a00",
+    "tests/test_prototype.py": "a61a365d58f01405e5c56e41a78748a9ca2e4c6deb6f8470a4fe588e2f847bf0",
+    "data/dataset_metadata.json": "0f820b9044209cf2fbf934a952c05dbb6eed1a8d94963f3b8af31411f95b38bb",
+    "requirements.txt": "04e633aef4ca78a8d6b425bbcf2cb9f3b2c278b488e05f88b8985f539bd61bc7",
+    "requirements-dev.txt": "95b0a27ebf905a44a17991db9ed6be0aaa3f95c9290cc4cc877c39844746d490",
+    "requirements-automation.txt": "deab22e315e793a52245630cf750a28689e8287db40e9349f7a000ffcca67a37",
+    "pyproject.toml": "bf9327e13be0067bfaa9e59ba24b7b724ab54e5128d887b93f684af31a1887f7",
     "artifacts/diagrams/use_case.png": "a3e56a19d590be3eb755c6a79719c965530a2c717e4b7ec388af690a27c13307",
+    "artifacts/diagrams/three_layer_architecture.png": "503ffea80df6ea4896bc867dd1ca19337879ecd1dc22d006c37ca948fa93e40e",
     "artifacts/diagrams/voice_sequence.png": "33c99af94d7778186c11674ef04700cf37067feb3c666e675ca7155e8ee89b24",
-    "artifacts/screenshots/vp_use_case.png": "ab82e86617dc086aa4ede9052d3c2a61d4585330c0c1d3341d3003120e3bf83b",
-    "artifacts/screenshots/vp_architecture.png": "52a283118bf728976310f98d366c00e72e2862cf5972e65a1de7e8e70fa96c03",
-    "artifacts/screenshots/vp_sequence.png": "a15b916c7643a8b1d71f3f95f2e407a02ec6def5ace309ca39a8cb5bb1dd6b2a",
+    "artifacts/screenshots/demo_image.png": "c93564fe24875d0a4f0b7aabee05175d99d1cbbd65d6e20f7a8ebb1c402bf6c0",
+    "artifacts/screenshots/demo_multimodal.png": "544e089c7aa3e7a66a59e104ded2504f52228394d14dd3aeac30463bdc3355dc",
     "artifacts/screenshots/demo_text.png": "dc9fca4b354b22d33813d0d5371b0bb15eada16bf84ad8f91ee88de73c8dd893",
     "artifacts/screenshots/demo_voice.png": "d1a7bf11b64336a7e2a27ebaa59eccf493a2fc64026618ab3910c0fef0657799",
-    "artifacts/screenshots/demo_image.png": "c93564fe24875d0a4f0b7aabee05175d99d1cbbd65d6e20f7a8ebb1c402bf6c0"
+    "artifacts/screenshots/vp_architecture.png": "52a283118bf728976310f98d366c00e72e2862cf5972e65a1de7e8e70fa96c03",
+    "artifacts/screenshots/vp_sequence.png": "a15b916c7643a8b1d71f3f95f2e407a02ec6def5ace309ca39a8cb5bb1dd6b2a",
+    "artifacts/screenshots/vp_use_case.png": "ab82e86617dc086aa4ede9052d3c2a61d4585330c0c1d3341d3003120e3bf83b",
+    "data/images/p001.png": "752cd6e613e6be7200a6764e0f6ae62a002a238d40e2032a6a718f93b55c9a99",
+    "data/images/p002.png": "68d787d044320416789d7dff26a242351421ae97acdc7f6e995a96e7c4591f90",
+    "data/images/p003.png": "8fe0271883d40c8db967e4e42bb24cf689e9c556f17f0fa0cae44c327de81d34",
+    "data/images/p004.png": "388e90d9de97a34f6dfbd452a222afd37c817b99b35243cf40c408d3edf1bdc6",
+    "data/images/p005.png": "e711d48b3b6d581de409a3666b7e1c1feb605ad3e5a142e4814806510b32b701",
+    "data/images/p006.png": "bedc0b5aa2490ef26999633a8ee759da703b383b3ba6689531e6da5d422f7835",
+    "data/images/p007.png": "f70b32e9a44bc5a577cda1ee7b308768116b89bd41da2c267d15dc3190209ff7",
+    "data/images/p008.png": "4b9abe6a796ba81fdbc435cb8b9d9518215aa7a63ef85f2ceeedc3ed80f8171d",
+    "data/images/p009.png": "11adafd8be3ee15fc956fcabfb51693e4cf1b679e3209dcfb4bb190344986e5f",
+    "data/images/p010.png": "c06f927a9550daa25175a73ed3407ab5cea5a0ee8b0714fec15e71ddc7e9efea",
+    "data/images/p011.png": "44545ad03320c1969f1542536cfc760a556eb0892ee6d0ad617e0b8b612c1178",
+    "data/images/p012.png": "6fee8322dfc1b1140eedd3994655a5f2c6a65f9110c2655a126f18de249ea543",
+    "data/queries/black_shoe_query.png": "d413044afe57b7070b6a97e13b4c41ea5903135637009bccaa91d91182c72365",
+    "data/queries/blue_shoe_query.png": "976be6dafcdcf4cbe4dc579eba421d07540205e87d93602ea62e46940fed2adf",
+    "data/queries/brown_bag_query.png": "4754ccf09e29ba11a5a6eadaf33017dbcd2aa9018b36c5158db8e328c36919d4",
+    "models/Assignment_06_Multimodal_Search.vpp": "5d04986f91b3a1373c5c0e951a7ed52d25222bba9ad97f0fb3f664e886091bd4",
+    "artifacts/tests/junit.xml": "b3f8638e024d83b435e5c798924a7fbae555f8e653607837a7e3bbbdd529787c",
+    "docs/report.tex": "c38fa61c423e306182d24702379c3cddf51b96181e510f9ec025fbda6c5ae771",
+    "docs/cover/background.png": "e028d3948a3b86e29c28846e6f409673cf25614dc73b463b612a5dc88f27e10d",
+    "docs/cover/logo.png": "679586c1f1ea31203b36affb061c138b13840e4d0c19da677bb4bf92f4c9beb9"
   },
-  "pdf_sha256": "11c6342f7c34dcb5d2fccefcdd965ffcb073e3598ea6ac915d33572a30ae38c2",
-  "UML_refinement_review": {
-    "changed_pages_visually_reviewed": [
-      4,
-      5,
-      6
-    ],
-    "native_default_palette": true,
-    "native_reopen_and_GUI_checked": true,
-    "layout_audit": "artifacts/tests/uml_layout_audit.json"
+  "approved_UML_and_images_unchanged": true,
+  "preserved_assets": {
+    "artifacts/diagrams/use_case.png": "a3e56a19d590be3eb755c6a79719c965530a2c717e4b7ec388af690a27c13307",
+    "artifacts/diagrams/three_layer_architecture.png": "503ffea80df6ea4896bc867dd1ca19337879ecd1dc22d006c37ca948fa93e40e",
+    "artifacts/diagrams/voice_sequence.png": "33c99af94d7778186c11674ef04700cf37067feb3c666e675ca7155e8ee89b24",
+    "artifacts/screenshots/demo_image.png": "c93564fe24875d0a4f0b7aabee05175d99d1cbbd65d6e20f7a8ebb1c402bf6c0",
+    "artifacts/screenshots/demo_multimodal.png": "544e089c7aa3e7a66a59e104ded2504f52228394d14dd3aeac30463bdc3355dc",
+    "artifacts/screenshots/demo_text.png": "dc9fca4b354b22d33813d0d5371b0bb15eada16bf84ad8f91ee88de73c8dd893",
+    "artifacts/screenshots/demo_voice.png": "d1a7bf11b64336a7e2a27ebaa59eccf493a2fc64026618ab3910c0fef0657799",
+    "artifacts/screenshots/vp_architecture.png": "52a283118bf728976310f98d366c00e72e2862cf5972e65a1de7e8e70fa96c03",
+    "artifacts/screenshots/vp_sequence.png": "a15b916c7643a8b1d71f3f95f2e407a02ec6def5ace309ca39a8cb5bb1dd6b2a",
+    "artifacts/screenshots/vp_use_case.png": "ab82e86617dc086aa4ede9052d3c2a61d4585330c0c1d3341d3003120e3bf83b",
+    "data/images/p001.png": "752cd6e613e6be7200a6764e0f6ae62a002a238d40e2032a6a718f93b55c9a99",
+    "data/images/p002.png": "68d787d044320416789d7dff26a242351421ae97acdc7f6e995a96e7c4591f90",
+    "data/images/p003.png": "8fe0271883d40c8db967e4e42bb24cf689e9c556f17f0fa0cae44c327de81d34",
+    "data/images/p004.png": "388e90d9de97a34f6dfbd452a222afd37c817b99b35243cf40c408d3edf1bdc6",
+    "data/images/p005.png": "e711d48b3b6d581de409a3666b7e1c1feb605ad3e5a142e4814806510b32b701",
+    "data/images/p006.png": "bedc0b5aa2490ef26999633a8ee759da703b383b3ba6689531e6da5d422f7835",
+    "data/images/p007.png": "f70b32e9a44bc5a577cda1ee7b308768116b89bd41da2c267d15dc3190209ff7",
+    "data/images/p008.png": "4b9abe6a796ba81fdbc435cb8b9d9518215aa7a63ef85f2ceeedc3ed80f8171d",
+    "data/images/p009.png": "11adafd8be3ee15fc956fcabfb51693e4cf1b679e3209dcfb4bb190344986e5f",
+    "data/images/p010.png": "c06f927a9550daa25175a73ed3407ab5cea5a0ee8b0714fec15e71ddc7e9efea",
+    "data/images/p011.png": "44545ad03320c1969f1542536cfc760a556eb0892ee6d0ad617e0b8b612c1178",
+    "data/images/p012.png": "6fee8322dfc1b1140eedd3994655a5f2c6a65f9110c2655a126f18de249ea543",
+    "data/queries/black_shoe_query.png": "d413044afe57b7070b6a97e13b4c41ea5903135637009bccaa91d91182c72365",
+    "data/queries/blue_shoe_query.png": "976be6dafcdcf4cbe4dc579eba421d07540205e87d93602ea62e46940fed2adf",
+    "data/queries/brown_bag_query.png": "4754ccf09e29ba11a5a6eadaf33017dbcd2aa9018b36c5158db8e328c36919d4",
+    "models/Assignment_06_Multimodal_Search.vpp": "5d04986f91b3a1373c5c0e951a7ed52d25222bba9ad97f0fb3f664e886091bd4"
+  },
+  "latex_layout_and_references_clean": true,
+  "pdf_sha256": "deba7c4f5429989f6f6d4ebf19cfa4eafa2437e7baa3a37ce66c337e3a479d71",
+  "cover": {
+    "student_name": "Vu Dinh Hieu",
+    "student_id": "B23DCCE036",
+    "class": "E23TTNT02",
+    "instructor": "Tran Dinh Que",
+    "institution": "Posts and Telecommunications Institute of Technology",
+    "artwork_origin": "D:/PROJECTS/DIP/report",
+    "artwork_copied_without_modification": true
   }
 }

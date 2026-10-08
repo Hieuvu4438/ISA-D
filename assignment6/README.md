@@ -90,9 +90,11 @@ Xem `docs/requirements.md` cho nguồn đề, `docs/architecture.md` cho compone
 Mở native UML và tái tạo bằng VP API: xem `docs/VP_AUTOMATION.md`. Gate bàn giao/hash và clean extraction: xem `docs/FINAL_VERIFICATION.md`.
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/build_report.py --input docs/report.md --output artifacts/report/Assignment_06_Report.pdf
+.\.venv\Scripts\python.exe scripts/build_report.py --input docs/report.tex --output artifacts/report/Assignment_06_Report.pdf
 .\.venv\Scripts\python.exe scripts/validate_submission.py
 .\.venv\Scripts\python.exe scripts/package_submission.py
 ```
 
-Report builder cần artifacts/screenshot thật có sẵn; ZIP bàn giao chứa các evidence này. Không rebuild report trước khi hoàn tất dataset/demo/evaluation/test/screenshot stages. Report cover chưa có họ tên/MSSV/lớp; sửa đúng thông tin trong `docs/report.md` rồi build lại PDF và package nếu cần cá nhân hóa.
+Report hiện tại là LaTeX paper chi tiết bằng tiếng Anh, chữ đen trên nền trắng, không giới hạn số trang. Source là `docs/report.tex`; `docs/report.md` hướng dẫn build. Báo cáo có đủ 11 phần đề khuyến nghị, 25 ảnh đã duyệt và phụ lục đầy đủ mọi file Python, dữ liệu và cấu hình. UML/ảnh giữ nguyên. Report builder cần artifacts thật, Python dev dependencies, XeLaTeX (MiKTeX/TeX Live) cùng font Times New Roman/Arial/Consolas; search runtime không cần LaTeX. Bản build hiện tại không còn dùng ReportLab.
+
+Builder lấy tables từ saved JSON/JUnit/coverage và source listings từ snapshot file thật, compile ba passes, kiểm tra references/fonts/text màu đen/bounds/ảnh và hash assets, render từng trang vào `artifacts/report/review_pages/`. Không rerun evaluation chỉ để build report; timing trong report là lần đo đã lưu. Cover chưa có họ tên/MSSV/lớp; sửa đúng dữ liệu trong `docs/report.tex`, rebuild PDF và package để cá nhân hóa. Xem `docs/report_requirements_audit.md` và `artifacts/report/REVIEW.md` cho review task/layout.

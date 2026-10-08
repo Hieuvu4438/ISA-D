@@ -1,31 +1,34 @@
-# Tiến độ thực hiện Assignment 06
+# Assignment 06 ? Current Progress and Evidence
 
-Ngày thực hiện: 01/10/2026. Phạm vi: guide → 6 task → native UML → Python prototype → thực nghiệm → báo cáo → ZIP.
+Date: 1 October 2026. Current deliverable: a detailed English XeLaTeX report with no page limit, all eleven recommended parts in order, complete Python source and all readable project images. `docs/report.tex` is canonical. Earlier condensed Markdown/ReportLab report claims are superseded.
 
-## Phân công
+## Ownership
 
-Tối đa 3 agent: root tích hợp/desktop/VP/nghiệm thu; prototype phụ trách code/dataset/tests/evaluation và package; report phụ trách tài liệu/báo cáo. Không push, không nộp LMS, không sửa bài khác.
+At most three active agents: root integrates native VP/UML and delivery; prototype reviews final PDF/source; report audit worker owns this file, SELF_EVALUATION.md and report_requirements_audit.md only. Do not revert another owner's edits. No external posting or LMS submission is claimed.
 
-## Các mốc đã kiểm chứng
+## Verified implementation and modeling
 
-- M0: đọc PDF đề 23 trang; đối chiếu guide. Workspace nằm trong repo cha ISA-D. Shortcut VP target hợp lệ, không cần sửa.
-- M1: frozen ground truth được định nghĩa trước implementation. RED ban đầu 9 failed, 1 passed, 32 errors; checkpoint local git 575e3c9. GREEN ban đầu 74 tests checkpoint 45bfc4e; các boundary/percentile tests bổ sung theo RED/GREEN riêng.
-- M2: giữ project VP ban đầu có unsaved changes; Save As snapshot thành công sau dialog trì hoãn tại artifacts/backups/baikiemtra01-unsaved-snapshot-20261001.vpp. Không overwrite original. Thông báo local repository version mới hơn đã được xử lý; không discard phiên gốc.
-- M3: prototype có 12 sản phẩm, 12 ảnh Pillow original, 3 query images biến đổi, text/voice/image/fusion, filter giá/category, order customer scope. Retrieval và ranking tách riêng, common query; pixel encoder88D và cosine thật.
-- M4: tạo native VP CE18 project models/Assignment_06_Multimodal_Search.vpp bằng Open API. 7 use cases, 3 generalizations, 4 actor associations; 3 packages với 16 components; voice sequence 7participants/14messages. Đã sửa hướng generalization theo API và đường nối để hình đúng nghĩa. GUI mở cả3diagram, lưu caption/layout patch; chụp screenshots thật. Project đóng để giải phóng lock rồi API mở lại file đã lưu thành công,3diagrams, export lại PNG. model_inventory/reopened_inventory/verify_result là evidence cuối. Một verify thử khi GUI đang giữ file đã bị VP từ chối; chỉ process API riêng bị dừng, verification sau khi đóng GUI PASS.
-- M5: root final pytest78PASS (2.62s), application/data coverage100%264statements. RuffPASS, pyright0errors, compileallPASS, pipcheckPASS, pip-audit no known vulnerabilities sau khi nâng pip trong .venv. Không thay systemPython.
-- M6: evaluation primary12/12, extension2/2, challenge0/2, robustness5/5; denominator riêng, groundtruthSHA256 đối chiếu. Giữ failures synonyms/negation thật. Không suy diễn100% trên ảnh thực.
-- M7: demo screenshots được chụp từ cửa sổ Python đọc outputCLIJSON vừa chạy; payload lưu kèm. Reportbuilder đọc metrics/tests/demo thật, báo cáo12trang, có 3 UMLexports+3VPscreenshots+3Python screenshots. Renderreview do reportworker và root thực hiện trước bàn giao.
+- All 23 assignment pages were read; full extraction: `artifacts/assignment_06_requirements_extracted.txt`. Six tasks, eleven report parts, evaluation, submission, rubric and principles are audited separately.
+- Twelve validated products, twelve original Pillow illustrations, three derived readable query images and one intentionally corrupt robustness fixture. Text, simulated voice, image, fusion, price/category filtering, product details and scoped order lookup are implemented.
+- Current JUnit: 78 passing tests, no failures/errors/skips. Application/Data line coverage: 100% across 264 statements, not branch/UI/VP/all-project coverage. Lint/typecheck/compile/dependency evidence is retained.
+- Frozen evaluation: 21 cases; primary 12/12 (four each text/voice/image), extension 2/2, challenge 0/2, robustness 5/5. Separate denominators and incorrect synonym/negation cases are preserved.
+- Native model: Customer/seven use cases, three packages/sixteen components, seven voice participants/fourteen messages. Native inventories/reopen and three VP screenshots are retained.
+- Existing unrelated user VP project was preserved via backup. Shortcut target was valid and did not need editing. No unrelated project is overwritten.
+- Approved VP factory fill is #7ACFF5; outlines/text are black. Model IDs and relationships are preserved. Latest layout audit checks axis alignment and conflicts/nonendpoint node penetration in use-case/component; sequence lifeline intersections are intentional notation. Root reports fresh layout audit PASS with zero conflicts, without further model edits.
+- Four Python screenshots show a real Tkinter result viewer receiving fresh CLI JSON; raw payloads remain alongside images. This is running-program evidence, not a terminal screenshot or production web UI.
 
-## Nghiệm thu và bàn giao
+## Verified report snapshot before the supplied cover update
 
-Kết quả gate cuối và clean ZIP extraction được ghi bởi scripts/package_submission.py trong docs/FINAL_VERIFICATION.md, artifacts/tests/submission_validation.json và clean_extraction.json. ZIP/manifest được tạo sau khi PDF và tài liệu đã freeze; chỉ file Assignment06, không kèm .venv/backup/VPseed/workspace/ảnh bài khác. Goal chỉ complete sau khi ZIP/hash/review cuối đạt.
+Final XeLaTeX build: **91 pages, 28 complete Python files, 2,645 source lines, 25 readable original images**. PDF SHA-256: `818a31566ac78f9e2f2727e34ecb843f97be273fdea812399ae7140af261c8c7`. Source/TEX/assets are frozen by root. Independent read-only inspection confirms canonical PDF/audit hash alignment, live TEX hash, all listing hashes, byte-identical code snapshots and all preserved model/image hashes. All eleven section bookmarks, black text, embedded fonts, original decoded image pixels, bounds and references pass the build audit.
 
-Sinh viên/MSSV/lớp: Chưa cung cấp. Voice mô phỏng STT; synthetic images/pixel descriptor; order context không phải production authentication. Chưa nộp LMS.
-# Cập nhật theo review UML của người dùng — 2026-10-01
+Images: three native exports, three VP screenshots, four Python screenshots, twelve catalogue illustrations and three derived query images. Corrupt image is correctly excluded from embedding and explained. Full vectors remain delivered JSON; every Python producer/consumer is included in full.
 
-Đã sao lưu project trước chỉnh tại `artifacts/backups/Assignment_06_before_UML_refinement.vpp`. Khôi phục màu từ native factory của VP cho đúng loại shape: fill default quan sát `#7ACFF5`, nét/chữ đen. Không dùng palette tự chọn, không đổi model IDs hoặc nội dung quan hệ. Guide đã bỏ hướng dẫn cho phép tô màu phân tầng và yêu cầu giữ VP default.
+Prototype owns final visual/source review. This worker audited content/requirements/hashes; it does not claim a GUI or whole-PDF visual review performed by itself. Root reports final validator 8/8 PASS. Curated ZIP/manifest/extracted-source smoke and FINAL_VERIFICATION are refreshed by root after these documents freeze; older package PASS snapshots do not prove the refreshed package.
 
-Đã căn hàng/cột, chia điểm bám và hành lang riêng ở use case/component; 7 connector use case và 15 dependency component đều ngang/dọc, không giao cắt/chồng nét hay xuyên node không liên quan. Sequence giữ 14 message và các self-call góc vuông. `artifacts/tests/uml_layout_audit.json` đối chiếu IDs và semantics trước/sau, kiểm tra geometry/style, PASS. Lifeline giao message trong sequence là UML hợp lệ.
+At that historical snapshot student name/ID/class had not yet been supplied. Simulated STT, synthetic images, handcrafted descriptor and unauthenticated CLI customer context were explicitly disclosed. No LMS submission was claimed. Changes to source/assets require rebuild/review/repackage.
 
-Đã phát hiện và sửa lỗi VP lưu connector bounds trước rendering làm mũi tên bị clipping sau reopen. Refiner render trước lần lưu cuối; project đã được mở lại qua process API độc lập và cả ba diagram trong GUI, sau đó lưu, đóng và verify lần nữa. Các `vp_*.png`, diagram exports, PDF và ZIP được cập nhật theo bản đã kiểm chứng.
+## Current cover update — supplied identity and DIP format
+
+The user has supplied student **Vu Dinh Hieu**, ID **B23DCCE036**, class **E23TTNT02**, instructor **Tran Dinh Que**, and university **Posts and Telecommunications Institute of Technology**. These supersede the historical missing-identity labels. Root updates the English cover using the DIP report format and supplied `background.png`/`logo.png` copied to `docs/cover/`; the abstract moves from the cover to its own page. No identity is inferred from an account/license.
+
+The prior 91-page/25-image/hash evidence above remains a historical checkpoint. The revised report is expected to add a separate abstract page; final page/image/source counts and SHA-256 await the new build audit. Root owns TEX/assets/build/package; this worker edits only its four documentation files and freezes them for integration. Approved UML, implementation and evaluated outcomes retain their existing scope. No LMS submission is claimed.

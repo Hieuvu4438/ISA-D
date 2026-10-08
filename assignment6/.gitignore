@@ -13,3 +13,5 @@ artifacts/automation/*.lck
 scripts/desktop/vp_plugin/classes/
 models/*.bak*
 models/*.lck
+artifacts/report/latex_build/
+artifacts/report/review_pages/

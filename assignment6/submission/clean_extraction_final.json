@@ -1,81 +1,188 @@
 {
   "passed": true,
-  "archive": {
-    "path": "Assignment_06_Submission.zip",
-    "bytes": 2441525,
-    "sha256": "434a7f6057a1c59baa899d9e80885e2bf53008e2b22ba8b4ea3793a8898e0e65"
+  "archive_sha256": "dc73cb27bb98eb46e8d84bfed2bde54d54173f50a550bf792d5fff3aa5e773ee",
+  "archive_bytes": 3091586,
+  "payload_files": 123,
+  "CRC_and_payload_hashes_passed": true,
+  "all_payload_bytes_match_workspace": true,
+  "actual_final_ZIP_extracted_validator": {
+    "passed": true,
+    "root": "D:\\PROJECTS\\ISA-D\\assignment6\\artifacts\\tests\\cover-zip-8wupbpwq",
+    "checks": [
+      {
+        "name": "Required submission groups and evidence",
+        "passed": true,
+        "details": {
+          "required_files": 50
+        }
+      },
+      {
+        "name": "Dataset, real images, and matching pixel index",
+        "passed": true,
+        "details": {
+          "products": 12,
+          "encoder": {
+            "name": "rgbhist-gray-thumbnail",
+            "version": "1.0",
+            "dimension": 88
+          },
+          "source_fingerprint_valid": true
+        }
+      },
+      {
+        "name": "Complete English LaTeX PDF, full Python listings and approved visual evidence",
+        "passed": true,
+        "details": {
+          "pages": 92,
+          "embedded_images": 27,
+          "nonempty_text_pages": true,
+          "English_LaTeX": true,
+          "full_Python_files": 28,
+          "page_limit": null
+        }
+      },
+      {
+        "name": "UML exports and real screenshot image files",
+        "passed": true,
+        "details": {
+          "artifacts/diagrams/use_case.png": [
+            2982,
+            1670
+          ],
+          "artifacts/diagrams/three_layer_architecture.png": [
+            3732,
+            2820
+          ],
+          "artifacts/diagrams/voice_sequence.png": [
+            3374,
+            2324
+          ],
+          "artifacts/screenshots/vp_use_case.png": [
+            1920,
+            1018
+          ],
+          "artifacts/screenshots/vp_architecture.png": [
+            1920,
+            1018
+          ],
+          "artifacts/screenshots/vp_sequence.png": [
+            1920,
+            1018
+          ],
+          "artifacts/screenshots/demo_text.png": [
+            1030,
+            349
+          ],
+          "artifacts/screenshots/demo_voice.png": [
+            1030,
+            385
+          ],
+          "artifacts/screenshots/demo_image.png": [
+            1030,
+            349
+          ]
+        }
+      },
+      {
+        "name": "Native VP model inventory and required UML semantics",
+        "passed": true,
+        "details": {
+          "native_diagram_names": [
+            "CMP_Three_Layer_Architecture",
+            "SEQ_Voice_Product_Search",
+            "UC_Multimodal_Ecommerce_Search"
+          ],
+          "use_case_elements": 9,
+          "generalizations": 3,
+          "customer_associations": 4,
+          "component_package_ownership": {
+            "VoiceInput": "Presentation Layer",
+            "SearchUI": "Presentation Layer",
+            "ImageUpload": "Presentation Layer",
+            "SearchResultView": "Presentation Layer",
+            "SpeechService": "Application / Intelligence Layer",
+            "QueryService": "Application / Intelligence Layer",
+            "ImageService": "Application / Intelligence Layer",
+            "SearchService": "Application / Intelligence Layer",
+            "RankingService": "Application / Intelligence Layer",
+            "OrderService": "Application / Intelligence Layer",
+            "ProductRepository": "Data Layer",
+            "ProductDatabase": "Data Layer",
+            "VectorIndex": "Data Layer",
+            "ImageStorage": "Data Layer",
+            "OrderRepository": "Data Layer",
+            "OrderDatabase": "Data Layer"
+          },
+          "presentation_to_data_dependencies": 0,
+          "voice_messages": 14,
+          "voice_participant_counts": {
+            "InteractionActor": 1,
+            "Activation": 6,
+            "InteractionLifeLine": 6,
+            "NOTE": 1
+          },
+          "note": "Inventory verifies native model types; GUI reopen/layout verification is recorded separately by root."
+        }
+      },
+      {
+        "name": "Three mandatory demo modes, fusion, order, and scores",
+        "passed": true,
+        "details": {
+          "modes": [
+            "image",
+            "multimodal",
+            "order",
+            "text",
+            "voice"
+          ],
+          "queries": 5
+        }
+      },
+      {
+        "name": "Frozen ground truth, metrics, separate denominators, and failures",
+        "passed": true,
+        "details": {
+          "primary": {
+            "total": 12,
+            "successful": 12,
+            "success_rate": 1.0
+          },
+          "separate_groups": {
+            "primary": {
+              "total": 12,
+              "successful": 12,
+              "success_rate": 1.0
+            },
+            "extension": {
+              "total": 2,
+              "successful": 2,
+              "success_rate": 1.0
+            },
+            "challenge": {
+              "total": 2,
+              "successful": 0,
+              "success_rate": 0.0
+            },
+            "robustness": {
+              "total": 5,
+              "successful": 5,
+              "success_rate": 1.0
+            }
+          },
+          "ground_truth_sha256": "85c1b7477b1b2f645ba865ebad160f9882b77b8309342a11a5292247017d3dea"
+        }
+      },
+      {
+        "name": "Test, coverage, lint, typecheck, and dependency consistency evidence",
+        "passed": true,
+        "details": {
+          "tests": 78,
+          "failures": 0,
+          "skipped": 0,
+          "application_data_line_coverage": 100.0
+        }
+      }
+    ]
   },
-  "file_count": 115,
-  "entry_count": 116,
-  "checksums_and_workspace_payload_match": true,
-  "dependency_environment": "workspace .venv; final ZIP source isolated, PYTHONPATH removed",
-  "runs": [
-    {
-      "command": [
-        "scripts/validate_submission.py"
-      ],
-      "returncode": 0,
-      "stdout": "{\n  \"passed\": true,\n  \"root\": \"D:\\\\PROJECTS\\\\ISA-D\\\\assignment6\\\\artifacts\\\\tests\\\\final-zip-y0kw9q8a\",\n  \"checks\": [\n    {\n      \"name\": \"Required submission groups and evidence\",\n      \"passed\": true,\n      \"details\": {\n        \"required_files\": 47\n      }\n    },\n    {\n      \"name\": \"Dataset, real images, and matching pixel index\",\n      \"passed\": true,\n      \"details\": {\n        \"products\": 12,\n        \"encoder\": {\n          \"name\": \"rgbhist-gray-thumbnail\",\n          \"version\": \"1.0\",\n          \"dimension\": 88\n        },\n        \"source_fingerprint_valid\": true\n      }\n    },\n    {\n      \"name\": \"Final PDF has 12 readable pages and embedded visual evidence\",\n      \"passed\": true,\n      \"details\": {\n        \"pages\": 12,\n        \"embedded_images\": 9,\n        \"nonempty_text_pages\": true\n      }\n    },\n    {\n      \"name\": \"UML exports and real screenshot image files\",\n      \"passed\": true,\n      \"details\": {\n        \"artifacts/diagrams/use_case.png\": [\n          2982,\n          1670\n        ],\n        \"artifacts/diagrams/three_layer_architecture.png\": [\n          3732,\n          2820\n        ],\n        \"artifacts/diagrams/voice_sequence.png\": [\n          3374,\n          2324\n        ],\n        \"artifacts/screenshots/vp_use_case.png\": [\n          1920,\n          1018\n        ],\n        \"artifacts/screenshots/vp_architecture.png\": [\n          1920,\n          1018\n        ],\n        \"artifacts/screenshots/vp_sequence.png\": [\n          1920,\n          1018\n        ],\n        \"artifacts/screenshots/demo_text.png\": [\n          1030,\n          349\n        ],\n        \"artifacts/screenshots/demo_voice.png\": [\n          1030,\n          385\n        ],\n        \"artifacts/screenshots/demo_image.png\": [\n          1030,\n          349\n        ]\n      }\n    },\n    {\n      \"name\": \"Native VP model inventory and required UML semantics\",\n      \"passed\": true,\n      \"details\": {\n        \"native_diagram_names\": [\n          \"CMP_Three_Layer_Architecture\",\n          \"SEQ_Voice_Product_Search\",\n          \"UC_Multimodal_Ecommerce_Search\"\n        ],\n        \"use_case_elements\": 9,\n        \"generalizations\": 3,\n        \"customer_associations\": 4,\n        \"component_package_ownership\": {\n          \"VoiceInput\": \"Presentation Layer\",\n          \"SearchUI\": \"Presentation Layer\",\n          \"ImageUpload\": \"Presentation Layer\",\n          \"SearchResultView\": \"Presentation Layer\",\n          \"SpeechService\": \"Application / Intelligence Layer\",\n          \"QueryService\": \"Application / Intelligence Layer\",\n          \"ImageService\": \"Application / Intelligence Layer\",\n          \"SearchService\": \"Application / Intelligence Layer\",\n          \"RankingService\": \"Application / Intelligence Layer\",\n          \"OrderService\": \"Application / Intelligence Layer\",\n          \"ProductRepository\": \"Data Layer\",\n          \"ProductDatabase\": \"Data Layer\",\n          \"VectorIndex\": \"Data Layer\",\n          \"ImageStorage\": \"Data Layer\",\n          \"OrderRepository\": \"Data Layer\",\n          \"OrderDatabase\": \"Data Layer\"\n        },\n        \"presentation_to_data_dependencies\": 0,\n        \"voice_messages\": 14,\n        \"voice_participant_counts\": {\n          \"InteractionActor\": 1,\n          \"Activation\": 6,\n          \"InteractionLifeLine\": 6,\n          \"NOTE\": 1\n        },\n        \"note\": \"Inventory verifies native model types; GUI reopen/layout verification is recorded separately by root.\"\n      }\n    },\n    {\n      \"name\": \"Three mandatory demo modes, fusion, order, and scores\",\n      \"passed\": true,\n      \"details\": {\n        \"modes\": [\n          \"image\",\n          \"multimodal\",\n          \"order\",\n          \"text\",\n          \"voice\"\n        ],\n        \"queries\": 5\n      }\n    },\n    {\n      \"name\": \"Frozen ground truth, metrics, separate denominators, and failures\",\n      \"passed\": true,\n      \"details\": {\n        \"primary\": {\n          \"total\": 12,\n          \"successful\": 12,\n          \"success_rate\": 1.0\n        },\n        \"separate_groups\": {\n          \"primary\": {\n            \"total\": 12,\n            \"successful\": 12,\n            \"success_rate\": 1.0\n          },\n          \"extension\": {\n            \"total\": 2,\n            \"successful\": 2,\n            \"success_rate\": 1.0\n          },\n          \"challenge\": {\n            \"total\": 2,\n            \"successful\": 0,\n            \"success_rate\": 0.0\n          },\n          \"robustness\": {\n            \"total\": 5,\n            \"successful\": 5,\n            \"success_rate\": 1.0\n          }\n        },\n        \"ground_truth_sha256\": \"85c1b7477b1b2f645ba865ebad160f9882b77b8309342a11a5292247017d3dea\"\n      }\n    },\n    {\n      \"name\": \"Test, coverage, lint, typecheck, and dependency consistency evidence\",\n      \"passed\": true,\n      \"details\": {\n        \"tests\": 78,\n        \"failures\": 0,\n        \"skipped\": 0,\n        \"application_data_line_coverage\": 100.0\n      }\n    }\n  ]\n}\n",
-      "stderr": ""
-    },
-    {
-      "command": [
-        "main.py",
-        "--demo",
-        "--json"
-      ],
-      "returncode": 0,
-      "stdout": "[\n  {\n    \"query\": {\n      \"type\": \"text\",\n      \"raw_input\": \"black shoes\",\n      \"query\": \"black shoes\",\n      \"tokens\": [\n        \"black\",\n        \"shoes\"\n      ],\n      \"embedding\": null,\n      \"filters\": {\n        \"category\": \"shoes\",\n        \"max_price_exclusive\": null,\n        \"max_price_inclusive\": null\n      },\n      \"top_k\": 5,\n      \"weights\": {\n        \"text\": 1.0,\n        \"image\": 0.0\n      },\n      \"customer_id\": null,\n      \"encoder\": null\n    },\n    \"processing\": {\n      \"modality\": \"text\",\n      \"normalized_query\": \"black shoes\",\n      \"tokens\": [\n        \"black\",\n        \"shoes\"\n      ],\n      \"filters\": {\n        \"category\": \"shoes\",\n        \"max_price_exclusive\": null,\n        \"max_price_inclusive\": null\n      },\n      \"candidates_before_filter\": 9,\n      \"candidates_after_filter\": 6,\n      \"encoder\": null,\n      \"ranking_weights\": {\n        \"text\": 1.0,\n        \"image\": 0.0\n      },\n      \"top_k\": 5,\n      \"simulated_stt\": false,\n      \"retrieval\": \"whole-word OR matching; explicit category inferred; image candidates union\",\n      \"ranking\": \"weighted normalized scores; product_id ascending breaks ties; no business boost\"\n    },\n    \"results\": [\n      {\n        \"product_id\": 1,\n        \"name\": \"Nike Running Shoes\",\n        \"brand\": \"Nike\",\n        \"category\": \"shoes\",\n        \"color\": \"black\",\n        \"price\": 120,\n        \"stock\": 10,\n        \"description\": \"Black running shoes for everyday training.\",\n        \"image_path\": \"data/images/p001.png\",\n        \"raw_text_score\": 2,\n        \"text_score\": 1.0,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"black\",\n          \"shoes\"\n        ],\n        \"final_score\": 1.0,\n        \"rank\": 1\n      },\n      {\n        \"product_id\": 5,\n        \"name\": \"Nike Budget Running Shoes\",\n        \"brand\": \"Nike\",\n        \"category\": \"shoes\",\n        \"color\": \"black\",\n        \"price\": 95,\n        \"stock\": 8,\n        \"description\": \"Affordable black running shoes for training.\",\n        \"image_path\": \"data/images/p005.png\",\n        \"raw_text_score\": 2,\n        \"text_score\": 1.0,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"black\",\n          \"shoes\"\n        ],\n        \"final_score\": 1.0,\n        \"rank\": 2\n      },\n      {\n        \"product_id\": 2,\n        \"name\": \"Adidas Running Shoes\",\n        \"brand\": \"Adidas\",\n        \"category\": \"shoes\",\n        \"color\": \"white\",\n        \"price\": 100,\n        \"stock\": 15,\n        \"description\": \"White running shoes for daily exercise.\",\n        \"image_path\": \"data/images/p002.png\",\n        \"raw_text_score\": 1,\n        \"text_score\": 0.5,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"shoes\"\n        ],\n        \"final_score\": 0.5,\n        \"rank\": 3\n      },\n      {\n        \"product_id\": 4,\n        \"name\": \"Blue Sports Shoes\",\n        \"brand\": \"Local\",\n        \"category\": \"shoes\",\n        \"color\": \"blue\",\n        \"price\": 75,\n        \"stock\": 12,\n        \"description\": \"Blue sports shoes with a flexible sole.\",\n        \"image_path\": \"data/images/p004.png\",\n        \"raw_text_score\": 1,\n        \"text_score\": 0.5,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"shoes\"\n        ],\n        \"final_score\": 0.5,\n        \"rank\": 4\n      },\n      {\n        \"product_id\": 6,\n        \"name\": \"Red Canvas Shoes\",\n        \"brand\": \"Local\",\n        \"category\": \"shoes\",\n        \"color\": \"red\",\n        \"price\": 60,\n        \"stock\": 18,\n        \"description\": \"Red canvas shoes for casual walks.\",\n        \"image_path\": \"data/images/p006.png\",\n        \"raw_text_score\": 1,\n        \"text_score\": 0.5,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"shoes\"\n        ],\n        \"final_score\": 0.5,\n        \"rank\": 5\n      }\n    ]\n  },\n  {\n    \"query\": {\n      \"type\": \"voice\",\n      \"raw_input\": \"find black running shoes\",\n      \"query\": \"find black running shoes\",\n      \"tokens\": [\n        \"black\",\n        \"running\",\n        \"shoes\"\n      ],\n      \"embedding\": null,\n      \"filters\": {\n        \"category\": \"shoes\",\n        \"max_price_exclusive\": null,\n        \"max_price_inclusive\": null\n      },\n      \"top_k\": 5,\n      \"weights\": {\n        \"text\": 1.0,\n        \"image\": 0.0\n      },\n      \"customer_id\": null,\n      \"encoder\": null\n    },\n    \"processing\": {\n      \"modality\": \"voice\",\n      \"normalized_query\": \"find black running shoes\",\n      \"tokens\": [\n        \"black\",\n        \"running\",\n        \"shoes\"\n      ],\n      \"filters\": {\n        \"category\": \"shoes\",\n        \"max_price_exclusive\": null,\n        \"max_price_inclusive\": null\n      },\n      \"candidates_before_filter\": 9,\n      \"candidates_after_filter\": 6,\n      \"encoder\": null,\n      \"ranking_weights\": {\n        \"text\": 1.0,\n        \"image\": 0.0\n      },\n      \"top_k\": 5,\n      \"simulated_stt\": true,\n      \"retrieval\": \"whole-word OR matching; explicit category inferred; image candidates union\",\n      \"ranking\": \"weighted normalized scores; product_id ascending breaks ties; no business boost\"\n    },\n    \"results\": [\n      {\n        \"product_id\": 1,\n        \"name\": \"Nike Running Shoes\",\n        \"brand\": \"Nike\",\n        \"category\": \"shoes\",\n        \"color\": \"black\",\n        \"price\": 120,\n        \"stock\": 10,\n        \"description\": \"Black running shoes for everyday training.\",\n        \"image_path\": \"data/images/p001.png\",\n        \"raw_text_score\": 3,\n        \"text_score\": 1.0,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"black\",\n          \"running\",\n          \"shoes\"\n        ],\n        \"final_score\": 1.0,\n        \"rank\": 1\n      },\n      {\n        \"product_id\": 5,\n        \"name\": \"Nike Budget Running Shoes\",\n        \"brand\": \"Nike\",\n        \"category\": \"shoes\",\n        \"color\": \"black\",\n        \"price\": 95,\n        \"stock\": 8,\n        \"description\": \"Affordable black running shoes for training.\",\n        \"image_path\": \"data/images/p005.png\",\n        \"raw_text_score\": 3,\n        \"text_score\": 1.0,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"black\",\n          \"running\",\n          \"shoes\"\n        ],\n        \"final_score\": 1.0,\n        \"rank\": 2\n      },\n      {\n        \"product_id\": 2,\n        \"name\": \"Adidas Running Shoes\",\n        \"brand\": \"Adidas\",\n        \"category\": \"shoes\",\n        \"color\": \"white\",\n        \"price\": 100,\n        \"stock\": 15,\n        \"description\": \"White running shoes for daily exercise.\",\n        \"image_path\": \"data/images/p002.png\",\n        \"raw_text_score\": 2,\n        \"text_score\": 0.6666666666666666,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"running\",\n          \"shoes\"\n        ],\n        \"final_score\": 0.6666666666666666,\n        \"rank\": 3\n      },\n      {\n        \"product_id\": 4,\n        \"name\": \"Blue Sports Shoes\",\n        \"brand\": \"Local\",\n        \"category\": \"shoes\",\n        \"color\": \"blue\",\n        \"price\": 75,\n        \"stock\": 12,\n        \"description\": \"Blue sports shoes with a flexible sole.\",\n        \"image_path\": \"data/images/p004.png\",\n        \"raw_text_score\": 1,\n        \"text_score\": 0.3333333333333333,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"shoes\"\n        ],\n        \"final_score\": 0.3333333333333333,\n        \"rank\": 4\n      },\n      {\n        \"product_id\": 6,\n        \"name\": \"Red Canvas Shoes\",\n        \"brand\": \"Local\",\n        \"category\": \"shoes\",\n        \"color\": \"red\",\n        \"price\": 60,\n        \"stock\": 18,\n        \"description\": \"Red canvas shoes for casual walks.\",\n        \"image_path\": \"data/images/p006.png\",\n        \"raw_text_score\": 1,\n        \"text_score\": 0.3333333333333333,\n        \"image_score\": 0.0,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"shoes\"\n        ],\n        \"final_score\": 0.3333333333333333,\n        \"rank\": 5\n      }\n    ]\n  },\n  {\n    \"query\": {\n      \"type\": \"image\",\n      \"raw_input\": \"D:\\\\PROJECTS\\\\ISA-D\\\\assignment6\\\\artifacts\\\\tests\\\\final-zip-y0kw9q8a\\\\data\\\\queries\\\\black_shoe_query.png\",\n      \"query\": \"\",\n      \"tokens\": [],\n      \"embedding\": [\n        0.05541482032927635,\n        0.010552265341098281,\n        0.004412204513967994,\n        0.005615533017777448,\n        0.005646387594798203,\n        0.003548276357386849,\n        0.0165997624371663,\n        0.4037321403165819,\n        0.004011095012698178,\n        0.06096864419301229,\n        0.004659041130134036,\n        0.005831515056922734,\n        0.006047497096068021,\n        0.003702549242490625,\n        0.01706258109247763,\n        0.4032384670842499,\n        0.0,\n        0.06414666562615008,\n        0.004473913668009506,\n        0.006417752020317084,\n        0.0054921147096944276,\n        0.002375802430598151,\n        0.019993765909449377,\n        0.4026213755438347,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.098043183151048,\n        0.09887759322041861,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.098043183151048,\n        0.0938711328041949,\n        0.08761305728391523,\n        0.09887759322041861,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.10221523349790111,\n        0.057991499821258174,\n        0.022529071873006776,\n        0.07509690624335592,\n        0.1017980284632158,\n        0.09971200328978926,\n        0.09762597811636267,\n        0.09971200328978926,\n        0.06842162568839094,\n        0.015853791318041804,\n        0.015019381248671184,\n        0.019191431595524288,\n        0.043806528641957616,\n        0.07634852134741185,\n        0.09887759322041861,\n        0.09971200328978926,\n        0.05632267968251694,\n        0.035462427948251406,\n        0.03796565815636327,\n        0.039217273260419204,\n        0.038382863191048576,\n        0.04756137395412542,\n        0.09595715797762146,\n        0.09762597811636267,\n        0.09637436301230676,\n        0.09553995294293614,\n        0.09553995294293614,\n        0.09553995294293614,\n        0.09512274790825084,\n        0.09553995294293614,\n        0.09720877308167737,\n        0.09762597811636267,\n        0.098043183151048,\n        0.098043183151048,\n        0.098043183151048,\n        0.098043183151048,\n        0.098043183151048,\n        0.098043183151048,\n        0.09762597811636267\n      ],\n      \"filters\": {\n        \"category\": null,\n        \"max_price_exclusive\": null,\n        \"max_price_inclusive\": null\n      },\n      \"top_k\": 5,\n      \"weights\": {\n        \"text\": 0.0,\n        \"image\": 1.0\n      },\n      \"customer_id\": null,\n      \"encoder\": {\n        \"name\": \"rgbhist-gray-thumbnail\",\n        \"version\": \"1.0\",\n        \"dimension\": 88\n      }\n    },\n    \"processing\": {\n      \"modality\": \"image\",\n      \"normalized_query\": \"\",\n      \"tokens\": [],\n      \"filters\": {\n        \"category\": null,\n        \"max_price_exclusive\": null,\n        \"max_price_inclusive\": null\n      },\n      \"candidates_before_filter\": 12,\n      \"candidates_after_filter\": 12,\n      \"encoder\": {\n        \"name\": \"rgbhist-gray-thumbnail\",\n        \"version\": \"1.0\",\n        \"dimension\": 88\n      },\n      \"ranking_weights\": {\n        \"text\": 0.0,\n        \"image\": 1.0\n      },\n      \"top_k\": 5,\n      \"simulated_stt\": false,\n      \"retrieval\": \"whole-word OR matching; explicit category inferred; image candidates union\",\n      \"ranking\": \"weighted normalized scores; product_id ascending breaks ties; no business boost\"\n    },\n    \"results\": [\n      {\n        \"product_id\": 5,\n        \"name\": \"Nike Budget Running Shoes\",\n        \"brand\": \"Nike\",\n        \"category\": \"shoes\",\n        \"color\": \"black\",\n        \"price\": 95,\n        \"stock\": 8,\n        \"description\": \"Affordable black running shoes for training.\",\n        \"image_path\": \"data/images/p005.png\",\n        \"raw_text_score\": 0,\n        \"text_score\": 0.0,\n        \"image_score\": 0.9980887041878072,\n        \"business_score\": 0.0,\n        \"matched_terms\": [],\n        \"final_score\": 0.9980887041878072,\n        \"rank\": 1\n      },\n      {\n        \"product_id\": 1,\n        \"name\": \"Nike Running Shoes\",\n        \"brand\": \"Nike\",\n        \"category\": \"shoes\",\n        \"color\": \"black\",\n        \"price\": 120,\n        \"stock\": 10,\n        \"description\": \"Black running shoes for everyday training.\",\n        \"image_path\": \"data/images/p001.png\",\n        \"raw_text_score\": 0,\n        \"text_score\": 0.0,\n        \"image_score\": 0.9980420883627943,\n        \"business_score\": 0.0,\n        \"matched_terms\": [],\n        \"final_score\": 0.9980420883627943,\n        \"rank\": 2\n      },\n      {\n        \"product_id\": 6,\n        \"name\": \"Red Canvas Shoes\",\n        \"brand\": \"Local\",\n        \"category\": \"shoes\",\n        \"color\": \"red\",\n        \"price\": 60,\n        \"stock\": 18,\n        \"description\": \"Red canvas shoes for casual walks.\",\n        \"image_path\": \"data/images/p006.png\",\n        \"raw_text_score\": 0,\n        \"text_score\": 0.0,\n        \"image_score\": 0.9906050609872308,\n        \"business_score\": 0.0,\n        \"matched_terms\": [],\n        \"final_score\": 0.9906050609872308,\n        \"rank\": 3\n      },\n      {\n        \"product_id\": 4,\n        \"name\": \"Blue Sports Shoes\",\n        \"brand\": \"Local\",\n        \"category\": \"shoes\",\n        \"color\": \"blue\",\n        \"price\": 75,\n        \"stock\": 12,\n        \"description\": \"Blue sports shoes with a flexible sole.\",\n        \"image_path\": \"data/images/p004.png\",\n        \"raw_text_score\": 0,\n        \"text_score\": 0.0,\n        \"image_score\": 0.9885635615706351,\n        \"business_score\": 0.0,\n        \"matched_terms\": [],\n        \"final_score\": 0.9885635615706351,\n        \"rank\": 4\n      },\n      {\n        \"product_id\": 2,\n        \"name\": \"Adidas Running Shoes\",\n        \"brand\": \"Adidas\",\n        \"category\": \"shoes\",\n        \"color\": \"white\",\n        \"price\": 100,\n        \"stock\": 15,\n        \"description\": \"White running shoes for daily exercise.\",\n        \"image_path\": \"data/images/p002.png\",\n        \"raw_text_score\": 0,\n        \"text_score\": 0.0,\n        \"image_score\": 0.9793878208161381,\n        \"business_score\": 0.0,\n        \"matched_terms\": [],\n        \"final_score\": 0.9793878208161381,\n        \"rank\": 5\n      }\n    ]\n  },\n  {\n    \"query\": {\n      \"type\": \"multimodal\",\n      \"raw_input\": \"black shoes | D:\\\\PROJECTS\\\\ISA-D\\\\assignment6\\\\artifacts\\\\tests\\\\final-zip-y0kw9q8a\\\\data\\\\queries\\\\black_shoe_query.png\",\n      \"query\": \"black shoes\",\n      \"tokens\": [\n        \"black\",\n        \"shoes\"\n      ],\n      \"embedding\": [\n        0.05541482032927635,\n        0.010552265341098281,\n        0.004412204513967994,\n        0.005615533017777448,\n        0.005646387594798203,\n        0.003548276357386849,\n        0.0165997624371663,\n        0.4037321403165819,\n        0.004011095012698178,\n        0.06096864419301229,\n        0.004659041130134036,\n        0.005831515056922734,\n        0.006047497096068021,\n        0.003702549242490625,\n        0.01706258109247763,\n        0.4032384670842499,\n        0.0,\n        0.06414666562615008,\n        0.004473913668009506,\n        0.006417752020317084,\n        0.0054921147096944276,\n        0.002375802430598151,\n        0.019993765909449377,\n        0.4026213755438347,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.098043183151048,\n        0.09887759322041861,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.098043183151048,\n        0.0938711328041949,\n        0.08761305728391523,\n        0.09887759322041861,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.09762597811636267,\n        0.10221523349790111,\n        0.057991499821258174,\n        0.022529071873006776,\n        0.07509690624335592,\n        0.1017980284632158,\n        0.09971200328978926,\n        0.09762597811636267,\n        0.09971200328978926,\n        0.06842162568839094,\n        0.015853791318041804,\n        0.015019381248671184,\n        0.019191431595524288,\n        0.043806528641957616,\n        0.07634852134741185,\n        0.09887759322041861,\n        0.09971200328978926,\n        0.05632267968251694,\n        0.035462427948251406,\n        0.03796565815636327,\n        0.039217273260419204,\n        0.038382863191048576,\n        0.04756137395412542,\n        0.09595715797762146,\n        0.09762597811636267,\n        0.09637436301230676,\n        0.09553995294293614,\n        0.09553995294293614,\n        0.09553995294293614,\n        0.09512274790825084,\n        0.09553995294293614,\n        0.09720877308167737,\n        0.09762597811636267,\n        0.098043183151048,\n        0.098043183151048,\n        0.098043183151048,\n        0.098043183151048,\n        0.098043183151048,\n        0.098043183151048,\n        0.09762597811636267\n      ],\n      \"filters\": {\n        \"category\": \"shoes\",\n        \"max_price_exclusive\": null,\n        \"max_price_inclusive\": null\n      },\n      \"top_k\": 5,\n      \"weights\": {\n        \"text\": 0.5,\n        \"image\": 0.5\n      },\n      \"customer_id\": null,\n      \"encoder\": {\n        \"name\": \"rgbhist-gray-thumbnail\",\n        \"version\": \"1.0\",\n        \"dimension\": 88\n      }\n    },\n    \"processing\": {\n      \"modality\": \"multimodal\",\n      \"normalized_query\": \"black shoes\",\n      \"tokens\": [\n        \"black\",\n        \"shoes\"\n      ],\n      \"filters\": {\n        \"category\": \"shoes\",\n        \"max_price_exclusive\": null,\n        \"max_price_inclusive\": null\n      },\n      \"candidates_before_filter\": 12,\n      \"candidates_after_filter\": 6,\n      \"encoder\": {\n        \"name\": \"rgbhist-gray-thumbnail\",\n        \"version\": \"1.0\",\n        \"dimension\": 88\n      },\n      \"ranking_weights\": {\n        \"text\": 0.5,\n        \"image\": 0.5\n      },\n      \"top_k\": 5,\n      \"simulated_stt\": false,\n      \"retrieval\": \"whole-word OR matching; explicit category inferred; image candidates union\",\n      \"ranking\": \"weighted normalized scores; product_id ascending breaks ties; no business boost\"\n    },\n    \"results\": [\n      {\n        \"product_id\": 5,\n        \"name\": \"Nike Budget Running Shoes\",\n        \"brand\": \"Nike\",\n        \"category\": \"shoes\",\n        \"color\": \"black\",\n        \"price\": 95,\n        \"stock\": 8,\n        \"description\": \"Affordable black running shoes for training.\",\n        \"image_path\": \"data/images/p005.png\",\n        \"raw_text_score\": 2,\n        \"text_score\": 1.0,\n        \"image_score\": 0.9980887041878072,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"black\",\n          \"shoes\"\n        ],\n        \"final_score\": 0.9990443520939036,\n        \"rank\": 1\n      },\n      {\n        \"product_id\": 1,\n        \"name\": \"Nike Running Shoes\",\n        \"brand\": \"Nike\",\n        \"category\": \"shoes\",\n        \"color\": \"black\",\n        \"price\": 120,\n        \"stock\": 10,\n        \"description\": \"Black running shoes for everyday training.\",\n        \"image_path\": \"data/images/p001.png\",\n        \"raw_text_score\": 2,\n        \"text_score\": 1.0,\n        \"image_score\": 0.9980420883627943,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"black\",\n          \"shoes\"\n        ],\n        \"final_score\": 0.9990210441813971,\n        \"rank\": 2\n      },\n      {\n        \"product_id\": 6,\n        \"name\": \"Red Canvas Shoes\",\n        \"brand\": \"Local\",\n        \"category\": \"shoes\",\n        \"color\": \"red\",\n        \"price\": 60,\n        \"stock\": 18,\n        \"description\": \"Red canvas shoes for casual walks.\",\n        \"image_path\": \"data/images/p006.png\",\n        \"raw_text_score\": 1,\n        \"text_score\": 0.5,\n        \"image_score\": 0.9906050609872308,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"shoes\"\n        ],\n        \"final_score\": 0.7453025304936154,\n        \"rank\": 3\n      },\n      {\n        \"product_id\": 4,\n        \"name\": \"Blue Sports Shoes\",\n        \"brand\": \"Local\",\n        \"category\": \"shoes\",\n        \"color\": \"blue\",\n        \"price\": 75,\n        \"stock\": 12,\n        \"description\": \"Blue sports shoes with a flexible sole.\",\n        \"image_path\": \"data/images/p004.png\",\n        \"raw_text_score\": 1,\n        \"text_score\": 0.5,\n        \"image_score\": 0.9885635615706351,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"shoes\"\n        ],\n        \"final_score\": 0.7442817807853175,\n        \"rank\": 4\n      },\n      {\n        \"product_id\": 2,\n        \"name\": \"Adidas Running Shoes\",\n        \"brand\": \"Adidas\",\n        \"category\": \"shoes\",\n        \"color\": \"white\",\n        \"price\": 100,\n        \"stock\": 15,\n        \"description\": \"White running shoes for daily exercise.\",\n        \"image_path\": \"data/images/p002.png\",\n        \"raw_text_score\": 1,\n        \"text_score\": 0.5,\n        \"image_score\": 0.9793878208161381,\n        \"business_score\": 0.0,\n        \"matched_terms\": [\n          \"shoes\"\n        ],\n        \"final_score\": 0.7396939104080691,\n        \"rank\": 5\n      }\n    ]\n  },\n  {\n    \"query\": {\n      \"type\": \"order\",\n      \"order_id\": \"O001\",\n      \"customer_id\": \"C001\"\n    },\n    \"processing\": {\n      \"customer_scope\": \"C001\",\n      \"authentication\": \"simulated customer context\"\n    },\n    \"order\": {\n      \"order_id\": \"O001\",\n      \"customer_id\": \"C001\",\n      \"date\": \"2026-09-29\",\n      \"status\": \"Shipped\",\n      \"total\": 150.0\n    },\n    \"message\": \"Order found\"\n  }\n]\n",
-      "stderr": ""
-    },
-    {
-      "command": [
-        "main.py",
-        "--mode",
-        "text",
-        "--query",
-        "black shoes",
-        "--json"
-      ],
-      "returncode": 0,
-      "stdout": "{\n  \"query\": {\n    \"type\": \"text\",\n    \"raw_input\": \"black shoes\",\n    \"query\": \"black shoes\",\n    \"tokens\": [\n      \"black\",\n      \"shoes\"\n    ],\n    \"embedding\": null,\n    \"filters\": {\n      \"category\": \"shoes\",\n      \"max_price_exclusive\": null,\n      \"max_price_inclusive\": null\n    },\n    \"top_k\": 5,\n    \"weights\": {\n      \"text\": 1.0,\n      \"image\": 0.0\n    },\n    \"customer_id\": null,\n    \"encoder\": null\n  },\n  \"processing\": {\n    \"modality\": \"text\",\n    \"normalized_query\": \"black shoes\",\n    \"tokens\": [\n      \"black\",\n      \"shoes\"\n    ],\n    \"filters\": {\n      \"category\": \"shoes\",\n      \"max_price_exclusive\": null,\n      \"max_price_inclusive\": null\n    },\n    \"candidates_before_filter\": 9,\n    \"candidates_after_filter\": 6,\n    \"encoder\": null,\n    \"ranking_weights\": {\n      \"text\": 1.0,\n      \"image\": 0.0\n    },\n    \"top_k\": 5,\n    \"simulated_stt\": false,\n    \"retrieval\": \"whole-word OR matching; explicit category inferred; image candidates union\",\n    \"ranking\": \"weighted normalized scores; product_id ascending breaks ties; no business boost\"\n  },\n  \"results\": [\n    {\n      \"product_id\": 1,\n      \"name\": \"Nike Running Shoes\",\n      \"brand\": \"Nike\",\n      \"category\": \"shoes\",\n      \"color\": \"black\",\n      \"price\": 120,\n      \"stock\": 10,\n      \"description\": \"Black running shoes for everyday training.\",\n      \"image_path\": \"data/images/p001.png\",\n      \"raw_text_score\": 2,\n      \"text_score\": 1.0,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"black\",\n        \"shoes\"\n      ],\n      \"final_score\": 1.0,\n      \"rank\": 1\n    },\n    {\n      \"product_id\": 5,\n      \"name\": \"Nike Budget Running Shoes\",\n      \"brand\": \"Nike\",\n      \"category\": \"shoes\",\n      \"color\": \"black\",\n      \"price\": 95,\n      \"stock\": 8,\n      \"description\": \"Affordable black running shoes for training.\",\n      \"image_path\": \"data/images/p005.png\",\n      \"raw_text_score\": 2,\n      \"text_score\": 1.0,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"black\",\n        \"shoes\"\n      ],\n      \"final_score\": 1.0,\n      \"rank\": 2\n    },\n    {\n      \"product_id\": 2,\n      \"name\": \"Adidas Running Shoes\",\n      \"brand\": \"Adidas\",\n      \"category\": \"shoes\",\n      \"color\": \"white\",\n      \"price\": 100,\n      \"stock\": 15,\n      \"description\": \"White running shoes for daily exercise.\",\n      \"image_path\": \"data/images/p002.png\",\n      \"raw_text_score\": 1,\n      \"text_score\": 0.5,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"shoes\"\n      ],\n      \"final_score\": 0.5,\n      \"rank\": 3\n    },\n    {\n      \"product_id\": 4,\n      \"name\": \"Blue Sports Shoes\",\n      \"brand\": \"Local\",\n      \"category\": \"shoes\",\n      \"color\": \"blue\",\n      \"price\": 75,\n      \"stock\": 12,\n      \"description\": \"Blue sports shoes with a flexible sole.\",\n      \"image_path\": \"data/images/p004.png\",\n      \"raw_text_score\": 1,\n      \"text_score\": 0.5,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"shoes\"\n      ],\n      \"final_score\": 0.5,\n      \"rank\": 4\n    },\n    {\n      \"product_id\": 6,\n      \"name\": \"Red Canvas Shoes\",\n      \"brand\": \"Local\",\n      \"category\": \"shoes\",\n      \"color\": \"red\",\n      \"price\": 60,\n      \"stock\": 18,\n      \"description\": \"Red canvas shoes for casual walks.\",\n      \"image_path\": \"data/images/p006.png\",\n      \"raw_text_score\": 1,\n      \"text_score\": 0.5,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"shoes\"\n      ],\n      \"final_score\": 0.5,\n      \"rank\": 5\n    }\n  ]\n}\n",
-      "stderr": ""
-    },
-    {
-      "command": [
-        "main.py",
-        "--mode",
-        "voice",
-        "--query",
-        "find black running shoes",
-        "--json"
-      ],
-      "returncode": 0,
-      "stdout": "{\n  \"query\": {\n    \"type\": \"voice\",\n    \"raw_input\": \"find black running shoes\",\n    \"query\": \"find black running shoes\",\n    \"tokens\": [\n      \"black\",\n      \"running\",\n      \"shoes\"\n    ],\n    \"embedding\": null,\n    \"filters\": {\n      \"category\": \"shoes\",\n      \"max_price_exclusive\": null,\n      \"max_price_inclusive\": null\n    },\n    \"top_k\": 5,\n    \"weights\": {\n      \"text\": 1.0,\n      \"image\": 0.0\n    },\n    \"customer_id\": null,\n    \"encoder\": null\n  },\n  \"processing\": {\n    \"modality\": \"voice\",\n    \"normalized_query\": \"find black running shoes\",\n    \"tokens\": [\n      \"black\",\n      \"running\",\n      \"shoes\"\n    ],\n    \"filters\": {\n      \"category\": \"shoes\",\n      \"max_price_exclusive\": null,\n      \"max_price_inclusive\": null\n    },\n    \"candidates_before_filter\": 9,\n    \"candidates_after_filter\": 6,\n    \"encoder\": null,\n    \"ranking_weights\": {\n      \"text\": 1.0,\n      \"image\": 0.0\n    },\n    \"top_k\": 5,\n    \"simulated_stt\": true,\n    \"retrieval\": \"whole-word OR matching; explicit category inferred; image candidates union\",\n    \"ranking\": \"weighted normalized scores; product_id ascending breaks ties; no business boost\"\n  },\n  \"results\": [\n    {\n      \"product_id\": 1,\n      \"name\": \"Nike Running Shoes\",\n      \"brand\": \"Nike\",\n      \"category\": \"shoes\",\n      \"color\": \"black\",\n      \"price\": 120,\n      \"stock\": 10,\n      \"description\": \"Black running shoes for everyday training.\",\n      \"image_path\": \"data/images/p001.png\",\n      \"raw_text_score\": 3,\n      \"text_score\": 1.0,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"black\",\n        \"running\",\n        \"shoes\"\n      ],\n      \"final_score\": 1.0,\n      \"rank\": 1\n    },\n    {\n      \"product_id\": 5,\n      \"name\": \"Nike Budget Running Shoes\",\n      \"brand\": \"Nike\",\n      \"category\": \"shoes\",\n      \"color\": \"black\",\n      \"price\": 95,\n      \"stock\": 8,\n      \"description\": \"Affordable black running shoes for training.\",\n      \"image_path\": \"data/images/p005.png\",\n      \"raw_text_score\": 3,\n      \"text_score\": 1.0,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"black\",\n        \"running\",\n        \"shoes\"\n      ],\n      \"final_score\": 1.0,\n      \"rank\": 2\n    },\n    {\n      \"product_id\": 2,\n      \"name\": \"Adidas Running Shoes\",\n      \"brand\": \"Adidas\",\n      \"category\": \"shoes\",\n      \"color\": \"white\",\n      \"price\": 100,\n      \"stock\": 15,\n      \"description\": \"White running shoes for daily exercise.\",\n      \"image_path\": \"data/images/p002.png\",\n      \"raw_text_score\": 2,\n      \"text_score\": 0.6666666666666666,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"running\",\n        \"shoes\"\n      ],\n      \"final_score\": 0.6666666666666666,\n      \"rank\": 3\n    },\n    {\n      \"product_id\": 4,\n      \"name\": \"Blue Sports Shoes\",\n      \"brand\": \"Local\",\n      \"category\": \"shoes\",\n      \"color\": \"blue\",\n      \"price\": 75,\n      \"stock\": 12,\n      \"description\": \"Blue sports shoes with a flexible sole.\",\n      \"image_path\": \"data/images/p004.png\",\n      \"raw_text_score\": 1,\n      \"text_score\": 0.3333333333333333,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"shoes\"\n      ],\n      \"final_score\": 0.3333333333333333,\n      \"rank\": 4\n    },\n    {\n      \"product_id\": 6,\n      \"name\": \"Red Canvas Shoes\",\n      \"brand\": \"Local\",\n      \"category\": \"shoes\",\n      \"color\": \"red\",\n      \"price\": 60,\n      \"stock\": 18,\n      \"description\": \"Red canvas shoes for casual walks.\",\n      \"image_path\": \"data/images/p006.png\",\n      \"raw_text_score\": 1,\n      \"text_score\": 0.3333333333333333,\n      \"image_score\": 0.0,\n      \"business_score\": 0.0,\n      \"matched_terms\": [\n        \"shoes\"\n      ],\n      \"final_score\": 0.3333333333333333,\n      \"rank\": 5\n    }\n  ]\n}\n",
-      "stderr": ""
-    },
-    {
-      "command": [
-        "main.py",
-        "--mode",
-        "image",
-        "--image",
-        "data/queries/black_shoe_query.png",
-        "--json"
-      ],
-      "returncode": 0,
-      "stdout": "{\n  \"query\": {\n    \"type\": \"image\",\n    \"raw_input\": \"D:\\\\PROJECTS\\\\ISA-D\\\\assignment6\\\\artifacts\\\\tests\\\\final-zip-y0kw9q8a\\\\data\\\\queries\\\\black_shoe_query.png\",\n    \"query\": \"\",\n    \"tokens\": [],\n    \"embedding\": [\n      0.05541482032927635,\n      0.010552265341098281,\n      0.004412204513967994,\n      0.005615533017777448,\n      0.005646387594798203,\n      0.003548276357386849,\n      0.0165997624371663,\n      0.4037321403165819,\n      0.004011095012698178,\n      0.06096864419301229,\n      0.004659041130134036,\n      0.005831515056922734,\n      0.006047497096068021,\n      0.003702549242490625,\n      0.01706258109247763,\n      0.4032384670842499,\n      0.0,\n      0.06414666562615008,\n      0.004473913668009506,\n      0.006417752020317084,\n      0.0054921147096944276,\n      0.002375802430598151,\n      0.019993765909449377,\n      0.4026213755438347,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.098043183151048,\n      0.09887759322041861,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.098043183151048,\n      0.0938711328041949,\n      0.08761305728391523,\n      0.09887759322041861,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.09762597811636267,\n      0.10221523349790111,\n      0.057991499821258174,\n      0.022529071873006776,\n      0.07509690624335592,\n      0.1017980284632158,\n      0.09971200328978926,\n      0.09762597811636267,\n      0.09971200328978926,\n      0.06842162568839094,\n      0.015853791318041804,\n      0.015019381248671184,\n      0.019191431595524288,\n      0.043806528641957616,\n      0.07634852134741185,\n      0.09887759322041861,\n      0.09971200328978926,\n      0.05632267968251694,\n      0.035462427948251406,\n      0.03796565815636327,\n      0.039217273260419204,\n      0.038382863191048576,\n      0.04756137395412542,\n      0.09595715797762146,\n      0.09762597811636267,\n      0.09637436301230676,\n      0.09553995294293614,\n      0.09553995294293614,\n      0.09553995294293614,\n      0.09512274790825084,\n      0.09553995294293614,\n      0.09720877308167737,\n      0.09762597811636267,\n      0.098043183151048,\n      0.098043183151048,\n      0.098043183151048,\n      0.098043183151048,\n      0.098043183151048,\n      0.098043183151048,\n      0.09762597811636267\n    ],\n    \"filters\": {\n      \"category\": null,\n      \"max_price_exclusive\": null,\n      \"max_price_inclusive\": null\n    },\n    \"top_k\": 5,\n    \"weights\": {\n      \"text\": 0.0,\n      \"image\": 1.0\n    },\n    \"customer_id\": null,\n    \"encoder\": {\n      \"name\": \"rgbhist-gray-thumbnail\",\n      \"version\": \"1.0\",\n      \"dimension\": 88\n    }\n  },\n  \"processing\": {\n    \"modality\": \"image\",\n    \"normalized_query\": \"\",\n    \"tokens\": [],\n    \"filters\": {\n      \"category\": null,\n      \"max_price_exclusive\": null,\n      \"max_price_inclusive\": null\n    },\n    \"candidates_before_filter\": 12,\n    \"candidates_after_filter\": 12,\n    \"encoder\": {\n      \"name\": \"rgbhist-gray-thumbnail\",\n      \"version\": \"1.0\",\n      \"dimension\": 88\n    },\n    \"ranking_weights\": {\n      \"text\": 0.0,\n      \"image\": 1.0\n    },\n    \"top_k\": 5,\n    \"simulated_stt\": false,\n    \"retrieval\": \"whole-word OR matching; explicit category inferred; image candidates union\",\n    \"ranking\": \"weighted normalized scores; product_id ascending breaks ties; no business boost\"\n  },\n  \"results\": [\n    {\n      \"product_id\": 5,\n      \"name\": \"Nike Budget Running Shoes\",\n      \"brand\": \"Nike\",\n      \"category\": \"shoes\",\n      \"color\": \"black\",\n      \"price\": 95,\n      \"stock\": 8,\n      \"description\": \"Affordable black running shoes for training.\",\n      \"image_path\": \"data/images/p005.png\",\n      \"raw_text_score\": 0,\n      \"text_score\": 0.0,\n      \"image_score\": 0.9980887041878072,\n      \"business_score\": 0.0,\n      \"matched_terms\": [],\n      \"final_score\": 0.9980887041878072,\n      \"rank\": 1\n    },\n    {\n      \"product_id\": 1,\n      \"name\": \"Nike Running Shoes\",\n      \"brand\": \"Nike\",\n      \"category\": \"shoes\",\n      \"color\": \"black\",\n      \"price\": 120,\n      \"stock\": 10,\n      \"description\": \"Black running shoes for everyday training.\",\n      \"image_path\": \"data/images/p001.png\",\n      \"raw_text_score\": 0,\n      \"text_score\": 0.0,\n      \"image_score\": 0.9980420883627943,\n      \"business_score\": 0.0,\n      \"matched_terms\": [],\n      \"final_score\": 0.9980420883627943,\n      \"rank\": 2\n    },\n    {\n      \"product_id\": 6,\n      \"name\": \"Red Canvas Shoes\",\n      \"brand\": \"Local\",\n      \"category\": \"shoes\",\n      \"color\": \"red\",\n      \"price\": 60,\n      \"stock\": 18,\n      \"description\": \"Red canvas shoes for casual walks.\",\n      \"image_path\": \"data/images/p006.png\",\n      \"raw_text_score\": 0,\n      \"text_score\": 0.0,\n      \"image_score\": 0.9906050609872308,\n      \"business_score\": 0.0,\n      \"matched_terms\": [],\n      \"final_score\": 0.9906050609872308,\n      \"rank\": 3\n    },\n    {\n      \"product_id\": 4,\n      \"name\": \"Blue Sports Shoes\",\n      \"brand\": \"Local\",\n      \"category\": \"shoes\",\n      \"color\": \"blue\",\n      \"price\": 75,\n      \"stock\": 12,\n      \"description\": \"Blue sports shoes with a flexible sole.\",\n      \"image_path\": \"data/images/p004.png\",\n      \"raw_text_score\": 0,\n      \"text_score\": 0.0,\n      \"image_score\": 0.9885635615706351,\n      \"business_score\": 0.0,\n      \"matched_terms\": [],\n      \"final_score\": 0.9885635615706351,\n      \"rank\": 4\n    },\n    {\n      \"product_id\": 2,\n      \"name\": \"Adidas Running Shoes\",\n      \"brand\": \"Adidas\",\n      \"category\": \"shoes\",\n      \"color\": \"white\",\n      \"price\": 100,\n      \"stock\": 15,\n      \"description\": \"White running shoes for daily exercise.\",\n      \"image_path\": \"data/images/p002.png\",\n      \"raw_text_score\": 0,\n      \"text_score\": 0.0,\n      \"image_score\": 0.9793878208161381,\n      \"business_score\": 0.0,\n      \"matched_terms\": [],\n      \"final_score\": 0.9793878208161381,\n      \"rank\": 5\n    }\n  ]\n}\n",
-      "stderr": ""
-    },
-    {
-      "command": [
-        "-m",
-        "pytest",
-        "-q"
-      ],
-      "returncode": 0,
-      "stdout": "........................................................................ [ 92%]\n......                                                                   [100%]\n78 passed in 2.44s\n",
-      "stderr": ""
-    }
-  ]
+  "runtime_smoke_evidence": "artifacts/tests/clean_extraction.json: five commands including all78tests executed from isolated ZIP snapshot by packager; final payload bytes also compared against workspace."
 }
