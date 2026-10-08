@@ -61,7 +61,7 @@ class SearchOptions(StrictModel):
 class TextRequest(StrictModel):
     mode: Literal["text", "voice"]
     text: str = Field(strict=True)
-    voice_source: Literal["azure", "local", "manual_transcript"] | None = None
+    voice_source: Literal["azure", "local", "groq", "manual_transcript"] | None = None
     options: SearchOptions = Field(default_factory=SearchOptions)
 
     @field_validator("text")

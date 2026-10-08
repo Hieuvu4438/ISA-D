@@ -22,6 +22,9 @@ class Settings:
     local_speech_model_path: Path | None = None
     local_speech_cpu_threads: int = 4
     local_speech_timeout: float = 90.0
+    groq_api_key: str = field(default="", repr=False)
+    groq_speech_model: str = "whisper-large-v3"
+    groq_speech_timeout: float = 30.0
     search_timeout: float = 10.0
     customer_id: str = "C001"
     load_models: bool = True
@@ -31,6 +34,8 @@ class Settings:
             raise ValueError("LOCAL_SPEECH_CPU_THREADS must be between 1 and 16")
         if not math.isfinite(self.local_speech_timeout) or not 1 <= self.local_speech_timeout <= 90:
             raise ValueError("LOCAL_SPEECH_TIMEOUT must be between 1 and 90 seconds")
+        if not math.isfinite(self.groq_speech_timeout) or not 1 <= self.groq_speech_timeout <= 60:
+            raise ValueError("GROQ_SPEECH_TIMEOUT must be between 1 and 60 seconds")
 
     @classmethod
     def from_env(cls):
@@ -46,5 +51,8 @@ class Settings:
                                          or root / "models" / "speech-whisper-small"),
             local_speech_cpu_threads=int(os.getenv("LOCAL_SPEECH_CPU_THREADS", "4")),
             local_speech_timeout=float(os.getenv("LOCAL_SPEECH_TIMEOUT", "90")),
+            groq_api_key=os.getenv("GROQ_API_KEY", ""),
+            groq_speech_model=os.getenv("GROQ_SPEECH_MODEL", "whisper-large-v3"),
+            groq_speech_timeout=float(os.getenv("GROQ_SPEECH_TIMEOUT", "30")),
             customer_id=os.getenv("DEMO_CUSTOMER_ID", "C001"),
         )

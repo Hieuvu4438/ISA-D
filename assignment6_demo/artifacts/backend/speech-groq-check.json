@@ -1,0 +1,83 @@
+{
+  "provider": "groq",
+  "model": "whisper-large-v3",
+  "api_endpoint": "https://api.groq.com/openai/v1/audio/transcriptions",
+  "cases": [
+    {
+      "id": "FLEURS-VI-01",
+      "audio_path": "fleurs-vi-01.wav",
+      "reference": "Văn hóa và bộ lạc cổ xưa đã bắt đầu giữ những con vật này để dễ lấy sữa, tóc, thịt, và da.",
+      "transcript": "Văn hóa và bộ lạc cổ xưa đã bắt đầu giữ những con vật này để dễ lấy sữa, tóc, thịt và da",
+      "word_errors": 0,
+      "reference_words": 23,
+      "timing_ms": {
+        "validation": 0.179,
+        "provider": 12792.249,
+        "total": 12792.433
+      },
+      "provider": "groq"
+    },
+    {
+      "id": "FLEURS-VI-02",
+      "audio_path": "fleurs-vi-02.wav",
+      "reference": "Đối với Springboks, trận này đã giúp đội tuyển kết thúc chuỗi thua 5 trận liền.",
+      "transcript": "Đối với Spring Book, trận này đã giúp đội tuyển kết thúc chui thua 5 trận liền.",
+      "word_errors": 3,
+      "reference_words": 16,
+      "timing_ms": {
+        "validation": 0.035,
+        "provider": 1266.021,
+        "total": 1266.059
+      },
+      "provider": "groq"
+    },
+    {
+      "id": "FLEURS-VI-03",
+      "audio_path": "fleurs-vi-03.wav",
+      "reference": "Nó cũng tấn công mọi thứ trong nước; ngay cả khủng long khổng lồ như T. rex cũng không phải là đối thủ với nó.",
+      "transcript": "Nó cũng tấn công mọi thứ trong nước Ngay cả khủng long khổng lồ như tí bếp Cũng không phải là đối thủ với nó",
+      "word_errors": 2,
+      "reference_words": 25,
+      "timing_ms": {
+        "validation": 0.096,
+        "provider": 2792.506,
+        "total": 2792.604
+      },
+      "provider": "groq"
+    },
+    {
+      "id": "FLEURS-VI-04",
+      "audio_path": "fleurs-vi-04.wav",
+      "reference": "Số người có mặt quá lớn nên việc mọi người tới được nơi tổ chức lễ tang tại Quảng trường Thánh Peter là không thể.",
+      "transcript": "Số người có mặt quá lớn nên việc mọi người tới được nơi tổ chức lễ tang tại quảng trường Thánh Peter là không thể",
+      "word_errors": 0,
+      "reference_words": 25,
+      "timing_ms": {
+        "validation": 0.132,
+        "provider": 15073.757,
+        "total": 15073.892
+      },
+      "provider": "groq"
+    },
+    {
+      "id": "FLEURS-VI-05",
+      "audio_path": "fleurs-vi-05.wav",
+      "reference": "Châu Âu là lục địa tương đối nhỏ nhưng có nhiều quốc gia độc lập. Thông thường, việc đi qua nhiều quốc gia đồng nghĩa với việc phải xin thị thực và xét hộ chiếu nhiều lần.",
+      "transcript": "Châu Âu là lục địa tương đối nhỏ nhưng có nhiều quốc gia độc lập. Thông thường, việc đi qua nhiều quốc gia đồng nghĩa với việc phải xin thị thực và xét hộ chiếu nhiều lần.",
+      "word_errors": 0,
+      "reference_words": 37,
+      "timing_ms": {
+        "validation": 0.1,
+        "provider": 1520.597,
+        "total": 1520.702
+      },
+      "provider": "groq"
+    }
+  ],
+  "sample_count": 5,
+  "total_reference_words": 126,
+  "total_word_errors": 5,
+  "wer": 0.0397,
+  "azure_recognition_calls": 0,
+  "timestamp": "2026-10-08T06:56:33Z"
+}

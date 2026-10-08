@@ -1,7 +1,7 @@
 export type QueryMode = 'text' | 'voice' | 'image' | 'multimodal'
 export type Category = 'running_shoes' | 'trail_shoes' | 'casual_shoes' | 'boots' | 'sandals'
   | 'bag' | 'backpack' | 'tote_bag' | 't_shirt' | 'jacket' | 'watch' | 'sunglasses'
-export type VoiceSource = 'azure' | 'local' | 'manual_transcript'
+export type VoiceSource = 'azure' | 'local' | 'groq' | 'manual_transcript'
 export type ResultPolicy = 'nearest' | 'relevant'
 
 export interface Filters {
@@ -102,7 +102,7 @@ export interface MetaResponse {
     relevant: Capability & { modes: QueryMode[]; multimodal_weights: number[] }
   }
   speech: {
-    provider: 'azure' | 'local'
+    provider: 'azure' | 'local' | 'groq'
     configuration_state: 'unconfigured' | 'configured_unverified'
     language: 'vi-VN'
     region: 'southeastasia' | null
@@ -147,7 +147,7 @@ export interface TranscriptionResponse {
   request_id: string
   transcript: string
   language: 'vi-VN'
-  provider: 'azure' | 'local'
+  provider: 'azure' | 'local' | 'groq'
   audio_duration_ms: number
   timing_ms: { validation: number; provider: number; total: number }
 }

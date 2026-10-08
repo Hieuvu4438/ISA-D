@@ -13,6 +13,7 @@ from concurrent.futures import ThreadPoolExecutor
 from app.domain import AppError
 from app.data.speech_budget import SpeechBudget
 from app.application.local_speech import LocalSpeechRecognizer
+from app.application.groq_speech import GroqSpeechRecognizer
 
 
 def decode_wav(blob: bytes) -> tuple[bytes, int]:
@@ -83,6 +84,13 @@ class SpeechService:
                 except Exception:
                     self._provider = None
             self.available = self._provider is not None and self._language == "vi-VN"
+        elif self.provider == "groq":
+            self._timeout = getattr(settings, "groq_speech_timeout", 30.0)
+            groq_key = getattr(settings, "groq_api_key", "").strip()
+            groq_model = getattr(settings, "groq_speech_model", "whisper-large-v3")
+            if provider is None:
+                self._provider = GroqSpeechRecognizer(groq_key, model=groq_model, timeout=self._timeout)
+            self.available = bool(groq_key and self._language == "vi-VN")
         elif self.provider == "azure":
             self._sdk = None if provider is not None else _load_sdk()
             valid_key = isinstance(self._key, str) and bool(self._key.strip()) and not re.search(r"\s", self._key)
@@ -165,6 +173,8 @@ class SpeechService:
     def _run_provider(self, audio, pcm, language, duration_ms):
         if self.provider == "local":
             return self._provider(pcm, language)
+        if self.provider == "groq":
+            return self._provider(pcm, language, audio_bytes=audio)
         attempt = self._budget.reserve(audio, duration_ms)
         try:
             transcript = self._provider(pcm, language)

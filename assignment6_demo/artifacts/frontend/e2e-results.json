@@ -114,12 +114,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1017,
+                  "duration": 2962,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:22.318Z",
+                  "startTime": "2026-10-08T06:41:55.726Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -148,12 +148,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1379,
+                  "duration": 5228,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:23.518Z",
+                  "startTime": "2026-10-08T06:41:59.242Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -182,12 +182,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2175,
+                  "duration": 7583,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:24.904Z",
+                  "startTime": "2026-10-08T06:42:04.508Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -216,12 +216,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 746,
+                  "duration": 2320,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:27.089Z",
+                  "startTime": "2026-10-08T06:42:12.134Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -250,12 +250,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 429,
+                  "duration": 1209,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:27.845Z",
+                  "startTime": "2026-10-08T06:42:14.490Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -284,12 +284,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 698,
+                  "duration": 1691,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:28.284Z",
+                  "startTime": "2026-10-08T06:42:15.732Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -304,7 +304,7 @@
         },
         {
           "title": "real API: all catalog credits and unknown-route recovery",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -317,18 +317,58 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 1503,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 12254,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]')\nExpected: \u001b[32m180\u001b[39m\nReceived: \u001b[31m187\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]')\u001b[22m\n\u001b[2m    22 × locator resolved to 187 elements\u001b[22m\n\u001b[2m       - unexpected value \"187\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]')\nExpected: \u001b[32m180\u001b[39m\nReceived: \u001b[31m187\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]')\u001b[22m\n\u001b[2m    22 × locator resolved to 187 elements\u001b[22m\n\u001b[2m       - unexpected value \"187\"\u001b[22m\n\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:176:77",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                      "column": 77,
+                      "line": 176
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 174 |\u001b[39m   \u001b[36mconst\u001b[39m credits \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mrequest\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m'/api/v1/credits'\u001b[39m))\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/credits'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 176 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'a[href*=\"commons.wikimedia.org/wiki/File:\"]'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(credits\u001b[33m.\u001b[39mcredits\u001b[33m.\u001b[39mlength)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 177 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/Goodreg3/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 178 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m link \u001b[36mof\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'a[target=\"_blank\"]'\u001b[39m)\u001b[33m.\u001b[39mall()) {\n \u001b[90m 179 |\u001b[39m     \u001b[36mawait\u001b[39m expect(link)\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'rel'\u001b[39m\u001b[33m,\u001b[39m \u001b[35m/noopener/\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                        "column": 77,
+                        "line": 176
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]')\nExpected: \u001b[32m180\u001b[39m\nReceived: \u001b[31m187\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]')\u001b[22m\n\u001b[2m    22 × locator resolved to 187 elements\u001b[22m\n\u001b[2m       - unexpected value \"187\"\u001b[22m\n\n\n  174 |   const credits = await (await page.request.get('/api/v1/credits')).json();\n  175 |   await page.goto('/credits');\n> 176 |   await expect(page.locator('a[href*=\"commons.wikimedia.org/wiki/File:\"]')).toHaveCount(credits.credits.length);\n      |                                                                             ^\n  177 |   await expect(page.getByText(/Goodreg3/)).toBeVisible();\n  178 |   for (const link of await page.locator('a[target=\"_blank\"]').all()) {\n  179 |     await expect(link).toHaveAttribute('rel', /noopener/);\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:176:77"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:28.992Z",
+                  "startTime": "2026-10-08T06:42:17.458Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-all-catalog-4468b--and-unknown-route-recovery\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-all-catalog-4468b--and-unknown-route-recovery\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-real-API-all-catalog-4468b--and-unknown-route-recovery\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                    "column": 77,
+                    "line": 176
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "86d6a544053f1eb9f224-1d3df2fa66ec6e4e33b4",
@@ -338,7 +378,7 @@
         },
         {
           "title": "keyboard tab arrows and serious/critical accessibility checks",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -349,20 +389,44 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 1,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5237,
-                  "errors": [],
+                  "status": "timedOut",
+                  "duration": 37614,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:30.503Z",
+                  "startTime": "2026-10-08T06:42:33.550Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-keyboard-tab-arrows--55aed-itical-accessibility-checks\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-keyboard-tab-arrows--55aed-itical-accessibility-checks\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-keyboard-tab-arrows--55aed-itical-accessibility-checks\\trace.zip"
+                    }
+                  ]
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "86d6a544053f1eb9f224-0551c141c87c099e98cc",
@@ -383,15 +447,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2404,
+                  "duration": 9326,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:35.750Z",
+                  "startTime": "2026-10-08T06:43:18.251Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -406,7 +470,7 @@
         },
         {
           "title": "expanded catalog: twelve category filters expose four to six real products each",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -417,25 +481,129 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 2,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 1563,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 507,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m60\u001b[39m\nReceived: \u001b[31m180\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m60\u001b[39m\nReceived: \u001b[31m180\u001b[39m\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:220:25",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                      "column": 25,
+                      "line": 220
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 218 |\u001b[39m   \u001b[36mconst\u001b[39m catalog \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mrequest\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m'/api/v1/products?limit=100'\u001b[39m))\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 219 |\u001b[39m   \u001b[36mconst\u001b[39m metadata \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mrequest\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m'/api/v1/meta'\u001b[39m))\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 220 |\u001b[39m   expect(catalog\u001b[33m.\u001b[39mtotal)\u001b[33m.\u001b[39mtoBe(\u001b[35m60\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 221 |\u001b[39m   expect(metadata\u001b[33m.\u001b[39mfilters\u001b[33m.\u001b[39mcategories)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m12\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 222 |\u001b[39m   \u001b[36mawait\u001b[39m initialCatalog(page)\u001b[33m;\u001b[39m\n \u001b[90m 223 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m category \u001b[36mof\u001b[39m metadata\u001b[33m.\u001b[39mfilters\u001b[33m.\u001b[39mcategories) {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                        "column": 25,
+                        "line": 220
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m60\u001b[39m\nReceived: \u001b[31m180\u001b[39m\n\n  218 |   const catalog = await (await page.request.get('/api/v1/products?limit=100')).json();\n  219 |   const metadata = await (await page.request.get('/api/v1/meta')).json();\n> 220 |   expect(catalog.total).toBe(60);\n      |                         ^\n  221 |   expect(metadata.filters.categories).toHaveLength(12);\n  222 |   await initialCatalog(page);\n  223 |   for (const category of metadata.filters.categories) {\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts:220:25"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:38.167Z",
+                  "startTime": "2026-10-08T06:43:28.217Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-expanded-catalog-twe-6687c-r-to-six-real-products-each\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-expanded-catalog-twe-6687c-r-to-six-real-products-each\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\flows-expanded-catalog-twe-6687c-r-to-six-real-products-each\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\flows.spec.ts",
+                    "column": 25,
+                    "line": 220
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "86d6a544053f1eb9f224-7dfe4fa41991e251845e",
           "file": "flows.spec.ts",
           "line": 217,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "local-speech.spec.ts",
+      "file": "local-speech.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real local CPU speech populates transcript and preserves provider through search @local-speech",
+          "ok": true,
+          "tags": [
+            "local-speech"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Run fetch_speech_samples.py and supply LOCAL_SPEECH_E2E_AUDIO.",
+                  "location": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\local-speech.spec.ts",
+                    "line": 6,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 384,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:43:30.752Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Run fetch_speech_samples.py and supply LOCAL_SPEECH_E2E_AUDIO.",
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\local-speech.spec.ts",
+                        "line": 6,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ff61ec7b56fefd4193a3-617998c366d8a5cc0681",
+          "file": "local-speech.spec.ts",
+          "line": 4,
           "column": 1
         }
       ]
@@ -448,7 +616,7 @@
       "specs": [
         {
           "title": "synthetic native microphone + provider stub: converts WAV PCM16 mono 16 kHz before upload",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -459,20 +627,60 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 5,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 3091,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 15577,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Lưu bản ghi WAV', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('link', { name: 'Lưu bản ghi WAV', exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Lưu bản ghi WAV', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Lưu bản ghi WAV', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('link', { name: 'Lưu bản ghi WAV', exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Lưu bản ghi WAV', exact: true })\u001b[22m\n\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\microphone.spec.ts:58:27",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\microphone.spec.ts",
+                      "column": 27,
+                      "line": 58
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/Dừng/\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m savedLink \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Lưu bản ghi WAV'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m expect(savedLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m   \u001b[36mconst\u001b[39m blobUrl \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m savedLink\u001b[33m.\u001b[39mgetAttribute(\u001b[32m'href'\u001b[39m))\u001b[33m!\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[36mconst\u001b[39m downloadEvent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mwaitForEvent(\u001b[32m'download'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mawait\u001b[39m savedLink\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\microphone.spec.ts",
+                        "column": 27,
+                        "line": 58
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Lưu bản ghi WAV', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('link', { name: 'Lưu bản ghi WAV', exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Lưu bản ghi WAV', exact: true })\u001b[22m\n\n\n  56 |   await page.getByRole('button', { name: /Dừng/ }).click();\n  57 |   const savedLink = page.getByRole('link', { name: 'Lưu bản ghi WAV', exact: true });\n> 58 |   await expect(savedLink).toBeVisible();\n     |                           ^\n  59 |   const blobUrl = (await savedLink.getAttribute('href'))!;\n  60 |   const downloadEvent = page.waitForEvent('download');\n  61 |   await savedLink.click();\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\microphone.spec.ts:58:27"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:46.836Z",
+                  "startTime": "2026-10-08T06:44:08.826Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\microphone-synthetic-nativ-d616e-6-mono-16-kHz-before-upload\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\microphone-synthetic-nativ-d616e-6-mono-16-kHz-before-upload\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\microphone-synthetic-nativ-d616e-6-mono-16-kHz-before-upload\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\microphone.spec.ts",
+                    "column": 27,
+                    "line": 58
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "130d2110c2e25538841c-2ad9f5c7a61012febc3a",
@@ -493,15 +701,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 6,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 826,
+                  "duration": 1164,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:50.058Z",
+                  "startTime": "2026-10-08T06:44:25.874Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -535,15 +743,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 3,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 986,
+                  "duration": 2850,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:39.768Z",
+                  "startTime": "2026-10-08T06:43:31.534Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -569,15 +777,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 3,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 937,
+                  "duration": 3249,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:40.764Z",
+                  "startTime": "2026-10-08T06:43:34.423Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -592,7 +800,7 @@
         },
         {
           "title": "unsupported image recovery and unconfigured Azure preserve manual voice fallback",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -603,20 +811,60 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 3,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 1141,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 14406,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first()\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first()\u001b[22m\n\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\recovery.spec.ts:69:82",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\recovery.spec.ts",
+                      "column": 82,
+                      "line": 69
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 67 |\u001b[39m   \u001b[36mawait\u001b[39m expectRealRankedResults(page\u001b[33m,\u001b[39m \u001b[36mawait\u001b[39m submitSearch(page\u001b[33m,\u001b[39m \u001b[32m'/api/v1/search/image'\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 68 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'tab'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Giọng nói'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/Azure.*chưa|chưa.*Azure|chưa cấu hình/i\u001b[39m)\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m   expect(speechRequests)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'voice-transcript'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'giày Converse đỏ cổ cao'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m   \u001b[36mawait\u001b[39m expectRealRankedResults(page\u001b[33m,\u001b[39m \u001b[36mawait\u001b[39m submitSearch(page))\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\recovery.spec.ts",
+                        "column": 82,
+                        "line": 69
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first()\u001b[22m\n\n\n  67 |   await expectRealRankedResults(page, await submitSearch(page, '/api/v1/search/image'));\n  68 |   await page.getByRole('tab', { name: 'Giọng nói', exact: true }).click();\n> 69 |   await expect(page.getByText(/Azure.*chưa|chưa.*Azure|chưa cấu hình/i).first()).toBeVisible();\n     |                                                                                  ^\n  70 |   expect(speechRequests).toBe(0);\n  71 |   await page.getByTestId('voice-transcript').fill('giày Converse đỏ cổ cao');\n  72 |   await expectRealRankedResults(page, await submitSearch(page));\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\recovery.spec.ts:69:82"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:41.711Z",
+                  "startTime": "2026-10-08T06:43:37.707Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\recovery-unsupported-image-a7ddd-serve-manual-voice-fallback\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\recovery-unsupported-image-a7ddd-serve-manual-voice-fallback\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\recovery-unsupported-image-a7ddd-serve-manual-voice-fallback\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\recovery.spec.ts",
+                    "column": 82,
+                    "line": 69
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "ef78f3da5c9c24fceacf-8f1a379c1d4b9f59a086",
@@ -637,15 +885,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 628,
+                  "duration": 2789,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:42.860Z",
+                  "startTime": "2026-10-08T06:43:55.255Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -671,15 +919,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 925,
+                  "duration": 3007,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:43.496Z",
+                  "startTime": "2026-10-08T06:43:58.398Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -705,15 +953,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 864,
+                  "duration": 2751,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:44.430Z",
+                  "startTime": "2026-10-08T06:44:01.444Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -739,15 +987,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 682,
+                  "duration": 2295,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-08T05:53:45.304Z",
+                  "startTime": "2026-10-08T06:44:04.235Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -765,11 +1013,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-08T05:53:21.439Z",
-    "duration": 29540.569,
-    "expected": 19,
-    "skipped": 0,
-    "unexpected": 0,
+    "startTime": "2026-10-08T06:41:53.750Z",
+    "duration": 153476.695,
+    "expected": 14,
+    "skipped": 1,
+    "unexpected": 5,
     "flaky": 0
   }
 }

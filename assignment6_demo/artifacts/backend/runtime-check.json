@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "check_count": 15,
+  "check_count": 14,
   "azure_live_called": false,
   "checks": [
     {
@@ -96,13 +96,6 @@
       "expected_status": 422,
       "passed": true,
       "error_code": "VALIDATION_ERROR"
-    },
-    {
-      "name": "valid WAV without Azure key",
-      "actual_status": 503,
-      "expected_status": 503,
-      "passed": true,
-      "error_code": "SPEECH_UNAVAILABLE"
     },
     {
       "name": "health after invalid requests",

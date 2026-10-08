@@ -15,9 +15,29 @@ export function CatalogProvider({ children }: { children: ReactNode }) {
     const controller = new AbortController();
     setLoading(true); setError(''); setMetaError('');
     void getMeta(controller.signal).then(setMeta).catch(reason => { if (!controller.signal.aborted) setMetaError(reason.message); });
-    void getProducts(0, 100, controller.signal).then(response => { if (!controller.signal.aborted) setProducts(response.products); })
-      .catch(reason => { if (!controller.signal.aborted) setError(reason.message); })
-      .finally(() => { if (!controller.signal.aborted) setLoading(false); });
+    void (async () => {
+      try {
+        const first = await getProducts(0, 100, controller.signal);
+        if (controller.signal.aborted) return;
+        const all = [...first.products];
+        let offset = first.products.length;
+        while (offset < first.total) {
+          const next = await getProducts(offset, 100, controller.signal);
+          if (controller.signal.aborted) return;
+          all.push(...next.products);
+          offset += next.products.length;
+          if (next.products.length === 0) break;
+        }
+        setProducts(all);
+      } catch (reason: unknown) {
+        if (!controller.signal.aborted) {
+          const message = reason instanceof Error ? reason.message : String(reason);
+          setError(message);
+        }
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    })();
     return () => controller.abort();
   }, [generation]);
   return <Context.Provider value={{ meta, products, loading, error, metaError, reload: () => setGeneration(value => value + 1) }}>{children}</Context.Provider>;
