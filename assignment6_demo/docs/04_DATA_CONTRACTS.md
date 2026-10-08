@@ -2,7 +2,7 @@
 
 ## Nguồn dữ liệu
 
-Catalog demo ít nhất 12 sản phẩm P001–P012. Giá/tồn kho/đơn hàng là dữ liệu giả định; tên, brand, màu và mô tả ảnh phải phù hợp với ảnh thật. Không dùng stock image của túi cho một sản phẩm giày hoặc cùng ảnh cho nhiều SKU để tăng số sản phẩm.
+Người dùng chốt catalog thời trang 60 sản phẩm và khoảng 30 đơn hàng, ưu tiên 12 danh mục đa dạng với 4–6 mẫu mỗi danh mục. P001–P012 được giữ làm mẫu ban đầu. Giá/tồn kho/đơn hàng là dữ liệu giả định; tên, brand, màu và mô tả ảnh phải phù hợp với ảnh thật. Không dùng ảnh túi cho một sản phẩm giày hoặc cùng ảnh cho nhiều SKU để tăng số sản phẩm.
 
 Đợt đặc tả chuẩn bị `data/images/`, `data/image_sources.json`, `data/products.json`, `data/orders.json` để người dùng review. Backend sau này validate và đọc chúng qua repository. Query fixtures/evaluation/index sẽ được xây trong đợt implement; không coi việc có seed là search đã chạy được.
 
@@ -30,7 +30,7 @@ Catalog demo ít nhất 12 sản phẩm P001–P012. Giá/tồn kho/đơn hàng 
 | product_id | String `^P[0-9]{3}$`, duy nhất; sort lexicographic tăng |
 | name / description | NFC, không rỗng; name ≤120, description ≤500 ký tự; combined embedding text không vượt 128 tokens |
 | brand | String có căn cứ trong ảnh/source; không rõ dùng `Không xác định`, không gán Nike từ ảnh giày bất kỳ |
-| category | `running_shoes`, `trail_shoes`, `casual_shoes`, `bag`; nhãn UI tiếng Việt riêng |
+| category | `running_shoes`, `trail_shoes`, `casual_shoes`, `boots`, `sandals`, `bag`, `backpack`, `tote_bag`, `t_shirt`, `jacket`, `watch`, `sunglasses`; nhãn UI tiếng Việt riêng |
 | color | Mô tả tiếng Việt từ ảnh, có thể nhiều màu; không suy vật liệu/hiệu năng chưa được source xác nhận |
 | price_vnd | Strict integer 0–1,000,000,000, reject boolean; giá demo, không float hoặc tự đổi USD |
 | stock_quantity | Strict integer 0–1,000,000; `in_stock = stock_quantity > 0` |

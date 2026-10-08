@@ -12,7 +12,7 @@ React, TypeScript, Vite theo đặc tả hiện có; backend FastAPI/Python CPU.
 
 ## Users
 
-Khách hàng và người trình diễn demo tiếng Việt: tìm giày/túi theo mô tả, giọng nói hoặc ảnh; kiểm tra sản phẩm và đơn hàng của khách demo C001.
+Khách hàng và người trình diễn demo tiếng Việt: tìm sản phẩm thời trang theo mô tả, giọng nói hoặc ảnh; kiểm tra sản phẩm và đơn hàng của khách demo C001.
 
 ## Product Purpose
 
@@ -36,7 +36,7 @@ Người dùng xác nhận tên Cortis, giao diện tiếng Việt, học hỏi 
 
 ## Evidence on Hand
 
-12 sản phẩm, 3 đơn seed, 12 ảnh thật cùng credits/hash; API đang chạy với CLIP CPU thật; artifacts/backend lưu tests/model/index/HTTP evidence. Giá/tồn kho là dữ liệu minh họa, không là giá bán thực tế của các thương hiệu.
+Người dùng chốt 60 sản phẩm, khoảng 30 đơn và ưu tiên nhiều danh mục, mỗi danh mục vài mẫu: giày, túi, quần áo, đồng hồ, kính. Đang mở rộng từ 12 sản phẩm/3 đơn seed; ảnh thật có credits/hash, API CLIP CPU thật. artifacts/backend lưu tests/model/index/HTTP evidence. Giá/tồn kho là dữ liệu minh họa, không là giá bán thực tế của các thương hiệu.
 
 ## Product Principles
 

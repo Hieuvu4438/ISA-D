@@ -22,8 +22,14 @@ class StrictModel(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
+CategoryCode = Literal[
+    "running_shoes", "trail_shoes", "casual_shoes", "boots", "sandals", "bag",
+    "backpack", "tote_bag", "t_shirt", "jacket", "watch", "sunglasses",
+]
+
+
 class Filters(StrictModel):
-    category: Literal["running_shoes", "trail_shoes", "casual_shoes", "bag"] | None = None
+    category: CategoryCode | None = None
     brand: str | None = None
     min_price: StrictInt | None = Field(default=None, ge=0, le=1_000_000_000)
     max_price: StrictInt | None = Field(default=None, ge=0, le=1_000_000_000)

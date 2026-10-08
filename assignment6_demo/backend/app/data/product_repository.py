@@ -15,6 +15,14 @@ CATEGORIES = {
     "trail_shoes": "Giày chạy địa hình",
     "casual_shoes": "Giày thường ngày",
     "bag": "Túi",
+    "boots": "Giày boots",
+    "sandals": "Dép và sandal",
+    "backpack": "Balo",
+    "tote_bag": "Túi tote",
+    "t_shirt": "Áo thun",
+    "jacket": "Áo khoác",
+    "watch": "Đồng hồ",
+    "sunglasses": "Kính mát",
 }
 
 

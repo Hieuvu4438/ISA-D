@@ -54,7 +54,7 @@ Catalog, media và order phải hoạt động khi model/index/Azure unavailable
 | --- | --- | --- |
 | `top_k` | integer, default 5 | 1–20 inclusive |
 | `result_policy` | string, default `nearest` | Chỉ `nearest` hoặc `relevant` |
-| `filters.category` | string hoặc null, default null | `running_shoes|trail_shoes|casual_shoes|bag` trong `/meta.filters.categories`; `null` là không lọc |
+| `filters.category` | string hoặc null, default null | `running_shoes|trail_shoes|casual_shoes|boots|sandals|bag|backpack|tote_bag|t_shirt|jacket|watch|sunglasses` trong `/meta.filters.categories`; `null` là không lọc |
 | `filters.brand` | string hoặc null, default null | Giá trị chính xác trong `/meta.filters.brands`; NFC+trim, không đoán thương hiệu |
 | `filters.min_price` | integer hoặc null, default null | 0–1,000,000,000 VND, bao gồm cận; JSON key giữ tên `min_price` |
 | `filters.max_price` | integer hoặc null, default null | 0–1,000,000,000 VND, bao gồm cận; nếu cả hai có giá trị thì min ≤ max |
