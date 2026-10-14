@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+**E4 checkout core:** Quote/COD/atomic stock-order-cart/idempotency/persistent inventory, owner history/detail/cancel + UI implemented theo [19](19_CHECKOUT_ORDERS.md). Evidence `artifacts/backend/CHECKOUT_REPORT.md`. Live product/search/browse/cart stock từ ledger, không reset khi restart. Admin fulfillment/returns/variants/full data-quality vẫn pending.
+
 **E3 shopping core:** Cart/wishlist per-account SQLite, strict API, cart version concurrency guard, current price/stock checks, product actions và routes `/cart`/`wishlist` đã implement theo [18](18_CART_WISHLIST.md). Verification ở `artifacts/backend/SHOPPING_REPORT.md`. Chưa checkout/variants/stock-order transaction/full admin; data gate còn pending17.
 
 **E3 data repair batch1:** Rà contact sheets 180 assets; 16 SKU descriptive metadata corrected, 8 invalid images replaced with reviewed Commons photographs, source/license/hash notes pinned, rollback/preview tools added. Index rebuilt + real HTTP/CPU smoke evidence in [17](17_CATALOG_REPAIR.md). Full visual/data gate still fails for remaining expansion assets; variants/cart/checkout/admin pending.

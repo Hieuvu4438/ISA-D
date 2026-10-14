@@ -18,8 +18,8 @@ Nguồn chính thức đã đọc: [H&M shopping](https://www2.hm.com/en_gb/cust
 | Lọc/sort/phân trang | Facets category/brand/color/size/price/availability, counts/clear/URL state, relevance/price; filters kết hợp rỗng, min>max, type sai/boundary, trang cũ, thay filter khi request đang chạy | Baseline filters có; browse facets/sorts pending |
 | Wishlist | Thêm/xóa/lưu theo user/chuyển giỏ; click lặp, đổi tài khoản, SKU ngừng bán | E3 core implemented theo18; guest/variant expansion pending |
 | Giỏ hàng | SKU/quantity/giá server/update/remove/tổng VND; stock đổi, số âm/boolean, SKU sai, race/session đổi | E3 core implemented theo18; variants/checkout/inventory transaction pending |
-| Checkout | Địa chỉ/phí rõ/COD/trạng thái thanh toán/idempotency/transaction stock+order; double submit, race stock cuối, timeout/retry, giá đổi, rollback | Pending; provider thanh toán thật cần cấu hình riêng |
-| Đơn hàng | List/detail/lookup ownership, trạng thái/hủy/trả hàng; foreign/missing cùng lỗi, hủy sau shipped, hủy lặp hoàn stock một lần, snapshot name/price | Detail baseline; auth E1; list/mutations pending |
+| Checkout | Địa chỉ/phí rõ/COD/trạng thái thanh toán/idempotency/transaction stock+order; double submit, race stock cuối, timeout/retry, giá đổi, rollback | E4 COD/transaction core implemented theo19; payment/logistics provider thật pending |
+| Đơn hàng | List/detail/lookup ownership, trạng thái/hủy/trả hàng; foreign/missing cùng lỗi, hủy sau shipped, hủy lặp hoàn stock một lần, snapshot name/price | E4 history/detail/lookup/cancel; admin fulfillment và returns pending |
 | Admin | Dashboard/product/variants/inventory/order/users/roles/audit; user gọi admin, self-demotion/last-admin, input sai, stale update, index lệch | Gate+overview E1; CRUD/audit pending |
 | Speech | Groq theo yêu cầu, local/Azure chọn explicit, sửa transcript; thiếu key/WAV sai/no-match/timeout/429/không fallback giả | Adapter/evidence lịch sử có; regression fashion thật pending |
 | UI/vận hành | Tiếng Việt/responsive/accessibility/navigation/loading/empty/error/DB persistence/clean install; keyboard/axe/offline/reload/race/restart/secrets | E1 riêng; full-system pending |

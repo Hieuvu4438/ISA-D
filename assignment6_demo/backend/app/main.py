@@ -23,6 +23,9 @@ from app.presentation.catalog import mount_catalog
 from app.presentation.shopping import mount_shopping
 from app.application.shopping_service import ShoppingService
 from app.data.shopping_repository import ShoppingRepository
+from app.data.purchase_repository import PurchaseRepository
+from app.application.purchase_service import PurchaseService
+from app.presentation.purchases import mount_purchases
 from app.application.catalog_search import CatalogSearch
 from app.application.query_service import QueryService
 from app.application.search_service import SearchService
@@ -186,6 +189,13 @@ def create_app(settings=None, container=None):
         ))
         application.state.shopping = ShoppingService(ShoppingRepository(application.state.accounts.repository),
                                                       application.state.services.products)
+        inventory = PurchaseRepository(application.state.accounts.repository,
+                                       application.state.services.products.products if application.state.services.products else [])
+        application.state.purchases = PurchaseService(inventory, application.state.services.products)
+        application.state.shopping.inventory = inventory
+        application.state.services.search.inventory = inventory
+        if application.state.services.catalog_search:
+            application.state.services.catalog_search.inventory = inventory
         yield
         application.state.services.close()
 
@@ -397,11 +407,15 @@ def create_app(settings=None, container=None):
             values[name] = int(raw)
         repo = services(request).require("products")
         rows = repo.products
+        stock, inventory_revision = request.app.state.purchases.repository.snapshot()
+        for p in rows:
+            p["stock_quantity"] = stock.get(p["product_id"], 0)
         return {
             "request_id": request.state.request_id,
             "products": [repo.summary(p) for p in rows[values["offset"] : values["offset"] + values["limit"]]],
             "total": len(rows),
             **values,
+            "inventory_revision": inventory_revision,
         }
 
     @application.get("/api/v1/products/{product_id}")
@@ -411,7 +425,9 @@ def create_app(settings=None, container=None):
         product = repo.get_by_id(identifier(product_id, "P"))
         if product is None:
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm.")
-        return {"request_id": request.state.request_id, "product": repo.detail(product)}
+        stock, revision = request.app.state.purchases.repository.snapshot()
+        product["stock_quantity"] = stock.get(product_id, 0)
+        return {"request_id": request.state.request_id, "product": repo.detail(product), "inventory_revision": revision}
 
     @application.get("/api/v1/credits")
     async def credits(request: Request):
@@ -492,6 +508,7 @@ def create_app(settings=None, container=None):
     mount_accounts(application, settings, query_fields)
     mount_catalog(application, query_fields)
     mount_shopping(application, query_fields)
+    mount_purchases(application, query_fields)
     return application
 
 

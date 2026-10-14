@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+**E4 amendment:** `/checkout` quote/COD/address/uncertain-result retry; `/purchases` history; ORD lookup/detail/cancel theo [19](19_CHECKOUT_ORDERS.md). Phí và tổng rõ trước confirm, không giả thanh toán/logistics thật.
+
 **E3 amendment:** Product quantity/add/save, `/cart`/`wishlist`, header navigation, conflict/expiry/error recovery tại [18](18_CART_WISHLIST.md). Checkout/variant selection vẫn pending, không UI success giả.
 
 **E2 amendment:** `/catalog` server facets/sort/pagination/URL state và keyboard autocomplete, semantic hybrid controls/cosine label tại [16](16_SEARCH_BROWSE.md). Navigation/breadcrumb giữ query nguồn, mobile category rail/filters/2-column navigation; không tải toàn catalog ở browse route.

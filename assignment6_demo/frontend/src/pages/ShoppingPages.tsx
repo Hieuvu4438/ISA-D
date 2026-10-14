@@ -58,7 +58,7 @@ export function CartPage() {
           <form className="cart-quantity" onSubmit={event => submit(event, item.product_id)}><label htmlFor={`quantity-${item.product_id}`}>Số lượng<input id={`quantity-${item.product_id}`} name="quantity" type="number" min="1" max="99" step="1" defaultValue={item.quantity} required disabled={busy || !item.product} /></label><button className="secondary-button" type="submit" disabled={busy || !item.product}>Cập nhật</button><button className="text-link" type="button" disabled={busy} onClick={() => { void change(item.product_id, 0) }}><Trash2 size={16} aria-hidden="true" />Xóa<span className="visually-hidden"> {item.product?.name ?? item.product_id}</span></button></form>
         </div><strong className="shopping-line-total">{formatMoney(item.line_total_vnd)}</strong>
       </article>)}</section>
-      <aside className="shopping-summary"><h2>Tạm tính</h2><p>{cart.item_count} sản phẩm</p><strong>{formatMoney(cart.subtotal_vnd)}</strong><p>Giá và tồn kho là dữ liệu demo. Giỏ hàng chưa giữ hàng; giá và tồn kho được kiểm tra lại khi đặt đơn.</p><p>Luồng đặt hàng đang được hoàn thiện.</p><Link className="secondary-button" to="/catalog">Tiếp tục chọn sản phẩm</Link></aside>
+      <aside className="shopping-summary"><h2>Tạm tính</h2><p>{cart.item_count} sản phẩm</p><strong>{formatMoney(cart.subtotal_vnd)}</strong><p>Giá và tồn kho là dữ liệu demo. Giỏ hàng chưa giữ hàng; giá và tồn kho được kiểm tra lại khi đặt đơn.</p>{cart.has_issues ? <p>Hãy xử lý các sản phẩm không còn đủ hàng trước khi đặt đơn.</p> : <Link className="primary-button" to="/checkout">Tiếp tục đặt hàng</Link>}<Link className="secondary-button" to="/catalog">Tiếp tục chọn sản phẩm</Link></aside>
     </div>)}
   </div>
 }

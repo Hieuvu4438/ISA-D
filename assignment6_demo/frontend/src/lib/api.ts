@@ -1,6 +1,7 @@
 import type {
   BrowseResponse, ProductSummary,
   CartResponse, WishlistResponse,
+  CheckoutQuote, PurchaseRequest, OrderSummary,
   CreditsResponse, FieldError, MetaResponse, OrderResponse, OrderSummaryResponse,
   ProductResponse, ProductsResponse, SearchOptions, SearchResponse,
   TextSearchRequest, TranscriptionResponse,
@@ -87,8 +88,8 @@ export const getMeta = (signal?: AbortSignal) => request<MetaResponse>('/meta', 
 export const getProducts = (offset = 0, limit = 12, signal?: AbortSignal) => request<ProductsResponse>(`/products?offset=${offset}&limit=${limit}`, {}, signal)
 export const getProduct = (id: string, signal?: AbortSignal) => request<ProductResponse>(`/products/${encodeURIComponent(id)}`, {}, signal)
 export const getCredits = (signal?: AbortSignal) => request<CreditsResponse>('/credits', {}, signal)
-export const getOrder = (id: string, signal?: AbortSignal) => request<OrderResponse>(`/orders/${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
-export const getOrderSummary = (id: string, signal?: AbortSignal) => request<OrderSummaryResponse>(`/orders?order_id=${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
+export const getOrder = (id: string, signal?: AbortSignal) => request<OrderResponse>(`${id.trim().toUpperCase().startsWith('ORD-') ? '/purchases' : '/orders'}/${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
+export const getOrderSummary = (id: string, signal?: AbortSignal) => request<OrderSummaryResponse>(id.trim().toUpperCase().startsWith('ORD-') ? `/purchases/${encodeURIComponent(id.trim().toUpperCase())}` : `/orders?order_id=${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
 export const getCatalogPage = (params: URLSearchParams, signal?: AbortSignal) => request<BrowseResponse>(`/catalog?${params}`, {}, signal)
 export const getSuggestions = (q: string, signal?: AbortSignal) => request<{ products: ProductSummary[] }>(`/suggestions?q=${encodeURIComponent(q)}`, {}, signal)
 export const getCart = (signal?: AbortSignal) => request<CartResponse>('/cart', {}, signal)
@@ -98,6 +99,10 @@ function shoppingWrite<T>(path: string, body: object): Promise<T> {
 }
 export const setCartQuantity = (product_id: string, quantity: number, version: number) => shoppingWrite<CartResponse>('/cart/items', { product_id, quantity, version })
 export const saveWishlist = (product_id: string, saved: boolean) => shoppingWrite<WishlistResponse>('/wishlist/items', { product_id, saved })
+export const createQuote = () => shoppingWrite<{ quote: CheckoutQuote }>('/checkout/quote', {})
+export const placePurchase = (body: PurchaseRequest) => shoppingWrite<OrderResponse & { replayed: boolean }>('/purchases', body)
+export const cancelPurchase = (id: string, version: number) => shoppingWrite<OrderResponse>(`/purchases/${encodeURIComponent(id)}/cancel`, { version })
+export const getPurchases = (offset = 0, signal?: AbortSignal) => request<{ orders: OrderSummary[]; total: number; offset: number; limit: number }>(`/purchases?offset=${offset}&limit=20`, {}, signal)
 
 export interface AccountUser { user_id: string; email: string; display_name: string; role: 'user' | 'admin' }
 export interface AccountResponse { request_id: string; user: AccountUser }

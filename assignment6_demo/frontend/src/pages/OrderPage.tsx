@@ -5,6 +5,7 @@ import { ApiError, getOrder } from '../lib/api'
 import type { OrderDetail } from '../lib/types'
 import { ErrorPanel, formatMoney } from '../ui'
 import { formatOrderDate, orderStatusLabels } from './OrdersPage'
+import { PurchaseInfo } from '../components/PurchaseInfo'
 
 export function OrderPage() {
   const { orderId = '' } = useParams()
@@ -52,10 +53,11 @@ export function OrderPage() {
               <span className="order-reference">{item.product_id}</span></th>
             <td>{item.quantity}</td><td>{formatMoney(item.unit_price_vnd)}</td><td>{formatMoney(item.line_total_vnd)}</td>
           </tr>)}</tbody>
-          <tfoot><tr><th scope="row" colSpan={3}>Tổng giá trị đơn hàng</th><td className="order-total">{formatMoney(order.total_vnd)}</td></tr></tfoot>
+          <tfoot>{order.shipping_fee_vnd != null && <tr><th scope="row" colSpan={3}>Phí vận chuyển</th><td>{formatMoney(order.shipping_fee_vnd)}</td></tr>}<tr><th scope="row" colSpan={3}>Tổng giá trị đơn hàng</th><td className="order-total">{formatMoney(order.total_vnd)}</td></tr></tfoot>
         </table>
       </div>
       <p className="demo-note">Tên sản phẩm và giá được ghi nhận tại thời điểm đặt đơn. Đây là đơn hàng minh họa.</p>
+      {order.demo_order && <PurchaseInfo key={order.order_id} order={order} onChange={setOrder} />}
     </article>}
   </div>
 }

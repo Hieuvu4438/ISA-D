@@ -5,6 +5,11 @@ class ShoppingService:
     def __init__(self, repository, products):
         self.repository = repository
         self.products = products
+        self.inventory = None
+
+    def stock_products(self):
+        stock = self.inventory.snapshot()[0] if self.inventory else {}
+        return stock
 
     def product(self, product_id):
         if not self.products:
@@ -12,15 +17,20 @@ class ShoppingService:
         product = self.products.get_by_id(product_id)
         if product is None:
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm.")
+        if self.inventory:
+            product["stock_quantity"] = self.stock_products().get(product_id, 0)
         return product
 
     def cart(self, user_id):
         if not self.products:
             raise AppError(503, "CATALOG_UNAVAILABLE", "Danh mục chưa sẵn sàng.")
         version, rows = self.repository.cart(user_id)
+        stock = self.stock_products()
         items = []
         for row in rows:
             product = self.products.get_by_id(row["product_id"])
+            if product and self.inventory:
+                product["stock_quantity"] = stock.get(row["product_id"], 0)
             issue = "PRODUCT_UNAVAILABLE" if product is None else "OUT_OF_STOCK" if product["stock_quantity"] == 0 else "INSUFFICIENT_STOCK" if product["stock_quantity"] < row["quantity"] else None
             price = product["price_vnd"] if product else 0
             items.append({**row, "product": self.products.summary(product) if product else None,
@@ -45,6 +55,8 @@ class ShoppingService:
             if not self.products:
                 raise AppError(503, "CATALOG_UNAVAILABLE", "Danh mục chưa sẵn sàng.")
             product = self.products.get_by_id(product_id)
+            if product and self.inventory:
+                product["stock_quantity"] = self.stock_products().get(product_id, 0)
             items.append({"product_id": product_id, "product": self.products.summary(product) if product else None})
         return {"items": items, "total": len(items)}
 

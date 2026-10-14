@@ -1,0 +1,22 @@
+{
+  "scope": "current OpenAPI and anonymous checkout smoke",
+  "passed": true,
+  "history_parameters": {
+    "offset": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000,
+      "default": 0
+    },
+    "limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 20
+    }
+  },
+  "strict_purchase_extra_forbid": true,
+  "anonymous_checkout_status": 401,
+  "model_loaded": false,
+  "provider_calls": 0
+}

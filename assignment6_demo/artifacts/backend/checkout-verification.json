@@ -1,0 +1,54 @@
+{
+  "milestone": "E4 checkout COD/order/stock core",
+  "base_commit": "42673fb6fd180e9f8146f0c85e0e55fbef127902",
+  "source_sha256": {
+    "backend/app/data/purchase_repository.py": "705b9373bc597ac662fe5ea1a555db06553d66668f312e7d7e78cc278114b9b8",
+    "backend/app/application/purchase_service.py": "db05fc9b3d7653faf56ce1d699b7d1c82e412de0774b96ac6b886731c87319d4",
+    "backend/app/presentation/purchases.py": "f06758dfcc6b2a9efad69cf89dfca446b8748c56d8c915d2580ae9a5a49d39cc",
+    "backend/app/main.py": "27bb8b798ee519d820b029d06a19c747a35350d3a0f1f55b7bfc2b033992105e",
+    "backend/app/application/search_service.py": "c5aa7a5cde532f09cc3c13961a93f3e5ef3beb5e7c80e364a1a9e842e9c6e2fc",
+    "backend/app/application/catalog_search.py": "5ee5d3f06c9a154ed0bb235d9ce9e90dfdcfc7eeac2783f63c132e7add80de71",
+    "backend/app/application/shopping_service.py": "03af760125917194ff67816c5c503a3a1d55e2643499c5b511cca2197f6ae8af",
+    "frontend/src/pages/CheckoutPage.tsx": "a3261582334c2f4430870feb4493fd46c023585ed616424b75a1d5b7a816d05a",
+    "frontend/src/components/PurchaseInfo.tsx": "e9456dc239aa645deb4d0bd5412160fc4a258e2d492462f708c53e683f209eef",
+    "frontend/src/pages/OrderPage.tsx": "7fb4db7e14898913841b5e2808ce2abc7fcff3ce7eb16d775ab5831598eca553",
+    "frontend/e2e/checkout.spec.ts": "e16630e3205146abdd4a45538093186a63fb280b20042d9af8295b4e224c1ba1",
+    "backend/tests/test_purchases.py": "77bfe2a91338dc2712583dd02367dbec9cad28c6814334595500654f15c5df77"
+  },
+  "catalog_sha256": "f39c7d826253d409589618948ec6ff9da9ae23716bb0384e4d1b426a16e6d1d1",
+  "verification": {
+    "full_backend_tests": 202,
+    "full_backend_failures": 0,
+    "full_backend_errors": 0,
+    "full_backend_exit": 0,
+    "subsequent_focused_purchase_tests": 12,
+    "focused_exit": 0,
+    "schema_smoke_passed": true,
+    "frontend_unit_tests": 17,
+    "frontend_lint_exit": 0,
+    "frontend_build_exit": 0,
+    "initial_browser_passed": 4,
+    "final_functional_browser_passed": 4,
+    "real_encoder_stock_filter_verified": true,
+    "index_fingerprint_unchanged_during_stock_transaction": true,
+    "axe_violations": 0,
+    "document_overflow": false,
+    "viewports": [
+      360,
+      768,
+      1440
+    ]
+  },
+  "payment": "COD demo, unpaid; no real charge or logistics",
+  "storage": "SQLite real persistence and transactions; SQL abort/status fixture explicit for failures",
+  "provider_live_calls": 0,
+  "full_ecommerce_gate_verified": false,
+  "pending": [
+    "Remaining catalog photo/metadata corrections",
+    "Variant and size inventory",
+    "Full admin/fulfillment/inventory reconciliation/audit",
+    "Returns/refunds and payment/logistics integration",
+    "Frozen independent model/OOD/voice/provider gates",
+    "Editable .vpp"
+  ]
+}

@@ -31,6 +31,13 @@
   .skip-link:focus { top: 12px; }
 }
 @layer components {
+  .checkout-layout { margin-top: 28px; }
+  .checkout-layout .account-panel { max-width: none; }
+  .checkout-layout .shopping-summary li { margin-bottom: 16px; }
+  .checkout-layout .shopping-summary ul { padding-left: 20px; margin-bottom: 24px; }
+  .shopping-summary > a { margin-bottom: 14px; }
+  .purchase-info { margin: 28px 0 48px; }
+  .purchase-info p { margin-bottom: 18px; }
   .header-shopping { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
   .shopping-page { padding-top: 22px; padding-bottom: 64px; }
   .shopping-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); gap: 32px; align-items: start; }

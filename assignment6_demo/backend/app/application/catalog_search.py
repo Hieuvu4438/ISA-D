@@ -75,6 +75,7 @@ def matches(product, filters):
 class CatalogSearch:
     def __init__(self, repository):
         self.repository = repository
+        self.inventory = None
         self.products = repository.products
         self.by_id = {p["product_id"]: p for p in self.products}
         self.counts = {}
@@ -139,7 +140,8 @@ class CatalogSearch:
         self.validate_filters(filters)
         plan = self.prepare(text)
         scores = self.scores(plan)
-        universe = [p for p in self.products if not text.strip() or p["product_id"] in scores]
+        stock, revision = self.inventory.snapshot() if self.inventory else ({}, None)
+        universe = [dict(p, stock_quantity=stock.get(p["product_id"], 0)) if self.inventory else p for p in self.products if not text.strip() or p["product_id"] in scores]
         eligible = [p for p in universe if matches(p, filters)]
         # Disjunctive facets: all other active filters remain applied, counts before pagination.
         facets = {}
@@ -155,6 +157,7 @@ class CatalogSearch:
                 "facets": facets, "corrections": plan.corrections,
                 "empty_reason": None if eligible else "catalog_empty" if not self.products else "filters" if universe else "no_matches",
                 "catalog_fingerprint": self.repository.fingerprint, "lexical_fingerprint": self.fingerprint,
+                "inventory_revision": revision,
                 "retrieval": "exact_sku" if plan.exact_id else "bm25" if text.strip() else "catalog"}
 
     @staticmethod
@@ -179,7 +182,8 @@ class CatalogSearch:
             if prefix or p["product_id"] in scores:
                 rows.append((not prefix, -scores.get(p["product_id"], 0), p["product_id"], p))
         rows.sort(key=lambda row: row[:3])
-        return [self.repository.summary(row[3]) for row in rows[:limit]]
+        stock = self.inventory.snapshot()[0] if self.inventory else {}
+        return [self.repository.summary(dict(row[3], stock_quantity=stock.get(row[3]["product_id"], 0)) if self.inventory else row[3]) for row in rows[:limit]]
 
     def fuse(self, candidates, text):
         plan = self.prepare(text)

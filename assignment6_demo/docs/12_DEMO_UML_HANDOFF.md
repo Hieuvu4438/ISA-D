@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+**E4 amendment:** Checkout atomic/idempotency sequence và code/test mapping tại [19](19_CHECKOUT_ORDERS.md); `.vpp` editable vẫn pending.
+
 **E3 amendment:** Cart mutation/version-conflict sequence và code/test mapping tại [18](18_CART_WISHLIST.md). Vẫn cần editable .vpp ngoài Mermaid.
 
 **E2 amendment:** Browse/suggestions/hybrid sequence và code/test mapping ở [16](16_SEARCH_BROWSE.md), bổ sung CatalogSearch và validate_request. Vẫn cần `.vpp` editable để nghiệm thu UML.

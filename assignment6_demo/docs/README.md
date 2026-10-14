@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Checkout/COD/order/stock ledger contract: [19_CHECKOUT_ORDERS.md](19_CHECKOUT_ORDERS.md).
+
 Cart/wishlist E3 contracts và verification mapping: [18_CART_WISHLIST.md](18_CART_WISHLIST.md).
 
 Data repair/source audit và reproducibility: [17_CATALOG_REPAIR.md](17_CATALOG_REPAIR.md), gồm fixes/pending và bằng chứng riêng.

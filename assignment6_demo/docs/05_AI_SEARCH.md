@@ -1,5 +1,7 @@
 # AI tìm kiếm tiếng Việt và chỉ mục
 
+**E4 amendment:** Hard in_stock filter và product summaries lấy inventory snapshot ledger theo [19](19_CHECKOUT_ORDERS.md). inventory_revision riêng; index/catalog hash thuộc immutable metadata/seed snapshot, không encode lại khi checkout/hủy thay quantity.
+
 **E2 amendment:** [16](16_SEARCH_BROWSE.md) thêm BM25/RRF hybrid optional; cosine model/fusion giữ nguyên và score tách rank_score. Filter→cosine threshold→full eligible RRF→sort→Top-k. API baseline default semantic; UI default hybrid. Không coi policies cosine cũ là full hybrid quality evidence.
 
 ## Model pair bắt buộc

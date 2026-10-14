@@ -149,7 +149,17 @@ export interface OrderSummary {
 
 export interface OrderDetail extends OrderSummary {
   items: { product_id: string; product_name: string; quantity: number; unit_price_vnd: number; line_total_vnd: number }[]
+  version?: number
+  subtotal_vnd?: number
+  shipping_fee_vnd?: number
+  payment_method?: 'cod'
+  payment_status?: 'unpaid'
+  demo_order?: boolean
+  shipping_address?: ShippingAddress
 }
+export interface ShippingAddress { recipient: string; phone: string; address_line: string; city: string }
+export interface CheckoutQuote { quote_id: string; cart_version: number; expires_at: number; items: OrderDetail['items']; subtotal_vnd: number; shipping_fee_vnd: number; total_vnd: number; currency: 'VND'; payment_method: 'cod' }
+export interface PurchaseRequest { quote_id: string; idempotency_key: string; shipping_address: ShippingAddress }
 
 export interface TranscriptionResponse {
   request_id: string

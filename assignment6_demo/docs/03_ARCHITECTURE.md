@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+**E4 amendment:** PurchaseService supply catalog snapshot, PurchaseRepository giữ atomic SQL transaction/invariants; ledger overlay cho search/browse/products/cart theo [19](19_CHECKOUT_ORDERS.md). Tách revision inventory khỏi encoder fingerprint.
+
 **E3 amendment:** ShoppingRepository/ShoppingService/routes thêm qua main DI, account-scoped SQL transactions/CAS version và price hydration, sequence tại [18](18_CART_WISHLIST.md).
 
 **E2 amendment:** CatalogSearch lexical adapter, catalog route và SearchService.validate_request/RRF mapping tại [16](16_SEARCH_BROWSE.md); lexical snapshot độc lập model/index, fingerprint config+catalog. All eligible trước Top-k, semantic scores giữ riêng.

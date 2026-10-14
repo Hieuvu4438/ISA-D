@@ -33,8 +33,8 @@ export function OrdersPage() {
     setInput(normalized)
     setOrder(null)
     setError(null)
-    if (!/^O[0-9]{3}$/.test(normalized)) {
-      setFieldError('Nhập mã gồm chữ O và 3 chữ số, ví dụ O001.')
+    if (!/^(?:O[0-9]{3}|ORD-[0-9A-F]{16})$/.test(normalized)) {
+      setFieldError('Nhập mã gồm chữ O và 3 chữ số, ví dụ O001; hoặc mã ORD- của đơn đã đặt.')
       setLoading(false)
       inputRef.current?.focus()
       return
@@ -60,6 +60,7 @@ export function OrdersPage() {
     <header className="page-heading">
       <h1>Đơn hàng của bạn.</h1>
       <p>Nhập mã đơn hàng để xem trạng thái và chi tiết sản phẩm.</p>
+      <Link className="text-link" to="/purchases">Xem các đơn đã đặt từ tài khoản</Link>
     </header>
     <div className="order-search">
       <form onSubmit={lookup} noValidate>
