@@ -2,7 +2,7 @@
   "scope": "E2 text category smoke comparison; labels chosen from shopping intent before running, not frozen multimodal acceptance set",
   "fixture_sha256": "0c2190b4c6685880720a5143e8933b656da7534daa43ba9d494f827c71826e27",
   "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-  "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
+  "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
   "cpu": true,
   "mocked_encoder": false,
   "requests": 50,
@@ -43,9 +43,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 30.110000167042017,
+      "elapsed_ms": 29.447900131344795,
       "response": {
-        "request_id": "270063d8-ce69-43b0-b947-751fdb96c4cf",
+        "request_id": "83e8b7ce-f27e-433f-9415-96ae560f0b36",
         "query": {
           "mode": "text",
           "text": "giày chạy bộ",
@@ -80,12 +80,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P075"
             },
-            "score": 0.7671548128128052,
+            "score": 0.7671547532081604,
             "component_scores": {
               "text": 0.76715487241745,
               "image": null
             },
-            "rank_score": 0.7671548128128052,
+            "rank_score": 0.7671547532081604,
             "lexical_score": null
           },
           {
@@ -102,7 +102,7 @@
             },
             "score": 0.7643929123878479,
             "component_scores": {
-              "text": 0.7643930315971375,
+              "text": 0.7643929719924927,
               "image": null
             },
             "rank_score": 0.7643929123878479,
@@ -131,21 +131,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.32670004293322563,
-            "encoding": 25.501299649477005,
-            "retrieval": 1.0850001126527786,
-            "filtering": 0.04749977961182594,
+            "validation": 0.5536000244319439,
+            "encoding": 23.029800038784742,
+            "retrieval": 1.1958000250160694,
+            "filtering": 0.061099883168935776,
             "threshold": 0,
-            "ranking": 0.060200225561857224,
-            "hydration": 0.04750024527311325,
-            "total": 28.442000038921833
+            "ranking": 0.06950041279196739,
+            "hydration": 0.07610023021697998,
+            "total": 27.00759982690215
           },
           "trace": [
             {
@@ -205,9 +205,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.359900314360857,
+      "elapsed_ms": 21.481500007212162,
       "response": {
-        "request_id": "463af45a-19ce-4adc-9faf-b7ae1d0b2732",
+        "request_id": "f9badbbd-e4f7-4361-98f0-0b69ae537cd7",
         "query": {
           "mode": "text",
           "text": "giày chạy bộ",
@@ -244,11 +244,11 @@
             },
             "score": 0.7643929123878479,
             "component_scores": {
-              "text": 0.7643930315971375,
+              "text": 0.7643929719924927,
               "image": null
             },
             "rank_score": 0.03252247488101534,
-            "lexical_score": 3.957971798139348
+            "lexical_score": 3.944519180163875
           },
           {
             "rank": 2,
@@ -268,7 +268,7 @@
               "image": null
             },
             "rank_score": 0.030309988518943745,
-            "lexical_score": 3.912708776990069
+            "lexical_score": 3.8976906118204466
           },
           {
             "rank": 3,
@@ -282,32 +282,32 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P075"
             },
-            "score": 0.7671548128128052,
+            "score": 0.7671547532081604,
             "component_scores": {
               "text": 0.76715487241745,
               "image": null
             },
             "rank_score": 0.02938045560996381,
-            "lexical_score": 2.893848677726337
+            "lexical_score": 2.862619713897614
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.1333998516201973,
-            "encoding": 15.370499808341265,
-            "retrieval": 1.0826997458934784,
-            "filtering": 0.0483999028801918,
+            "validation": 0.13120006769895554,
+            "encoding": 15.024799853563309,
+            "retrieval": 1.113200094550848,
+            "filtering": 0.04829978570342064,
             "threshold": 0,
-            "ranking": 0.6683999672532082,
-            "hydration": 0.04970002919435501,
-            "total": 18.745600245893
+            "ranking": 0.6026001647114754,
+            "hydration": 0.052700284868478775,
+            "total": 18.649199977517128
           },
           "trace": [
             {
@@ -355,7 +355,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -367,9 +367,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 20.670800004154444,
+      "elapsed_ms": 21.74529992043972,
       "response": {
-        "request_id": "d05bfa29-7251-43d0-8a30-a5e99e8a7ff0",
+        "request_id": "64594158-5d69-4f47-a0c5-f2269778f784",
         "query": {
           "mode": "text",
           "text": "giày chạy địa hình",
@@ -444,32 +444,32 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P077"
             },
-            "score": 0.7659798860549927,
+            "score": 0.7659798264503479,
             "component_scores": {
-              "text": 0.7659800052642822,
+              "text": 0.765980064868927,
               "image": null
             },
-            "rank_score": 0.7659798860549927,
+            "rank_score": 0.7659798264503479,
             "lexical_score": null
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.15200022608041763,
-            "encoding": 15.97849978134036,
-            "retrieval": 1.201000064611435,
-            "filtering": 0.049800146371126175,
+            "validation": 0.14959974214434624,
+            "encoding": 15.84109989926219,
+            "retrieval": 1.1843000538647175,
+            "filtering": 0.04830025136470795,
             "threshold": 0,
-            "ranking": 0.06490014493465424,
-            "hydration": 0.05410006269812584,
-            "total": 18.88930005952716
+            "ranking": 0.05959998816251755,
+            "hydration": 0.04829978570342064,
+            "total": 18.89490010216832
           },
           "trace": [
             {
@@ -529,9 +529,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 22.38929970189929,
+      "elapsed_ms": 24.064400233328342,
       "response": {
-        "request_id": "6b9af98d-4050-4e71-94cc-b3bb685a7c67",
+        "request_id": "ed36bcdd-202f-4fd7-a4fb-28f24857fa2a",
         "query": {
           "mode": "text",
           "text": "giày chạy địa hình",
@@ -572,7 +572,7 @@
               "image": null
             },
             "rank_score": 0.032266458495966696,
-            "lexical_score": 4.54910031863972
+            "lexical_score": 4.52400308411372
           },
           {
             "rank": 2,
@@ -586,13 +586,13 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P077"
             },
-            "score": 0.7659798860549927,
+            "score": 0.7659798264503479,
             "component_scores": {
-              "text": 0.7659800052642822,
+              "text": 0.765980064868927,
               "image": null
             },
-            "rank_score": 0.031024531024531024,
-            "lexical_score": 4.515115488176924
+            "rank_score": 0.030798389007344232,
+            "lexical_score": 4.48898615830182
           },
           {
             "rank": 3,
@@ -612,26 +612,26 @@
               "image": null
             },
             "rank_score": 0.030621785881252923,
-            "lexical_score": 4.481634671348617
+            "lexical_score": 4.4545071485730485
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.1534000039100647,
-            "encoding": 17.156200017780066,
-            "retrieval": 1.0951999574899673,
-            "filtering": 0.04810001701116562,
+            "validation": 0.14319969341158867,
+            "encoding": 16.070600133389235,
+            "retrieval": 1.1087004095315933,
+            "filtering": 0.04759989678859711,
             "threshold": 0,
-            "ranking": 0.6174999289214611,
-            "hydration": 0.050900038331747055,
-            "total": 20.59740014374256
+            "ranking": 0.5955002270638943,
+            "hydration": 0.05159992724657059,
+            "total": 19.82180029153824
           },
           "trace": [
             {
@@ -679,7 +679,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -691,9 +691,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": false,
-      "elapsed_ms": 20.06240002810955,
+      "elapsed_ms": 25.054299738258123,
       "response": {
-        "request_id": "addb9d34-9122-49d1-a588-3edbe93b5b75",
+        "request_id": "6ed191ff-a372-4e5e-b49c-20c4282712e3",
         "query": {
           "mode": "text",
           "text": "giày thường ngày",
@@ -728,12 +728,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P021"
             },
-            "score": 0.7669574022293091,
+            "score": 0.7669573426246643,
             "component_scores": {
               "text": 0.7669574022293091,
               "image": null
             },
-            "rank_score": 0.7669574022293091,
+            "rank_score": 0.7669573426246643,
             "lexical_score": null
           },
           {
@@ -748,12 +748,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P024"
             },
-            "score": 0.7652313113212585,
+            "score": 0.7652313709259033,
             "component_scores": {
               "text": 0.7652311325073242,
               "image": null
             },
-            "rank_score": 0.7652313113212585,
+            "rank_score": 0.7652313709259033,
             "lexical_score": null
           },
           {
@@ -779,21 +779,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.14030002057552338,
-            "encoding": 15.840400010347366,
-            "retrieval": 1.0778997093439102,
-            "filtering": 0.04810001701116562,
+            "validation": 0.14170026406645775,
+            "encoding": 16.755499877035618,
+            "retrieval": 1.1173002421855927,
+            "filtering": 0.0483999028801918,
             "threshold": 0,
-            "ranking": 0.061300117522478104,
-            "hydration": 0.04719989374279976,
-            "total": 18.507299944758415
+            "ranking": 0.05879998207092285,
+            "hydration": 0.047999899834394455,
+            "total": 19.99379973858595
           },
           "trace": [
             {
@@ -853,9 +853,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 21.025000140070915,
+      "elapsed_ms": 24.049900006502867,
       "response": {
-        "request_id": "35279f32-c610-4088-8b5f-48a6b954574f",
+        "request_id": "bb1431f4-3b9b-416f-89cd-91311b080b7d",
         "query": {
           "mode": "text",
           "text": "giày thường ngày",
@@ -896,7 +896,7 @@
               "image": null
             },
             "rank_score": 0.030536130536130537,
-            "lexical_score": 4.5004248677858465
+            "lexical_score": 4.479800664067447
           },
           {
             "rank": 2,
@@ -916,7 +916,7 @@
               "image": null
             },
             "rank_score": 0.02964426877470356,
-            "lexical_score": 4.4504057737297815
+            "lexical_score": 4.429292809450386
           },
           {
             "rank": 3,
@@ -936,26 +936,26 @@
               "image": null
             },
             "rank_score": 0.02938045560996381,
-            "lexical_score": 4.602567894254107
+            "lexical_score": 4.58320199698444
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.14560017734766006,
-            "encoding": 16.026099678128958,
-            "retrieval": 1.0783998295664787,
+            "validation": 0.14169979840517044,
+            "encoding": 14.98690014705062,
+            "retrieval": 1.114200334995985,
             "filtering": 0.04770001396536827,
             "threshold": 0,
-            "ranking": 0.6102998740971088,
-            "hydration": 0.05030026659369469,
-            "total": 19.376100040972233
+            "ranking": 0.5966001190245152,
+            "hydration": 0.05120038986206055,
+            "total": 18.87409994378686
           },
           "trace": [
             {
@@ -1003,7 +1003,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -1015,9 +1015,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 20.495000295341015,
+      "elapsed_ms": 19.8679999448359,
       "response": {
-        "request_id": "95f37386-4cee-4823-966a-4b36e39eaf07",
+        "request_id": "086670c0-022e-491d-b754-c5051bd1a3b3",
         "query": {
           "mode": "text",
           "text": "giày boots",
@@ -1054,7 +1054,7 @@
             },
             "score": 0.787431001663208,
             "component_scores": {
-              "text": 0.7874310612678528,
+              "text": 0.787431001663208,
               "image": null
             },
             "rank_score": 0.787431001663208,
@@ -1072,12 +1072,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P091"
             },
-            "score": 0.779788613319397,
+            "score": 0.7797885537147522,
             "component_scores": {
               "text": 0.779788613319397,
               "image": null
             },
-            "rank_score": 0.779788613319397,
+            "rank_score": 0.7797885537147522,
             "lexical_score": null
           },
           {
@@ -1103,21 +1103,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13560010120272636,
-            "encoding": 16.271099913865328,
-            "retrieval": 1.083199866116047,
-            "filtering": 0.0483999028801918,
+            "validation": 0.13459986075758934,
+            "encoding": 14.22009989619255,
+            "retrieval": 1.1077001690864563,
+            "filtering": 0.046900007873773575,
             "threshold": 0,
-            "ranking": 0.059800222516059875,
-            "hydration": 0.05460018292069435,
-            "total": 19.002099987119436
+            "ranking": 0.05860021337866783,
+            "hydration": 0.04659965634346008,
+            "total": 17.062599770724773
           },
           "trace": [
             {
@@ -1177,9 +1177,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 21.269799675792456,
+      "elapsed_ms": 24.17209977284074,
       "response": {
-        "request_id": "2c419f3b-4b26-4574-8461-6505486270fa",
+        "request_id": "dfd4d41c-c130-4b74-a303-b84d48cc5f3a",
         "query": {
           "mode": "text",
           "text": "giày boots",
@@ -1216,11 +1216,11 @@
             },
             "score": 0.787431001663208,
             "component_scores": {
-              "text": 0.7874310612678528,
+              "text": 0.787431001663208,
               "image": null
             },
             "rank_score": 0.032266458495966696,
-            "lexical_score": 4.626416457324475
+            "lexical_score": 4.606712488253831
           },
           {
             "rank": 2,
@@ -1234,13 +1234,13 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P091"
             },
-            "score": 0.779788613319397,
+            "score": 0.7797885537147522,
             "component_scores": {
               "text": 0.779788613319397,
               "image": null
             },
             "rank_score": 0.03225806451612903,
-            "lexical_score": 4.643932468521159
+            "lexical_score": 4.62362389029644
           },
           {
             "rank": 3,
@@ -1254,32 +1254,32 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P100"
             },
-            "score": 0.7589737176895142,
+            "score": 0.7589736580848694,
             "component_scores": {
-              "text": 0.7589736580848694,
+              "text": 0.7589737176895142,
               "image": null
             },
             "rank_score": 0.031544957774465976,
-            "lexical_score": 4.68353671891425
+            "lexical_score": 4.6645490386048385
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13170018792152405,
-            "encoding": 16.239700373262167,
-            "retrieval": 1.108500175178051,
-            "filtering": 0.04810001701116562,
+            "validation": 0.134199857711792,
+            "encoding": 14.75830003619194,
+            "retrieval": 1.1114999651908875,
+            "filtering": 0.0483999028801918,
             "threshold": 0,
-            "ranking": 0.6030001677572727,
-            "hydration": 0.051099807024002075,
-            "total": 19.683399703353643
+            "ranking": 0.5879998207092285,
+            "hydration": 0.05060015246272087,
+            "total": 18.601700197905302
           },
           "trace": [
             {
@@ -1327,7 +1327,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -1339,9 +1339,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 20.29359992593527,
+      "elapsed_ms": 19.387600012123585,
       "response": {
-        "request_id": "b8a8fd82-f2c9-4a36-ab15-1233e0e5dd53",
+        "request_id": "8e9b99e5-b956-488f-bc34-8a3d016735e7",
         "query": {
           "mode": "text",
           "text": "dép sandal",
@@ -1427,21 +1427,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13899989426136017,
-            "encoding": 15.892299823462963,
-            "retrieval": 1.098299864679575,
-            "filtering": 0.04789978265762329,
+            "validation": 0.1384001225233078,
+            "encoding": 12.652399949729443,
+            "retrieval": 0.4747002385556698,
+            "filtering": 0.026999972760677338,
             "threshold": 0,
-            "ranking": 0.06050011143088341,
-            "hydration": 0.04740012809634209,
-            "total": 18.638100009411573
+            "ranking": 0.035800039768218994,
+            "hydration": 0.02510007470846176,
+            "total": 14.395799953490496
           },
           "trace": [
             {
@@ -1501,9 +1501,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 21.10939985141158,
+      "elapsed_ms": 25.2099996432662,
       "response": {
-        "request_id": "fc74d742-79ae-4127-a1e7-adf225647296",
+        "request_id": "ec86a123-b774-40da-8d03-2951f98b02e8",
         "query": {
           "mode": "text",
           "text": "dép sandal",
@@ -1544,7 +1544,7 @@
               "image": null
             },
             "rank_score": 0.03252247488101534,
-            "lexical_score": 4.805135920893594
+            "lexical_score": 4.7886661457591915
           },
           {
             "rank": 2,
@@ -1564,7 +1564,7 @@
               "image": null
             },
             "rank_score": 0.032266458495966696,
-            "lexical_score": 4.751246993755241
+            "lexical_score": 4.732916034324713
           },
           {
             "rank": 3,
@@ -1584,26 +1584,26 @@
               "image": null
             },
             "rank_score": 0.031054405392392875,
-            "lexical_score": 4.761927864721836
+            "lexical_score": 4.743961966541551
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13119960203766823,
-            "encoding": 16.17900002747774,
-            "retrieval": 1.0802997276186943,
-            "filtering": 0.048700254410505295,
+            "validation": 0.1346999779343605,
+            "encoding": 19.339300226420164,
+            "retrieval": 1.1344999074935913,
+            "filtering": 0.0483999028801918,
             "threshold": 0,
-            "ranking": 0.6198999471962452,
-            "hydration": 0.05069980397820473,
-            "total": 19.50030028820038
+            "ranking": 0.5860999226570129,
+            "hydration": 0.05179969593882561,
+            "total": 22.827799897640944
           },
           "trace": [
             {
@@ -1651,7 +1651,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -1663,9 +1663,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": false,
-      "elapsed_ms": 19.550399854779243,
+      "elapsed_ms": 21.781600080430508,
       "response": {
-        "request_id": "48c9a127-a75e-4181-9231-3ef385f41034",
+        "request_id": "b10f5145-c1bf-4cfa-a2dd-fca5de5bdf08",
         "query": {
           "mode": "text",
           "text": "túi xách",
@@ -1712,20 +1712,20 @@
             "rank": 2,
             "product": {
               "product_id": "P149",
-              "name": "Áo thun On Colton Cotton talks on đỏ đô",
+              "name": "Áo thun đen in chữ trắng và hồng",
               "category": "t_shirt",
-              "brand": "On",
-              "color": "đỏ đô",
+              "brand": "Không xác định",
+              "color": "đen",
               "price_vnd": 545000,
               "in_stock": true,
               "image_url": "/api/v1/media/products/P149"
             },
-            "score": 0.7508451342582703,
+            "score": 0.7498239874839783,
             "component_scores": {
-              "text": 0.7508450746536255,
+              "text": 0.7498239874839783,
               "image": null
             },
-            "rank_score": 0.7508451342582703,
+            "rank_score": 0.7498239874839783,
             "lexical_score": null
           },
           {
@@ -1751,21 +1751,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13360008597373962,
-            "encoding": 14.721899759024382,
-            "retrieval": 1.1021997779607773,
-            "filtering": 0.048199668526649475,
+            "validation": 0.12749992311000824,
+            "encoding": 15.148499980568886,
+            "retrieval": 1.1120997369289398,
+            "filtering": 0.04759989678859711,
             "threshold": 0,
-            "ranking": 0.060399994254112244,
-            "hydration": 0.04810001701116562,
-            "total": 17.41009997203946
+            "ranking": 0.06099976599216461,
+            "hydration": 0.05039991810917854,
+            "total": 18.149300012737513
           },
           "trace": [
             {
@@ -1825,9 +1825,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.888700149953365,
+      "elapsed_ms": 21.183600183576345,
       "response": {
-        "request_id": "de563bdd-bd3f-46a4-a9f3-3cbcd261fe01",
+        "request_id": "7c1ebf61-e4e6-47d1-bb23-2aecc283e9d2",
         "query": {
           "mode": "text",
           "text": "túi xách",
@@ -1853,6 +1853,26 @@
           {
             "rank": 1,
             "product": {
+              "product_id": "P111",
+              "name": "Túi xách Không xác định Kelly Bag đỏ rượu",
+              "category": "bag",
+              "brand": "Không xác định",
+              "color": "đỏ rượu",
+              "price_vnd": 1700000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P111"
+            },
+            "score": 0.7344386577606201,
+            "component_scores": {
+              "text": 0.7344387173652649,
+              "image": null
+            },
+            "rank_score": 0.028169014084507043,
+            "lexical_score": 4.151360883537838
+          },
+          {
+            "rank": 2,
+            "product": {
               "product_id": "P119",
               "name": "Túi xách Không xác định Handtooled leather handbag Celtic trắng",
               "category": "bag",
@@ -1867,28 +1887,8 @@
               "text": 0.723262369632721,
               "image": null
             },
-            "rank_score": 0.02844163539403516,
-            "lexical_score": 4.551855630528543
-          },
-          {
-            "rank": 2,
-            "product": {
-              "product_id": "P111",
-              "name": "Túi xách Không xác định Kelly Bag đỏ rượu",
-              "category": "bag",
-              "brand": "Không xác định",
-              "color": "đỏ rượu",
-              "price_vnd": 1700000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P111"
-            },
-            "score": 0.7344385981559753,
-            "component_scores": {
-              "text": 0.7344386577606201,
-              "image": null
-            },
-            "rank_score": 0.028370221327967807,
-            "lexical_score": 4.180865346625006
+            "rank_score": 0.028021349599695006,
+            "lexical_score": 4.52971864919594
           },
           {
             "rank": 3,
@@ -1904,30 +1904,30 @@
             },
             "score": 0.7297670245170593,
             "component_scores": {
-              "text": 0.7297669053077698,
+              "text": 0.729766845703125,
               "image": null
             },
             "rank_score": 0.027650648360030512,
-            "lexical_score": 4.334868958797325
+            "lexical_score": 4.309796240788834
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12829992920160294,
-            "encoding": 15.90520003810525,
-            "retrieval": 1.110900193452835,
-            "filtering": 0.047600362449884415,
+            "validation": 0.1417999155819416,
+            "encoding": 14.918300323188305,
+            "retrieval": 1.1195000261068344,
+            "filtering": 0.04789978265762329,
             "threshold": 0,
-            "ranking": 0.6026001647114754,
-            "hydration": 0.05060015246272087,
-            "total": 19.28530028089881
+            "ranking": 0.5621998570859432,
+            "hydration": 0.06900029256939888,
+            "total": 18.53469992056489
           },
           "trace": [
             {
@@ -1975,7 +1975,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -1987,9 +1987,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 19.09680012613535,
+      "elapsed_ms": 20.617600064724684,
       "response": {
-        "request_id": "c90b116a-17b2-4831-8586-c22ed434e0ec",
+        "request_id": "b0a47789-dcef-406e-a395-34819f9282fb",
         "query": {
           "mode": "text",
           "text": "balo",
@@ -2024,12 +2024,12 @@
               "in_stock": false,
               "image_url": "/api/v1/media/products/P033"
             },
-            "score": 0.7402158975601196,
+            "score": 0.7402159571647644,
             "component_scores": {
-              "text": 0.7402159571647644,
+              "text": 0.7402158975601196,
               "image": null
             },
-            "rank_score": 0.7402158975601196,
+            "rank_score": 0.7402159571647644,
             "lexical_score": null
           },
           {
@@ -2055,41 +2055,41 @@
           {
             "rank": 3,
             "product": {
-              "product_id": "P149",
-              "name": "Áo thun On Colton Cotton talks on đỏ đô",
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
               "category": "t_shirt",
-              "brand": "On",
-              "color": "đỏ đô",
-              "price_vnd": 545000,
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
               "in_stock": true,
-              "image_url": "/api/v1/media/products/P149"
+              "image_url": "/api/v1/media/products/P045"
             },
-            "score": 0.7304093837738037,
+            "score": 0.7301579713821411,
             "component_scores": {
-              "text": 0.7304095029830933,
+              "text": 0.7301579713821411,
               "image": null
             },
-            "rank_score": 0.7304093837738037,
+            "rank_score": 0.7301579713821411,
             "lexical_score": null
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12290012091398239,
-            "encoding": 14.799799770116806,
-            "retrieval": 1.0961000807583332,
-            "filtering": 0.04750024527311325,
+            "validation": 0.11719996109604836,
+            "encoding": 13.702599797397852,
+            "retrieval": 1.1029001325368881,
+            "filtering": 0.04810001701116562,
             "threshold": 0,
-            "ranking": 0.06060022860765457,
-            "hydration": 0.04669977352023125,
-            "total": 17.515600193291903
+            "ranking": 0.059999991208314896,
+            "hydration": 0.0483999028801918,
+            "total": 16.72910014167428
           },
           "trace": [
             {
@@ -2149,9 +2149,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 19.903600215911865,
+      "elapsed_ms": 21.218099631369114,
       "response": {
-        "request_id": "6de10bb4-caf7-4176-81bf-fd07382e1663",
+        "request_id": "c0045f66-3041-4972-bbc0-eafa5dbb916a",
         "query": {
           "mode": "text",
           "text": "balo",
@@ -2191,8 +2191,8 @@
               "text": 0.7225319743156433,
               "image": null
             },
-            "rank_score": 0.030834914611005692,
-            "lexical_score": 4.5384615819451595
+            "rank_score": 0.031054405392392875,
+            "lexical_score": 4.638247913832781
           },
           {
             "rank": 2,
@@ -2206,13 +2206,13 @@
               "in_stock": false,
               "image_url": "/api/v1/media/products/P033"
             },
-            "score": 0.7402158975601196,
+            "score": 0.7402159571647644,
             "component_scores": {
-              "text": 0.7402159571647644,
+              "text": 0.7402158975601196,
               "image": null
             },
             "rank_score": 0.03028233151183971,
-            "lexical_score": 4.316249285447779
+            "lexical_score": 4.404482345183089
           },
           {
             "rank": 3,
@@ -2226,32 +2226,32 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P125"
             },
-            "score": 0.7138975262641907,
+            "score": 0.7138974666595459,
             "component_scores": {
-              "text": 0.7138974666595459,
+              "text": 0.7138974070549011,
               "image": null
             },
             "rank_score": 0.028258706467661692,
-            "lexical_score": 4.425991606856933
+            "lexical_score": 4.517920738159182
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12400001287460327,
-            "encoding": 14.985200017690659,
-            "retrieval": 1.0830000974237919,
-            "filtering": 0.04810001701116562,
+            "validation": 0.12229988351464272,
+            "encoding": 13.142300304025412,
+            "retrieval": 1.0899999178946018,
+            "filtering": 0.0491999089717865,
             "threshold": 0,
-            "ranking": 0.582799781113863,
-            "hydration": 0.059300102293491364,
-            "total": 18.318000249564648
+            "ranking": 0.5676001310348511,
+            "hydration": 0.06850017234683037,
+            "total": 16.525800339877605
           },
           "trace": [
             {
@@ -2299,7 +2299,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -2311,9 +2311,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": false,
-      "elapsed_ms": 21.039600018411875,
+      "elapsed_ms": 24.839600082486868,
       "response": {
-        "request_id": "0ebc6551-78d7-4736-b56d-94d6b2daaf87",
+        "request_id": "4835f856-2432-4607-96d2-84953640f4d8",
         "query": {
           "mode": "text",
           "text": "túi tote",
@@ -2339,6 +2339,26 @@
           {
             "rank": 1,
             "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7455280423164368,
+            "component_scores": {
+              "text": 0.7455280423164368,
+              "image": null
+            },
+            "rank_score": 0.7455280423164368,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
               "product_id": "P033",
               "name": "Balo XD Design Bobby Urban màu xám",
               "category": "backpack",
@@ -2348,32 +2368,12 @@
               "in_stock": false,
               "image_url": "/api/v1/media/products/P033"
             },
-            "score": 0.7440583109855652,
+            "score": 0.7440582513809204,
             "component_scores": {
-              "text": 0.7440583109855652,
+              "text": 0.74405837059021,
               "image": null
             },
-            "rank_score": 0.7440583109855652,
-            "lexical_score": null
-          },
-          {
-            "rank": 2,
-            "product": {
-              "product_id": "P149",
-              "name": "Áo thun On Colton Cotton talks on đỏ đô",
-              "category": "t_shirt",
-              "brand": "On",
-              "color": "đỏ đô",
-              "price_vnd": 545000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P149"
-            },
-            "score": 0.7437107563018799,
-            "component_scores": {
-              "text": 0.7437107563018799,
-              "image": null
-            },
-            "rank_score": 0.7437107563018799,
+            "rank_score": 0.7440582513809204,
             "lexical_score": null
           },
           {
@@ -2399,21 +2399,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13720011338591576,
-            "encoding": 16.841199714690447,
-            "retrieval": 1.0848999954760075,
-            "filtering": 0.04830025136470795,
+            "validation": 0.13610022142529488,
+            "encoding": 16.824500169605017,
+            "retrieval": 1.0999999940395355,
+            "filtering": 0.04810001701116562,
             "threshold": 0,
-            "ranking": 0.06160000339150429,
-            "hydration": 0.04759989678859711,
-            "total": 19.53169982880354
+            "ranking": 0.06120000034570694,
+            "hydration": 0.048199668526649475,
+            "total": 19.86239990219474
           },
           "trace": [
             {
@@ -2473,9 +2473,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 21.444200072437525,
+      "elapsed_ms": 25.23790020495653,
       "response": {
-        "request_id": "a820fef4-07cb-4385-adce-252c80dd5940",
+        "request_id": "12c5edf9-3502-49d6-bf47-370bcb31ecc0",
         "query": {
           "mode": "text",
           "text": "túi tote",
@@ -2510,13 +2510,13 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P137"
             },
-            "score": 0.7156627774238586,
+            "score": 0.7156628370285034,
             "component_scores": {
-              "text": 0.7156627178192139,
+              "text": 0.7156627774238586,
               "image": null
             },
-            "rank_score": 0.029827662395050816,
-            "lexical_score": 4.5963009155076655
+            "rank_score": 0.02946236559139785,
+            "lexical_score": 4.575602985247372
           },
           {
             "rank": 2,
@@ -2535,8 +2535,8 @@
               "text": 0.7132939696311951,
               "image": null
             },
-            "rank_score": 0.027583600982429624,
-            "lexical_score": 4.4794915688452654
+            "rank_score": 0.027271052146674038,
+            "lexical_score": 4.456629125983618
           },
           {
             "rank": 3,
@@ -2555,27 +2555,27 @@
               "text": 0.7108641862869263,
               "image": null
             },
-            "rank_score": 0.02749719416386083,
-            "lexical_score": 4.4797802792029096
+            "rank_score": 0.026540946394272742,
+            "lexical_score": 4.454275988973388
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13530021533370018,
-            "encoding": 16.31359988823533,
-            "retrieval": 1.1069001629948616,
-            "filtering": 0.047800131142139435,
+            "validation": 0.13740034773945808,
+            "encoding": 14.028200414031744,
+            "retrieval": 1.1183996684849262,
+            "filtering": 0.04879990592598915,
             "threshold": 0,
-            "ranking": 0.6087999790906906,
-            "hydration": 0.05110027268528938,
-            "total": 19.742799922823906
+            "ranking": 0.8930000476539135,
+            "hydration": 0.07309997454285622,
+            "total": 18.658899702131748
           },
           "trace": [
             {
@@ -2623,7 +2623,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -2635,9 +2635,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 19.480499904602766,
+      "elapsed_ms": 24.979100096970797,
       "response": {
-        "request_id": "7e96ba15-e393-4720-887a-5d8bdd61d7f7",
+        "request_id": "b564c30a-8bbc-4d14-8280-36212d49f448",
         "query": {
           "mode": "text",
           "text": "áo thun",
@@ -2723,21 +2723,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.1321001909673214,
-            "encoding": 15.053699724376202,
-            "retrieval": 1.110099721699953,
-            "filtering": 0.04770001396536827,
+            "validation": 0.1384001225233078,
+            "encoding": 14.37429990619421,
+            "retrieval": 1.1149002239108086,
+            "filtering": 0.04789978265762329,
             "threshold": 0,
-            "ranking": 0.062000006437301636,
-            "hydration": 0.04749977961182594,
-            "total": 17.849100288003683
+            "ranking": 0.06050011143088341,
+            "hydration": 0.04770001396536827,
+            "total": 17.569600138813257
           },
           "trace": [
             {
@@ -2797,9 +2797,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 19.473799970000982,
+      "elapsed_ms": 21.264600101858377,
       "response": {
-        "request_id": "7d8532ea-2281-4535-8220-2ab81ddb9afb",
+        "request_id": "1030aed5-d1bc-4adf-9743-f1fe2f44f828",
         "query": {
           "mode": "text",
           "text": "áo thun",
@@ -2825,46 +2825,6 @@
           {
             "rank": 1,
             "product": {
-              "product_id": "P145",
-              "name": "Áo thun Không xác định Ironed blue T-shirt .JPG đen",
-              "category": "t_shirt",
-              "brand": "Không xác định",
-              "color": "đen",
-              "price_vnd": 520000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P145"
-            },
-            "score": 0.7516469359397888,
-            "component_scores": {
-              "text": 0.7516468167304993,
-              "image": null
-            },
-            "rank_score": 0.03128054740957967,
-            "lexical_score": 4.643932468521159
-          },
-          {
-            "rank": 2,
-            "product": {
-              "product_id": "P144",
-              "name": "Áo thun Không xác định Ironed green T-shirt .JPG trắng",
-              "category": "t_shirt",
-              "brand": "Không xác định",
-              "color": "trắng",
-              "price_vnd": 495000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P144"
-            },
-            "score": 0.7492594122886658,
-            "component_scores": {
-              "text": 0.7492594122886658,
-              "image": null
-            },
-            "rank_score": 0.031099324975891997,
-            "lexical_score": 4.643932468521159
-          },
-          {
-            "rank": 3,
-            "product": {
               "product_id": "P041",
               "name": "Áo thun trơn màu đen",
               "category": "t_shirt",
@@ -2879,27 +2839,67 @@
               "text": 0.7602717280387878,
               "image": null
             },
-            "rank_score": 0.031009615384615385,
-            "lexical_score": 4.531235011347424
+            "rank_score": 0.03125,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7467679381370544,
+            "component_scores": {
+              "text": 0.7467679381370544,
+              "image": null
+            },
+            "rank_score": 0.03036576949620428,
+            "lexical_score": 4.5281097459082575
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7412593364715576,
+            "component_scores": {
+              "text": 0.7412593364715576,
+              "image": null
+            },
+            "rank_score": 0.029906956136464335,
+            "lexical_score": 4.583243300290219
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.1270999200642109,
-            "encoding": 14.372400008141994,
-            "retrieval": 1.0965000838041306,
-            "filtering": 0.04750024527311325,
+            "validation": 0.1338999718427658,
+            "encoding": 13.834599871188402,
+            "retrieval": 1.1585000902414322,
+            "filtering": 0.04770001396536827,
             "threshold": 0,
-            "ranking": 0.5916999652981758,
-            "hydration": 0.05060015246272087,
-            "total": 17.79900025576353
+            "ranking": 0.5864999257028103,
+            "hydration": 0.05119992420077324,
+            "total": 17.389200162142515
           },
           "trace": [
             {
@@ -2947,7 +2947,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -2959,9 +2959,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 19.061599858105183,
+      "elapsed_ms": 20.313999615609646,
       "response": {
-        "request_id": "af897c35-9716-4645-a7d9-0251b5b6bbf8",
+        "request_id": "7ddb32e0-5a85-4bcb-a745-9f6a37ba62cb",
         "query": {
           "mode": "text",
           "text": "áo khoác",
@@ -3016,12 +3016,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P154"
             },
-            "score": 0.7527162432670593,
+            "score": 0.7527163028717041,
             "component_scores": {
               "text": 0.7527163028717041,
               "image": null
             },
-            "rank_score": 0.7527162432670593,
+            "rank_score": 0.7527163028717041,
             "lexical_score": null
           },
           {
@@ -3047,21 +3047,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13320008292794228,
-            "encoding": 14.664999675005674,
-            "retrieval": 1.0714000090956688,
-            "filtering": 0.04759989678859711,
+            "validation": 0.13429997488856316,
+            "encoding": 14.457999728620052,
+            "retrieval": 1.1146003380417824,
+            "filtering": 0.04779966548085213,
             "threshold": 0,
-            "ranking": 0.05970010533928871,
-            "hydration": 0.04700012505054474,
-            "total": 17.374900169670582
+            "ranking": 0.06029987707734108,
+            "hydration": 0.048199668526649475,
+            "total": 17.384099774062634
           },
           "trace": [
             {
@@ -3121,9 +3121,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.510700065642595,
+      "elapsed_ms": 21.965299732983112,
       "response": {
-        "request_id": "a3bf5db6-64b1-47c7-9b2b-f2783b120b33",
+        "request_id": "7989b120-28bb-429a-be84-a3873f7a0db5",
         "query": {
           "mode": "text",
           "text": "áo khoác",
@@ -3158,13 +3158,13 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P154"
             },
-            "score": 0.7527162432670593,
+            "score": 0.7527163028717041,
             "component_scores": {
               "text": 0.7527163028717041,
               "image": null
             },
             "rank_score": 0.03252247488101534,
-            "lexical_score": 4.670260458914807
+            "lexical_score": 4.650827061229977
           },
           {
             "rank": 2,
@@ -3183,8 +3183,8 @@
               "text": 0.7348968386650085,
               "image": null
             },
-            "rank_score": 0.031054405392392875,
-            "lexical_score": 4.670260458914807
+            "rank_score": 0.030834914611005692,
+            "lexical_score": 4.650827061229977
           },
           {
             "rank": 3,
@@ -3203,27 +3203,27 @@
               "text": 0.7341977953910828,
               "image": null
             },
-            "rank_score": 0.03057889822595705,
-            "lexical_score": 4.56639990259612
+            "rank_score": 0.03036576949620428,
+            "lexical_score": 4.546339621299038
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13229995965957642,
-            "encoding": 15.316800214350224,
-            "retrieval": 1.1519999243319035,
-            "filtering": 0.04899967461824417,
+            "validation": 0.14320015907287598,
+            "encoding": 14.787799678742886,
+            "retrieval": 1.0908003896474838,
+            "filtering": 0.04810001701116562,
             "threshold": 0,
-            "ranking": 0.601000152528286,
-            "hydration": 0.053399708122015,
-            "total": 18.827900290489197
+            "ranking": 0.5784002132713795,
+            "hydration": 0.05260016769170761,
+            "total": 18.386700190603733
           },
           "trace": [
             {
@@ -3271,7 +3271,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -3283,9 +3283,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 19.08579980954528,
+      "elapsed_ms": 19.826900213956833,
       "response": {
-        "request_id": "02bdb1c5-b651-4f20-81a7-e6c4d0a134cc",
+        "request_id": "99c445ce-c944-42b1-93ae-5b1851009bc5",
         "query": {
           "mode": "text",
           "text": "đồng hồ",
@@ -3371,21 +3371,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12939982116222382,
-            "encoding": 14.828499872237444,
-            "retrieval": 1.0779998265206814,
-            "filtering": 0.0491999089717865,
+            "validation": 0.1337002031505108,
+            "encoding": 13.406299985945225,
+            "retrieval": 1.1904998682439327,
+            "filtering": 0.04820013418793678,
             "threshold": 0,
-            "ranking": 0.06249966099858284,
-            "hydration": 0.04620011895895004,
-            "total": 17.513399943709373
+            "ranking": 0.06099976599216461,
+            "hydration": 0.04660012200474739,
+            "total": 16.388699878007174
           },
           "trace": [
             {
@@ -3445,9 +3445,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.451500080525875,
+      "elapsed_ms": 19.89190001040697,
       "response": {
-        "request_id": "0c72c3b4-7b5e-4d0c-aa39-781bb8736fa2",
+        "request_id": "b8129f34-80b8-4af6-982b-003eff5f2284",
         "query": {
           "mode": "text",
           "text": "đồng hồ",
@@ -3488,7 +3488,7 @@
               "image": null
             },
             "rank_score": 0.03125,
-            "lexical_score": 4.4794915688452654
+            "lexical_score": 4.456629125983618
           },
           {
             "rank": 2,
@@ -3508,7 +3508,7 @@
               "image": null
             },
             "rank_score": 0.031054405392392875,
-            "lexical_score": 4.496607576217214
+            "lexical_score": 4.474286869340553
           },
           {
             "rank": 3,
@@ -3528,26 +3528,26 @@
               "image": null
             },
             "rank_score": 0.030679156908665108,
-            "lexical_score": 4.328619062584904
+            "lexical_score": 4.299755319863776
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12589991092681885,
-            "encoding": 15.531899873167276,
-            "retrieval": 1.0806000791490078,
-            "filtering": 0.04749977961182594,
+            "validation": 0.1354999840259552,
+            "encoding": 13.745700009167194,
+            "retrieval": 1.1129002086818218,
+            "filtering": 0.04820013418793678,
             "threshold": 0,
-            "ranking": 0.5948999896645546,
-            "hydration": 0.050700269639492035,
-            "total": 18.8614996150136
+            "ranking": 0.5795997567474842,
+            "hydration": 0.06069988012313843,
+            "total": 17.169599886983633
           },
           "trace": [
             {
@@ -3595,7 +3595,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -3607,9 +3607,9 @@
       "family": "standard",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 18.325999844819307,
+      "elapsed_ms": 20.1300997287035,
       "response": {
-        "request_id": "f85cf295-55c2-4c3a-b9ff-cdbb682cfbc9",
+        "request_id": "e4d89972-6980-4414-b773-1abf94a5226a",
         "query": {
           "mode": "text",
           "text": "kính mát",
@@ -3635,6 +3635,46 @@
           {
             "rank": 1,
             "product": {
+              "product_id": "P177",
+              "name": "Kính mát thể thao mắt phản quang",
+              "category": "sunglasses",
+              "brand": "Không xác định",
+              "color": "đen và bạc",
+              "price_vnd": 550000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P177"
+            },
+            "score": 0.7571138143539429,
+            "component_scores": {
+              "text": 0.7571138143539429,
+              "image": null
+            },
+            "rank_score": 0.7571138143539429,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P171",
+              "name": "Kính mát Ray-Ban gọng đen mắt xanh",
+              "category": "sunglasses",
+              "brand": "Ray-Ban",
+              "color": "đen và xanh",
+              "price_vnd": 1800000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P171"
+            },
+            "score": 0.7479618787765503,
+            "component_scores": {
+              "text": 0.7479618787765503,
+              "image": null
+            },
+            "rank_score": 0.7479618787765503,
+            "lexical_score": null
+          },
+          {
+            "rank": 3,
+            "product": {
               "product_id": "P179",
               "name": "Kính mát Không xác định Junior UV sunglasses đen toàn bộ",
               "category": "sunglasses",
@@ -3644,72 +3684,32 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P179"
             },
-            "score": 0.7425543665885925,
+            "score": 0.7425544261932373,
             "component_scores": {
               "text": 0.7425543665885925,
               "image": null
             },
-            "rank_score": 0.7425543665885925,
-            "lexical_score": null
-          },
-          {
-            "rank": 2,
-            "product": {
-              "product_id": "P033",
-              "name": "Balo XD Design Bobby Urban màu xám",
-              "category": "backpack",
-              "brand": "XD Design",
-              "color": "xám",
-              "price_vnd": 1455000,
-              "in_stock": false,
-              "image_url": "/api/v1/media/products/P033"
-            },
-            "score": 0.7424899339675903,
-            "component_scores": {
-              "text": 0.7424898743629456,
-              "image": null
-            },
-            "rank_score": 0.7424899339675903,
-            "lexical_score": null
-          },
-          {
-            "rank": 3,
-            "product": {
-              "product_id": "P149",
-              "name": "Áo thun On Colton Cotton talks on đỏ đô",
-              "category": "t_shirt",
-              "brand": "On",
-              "color": "đỏ đô",
-              "price_vnd": 545000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P149"
-            },
-            "score": 0.7405920624732971,
-            "component_scores": {
-              "text": 0.7405920028686523,
-              "image": null
-            },
-            "rank_score": 0.7405920624732971,
+            "rank_score": 0.7425544261932373,
             "lexical_score": null
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13739988207817078,
-            "encoding": 14.014100190252066,
-            "retrieval": 1.0660002008080482,
-            "filtering": 0.0479002483189106,
+            "validation": 0.12010009959340096,
+            "encoding": 13.840400148183107,
+            "retrieval": 1.107300166040659,
+            "filtering": 0.04829978570342064,
             "threshold": 0,
-            "ranking": 0.06280001252889633,
-            "hydration": 0.04650000482797623,
-            "total": 16.67949976399541
+            "ranking": 0.06050011143088341,
+            "hydration": 0.04759989678859711,
+            "total": 16.801699995994568
           },
           "trace": [
             {
@@ -3769,9 +3769,9 @@
       "family": "standard",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.552000030875206,
+      "elapsed_ms": 22.71750010550022,
       "response": {
-        "request_id": "2fb936cf-e9e0-481e-87d2-b1f234fec143",
+        "request_id": "c8ce77a4-a03f-49d8-a543-c38f7461aa86",
         "query": {
           "mode": "text",
           "text": "kính mát",
@@ -3797,6 +3797,26 @@
           {
             "rank": 1,
             "product": {
+              "product_id": "P171",
+              "name": "Kính mát Ray-Ban gọng đen mắt xanh",
+              "category": "sunglasses",
+              "brand": "Ray-Ban",
+              "color": "đen và xanh",
+              "price_vnd": 1800000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P171"
+            },
+            "score": 0.7479618787765503,
+            "component_scores": {
+              "text": 0.7479618787765503,
+              "image": null
+            },
+            "rank_score": 0.031754032258064516,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 2,
+            "product": {
               "product_id": "P179",
               "name": "Kính mát Không xác định Junior UV sunglasses đen toàn bộ",
               "category": "sunglasses",
@@ -3806,16 +3826,16 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P179"
             },
-            "score": 0.7425543665885925,
+            "score": 0.7425544261932373,
             "component_scores": {
               "text": 0.7425543665885925,
               "image": null
             },
-            "rank_score": 0.032266458495966696,
-            "lexical_score": 4.5372309337290435
+            "rank_score": 0.031746031746031744,
+            "lexical_score": 4.514627691435194
           },
           {
-            "rank": 2,
+            "rank": 3,
             "product": {
               "product_id": "P055",
               "name": "Kính mát gọng đen tròng tròn",
@@ -3831,47 +3851,27 @@
               "text": 0.7382252216339111,
               "image": null
             },
-            "rank_score": 0.032018442622950824,
-            "lexical_score": 4.602114860700316
-          },
-          {
-            "rank": 3,
-            "product": {
-              "product_id": "P173",
-              "name": "Kính mát Không xác định 2008-07-27 Sunglasses gọng bạc mắt xám",
-              "category": "sunglasses",
-              "brand": "Không xác định",
-              "color": "gọng bạc mắt xám",
-              "price_vnd": 1800000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P173"
-            },
-            "score": 0.721626877784729,
-            "component_scores": {
-              "text": 0.7216269969940186,
-              "image": null
-            },
-            "rank_score": 0.02964254577157803,
-            "lexical_score": 4.592157083129124
+            "rank_score": 0.031544957774465976,
+            "lexical_score": 4.583243300290219
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13109995052218437,
-            "encoding": 15.555900055915117,
-            "retrieval": 1.086999662220478,
-            "filtering": 0.04820013418793678,
+            "validation": 0.12979982420802116,
+            "encoding": 14.404499903321266,
+            "retrieval": 1.16390036419034,
+            "filtering": 0.04830025136470795,
             "threshold": 0,
-            "ranking": 0.7035997696220875,
-            "hydration": 0.04959991201758385,
-            "total": 19.009399693459272
+            "ranking": 0.5846000276505947,
+            "hydration": 0.05590030923485756,
+            "total": 18.046699929982424
           },
           "trace": [
             {
@@ -3919,7 +3919,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -3931,9 +3931,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 20.209699869155884,
+      "elapsed_ms": 20.432899706065655,
       "response": {
-        "request_id": "0e7a3445-134a-4a0a-97a3-366ad3f88dfe",
+        "request_id": "aaf2fa40-0e45-4b8e-92fc-e6b600fa74da",
         "query": {
           "mode": "text",
           "text": "running shoes",
@@ -3968,12 +3968,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P066"
             },
-            "score": 0.7703691124916077,
+            "score": 0.7703690528869629,
             "component_scores": {
-              "text": 0.7703691720962524,
+              "text": 0.7703691124916077,
               "image": null
             },
-            "rank_score": 0.7703691124916077,
+            "rank_score": 0.7703690528869629,
             "lexical_score": null
           },
           {
@@ -3988,12 +3988,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P075"
             },
-            "score": 0.7642225623130798,
+            "score": 0.7642226219177246,
             "component_scores": {
               "text": 0.7642225027084351,
               "image": null
             },
-            "rank_score": 0.7642225623130798,
+            "rank_score": 0.7642226219177246,
             "lexical_score": null
           },
           {
@@ -4019,21 +4019,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13250019401311874,
-            "encoding": 15.86179994046688,
-            "retrieval": 1.1033001355826855,
-            "filtering": 0.04770001396536827,
+            "validation": 0.12619979679584503,
+            "encoding": 13.81269982084632,
+            "retrieval": 1.0958998464047909,
+            "filtering": 0.05029980093240738,
             "threshold": 0,
-            "ranking": 0.06029987707734108,
-            "hydration": 0.0483999028801918,
-            "total": 18.602299969643354
+            "ranking": 0.059300102293491364,
+            "hydration": 0.04820013418793678,
+            "total": 16.588099766522646
           },
           "trace": [
             {
@@ -4093,9 +4093,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 21.226400043815374,
+      "elapsed_ms": 19.86619969829917,
       "response": {
-        "request_id": "64af6248-7a44-4220-8461-4f0d11fd5731",
+        "request_id": "0e25820a-9f25-4993-b1fe-7764932eadda",
         "query": {
           "mode": "text",
           "text": "running shoes",
@@ -4130,13 +4130,13 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P066"
             },
-            "score": 0.7703691124916077,
+            "score": 0.7703690528869629,
             "component_scores": {
-              "text": 0.7703691720962524,
+              "text": 0.7703691124916077,
               "image": null
             },
             "rank_score": 0.03278688524590164,
-            "lexical_score": 3.957971798139348
+            "lexical_score": 3.944519180163875
           },
           {
             "rank": 2,
@@ -4156,7 +4156,7 @@
               "image": null
             },
             "rank_score": 0.03125763125763126,
-            "lexical_score": 3.912708776990069
+            "lexical_score": 3.8976906118204466
           },
           {
             "rank": 3,
@@ -4170,32 +4170,32 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P001"
             },
-            "score": 0.7368873357772827,
+            "score": 0.7368872761726379,
             "component_scores": {
-              "text": 0.7368872165679932,
+              "text": 0.7368870973587036,
               "image": null
             },
             "rank_score": 0.0293236301369863,
-            "lexical_score": 3.914681883439201
+            "lexical_score": 3.902177360487052
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.14269957318902016,
-            "encoding": 15.789200086146593,
-            "retrieval": 1.0899999178946018,
-            "filtering": 0.04779966548085213,
+            "validation": 0.1268000341951847,
+            "encoding": 14.66280035674572,
+            "retrieval": 1.1664996854960918,
+            "filtering": 0.04829978570342064,
             "threshold": 0,
-            "ranking": 0.708400271832943,
-            "hydration": 0.0729002058506012,
-            "total": 19.27290018647909
+            "ranking": 0.5816998891532421,
+            "hydration": 0.05990033969283104,
+            "total": 18.08569999411702
           },
           "trace": [
             {
@@ -4243,7 +4243,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -4255,9 +4255,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 19.695899914950132,
+      "elapsed_ms": 22.49799994751811,
       "response": {
-        "request_id": "cb7fdb7d-22f1-4392-8e4b-ab0200bec1d2",
+        "request_id": "7faf93f3-53f0-4e6a-b584-c3d92653105e",
         "query": {
           "mode": "text",
           "text": "trail shoes",
@@ -4332,32 +4332,32 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P077"
             },
-            "score": 0.7594462037086487,
+            "score": 0.7594461441040039,
             "component_scores": {
               "text": 0.7594461441040039,
               "image": null
             },
-            "rank_score": 0.7594462037086487,
+            "rank_score": 0.7594461441040039,
             "lexical_score": null
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13250019401311874,
-            "encoding": 15.41990041732788,
-            "retrieval": 1.086999662220478,
-            "filtering": 0.048900023102760315,
+            "validation": 0.12410013005137444,
+            "encoding": 16.30220003426075,
+            "retrieval": 1.1170003563165665,
+            "filtering": 0.048199668526649475,
             "threshold": 0,
-            "ranking": 0.06800005212426186,
-            "hydration": 0.045800115913152695,
-            "total": 18.143100198358297
+            "ranking": 0.060399994254112244,
+            "hydration": 0.04879990592598915,
+            "total": 19.257099833339453
           },
           "trace": [
             {
@@ -4417,9 +4417,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.02870012074709,
+      "elapsed_ms": 21.521999966353178,
       "response": {
-        "request_id": "d7df0581-be04-4ad3-8602-e2ec318b37ff",
+        "request_id": "109350ea-5ef5-416e-bc2f-c9663d66cf24",
         "query": {
           "mode": "text",
           "text": "trail shoes",
@@ -4460,30 +4460,10 @@
               "image": null
             },
             "rank_score": 0.03200204813108039,
-            "lexical_score": 4.54910031863972
+            "lexical_score": 4.52400308411372
           },
           {
             "rank": 2,
-            "product": {
-              "product_id": "P077",
-              "name": "Giày địa hình Không xác định Trail running.JPG xanh dương",
-              "category": "trail_shoes",
-              "brand": "Không xác định",
-              "color": "xanh dương",
-              "price_vnd": 1500000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P077"
-            },
-            "score": 0.7594462037086487,
-            "component_scores": {
-              "text": 0.7594461441040039,
-              "image": null
-            },
-            "rank_score": 0.031024531024531024,
-            "lexical_score": 4.515115488176924
-          },
-          {
-            "rank": 3,
             "product": {
               "product_id": "P076",
               "name": "Giày địa hình Không xác định Trail running shoe cam đất",
@@ -4500,26 +4480,46 @@
               "image": null
             },
             "rank_score": 0.030886196246139225,
-            "lexical_score": 4.481634671348617
+            "lexical_score": 4.4545071485730485
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P077",
+              "name": "Giày địa hình Không xác định Trail running.JPG xanh dương",
+              "category": "trail_shoes",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 1500000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P077"
+            },
+            "score": 0.7594461441040039,
+            "component_scores": {
+              "text": 0.7594461441040039,
+              "image": null
+            },
+            "rank_score": 0.030798389007344232,
+            "lexical_score": 4.48898615830182
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.157299917191267,
-            "encoding": 15.083800069987774,
-            "retrieval": 1.0779998265206814,
-            "filtering": 0.04749977961182594,
+            "validation": 0.13279961422085762,
+            "encoding": 14.586899895220995,
+            "retrieval": 1.1106999590992928,
+            "filtering": 0.047999899834394455,
             "threshold": 0,
-            "ranking": 0.6047999486327171,
-            "hydration": 0.050900038331747055,
-            "total": 18.4277999214828
+            "ranking": 0.5876999348402023,
+            "hydration": 0.05050003528594971,
+            "total": 18.20670021697879
           },
           "trace": [
             {
@@ -4567,7 +4567,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -4579,9 +4579,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": false,
-      "elapsed_ms": 20.03249991685152,
+      "elapsed_ms": 18.811000045388937,
       "response": {
-        "request_id": "3f0af187-41c8-4d9b-8126-5dd7ad04c854",
+        "request_id": "fb8c6b3f-fbb9-4984-8d01-00194b592a61",
         "query": {
           "mode": "text",
           "text": "snekaer",
@@ -4628,20 +4628,20 @@
             "rank": 2,
             "product": {
               "product_id": "P149",
-              "name": "Áo thun On Colton Cotton talks on đỏ đô",
+              "name": "Áo thun đen in chữ trắng và hồng",
               "category": "t_shirt",
-              "brand": "On",
-              "color": "đỏ đô",
+              "brand": "Không xác định",
+              "color": "đen",
               "price_vnd": 545000,
               "in_stock": true,
               "image_url": "/api/v1/media/products/P149"
             },
-            "score": 0.7465530633926392,
+            "score": 0.7458042502403259,
             "component_scores": {
-              "text": 0.7465530633926392,
+              "text": 0.7458041906356812,
               "image": null
             },
-            "rank_score": 0.7465530633926392,
+            "rank_score": 0.7458042502403259,
             "lexical_score": null
           },
           {
@@ -4667,21 +4667,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13240007683634758,
-            "encoding": 15.656100120395422,
-            "retrieval": 1.0783001780509949,
-            "filtering": 0.04810001701116562,
+            "validation": 0.11810008436441422,
+            "encoding": 13.853500131517649,
+            "retrieval": 1.1073998175561428,
+            "filtering": 0.0483999028801918,
             "threshold": 0,
-            "ranking": 0.06069988012313843,
-            "hydration": 0.047800131142139435,
-            "total": 18.381899688392878
+            "ranking": 0.05889963358640671,
+            "hydration": 0.04879990592598915,
+            "total": 16.72480022534728
           },
           "trace": [
             {
@@ -4741,9 +4741,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 21.386300213634968,
+      "elapsed_ms": 20.588899962604046,
       "response": {
-        "request_id": "ca6eafba-2363-4662-85a3-21473ffa0643",
+        "request_id": "2ad04e74-3f9e-48f8-9a6a-60608309f632",
         "query": {
           "mode": "text",
           "text": "snekaer",
@@ -4778,13 +4778,13 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P090"
             },
-            "score": 0.7211351990699768,
+            "score": 0.7211352586746216,
             "component_scores": {
               "text": 0.721135139465332,
               "image": null
             },
-            "rank_score": 0.027912386121341344,
-            "lexical_score": 4.413824778868031
+            "rank_score": 0.027745885954841176,
+            "lexical_score": 4.390442780876928
           },
           {
             "rank": 2,
@@ -4803,8 +4803,8 @@
               "text": 0.7118000984191895,
               "image": null
             },
-            "rank_score": 0.026373626373626377,
-            "lexical_score": 4.5004248677858465
+            "rank_score": 0.026137303556658397,
+            "lexical_score": 4.479800664067447
           },
           {
             "rank": 3,
@@ -4823,27 +4823,27 @@
               "text": 0.6984387636184692,
               "image": null
             },
-            "rank_score": 0.02540245163195983,
-            "lexical_score": 4.602567894254107
+            "rank_score": 0.02494045116995937,
+            "lexical_score": 4.58320199698444
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.1349998638033867,
-            "encoding": 15.687000006437302,
-            "retrieval": 1.1195000261068344,
-            "filtering": 0.04810001701116562,
+            "validation": 0.12669991701841354,
+            "encoding": 14.831200242042542,
+            "retrieval": 1.102800015360117,
+            "filtering": 0.04730001091957092,
             "threshold": 0,
-            "ranking": 0.9398004040122032,
-            "hydration": 0.049999915063381195,
-            "total": 19.57110036164522
+            "ranking": 0.8539999835193157,
+            "hydration": 0.050700269639492035,
+            "total": 18.587199971079826
           },
           "trace": [
             {
@@ -4891,7 +4891,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": [
             {
               "input": "snekaer",
@@ -4908,9 +4908,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 19.88920010626316,
+      "elapsed_ms": 19.281100016087294,
       "response": {
-        "request_id": "f2a9cf0c-29e9-4102-9022-9b951f7a909b",
+        "request_id": "75690145-f190-4d21-bf92-30bb9c3b7200",
         "query": {
           "mode": "text",
           "text": "boot",
@@ -4967,7 +4967,7 @@
             },
             "score": 0.7530368566513062,
             "component_scores": {
-              "text": 0.7530367970466614,
+              "text": 0.7530367374420166,
               "image": null
             },
             "rank_score": 0.7530368566513062,
@@ -4996,21 +4996,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12119999155402184,
-            "encoding": 15.561199747025967,
-            "retrieval": 1.08819967135787,
-            "filtering": 0.047999899834394455,
+            "validation": 0.11899974197149277,
+            "encoding": 14.850799925625324,
+            "retrieval": 1.1682999320328236,
+            "filtering": 0.06309989839792252,
             "threshold": 0,
-            "ranking": 0.07579987868666649,
-            "hydration": 0.08520018309354782,
-            "total": 18.337300047278404
+            "ranking": 0.06960006430745125,
+            "hydration": 0.058399979025125504,
+            "total": 17.647599801421165
           },
           "trace": [
             {
@@ -5070,9 +5070,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 19.937200006097555,
+      "elapsed_ms": 21.7246999964118,
       "response": {
-        "request_id": "39552337-fc99-4789-a1e3-72e9be5483b9",
+        "request_id": "58f74bfd-f61e-47fb-a85a-a91220cf3ba2",
         "query": {
           "mode": "text",
           "text": "boot",
@@ -5109,11 +5109,11 @@
             },
             "score": 0.7530368566513062,
             "component_scores": {
-              "text": 0.7530367970466614,
+              "text": 0.7530367374420166,
               "image": null
             },
             "rank_score": 0.03200204813108039,
-            "lexical_score": 4.626416457324475
+            "lexical_score": 4.606712488253831
           },
           {
             "rank": 2,
@@ -5129,11 +5129,11 @@
             },
             "score": 0.7368420958518982,
             "component_scores": {
-              "text": 0.7368420958518982,
+              "text": 0.7368420362472534,
               "image": null
             },
             "rank_score": 0.0315136476426799,
-            "lexical_score": 4.643932468521159
+            "lexical_score": 4.62362389029644
           },
           {
             "rank": 3,
@@ -5153,26 +5153,26 @@
               "image": null
             },
             "rank_score": 0.030679156908665108,
-            "lexical_score": 4.137628469776607
+            "lexical_score": 4.110239946424033
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.11789985001087189,
-            "encoding": 14.608200173825026,
-            "retrieval": 1.094999723136425,
-            "filtering": 0.05450006574392319,
+            "validation": 0.11020014062523842,
+            "encoding": 15.229699667543173,
+            "retrieval": 1.1140001006424427,
+            "filtering": 0.04910025745630264,
             "threshold": 0,
-            "ranking": 0.5932999774813652,
-            "hydration": 0.05029980093240738,
-            "total": 17.95249991118908
+            "ranking": 0.592800322920084,
+            "hydration": 0.05770009011030197,
+            "total": 19.115999806672335
           },
           "trace": [
             {
@@ -5220,7 +5220,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -5232,9 +5232,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 19.02009965851903,
+      "elapsed_ms": 19.61319986730814,
       "response": {
-        "request_id": "e69d559d-5bb3-4062-80d0-06b5f9e20187",
+        "request_id": "31f9b88a-23ae-46dd-a9cd-19739b06b032",
         "query": {
           "mode": "text",
           "text": "sandals",
@@ -5320,21 +5320,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.14659995213150978,
-            "encoding": 14.443499967455864,
-            "retrieval": 1.0736999101936817,
-            "filtering": 0.0483999028801918,
+            "validation": 0.12079998850822449,
+            "encoding": 13.851199764758348,
+            "retrieval": 1.1807000264525414,
+            "filtering": 0.049999915063381195,
             "threshold": 0,
-            "ranking": 0.06539979949593544,
-            "hydration": 0.06910040974617004,
-            "total": 17.29109976440668
+            "ranking": 0.060399994254112244,
+            "hydration": 0.07269997149705887,
+            "total": 16.804900020360947
           },
           "trace": [
             {
@@ -5394,9 +5394,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 19.093699753284454,
+      "elapsed_ms": 21.12240018323064,
       "response": {
-        "request_id": "45c5292e-a4a9-45dc-8e78-eb49074e1867",
+        "request_id": "c8be1d3f-ceb3-4739-9d57-37724bfd10c4",
         "query": {
           "mode": "text",
           "text": "sandals",
@@ -5437,7 +5437,7 @@
               "image": null
             },
             "rank_score": 0.03252247488101534,
-            "lexical_score": 4.805135920893594
+            "lexical_score": 4.7886661457591915
           },
           {
             "rank": 2,
@@ -5457,7 +5457,7 @@
               "image": null
             },
             "rank_score": 0.032266458495966696,
-            "lexical_score": 4.751246993755241
+            "lexical_score": 4.732916034324713
           },
           {
             "rank": 3,
@@ -5477,26 +5477,26 @@
               "image": null
             },
             "rank_score": 0.0315136476426799,
-            "lexical_score": 4.761927864721836
+            "lexical_score": 4.743961966541551
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12770015746355057,
-            "encoding": 14.26189998164773,
-            "retrieval": 1.0726000182330608,
-            "filtering": 0.04820013418793678,
+            "validation": 0.1254999078810215,
+            "encoding": 13.683199882507324,
+            "retrieval": 1.116500236093998,
+            "filtering": 0.04899967461824417,
             "threshold": 0,
-            "ranking": 0.5851997993886471,
-            "hydration": 0.05020014941692352,
-            "total": 17.53720035776496
+            "ranking": 0.5659000016748905,
+            "hydration": 0.05120038986206055,
+            "total": 17.388199921697378
           },
           "trace": [
             {
@@ -5544,7 +5544,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -5556,9 +5556,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 18.933000043034554,
+      "elapsed_ms": 26.940700132399797,
       "response": {
-        "request_id": "c5f8f6a3-54a5-4b50-ae73-ddaa02129af9",
+        "request_id": "977ec9b2-6c9d-4d4a-80d8-d2bcae357f8f",
         "query": {
           "mode": "text",
           "text": "handbag",
@@ -5595,7 +5595,7 @@
             },
             "score": 0.7631934881210327,
             "component_scores": {
-              "text": 0.7631933689117432,
+              "text": 0.7631934285163879,
               "image": null
             },
             "rank_score": 0.7631934881210327,
@@ -5633,32 +5633,32 @@
               "in_stock": false,
               "image_url": "/api/v1/media/products/P033"
             },
-            "score": 0.7595385909080505,
+            "score": 0.7595385313034058,
             "component_scores": {
-              "text": 0.7595385313034058,
+              "text": 0.7595385909080505,
               "image": null
             },
-            "rank_score": 0.7595385909080505,
+            "rank_score": 0.7595385313034058,
             "lexical_score": null
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13069994747638702,
-            "encoding": 14.624400064349174,
-            "retrieval": 1.0830000974237919,
-            "filtering": 0.04789978265762329,
+            "validation": 0.1334003172814846,
+            "encoding": 17.622100189328194,
+            "retrieval": 1.1013997718691826,
+            "filtering": 0.053399708122015,
             "threshold": 0,
-            "ranking": 0.06099976599216461,
-            "hydration": 0.04739966243505478,
-            "total": 17.332700081169605
+            "ranking": 0.0633997842669487,
+            "hydration": 0.0729002058506012,
+            "total": 20.82799980416894
           },
           "trace": [
             {
@@ -5718,9 +5718,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.9583998657763,
+      "elapsed_ms": 23.178200237452984,
       "response": {
-        "request_id": "43527727-018d-482a-986b-a72c8708a7cd",
+        "request_id": "ffd45380-4370-49be-a042-41d7b80dc287",
         "query": {
           "mode": "text",
           "text": "handbag",
@@ -5761,7 +5761,7 @@
               "image": null
             },
             "rank_score": 0.031544957774465976,
-            "lexical_score": 4.551855630528543
+            "lexical_score": 4.52971864919594
           },
           {
             "rank": 2,
@@ -5777,11 +5777,11 @@
             },
             "score": 0.7631934881210327,
             "component_scores": {
-              "text": 0.7631933689117432,
+              "text": 0.7631934285163879,
               "image": null
             },
             "rank_score": 0.030679156908665108,
-            "lexical_score": 4.295314115815813
+            "lexical_score": 4.269064372495596
           },
           {
             "rank": 3,
@@ -5801,26 +5801,26 @@
               "image": null
             },
             "rank_score": 0.03021353930031804,
-            "lexical_score": 4.180865346625006
+            "lexical_score": 4.151360883537838
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12640003114938736,
-            "encoding": 16.03240007534623,
-            "retrieval": 1.1320002377033234,
-            "filtering": 0.047999899834394455,
+            "validation": 0.12329965829849243,
+            "encoding": 14.771200250834227,
+            "retrieval": 1.1080000549554825,
+            "filtering": 0.04810001701116562,
             "threshold": 0,
-            "ranking": 0.6101001054048538,
-            "hydration": 0.05020014941692352,
-            "total": 19.380000419914722
+            "ranking": 0.5775000900030136,
+            "hydration": 0.05039991810917854,
+            "total": 18.416699953377247
           },
           "trace": [
             {
@@ -5868,7 +5868,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -5880,9 +5880,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 19.19169956818223,
+      "elapsed_ms": 20.574800204485655,
       "response": {
-        "request_id": "7651c451-3fb3-4184-bfbc-1fd834742195",
+        "request_id": "265803c9-1cac-4e8a-8387-bdbda9eb048c",
         "query": {
           "mode": "text",
           "text": "ba lo",
@@ -5919,7 +5919,7 @@
             },
             "score": 0.7497321367263794,
             "component_scores": {
-              "text": 0.7497321367263794,
+              "text": 0.7497320771217346,
               "image": null
             },
             "rank_score": 0.7497321367263794,
@@ -5968,21 +5968,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.1349998638033867,
-            "encoding": 14.72900016233325,
-            "retrieval": 1.1463998816907406,
-            "filtering": 0.04850002005696297,
+            "validation": 0.12329965829849243,
+            "encoding": 14.003100339323282,
+            "retrieval": 1.1092000640928745,
+            "filtering": 0.04820013418793678,
             "threshold": 0,
-            "ranking": 0.06389990448951721,
-            "hydration": 0.04940014332532883,
-            "total": 17.526099923998117
+            "ranking": 0.059099867939949036,
+            "hydration": 0.04830025136470795,
+            "total": 16.829099971801043
           },
           "trace": [
             {
@@ -6042,9 +6042,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 19.80780018493533,
+      "elapsed_ms": 20.54679999127984,
       "response": {
-        "request_id": "b8f96100-65b2-4072-8332-d23d1f51761e",
+        "request_id": "e4fe1946-f572-4fc6-865e-7ac05fa5360f",
         "query": {
           "mode": "text",
           "text": "ba lo",
@@ -6081,11 +6081,11 @@
             },
             "score": 0.7497321367263794,
             "component_scores": {
-              "text": 0.7497321367263794,
+              "text": 0.7497320771217346,
               "image": null
             },
             "rank_score": 0.03028233151183971,
-            "lexical_score": 4.316249285447779
+            "lexical_score": 4.404482345183089
           },
           {
             "rank": 2,
@@ -6104,8 +6104,8 @@
               "text": 0.7234563231468201,
               "image": null
             },
-            "rank_score": 0.03021353930031804,
-            "lexical_score": 4.5384615819451595
+            "rank_score": 0.029827662395050816,
+            "lexical_score": 4.638247913832781
           },
           {
             "rank": 3,
@@ -6121,30 +6121,30 @@
             },
             "score": 0.7215979099273682,
             "component_scores": {
-              "text": 0.7215980291366577,
+              "text": 0.7215979695320129,
               "image": null
             },
-            "rank_score": 0.028258706467661692,
-            "lexical_score": 4.425991606856933
+            "rank_score": 0.027912386121341344,
+            "lexical_score": 4.517920738159182
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12700026854872704,
-            "encoding": 14.895999804139137,
-            "retrieval": 1.0844003409147263,
-            "filtering": 0.047600362449884415,
+            "validation": 0.12229988351464272,
+            "encoding": 14.30319994688034,
+            "retrieval": 1.0836999863386154,
+            "filtering": 0.047999899834394455,
             "threshold": 0,
-            "ranking": 0.5856999196112156,
-            "hydration": 0.05010003224015236,
-            "total": 18.173200078308582
+            "ranking": 0.5628000944852829,
+            "hydration": 0.057999975979328156,
+            "total": 17.719600349664688
           },
           "trace": [
             {
@@ -6192,7 +6192,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -6204,9 +6204,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": false,
-      "elapsed_ms": 21.15230029448867,
+      "elapsed_ms": 22.40080013871193,
       "response": {
-        "request_id": "10f71910-3fe7-4204-8409-bb22ca8599ed",
+        "request_id": "09779812-2e4d-44c3-b2ba-54b1e45cb1cc",
         "query": {
           "mode": "text",
           "text": "tote bag",
@@ -6261,12 +6261,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P111"
             },
-            "score": 0.7430325150489807,
+            "score": 0.7430326342582703,
             "component_scores": {
               "text": 0.7430326342582703,
               "image": null
             },
-            "rank_score": 0.7430325150489807,
+            "rank_score": 0.7430326342582703,
             "lexical_score": null
           },
           {
@@ -6281,32 +6281,32 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P018"
             },
-            "score": 0.7430219054222107,
+            "score": 0.7430219650268555,
             "component_scores": {
               "text": 0.7430219650268555,
               "image": null
             },
-            "rank_score": 0.7430219054222107,
+            "rank_score": 0.7430219650268555,
             "lexical_score": null
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12379977852106094,
-            "encoding": 16.79039979353547,
-            "retrieval": 1.1090999469161034,
-            "filtering": 0.047999899834394455,
+            "validation": 0.11899974197149277,
+            "encoding": 14.04310017824173,
+            "retrieval": 1.1065001599490643,
+            "filtering": 0.04860013723373413,
             "threshold": 0,
-            "ranking": 0.062000006437301636,
-            "hydration": 0.04740012809634209,
-            "total": 19.50629986822605
+            "ranking": 0.05959998816251755,
+            "hydration": 0.04789978265762329,
+            "total": 17.05490006133914
           },
           "trace": [
             {
@@ -6366,9 +6366,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 19.41400021314621,
+      "elapsed_ms": 22.795700002461672,
       "response": {
-        "request_id": "5c6bea31-973a-4b5f-86ea-904dccc5e4d6",
+        "request_id": "b247b78d-ca80-4e75-ac69-627127103972",
         "query": {
           "mode": "text",
           "text": "tote bag",
@@ -6409,7 +6409,7 @@
               "image": null
             },
             "rank_score": 0.0315136476426799,
-            "lexical_score": 4.5963009155076655
+            "lexical_score": 4.575602985247372
           },
           {
             "rank": 2,
@@ -6428,47 +6428,47 @@
               "text": 0.7350565195083618,
               "image": null
             },
-            "rank_score": 0.02900988017658188,
-            "lexical_score": 4.4794915688452654
+            "rank_score": 0.028814262023217248,
+            "lexical_score": 4.456629125983618
           },
           {
             "rank": 3,
             "product": {
-              "product_id": "P133",
-              "name": "Túi tote Không xác định Canvas two-tone tote Navy be",
+              "product_id": "P140",
+              "name": "Túi tote be in chữ USENIX",
               "category": "tote_bag",
               "brand": "Không xác định",
               "color": "be",
-              "price_vnd": 825000,
+              "price_vnd": 375000,
               "in_stock": true,
-              "image_url": "/api/v1/media/products/P133"
+              "image_url": "/api/v1/media/products/P140"
             },
-            "score": 0.7152701616287231,
+            "score": 0.7232552766799927,
             "component_scores": {
-              "text": 0.7152702808380127,
+              "text": 0.7232553362846375,
               "image": null
             },
-            "rank_score": 0.02681010928961749,
-            "lexical_score": 4.604992393370515
+            "rank_score": 0.02736726874657909,
+            "lexical_score": 4.546339621299038
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.1276000402867794,
-            "encoding": 14.476499985903502,
-            "retrieval": 1.076200045645237,
-            "filtering": 0.04809955134987831,
+            "validation": 0.12139976024627686,
+            "encoding": 14.389700256288052,
+            "retrieval": 1.102800015360117,
+            "filtering": 0.04860013723373413,
             "threshold": 0,
-            "ranking": 0.5948003381490707,
-            "hydration": 0.05100015550851822,
-            "total": 17.82209984958172
+            "ranking": 0.6572999991476536,
+            "hydration": 0.06170012056827545,
+            "total": 17.886199988424778
           },
           "trace": [
             {
@@ -6516,7 +6516,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -6528,9 +6528,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": true,
-      "elapsed_ms": 18.817899748682976,
+      "elapsed_ms": 21.439800038933754,
       "response": {
-        "request_id": "07e91d42-3687-4c8c-947e-1c0dee161020",
+        "request_id": "40fbbb52-22c5-4320-a40d-396fe7d39308",
         "query": {
           "mode": "text",
           "text": "ao phong",
@@ -6567,7 +6567,7 @@
             },
             "score": 0.7535138130187988,
             "component_scores": {
-              "text": 0.7535139322280884,
+              "text": 0.7535138726234436,
               "image": null
             },
             "rank_score": 0.7535138130187988,
@@ -6596,41 +6596,41 @@
           {
             "rank": 3,
             "product": {
-              "product_id": "P043",
-              "name": "Áo thun tay dài màu xanh đậm",
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
               "category": "t_shirt",
               "brand": "Không xác định",
-              "color": "xanh đậm",
-              "price_vnd": 1805000,
+              "color": "đen",
+              "price_vnd": 545000,
               "in_stock": true,
-              "image_url": "/api/v1/media/products/P043"
+              "image_url": "/api/v1/media/products/P149"
             },
-            "score": 0.7462977766990662,
+            "score": 0.7472100853919983,
             "component_scores": {
-              "text": 0.7462978363037109,
+              "text": 0.7472101449966431,
               "image": null
             },
-            "rank_score": 0.7462977766990662,
+            "rank_score": 0.7472100853919983,
             "lexical_score": null
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13109995052218437,
-            "encoding": 14.339199755340815,
-            "retrieval": 1.0881000198423862,
-            "filtering": 0.04930002614855766,
+            "validation": 0.12119999155402184,
+            "encoding": 16.87130006030202,
+            "retrieval": 1.1200997978448868,
+            "filtering": 0.04789978265762329,
             "threshold": 0,
-            "ranking": 0.06570015102624893,
-            "hydration": 0.05060015246272087,
-            "total": 17.136000096797943
+            "ranking": 0.060399994254112244,
+            "hydration": 0.046900007873773575,
+            "total": 19.609599839895964
           },
           "trace": [
             {
@@ -6690,9 +6690,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 18.826999701559544,
+      "elapsed_ms": 20.534600131213665,
       "response": {
-        "request_id": "86262a87-326f-4bf5-a5db-8bf780dda083",
+        "request_id": "5e4663a8-6f4a-4e56-bd11-6186652a7834",
         "query": {
           "mode": "text",
           "text": "ao phong",
@@ -6718,26 +6718,6 @@
           {
             "rank": 1,
             "product": {
-              "product_id": "P043",
-              "name": "Áo thun tay dài màu xanh đậm",
-              "category": "t_shirt",
-              "brand": "Không xác định",
-              "color": "xanh đậm",
-              "price_vnd": 1805000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P043"
-            },
-            "score": 0.7462977766990662,
-            "component_scores": {
-              "text": 0.7462978363037109,
-              "image": null
-            },
-            "rank_score": 0.03057889822595705,
-            "lexical_score": 4.462505369027072
-          },
-          {
-            "rank": 2,
-            "product": {
               "product_id": "P041",
               "name": "Áo thun trơn màu đen",
               "category": "t_shirt",
@@ -6752,47 +6732,67 @@
               "text": 0.7335322499275208,
               "image": null
             },
-            "rank_score": 0.030309988518943745,
-            "lexical_score": 4.531235011347424
+            "rank_score": 0.030117753623188408,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7472100853919983,
+            "component_scores": {
+              "text": 0.7472101449966431,
+              "image": null
+            },
+            "rank_score": 0.029957522915269395,
+            "lexical_score": 4.456629125983618
           },
           {
             "rank": 3,
             "product": {
-              "product_id": "P143",
-              "name": "Áo thun Không xác định Ironed green T-shirt .JPG đỏ đô",
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
               "category": "t_shirt",
               "brand": "Không xác định",
-              "color": "đỏ đô",
-              "price_vnd": 495000,
+              "color": "trắng",
+              "price_vnd": 520000,
               "in_stock": true,
-              "image_url": "/api/v1/media/products/P143"
+              "image_url": "/api/v1/media/products/P147"
             },
-            "score": 0.731774628162384,
+            "score": 0.7429991960525513,
             "component_scores": {
-              "text": 0.731774628162384,
+              "text": 0.7429991960525513,
               "image": null
             },
-            "rank_score": 0.030117753623188408,
-            "lexical_score": 4.592157083129124
+            "rank_score": 0.02967032967032967,
+            "lexical_score": 4.456629125983618
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12960005551576614,
-            "encoding": 13.858300168067217,
-            "retrieval": 1.089000143110752,
-            "filtering": 0.04810001701116562,
+            "validation": 0.12379977852106094,
+            "encoding": 13.443300034850836,
+            "retrieval": 1.1141998693346977,
+            "filtering": 0.05100015550851822,
             "threshold": 0,
-            "ranking": 0.5888999439775944,
-            "hydration": 0.04990026354789734,
-            "total": 17.16989977285266
+            "ranking": 0.5886000581085682,
+            "hydration": 0.05200039595365524,
+            "total": 17.05149980261922
           },
           "trace": [
             {
@@ -6840,7 +6840,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -6852,9 +6852,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": false,
-      "elapsed_ms": 19.159500021487474,
+      "elapsed_ms": 18.886799924075603,
       "response": {
-        "request_id": "c1f35891-32ff-4648-b04b-323f377dca63",
+        "request_id": "52a9b078-dcff-4239-b179-f1194530968e",
         "query": {
           "mode": "text",
           "text": "ao khoac",
@@ -6891,7 +6891,7 @@
             },
             "score": 0.7590447664260864,
             "component_scores": {
-              "text": 0.7590447068214417,
+              "text": 0.7590446472167969,
               "image": null
             },
             "rank_score": 0.7590447664260864,
@@ -6901,20 +6901,20 @@
             "rank": 2,
             "product": {
               "product_id": "P149",
-              "name": "Áo thun On Colton Cotton talks on đỏ đô",
+              "name": "Áo thun đen in chữ trắng và hồng",
               "category": "t_shirt",
-              "brand": "On",
-              "color": "đỏ đô",
+              "brand": "Không xác định",
+              "color": "đen",
               "price_vnd": 545000,
               "in_stock": true,
               "image_url": "/api/v1/media/products/P149"
             },
-            "score": 0.7485240697860718,
+            "score": 0.7479530572891235,
             "component_scores": {
-              "text": 0.7485240697860718,
+              "text": 0.7479531764984131,
               "image": null
             },
-            "rank_score": 0.7485240697860718,
+            "rank_score": 0.7479530572891235,
             "lexical_score": null
           },
           {
@@ -6940,21 +6940,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.1360001042485237,
-            "encoding": 14.725000131875277,
-            "retrieval": 1.087999902665615,
-            "filtering": 0.04770001396536827,
+            "validation": 0.12490013614296913,
+            "encoding": 13.452200219035149,
+            "retrieval": 1.1548004113137722,
+            "filtering": 0.04830025136470795,
             "threshold": 0,
-            "ranking": 0.062000006437301636,
-            "hydration": 0.045999884605407715,
-            "total": 17.443799879401922
+            "ranking": 0.05989987403154373,
+            "hydration": 0.049099791795015335,
+            "total": 16.247599851340055
           },
           "trace": [
             {
@@ -7014,9 +7014,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 19.92989983409643,
+      "elapsed_ms": 23.305200040340424,
       "response": {
-        "request_id": "9ffeab1c-22b2-40bb-ab8c-1eca0b1d9755",
+        "request_id": "ef240fca-1d52-492d-8363-aa0f4e20398b",
         "query": {
           "mode": "text",
           "text": "ao khoac",
@@ -7056,8 +7056,8 @@
               "text": 0.7416739463806152,
               "image": null
             },
-            "rank_score": 0.03177805800756621,
-            "lexical_score": 4.670260458914807
+            "rank_score": 0.031544957774465976,
+            "lexical_score": 4.650827061229977
           },
           {
             "rank": 2,
@@ -7076,8 +7076,8 @@
               "text": 0.7255935668945312,
               "image": null
             },
-            "rank_score": 0.028693528693528692,
-            "lexical_score": 4.56639990259612
+            "rank_score": 0.028373015873015873,
+            "lexical_score": 4.546339621299038
           },
           {
             "rank": 3,
@@ -7096,27 +7096,27 @@
               "text": 0.7320597767829895,
               "image": null
             },
-            "rank_score": 0.028169014084507043,
-            "lexical_score": 4.462505369027072
+            "rank_score": 0.02797339593114241,
+            "lexical_score": 4.43911020709018
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13070041313767433,
-            "encoding": 14.965999871492386,
-            "retrieval": 1.0934998281300068,
-            "filtering": 0.05410006269812584,
+            "validation": 0.11959997937083244,
+            "encoding": 14.574599917978048,
+            "retrieval": 1.1048996821045876,
+            "filtering": 0.04810001701116562,
             "threshold": 0,
-            "ranking": 0.5894997157156467,
-            "hydration": 0.049299560487270355,
-            "total": 18.287200015038252
+            "ranking": 0.5922000855207443,
+            "hydration": 0.05039991810917854,
+            "total": 18.30119965597987
           },
           "trace": [
             {
@@ -7164,7 +7164,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -7176,9 +7176,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": false,
-      "elapsed_ms": 18.998400308191776,
+      "elapsed_ms": 22.37469982355833,
       "response": {
-        "request_id": "520f3835-a705-4ff4-a459-c9778c700e9a",
+        "request_id": "0f4f1128-a1c2-4736-957b-c37aae4ef56b",
         "query": {
           "mode": "text",
           "text": "dong ho",
@@ -7213,12 +7213,12 @@
               "in_stock": false,
               "image_url": "/api/v1/media/products/P033"
             },
-            "score": 0.7212795615196228,
+            "score": 0.7212794423103333,
             "component_scores": {
               "text": 0.7212795615196228,
               "image": null
             },
-            "rank_score": 0.7212795615196228,
+            "rank_score": 0.7212794423103333,
             "lexical_score": null
           },
           {
@@ -7244,41 +7244,41 @@
           {
             "rank": 3,
             "product": {
-              "product_id": "P154",
-              "name": "Áo khoác Không xác định Leather jacket xám",
-              "category": "jacket",
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
               "brand": "Không xác định",
-              "color": "xám",
-              "price_vnd": 2325000,
+              "color": "trắng",
+              "price_vnd": 520000,
               "in_stock": true,
-              "image_url": "/api/v1/media/products/P154"
+              "image_url": "/api/v1/media/products/P147"
             },
-            "score": 0.6969620585441589,
+            "score": 0.6971560120582581,
             "component_scores": {
-              "text": 0.6969619393348694,
+              "text": 0.6971560120582581,
               "image": null
             },
-            "rank_score": 0.6969620585441589,
+            "rank_score": 0.6971560120582581,
             "lexical_score": null
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.13239961117506027,
-            "encoding": 14.322599861770868,
-            "retrieval": 1.1599999852478504,
-            "filtering": 0.05179969593882561,
+            "validation": 0.12969970703125,
+            "encoding": 13.739099726080894,
+            "retrieval": 1.1035003699362278,
+            "filtering": 0.04879990592598915,
             "threshold": 0,
-            "ranking": 0.07340032607316971,
-            "hydration": 0.0784001313149929,
-            "total": 17.332499846816063
+            "ranking": 0.061499886214733124,
+            "hydration": 0.0491999089717865,
+            "total": 16.90230006352067
           },
           "trace": [
             {
@@ -7338,9 +7338,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.42519999668002,
+      "elapsed_ms": 19.59419995546341,
       "response": {
-        "request_id": "52e48ad2-1028-4a8a-8ff0-b61d642c0c7b",
+        "request_id": "f7bd4a42-cd00-4173-a9dd-8b085693292b",
         "query": {
           "mode": "text",
           "text": "dong ho",
@@ -7366,26 +7366,6 @@
           {
             "rank": 1,
             "product": {
-              "product_id": "P051",
-              "name": "Đồng hồ Junghans mặt vuông dây xanh",
-              "category": "watch",
-              "brand": "Junghans",
-              "color": "vàng nâu và xanh đậm",
-              "price_vnd": 2085000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P051"
-            },
-            "score": 0.6572830677032471,
-            "component_scores": {
-              "text": 0.6572831869125366,
-              "image": null
-            },
-            "rank_score": 0.024320652173913042,
-            "lexical_score": 4.4794915688452654
-          },
-          {
-            "rank": 2,
-            "product": {
               "product_id": "P164",
               "name": "Đồng hồ Không xác định The making of the đen toàn bộ",
               "category": "watch",
@@ -7400,8 +7380,28 @@
               "text": 0.6677426695823669,
               "image": null
             },
-            "rank_score": 0.02408450704225352,
-            "lexical_score": 4.268281840463958
+            "rank_score": 0.024185517143263623,
+            "lexical_score": 4.239142410871812
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P051",
+              "name": "Đồng hồ Junghans mặt vuông dây xanh",
+              "category": "watch",
+              "brand": "Junghans",
+              "color": "vàng nâu và xanh đậm",
+              "price_vnd": 2085000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P051"
+            },
+            "score": 0.6572830677032471,
+            "component_scores": {
+              "text": 0.6572831869125366,
+              "image": null
+            },
+            "rank_score": 0.023889462809917356,
+            "lexical_score": 4.456629125983618
           },
           {
             "rank": 3,
@@ -7420,27 +7420,27 @@
               "text": 0.6514992713928223,
               "image": null
             },
-            "rank_score": 0.02382133995037221,
-            "lexical_score": 4.496607576217214
+            "rank_score": 0.02364782925054572,
+            "lexical_score": 4.474286869340553
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.14490028843283653,
-            "encoding": 15.176900196820498,
-            "retrieval": 1.0830000974237919,
-            "filtering": 0.0483999028801918,
+            "validation": 0.12770015746355057,
+            "encoding": 13.822999782860279,
+            "retrieval": 1.1172001250088215,
+            "filtering": 0.04800036549568176,
             "threshold": 0,
-            "ranking": 0.5910997278988361,
-            "hydration": 0.05189981311559677,
-            "total": 18.806899897754192
+            "ranking": 0.5855998024344444,
+            "hydration": 0.051999930292367935,
+            "total": 17.241999972611666
           },
           "trace": [
             {
@@ -7488,7 +7488,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -7500,9 +7500,9 @@
       "family": "variant",
       "strategy": "semantic",
       "hit_at_3": false,
-      "elapsed_ms": 18.81820010021329,
+      "elapsed_ms": 19.73639987409115,
       "response": {
-        "request_id": "da800f64-8900-40ec-9bd7-b121f4346f90",
+        "request_id": "9e8a6447-4b93-47e9-8916-de1f564672a3",
         "query": {
           "mode": "text",
           "text": "kinh ram",
@@ -7537,12 +7537,12 @@
               "in_stock": false,
               "image_url": "/api/v1/media/products/P033"
             },
-            "score": 0.7523608803749084,
+            "score": 0.7523607611656189,
             "component_scores": {
-              "text": 0.7523609399795532,
+              "text": 0.7523608803749084,
               "image": null
             },
-            "rank_score": 0.7523608803749084,
+            "rank_score": 0.7523607611656189,
             "lexical_score": null
           },
           {
@@ -7588,21 +7588,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12940028682351112,
-            "encoding": 14.573600143194199,
-            "retrieval": 1.0858997702598572,
-            "filtering": 0.047800131142139435,
+            "validation": 0.12859981507062912,
+            "encoding": 14.676200225949287,
+            "retrieval": 1.1079995892941952,
+            "filtering": 0.04759989678859711,
             "threshold": 0,
-            "ranking": 0.06099976599216461,
-            "hydration": 0.04680035635828972,
-            "total": 17.278900370001793
+            "ranking": 0.06009964272379875,
+            "hydration": 0.04850002005696297,
+            "total": 17.455600202083588
           },
           "trace": [
             {
@@ -7662,9 +7662,9 @@
       "family": "variant",
       "strategy": "hybrid",
       "hit_at_3": true,
-      "elapsed_ms": 20.037999842315912,
+      "elapsed_ms": 19.92709981277585,
       "response": {
-        "request_id": "84bc5229-f3f0-4210-a2c2-917fc628fc16",
+        "request_id": "4c0f8ec7-b150-4e9c-aae5-470c51feb83f",
         "query": {
           "mode": "text",
           "text": "kinh ram",
@@ -7705,66 +7705,66 @@
               "image": null
             },
             "rank_score": 0.03047794966520434,
-            "lexical_score": 4.602114860700316
+            "lexical_score": 4.583243300290219
           },
           {
             "rank": 2,
             "product": {
-              "product_id": "P171",
-              "name": "Kính mát Không xác định الحداد gọng vàng mắt nâu",
+              "product_id": "P177",
+              "name": "Kính mát thể thao mắt phản quang",
               "category": "sunglasses",
               "brand": "Không xác định",
-              "color": "gọng vàng mắt nâu",
-              "price_vnd": 1800000,
+              "color": "đen và bạc",
+              "price_vnd": 550000,
               "in_stock": true,
-              "image_url": "/api/v1/media/products/P171"
+              "image_url": "/api/v1/media/products/P177"
             },
-            "score": 0.7184545993804932,
+            "score": 0.7368708848953247,
             "component_scores": {
-              "text": 0.7184547185897827,
+              "text": 0.7368708252906799,
               "image": null
             },
-            "rank_score": 0.026785714285714288,
-            "lexical_score": 4.268281840463958
+            "rank_score": 0.030309988518943745,
+            "lexical_score": 4.492085093846648
           },
           {
             "rank": 3,
             "product": {
-              "product_id": "P176",
-              "name": "Kính mát Ray-Ban RayBanAviator gọng vàng mắt nâu",
+              "product_id": "P171",
+              "name": "Kính mát Ray-Ban gọng đen mắt xanh",
               "category": "sunglasses",
               "brand": "Ray-Ban",
-              "color": "gọng vàng mắt nâu",
-              "price_vnd": 1825000,
+              "color": "đen và xanh",
+              "price_vnd": 1800000,
               "in_stock": true,
-              "image_url": "/api/v1/media/products/P176"
+              "image_url": "/api/v1/media/products/P171"
             },
-            "score": 0.7090936303138733,
+            "score": 0.7261942028999329,
             "component_scores": {
-              "text": 0.7090936303138733,
+              "text": 0.7261942028999329,
               "image": null
             },
-            "rank_score": 0.025342039800995024,
-            "lexical_score": 4.3687925517536765
+            "rank_score": 0.029513888888888888,
+            "lexical_score": 4.510025482653301
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 0.12499978765845299,
-            "encoding": 14.846500009298325,
-            "retrieval": 1.10140023753047,
-            "filtering": 0.05009956657886505,
+            "validation": 0.12020021677017212,
+            "encoding": 14.46179999038577,
+            "retrieval": 1.1122999712824821,
+            "filtering": 0.04860013723373413,
             "threshold": 0,
-            "ranking": 0.7556998170912266,
-            "hydration": 0.05119992420077324,
-            "total": 18.37560022249818
+            "ranking": 0.5755997262895107,
+            "hydration": 0.05100015550851822,
+            "total": 17.849399708211422
           },
           "trace": [
             {
@@ -7812,7 +7812,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }
@@ -7824,7 +7824,7 @@
       "scope": "real catalog photo upload mechanics; same-image query, not independent relevance",
       "passed": true,
       "response": {
-        "request_id": "37d621fc-045f-4d6c-aa99-2dd115cc56c5",
+        "request_id": "bea09f56-d171-4513-bc05-edd9a136ea59",
         "query": {
           "mode": "image",
           "text": null,
@@ -7867,7 +7867,7 @@
             "score": 0.8025829792022705,
             "component_scores": {
               "text": null,
-              "image": 0.8025829195976257
+              "image": 0.8025829792022705
             },
             "rank_score": 0.8025829792022705,
             "lexical_score": null
@@ -7884,12 +7884,12 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P066"
             },
-            "score": 0.7039471864700317,
+            "score": 0.7039470672607422,
             "component_scores": {
               "text": null,
-              "image": 0.7039470672607422
+              "image": 0.7039471864700317
             },
-            "rank_score": 0.7039471864700317,
+            "rank_score": 0.7039470672607422,
             "lexical_score": null
           },
           {
@@ -7915,21 +7915,21 @@
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 15.06520016118884,
-            "encoding": 121.17639975622296,
-            "retrieval": 1.146799884736538,
-            "filtering": 0.0604996457695961,
+            "validation": 20.520299673080444,
+            "encoding": 100.14429967850447,
+            "retrieval": 1.1320002377033234,
+            "filtering": 0.055999960750341415,
             "threshold": 0,
-            "ranking": 0.06289966404438019,
-            "hydration": 0.054900068789720535,
-            "total": 139.23519989475608
+            "ranking": 0.05100015550851822,
+            "hydration": 0.04989979788661003,
+            "total": 123.80200019106269
           },
           "trace": [
             {
@@ -7987,7 +7987,7 @@
       "scope": "real catalog photo upload mechanics; same-image query, not independent relevance",
       "passed": true,
       "response": {
-        "request_id": "872bd78f-16df-40ff-829f-95affbbc00ce",
+        "request_id": "03920c9a-ce59-476d-902a-9b3c12faad62",
         "query": {
           "mode": "multimodal",
           "text": "giày chạy bộ màu đen",
@@ -8027,16 +8027,36 @@
               "in_stock": true,
               "image_url": "/api/v1/media/products/P001"
             },
-            "score": 0.9866642355918884,
+            "score": 0.9866642951965332,
             "component_scores": {
-              "text": 0.7811385989189148,
-              "image": 0.8025829195976257
+              "text": 0.78113853931427,
+              "image": 0.8025829792022705
             },
             "rank_score": 0.03278688524590164,
-            "lexical_score": 6.156429574227965
+            "lexical_score": 6.039748020121317
           },
           {
             "rank": 2,
+            "product": {
+              "product_id": "P066",
+              "name": "Giày chạy bộ On On Cloud Running Shoes xám",
+              "category": "running_shoes",
+              "brand": "On",
+              "color": "xám",
+              "price_vnd": 1325000,
+              "in_stock": true,
+              "image_url": "/api/v1/media/products/P066"
+            },
+            "score": 0.9120323061943054,
+            "component_scores": {
+              "text": 0.7599806785583496,
+              "image": 0.7039471864700317
+            },
+            "rank_score": 0.031054405392392875,
+            "lexical_score": 4.071799620750836
+          },
+          {
+            "rank": 3,
             "product": {
               "product_id": "P072",
               "name": "Giày địa hình Không xác định ECCO BIOM running shoe đen",
@@ -8053,46 +8073,26 @@
               "image": 0.6119232177734375
             },
             "rank_score": 0.031024531024531024,
-            "lexical_score": 4.962074405074612
-          },
-          {
-            "rank": 3,
-            "product": {
-              "product_id": "P066",
-              "name": "Giày chạy bộ On On Cloud Running Shoes xám",
-              "category": "running_shoes",
-              "brand": "On",
-              "color": "xám",
-              "price_vnd": 1325000,
-              "in_stock": true,
-              "image_url": "/api/v1/media/products/P066"
-            },
-            "score": 0.9120323061943054,
-            "component_scores": {
-              "text": 0.7599806785583496,
-              "image": 0.7039470672607422
-            },
-            "rank_score": 0.030834914611005692,
-            "lexical_score": 4.066189098080637
+            "lexical_score": 4.822227767365245
           }
         ],
         "meta": {
           "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
-          "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
-          "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
           "result_policy": "nearest",
           "threshold": null,
           "policy_fingerprint": null,
           "empty_reason": null,
           "timing_ms": {
-            "validation": 5.448599811643362,
-            "encoding": 107.5623999349773,
-            "retrieval": 1.2400001287460327,
-            "filtering": 0.057800207287073135,
+            "validation": 4.885499831289053,
+            "encoding": 107.53659997135401,
+            "retrieval": 1.109899953007698,
+            "filtering": 0.0554998405277729,
             "threshold": 0,
-            "ranking": 0.8209999650716782,
-            "hydration": 0.07570022717118263,
-            "total": 116.85239989310503
+            "ranking": 0.8001001551747322,
+            "hydration": 0.07529975846409798,
+            "total": 116.39979993924499
           },
           "trace": [
             {
@@ -8140,7 +8140,7 @@
           ],
           "ranking_strategy": "rrf",
           "sort": "relevance",
-          "lexical_fingerprint": "642fd62ee950215854b39ea9a2d053681a03130e63a91c8225d294c47e658f64",
+          "lexical_fingerprint": "005225ea419e2109edb00be47ea910160612425b3a76e2e9adb92192c7084848",
           "corrections": []
         }
       }

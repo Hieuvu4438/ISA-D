@@ -16,7 +16,8 @@ def main():
     sources = {a["product_id"]: a for a in assets}
     lines = [
         "# Nguồn ảnh sản phẩm", "",
-        f"Catalog có {len(products)} ảnh chụp thật tải từ Wikimedia Commons. Nguồn, tác giả, giấy phép, "
+        f"Catalog có {len(products)} asset tải từ Wikimedia Commons. Rà trực quan đã phát hiện asset không phù hợp trong đợt import; "
+        "bảng này là attribution, không phải chứng nhận tất cả ảnh/metadata đã đạt. Xem artifacts/validation/catalog-repair-applied.json và các pending trong docs/17_CATALOG_REPAIR.md. Nguồn, tác giả, giấy phép, "
         "checksum và ngày tải được lưu trong [image_sources.json](../data/image_sources.json). "
         "Ảnh được phục vụ từ file local; giá, tồn kho và đơn hàng là dữ liệu giả định cho demo. "
         "Không sử dụng ảnh sản phẩm tạo bằng AI.", "",

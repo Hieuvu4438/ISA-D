@@ -1,0 +1,202 @@
+[
+  {
+    "product_id": "P141",
+    "candidate_id": "R067",
+    "status": "passed",
+    "visual_notes": "Reviewed R067 on candidate contact sheet: a complete olive-green T-shirt with white Ideal print, isolated on white; no On mark. Replaces fabric-stain closeup.",
+    "metadata": {
+      "name": "Áo thun xanh ô liu in chữ Ideal",
+      "brand": "Không xác định",
+      "color": "xanh ô liu",
+      "description": "Áo thun tay ngắn màu xanh ô liu, cổ tròn, in chữ Ideal màu trắng ở phía trước."
+    },
+    "sha256": "7ee88459d80f60896f3fea0a6fadacfa840860aa617c6fb87231f6fa1e91e2e9"
+  },
+  {
+    "product_id": "P142",
+    "status": "passed",
+    "visual_notes": "Reviewed original P142 on sheet-141-160: yellow hanging T-shirt with dark round printed emblem; previous green label inaccurate.",
+    "metadata": {
+      "name": "Áo thun vàng in họa tiết tròn",
+      "brand": "Không xác định",
+      "color": "vàng",
+      "description": "Áo thun tay ngắn màu vàng, cổ tròn, phía trước in họa tiết tròn màu tối."
+    },
+    "sha256": "ce0044fbbe238f9fa90acd4b5630be95f7cfedbf936811604655759444ee90db"
+  },
+  {
+    "product_id": "P143",
+    "status": "passed",
+    "visual_notes": "Reviewed original P143: rear view of olive-green T-shirt on hanger, no red color or visible brand.",
+    "metadata": {
+      "name": "Áo thun xanh ô liu nhìn từ phía sau",
+      "brand": "Không xác định",
+      "color": "xanh ô liu",
+      "description": "Áo thun tay ngắn màu xanh ô liu treo trên móc; ảnh chụp phần lưng trơn và cổ áo."
+    },
+    "sha256": "31ce4a01d6215aa69843f5e91c8cb9f3e2548b9d1104bde9248c4f01dc29c7f6"
+  },
+  {
+    "product_id": "P144",
+    "status": "passed",
+    "visual_notes": "Reviewed original P144: front view of olive-green T-shirt; same garment family as P143, keep different shot IDs for now, consolidation pending.",
+    "metadata": {
+      "name": "Áo thun xanh ô liu cổ tròn",
+      "brand": "Không xác định",
+      "color": "xanh ô liu",
+      "description": "Áo thun tay ngắn màu xanh ô liu, cổ tròn, phía trước trơn, treo trên móc."
+    },
+    "sha256": "6150cf49e65755bcefdbc6412014e2c329849992143a43d8eb6a1a0546350971"
+  },
+  {
+    "product_id": "P145",
+    "status": "passed",
+    "visual_notes": "Reviewed original P145: blue T-shirt rear view; no black or brand evidence.",
+    "metadata": {
+      "name": "Áo thun xanh dương nhìn từ phía sau",
+      "brand": "Không xác định",
+      "color": "xanh dương",
+      "description": "Áo thun tay ngắn màu xanh dương treo trên móc; ảnh chụp phần lưng trơn."
+    },
+    "sha256": "7a5683d3fdea99221a31009858ae2afccaddf4a498a71879665faabbadf54f05"
+  },
+  {
+    "product_id": "P146",
+    "status": "passed",
+    "visual_notes": "Reviewed original P146: blue T-shirt front view; same garment family as P145, consolidation pending.",
+    "metadata": {
+      "name": "Áo thun xanh dương cổ tròn",
+      "brand": "Không xác định",
+      "color": "xanh dương",
+      "description": "Áo thun tay ngắn màu xanh dương, cổ tròn, phía trước trơn, treo trên móc."
+    },
+    "sha256": "31247ccba755ee1b08129412260412c96766b62c1af1cdf83b9b75c15efeff6c"
+  },
+  {
+    "product_id": "P147",
+    "candidate_id": "R072",
+    "status": "passed",
+    "visual_notes": "Reviewed R072: real white T-shirt laid flat with dark zine-making graphic, supported by Commons photographic description. Replaces academic infographic.",
+    "metadata": {
+      "name": "Áo thun trắng in hình làm tạp chí",
+      "brand": "Không xác định",
+      "color": "trắng",
+      "description": "Áo thun trắng cổ tròn, tay ngắn; phía trước có chữ và hình minh họa màu đen về cách làm tạp chí nhỏ."
+    },
+    "sha256": "0fecd8f4d28c158077c2d200c3b1a4a45183f7980692960f58d61b6e6c2c2ff2"
+  },
+  {
+    "product_id": "P148",
+    "status": "passed",
+    "visual_notes": "Reviewed P148: full shirt with orange/red/yellow tie-dye pattern, not green.",
+    "metadata": {
+      "name": "Áo thun loang màu cam đỏ vàng",
+      "brand": "Không xác định",
+      "color": "cam, đỏ và vàng",
+      "description": "Áo thun tay ngắn cổ tròn, họa tiết loang màu cam, đỏ và vàng trên toàn thân áo."
+    },
+    "sha256": "e4326b909f74bbc09e2a05dcb312b3bb22675c5ef9c332b215cc2297fe3b42a7"
+  },
+  {
+    "product_id": "P149",
+    "status": "passed",
+    "visual_notes": "Reviewed P149: man wearing black shirt with visible A.EAGLE lettering; no On branding. Avoid attributing brand from partial text alone.",
+    "metadata": {
+      "name": "Áo thun đen in chữ trắng và hồng",
+      "brand": "Không xác định",
+      "color": "đen",
+      "description": "Áo thun đen cổ tròn, tay ngắn; phía trước in nhiều dòng chữ trắng và hồng. Ảnh chụp áo khi đang mặc."
+    },
+    "sha256": "e3949c64195e420de0d6a219f13b13f72a46e0c7867e857df934477e9b8023fd"
+  },
+  {
+    "product_id": "P150",
+    "status": "passed",
+    "visual_notes": "Reviewed P150: complete bright-green shirt with yellow band and white/black typography; no On mark.",
+    "metadata": {
+      "name": "Áo thun xanh lá in bảng ký tự",
+      "brand": "Không xác định",
+      "color": "xanh lá",
+      "description": "Áo thun tay ngắn xanh lá, cổ tròn; phía trước in các bảng ký tự trắng và đen cùng dải màu vàng."
+    },
+    "sha256": "a6e4ba5b8493d2f21cf17e6168249c16e84d127fdd25eebf07e5fbca61c57612"
+  },
+  {
+    "product_id": "P153",
+    "candidate_id": "R078",
+    "status": "passed",
+    "visual_notes": "Reviewed R078: real black leather-style jacket on display mannequin over a graphic top; zipper/lapels visible. Replaces photograph of apples named Leatherjacket.",
+    "metadata": {
+      "name": "Áo khoác đen có khóa kéo và cổ bẻ",
+      "brand": "Không xác định",
+      "color": "đen",
+      "description": "Áo khoác đen có bề mặt bóng, cổ bẻ, khóa kéo và túi phía trước; ảnh chụp trên ma-nơ-canh."
+    },
+    "sha256": "e644aa36eaa9e9155ec0d775ce44696296a5e173a600f27b91fb5348f50a0ba0"
+  },
+  {
+    "product_id": "P140",
+    "candidate_id": "R056",
+    "status": "passed",
+    "visual_notes": "Reviewed R056: complete beige canvas tote with two handles and USENIX/SAGE printed emblem; no landscape or portrait substitution.",
+    "metadata": {
+      "name": "Túi tote be in chữ USENIX",
+      "brand": "Không xác định",
+      "color": "be",
+      "description": "Túi tote màu be, hai quai ngắn; mặt trước in chữ USENIX và họa tiết xanh, tím, đỏ."
+    },
+    "sha256": "6258bedc1baba802e104e8c39a4eea7a4c54d85c5a34f8e8ddd800acfa047df8"
+  },
+  {
+    "product_id": "P171",
+    "candidate_id": "R110",
+    "status": "passed",
+    "visual_notes": "Reviewed R110: real black frame sunglasses on table, Ray-Ban mark visible on lens; replaces workshop photograph with no sunglasses product.",
+    "metadata": {
+      "name": "Kính mát Ray-Ban gọng đen mắt xanh",
+      "brand": "Ray-Ban",
+      "color": "đen và xanh",
+      "description": "Kính mát gọng đen, mắt kính xanh sẫm; ảnh chụp nghiêng trên mặt bàn, có chữ Ray-Ban trên mắt kính."
+    },
+    "sha256": "462d040b1f8c4294cb8afaee1eb70504fbd7c5071a2c5b815e00ee2ad7e3b0fb"
+  },
+  {
+    "product_id": "P175",
+    "candidate_id": "R103",
+    "status": "passed",
+    "visual_notes": "Reviewed R103: real black sports sunglasses on pale ground, clearly visible frame/lenses. Replaces historic portrait wearing optical eyeglasses.",
+    "metadata": {
+      "name": "Kính mát thể thao gọng đen trên nền cát",
+      "brand": "Không xác định",
+      "color": "đen",
+      "description": "Kính mát thể thao gọng đen, mắt tối màu; ảnh chụp kính đặt trên nền cát sáng."
+    },
+    "sha256": "58a37f80695c08495cb8a1d0689e30c63e17058fbc8b8a7542c705cc98e0de8b"
+  },
+  {
+    "product_id": "P177",
+    "candidate_id": "R102",
+    "status": "passed",
+    "visual_notes": "Reviewed R102: real curved sports sunglasses with reflective lenses on stone. Replaces historical portrait; no On brand evidence.",
+    "metadata": {
+      "name": "Kính mát thể thao mắt phản quang",
+      "brand": "Không xác định",
+      "color": "đen và bạc",
+      "description": "Kính mát thể thao gọng đen, mắt kính phản quang màu bạc; ảnh chụp trên mặt đá."
+    },
+    "sha256": "6a5844c5161347f7659cf79cb4e4bce197cdeba4d66b0eef7f425274ba088183"
+  },
+  {
+    "product_id": "P180",
+    "candidate_id": "R106",
+    "status": "passed",
+    "visual_notes": "Reviewed R106: real black sports sunglasses resting on rock, lenses visible. Replaces nineteenth-century portrait with a child.",
+    "metadata": {
+      "name": "Kính mát đen trên nền đá",
+      "brand": "Không xác định",
+      "color": "đen",
+      "description": "Kính mát gọng đen và mắt kính tối màu, đặt trên mặt đá; ảnh chụp nghiêng với nền núi ở xa."
+    },
+    "sha256": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d"
+  }
+]

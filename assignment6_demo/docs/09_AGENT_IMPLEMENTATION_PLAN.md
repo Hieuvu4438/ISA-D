@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+**E3 data repair batch1:** Rà contact sheets 180 assets; 16 SKU descriptive metadata corrected, 8 invalid images replaced with reviewed Commons photographs, source/license/hash notes pinned, rollback/preview tools added. Index rebuilt + real HTTP/CPU smoke evidence in [17](17_CATALOG_REPAIR.md). Full visual/data gate still fails for remaining expansion assets; variants/cart/checkout/admin pending.
+
 **15/10/2026 — E2:** BM25 tiếng Việt/aliases/typo bounded + RRF trên encoder CPU thật; API `/catalog`/`suggestions`, color/sort, facets/pagination và UI URL state đã implement theo [16](16_SEARCH_BROWSE.md). Evidence riêng tại `artifacts/backend/SEARCH_BROWSE_REPORT.md`. Natural-language constraints/frozen independent quality vẫn pending; E2 chưa đạt toàn bộ scope mở rộng. E3–E6 tiếp tục giữ nguyên.
 
 **15/10/2026 — E1:** Accounts SQLite/session/user-admin/profile/password/UI `/account` và scope đơn theo login đã implement. Research/ma trận/mốc E0–E6 tại [15](15_ECOMMERCE_EXPANSION.md); evidence tại `artifacts/backend/ACCOUNTS_REPORT.md`. E2 search/facets, E3 cart/variants, E4 checkout/order, E5 admin, E6 full verification pending. Các số baseline dưới đây không chứng minh phiên bản mới.

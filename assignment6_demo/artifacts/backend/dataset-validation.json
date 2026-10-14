@@ -2,7 +2,7 @@
   "status": "passed",
   "product_count": 180,
   "order_count": 30,
-  "catalog_fingerprint": "4bcffde0dc876f950a46a20dae67c6746150ea839fbbed96e5d8b6c366238a53",
+  "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
   "photos": [
     {
       "product_id": "P001",
@@ -562,11 +562,11 @@
     },
     {
       "product_id": "P140",
-      "sha256": "b970eca8b4a056cf96ebbec47d15019df90e9ac238efcbb47fd23ef289d136bd"
+      "sha256": "6258bedc1baba802e104e8c39a4eea7a4c54d85c5a34f8e8ddd800acfa047df8"
     },
     {
       "product_id": "P141",
-      "sha256": "7e083fbf7e2a165ce46844670d27794567942e6b66d9b9a9ca71ebb9c3236d3e"
+      "sha256": "7ee88459d80f60896f3fea0a6fadacfa840860aa617c6fb87231f6fa1e91e2e9"
     },
     {
       "product_id": "P142",
@@ -590,7 +590,7 @@
     },
     {
       "product_id": "P147",
-      "sha256": "c7f34fb72cbaff285b99f921827f1153e5280bcedd40b3a100e710a66d114796"
+      "sha256": "0fecd8f4d28c158077c2d200c3b1a4a45183f7980692960f58d61b6e6c2c2ff2"
     },
     {
       "product_id": "P148",
@@ -614,7 +614,7 @@
     },
     {
       "product_id": "P153",
-      "sha256": "e8fea750dbe977a4287f04eaebd86764f2e3c2b4fed79a929c439d9a43bc9f2a"
+      "sha256": "e644aa36eaa9e9155ec0d775ce44696296a5e173a600f27b91fb5348f50a0ba0"
     },
     {
       "product_id": "P154",
@@ -686,7 +686,7 @@
     },
     {
       "product_id": "P171",
-      "sha256": "c8b5dae8d2dace1a31bc00b4ca2cac35ba87a273c35cfde0c1110112b6414e4f"
+      "sha256": "462d040b1f8c4294cb8afaee1eb70504fbd7c5071a2c5b815e00ee2ad7e3b0fb"
     },
     {
       "product_id": "P172",
@@ -702,7 +702,7 @@
     },
     {
       "product_id": "P175",
-      "sha256": "21733cfda0f0e5982b99466da0b35a0c6b47a26f1a7e2c2e75e47efb32397cfd"
+      "sha256": "58a37f80695c08495cb8a1d0689e30c63e17058fbc8b8a7542c705cc98e0de8b"
     },
     {
       "product_id": "P176",
@@ -710,7 +710,7 @@
     },
     {
       "product_id": "P177",
-      "sha256": "ed26af6788c3887f3a8f7dd0865e184df550b96e20703e76f9be319dac3dc26e"
+      "sha256": "6a5844c5161347f7659cf79cb4e4bce197cdeba4d66b0eef7f425274ba088183"
     },
     {
       "product_id": "P178",
@@ -722,7 +722,7 @@
     },
     {
       "product_id": "P180",
-      "sha256": "affb4d0ca08608f0b4feb8d1a22a8907e396fa6da879135ecdec32cde1852d92"
+      "sha256": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d"
     }
   ],
   "query_photo_count": 1

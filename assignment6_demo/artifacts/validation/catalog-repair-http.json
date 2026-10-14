@@ -1,0 +1,119 @@
+{
+  "scope": "real HTTP repaired product details/media/filters; no browser/provider calls",
+  "requests": 48,
+  "passed": true,
+  "checks": [
+    {
+      "product_id": "P141",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ambigram_Ideal,_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg"
+    },
+    {
+      "product_id": "P142",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:T-shirt_medieval_(6814570079).jpg"
+    },
+    {
+      "product_id": "P143",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_green_T-shirt_(002).JPG"
+    },
+    {
+      "product_id": "P144",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_green_T-shirt_(001).JPG"
+    },
+    {
+      "product_id": "P145",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_blue_T-shirt_(002).JPG"
+    },
+    {
+      "product_id": "P146",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_blue_T-shirt_(001).JPG"
+    },
+    {
+      "product_id": "P147",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg"
+    },
+    {
+      "product_id": "P148",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:TieDyeShirtMpegMan.jpg"
+    },
+    {
+      "product_id": "P149",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Colton_Cotton_talks_on_the_phone.jpg"
+    },
+    {
+      "product_id": "P150",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Green_YourSIGN_T-shirt.jpg"
+    },
+    {
+      "product_id": "P153",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition,_Manchester,_2010_(2010-05-19_13.05.47_by_Man_Alive!).jpg"
+    },
+    {
+      "product_id": "P140",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:USENIX_tote_bag.jpg"
+    },
+    {
+      "product_id": "P171",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Polarized_sunglasses_(2026).jpg"
+    },
+    {
+      "product_id": "P175",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Black_sunglasses,_Russia.jpg"
+    },
+    {
+      "product_id": "P177",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Reflective_mirrored_sunglasses,_Russia.jpg"
+    },
+    {
+      "product_id": "P180",
+      "metadata": true,
+      "media_hash": true,
+      "exact_sku_color_filter": true,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Russia.jpg"
+    }
+  ]
+}

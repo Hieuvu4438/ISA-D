@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+**Data repair đợt 1:** đã sửa metadata 16 SKU và thay 8 ảnh sai nội dung bằng ảnh chụp Commons có review/hash/provenance; index CPU rebuild. [Báo cáo và pending](docs/17_CATALOG_REPAIR.md). Gate ảnh/metadata toàn 180 SKU còn thiếu, chưa nghiệm thu toàn ecommerce.
+
 **Dataset cần rà lại:** kiểm tra trực quan E2 phát hiện ảnh infographic và metadata màu/brand sai trong đợt import 120. Xem [findings](artifacts/backend/catalog-review-findings.json); các câu “toàn bộ ảnh/metadata đạt” trong báo cáo baseline bên dưới chưa chứng minh catalog 180 hiện tại.
 
 **Mốc search/browse E2:** trang `/catalog` có tìm từ khóa/SKU, category/brand/color/price/stock facets, sort/phân trang server và URL state. Trang search mặc định kết hợp BM25 + encoder CPU thật qua RRF, giữ cosine riêng. Xem [contract](docs/16_SEARCH_BROWSE.md) và [evidence](artifacts/backend/SEARCH_BROWSE_REPORT.md). Natural-language constraints/frozen independent quality/checkout/full admin còn pending.

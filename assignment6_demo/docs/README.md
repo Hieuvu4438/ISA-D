@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Data repair/source audit và reproducibility: [17_CATALOG_REPAIR.md](17_CATALOG_REPAIR.md), gồm fixes/pending và bằng chứng riêng.
+
 E2 search/browse amendment: [16_SEARCH_BROWSE.md](16_SEARCH_BROWSE.md), gồm API, thuật toán, UI, UML và pending.
 
 **Mở rộng 15/10/2026:** Scope ecommerce đầy đủ và contract accounts tại [15_ECOMMERCE_EXPANSION.md](15_ECOMMERCE_EXPANSION.md), ưu tiên trên scope demo-only baseline. Toàn hệ thống chưa hoàn tất.

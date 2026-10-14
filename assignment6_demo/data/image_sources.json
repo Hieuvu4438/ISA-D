@@ -3376,56 +3376,48 @@
       "review_notes": "Real fashion photograph from Wikimedia Commons"
     },
     {
+      "source_title": "File:USENIX tote bag.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:USENIX_tote_bag.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/USENIX_tote_bag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/USENIX_tote_bag.jpg/960px-USENIX_tote_bag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Jonathan Schilling",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "retrieved_at": "2026-10-14T18:11:39.900790+00:00",
+      "sha256": "6258bedc1baba802e104e8c39a4eea7a4c54d85c5a34f8e8ddd800acfa047df8",
+      "bytes": 304500,
+      "format": "JPEG",
+      "width": 960,
+      "height": 1280,
+      "transformations": "Commons server thumbnail; local bytes unmodified",
       "asset_id": "P140",
       "product_id": "P140",
       "local_path": "data/images/P140.jpg",
-      "source_title": "File:ASC Leiden - van Achterberg Collection - 15 - 70 - Un homme souriant vêtu d'une robe bleue - Ahaggar, Algérie - 1986.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:ASC_Leiden_-_van_Achterberg_Collection_-_15_-_70_-_Un_homme_souriant_v%C3%AAtu_d%27une_robe_bleue_-_Ahaggar,_Alg%C3%A9rie_-_1986.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/ASC_Leiden_-_van_Achterberg_Collection_-_15_-_70_-_Un_homme_souriant_v%C3%AAtu_d%27une_robe_bleue_-_Ahaggar%2C_Alg%C3%A9rie_-_1986.jpg/960px-ASC_Leiden_-_van_Achterberg_Collection_-_15_-_70_-_Un_homme_souriant_v%C3%AAtu_d%27une_robe_bleue_-_Ahaggar%2C_Alg%C3%A9rie_-_1986.jpg",
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/ASC_Leiden_-_van_Achterberg_Collection_-_15_-_70_-_Un_homme_souriant_v%C3%AAtu_d%27une_robe_bleue_-_Ahaggar%2C_Alg%C3%A9rie_-_1986.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "author": "Angeline A. van Achterberg",
-      "license": "CC BY-SA 4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "description": "Mẫu túi tote màu kem, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: A smiling man in a blue robe with black headscarf is sitting in the sand in front of bushes and has made tea in small kettles. Three glasses, an oblon.",
-      "retrieved_at": "2026-10-08T05:00:00Z",
-      "sha256": "b970eca8b4a056cf96ebbec47d15019df90e9ac238efcbb47fd23ef289d136bd",
-      "bytes": 244588,
-      "transformations": [
-        "resize",
-        "strip_exif"
-      ],
       "real_photo_review": "passed",
-      "width": 960,
-      "height": 619,
-      "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:ASC_Leiden_-_van_Achterberg_Collection_-_15_-_70_-_Un_homme_souriant_v%C3%AAtu_d%27une_robe_bleue_-_Ahaggar,_Alg%C3%A9rie_-_1986.jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed R056: complete beige canvas tote with two handles and USENIX/SAGE printed emblem; no landscape or portrait substitution."
     },
     {
+      "source_title": "File:Ambigram Ideal, polysymmetrical logo printed on a green T-shirt.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ambigram_Ideal,_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg/960px-Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "retrieved_at": "2026-10-14T18:11:52.919316+00:00",
+      "sha256": "7ee88459d80f60896f3fea0a6fadacfa840860aa617c6fb87231f6fa1e91e2e9",
+      "bytes": 152539,
+      "format": "JPEG",
+      "width": 960,
+      "height": 960,
+      "transformations": "Commons server thumbnail; local bytes unmodified",
       "asset_id": "P141",
       "product_id": "P141",
       "local_path": "data/images/P141.jpg",
-      "source_title": "File:Perspiration stain on white cotton T-shirt.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Perspiration_stain_on_white_cotton_T-shirt.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Perspiration_stain_on_white_cotton_T-shirt.jpg/960px-Perspiration_stain_on_white_cotton_T-shirt.jpg",
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Perspiration_stain_on_white_cotton_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "author": "Daniel Case",
-      "license": "CC BY-SA 3.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-      "description": "Mẫu áo thun xanh navy, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Visible yellow dried  sweat  stain, on a white cotton T-shirt after hiking in it with a backpack on a hot afternoon..",
-      "retrieved_at": "2026-10-08T05:00:00Z",
-      "sha256": "7e083fbf7e2a165ce46844670d27794567942e6b66d9b9a9ca71ebb9c3236d3e",
-      "bytes": 102040,
-      "transformations": [
-        "resize",
-        "strip_exif"
-      ],
       "real_photo_review": "passed",
-      "width": 960,
-      "height": 653,
-      "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Perspiration_stain_on_white_cotton_T-shirt.jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed R067 on candidate contact sheet: a complete olive-green T-shirt with white Ideal print, isolated on white; no On mark. Replaces fabric-stain closeup."
     },
     {
       "asset_id": "P142",
@@ -3450,8 +3442,8 @@
       "width": 960,
       "height": 1440,
       "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:T-shirt_medieval_(6814570079).jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed original P142 on sheet-141-160: yellow hanging T-shirt with dark round printed emblem; previous green label inaccurate."
     },
     {
       "asset_id": "P143",
@@ -3476,8 +3468,8 @@
       "width": 960,
       "height": 1280,
       "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Ironed_green_T-shirt_(002).JPG",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed original P143: rear view of olive-green T-shirt on hanger, no red color or visible brand."
     },
     {
       "asset_id": "P144",
@@ -3502,8 +3494,8 @@
       "width": 960,
       "height": 1280,
       "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Ironed_green_T-shirt_(001).JPG",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed original P144: front view of olive-green T-shirt; same garment family as P143, keep different shot IDs for now, consolidation pending."
     },
     {
       "asset_id": "P145",
@@ -3528,8 +3520,8 @@
       "width": 960,
       "height": 1280,
       "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Ironed_blue_T-shirt_(002).JPG",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed original P145: blue T-shirt rear view; no black or brand evidence."
     },
     {
       "asset_id": "P146",
@@ -3554,34 +3546,30 @@
       "width": 960,
       "height": 1280,
       "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Ironed_blue_T-shirt_(001).JPG",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed original P146: blue T-shirt front view; same garment family as P145, consolidation pending."
     },
     {
+      "source_title": "File:White T-shirt plotted used by T-shirt pen plotter - simple graphic \"How to make a zine\" - event GRADE Paris 2026.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg/960px-White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Valerio Bozzolan",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "retrieved_at": "2026-10-14T18:11:57.935738+00:00",
+      "sha256": "0fecd8f4d28c158077c2d200c3b1a4a45183f7980692960f58d61b6e6c2c2ff2",
+      "bytes": 405836,
+      "format": "JPEG",
+      "width": 960,
+      "height": 1707,
+      "transformations": "Commons server thumbnail; local bytes unmodified",
       "asset_id": "P147",
       "product_id": "P147",
       "local_path": "data/images/P147.jpg",
-      "source_title": "File:A LCA of a Cotton T-Shirt (5622182415).jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:A_LCA_of_a_Cotton_T-Shirt_(5622182415).jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/A_LCA_of_a_Cotton_T-Shirt_%285622182415%29.jpg/960px-A_LCA_of_a_Cotton_T-Shirt_%285622182415%29.jpg",
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/A_LCA_of_a_Cotton_T-Shirt_%285622182415%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "author": "University of Michigan School for Environment and Sustainability  from Ann Arbor",
-      "license": "CC BY 2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0",
-      "description": "Mẫu áo thun xanh navy, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Mark Ellis, Elizabeth Matzen, \nViktor Passinksy, Priya Thyagarajan\n \nNRE 557  -  Industrial Ecology.",
-      "retrieved_at": "2026-10-08T05:00:00Z",
-      "sha256": "c7f34fb72cbaff285b99f921827f1153e5280bcedd40b3a100e710a66d114796",
-      "bytes": 217740,
-      "transformations": [
-        "resize",
-        "strip_exif"
-      ],
       "real_photo_review": "passed",
-      "width": 960,
-      "height": 715,
-      "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:A_LCA_of_a_Cotton_T-Shirt_(5622182415).jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed R072: real white T-shirt laid flat with dark zine-making graphic, supported by Commons photographic description. Replaces academic infographic."
     },
     {
       "asset_id": "P148",
@@ -3606,8 +3594,8 @@
       "width": 960,
       "height": 803,
       "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:TieDyeShirtMpegMan.jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed P148: full shirt with orange/red/yellow tie-dye pattern, not green."
     },
     {
       "asset_id": "P149",
@@ -3632,8 +3620,8 @@
       "width": 540,
       "height": 720,
       "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Colton_Cotton_talks_on_the_phone.jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed P149: man wearing black shirt with visible A.EAGLE lettering; no On branding. Avoid attributing brand from partial text alone."
     },
     {
       "asset_id": "P150",
@@ -3658,8 +3646,8 @@
       "width": 960,
       "height": 961,
       "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Green_YourSIGN_T-shirt.jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed P150: complete bright-green shirt with yellow band and white/black typography; no On mark."
     },
     {
       "asset_id": "P151",
@@ -3714,30 +3702,26 @@
       "review_notes": "Real fashion photograph from Wikimedia Commons"
     },
     {
+      "source_title": "File:Unknown Pleasures knit sweater & leather jacket - Joy Division Exhibition, Manchester, 2010 (2010-05-19 13.05.47 by Man Alive!).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition,_Manchester,_2010_(2010-05-19_13.05.47_by_Man_Alive!).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg/960px-Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Man Alive!",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "retrieved_at": "2026-10-14T18:12:07.003583+00:00",
+      "sha256": "e644aa36eaa9e9155ec0d775ce44696296a5e173a600f27b91fb5348f50a0ba0",
+      "bytes": 318203,
+      "format": "JPEG",
+      "width": 960,
+      "height": 1280,
+      "transformations": "Commons server thumbnail; local bytes unmodified",
       "asset_id": "P153",
       "product_id": "P153",
       "local_path": "data/images/P153.jpg",
-      "source_title": "File:Cross section of Leather Jacket, National Fruit Collection (acc. 1983-011).jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Cross_section_of_Leather_Jacket,_National_Fruit_Collection_(acc._1983-011).jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cross_section_of_Leather_Jacket%2C_National_Fruit_Collection_%28acc._1983-011%29.jpg",
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cross_section_of_Leather_Jacket%2C_National_Fruit_Collection_%28acc._1983-011%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "author": "National Fruit Collection,  Brogdale .",
-      "license": "OGL 2",
-      "license_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2",
-      "description": "Mẫu áo khoác rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: : Leather Jacket  apple, cross-sectioned.\n  NFC's description of the apple is:  \"Exhibited in 1883 from Harwich, Essex. Fruits tend to have very greas.",
-      "retrieved_at": "2026-10-08T05:00:00Z",
-      "sha256": "e8fea750dbe977a4287f04eaebd86764f2e3c2b4fed79a929c439d9a43bc9f2a",
-      "bytes": 28688,
-      "transformations": [
-        "resize",
-        "strip_exif"
-      ],
       "real_photo_review": "passed",
-      "width": 640,
-      "height": 480,
-      "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Cross_section_of_Leather_Jacket,_National_Fruit_Collection_(acc._1983-011).jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed R078: real black leather-style jacket on display mannequin over a graphic top; zipper/lapels visible. Replaces photograph of apples named Leatherjacket."
     },
     {
       "asset_id": "P154",
@@ -4182,30 +4166,26 @@
       "review_notes": "Real fashion photograph from Wikimedia Commons"
     },
     {
+      "source_title": "File:Polarized sunglasses (2026).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Polarized_sunglasses_(2026).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Polarized_sunglasses_%282026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Polarized_sunglasses_%282026%29.jpg/960px-Polarized_sunglasses_%282026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Gpkp",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "retrieved_at": "2026-10-14T18:12:47.932279+00:00",
+      "sha256": "462d040b1f8c4294cb8afaee1eb70504fbd7c5071a2c5b815e00ee2ad7e3b0fb",
+      "bytes": 111467,
+      "format": "JPEG",
+      "width": 960,
+      "height": 723,
+      "transformations": "Commons server thumbnail; local bytes unmodified",
       "asset_id": "P171",
       "product_id": "P171",
       "local_path": "data/images/P171.jpg",
-      "source_title": "File:2 الحداد.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:2_%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/2_%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF.jpg/960px-2_%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF.jpg",
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/2_%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "author": "Sofiane mohammed amri",
-      "license": "CC BY-SA 4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "description": "Mẫu kính mát gọng vàng mắt nâu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: This is an image of \"African people at work\" from.",
-      "retrieved_at": "2026-10-08T05:00:00Z",
-      "sha256": "c8b5dae8d2dace1a31bc00b4ca2cac35ba87a273c35cfde0c1110112b6414e4f",
-      "bytes": 470975,
-      "transformations": [
-        "resize",
-        "strip_exif"
-      ],
       "real_photo_review": "passed",
-      "width": 960,
-      "height": 1438,
-      "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:2_%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF.jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed R110: real black frame sunglasses on table, Ray-Ban mark visible on lens; replaces workshop photograph with no sunglasses product."
     },
     {
       "asset_id": "P172",
@@ -4286,30 +4266,26 @@
       "review_notes": "Real fashion photograph from Wikimedia Commons"
     },
     {
+      "source_title": "File:Mezmay, Sports sunglasses, Black sunglasses, Russia.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Black_sunglasses,_Russia.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "retrieved_at": "2026-10-14T18:12:39.233319+00:00",
+      "sha256": "58a37f80695c08495cb8a1d0689e30c63e17058fbc8b8a7542c705cc98e0de8b",
+      "bytes": 309850,
+      "format": "JPEG",
+      "width": 960,
+      "height": 638,
+      "transformations": "Commons server thumbnail; local bytes unmodified",
       "asset_id": "P175",
       "product_id": "P175",
       "local_path": "data/images/P175.jpg",
-      "source_title": "File:Jane Jacobs.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Jane_Jacobs.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Jane_Jacobs.jpg/960px-Jane_Jacobs.jpg",
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Jane_Jacobs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "author": "Phil Stanziola",
-      "license": "Public domain",
-      "license_url": "https://commons.wikimedia.org/wiki/File:Jane_Jacobs.jpg#Licensing",
-      "description": "Mẫu kính mát gọng đen mắt khói, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Mrs. Jane Jacobs, chairman of the Comm. to save the West Village holds up documentary evidence at press conference at Lions Head Restaurant at Hudson .",
-      "retrieved_at": "2026-10-08T05:00:00Z",
-      "sha256": "21733cfda0f0e5982b99466da0b35a0c6b47a26f1a7e2c2e75e47efb32397cfd",
-      "bytes": 174539,
-      "transformations": [
-        "resize",
-        "strip_exif"
-      ],
       "real_photo_review": "passed",
-      "width": 960,
-      "height": 827,
-      "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Jane_Jacobs.jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed R103: real black sports sunglasses on pale ground, clearly visible frame/lenses. Replaces historic portrait wearing optical eyeglasses."
     },
     {
       "asset_id": "P176",
@@ -4338,30 +4314,26 @@
       "review_notes": "Real fashion photograph from Wikimedia Commons"
     },
     {
+      "source_title": "File:Mezmay, Sports sunglasses, Reflective mirrored sunglasses, Russia.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Reflective_mirrored_sunglasses,_Russia.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "retrieved_at": "2026-10-14T18:12:37.831035+00:00",
+      "sha256": "6a5844c5161347f7659cf79cb4e4bce197cdeba4d66b0eef7f425274ba088183",
+      "bytes": 187504,
+      "format": "JPEG",
+      "width": 960,
+      "height": 638,
+      "transformations": "Commons server thumbnail; local bytes unmodified",
       "asset_id": "P177",
       "product_id": "P177",
       "local_path": "data/images/P177.jpg",
-      "source_title": "File:Blind Woman with Dark Glasses (5759147260).jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Blind_Woman_with_Dark_Glasses_(5759147260).jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Blind_Woman_with_Dark_Glasses_%285759147260%29.jpg",
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Blind_Woman_with_Dark_Glasses_%285759147260%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "author": "SMU Central University Libraries",
-      "license": "No restrictions",
-      "license_url": "https://www.flickr.com/commons/usage/",
-      "description": "Mẫu kính mát gọng đồi mồi, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Title: [Blind Woman with Dark Glasses] \n Creator: J. P. Blessing & Bro. \nDate: ca. 1870s \nPlace: Houston, Harris County, Texas \nPart Of: Lawrence T. J.",
-      "retrieved_at": "2026-10-08T05:00:00Z",
-      "sha256": "ed26af6788c3887f3a8f7dd0865e184df550b96e20703e76f9be319dac3dc26e",
-      "bytes": 531521,
-      "transformations": [
-        "resize",
-        "strip_exif"
-      ],
       "real_photo_review": "passed",
-      "width": 632,
-      "height": 1000,
-      "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Blind_Woman_with_Dark_Glasses_(5759147260).jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed R102: real curved sports sunglasses with reflective lenses on stone. Replaces historical portrait; no On brand evidence."
     },
     {
       "asset_id": "P178",
@@ -4416,30 +4388,26 @@
       "review_notes": "Real fashion photograph from Wikimedia Commons"
     },
     {
+      "source_title": "File:Mezmay, Sports sunglasses, Russia.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Russia.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Mezmay%2C_Sports_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Mezmay%2C_Sports_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "retrieved_at": "2026-10-14T18:12:45.349687+00:00",
+      "sha256": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d",
+      "bytes": 102564,
+      "format": "JPEG",
+      "width": 960,
+      "height": 638,
+      "transformations": "Commons server thumbnail; local bytes unmodified",
       "asset_id": "P180",
       "product_id": "P180",
       "local_path": "data/images/P180.jpg",
-      "source_title": "File:Portrait of blind woman (wearing dark glasses) and child (4420682988).jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Portrait_of_blind_woman_(wearing_dark_glasses)_and_child_(4420682988).jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Portrait_of_blind_woman_%28wearing_dark_glasses%29_and_child_%284420682988%29.jpg",
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Portrait_of_blind_woman_%28wearing_dark_glasses%29_and_child_%284420682988%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "author": "George Eastman House",
-      "license": "No restrictions",
-      "license_url": "https://www.flickr.com/commons/usage/",
-      "description": "Mẫu kính mát gọng đen mắt khói, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Digital Accession Number:  1995:1303:0001.0001 \n Maker:  Unidentified \n Title:  Portrait of blind woman (wearing dark glasses) and child \n Date:  ca. .",
-      "retrieved_at": "2026-10-08T05:00:00Z",
-      "sha256": "affb4d0ca08608f0b4feb8d1a22a8907e396fa6da879135ecdec32cde1852d92",
-      "bytes": 237994,
-      "transformations": [
-        "resize",
-        "strip_exif"
-      ],
       "real_photo_review": "passed",
-      "width": 926,
-      "height": 1024,
-      "format": "JPEG",
-      "review_evidence": "https://commons.wikimedia.org/wiki/File:Portrait_of_blind_woman_(wearing_dark_glasses)_and_child_(4420682988).jpg",
-      "review_notes": "Real fashion photograph from Wikimedia Commons"
+      "review_evidence": "data/catalog_repair_review.json",
+      "review_notes": "Reviewed R106: real black sports sunglasses resting on rock, lenses visible. Replaces nineteenth-century portrait with a child."
     }
   ]
 }
