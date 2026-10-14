@@ -1,0 +1,22 @@
+05-return-inspection	ACTIVITY_DIAGRAM	UC13 Inspect an approved return before stock restoration
+S	20	20	750	700
+P	ri-service	Customer Service	20	20	250	700
+P	ri-system	Atelier system	270	20	250	700
+P	ri-warehouse	Warehouse Staff	520	20	250	700
+N	ri-start	InitialNode		130	75	20	20		ri-service
+N	ri-check	ActivityAction	Confirm approved request\nand receipt instructions	45	130	200	55		ri-service
+N	ri-inspect	ActivityAction	Receive parcel; count and\ninspect each returned SKU	545	230	200	60		ri-warehouse
+N	ri-validate	ActivityAction	Check receipt reference and\nremaining approved quantity	295	340	200	60		ri-system
+N	ri-decision	DecisionNode		370	450	45	45		ri-system
+N	ri-record	ActivityAction	Record inspection; restock\nonly saleable quantities once	295	570	200	65		ri-system
+N	ri-error	ActivityAction	Resolve discrepancy;\nno stock change is committed	45	445	200	65		ri-service
+N	ri-error-end	ActivityFinalNode		130	570	25	25		ri-service
+N	ri-end	ActivityFinalNode		380	665	25	25		ri-system
+R	1	ControlFlow	ri-start	ri-check					
+R	2	ControlFlow	ri-check	ri-inspect					
+R	3	ControlFlow	ri-inspect	ri-validate					
+R	4	ControlFlow	ri-validate	ri-decision					
+R	5	ControlFlow	ri-error	ri-error-end					
+R	6	ControlFlow	ri-record	ri-end					
+R	7	ControlFlow	ri-decision	ri-record				valid receipt	
+R	8	ControlFlow	ri-decision	ri-error				invalid receipt	

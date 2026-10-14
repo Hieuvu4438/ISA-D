@@ -10,17 +10,19 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{graphicx}
-\graphicspath{{../img/}}
+\graphicspath{{img/}}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,backgrounds,calc,fit,matrix,positioning,shapes.geometric}
 \usepackage{multicol}
 \usepackage{float}
+\usepackage{pdflscape}
 \usepackage{caption}
+\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
 \usepackage{ragged2e}
 % ---------- Student identity ----------
 \newcommand{\studentid}{B23DCCE036}
-\newcommand{\studentname}{Vũ Đình Hiếu}
+\newcommand{\studentname}{V\~u \DJ\`inh Hi\'{\^e}u}
 \hypersetup{
   pdftitle={ABC Fashion Online Shop -- E-Commerce Information System Investigation},
   pdfsubject={Information System Analysis and Design -- Assignment 01},
@@ -141,7 +143,8 @@
 \section*{Executive Summary}
 ABC Fashion Online Shop is modeled as a medium-sized B2C retailer that owns and sells apparel, footwear, and accessories online. The investigation identifies one focal problem: fragmented and unreliable information prevents the business from coordinating Product Variants, stock, Orders, payment results, delivery, returns, customers, and reporting as one end-to-end process. In fashion, the stocked and fulfilled unit is the exact size/color \keyterm{Product Variant}, not its parent Product Style.
 
-The proposed \keyterm{ABC Fashion Commerce Information System (AFCIS)} establishes a controlled information backbone for catalog, customer, cart, Order, promotion, variant-level inventory, fulfillment, after-sales, review, and operational reporting. Payment execution, carrier operations, and message delivery remain external services. Six problems are supported by the available evidence; return/exchange and promotion-control concerns remain hypotheses for validation.
+The proposed \keyterm{ABC Fashion Commerce Information System (AFCIS)} establishes a controlled information backbone for catalog, customer, cart, Order, promotion, variant-level inventory, fulfillment, after-sales, review, and operational reporting. Payment execution, carrier operations, and message delivery remain external services. Six problems are established by the assignment case; return/exchange and promotion-control concerns remain hypotheses for validation before Assignment 02.
+
 \end{titlepage}
 \hypersetup{pageanchor=true}
 
@@ -151,7 +154,7 @@ This report investigates the information problem ABC Fashion Online Shop should 
 
 \textbf{Assumptions and limits.} ABC is treated as one medium-sized, owned-inventory B2C retailer with one initial warehouse and an online storefront. Payment authorization, physical transport, and message delivery are performed by external providers. The case supplies no interviews, logs, policies, or measured baselines; therefore, fashion-specific failure modes and numeric targets are explicitly preliminary.
 
-\textbf{Controlled terms.} A \keyterm{Product Style} groups related merchandise; a \keyterm{Product Variant} is one sellable size/\allowbreak color/\allowbreak attribute combination with one SKU. It is the stock, order-line, fulfillment, return, and exchange unit. \keyterm{Available-to-\allowbreak Sell (ATS)} is eligible on-hand stock less reservations and approved safety stock.
+\textbf{Controlled terms.} A \keyterm{Product Style} groups related merchandise; a \keyterm{Product Variant} is one sellable size/\allowbreak color/\allowbreak attribute combination with one SKU or GTIN. Variant attributes and identifiers must distinguish the precise sellable item~[R2], [R3]. It is the stock, order-line, fulfillment, return, and exchange unit. \keyterm{Available-to-\allowbreak Sell (ATS)} is eligible on-hand stock less reservations and approved safety stock.
 
 \section{Business Background}
 \subsection{Organization}
@@ -167,7 +170,7 @@ Resources and partners & Product and stock information, staff, warehouse, suppli
 \end{tabularx}
 
 \subsection{Products and Customers}
-The assortment covers apparel, footwear, and accessories. Customers need search and filtering by category, price, size, color, material, fit, and availability; variant-consistent media and size guidance; accurate promotion and ATS information; and dependable payment, shipment, return, exchange, and refund status. A style can be browsed as one family, but selection must resolve to a unique SKU before checkout.
+The assortment covers apparel, footwear, and accessories. Customers need search and filtering by category, price, size, color, material, fit, and availability; variant-consistent media and size guidance; accurate promotion and ATS information; and dependable payment, shipment, return, exchange, and refund status. Apparel UX research particularly supports clear fit and size guidance for confident product selection~[R4]. A style can be browsed as one family, but selection must resolve to a unique SKU before checkout.
 
 \subsection{Major Business Activities}
 ABC manages assortment and variants; prices/promotions; customers and consent; browsing/search; cart/checkout; orders and payments; variant-level stock; picking, packing, shipping and tracking; customer service, cancellations, returns/exchanges/refunds; reviews; supplier receipts; and sales/stock/operations reporting.
@@ -194,13 +197,15 @@ Customer; Supplier; Payment Gateway; Shipping Provider; and Notification Service
 \rowcolor{TableGray}\textbf{Stakeholder} & \textbf{Role} & \textbf{Main interest / need} & \textbf{Influence}\\
 Owner / Manager & Sponsor and policy owner & Benefits, risks, reliable KPIs and timely exceptions & High\\
 Administrator & Access, settings, exceptions & Efficient, accurate and auditable control & High\\
-Merchandiser / Marketing & Catalog and promotions & One controlled variant source and deterministic rules & High\\
+Merchandiser / Catalog Staff & Catalog and product data & One controlled Style/Variant source with complete attributes & High\\
+Marketing / Promotion Staff & Campaigns and promotion rules & Deterministic eligibility, dates, stacking and reporting & High\\
 Sales / Customer Service & Order and after-sales support & Consolidated customer/order lifecycle status & High\\
 Warehouse / Fulfillment & Stock and physical events & Exact-SKU work, accurate balances and traceability & High\\
 Finance / Accounting & Reconciliation & Linked order, payment, refund and fee information & Med--high\\
 Customer & Browse, buy, track, return, review & Confidence, accurate availability, fair price and status & High interest\\
 Supplier & Provide merchandise/facts & Clear receipt and replenishment communication & Medium\\
-Payment / Shipping providers & Financial and delivery services & Valid requests, stable references and exception handling & High interface\\
+Payment Gateway & Financial authorization, capture and refund & Valid requests, stable references and reconcilable outcomes & High interface\\
+Shipping Provider & Shipment and tracking services & Complete delivery data, milestones and exception handling & High interface\\
 Notification Service & Message delivery & Valid destination/content and correlation reference & Medium\\
 \end{tabularx}
 
@@ -211,7 +216,7 @@ Notification Service & Message delivery & Valid destination/content and correlat
 \label{fig:stakeholder-map}
 \end{figure}
 
-The branches classify the stakeholder groups as internal or external to ABC Fashion Online Shop.
+Figure~\ref{fig:stakeholder-map} classifies the internal and external stakeholders relative to ABC's organizational boundary. The map contains all and only the stakeholder groups analyzed above. Branch connectors indicate classification, not authorization or data flow; therefore, UML actors and Use Cases are not used.
 \newpage
 
 % ============================== PAGE 4 ==============================
@@ -221,13 +226,15 @@ The branches classify the stakeholder groups as internal or external to ABC Fash
 \textbf{4.1 Product Management} & Maintains categories, Styles, Variants, images, size/fit/care, lifecycle, prices and publication. & Style/Variant, media, price, promotion, supplier facts\\
 \textbf{4.2 Customer Management} & Maintains one controlled identity, contact, address, consent and service timeline. & Customer, consent, address, service history\\
 \textbf{4.3 Order Processing} & Validates cart, price, promotion and ATS; snapshots exact SKU lines; reserves stock and controls status. & Cart, Order, Order Line, reservation, status event\\
-\textbf{4.4 Payment} & Sends authorization/capture/refund requests to the gateway and records results/references. & Amount, request, gateway reference/status; no raw PAN/CVV\\
+\textbf{4.4 Payment} & Sends authorization/capture/refund requests to the gateway and records results/references. & Amount, request, gateway reference/status; no raw PAN/CVV~[R5]\\
 \textbf{4.5 Inventory} & Records SKU/location receipts, reservations, releases, picks, shipments, returns and adjustments. & On-hand, reserved, ATS, movement and source reference\\
 \textbf{4.6 Shipping} & Directs exact-SKU pick/pack, requests shipment, and maps tracking milestones into lifecycle status. & Pick list, package, address, tracking/status\\
 \textbf{4.7 Reporting} & Produces defined sales, stock, fulfillment, return/refund, promotion and exception views. & Governed operational data, period/status filters, refresh time\\
 \end{tabularx}
 
-Browsing and fit support, cart and checkout, promotions, reviews, cancellation, return, exchange, refund, and supplier receipt complete the fashion-commerce journey.
+Browsing and fit support, cart and checkout, promotions, reviews, cancellation, return, exchange, refund, and supplier receipt complete the required fashion journey. Figure~\ref{fig:business-process} presents the high-level order-to-after-sales business process and its external service interactions.
+
+\clearpage
 
 \iffalse
 \begin{figure}[!h]
@@ -300,13 +307,13 @@ Browsing and fit support, cart and checkout, promotions, reviews, cancellation, 
 \fi
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth]{bpmn_2.0.png}
-\caption{High-Level Fashion Order-to-After-Sales Process (BPMN 2.0).}
+\includegraphics[width=0.98\textwidth,height=0.68\textheight,keepaspectratio]{bpmn_2.0.png}
+\refstepcounter{figure}
 \label{fig:business-process}
 \end{figure}
 
-Solid Sequence Flows remain inside a pool; dashed Message Flows cross participant boundaries. External providers are represented as black-box pools. The process includes validation, payment-failure, review, and return/exchange paths.
-\newpage
+\footnotesize Solid Sequence Flows remain inside a Pool; dashed Message Flows cross participant boundaries, as required by BPMN 2.0 and the Visual Paradigm notation guidance~[R6], [R7]. External providers are black-box Pools. Alternative validation, payment-failure, review, and return/exchange paths are shown without introducing detailed Use Cases.
+\clearpage
 
 % ============================== PAGE 5 ==============================
 \section{Information Analysis}
@@ -343,7 +350,7 @@ I-16--17 & KPI/report and status/audit event & AFCIS / actors & Decisions, excep
 \item Every stock event references exact SKU, location, signed quantity, event type/time, actor/source and originating reference.
 \item An Order Line preserves the committed SKU, description, attributes, price, discount and quantity after catalog changes.
 \item Order, Payment, Shipment, Return, Exchange and Refund use controlled, timestamped status transitions.
-\item Payment data is minimized; raw PAN and CVV/CVC are excluded. Customer/consent changes are attributable.
+\item Payment data is minimized; raw PAN and CVV/CVC are excluded~[R5]. Customer/consent changes are attributable.
 \item Reports state period, included statuses and refresh/cut-off time so results are reproducible.
 \end{enumerate}
 
@@ -394,10 +401,12 @@ The combined effects are inaccurate promise or cancellation; overselling, unders
 \fi
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.88\textwidth]{problem_tree.png}
-\caption*{\textbf{Problem Tree.} Causes appear below the focal problem and consequences above it; arrows mean ``contributes to.''}
+\includegraphics[width=0.74\textwidth]{problem_tree.png}
+\caption*{\textbf{PT-1.} Mandatory supporting Problem Tree. Causes appear below the focal problem and consequences above it; arrows mean ``contributes to.''}
 \label{fig:problem-tree}
 \end{figure}
+
+PT-1 presents the candidate causal relationships among root causes, the focal problem, and business consequences.
 
 P-01--P-04 are investigated first because they determine whether the exact Variant can be promised, paid, fulfilled and explained. P-05--P-06 share the same source-of-truth need; P-07--P-08 remain in preliminary scope only if early validation confirms them.
 \newpage
@@ -443,9 +452,10 @@ Procurement & Supplier master, expected receipt, discrepancy and replenishment n
 \textbf{Boundary rationale.} AFCIS records and explains requests/results but does not perform payment processing, parcel transport or message delivery. Supplier is a business stakeholder but not a direct system interface in the initial boundary; authorized staff record relevant receipt/replenishment inputs.}}
 \newpage
 
-% ============================== PAGE 8 ==============================
+% ============================== CONTEXT DFD ==============================
+\clearpage
 \subsection{Context Diagram}
-Figure 3 uses one black-box DFD process, seven external entities, sixteen directed noun-phrase information flows and no data store or internal subprocess.
+Figure~\ref{fig:context-diagram} uses one black-box DFD process, seven external entities, sixteen directed noun-phrase information flows and no data store or internal subprocess, consistent with Visual Paradigm's DFD guidance~[R8].
 
 \iffalse
 \begin{figure}[!h]
@@ -484,37 +494,48 @@ Figure 3 uses one black-box DFD process, seven external entities, sixteen direct
 \fi
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth]{context_diagram.png}
-\caption{AFCIS System Context Diagram (Yourdon--DeMarco DFD convention).}
+\includegraphics[width=0.98\textwidth,height=0.68\textheight,keepaspectratio]{context_diagram.png}
+\caption{Core Diagram 3 --- AFCIS System Context Diagram (Yourdon--DeMarco DFD convention).}
 \label{fig:context-diagram}
 \end{figure}
 
+\clearpage
 \subsection{Information Flows}
-\begin{tabularx}{\textwidth}{L{13mm}L{32mm}L{32mm}Y}
+\tinytab
+\begin{tabularx}{\linewidth}{L{12mm}L{35mm}L{35mm}Y}
 \rowcolor{TableGray}\textbf{Flow} & \textbf{Source} & \textbf{Destination} & \textbf{Information crossing the boundary}\\
-F-01--02 & Customer & AFCIS & Account/contact/consent; search, cart, checkout, Order, review and after-sales requests\\
-F-03--04 & AFCIS & Customer & Catalog/Variant/size-fit/price/ATS; checkout and full lifecycle status\\
-F-05--06 & Operations Staff / AFCIS & AFCIS / Operations Staff & Catalog/promotion/service/admin updates; work, timeline, quality and exceptions\\
-F-07--08 & Warehouse Staff / AFCIS & AFCIS / Warehouse Staff & Receipt/count/pick/pack/return events; exact-SKU work and inventory status\\
-F-09--10 & Manager/Finance / AFCIS & AFCIS / Manager/Finance & Parameters/targets/approvals; KPI, reconciliation and audit information\\
-F-11--12 & AFCIS / Gateway & Gateway / AFCIS & Payment/capture/refund requests; transaction references and results\\
-F-13--14 & AFCIS / Carrier & Carrier / AFCIS & Shipment/package/recipient data; tracking, milestone, delivery and exception status\\
-F-15--16 & AFCIS / Notification Service & Service / AFCIS & Destination/content/template request; acceptance, delivery or failure outcome\\
+F-01 & Customer & AFCIS & Account, Contact, Address, Preference and Consent Data\\
+F-02 & Customer & AFCIS & Search, Cart, Checkout, Order, Review and After-Sales Request Data\\
+F-03 & AFCIS & Customer & Catalog, Variant, Media, Size/Fit, Price, Promotion and ATS Information\\
+F-04 & AFCIS & Customer & Checkout, Order, Payment, Shipment, Return, Exchange, Refund and Notification Status\\
+F-05 & Commerce Operations Staff & AFCIS & Catalog, Variant, Price, Promotion, Service, Moderation and Administration Updates\\
+F-06 & AFCIS & Commerce Operations Staff & Work Queue, Customer/Order Timeline, Data-Quality Issue and Exception Information\\
+F-07 & Warehouse/Fulfillment Staff & AFCIS & Receipt, Count, Adjustment, Pick/Pack, Shipment Handoff and Return Events\\
+F-08 & AFCIS & Warehouse/Fulfillment Staff & Receipt, Pick/Pack, Shipment and Return Work with Inventory Status\\
+F-09 & Manager/Finance Staff & AFCIS & Report Parameters, Targets, Approvals and Reconciliation Updates\\
+F-10 & AFCIS & Manager/Finance Staff & KPI, Report, Exception, Reconciliation and Audit Information\\
+F-11 & AFCIS & Payment Gateway & Payment Authorization, Capture and Refund Request Data\\
+F-12 & Payment Gateway & AFCIS & Gateway Transaction Reference and Payment/Refund Result Status\\
+F-13 & AFCIS & Shipping Provider & Shipment, Package, Service, Recipient and Delivery Data\\
+F-14 & Shipping Provider & AFCIS & Tracking, Shipment Milestone, Delivery and Exception Status\\
+F-15 & AFCIS & Notification Service & Message Request, Destination, Approved Content/Template and Correlation Data\\
+F-16 & Notification Service & AFCIS & Message Acceptance, Delivery or Failure Outcome\\
 \end{tabularx}
 
-Every context entity has at least one named incoming and outgoing flow. Payment, shipping and notification providers remain external. The DFD contains no entity-to-entity flow, database, UI or implementation component.
-\newpage
+\footnotesize Every context entity has at least one named incoming and outgoing flow. Payment, shipping and notification providers remain external. The DFD contains no entity-to-entity flow, database, UI or implementation component.
+\clearpage
 
 % ============================== PAGE 9 ==============================
 \subsection{System Objectives}
-\begin{tabularx}{\textwidth}{L{10mm}Y L{39mm}}
-\rowcolor{TableGray}\textbf{ID} & \textbf{Objective} & \textbf{Measure / target}\\
+\small
+\begin{tabularx}{\textwidth}{L{10mm}Y L{52mm}}
+\rowcolor{TableGray}\textbf{ID} & \textbf{Preliminary objective} & \textbf{Candidate measure / target}\\
 O-01 & One governed Style/Variant catalog with complete fashion attributes and controlled publication. & 100\% of published Variants pass mandatory-field and unique-SKU validation.\\
 O-02 & Timely, traceable SKU-level inventory, reservations, movements and ATS. & At least 99\% physical-to-record accuracy; accepted event visible within 60 seconds.\\
 O-03 & Coordinate routine Orders from checkout through payment, stock, fulfillment and shipment without re-keying. & At least 90\% of routine paid Orders enter warehouse work without manual re-entry.\\
 O-04 & One timely, explainable lifecycle status for customers and staff with proactive notifications. & At least 95\% of accepted status events visible within five minutes.\\
 O-05 & Traceable cancellation, return, size/color exchange, inspection, restock, replacement and refund. & 100\% of approved cases retain linked Order Line/SKU, decision, disposition and financial status.\\
-O-06 & Controlled customer data and secure external payment coordination without raw card credentials. & 100\% use gateway references; zero raw PAN/CVV stored; profile duplicates before target-setting.\\
+O-06 & Controlled customer data and secure external payment coordination without raw card credentials. & 100\% of AFCIS card-payment records use gateway references; zero raw PAN/CVV is stored; duplicate-customer and consent-quality targets are established after authorized data profiling.\\
 O-07 & Timely, reproducible operational reports and exception views. & Agreed dashboards refresh within 15 minutes; standard reports need no manual source consolidation.\\
 \end{tabularx}
 
@@ -526,15 +547,17 @@ ABC does not primarily need ``a website.'' It needs to solve a more fundamental 
 AFCIS responds with a bounded, traceable information-system proposal. It governs the Style/Variant distinction and coordinates catalog, customer, cart, Order, payment-reference, stock, fulfillment, shipment, return/exchange/refund, review and reporting information. Payment execution, physical transport, message delivery, supplier systems and accounting stay outside with named crossings. ABC should validate candidate causes and P-07/P-08, establish baseline objective measures, confirm policies and status vocabularies, and verify provider interfaces before detailed system design begins.
 
 \section{References}
+\sloppy
 \begin{enumerate}[label={[R\arabic*]},leftmargin=8mm,itemsep=.3pt]
 \footnotesize
-\item Tran, D. Q. (2026). \emph{Information System Analysis and Design --- Assignment 01: E-Commerce Information System Investigation}. Department of Information Technology, PTIT.
-\item GS1 (2024). \emph{How many GS1 GTINs do I need when I have a product with many sizes and colours?}
-\item Google Merchant Center. \emph{Product data specification} (variant-group, color, size, material and pattern guidance).
-\item Baymard Institute. \emph{Apparel \& Accessories Ecommerce UX Research}.
-\item PCI Security Standards Council. \emph{Merchant Resources --- What is PCI DSS?}
-\item Object Management Group. \emph{Business Process Model and Notation (BPMN), Version 2.0.2}.
-\item Visual Paradigm. \emph{Mind Mapping, BPMN Pool/Lane, System Context Diagram and Data Flow Diagram guidance}.
+\item Tran, D. Q. (2026). \emph{Information System Analysis and Design --- Assignment 01: E-Commerce Information System Investigation}. Department of Information Technology, Posts and Telecommunications Institute of Technology.
+\item GS1 (2024). \emph{How many GS1 GTINs do I need when I have a product with many sizes and colours?} GS1 Global Office. \url{https://support.gs1.org/support/solutions/articles/43000734083-how-many-gs1-gtins-do-i-need-when-i-have-a-product-with-many-sizes-and-colours-} (accessed 26 August 2026).
+\item Google (2026). \emph{Product data specification}. Google Merchant Center Help. \url{https://support.google.com/merchants/answer/7052112?hl=en} (accessed 26 August 2026).
+\item Baymard Institute (2026). \emph{Apparel \& Accessories Ecommerce UX Research}. \url{https://baymard.com/research/apparel-and-accessories} (accessed 26 August 2026).
+\item PCI Security Standards Council (2026). \emph{Merchant Resources: What Is PCI DSS?} \url{https://www.pcisecuritystandards.org/merchants/} (accessed 26 August 2026).
+\item Object Management Group (2014). \emph{Business Process Model and Notation (BPMN), Version 2.0.2}. OMG Document formal/2013-12-09. \url{https://www.omg.org/spec/BPMN/2.0.2/About-BPMN} (accessed 26 August 2026).
+\item Visual Paradigm (2026). \emph{Drawing BPMN Pools and Lanes}. Visual Paradigm User Guide. \url{https://www.visual-paradigm.com/support/documents/vpuserguide/2821/286/56993_poolandlane.html} (accessed 26 August 2026); and \emph{Introduction to BPMN Part III: Flow and Connecting Objects}. \url{https://www.visual-paradigm.com/tutorials/bpmn3.jsp} (accessed 26 August 2026).
+\item Visual Paradigm (2026). \emph{What Is a Data Flow Diagram (DFD)? How to Draw a DFD?} \url{https://www.visual-paradigm.com/tutorials/data-flow-diagram-dfd.jsp} (accessed 26 August 2026).
 \end{enumerate}
 
 \end{document}

@@ -1,0 +1,91 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{graphicx,booktabs,longtable,tabularx,array}
+\usepackage{amsmath,amssymb,enumitem,float,pdflscape}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Atelier Fashion Ecommerce}\fancyhead[R]{\small Systems Analysis and Design}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{16pt}
+\newcommand{\diagram}[3]{\begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.78\textheight,keepaspectratio]{../diagrams/#1.png}\caption{#2}\label{#3}\end{figure}}
+\newcommand{\landdiagram}[3]{\clearpage\newgeometry{margin=20mm}\begin{landscape}\thispagestyle{plain}\begin{figure}[H]\centering\includegraphics[width=250mm,height=148mm,keepaspectratio]{../diagrams/#1.png}\caption{#2}\label{#3}\end{figure}\end{landscape}\restoregeometry}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\draw[line width=1.2pt] ([xshift=12mm,yshift=-12mm]current page.north west) rectangle ([xshift=-12mm,yshift=12mm]current page.south east);
+\draw[line width=.4pt] ([xshift=14mm,yshift=-14mm]current page.north west) rectangle ([xshift=-14mm,yshift=14mm]current page.south east);
+\foreach \corner/\dx/\dy in {north west/1/-1,north east/-1/-1,south west/1/1,south east/-1/1}{
+\draw[line width=.7pt] ([xshift=\dx*17mm,yshift=\dy*17mm]current page.\corner) -- ++(\dx*10mm,0) -- ++(0,\dy*2mm);
+\draw[line width=.7pt] ([xshift=\dx*17mm,yshift=\dy*17mm]current page.\corner) -- ++(0,\dy*10mm) -- ++(\dx*2mm,0);
+}
+\end{tikzpicture}
+\centering
+{\large\bfseries POSTS AND TELECOMMUNICATIONS\par
+INSTITUTE OF TECHNOLOGY\par}
+\vspace{3mm}
+{\large PTIT\par}
+\vspace{4mm}
+\rule{25mm}{.4pt}\quad $\diamond$\quad\rule{25mm}{.4pt}\par
+\vspace{8mm}
+\includegraphics[height=43mm]{assets/ptit-logo.jpg}\par
+\vspace{10mm}
+{\large\bfseries INFORMATION SYSTEM ANALYSIS\par
+AND DESIGN\par}
+\vspace{7mm}
+{\Large\bfseries COURSE REPORT\par}
+\vspace{7mm}
+{\huge\bfseries ATELIER FASHION\par}
+\vspace{3mm}
+{\LARGE\bfseries Ecommerce Information System\par}
+\vspace{6mm}
+{\large Requirements Identification, Requirements Analysis,\par
+and System Design\par}
+\vspace{15mm}
+\begin{tabular}{@{}ll@{}}
+\textbf{Lecturer / Giang vien:} & Tran Dinh Que\\[3mm]
+\textbf{Student / Sinh vien:} & Vu Dinh Hieu\\[3mm]
+\textbf{Student ID / MSV:} & B23DCCE036
+\end{tabular}\par
+\vfill
+{\large\bfseries Hanoi, 2026\par}
+\vspace{3mm}
+\end{titlepage}
+\pagenumbering{roman}\hypersetup{pageanchor=true}
+\chapter*{Abstract}\addcontentsline{toc}{chapter}{Abstract}
+Fashion ecommerce requires the same size and colour identity to remain consistent from product discovery to warehouse picking and post-purchase service. This report specifies Atelier Fashion, a fictional direct-to-consumer retailer transitioning from disconnected catalogue, order, and inventory records to an integrated information system. The analysis establishes business activities, stakeholders, information needs, functional and nonfunctional requirements, priorities, and business rules. UML models describe actor goals, workflow responsibilities, transaction lifecycles, and domain relationships. The proposed design separates product designs from sellable variants, temporary carts from inventory reservations, and order fulfilment from payment and refund status. It uses immutable order snapshots, atomic stock allocation, authenticated provider notifications, and explicit return inspection to address overselling and inconsistent financial records. The report defines acceptance scenarios and requirement traceability for later implementation. It is a design study, not an implemented or performance-tested production system.
+\tableofcontents\listoffigures\listoftables
+\clearpage\pagenumbering{arabic}
+\input{introduction}
+\input{requirements}
+\input{analysis}
+\input{models}
+\input{design}
+\input{validation}
+\input{conclusion}
+\appendix
+\input{appendix}
+\renewcommand{\bibname}{References}
+\begin{thebibliography}{9}
+\phantomsection\addcontentsline{toc}{chapter}{References}
+\bibitem{uml} Object Management Group. \emph{Unified Modeling Language, Version 2.5.1}. 2017. \url{https://www.omg.org/spec/UML/2.5.1}.
+\bibitem{shopifyvariant} Shopify. \emph{ProductVariant: GraphQL Admin API}. Accessed 14 October 2026. \url{https://shopify.dev/docs/api/admin-graphql/latest/objects/ProductVariant}.
+\bibitem{shopifyinventory} Shopify. \emph{InventoryItem: GraphQL Admin API}. Accessed 14 October 2026. \url{https://shopify.dev/docs/api/admin-graphql/latest/objects/InventoryItem}.
+\bibitem{stripeintent} Stripe. \emph{The Payment Intents API}. Accessed 14 October 2026. \url{https://docs.stripe.com/payments/payment-intents}.
+\bibitem{stripewebhook} Stripe. \emph{Webhooks}. Accessed 14 October 2026. \url{https://docs.stripe.com/webhooks}.
+\bibitem{stripeidempotent} Stripe. \emph{Idempotent requests}. Accessed 14 October 2026. \url{https://docs.stripe.com/api/idempotent_requests}.
+\bibitem{asvs} OWASP Foundation. \emph{Application Security Verification Standard}. Accessed 14 October 2026. \url{https://owasp.org/projects/asvs}.
+\bibitem{wcag} World Wide Web Consortium. \emph{Web Content Accessibility Guidelines (WCAG) 2.2}. \url{https://www.w3.org/TR/WCAG22/}.
+\bibitem{vp} Visual Paradigm. \emph{Create Use Case Diagram using Open API; Export active diagram as image via Open API}. \url{https://knowhow.visual-paradigm.com/openapi/use-case-diagram/}; \url{https://knowhow.visual-paradigm.com/openapi/export-diagram-img-plugin/}.
+\end{thebibliography}
+\end{document}

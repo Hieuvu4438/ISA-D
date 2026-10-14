@@ -1,0 +1,163 @@
+\chapter{Requirements Identification}
+\section{Business background}
+Atelier Fashion sells clothing and accessories through an online storefront. Merchandising staff organise seasonal collections, categories, material descriptions, care instructions, photographs, and size charts. Each product design has one product identifier. Each sellable size/colour combination has one unique SKU. A blue shirt in size M and the same blue shirt in size L are distinct inventory items even when their listed prices match.
+
+The retailer earns revenue from merchandise sales. Unlike a marketplace, it owns stock and does not calculate commissions or seller payouts. Garment suppliers deliver stock to the warehouse; shipping and payment providers perform external services. Customers need accurate fit and availability information, while internal staff require unambiguous item identities and evidence of what was promised at purchase.
+
+\section{Current business activities and information}
+The assumed current operation uses spreadsheets, social messages, and provider portals. This scenario establishes design problems without claiming a measured field study. Table~\ref{tab:activities} distinguishes current work from the capabilities proposed to improve it.
+\begin{longtable}{P{.17\linewidth}P{.35\linewidth}P{.39\linewidth}}
+\caption{Business activities and information dependencies}\label{tab:activities}\\
+\toprule Activity & Assumed current operation & Proposed support \\\midrule\endfirsthead
+\toprule Activity & Assumed current operation & Proposed support \\\midrule\endhead
+Catalogue publication & Staff share product descriptions, images, and size lists in separate files. & Maintain product designs and explicit SKU matrices; publish only complete active variants.\\
+Customer information & Addresses are copied from messages into order sheets. & Store customer-owned addresses and immutable delivery snapshots per order.\\
+Product discovery & Customers browse listings and ask staff about size availability. & Filter products by category, size, colour, and price; display availability for the selected SKU.\\
+Cart preparation & Customers assemble selections, sometimes using product names alone. & Record exact SKU and quantity; clarify that carts do not reserve stock.\\
+Checkout & Staff check stock and calculate totals manually. & Recalculate authoritative prices, allocate stock atomically, and preserve the agreed total.\\
+Payment verification & Staff compare order sheets with a provider portal. & Receive verified payment events and reconcile unresolved transactions.\\
+Order fulfilment & Staff pick from text descriptions and record dispatch separately. & Produce SKU pick lists; block dispatch until verified payment and packing checks.\\
+Delivery tracking & Customers ask staff to look up tracking references. & Store one shipment reference and validated carrier updates per order.\\
+Returns and exchanges & Requests, parcel receipt, refund approval, and stock updates are disconnected. & Link requests to order lines; inspect goods before restoring stock or dispatching replacements.\\
+Management reporting & Teams manually consolidate sales and stock sheets. & Report SKU sales, stock, returns, and confirmed financial events with defined measures.\\
+\bottomrule
+\end{longtable}
+
+\section{Stakeholders and needs}
+Stakeholder status does not imply direct use of the software. Suppliers affect stock quality and receiving data but do not have accounts in this scope. Payment and shipping providers are external software actors because their interfaces exchange information with the system.
+\begin{longtable}{P{.17\linewidth}P{.22\linewidth}P{.52\linewidth}}
+\caption{Stakeholders, responsibilities, and needs}\label{tab:stakeholders}\\
+\toprule Stakeholder & Responsibility & Need and expected value \\\midrule\endfirsthead
+\toprule Stakeholder & Responsibility & Need and expected value \\\midrule\endhead
+Visitor / customer & Choose garments and purchase & N01: Accurate size/colour information, transparent totals, secure account access, and understandable order/return status.\\
+Merchandiser & Maintain sellable catalogue & N02: One source for product attributes, SKU uniqueness, images, size charts, prices, and publication state.\\
+Warehouse staff & Receive, pick, pack, and inspect & N03: Available and committed stock by SKU, reliable pick lists, and controlled return stock restoration.\\
+Customer service & Resolve cancellations and returns & N04: Purchase snapshots, eligibility rules, delivery evidence, and auditable decisions.\\
+Finance staff & Reconcile payments and refunds & N05: Provider references, verified monetary events, outstanding exceptions, and prevention of duplicate refunds.\\
+Manager & Evaluate business performance & N06: Consistent reporting definitions, SKU-level sales, return reasons, and seasonal stock visibility.\\
+Administrator & Control access and configuration & N07: Role permissions, secure staff accounts, configuration versioning, and audit evidence.\\
+Payment provider & Process funds externally & N08: Order reference, agreed amount/currency, idempotent requests, and authenticated event exchange.\\
+Shipping provider & Transport parcels externally & N09: Recipient snapshot, shipment reference, parcel details, and tracking event exchange.\\
+Garment supplier & Supply physical goods & N10: Consistent SKU references and discrepancy records; coordination remains outside the software.\\
+\bottomrule
+\end{longtable}
+
+\section{Information catalogue}
+Master information changes over time; transaction information records a commitment or event; derived information is calculated from identified source records. This distinction explains why a profile change must not rewrite a historical delivery address and why an edited product price must not change an existing order.
+\begin{longtable}{P{.18\linewidth}P{.37\linewidth}P{.36\linewidth}}
+\caption{Information catalogue and ownership}\label{tab:information}\\
+\toprule Information & Principal data and classification & Owner and control \\\midrule\endfirsthead
+\toprule Information & Principal data and classification & Owner and control \\\midrule\endhead
+Product and variant & Product title, category, material, size-chart version, colour images; SKU, size, colour, price, active state. Master. & Merchandiser; unique SKU and unique product/size/colour combination; retain referenced discontinued variants.\\
+Customer and address & Account identity, contact information, password hash, address book. Master/private. & Customer; restricted staff access; address snapshots on orders are separate.\\
+Inventory & SKU, on-hand quantity, reserved quantity, stock movement reason and reference. Operational. & Warehouse; atomic updates and audit; no negative available balance.\\
+Cart & Customer, exact SKU, requested quantity, revision. Temporary intention. & Customer; no stock hold; prices and availability rechecked at checkout.\\
+Order and lines & Owner, timestamp, recipient/address snapshot, SKU/title/size/colour snapshots, quantities, prices, discounts, delivery charge, total. Transaction. & Order service; immutable commercial snapshot after confirmation.\\
+Reservation & Order/SKU quantities, expiry, active/consumed/released state. Transaction. & Inventory service; unique allocation and once-only release/consumption.\\
+Payment and refund & Provider object reference, amount, currency, status, event identifiers, refund reason. Transaction. & Finance; trusted provider confirmation and idempotency.\\
+Shipment & Tracking reference, carrier, dispatch time, delivery events. Transaction. & Warehouse/carrier integration; ownership checks and event validation.\\
+Return and exchange & Original order line, requested quantity/reason, receipt and inspection result, replacement SKU or refund allocation. Transaction. & Customer service and warehouse; cumulative quantity checks.\\
+Audit and reports & Actor, action, time, before/after reference; daily aggregates. Audit/derived. & Administrator/manager; restricted audit access; reproducible report definitions.\\
+\bottomrule
+\end{longtable}
+
+\section{Problems, causes, and proposed responses}
+\begin{longtable}{P{.19\linewidth}P{.27\linewidth}P{.35\linewidth}P{.1\linewidth}}
+\caption{Problem analysis}\label{tab:problems}\\
+\toprule Problem & Cause & Consequence and response & Needs \\\midrule\endfirsthead
+\toprule Problem & Cause & Consequence and response & Needs \\\midrule\endhead
+P01 Wrong garment variant & Product names replace size/colour SKU identity. & Mis-picks and exchanges; use the same SKU in browsing, cart, order, and pick list. & N01--03\\
+P02 Overselling & Availability check and stock allocation occur separately. & Two buyers obtain the last unit; allocate all order SKUs atomically at checkout. & N01,03\\
+P03 Historical data drift & Orders reference editable prices and profile addresses. & Disputes over totals/address; preserve purchase and delivery snapshots. & N01,04\\
+P04 False paid status & Browser redirects or manual flags are treated as proof. & Unpaid dispatch; verify provider events and reconcile pending payment objects. & N03,05\\
+P05 Premature restocking & Refund approval is treated as physical goods receipt. & Damaged or absent items become sellable; restock only after inspection. & N03--05\\
+P06 Duplicate financial work & Retries and partial requests lack unique references and quantity caps. & Repeated charge/refund or over-return; use idempotency and cumulative allocations. & N04,05\\
+P07 Inconsistent reports & Sales, cash, and refunds are combined without definitions. & Managers cannot reconcile performance; define and label each metric. & N05,06\\
+\bottomrule
+\end{longtable}
+
+\section{Proposed system, boundary, and objectives}
+The proposed system integrates a public storefront, authenticated customer services, staff operations, and controlled provider adapters. Inside the boundary are catalogue publication, variant carts, checkout, stock reservations, order coordination, return decisions, refund requests, access control, and reporting. Outside are physical manufacture, parcel transport, the provider's settlement process, and supplier purchasing contracts. Provider status is recorded and verified rather than invented by the application.
+
+The proposed objectives are to preserve exact SKU identity through each transaction, prevent committed stock from exceeding sellable stock, block fulfilment without verified payment, maintain traceable monetary events, and make post-purchase decisions auditable. Success is assessed against acceptance scenarios rather than unsupported claims of a percentage improvement over a nonexistent measured baseline.
+
+\subsection{Feasibility and delivery approach}
+A modular web application with a transactional relational database is technically appropriate for a single retailer because stock and order changes can share a local transaction. Hosted payment pages reduce the application's direct handling of payment credentials. Operational feasibility depends on staff agreeing on SKU naming, barcode practice, return inspection, and responsibility for exception queues. Economic feasibility cannot be proved without supplier quotations and transaction volumes; a later budget must include hosting, provider fees, support, security review, and staff training.
+
+Delivery proceeds through catalogue/SKU cleanup, customer ordering and payment, warehouse workflows, then returns and reporting. Each phase requires approved requirements, migration reconciliation, and acceptance review. A pilot warehouse count establishes opening stock; spreadsheets are archived and reconciled before becoming read-only. No estimated implementation cost or achieved return on investment is asserted.
+
+\section{Elicitation and validation plan}
+The proposed elicitation methods are interviews with merchandising, warehouse, finance, and customer-service representatives; observation of receiving, picking, and returns; inspection of anonymised order sheets and payment references; and walkthroughs of difficult scenarios such as the last unit being purchased twice. Customer testing should focus on selecting unavailable sizes, understanding size charts, and distinguishing pending payment from confirmed purchase. These are planned activities, not completed research.
+
+Open decisions include the chosen payment/carrier interfaces, excluded return categories, shipping fee rules, and retention schedules. Before development, the manager and relevant staff approve a requirement baseline. Changes receive a version, reason, impact assessment, and updated links to use cases, rules, data, and acceptance scenarios.
+
+\section{Functional requirements and priorities}
+Each requirement below expresses a system obligation. \emph{Must} identifies a release condition; \emph{Should} may be deferred without breaking the core transaction; \emph{Could} is optional. Out-of-scope functions are recorded separately rather than disguised as low-priority obligations.
+The fourth MoSCoW category, \emph{Won't in this release}, includes guest checkout, cash on delivery, marketplace seller onboarding/settlement, manufacturing, multi-warehouse allocation, and perishable expiry tracking. These exclusions define this release's boundary; expansion requires a new requirement baseline and corresponding model changes.
+\begin{longtable}{P{.1\linewidth}P{.68\linewidth}P{.12\linewidth}}
+\caption{Functional requirement baseline}\label{tab:fr}\\
+\toprule ID & Requirement & Priority \\\midrule\endfirsthead
+\toprule ID & Requirement & Priority \\\midrule\endhead
+FR01 & The system shall search/filter active products by keyword, category, size, colour, and price, and display selected-SKU availability and size-chart information. & Must\\
+FR02 & The system shall register/authenticate customers and allow them to manage their own contact data and addresses; staff accounts shall be provisioned by administrators. & Must\\
+FR03 & The system shall store exact SKU quantities in customer carts, support add/update/remove, and state that a cart does not hold stock. & Must\\
+FR04 & The system shall revalidate the cart, address, prices, and delivery charge; show the final total for consent; and create at most one order for one checkout request key. & Must\\
+FR05 & The system shall reserve all required SKU quantities in the same transaction as order creation; reject the whole checkout if any SKU lacks stock. & Must\\
+FR06 & The system shall initiate hosted online payment with the agreed order total/currency and persist the provider reference using an idempotent request. & Must\\
+FR07 & The system shall verify provider events, deduplicate deliveries, validate amount/currency/order linkage, and reconcile uncertain or late outcomes. & Must\\
+FR08 & The system shall show a customer only their own order snapshots, payment state, shipment tracking, and return/refund progress. & Must\\
+FR09 & The system shall permit customer-service/customer cancellation before packing begins; release allocations once and request any required refund independently. & Must\\
+FR10 & The system shall accept eligible per-line returns/exchanges, enforce the request window and remaining quantities, and record decisions with reasons. & Must\\
+FR11 & The system shall allow merchandisers to maintain products, SKU variants, images, size charts, prices, and publication state without rewriting historical orders. & Must\\
+FR12 & The system shall record stock receipts/adjustments per SKU with quantity, reason, staff identity, and movement reference. & Must\\
+FR13 & The system shall generate SKU pick lists, verify packing, create one shipment per order, and consume reservations when goods are dispatched. & Must\\
+FR14 & The system shall validate and store carrier events, protect verified delivery from older events, and support authorised permanent non-delivery closure with independent refund and physical receipt controls. & Must\\
+FR15 & The system shall record return receipt and inspection; restore only saleable quantities and allocate equal-price replacement stock before confirming an exchange. & Must\\
+FR16 & The system shall request refunds against captured funds, cap cumulative amounts, prevent duplicate submissions, and confirm completion only from provider evidence. & Must\\
+FR17 & The system shall provide daily order, captured-payment, confirmed-refund, SKU sales, and stock reports with explicit measures and date filters. & Should\\
+FR18 & The system shall restrict actions by role, enforce customer/resource ownership, and audit sensitive changes and financial/stock events. & Must\\
+FR19 & The system shall notify customers of confirmed order, shipment, return decision, and refund outcomes without rolling back business transactions when notification fails. & Should\\
+FR20 & The system may allow customers with delivered purchases to submit one moderated review per purchased product per order. & Could\\
+\bottomrule
+\end{longtable}
+
+\section{Nonfunctional requirements}
+The following numerical targets are proposed acceptance conditions. They are not benchmarks already achieved. Provider/network time is reported separately from internal processing time.
+\begin{longtable}{P{.1\linewidth}P{.54\linewidth}P{.26\linewidth}}
+\caption{Nonfunctional requirements and verification methods}\label{tab:nfr}\\
+\toprule ID & Target & Verification method \\\midrule\endfirsthead
+\toprule ID & Target & Verification method \\\midrule\endhead
+NFR01 & At 100 concurrent active sessions and a 10,000-variant catalogue, internal search response p95 shall be at most 2 s and checkout allocation p95 at most 3 s. & Representative load test; publish test hardware, workload, and p95 results.\\
+NFR02 & The production service shall target 99.5\% monthly availability, excluding announced maintenance; external provider incidents shall be reported separately. & Monitor successful core journeys and calculate downtime over the calendar month.\\
+NFR03 & Concurrent purchases, cancellations, expiry jobs, and returns shall preserve stock and money invariants without lost updates. & Concurrency and retry scenarios; database reconciliation.\\
+NFR04 & Sensitive actions shall enforce server-side role/ownership checks, staff MFA, secure password hashing, TLS, and verified provider signatures. ASVS guides the security review. & Access-control, injection, session, and callback security tests; no certification claim\cite{asvs}.\\
+NFR05 & No raw card credentials shall be stored. Contact/address data shall be minimised, access-controlled, and excluded from routine logs. & Storage/log inspection and permission review.\\
+NFR06 & Core browsing, cart, checkout, and return forms shall target WCAG 2.2 AA, with keyboard navigation, labelled controls, visible focus, and non-colour status cues. & Manual keyboard/screen-reader checks and automated accessibility checks\cite{wcag}.\\
+NFR07 & The service shall target an RPO of 15 min and an RTO of 4 h using backups and database log recovery. & Restore drill; confirm event/outbox replay and payment reconciliation.\\
+NFR08 & The application shall centralise configurable policies, separate provider adapters, and record correlation identifiers across transaction steps. & Review module interfaces; trace one checkout and one return through logs.\\
+NFR09 & Staff shall be able to trace every stock adjustment, cancellation, return decision, and refund to an authorised actor or validated external event. & Reconstruct sampled event histories; detect missing references.\\
+\bottomrule
+\end{longtable}
+
+\section{Business rules and invariants}
+\begin{longtable}{P{.1\linewidth}P{.8\linewidth}}
+\caption{Business rule baseline}\label{tab:rules}\\
+\toprule ID & Rule \\\midrule\endfirsthead
+\toprule ID & Rule \\\midrule\endhead
+BR01 & SKU is unique across the retailer. A product/size/colour tuple identifies at most one variant. Only published active variants are purchasable.\\
+BR02 & Cart membership does not reserve inventory. For each SKU, available stock equals saleable on-hand stock minus active reserved stock; all three values are nonnegative.\\
+BR03 & Checkout reserves every order line atomically or reserves none. The initial payment hold lasts 15 minutes. Expiry closes the order and releases active holds once; a late captured payment creates a compensation/refund exception rather than reviving the order.\\
+BR04 & Unit prices, line discounts, SKU descriptions, recipient address, and delivery charge are snapshotted after customer consent. A changed quote requires renewed consent. Amounts use integer VND, not floating-point arithmetic.\\
+BR05 & Order total equals the sum of quantity times agreed unit price less allocated line discount, plus delivery charge. A line discount cannot exceed its gross line value. Listed prices are treated as tax-inclusive in this academic case; tax compliance requires separate jurisdictional review.\\
+BR06 & Payment is successful only after trusted provider verification of its reference, order, amount, and currency. A browser success page alone cannot authorise packing. Duplicate events have no duplicate business effect.\\
+BR07 & Only a paid, confirmed order can enter packing. Customer cancellation is permitted only in PendingPayment or Confirmed. A version/lock check resolves cancellation versus packing so only one eligible transition succeeds.\\
+BR08 & At dispatch, consume the reservation and reduce on-hand stock by the same quantity. Cancellation/expiry releases reserved stock without reducing on-hand stock. Once dispatched, use a return process rather than cancellation.\\
+BR09 & Return requests must reference delivered order lines and be submitted within the assumed 14-day policy window. Completed and active return allocations together cannot exceed the quantity delivered for a line. Rejected/withdrawn allocations are released.\\
+BR10 & Refund approval and returned-stock restoration are distinct events. Only received, inspected, saleable goods increase saleable on-hand stock. Damaged goods are recorded separately.\\
+BR11 & An exchange replaces a line with another size/colour of the same product at the same agreed price. Staff allocate replacement stock after inspection before confirming the exchange; unavailable replacements require customer choice of refund or withdrawal.\\
+BR12 & Confirmed plus pending refund commitments cannot exceed captured funds, and line refund commitments cannot exceed the refundable discounted value of eligible quantities. Delivery charge is refunded for full pre-dispatch cancellation or permanent non-delivery closure under BR15; post-delivery item returns exclude it. Partial item refunds use deterministic per-unit discount allocation.\\
+BR13 & Payment, fulfilment, return, and refund status are separate. Delivered remains the fulfilment fact even when some items are returned or refunded. RefundRequested is not evidence that money has reached the customer.\\
+BR14 & A staff role confers only its assigned permissions. Customers can read or change only their own resources; suppliers have no direct software access.\\
+BR15 & Permanent non-delivery closure requires verified carrier evidence and Customer Service authorisation while the order is Shipped. It schedules a full captured-amount refund, including delivery. Restocking requires a unique physical carrier-return receipt and saleability inspection; lost goods are not restocked. Temporary delivery attempts do not trigger closure.\\
+\bottomrule
+\end{longtable}

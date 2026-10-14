@@ -1,0 +1,12 @@
+18-support-use-cases	USE_CASE_DIAGRAM	Notifications optional reviews and finance reconciliation
+N	customer_boundary	System	Atelier Fashion Ecommerce	200	30	460	450		
+N	su-customer	Actor	Customer	40	140	110	85		
+N	su-provider	Actor	Payment Provider	40	350	110	85		
+N	su-finance	Actor	Finance Staff	740	350	110	85		
+N	notice	UseCase	UC17 Receive transaction notifications	245	95	370	65		
+N	review	UseCase	UC18 Submit purchased-product review	245	230	370	65		
+N	payevent	UseCase	UC05 Reconcile payment event	245	365	370	65		
+R	1	Association	su-customer	notice					150,165;245,127	
+R	2	Association	su-customer	review					150,200;245,262	
+R	3	Association	su-provider	payevent					150,392;245,397	
+R	4	Association	su-finance	payevent					740,392;615,397	

@@ -1,0 +1,85 @@
+\chapter{System Design}
+\section{Architecture and responsibility allocation}
+The proposed implementation is a modular application with one transactional data store. This choice supports a single retailer without requiring distributed stock allocation across independent merchants. Catalogue, identity/access, cart, checkout, inventory, order fulfilment, returns, payments/refunds, and reporting form distinct application modules with explicit interfaces. Their separation supports maintainability; their shared database supports atomic changes where local business invariants span several modules.
+
+Figure~\ref{fig:components} shows dependencies rather than chronological message flow. The UI calls application interfaces over HTTPS. Application modules use the transactional repository and record durable work. A worker processes inbox/outbox entries and delegates external calls to payment and shipping adapters. Adapters translate provider-specific fields and errors into local business outcomes. Provider credentials remain server-side. Reporting queries approved source data; it cannot set stock or paid flags.
+\landdiagram{12-components}{Application modules, durable work processing, and external service adapters.}{fig:components}
+
+\begin{longtable}{P{.23\linewidth}P{.39\linewidth}P{.27\linewidth}}
+\caption{Design responsibilities and boundaries}\label{tab:modules}\\
+\toprule Module & Responsibility & Boundary rule \\\midrule\endfirsthead
+\toprule Module & Responsibility & Boundary rule \\\midrule\endhead
+Catalogue & Publish products, variants, images, and chart versions & Never rewrite purchase snapshots.\\
+Checkout/cart & Customer cart ownership, consented quote, request deduplication & Never trust client-supplied prices or paid status.\\
+Inventory & Receipts, reservations, release, consumption, inspected restock & All stock effects require a unique movement/allocation reference.\\
+Orders/fulfilment & Guarded lifecycle transitions and SKU packing & Packing requires confirmed funds and active allocation.\\
+Payments/refunds & Provider object linkage, money commitments, reconciliation & Remote timeouts remain uncertain until reconciled.\\
+Returns/exchanges & Eligibility, quantity allocation, inspection, remedy & Financial approval is separate from physical stock receipt.\\
+Identity/audit & Roles, resource ownership, staff provisioning, audit events & Enforce permission at every mutation/read boundary.\\
+Worker/adapters & Retryable external calls, inbox processing, notification & Business effects are idempotent despite repeated delivery.\\
+\bottomrule
+\end{longtable}
+
+\section{Checkout transaction and interaction design}
+Figure~\ref{fig:checkout-sequence} is the successful checkout trace. Steps 2--5 belong to one local database transaction, including the SKU locks and final commit. Returning validated data at step 3 does not release those transaction locks. External payment initiation occurs only after commit. The customer receives PendingPayment and provider instructions, not a local assertion that payment succeeded. Execution bars are omitted because this is a responsibility-level interaction model; message order, synchronous calls, and dashed replies carry its relevant semantics.
+\landdiagram{10-checkout-sequence}{Successful checkout: commit order, stock holds, and durable work before the provider call.}{fig:checkout-sequence}
+
+The transaction loads the owned cart, verifies the consented quote and revision, locks SKU balances in sorted SKU order, and validates every requested quantity. It inserts the order, immutable lines/address, active reservations, and payment-command outbox entry together. Failure for any line rolls back every new record and stock change. The unique customer/request-key constraint returns an existing result on retries. A request fingerprint prevents a different payload from reusing the same key. Inventory does not wait on a provider network response while its rows are locked.
+
+The payment-command worker may retry after a crash. It uses a stable key tied to the original order/payment operation and retrieves the provider object when the previous outcome is uncertain. The provider reference is durably linked to the order. An expired payment deadline is handled under the order lock; a callback racing expiry can either confirm a still-active order or record captured funds for a closed order and compensate, but cannot do both. A production adapter must define the provider's supported retry and reconciliation semantics before launch.
+
+\section{Provider callback and compensation design}
+Figure~\ref{fig:payment-sequence} treats receipt acknowledgment and financial processing separately. The adapter validates the original signed request, persists a unique inbox event, and acknowledges durable receipt. Message 5 is asynchronous processing of that stored event. The business update then validates provider reference, amount/currency, event identity, and the locked order state. The optional fragment applies only when the order is closed and a capture has been verified; \emph{paid} in its guard means trusted captured funds, not a browser flag.
+\landdiagram{11-payment-sequence}{Durable callback receipt, guarded processing, and optional late-payment compensation.}{fig:payment-sequence}
+
+Signature verification precedes inbox persistence; the step-2 message includes persistence after adapter verification, not an instruction to trust a database with cryptographic authentication automatically. A duplicate already persisted event receives an acknowledgment and does not schedule duplicate work. A distinct event describing the same provider payment is also protected by the unique provider object and guarded payment transition. Pending event delivery is retried/reconciled; timestamp order alone is insufficient to infer the final state\cite{stripewebhook}.
+
+Compensation first records a pending refund commitment and durable command in the transaction that recognises the late capture. The call shown in the optional fragment is issued through the payment adapter by retryable work after that commit. It does not mark the refund Succeeded. An unavailable provider leaves a visible pending/failed exception until verified resolution. Idempotent API requests are a provider integration pattern\cite{stripeidempotent}; local unique constraints and transaction guards are still required to protect application effects.
+
+\section{Relational mapping and data integrity}
+The relational mapping below translates concepts into a persistence design. PK denotes primary key, FK denotes foreign key, and UQ denotes uniqueness. It is a design specification; no deployed database or generated application is claimed.
+\begin{longtable}{P{.2\linewidth}P{.35\linewidth}P{.34\linewidth}}
+\caption{Core relational entities and constraints}\label{tab:db}\\
+\toprule Entity & Keys and principal links & Integrity rule \\\midrule\endfirsthead
+\toprule Entity & Keys and principal links & Integrity rule \\\midrule\endhead
+Customer, Staff, Role & Customer/staff PK; email UQ; StaffRole composite PK & Public registration creates customer roles only; credentials are hashes, not plaintext.\\
+Category, SizeChart, Product & Product PK; category FK; optional chart/version FK & Required attributes/images before publication; preserve chart versions.\\
+ProductVariant & SKU PK; product FK; UQ(product, size, colour) & Active flag; nonnegative integer price; retain purchased variants.\\
+InventoryBalance & SKU PK/FK; onHand, reserved; row version & Check $0\leq reserved\leq onHand$; availability derived.\\
+StockMovement & Movement PK; SKU FK; UQ(source type, source reference, SKU, effect) & Signed quantity and authorised reason; immutable effect history.\\
+Cart, CartLine & Cart PK; customer UQ/FK; line UQ(cart, SKU) & Positive quantity; optimistic cart revision; no reservation FK.\\
+Order, AddressSnapshot & Order PK; customer FK; UQ(customer, request key); address order PK/FK & Immutable agreed snapshot; separate fulfilment status/version.\\
+OrderLine & Line PK; order/SKU FKs; unique line number per order & Positive quantity; integer agreed unit price and allocated discount; preserve descriptions.\\
+Reservation & PK; order/SKU FKs; optional exchange FK; unique operation/SKU & Positive quantity; kind, active/consumed/released state, deadline; guarded once-only effects.\\
+Payment & PK; order FK; provider reference UQ & Integer amount/currency; immutable captured evidence; only one accepted successful object for original total.\\
+InboxEvent, OutboxCommand & PK; UQ(provider, event ID) / UQ(operation key) & Durable attempts, state, correlation, and next retry; business commit includes new command.\\
+Shipment, TrackingEvent & Shipment PK; order UQ/FK; tracking reference UQ; provider/event UQ & One original shipment per order; guarded delivery progression.\\
+ReturnRequest, ReturnLine & Request/line PKs; order and original line FKs & Lock original line entitlement; positive quantities; active/completed allocation cap.\\
+Inspection & PK; return-line FK; unique receipt-line reference & $0\leq saleable\leq accepted\leq received$; cumulative receipts cannot exceed approval.\\
+Exchange fulfilment & PK; original return-line FK; replacement SKU FK; tracking reference & One linked replacement allocation per accepted return line; equal product and agreed price.\\
+Refund, RefundAllocation & Refund PK; payment FK; request key UQ; allocation line FK & Pending and successful commitments count toward payment/line caps.\\
+AuditEvent, Notification, Review & PKs; business reference; notification operation UQ; review UQ(customer, order, product) & Append-only audit; independent delivery retry; purchase-checked moderated review.\\
+\bottomrule
+\end{longtable}
+
+Foreign keys prevent orphan lines and references; restricted deletion protects transaction history. Cross-row sums require transactional enforcement rather than a simple row CHECK. For instance, an original OrderLine is locked before allocating a new return quantity, and a Payment is locked before adding a refund commitment. The stored reserved balance and active Reservation sum are reconciled periodically; application transactions update them together. Useful indexes cover active catalogue filters, customer/order history, SKU movements, unresolved payment/refund state, and due inbox/outbox work. Search indexes are read models and never authorise stock allocation.
+
+\section{Stock and money examples}
+Consider a SKU with $onHand=5$ and $reserved=0$. Reserving two units gives $(5,2)$ and available stock 3. Dispatch gives $(3,0)$ and still available stock 3. Cancelling before dispatch would instead produce $(5,0)$. If two dispatched units return and only one is saleable, inspection restores one unit, producing $(4,0)$; refunding two units does not independently add two units to stock. A last-unit race must allocate at most one successful hold even if both carts previously showed availability.
+
+For money, suppose three units cost 399,000 VND each, the agreed line discount is 70,000 VND, and delivery is 30,000 VND. Gross merchandise is 1,197,000 VND; net merchandise is 1,127,000 VND; the order total is 1,157,000 VND. Allocate the discount deterministically across stable unit ordinals as 23,334, 23,333, and 23,333 VND. The corresponding refund entitlements are 375,666, 375,667, and 375,667 VND. Refunding the first unit commits 375,666 VND; it does not recompute a larger refund from the current catalogue price. A second concurrent request cannot allocate that same unit ordinal again. Remainder allocation guarantees that full item refunds sum exactly to the agreed discounted merchandise value. The baseline policy excludes delivery refunds for post-delivery item returns; a full pre-dispatch cancellation or permanent non-delivery closure includes the agreed delivery charge.
+
+\section{Interface behaviour and access design}
+Product pages show the chosen size/colour explicitly, retain size-chart context, and disable unavailable selections with text rather than colour alone. Cart estimates are labelled as estimates. Checkout repeats the final SKU quantities, recipient snapshot, delivery charge, and payable total before consent. A changed quote is shown for reconfirmation, not silently accepted. Pending payment screens include an order reference, resumable provider instruction, and status refresh; their copy avoids a false success message.
+
+Order detail separates payment, delivery, return, and refund status. Return forms list eligible order lines and remaining quantities; unavailable exchange stock creates a clear choice rather than an automatic unwanted refund. Warehouse screens require SKU identity and quantities, and distinguish saleable from damaged units. Financial exceptions show provider reference, verified amount, pending commitments, and reconciliation history. All forms provide field-level errors and preserve safe input after validation failure. Core journeys target labelled controls, keyboard operation, visible focus, and accessible status messages under WCAG 2.2 AA\cite{wcag}; this is an acceptance target, not a certification claim.
+
+Server-side checks apply on every relevant request. Customers access only owned carts, addresses, orders, and requests. Merchandisers change catalogue data; Warehouse Staff change authorised stock/packing/inspection records; Customer Service makes permitted cancellation and return decisions; Finance Staff control refunds/reconciliation; Managers read approved aggregates; Administrators provision access. Staff use MFA. Hosted payment interfaces keep raw card credentials out of application storage. TLS, secure sessions, password hashing, input validation, parameterised queries, CSRF protection for browser mutations, and verified provider signatures are design controls reviewed using ASVS\cite{asvs}. Webhook signature verification replaces browser-session trust for external callbacks. Secrets are kept out of source, customer pages, and logs.
+
+\section{Deployment, recovery, and operational reporting}
+Figure~\ref{fig:deployment} shows logical deployment nodes, not a claim of purchased infrastructure. The reverse proxy is the public HTTPS entry point. Application and worker hosts reach the primary database through private authenticated connections. The worker calls provider APIs; signed callbacks return through the proxy. Backup storage is access-restricted and separate from the primary. Application/worker processes can initially share a machine while retaining separate credentials and execution roles; physical sizing follows load testing.
+\landdiagram{13-deployment}{Deployment topology, provider callbacks, and backups.}{fig:deployment}
+
+Backups plus database log recovery target the proposed 15-minute RPO and four-hour RTO. A restore drill verifies data, outstanding reservations, inbox/outbox replay, and provider reconciliation. External payment outcomes may exist beyond the recovered local point; restoration must query provider references before repeating charges/refunds. Audit logs include business reference and correlation identifier, but exclude credentials and unnecessary personal data. Retention and deletion schedules require approved operational/legal policy; customer profile erasure does not justify corrupting required financial evidence.
+
+Reports distinguish order value, captured funds, successful refunds, and net cash movement. A daily order-value measure uses placedAt and agreed totals; captured funds use verified capture time; refunded funds use provider-confirmed refund completion time. Net cash movement is captured funds minus successful refunds for the selected event period and is not labelled profit or recognised revenue. SKU units sold exclude cancelled/unpaid orders and use a disclosed dispatch or delivery basis; return rate states its unit-based numerator and delivered-unit denominator. Stock reports show saleable on-hand, reserved, available, and damaged counts separately. Use the Asia/Bangkok reporting timezone consistently for day boundaries while storing timestamps as UTC instants.

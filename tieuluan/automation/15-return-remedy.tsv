@@ -1,0 +1,22 @@
+15-return-remedy	ACTIVITY_DIAGRAM	UC13 Resolve inspected return as refund or equal-price exchange
+N	rm-start	InitialNode		160	20	20	20		
+N	rm-choice	ActivityAction	Load accepted inspected lines\nand customer remedy choice	40	85	250	60		
+N	rm-decision	DecisionNode		145	205	50	45		
+N	rm-reserve	ActivityAction	Atomically reserve equal-price\nreplacement size or colour	40	330	250	65		
+N	rm-refund	ActivityAction	Schedule UC14 refund against\nremaining captured entitlement	390	200	260	70		
+N	rm-stock	DecisionNode		145	460	50	45		
+N	rm-confirm	ActivityAction	Confirm linked exchange;\nfulfil with SKU packing checks	40	600	250	65		
+N	rm-unavailable	ActivityAction	Ask customer to choose refund\nor withdraw exchange request	390	450	260	70		
+N	rm-end-refund	ActivityFinalNode		500	320	25	25		
+N	rm-end-pending	ActivityFinalNode		500	595	25	25		
+N	rm-end-exchange	ActivityFinalNode		155	720	25	25		
+R	1	ControlFlow	rm-start	rm-choice					
+R	2	ControlFlow	rm-choice	rm-decision					
+R	3	ControlFlow	rm-reserve	rm-stock					
+R	4	ControlFlow	rm-refund	rm-end-refund					
+R	5	ControlFlow	rm-unavailable	rm-end-pending					
+R	6	ControlFlow	rm-confirm	rm-end-exchange					
+R	7	ControlFlow	rm-decision	rm-reserve				exchange	
+R	8	ControlFlow	rm-decision	rm-refund				refund	
+R	9	ControlFlow	rm-stock	rm-confirm				stock allocated	
+R	10	ControlFlow	rm-stock	rm-unavailable				stock unavailable	

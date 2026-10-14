@@ -1,0 +1,1221 @@
+MINISTRY OF SCIENCE AND TECHNOLOGY
+POSTS AND TELECOMMUNICATIONS INSTITUTE OF
+TECHNOLOGY
+——————–o0o——————–
+INFORMATION SYSTEM ANALYSIS AND
+DESIGN
+Information System Investigation Report:
+Requirements Identification and Analysis
+Instructor:
+Trần Đình Quế
+Student:
+Lê Như Quỳnh
+Student ID:
+B23DCCE081
+Class:
+E23TTNT02
+Group:
+03
+Hanoi 2026
+Contents
+1
+REQUIREMENTS IDENTIFICATION
+1
+1.1
+Introduction to the Problem . . . . . . . . . . . . . . . . . . . . . . . . . .
+1
+1.2
+Review of Current Business Operations . . . . . . . . . . . . . . . . . . . .
+2
+1.3
+Stakeholders and Their Needs . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+1.4
+Information Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+1.5
+Problems in the Current Situation . . . . . . . . . . . . . . . . . . . . . . .
+7
+1.6
+Proposed Information System . . . . . . . . . . . . . . . . . . . . . . . . .
+9
+1.7
+Functional Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+1.8
+Non-Functional Requirements . . . . . . . . . . . . . . . . . . . . . . . . .
+13
+1.9
+Requirement Priorities . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+1.10 Traceability and Requirement Review . . . . . . . . . . . . . . . . . . . . .
+15
+2
+REQUIREMENTS ANALYSIS
+16
+2.1
+Actor Analysis
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+2.2
+Use Case Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+2.3
+Use Case Specifications . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+2.4
+Activity Diagrams . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23
+2.5
+Swimlane Diagrams . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+26
+2.6
+Requirement Traceability . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+28
+2.7
+Requirement Validation
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+29
+i
+Chapter 1
+REQUIREMENTS IDENTIFICATION
+1.1
+Introduction to the Problem
+1.1.1
+Business context
+Fashion e-commerce differs from the sale of a single, undifferentiated item. One product
+design can be offered in several colors and sizes; every combination must be identified,
+priced, displayed, counted, picked, and recorded consistently. In the ABC Fashion case
+described in the business investigation, variant information is fragmented, inventory up-
+dates rely on spreadsheets, and size information does not sufficiently support customers’
+choices. These conditions contribute to canceled orders, incorrect fulfillment, and size
+exchanges.
+This chapter identifies the business problems, stakeholders, needs, system boundary,
+and requirements. The case is an academic analysis; no new field interviews, measured
+outcomes, or operational statistics are claimed.
+1.1.2
+Organization and business model
+ABC Fashion is a medium-sized direct-to-consumer online fashion retailer in this case. It
+works with garment suppliers, a payment provider, and a shipping provider. Seasonal col-
+lections and unsold stock influence purchasing and reporting. The proposed information
+system supports sales and internal coordination but does not itself manufacture goods,
+move parcels, or settle payments.
+1.1.3
+Products and target customers
+The merchandise includes clothing, dresses, and accessories.
+A product design has a
+product identifier; a specific color-size combination has its own stock-keeping unit (SKU).
+A white shirt in size M and a black shirt in size L therefore represent different variants
+for inventory and order processing. Target customers are online shoppers who depend on
+reliable photographs, size charts, product availability, and an accessible exchange process.
+Internal users need the same variant identity to handle orders and stock accurately.
+1
+1.2
+Review of Current Business Operations
+1.2.1
+Main activities and existing workflow
+The business investigation describes collection and variant management, customer in-
+formation, search and product viewing, size support, carts, orders, payment, picking,
+delivery, exchanges, reviews, and management reporting. The current workflow moves
+from product information to customer selection, an availability check, order processing,
+picking, shipment, and after-sales support. Inventory is still handled with general product
+codes and manual consolidation. Reserving inventory by SKU and generating SKU-level
+pick lists are proposed capabilities; they must not be mistaken for features of the current
+operation.
+1.2.2
+Participating departments and external parties
+Administrators maintain catalog data. Merchandising staff plan collections; sales staff
+handle orders; warehouse staff count, pick, pack, and receive returned items. Customer
+service addresses questions and exchanges. Marketing uses product and sales informa-
+tion, while managers evaluate performance. Customers, garment suppliers, the payment
+provider, and the shipping provider participate from outside the organization. A stake-
+holder need not be a direct software actor: this distinction becomes important in Chapter
+2.
+1.2.3
+Ten major business activities
+The business investigation distinguishes ten activities. Their inclusion describes the enter-
+prise workflow; it does not imply that each activity already has a fully specified software
+function.
+2
+Activity
+Business work and information
+Collection and
+variant
+management
+Maintain categories, fabric specifications, size charts, color/size SKU
+matrices, and photographs for each color.
+Customer and
+measurement
+profiles
+Keep contact details, addresses, purchase history, height, weight, and
+measurements for possible sizing assistance.
+Browsing and size
+selection
+Search and filter by available variants; inspect lookbooks and size
+information.
+Variant shopping
+cart
+Store the exact SKU and quantity chosen and check availability at
+checkout.
+Fashion order
+processing
+Record orders, reserve variants under an agreed stock rule, and create
+SKU-level pick lists.
+Payment
+management
+Request online payment authorization or record a COD method;
+reconcile its actual status.
+Matrix inventory
+management
+Track color-size stock and identify unavailable or slow-moving sizes.
+Shipping and
+returns
+Issue waybills, follow delivery, and coordinate reverse logistics for
+exchanges.
+Visual reviews
+Collect ratings, fit feedback, fabric comments, and customer
+photographs where permitted.
+Fashion analytics
+Report sales by collection and variant and returns by design to guide
+future purchasing.
+Table 1.1: The ten business activities and their principal information needs.
+Figure 1.1: High-level business process from browsing and size selection through payment,
+SKU fulfillment, delivery, and fit feedback.
+The process figure includes a smart sizing step that the business investigation proposes.
+Its presence in a preliminary business process does not, by itself, supply a testable sizing
+FR in the committed FR01–FR20 catalogue. This distinction is maintained throughout
+both chapters.
+3
+1.2.4
+Business information
+Inputs include product and variant data, size charts, customer measurements, SKU selec-
+tion, quantities, addresses, payment responses, shipment updates, and exchange requests.
+Outputs include order confirmations, pick lists, waybills, status notifications, and reports.
+Persistent information covers customers, catalog entries, orders and lines, payments, stock
+records, shipments, returns, and reviews. The same item of information may be produced
+by one activity, used by another, and stored for later reconciliation.
+Information
+Source
+Main use
+Product, color,
+size, SKU
+Administration,
+merchandising
+Variant selection and correct warehouse picking.
+Size chart,
+measurements
+Business,
+customer
+Size comparison and potential advice.
+Order and
+order lines
+Customer,
+system
+Sales, warehouse, and customer-service processing.
+Quantity by
+SKU
+Warehouse,
+order
+operations
+Availability checks and prevention of overselling.
+Payment,
+waybill
+External
+services
+Transaction and shipment reconciliation.
+Exchange,
+review
+Customer,
+warehouse
+After-sales work and product feedback.
+Business report
+Transaction
+summaries
+Sales and collection decisions.
+Table 1.2: Business information summarized from the business investigation.
+1.3
+Stakeholders and Their Needs
+1.3.1
+Internal and external stakeholders
+Internal stakeholders are administrators, merchandising staff, sales staff, warehouse staff,
+customer-service staff, marketing staff, and managers.
+External stakeholders are cus-
+tomers, garment suppliers, the payment provider, and the shipping provider. Administra-
+tors need consistent product and SKU definitions. Warehouse staff need correct quantities
+and picking instructions. Managers and merchandisers need timely sales, stock, and return
+information. Customers need to choose the right variant and track their transactions.
+4
+Figure 1.2: Stakeholder map distinguishing seven internal roles and four external parties.
+1.3.2
+Roles and interests of the stakeholder groups
+Stakeholder
+Principal interest
+Customer
+Reliable fit and size information, accurate delivery, and manageable
+returns.
+Administrator
+A consistent, rapidly changing catalogue and valid product variants.
+Merchandiser /
+Buyer
+Sales and stock data for collections and size distributions.
+Sales Staff
+Correct order, customer, and sizing information.
+Warehouse Staff
+Physical and available quantities for each color-size SKU.
+Customer Service
+Staff
+Fast access to order history, fit feedback, and return state.
+Marketing Staff
+Sales trends relevant to campaigns and promotions.
+Manager
+Timely sales, stock, and return analysis.
+Garment Supplier
+Demand and potential reorder information by style and size.
+Payment Provider
+Correct and secure transaction data.
+Shipping Provider
+Precise addresses, waybills, and return pickup details.
+Table 1.3: Distinct interests of the eleven stakeholder groups.
+5
+1.3.3
+Stakeholder needs
+The following identifiers organize ten needs already represented in the requirements spec-
+ification; they do not assert that new interviews occurred.
+ID
+Stakeholder
+Need
+Expected benefit
+NC01 Customer
+Search by text, voice, or image.
+Find relevant products quickly.
+NC02 Customer
+View variants and add the desired
+one to the cart.
+Know color, size, price, and
+availability.
+NC03 Customer
+Follow order and shipment status.
+Understand purchase progress.
+NC04 Administrator Manage catalog and variants.
+Consistent product and SKU data.
+NC05 Manager
+View dashboards and reports.
+Monitor sales, inventory, and
+returns.
+NC06 Warehouse
+staff
+View pick lists and update stock
+by SKU.
+Pick the correct variant and avoid
+overselling.
+NC07 Warehouse
+staff
+Receive returns and adjust stock.
+Distinguish resalable and
+damaged items.
+NC08 Customer
+service
+Access customer feedback.
+Support complaints and reviews.
+NC09 Payment
+provider
+Verify transactions and process
+refunds.
+Reconcile payment state.
+NC10 Shipping
+provider
+Create waybills and update
+delivery/return state.
+Track shipping and exchanges.
+Table 1.4: Stakeholder needs used for traceability.
+NC08 is only partly covered by FR18, which allows customer comments but does not
+specify a customer-service complaint workflow. NC10 is reflected in FR14–FR15, although
+exchange formats, timing, and error handling remain to be clarified.
+Accurate stock
+benefits both the warehouse and customers even though their immediate tasks differ.
+1.4
+Information Analysis
+1.4.1
+Information produced
+The business produces order confirmations that identify color and size, pick lists by SKU
+and shelf location, electronic waybills, VAT invoices, sales reports by collection, return
+reports by size, and delivery notifications. These are proposed or existing business infor-
+mation outputs, depending on the current workflow; the presence of an output here is not
+proof that an automated module already exists.
+6
+1.4.2
+Information consumed
+Business activities consume merchandising size specifications and lookbook images, cus-
+tomer body measurements, SKU-level stock, payment verification, shipping status mes-
+sages, and fit feedback. Order validation depends on current stock; shipping status de-
+pends on information from the external provider.
+1.4.3
+Information stored
+The shared information base retains customer profiles and measurements; the collection
+tree; product style, color, size, SKU, and listed price; variant order lines; payment trans-
+action history; warehouse shelf and stock records; waybills and exchanges; and reviews
+with any permitted customer images.
+1.4.4
+Information catalogue
+Information
+Producer
+Consumer
+Purpose
+Product
+variant data
+Administrator Customer,
+sales
+Select and order the correct color/size.
+Measurement
+profile
+Customer
+System, sales
+Support sizing advice when this capability is
+specified.
+Variant order
+data
+Customer,
+system
+Warehouse,
+sales
+Pack the exact SKU and quantity.
+Matrix stock
+data
+Warehouse,
+system
+Customer,
+manager
+Identify availability and prevent overselling.
+Sales and
+trend reports
+System
+Manager,
+buyer
+Plan collections and size quantities.
+Fit feedback
+Customer
+Manager,
+shoppers
+Describe actual form and fit.
+Table 1.5: Information catalogue connecting producers, consumers, and purposes.
+1.5
+Problems in the Current Situation
+1.5.1
+Problems, causes, and consequences
+The business investigation identifies canceled orders due to variant-stock discrepancies,
+size-related exchanges, incorrect color or size in packing, mismatches between displayed
+color and the product, and delayed consumption reports. The IDs below permit a direct
+link to needs and system requirements.
+7
+ID
+Problem
+Cause described in the business
+investigation
+VD01 Orders canceled because variant stock is
+inaccurate.
+Spreadsheet quantities use general
+product codes rather than timely
+color-size SKU updates.
+VD02 Frequent size exchanges.
+Insufficient standard size charts and sizing
+support.
+VD03 Wrong color or size picked and packed.
+Pick lists do not clearly identify variant
+SKUs.
+VD04 Displayed colors do not match the actual
+goods.
+No consistent color and photography
+standards.
+VD05 Slow sales and consumption analysis.
+Fragmented data and manual aggregation
+by color and size.
+Table 1.6: Business problems and their stated causes.
+VD01 undermines fulfillment and trust; VD02 raises exchange work and transport costs;
+VD03 results in wrong deliveries; VD04 changes customer expectations; and VD05 delays
+collection and inventory decisions. These are qualitative effects. The supplied material
+does not provide a dataset from which to calculate actual rates or demonstrate improve-
+ment.
+1.5.2
+Problem tree
+Figure 1.3: Problem tree: causes, intermediate problems, and shared consequences.
+The left branch links spreadsheet inventory and missing real-time SKU synchronization to
+apparent size/color stock-outs and cancellations (VD01). The middle branch links weak
+8
+size guidance to poor fit and returns (VD02). The right branch links SKU-free pick lists
+and a lack of automated analysis to packing errors (VD03) and delayed reports (VD05).
+The common outcomes include size exchanges, cancellations, dead stock, and falling trust.
+VD04 is discussed in the business investigation text but is not drawn as a separate branch
+in this particular figure; it remains in the problem table for completeness.
+1.6
+Proposed Information System
+1.6.1
+Purpose, objectives, and scope
+The system should unify fashion inventory by SKU, support customer selection, connect
+orders to warehouse work, and provide reliable management information. Its objectives
+are to limit orders for unavailable variants, assist sizing decisions where specified, im-
+prove picking accuracy, track delivery and returns, and consolidate sales and inventory
+information.
+The functional scope follows FR01–FR20 of the requirements specification: accounts
+and profiles; categories, products and variants; text, voice and image search; product
+details; cart and checkout; payments and refunds; SKU pick lists, inventory and returns;
+shipping; comments; and reports.
+Priorities are addressed later in this chapter.
+An
+augmented-reality fitting room is outside the current scope.
+Advanced wish lists and
+outfit recommendations are optional extensions. AI examples, promotions, supplier or-
+dering, and sizing advice appear in the background documents, but the requirements
+specification does not provide sufficiently specific functional requirements to treat them
+as commitments under FR01–FR20.
+1.6.2
+System boundary and context diagram
+The software stores and processes business information. Payment services handle money
+movement; shipping services move parcels. Staff members remain external actors to the
+software boundary even though they belong to ABC Fashion as an organization.
+9
+Figure 1.4: Preliminary context diagram with five external parties.
+The customer sends orders, measurements, exchange requests, and feedback, and receives
+catalog information, confirmations, and tracking details. Administrators and managers
+provide collection data, size charts, and settings, and receive sales and returns informa-
+tion. The payment service exchanges requests, responses, and transaction references. The
+shipping provider receives delivery/exchange requests and sends waybill numbers and sta-
+tuses. The garment supplier appears in this preliminary diagram with production orders
+and finished-goods information. The requirement catalogue has no corresponding direct
+FR or Use Case, so supplier integration would require a separate detailed specification.
+Sales, service, and marketing staff are Chapter 1 stakeholders even though the Use Case
+diagram does not draw separate cases for them.
+1.6.3
+Detailed external information flows
+• Customer →system: search input, body measurements, color/size choice, cart and
+order information, exchange request, and fit feedback. System →customer: variant
+images and availability, possible sizing advice, confirmation, and tracking updates.
+• Garment supplier →system: production progress, finished quantities by size and color,
+and quotations.
+System →supplier: proposed manufacturing orders by SKU and
+10
+target delivery dates. These preliminary context flows are not a committed supplier
+integration in FR01–FR20.
+• System →payment service: order identifier and payable amount. Payment service →
+system: success/failure response, reference, and reconciliation information.
+• System →shipping provider: delivery or exchange-pickup request, address, parcel
+information, and any COD amount. Shipping provider →system: waybill code and
+delivery/return status events.
+• Administrator and manager →system: catalog and size-chart data, color standards,
+and report queries. System →them: collection sales, variant consumption, return
+analysis, and audit information where available.
+1.6.4
+Six business objectives
+1. Synchronize inventory by color-size SKU. The investigation proposes reducing
+unavailable-stock orders by 90%; this is a target, not an observed result, and requires
+a baseline.
+2. Offer measurement-based sizing assistance to reduce size-related returns. The concept
+appears in the business scope and AI illustration; its acceptance criteria need a separate
+FR.
+3. Generate unambiguous SKU pick lists and support barcode checking to reduce wrong-
+color and wrong-size fulfillment.
+4. Standardize digital color codes and lookbook photography; display software alone can-
+not guarantee the appearance of physical goods on all devices.
+5. Coordinate size-exchange requests and reverse delivery with the shipping provider.
+Return conditions still require agreement.
+6. Analyze sales by collection, color, and size to plan replenishment and reduce stagnant
+stock.
+1.7
+Functional Requirements
+1.7.1
+Organization and source of the requirements
+Functional requirements describe what the system must do, without prescribing its imple-
+mentation. The next two tables define the shared FR01–FR20 catalogue. Here M means
+Must Have and S means Should Have. The stakeholder/need column is an analytical
+trace to Section 1.3, not a record of interviews.
+11
+ID
+System behavior
+Need or
+party
+Priority
+FR01 Allow customer registration and login.
+Customer
+M
+FR02 Allow customers to manage profile information.
+Customer
+S
+FR03 Allow administrators to manage categories and variant
+matrices.
+NC04
+M
+FR04 Allow administrators to create, update, and delete products.
+NC04
+M
+FR05 Allow product search using keywords, voice, and images.
+NC01
+M
+FR06 Display product details, including variant information.
+NC02
+M
+FR07 Add the selected product variant to the cart.
+NC02
+M
+FR08 Display cart contents.
+NC02
+M
+FR09 Check out the cart and place an order.
+NC03
+M
+FR10 Generate a warehouse pick list by SKU after order placement. NC06
+M
+Table 1.7: Functional requirements FR01–FR10.
+FR01 combines registration and login because the source groups them; individual test
+cases may still separate the two behaviors. For FR05, accepted voice/image input, recog-
+nition failure, and response time require further definition. The full implementation of a
+search algorithm is a design question, not a requirement stated by these two chapters.
+ID
+System behavior
+Need or
+party
+Priority
+FR11 Let customers pay for orders securely.
+Customer
+M
+FR12 Process online payments through the integrated service.
+NC09
+M
+FR13 Verify payment status and handle refunds.
+NC09
+M
+FR14 Allow the shipping provider to create waybills.
+NC10
+M
+FR15 Update delivery and exchange/return status.
+NC03,
+NC10
+S
+FR16 Allow warehouse staff to view pick lists and update inventory
+by SKU.
+NC06
+M
+FR17 Process returned items and update the appropriate stock
+state.
+NC07
+M
+FR18 Allow customers to submit product comments and feedback.
+NC08
+(partial)
+S
+FR19 Let managers view analytics dashboards on sales, stock, and
+returns.
+NC05
+S
+FR20 Generate comprehensive management reports.
+NC05
+S
+12
+Table 1.8: Functional requirements FR11–FR20.
+1.7.2
+Associated business rules
+1. Variant identity: a cart or order line must identify a SKU and its color and size,
+not merely a product design.
+2. Availability: an order must not be confirmed when a selected SKU cannot satisfy the
+requested quantity. Checking and reserving stock must be consistent under concurrent
+orders.
+3. Order total: the amount derives from quantities and line prices; shipping, promo-
+tions, and adjustments still need precise rules.
+4. Payment state: choosing cash on delivery (COD) does not mean that money has
+already been collected.
+5. Returns: an incoming item is associated with its original SKU; inspection determines
+whether it can re-enter saleable stock.
+The requirement catalogue does not settle when stock is reserved and deducted, how failed
+payments release reservations, or exactly how COD is represented. Chapter 2 therefore
+makes these open questions explicit rather than silently assigning a policy.
+1.8
+Non-Functional Requirements
+Ten NFR identifiers are used consistently. The figures of two seconds, 99.9%, and 5,000
+are proposed targets from the requirements, not measured results. Test conditions must
+be agreed before acceptance.
+NFR01 – Performance
+Normal product searches by text, voice, or image should return in two seconds
+according to the requirements specification. The meaning of peak load, dataset
+size, system configuration, and timing boundary remains open.
+NFR02 – Security
+Only authenticated and authorized users may access personal order information.
+Tests should include unauthenticated requests and attempts to read another cus-
+tomer’s order.
+NFR03 – Usability
+Customer pages should use consistent navigation and legible color/size labels.
+Color fidelity requires accepted photography and display conditions; software
+alone cannot guarantee identical rendering on every screen.
+NFR04 – Availability
+Target availability is at least 99.9% during business hours. The operating window,
+measurement period, and treatment of maintenance must be defined.
+13
+NFR05 – Reliability
+Confirmed orders and their stock effects must remain consistent and retrievable,
+including after an interrupted transaction.
+NFR06 – Scalability
+The requirement catalogue refers to 5,000 “active users and SKUs.” Users and
+SKUs are different quantities; the concurrency level and variant count must be
+specified separately.
+NFR07 – Maintainability
+Changes to one functional area should be testable without uncontrolled effects
+on others. The modular architecture mentioned in the earlier specification is a
+later design decision.
+NFR08 – Data integrity
+Prevent confirmation of orders with invalid SKUs or insufficient stock; this con-
+strains FR09 and FR16.
+NFR09 – Compatibility
+Support suitable desktop and mobile browsers; named versions and viewport sizes
+remain to be agreed.
+NFR10 – Compliance
+Handle customer data in accordance with the project’s applicable com-
+merce/privacy rules.
+The requirement catalogue does not identify the exact
+legal criteria, so compliance cannot yet be certified.
+1.9
+Requirement Priorities
+1.9.1
+Must Have
+The requirements are marked FR01, FR03–FR14, FR16–FR17, NFR02, NFR05, and
+NFR08 as essential for catalog integrity, ordering, payment, warehouse work, and access
+control.
+1.9.2
+Should Have
+FR02, FR15, FR18–FR20, NFR01, and NFR04 support profiles, tracking, feedback, re-
+ports, performance, and availability. The AI sizing discussion in the requirements speci-
+fication does not establish a separate FR identifier in the latest list.
+1.9.3
+Could Have and Won’t Have
+An advanced wish list and outfit recommendations are potential extensions without de-
+tailed FR identifiers.
+An AR fitting room is excluded from the present release.
+The
+requirement list gives no explicit priority to NFR03, NFR06, NFR07, NFR09, or NFR10;
+14
+their priority must be confirmed, not inferred to be low. FR14 is Must Have while the
+broader tracking FR15 is Should Have: even the first release must still handle a failed
+waybill request honestly.
+1.10
+Traceability and Requirement Review
+1.10.1
+From problem to need to requirement
+Problem Need
+Requirement Contribution and limitation
+VD01
+NC04
+FR03
+Identifies color-size variants consistently.
+VD01
+NC06
+FR16,
+NFR08
+Maintains SKU stock and prevents impossible orders.
+VD01
+NC03
+FR09
+Checks stock again before order confirmation.
+VD02
+NC02
+FR06
+Displays details; specific size recommendations lack an FR.
+VD03
+NC06
+FR10, FR16
+Gives warehouse staff SKU-level picking information.
+VD04
+NC02
+FR06,
+NFR03
+Shows product images; photography standards remain
+separate.
+VD05
+NC05
+FR19, FR20
+Provides dashboards and consolidated reports.
+Table 1.9: Representative problem–need–requirement links.
+1.10.2
+Clarity, completeness, and feasibility
+FR03, FR05, FR07, FR10, and FR19 have identifiable inputs or outputs and can support
+concrete tests. That does not mean the specification is complete. VD04 is covered only
+in part by image-display and usability requirements. NC08 lacks a complete customer-
+service workflow; NC10 needs service error and data-exchange rules. Refund timing, stock
+release after payment failure, return eligibility, and report definitions remain unresolved.
+The proposed NFR01 two-second target cannot be tested without a load profile; NFR04
+requires a business-hours calendar and measurement period; NFR06 needs separate user
+and SKU scales. FR09 can be checked with valid, unavailable-stock, and payment-failure
+scenarios. The supplied documents do not establish that performance targets are already
+feasible or met.
+15
+Chapter 2
+REQUIREMENTS ANALYSIS
+This chapter develops the requirements established in Chapter 1 into system actors, Use
+Case descriptions, Activity Diagrams, Swimlane Diagrams, requirement traceability, and
+validation. The identified functions follow the FR01–FR20 catalogue.
+2.1
+Actor Analysis
+An actor represents an external role that directly interacts with the proposed system.
+The six actors in the ABC Fashion Use Case diagram are identified below.
+1. Customer: Interacts through the web or mobile interface to register, log in, search
+by keyword, voice or image, view products, add variants to the cart, check out, pay,
+and submit comments or feedback.
+2. Administrator: Manages product categories, products, and variant information.
+3. Warehouse Staff: Views pick-lists, picks and packs items by SKU, updates inventory,
+and processes returned items.
+4. Manager: Accesses analytics dashboards, sales reports, inventory reports, and return
+reports.
+5. Payment Service: External service that processes online payments, verifies payment
+status, and executes refunds.
+6. Shipping Provider: External service that creates waybills and updates delivery and
+exchange/return statuses.
+The garment supplier is a stakeholder in the preliminary context diagram from Chapter
+1. However, it is not drawn as a direct actor in the supplied Use Case diagram.
+2.2
+Use Case Model
+2.2.1
+Actor Identification
+The six actors are identified from the system boundary and external service interactions:
+Customer, Administrator, Warehouse Staff, Manager, Payment Service, and Shipping
+Provider. Staff members are actors because they interact with the software, even though
+they belong to ABC Fashion as an organization.
+16
+2.2.2
+Use Case Identification
+The Use Case diagram contains functions for account access, product browsing and search,
+shopping-cart operations, orders, payments, product and inventory management, report-
+ing, and shipping integration. Five key use cases are described in detail in Section 2.3.
+ID
+Use Case
+Primary
+actor(s)
+Related FRs
+UC01
+Search Products
+Customer
+FR05
+UC02
+View Products
+Customer
+FR06
+UC03
+Place Order / Checkout
+Customer
+FR07–FR09, FR11–FR14
+UC04
+Manage Products &
+Inventory
+Administrator,
+Warehouse Staff
+FR03–FR04, FR10, FR16–FR17
+UC05
+View Analytics
+Dashboard & Reports
+Manager
+FR19–FR20
+Table 2.1: The five principal Use Cases and their corresponding requirements.
+17
+2.2.3
+UML Use Case Diagram
+Figure 2.1: UML Use Case Diagram of ABC Fashion Shop System.
+The diagram associates the Customer with search, product viewing, cart, ordering, lo-
+gin, registration, payment and comments; the Administrator with category and product
+management; Warehouse Staff with pick-lists, packing, inventory and returned items;
+the Manager with dashboards and reports; and the external services with payment and
+shipping functions.
+2.2.4
+Include and Extend Relationships
+The original model identifies these relations:
+18
+• Include: Place Order and Create Waybill; Pay and Process Online Payment.
+• Extend: Search and the three search forms: Search Key, Search Voice, and Search
+Image.
+These relations are described as shown in the supplied diagram. The three search methods
+are alternatives for a user request; online payment is conditional on the chosen payment
+method, while COD does not require immediate online payment.
+2.3
+Use Case Specifications
+The following five specifications retain the goal, actors, trigger, preconditions, postcon-
+ditions, main scenario, alternative flows, exceptions, rules, and priority of the original
+Assignment 02 Use Cases.
+2.3.1
+Use Case 1: Search Products
+Field
+Specification
+Use Case ID
+UC01
+Use Name
+Search Products
+Primary Actor
+Customer
+Goal
+Find specific fashion products quickly using available search
+methods.
+Trigger
+The customer uses the search bar or selects a search option on the
+storefront.
+Preconditions
+The system is online and the product catalogue is loaded.
+Postconditions
+Matching products or variants are displayed, or the customer exits
+the search flow.
+Main Success
+Scenario
+1. Customer initiates a search. 2. System provides the search
+interface. 3. Customer chooses keyword, voice, or image input. 4.
+System queries the product catalogue. 5. System displays
+matching products.
+Alternative
+Flows
+3a. Voice/Image: The customer submits a voice query or image;
+the system interprets it into product attributes before querying the
+catalogue. 5a. Search Again: The customer changes the query
+and repeats the search.
+Exceptions
+No Results Found: The system displays a no-results message
+and alternative suggestions; the customer can search again or exit.
+19
+Field
+Specification (continued)
+Business Rules
+Results display active, stocked products or products explicitly
+available for pre-order.
+Priority
+Must Have
+Table 2.2: UC01 – Search Products specification.
+2.3.2
+Use Case 2: View Products
+Field
+Specification
+Use Case ID
+UC02
+Use Name
+View Products
+Primary Actor
+Customer
+Goal
+View product details, lookbook images, and available color/size
+variants.
+Trigger
+The customer selects a product from a search result or collection
+catalogue.
+Preconditions
+The system is online and product data is loaded.
+Postconditions
+The product-detail page shows the available variants and prices.
+Main Success
+Scenario
+1. Customer selects a product. 2. System retrieves product
+details. 3. System checks availability. 4. System displays the
+product name, description, category, price, lookbook images, color
+swatches, size matrix, and real-time stock. 5. The product-detail
+page is displayed.
+Alternative
+Flows
+5a. Color Variant Selected: The customer selects a color
+swatch; the system updates the lookbook images, price, and
+variant stock displayed.
+Exceptions
+Product Unavailable: The system shows an unavailable
+message and redirects the customer to the catalogue.
+Business Rules
+Product information must reflect the maintained variant attributes
+and prices.
+Priority
+Must Have
+Table 2.3: UC02 – View Products specification.
+20
+2.3.3
+Use Case 3: Place Order / Checkout
+Field
+Specification
+Use Case ID
+UC03
+Use Name
+Place Order / Checkout
+Primary Actor
+Customer
+Supporting
+Actors
+Payment Service, Shipping Provider
+Goal
+Successfully purchase selected items from the cart.
+Trigger
+Customer chooses Checkout from the shopping cart.
+Preconditions
+Customer is logged in and the shopping cart contains at least one
+item.
+Postconditions
+An accepted order has corresponding inventory and payment
+states; a waybill is recorded when creation succeeds.
+Main Success
+Scenario
+1. Customer initiates checkout. 2. System checks the cart and
+real-time SKU stock. 3. System calculates costs and shipping fees.
+4. Customer selects the payment method. 5. For an online
+method, the Payment Service processes the payment. 6. System
+creates the accepted order, updates inventory by SKU, and
+requests a waybill from the Shipping Provider. 7. System displays
+order confirmation.
+Alternative
+Flows
+2a. Invalid Cart / Out of Stock: The system asks the
+customer to correct the cart. 4a. COD: Online collection is
+skipped and the order proceeds with payment awaiting collection.
+Exceptions
+5a. Payment Failure: System shows the failure, does not
+confirm the order, and preserves the cart. If the shipping provider
+fails after an order is accepted, its waybill remains pending rather
+than showing a nonexistent tracking number.
+Business Rules
+Inventory is checked at the SKU level before confirming the order;
+reservation and deduction must not be counted twice.
+Priority
+Must Have
+Table 2.4: UC03 – Place Order / Checkout specification.
+2.3.4
+Use Case 4: Manage Products & Inventory
+21
+Field
+Specification
+Use Case ID
+UC04
+Use Name
+Manage Products & Inventory
+Primary Actors
+Administrator, Warehouse Staff
+Goal
+Maintain accurate catalogue information, SKU-level stock, and
+picking and return records.
+Trigger
+Administrator opens product management, or Warehouse Staff
+receives a pick-list.
+Preconditions
+Staff members have appropriate authentication and role
+permissions.
+Postconditions
+Product information and warehouse stock records reflect the
+processed operations.
+Main Success
+Scenario
+1. Warehouse staff opens an assigned pick-list. 2. Staff picks and
+packs items by SKU. 3. System updates stock by SKU. 4. System
+checks concurrent stock changes. 5. For received returns, staff
+inspects the items and the system records resalable stock or
+damage. Separately, administrators maintain the product
+catalogue.
+Alternative
+Flows
+5a. No Return Received: The fulfillment flow ends without
+restocking. 5b. Defective Return: The item is recorded as
+defective instead of available stock.
+Exceptions
+Concurrency Conflict: Concurrent updates to one SKU must
+be logged and handled under an agreed stock-consistency rule.
+The source scenario describes a latest-update policy, which
+requires review because it can lose stock changes.
+Business Rules
+Inventory movements must refer to the actual color/size variant
+SKU.
+Priority
+Must Have
+Table 2.5: UC04 – Manage Products and Inventory specification.
+2.3.5
+Use Case 5: View Analytics Dashboard & Reports
+Field
+Specification
+Use Case ID
+UC05
+22
+Field
+Specification (continued)
+Use Name
+View Analytics & Generate Reports
+Primary Actor
+Manager
+Goal
+Monitor business performance through dashboards and
+management reports.
+Trigger
+The manager opens the analytics section of the management
+portal.
+Preconditions
+The manager is authenticated with managerial privileges.
+Postconditions
+Sales, stock and return reports are compiled and displayed.
+Main Success
+Scenario
+1. Manager selects a report. 2. System checks whether a custom
+date range is supplied. 3. System queries completed transactions
+and relevant inventory/return data. 4. System checks export
+volume. 5. System compiles charts and exportable tables and
+displays the report.
+Alternative
+Flows
+2a. Custom Date Range: The selected period is applied before
+querying. 2b. Default Timeframe: The system uses the default
+report period when no custom range is supplied.
+Exceptions
+4a. Massive Export Limit: The system limits batch size and
+offers CSV download rather than rendering an excessively large
+dataset.
+Business Rules
+Financial reporting must use an agreed definition of successfully
+completed transactions.
+Priority
+Should Have
+Table 2.6: UC05 – Analytics and Reports specification.
+2.4
+Activity Diagrams
+Activity Diagrams illustrate the order of work, branching conditions and any parallel
+processing for five core workflows from the source report.
+23
+2.4.1
+Activity Diagram 1: Search Products Flow
+Figure 2.2: Activity Diagram: Search Products Flow.
+The customer starts a search, selects a keyword, voice or image method, and the system
+queries the catalogue. The diagram uses parallel fork/join bars across the three search
+inputs; logically these represent alternative input choices for a search request.
+When
+matches exist, the system displays search results. Otherwise, it shows no results and
+suggestions, allowing the customer to search again or exit.
+2.4.2
+Activity Diagram 2: Add to Cart Flow
+Figure 2.3: Activity Diagram: Add to Cart Flow.
+The Add to Cart flow starts with product selection and an availability check. Unavailable
+products return to the catalog with an error message. Otherwise, the system displays
+product details, lookbook images, color swatches, sizes, prices, and stock. Choosing a color
+updates the corresponding images, price, and variant availability, helping the customer
+choose the correct item before adding it to the cart (FR07).
+24
+2.4.3
+Activity Diagram 3: Place Order / Checkout Flow
+Figure 2.4: Activity Diagram: Place Order and Checkout Flow.
+The customer opens checkout, supplies the shipping address, and the system validates
+the order and calculates the payable amount. The customer chooses a payment method.
+Online payment proceeds through the Payment Service; COD bypasses immediate online
+collection. A valid order triggers stock processing and waybill generation. An unsuccessful
+payment does not produce a successful-order confirmation.
+2.4.4
+Activity Diagram 4: Warehouse Fulfillment Flow
+Figure 2.5: Activity Diagram: Warehouse Fulfillment Flow.
+Warehouse Staff opens a generated order pick-list, picks and packs items according to
+SKU and shelf location, and the system updates stock. The diagram then checks whether
+returned items have been received. If so, they are inspected; accepted stock is returned to
+inventory, while defective items are marked as defective. The final inventory state must
+distinguish saleable returns from damaged stock.
+25
+2.4.5
+Activity Diagram 5: Reporting and Analytics Flow
+Figure 2.6: Activity Diagram: Reporting and Analytics Flow.
+A manager chooses an inventory or analytics report and may supply a custom period.
+The system queries completed transactions, stock and return data, checks whether the
+export is too large, and compiles visual charts and exportable tables. An excessive export
+leads to a limited-batch or CSV-download branch. The figure uses parallel work for chart
+and table creation, unlike the alternative methods in the search flow.
+2.5
+Swimlane Diagrams
+Swimlane Diagrams show how activities are distributed among organizational roles and
+external services.
+26
+2.5.1
+Swimlane Diagram 1: Order Processing & Payment Work-
+flow
+Figure 2.7: Swimlane Diagram: Order Processing and Payment Workflow.
+The diagram has lanes for the Customer, E-Commerce System, Payment Service, and
+Shipping Provider. The customer starts checkout and provides address and payment in-
+formation. The system validates stock and calculates costs; the Payment Service verifies
+the selected online payment when applicable. The system generates the order, coordi-
+nates SKU-level inventory handling, and requests a waybill from the Shipping Provider.
+The customer receives the order confirmation once the corresponding transaction state is
+known.
+27
+2.5.2
+Swimlane Diagram 2: Inventory Receiving Workflow
+Figure 2.8: Swimlane Diagram: Inventory Receiving Workflow.
+The source text describes the Supplier delivering goods and purchase documents; Ware-
+house Staff receives the shipment, checks the purchase order, and inspects quantities and
+conditions; the Inventory System updates accepted stock or records discrepancies. The
+image itself names its first lane “Customer”, despite showing a supplier-receiving process.
+This inconsistency is present in the supplied graphic. Inventory receiving from a supplier
+is distinct from the customer-return procedure defined by FR17.
+2.6
+Requirement Traceability
+Traceability links the main business problems identified in Chapter 1 to stakeholder needs,
+requirements, and Use Cases.
+28
+Business
+problem
+Stakeholder
+need
+Requirement
+Use Case
+Inaccurate variant
+inventory causing
+cancelled orders
+Accurate stock
+down to SKU
+FR16: Update
+inventory by SKU
+UC04: Manage Products &
+Inventory
+High
+size-exchange
+returns due to
+poor fit
+Clear product
+attributes and size
+information
+FR06: View
+product details
+UC02: View Products
+Packing errors:
+wrong color or
+size shipped
+Pick-lists showing
+variant SKUs
+FR10: Generate
+pick-lists by SKU
+UC04: Manage Products &
+Inventory
+Delayed analytics
+on sales trends
+Timely
+consumption
+reports
+FR19: View
+analytics
+dashboards
+UC05: View Analytics
+Dashboard & Reports
+Table 2.7: Business problem–stakeholder need–requirement–Use Case traceability.
+The links above reflect the four traceability examples in the source A02 report. They are
+representative rather than an exhaustive mapping of every FR01–FR20 entry.
+2.7
+Requirement Validation
+Requirement validation evaluates whether the requirements are clear, consistent, com-
+plete, and testable against business rules. FR05, FR10, FR16, NFR01 and NFR08 are
+suitable starting points for verification, subject to defined test conditions.
+Problematic
+wording
+Revised requirement wording
+“The system should be
+fast.”
+NFR01: The system shall return normal product-search results
+(keyword, voice, image) within 2 seconds under peak operating
+conditions. Peak load and test data still need to be defined.
+“The system should be
+user-friendly.”
+NFR03: The system shall provide consistent navigation menus
+across customer-facing product pages. A checklist must define what
+consistency means.
+“The system must
+protect user data.”
+NFR02: Only authenticated and authorized users shall access
+their personal order and payment details via secured authentication
+mechanisms. Verification must include access-control tests.
+Table 2.8: Three examples of requirement clarification and validation.
+29
+References
+[1] Dinh Que Tran (2026). Information System Analysis and Design – Assignment 01: E-
+Commerce Information System Investigation. Department of Information Technology,
+PTIT.
+[2] Dinh Que Tran (2026). Information System Analysis and Design – Assignment 02:
+E-Commerce Requirements Engineering and Specification. Department of Information
+Technology, PTIT.
+30

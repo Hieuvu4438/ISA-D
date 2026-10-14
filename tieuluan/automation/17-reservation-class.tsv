@@ -1,0 +1,8 @@
+17-reservation-class	CLASS_DIAGRAM	Analysis class model stock commitment independent of carts
+N	order-class	Class	Order	40	40	220	150		
+N	variant-class	Class	ProductVariant	600	40	220	150		
+N	reservation-class	Class	Reservation	330	300	220	150	reservationId:Identifier;quantity:Integer;kind:ReservationKind;status:ReservationStatus;expiresAt:DateTime	
+N	inventory-class	Class	InventoryBalance	600	300	220	150		
+R	1	Association	order-class	reservation-class		1	0..*			
+R	2	Association	variant-class	reservation-class		1	0..*			
+R	3	Association	variant-class	inventory-class		1	1			

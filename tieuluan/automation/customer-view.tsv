@@ -1,0 +1,29 @@
+01-customer-use-cases	USE_CASE_DIAGRAM	Customer services and payment boundary
+N	customer_boundary	System	Atelier Fashion Ecommerce	240	30	690	900
+N	visitor	Actor	Visitor	60	85	80	100
+N	customer	Actor	Customer	60	430	80	100
+N	payment	Actor	Payment Provider	990	550	120	100
+N	browse	UseCase	UC01 Browse fashion catalogue	300	90	260	65
+N	account	UseCase	UC02 Manage account	300	210	260	65
+N	cart	UseCase	UC03 Manage variant cart	300	330	260	65
+N	checkout	UseCase	UC04 Place order	300	450	260	65
+N	track	UseCase	UC06 Track order	300	570	260	65
+N	cancel	UseCase	UC07 Cancel order	300	690	260	65
+N	return	UseCase	UC08 Request return or exchange	300	810	260	65
+N	validate	UseCase	Validate checkout	650	330	220	65
+N	reserve	UseCase	Reserve SKU stock	650	450	220	65
+N	initpay	UseCase	Initiate online payment	650	570	220	65
+N	payevent	UseCase	UC05 Reconcile payment event	650	740	250	65
+R	inherit	Generalization	visitor	customer					
+R	browse-assoc	Association	visitor	browse					
+R	customer-account	Association	customer	account					
+R	customer-cart	Association	customer	cart					
+R	customer-checkout	Association	customer	checkout					
+R	customer-track	Association	customer	track					
+R	customer-cancel	Association	customer	cancel					
+R	customer-return	Association	customer	return					
+R	include-validate	Include	checkout	validate					550,465;660,365
+R	include-reserve	Include	checkout	reserve					560,482;650,482
+R	include-initpay	Include	checkout	initpay					550,500;660,590
+R	provider-payment	Association	payment	initpay					
+R	provider-event	Association	payment	payevent					

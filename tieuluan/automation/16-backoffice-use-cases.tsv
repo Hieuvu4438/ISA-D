@@ -1,0 +1,19 @@
+16-backoffice-use-cases	USE_CASE_DIAGRAM	Customer service finance management and administration
+N	customer_boundary	System	Atelier Fashion Ecommerce	200	30	440	680		
+N	bo-support	Actor	Customer Service	40	70	100	80		
+N	bo-finance	Actor	Finance Staff	40	310	100	80		
+N	bo-manager	Actor	Manager	40	490	100	80		
+N	bo-admin	Actor	Administrator	40	610	100	80		
+N	bo-payment	Actor	Payment Provider	720	325	100	80		
+N	cancel	UseCase	UC07 Cancel order	245	90	350	65		
+N	return	UseCase	UC08 Request return or exchange	245	210	350	65		
+N	refund	UseCase	UC14 Process refund	245	340	350	65		
+N	report	UseCase	UC15 View management reports	245	480	350	65		
+N	access	UseCase	UC16 Administer access	245	610	350	65		
+R	1	Association	bo-support	cancel					
+R	2	Association	bo-support	return					
+R	3	Association	bo-finance	refund					
+R	4	Association	bo-payment	refund					
+R	5	Association	bo-finance	report					
+R	6	Association	bo-manager	report					
+R	7	Association	bo-admin	access					

@@ -1,0 +1,18 @@
+01-customer-use-cases	Customer services and payment boundary
+02-operations-use-cases	Catalogue warehouse and delivery use cases
+03-search-activity	UC01 Search and select an available fashion variant
+04-checkout-swimlane	UC04 Checkout responsibilities and asynchronous payment
+05-return-inspection	UC13 Inspect an approved return before stock restoration
+06-order-state	Order fulfilment lifecycle separate from money and returns
+07-catalogue-class	Analysis class model catalogue variants and inventory
+08-order-class	Analysis class model shopping intention and purchase commitment
+09-aftersales-class	Analysis class model payment shipment and post-purchase service
+10-checkout-sequence	UC04 Successful checkout allocation before provider interaction
+11-payment-sequence	UC05 Verify and reconcile a payment outcome exactly once
+12-components	Modular application architecture and provider adapters
+13-deployment	Deployment topology and recovery boundaries
+14-inventory-receiving	UC10 Receive stock with an auditable movement reference
+15-return-remedy	UC13 Resolve inspected return as refund or equal-price exchange
+16-backoffice-use-cases	Customer service finance management and administration
+17-reservation-class	Analysis class model stock commitment independent of carts
+18-support-use-cases	Notifications optional reviews and finance reconciliation

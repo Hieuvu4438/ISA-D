@@ -1,0 +1,3 @@
+<plugin id="fashion.report" name="Fashion Report Native UML" description="Create editable academic models in Visual Paradigm" provider="Local academic project" class="fashion.FashionPlugin">
+  <runtime><library path="fashion-plugin.jar" relativePath="true"/></runtime>
+</plugin>

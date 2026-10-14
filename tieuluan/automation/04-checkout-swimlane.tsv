@@ -1,0 +1,28 @@
+04-checkout-swimlane	ACTIVITY_DIAGRAM	UC04 Checkout responsibilities and asynchronous payment
+S	22	19	742	747
+P	buyer-lane	Customer	22	19	248	747
+P	app-lane	Atelier system	270	19	248	747
+P	provider-lane	Payment Provider	518	19	248	747
+N	c-start	InitialNode		135	58	15	17		buyer-lane
+N	c-review	ActivityAction	Review SKU quantities, address\nand final quoted total	49	102	195	55		buyer-lane
+N	c-submit	ActivityAction	Consent and submit checkout	49	179	195	51		buyer-lane
+N	c-allocate	ActivityAction	Revalidate and atomically create\norder plus 15-minute stock hold	296	246	195	60		app-lane
+N	c-valid	DecisionNode		375	326	38	42		app-lane
+N	c-reject	ActivityAction	Show validation/stock error;\nno order or hold is committed	49	323	195	60		buyer-lane
+N	c-no-end	ActivityFinalNode		135	403	22	26		buyer-lane
+N	c-initpay	ActivityAction	Persist payment request\nand send idempotently	296	436	195	55		app-lane
+N	c-provider	ActivityAction	Host payment and process\ncustomer authorisation	544	513	195	55		provider-lane
+N	c-event	ActivityAction	Send signed outcome event\n(retries may occur)	544	596	195	55		provider-lane
+N	c-process	ActivityAction	Verify and deduplicate event;\napply guarded payment update	296	596	195	60		app-lane
+N	c-end	ActivityFinalNode		382	696	22	26		app-lane
+R	1	ControlFlow	c-start	c-review					
+R	2	ControlFlow	c-review	c-submit					
+R	3	ControlFlow	c-submit	c-allocate					
+R	4	ControlFlow	c-allocate	c-valid					
+R	5	ControlFlow	c-reject	c-no-end					
+R	6	ControlFlow	c-initpay	c-provider					
+R	7	ControlFlow	c-provider	c-event					
+R	8	ControlFlow	c-event	c-process					
+R	9	ControlFlow	c-process	c-end					
+R	10	ControlFlow	c-valid	c-initpay				committed	
+R	11	ControlFlow	c-valid	c-reject				rejected	

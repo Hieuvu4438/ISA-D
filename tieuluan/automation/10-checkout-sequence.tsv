@@ -1,0 +1,13 @@
+10-checkout-sequence	INTERACTION_DIAGRAM	UC04 Successful checkout allocation before provider interaction
+N	sq-customer	InteractionLifeLine	customer:Customer	30	30	220	570		
+N	sq-checkout	InteractionLifeLine	checkout:CheckoutService	340	30	220	570		
+N	sq-db	InteractionLifeLine	db:TransactionalStore	650	30	220	570		
+N	sq-provider	InteractionLifeLine	provider:PaymentProvider	960	30	220	570		
+R	1	Message	sq-customer	sq-checkout	submit(consentedQuote, key)				140,110;450,110
+R	2	Message	sq-checkout	sq-db	lock SKUs; validate quote				450,170;760,170
+R	3	Message	sq-db	sq-checkout	valid quote and stock			reply	760,225;450,225
+R	4	Message	sq-checkout	sq-db	commit order, holds, outbox				450,285;760,285
+R	5	Message	sq-db	sq-checkout	committed order reference			reply	760,340;450,340
+R	6	Message	sq-checkout	sq-provider	create/resume payment(key)				450,400;1070,400
+R	7	Message	sq-provider	sq-checkout	providerRef and hosted URL			reply	1070,465;450,465
+R	8	Message	sq-checkout	sq-customer	PendingPayment and URL			reply	450,535;140,535

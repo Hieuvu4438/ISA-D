@@ -1,0 +1,19 @@
+06-order-state	STATE_DIAGRAM	Order fulfilment lifecycle separate from money and returns
+N	os-start	InitialPseudoState		60	65	20	20		
+N	os-pending	State2	PendingPayment	140	45	180	65		
+N	os-confirmed	State2	Confirmed	500	45	180	65		
+N	os-packing	State2	Packing	500	235	180	65		
+N	os-shipped	State2	Shipped	500	425	180	65		
+N	os-delivered	State2	Delivered	500	615	180	65		
+N	os-cancelled	State2	Cancelled	140	235	180	65		
+N	os-expired	State2	Expired	140	425	180	65		
+N	os-deliveryfailed	State2	DeliveryFailed	140	615	180	65		
+R	1	Transition2	os-start	os-pending						
+R	2	Transition2	os-pending	os-confirmed	verifiedCapture					
+R	3	Transition2	os-confirmed	os-packing	startPacking					
+R	4	Transition2	os-packing	os-shipped	dispatch					
+R	5	Transition2	os-shipped	os-delivered	verifiedDelivery					
+R	6	Transition2	os-pending	os-cancelled	cancel					
+R	7	Transition2	os-confirmed	os-cancelled	cancel				500,77;405,77;405,267;320,267	
+R	8	Transition2	os-pending	os-expired	holdExpired				140,90;30,90;30,457;140,457	
+R	9	Transition2	os-shipped	os-deliveryfailed	closeFailure				500,457;450,457;450,647;320,647	

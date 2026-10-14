@@ -1,0 +1,15 @@
+13-deployment	DEPLOYMENT	Deployment topology and recovery boundaries
+N	dep-client	Node	Browser device	160	40	240	110		
+N	dep-edge	Node	HTTPS reverse proxy	490	40	240	110		
+N	dep-app	Node	Application host	820	40	240	110		
+N	dep-worker	Node	Worker host	820	300	240	110		
+N	dep-db	Node	Database primary	490	300	240	110		
+N	dep-backup	Node	Backup storage	160	300	240	110		
+N	dep-provider	Node	Provider endpoints	820	570	240	110		
+R	1	Association	dep-client	dep-edge	HTTPS					
+R	2	Association	dep-edge	dep-app	HTTPS					
+R	3	Association	dep-app	dep-db	DB/TLS				820,130;770,130;770,350;730,350	
+R	4	Association	dep-worker	dep-db	DB/TLS					
+R	5	Association	dep-db	dep-backup	backup + logs					
+R	6	Association	dep-worker	dep-provider	HTTPS API					
+R	7	Association	dep-provider	dep-edge	signed HTTPS events				820,625;130,625;130,200;610,200;610,150	

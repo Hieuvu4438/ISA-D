@@ -1,0 +1,16 @@
+09-aftersales-class	CLASS_DIAGRAM	Analysis class model payment shipment and post-purchase service
+N	order-class	Class	Order	40	40	220	150		
+N	pay-class	Class	Payment	380	40	220	150	paymentId:Identifier;providerRef:String;captured:MoneyVND;status:PaymentStatus	
+N	refund-class	Class	Refund	720	40	220	150	refundId:Identifier;amount:MoneyVND;status:RefundStatus	
+N	shipment-class	Class	Shipment	40	310	220	150	trackingRef:String;dispatchedAt:DateTime;status:ShipmentStatus	
+N	request-class	Class	ReturnRequest	380	310	220	150	requestId:Identifier;remedy:Remedy;status:ReturnStatus	
+N	returnline-class	Class	ReturnLine	380	580	220	150	quantity:Integer;received:Integer;saleable:Integer;reason:String	
+N	orderline-class	Class	OrderLine	40	580	220	150		
+N	exchange-class	Class	ExchangeFulfilment	720	580	220	150	exchangeId:Identifier;replacementSku:String;quantity:Integer;status:String	
+R	1	Association	order-class	pay-class		1	0..*		
+R	2	Association	pay-class	refund-class		1	0..*		
+R	3	Association	order-class	shipment-class		1	0..1		
+R	4	Association	order-class	request-class		1	0..*		260,155;300,155;300,385;380,385
+R	5	Association	request-class	returnline-class		1	1..*		
+R	6	Association	returnline-class	orderline-class		0..*	1		
+R	7	Association	returnline-class	exchange-class		1	0..1		

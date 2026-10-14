@@ -1,0 +1,10 @@
+07-catalogue-class	CLASS_DIAGRAM	Analysis class model catalogue variants and inventory
+N	category-class	Class	Category	40	40	220	150	categoryId:Identifier;name:String	
+N	product-class	Class	Product	370	40	220	150	productId:Identifier;title:String;material:String;published:Boolean	
+N	variant-class	Class	ProductVariant	370	300	220	150	sku:String;size:String;colour:String;price:MoneyVND;active:Boolean	
+N	inventory-class	Class	InventoryBalance	710	300	220	150	onHand:Integer;reserved:Integer;available:Integer	
+N	sizechart-class	Class	SizeChart	40	300	220	150	chartId:Identifier;version:Integer;measurementGuide:String	
+R	1	Association	category-class	product-class		1	0..*			
+R	2	Association	product-class	variant-class		1	0..*			
+R	3	Association	variant-class	inventory-class		1	1			
+R	4	Association	sizechart-class	product-class		0..1	0..*			

@@ -1,0 +1,16 @@
+14-inventory-receiving	ACTIVITY_DIAGRAM	UC10 Receive stock with an auditable movement reference
+N	ir-start	InitialNode		165	20	20	20		
+N	ir-count	ActivityAction	Identify SKU; count saleable\nand damaged received units	50	85	250	60		
+N	ir-check	ActivityAction	Verify staff role, receipt key,\nSKU and quantity	50	190	250	60		
+N	ir-valid	DecisionNode		150	305	50	45		
+N	ir-post	ActivityAction	Atomically post saleable stock\nand an auditable movement	50	440	250	65		
+N	ir-reject	ActivityAction	Show invalid data or existing\nreceipt result; no repeat posting	400	295	270	70		
+N	ir-end	ActivityFinalNode		165	570	25	25		
+N	ir-reject-end	ActivityFinalNode		520	430	25	25		
+R	1	ControlFlow	ir-start	ir-count					
+R	2	ControlFlow	ir-count	ir-check					
+R	3	ControlFlow	ir-check	ir-valid					
+R	4	ControlFlow	ir-post	ir-end					
+R	5	ControlFlow	ir-reject	ir-reject-end					
+R	6	ControlFlow	ir-valid	ir-post				valid new receipt	
+R	7	ControlFlow	ir-valid	ir-reject				invalid or duplicate	

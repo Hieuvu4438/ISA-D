@@ -1,0 +1,14 @@
+11-payment-sequence	INTERACTION_DIAGRAM	UC05 Verify and reconcile a payment outcome exactly once
+N	pe-provider	InteractionLifeLine	provider:PaymentProvider	100	30	220	590		
+N	pe-adapter	InteractionLifeLine	adapter:WebhookAdapter	370	30	220	590		
+N	pe-service	InteractionLifeLine	payment:PaymentService	640	30	220	590		
+N	pe-db	InteractionLifeLine	db:TransactionalStore	910	30	220	590		
+R	1	Message	pe-provider	pe-adapter	signed outcome(eventId)				210,110;480,110	
+R	2	Message	pe-adapter	pe-db	verify; persist inbox event				480,175;1020,175	
+R	3	Message	pe-db	pe-adapter	durable receipt			reply	1020,230;480,230	
+R	4	Message	pe-adapter	pe-provider	acknowledge delivery			reply	480,285;210,285	
+R	5	Message	pe-adapter	pe-service	process persisted event			async	480,350;750,350	
+R	6	Message	pe-service	pe-db	lock and apply guarded update				750,410;1020,410	
+R	7	Message	pe-db	pe-service	commit payment and outbox			reply	1020,470;750,470	
+F	closed and paid	15	510	1130	105
+R	8	Message	pe-service	pe-provider	refund with stable key			conditional	750,570;210,570	

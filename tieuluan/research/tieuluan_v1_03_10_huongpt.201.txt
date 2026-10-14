@@ -1,0 +1,1156 @@
+HỌC VIỆN CÔNG NGHỆBƯU CHÍNH VIỄN THÔNG
+KHOA CÔNG NGHỆTHÔNG TIN I
+——————–o0o——————–
+TIỂU LUẬN
+PHÂN TÍCH VÀ THIẾT KẾHỆTHỐNG
+THÔNG TIN
+Giảng viên hướng dẫn:
+Trần Đình Quế
+Sinh viên:
+Phùng Thu Hương
+Mã sinh viên:
+B23DCVT201
+Lớp:
+E23TTNT02
+Hà Nội, 2026
+Mục lục
+1
+XÁC ĐỊNH YÊU CẦU (SYSTEM INVESTIGATION)
+3
+1.1
+Giới thiệu & Bối cảnh nghiệp vụ(Business Background)
+. . . . . . . . . .
+3
+1.1.1
+Tổng quan vềcửa hàng . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+1.1.2
+Mô hình kinh doanh
+. . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+1.1.3
+Sản phẩm và Khách hàng
+. . . . . . . . . . . . . . . . . . . . . . .
+3
+1.1.4
+Các hoạt động nghiệp vụchính
+. . . . . . . . . . . . . . . . . . . .
+3
+1.2
+Phân tích các bên liên quan (Stakeholder Analysis) . . . . . . . . . . . . .
+4
+1.2.1
+Phân loại các bên liên quan . . . . . . . . . . . . . . . . . . . . . .
+4
+1.2.2
+Bảng nhu cầu của các bên liên quan
+. . . . . . . . . . . . . . . . .
+5
+1.3
+Phân tích thông tin (Information Analysis) . . . . . . . . . . . . . . . . . .
+6
+1.3.1
+Phân loại thông tin . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+1.3.2
+Danh mục thông tin (Information Catalogue)
+. . . . . . . . . . . .
+6
+1.4
+Phân tích vấn đềhiện tại (Current Problems)
+. . . . . . . . . . . . . . . .
+7
+1.4.1
+Nhận diện vấn đề. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+1.4.2
+Nguyên nhân và Hậu quả
+. . . . . . . . . . . . . . . . . . . . . . .
+7
+1.5
+Đềxuất Hệthống Thông tin Mới (Proposed Information System) . . . . .
+9
+1.5.1
+Mục tiêu và Phạm vi hệthống . . . . . . . . . . . . . . . . . . . . .
+9
+1.5.2
+Biên giới hệthống (System Boundary) . . . . . . . . . . . . . . . .
+9
+1.5.3
+Các luồng thông tin chính (Information Flows)
+. . . . . . . . . . .
+9
+1.5.4
+Mục tiêu cụthểcủa hệthống mới . . . . . . . . . . . . . . . . . . .
+10
+2
+PHÂN TÍCH YÊU CẦU (REQUIREMENTS ANALYSIS)
+11
+2.1
+Nhu cầu của các bên liên quan (Stakeholder Needs) . . . . . . . . . . . . .
+11
+2.1.1
+Mục tiêu của các bên liên quan . . . . . . . . . . . . . . . . . . . .
+11
+2.1.2
+Danh sách nhu cầu của các bên liên quan . . . . . . . . . . . . . . .
+11
+2.2
+Yêu cầu chức năng & Phi chức năng (System Requirements) . . . . . . . .
+12
+2.2.1
+Yêu cầu chức năng (Functional Requirements - FR) . . . . . . . . .
+12
+2.2.2
+Yêu cầu phi chức năng (Non-Functional Requirements - NFR) . . .
+14
+2.2.3
+Phân loại độưu tiên yêu cầu (MoSCoW) . . . . . . . . . . . . . . .
+14
+2.3
+Mô hình Use Case (Use Case Model) . . . . . . . . . . . . . . . . . . . . .
+14
+2.3.1
+Phân tích tác nhân (Actor Analysis)
+. . . . . . . . . . . . . . . . .
+14
+2.3.2
+Xác định Use Case & Sơ đồUML Use Case
+. . . . . . . . . . . . .
+15
+2.4
+Mô tảchi tiết Use Case & Sơ đồhoạt động (Activity Diagrams) . . . . . .
+17
+2.4.1
+Use Case 1: Đặt hàng (Place Order / Checkout) . . . . . . . . . . .
+17
+2.4.2
+Use Case 2: Tìm kiếm sản phẩm (Search Products) . . . . . . . . .
+19
+2.4.3
+Use Case 3: Quản lý giỏhàng (Manage Cart)
+. . . . . . . . . . . .
+21
+2.4.4
+Use Case 4: Quản lý tồn kho (Maintain Inventory)
+. . . . . . . . .
+22
+2.4.5
+Use Case 5: Lập báo cáo rủi ro hết hạn (Generate Expiry-Risk
+Reports) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+24
+1
+2.5
+Sơ đồlàn bơi (Swimlane Diagrams) . . . . . . . . . . . . . . . . . . . . . .
+25
+2.5.1
+Quy trình đặt hàng & Thanh toán (Checkout Process) . . . . . . .
+25
+2.5.2
+Quy trình nhập kho & Kiểm soát hạn dùng (Inventory Receiving) .
+26
+2.6
+Ma trận truy vết & Kiểm chứng yêu cầu (Traceability & Validation) . . . .
+27
+2.6.1
+Ma trận truy vết (Requirement Traceability Matrix)
+. . . . . . . .
+27
+2.6.2
+Kiểm chứng và chuẩn hóa yêu cầu (Requirement Validation) . . . .
+28
+2.7
+ỨNG DỤNG AI TRONG THƯƠNG MẠI ĐIỆN TỬ& DEMO MÃ NGUỒN 28
+2.7.1
+Demo mã nguồn Python: Phân nhóm khách hàng bằng K-Means . .
+29
+Tài liệu tham khảo
+30
+2
+Chương 1
+XÁC ĐỊNH YÊU CẦU (SYSTEM
+INVESTIGATION)
+1.1
+Giới thiệu & Bối cảnh nghiệp vụ(Business Background)
+1.1.1
+Tổng quan vềcửa hàng
+ABC Cosmetics Shop là doanh nghiệp thương mại điện tửquy mô vừa, chuyên kinh
+doanh các sản phẩm chăm sóc da (skincare), trang điểm (makeup), chăm sóc tóc, nước
+hoa và phụkiện làm đẹp. Cửa hàng vận hành hoàn toàn trên các kênh trực tuyến bao
+gồm website và ứng dụng di động, được hỗtrợbởi một kho hàng nhỏvà đội ngũ chăm
+sóc khách hàng.
+1.1.2
+Mô hình kinh doanh
+ABC Cosmetics Shop hoạt động theo mô hình bán lẻtrực tiếp tới người tiêu dùng (B2C).
+Cửa hàng nhập hàng từnhiều thương hiệu, nhà cung cấp mỹphẩm và bán trực tiếp cho
+khách hàng cá nhân. Doanh thu chính đến từbán lẻsản phẩm, các chương trình khuyến
+mãi theo mùa, gói sản phẩm (combo) và chương trình tích điểm khách hàng thân thiết.
+Giá trịcốt lõi của cửa hàng là sựtuyển chọn sản phẩm chất lượng, mua sắm trực tuyến
+tiện lợi, giao hàng tin cậy và thông tin sản phẩm minh bạch (thành phần, độphù hợp với
+loại da, cam kết chính hãng).
+1.1.3
+Sản phẩm và Khách hàng
+• Sản phẩm: Danh mục bao gồm chăm sóc da, trang điểm, chăm sóc tóc, cơ thể,
+nước hoa và dụng cụlàm đẹp. Mỗi sản phẩm thường có nhiều biến thể(màu sắc,
+dung tích, mùi hương) và các thuộc tính đặc thụcủa ngành mỹphẩm như: bảng
+thành phần, độphù hợp loại da, hạn sửdụng, sốlô sản xuất.
+• Khách hàng: Khách hàng mục tiêu là người tiêu dùng cá nhân, từngười mua ngẫu
+nhiên đến những người đam mê làm đẹp. Khách hàng phụthuộc nhiều vào đánh
+giá sản phẩm, độminh bạch của thành phần và độchính xác của thông tin màu
+sắc/tone da trước khi quyết định mua.
+1.1.4
+Các hoạt động nghiệp vụchính
+Các hoạt động nghiệp vụcốt lõi tại ABC Cosmetics Shop bao gồm:
+3
+• Quản lý sản phẩm và danh mục (bao gồm thông tin biến thểmàu và thành phần).
+• Quản lý thông tin khách hàng.
+• Tìm kiếm và duyệt sản phẩm.
+• Quản lý giỏhàng.
+• Xửlý đơn hàng.
+• Xửlý thanh toán.
+• Quản lý tồn kho (theo lô và hạn sửdụng).
+• Vận chuyển và giao hàng.
+• Đánh giá và phản hồi của khách hàng.
+• Quản lý khuyến mãi và tích điểm.
+• Báo cáo doanh thu và tồn kho.
+1.2
+Phân tích các bên liên quan (Stakeholder Analysis)
+1.2.1
+Phân loại các bên liên quan
+• Bên liên quan nội bộ(Internal Stakeholders):
+– Quản trịviên (Administrator): Quản lý tài khoản người dùng, cấu hình danh
+mục sản phẩm và thiết lập hệthống.
+– Nhân viên Bán hàng / CSKH (Sales/Service Staff): Xửlý đơn hàng, giải đáp
+thắc mắc và xửlý đổi trả.
+– Nhân viên Kho (Warehouse Staff): Quản lý nhập kho, lưu trữ, lấy hàng, theo
+dõi lô sản xuất và hạn sửdụng.
+– Quản lý (Manager): Giám sát hiệu động kinh doanh tổng thểvà đưa ra quyết
+định chiến lược.
+• Bên liên quan bên ngoài (External Stakeholders):
+– Khách hàng (Customer): Duyệt, mua hàng và đánh giá sản phẩm mỹphẩm.
+– Nhà cung cấp / Đối tác thương hiệu (Supplier/Brand Partner): Cung cấp sản
+phẩm và thông tin liên quan (thành phần, giấy chứng nhận).
+– Đơn vịthanh toán (Payment Provider): Xửlý thanh toán trực tuyến và hoàn
+tiền.
+– Đơn vịvận chuyển (Shipping Provider): Giao đơn hàng tới tay khách hàng.
+4
+1.2.2
+Bảng nhu cầu của các bên liên quan
+Bảng 1.1 tổng hợp vai trò và nhu cầu chính của từng bên liên quan trong hệthống.
+Bảng 1.1: Bảng phân tích bên liên quan cho ABC Cosmetics Shop
+Bên liên quan
+Vai trò
+Nhu cầu / Mối quan tâm
+chính
+Khách hàng
+Mua sản phẩm mỹphẩm
+Mua sắm tiện lợi, tin cậy;
+thông tin màu sắc, thành
+phần chính xác.
+Quản trịviên
+Quản lý hệthống & danh mục
+Dữliệu sản phẩm/danh
+mục nhất quán, chính xác,
+hiệu quả.
+Nhân viên Bán hàng
+Xửlý đơn hàng & khách hàng
+Thông tin đơn hàng và
+khách hàng chính xác, cập
+nhật kịp thời.
+Nhân viên Kho
+Quản lý tồn kho
+Sốlượng tồn kho và thông
+tin hạn dùng/lô hàng chính
+xác.
+Quản lý
+Giám sát hiệu quảkinh doanh
+Báo cáo kịp thời và thông
+tin hỗtrợra quyết định.
+Cổng thanh toán
+Xửlý giao dịch
+Thông tin giao dịch an toàn
+và chính xác.
+Đơn vịvận chuyển
+Giao hàng
+Địa chỉgiao hàng và thông
+tin đơn hàng chính xác.
+Nhà cung cấp
+Cung cấp sản phẩm
+Thông tin sản phẩm, tồn
+kho và đơn đặt hàng chính
+xác.
+Hình 1.1: Sơ đồbản đồcác bên liên quan (Stakeholder Map) của ABC Cosmetics Shop
+5
+1.3
+Phân tích thông tin (Information Analysis)
+1.3.1
+Phân loại thông tin
+• Thông tin sản sinh (Produced Information): Xác nhận đơn hàng, hóa đơn/biên
+nhận, báo cáo doanh thu (theo danh mục, thương hiệu, màu sắc), báo cáo rủi ro
+hạn sửdụng, thông báo vận chuyển và mã theo dõi đơn.
+• Thông tin tiêu thụ(Consumed Information): Thông tin sản phẩm & thành
+phần (từnhà cung cấp), thông tin khách hàng, thông tin tồn kho & hạn sửdụng,
+xác nhận thanh toán, trạng thái giao hàng.
+• Thông tin lưu trữ(Stored Information): Hồsơ khách hàng (địa chỉ, lịch sử
+mua, loại da), sản phẩm (thuộc tính, biến thểmàu, thành phần), thông tin đơn
+hàng, giao dịch thanh toán, tồn kho (lô, hạn dùng), vận chuyển, đánh giá & xếp
+hạng.
+1.3.2
+Danh mục thông tin (Information Catalogue)
+Bảng 1.2 trình bày chi tiết các loại thông tin, nguồn tạo, người sửdụng và mục đích
+nghiệp vụtương ứng.
+Bảng 1.2: Danh mục thông tin hệthống ABC Cosmetics Shop
+Loại thông tin
+Người
+tạo
+/
+Nguồn
+Người sửdụng
+Mục đích
+Thông tin sản phẩm
+Quản trịviên /
+Nhà cung cấp
+Khách
+hàng,
+Nhân
+viên
+bán
+hàng
+Duyệt và lựa chọn
+sản phẩm.
+Thông tin khách hàng
+Khách hàng
+Nhân
+viên
+bán
+hàng, Quản lý
+Xửlý đơn hàng,
+cá nhân hóa trải
+nghiệm.
+Thông tin đơn hàng
+Khách hàng / Hệ
+thống
+Nhân
+viên
+bán
+hàng, Nhân viên
+kho
+Thực
+hiện
+và
+hoàn
+tất
+đơn
+hàng.
+Thông tin tồn kho
+Nhân viên kho /
+Hệthống
+Nhân
+viên
+kho,
+Quản lý
+Quản lý hàng tồn
+và hạn sửdụng.
+Thông tin thanh toán
+Đơn vịthanh toán
+Hệ
+thống
+đơn
+hàng, Quản lý
+Xửlý thanh toán
+và đối soát.
+Thông tin đánh giá
+Khách hàng
+Khách
+hàng,
+Quản lý
+Hỗtrợquyết định
+mua,
+phản
+hồi
+chất lượng.
+Báo cáo doanh số
+Hệthống
+Quản lý
+Hỗtrợra quyết
+định kinh doanh.
+6
+1.4
+Phân tích vấn đềhiện tại (Current Problems)
+1.4.1
+Nhận diện vấn đề
+Khảo sát thực tếnghiệp vụhiện tại tại ABC Cosmetics Shop cho thấy các hạn chếlớn
+sau:
+1. Thông tin sản phẩm và biến thểmàu sắc duy trì không nhất quán giữa các nhân
+viên và kênh bán.
+2. Dữliệu tồn kho, sốlô và hạn sửdụng thường xuyên bịlỗi thời, cập nhật chậm.
+3. Tiến trình xửlý đơn hàng (đặc biệt là giữhàng theo biến thểmàu) còn làm thủ
+công.
+4. Khách hàng khó theo dõi trạng thái đơn hàng theo thời gian thực.
+5. Báo cáo doanh sốvà tồn kho chuẩn bịchậm do phải gom dữliệu thủcông từnhiều
+file Excel.
+6. Dữliệu khách hàng bịphân tán ởnhiều nơi (website, spreadsheet, tin nhắn mạng
+xã hội).
+7. Ban quản lý thiếu thông tin thời gian thực, đặc biệt là cảnh báo hàng cận hạn sử
+dụng (Expiry-risk).
+1.4.2
+Nguyên nhân và Hậu quả
+Bảng 1.3 phân tích chi tiết nguyên nhân gốc rễvà hậu quảcủa từng vấn đềđã nhận diện.
+7
+Bảng 1.3: Bảng phân tích vấn đề, nguyên nhân và hậu quả
+Vấn đề
+Nguyên nhân gốc
+rễ
+Hậu quảđối với
+doanh nghiệp
+Sản phẩm/Màu sắc không nhất quán
+Nhiều nhân viên
+tựcập nhật thủ
+công,
+không
+có
+quy chuẩn chung.
+Khách
+nhận
+sai
+màu/thành phần,
+dẫn đến khiếu nại
+và trảhàng.
+Dữliệu tồn kho/Hạn dùng bịcũ
+Cập nhật sốlượng
+và hạn sửdụng
+thủ
+công,
+không
+thường xuyên.
+Khách
+đặt
+phải
+hàng đã hết hoặc
+cận/quá
+hạn
+sử
+dụng.
+Xửlý đơn/biên thểthủcông
+Thiếu cơ chếtự
+động giữtồn kho
+biến thểkhi khách
+đặt.
+Gây trễđơn, sai
+sót và quá tải nhân
+viên vào đợt cao
+điểm.
+Trạng thái đơn hàng không rõ ràng
+Dữliệu đơn hàng
+và vận chuyển lưu
+rời rạc, chưa tích
+hợp.
+Khách
+hỏi
+liên
+tục, tăng tải cho
+bộphận chăm sóc
+khách hàng.
+Báo cáo doanh số/tồn kho chậm
+Dữliệu phải tổng
+hợp thủcông từ
+nhiều file Excel.
+Chậm
+đưa
+ra
+quyết định nhập
+hàng
+hay
+chạy
+khuyến mãi.
+Dữliệu khách hàng phân tán
+Lưu trữtrên nhiều
+kênh/file
+khác
+nhau.
+Trải nghiệm khách
+hàng không đồng
+nhất, khó tiếp thị.
+Thiếu thông tin quản lý thời gian thực
+Chưa
+có
+bảng
+điều
+khiển
+(Dashboard)
+tổng hợp dữliệu.
+Phản
+ứng
+chậm
+với rủi ro hàng hết
+hạn và biến động
+cầu.
+Hình 1.2: Cây vấn đề(Problem Tree) của ABC Cosmetics Shop
+8
+1.5
+Đềxuất Hệthống Thông tin Mới (Proposed Information
+System)
+1.5.1
+Mục tiêu và Phạm vi hệthống
+• Mục đích (Purpose): Cung cấp một nguồn dữliệu tập trung, nhất quán cho sản
+phẩm, tồn kho, khách hàng và đơn hàng; thay thếcác quy trình thủcông và file
+Excel rời rạc.
+• Phạm vi (Scope): Quản lý khách hàng, danh mục sản phẩm (kèm biến thểmàu &
+thành phần), giỏhàng, đơn hàng, thanh toán, tồn kho (theo lô & hạn dùng FEFO),
+vận chuyển, đánh giá, khuyến mãi và báo cáo.
+1.5.2
+Biên giới hệthống (System Boundary)
+• Bên trong hệthống (Inside Boundary): Quản lý khách hàng, Quản lý sản
+phẩm/danh mục, Giỏhàng, Quản lý đơn hàng, Quản lý tồn kho & hạn dùng, Hệ
+thống báo cáo.
+• Hệthống bên ngoài (External Systems): Cổng thanh toán (Payment Gateway),
+Hệthống đơn vịvận chuyển (Shipping Provider), Hệthống nhà cung cấp (Supplier
+System), Dịch vụgửi thông báo Email/SMS.
+Hình 1.3: Sơ đồngữcảnh (Context Diagram) của Hệthống Thông tin Đềxuất
+1.5.3
+Các luồng thông tin chính (Information Flows)
+• Khách hàng →Hệthống: Thông tin đăng ký, đăng nhập, tìm kiếm sản phẩm/màu
+sắc, thông tin giỏhàng, đặt hàng, gửi đánh giá.
+• Hệthống →Khách hàng: Thông tin sản phẩm & thành phần, xác nhận đơn
+hàng, trạng thái thanh toán, trạng thái đơn hàng, thông tin vận chuyển.
+9
+• Hệthống ↔Cổng thanh toán: Gửi yêu cầu thanh toán ↔Nhận kết quảvà
+trạng thái giao dịch.
+• Hệthống ↔Đơn vịvận chuyển: Gửi yêu cầu giao hàng & ghi chú bảo quản ↔
+Cập nhật trạng thái giao hàng.
+• Quản trịviên ↔Hệthống: Gửi yêu cầu cấu hình/quản lý ↔Nhận báo cáo và
+bảng điều khiển (Dashboard).
+1.5.4
+Mục tiêu cụthểcủa hệthống mới
+1. Hỗtrợtìm kiếm, duyệt sản phẩm mỹphẩm chính xác theo biến thểmàu và thành
+phần.
+2. Tựđộng hóa giữtồn kho biến thểkhi khách thực hiện đặt hàng.
+3. Quản lý kho tập trung theo lô sản xuất và hạn sửdụng (áp dụng nguyên tắc FEFO).
+4. Cung cấp tính năng theo dõi trạng thái đơn hàng theo thời gian thực cho khách
+hàng.
+5. Tích hợp an toàn với cổng thanh toán và dịch vụvận chuyển bên ngoài.
+6. Cung cấp báo cáo thời gian thực vềdoanh sốvà rủi ro tồn kho cận hạn dùng cho
+ban quản lý.
+10
+Chương 2
+PHÂN TÍCH YÊU CẦU
+(REQUIREMENTS ANALYSIS)
+2.1
+Nhu cầu của các bên liên quan (Stakeholder Needs)
+2.1.1
+Mục tiêu của các bên liên quan
+• Khách hàng (Customer): Mua sắm tiện lợi, tin cậy với đầy đủthông tin chính
+xác vềbảng màu, thành phần và độphù hợp theo loại da.
+• Nhân viên Bán hàng (Sales Staff): Sửdụng hệthống tựđộng hóa hiệu quảđể
+xửlý đơn hàng mà không gặp lỗi thao tác thủcông.
+• Nhân viên Kho (Warehouse Staff): Công cụchính xác đểquản lý tồn kho thực
+tế, lô sản xuất và hạn sửdụng mỹphẩm (áp dụng quy tắc FEFO - First-Expired,
+First-Out).
+• Quản lý (Manager): Theo dõi theo thời gian thực vềhiệu quảkinh doanh và rủi
+ro tồn kho cận hạn dùng.
+• Quản trịviên (Administrator): Nền tảng quản lý tập trung đểduy trì dữliệu
+danh mục sản phẩm đồng nhất.
+2.1.2
+Danh sách nhu cầu của các bên liên quan
+Bảng 2.1 tổng hợp các nhu cầu chi tiết bằng ngôn ngữtựnhiên được thu thập từcác bên
+liên quan.
+11
+Bảng 2.1: Danh sách nhu cầu của các bên liên quan (Stakeholder Needs)
+STT
+Bên liên quan
+Nhu cầu chi tiết (Natural Language)
+1
+Khách hàng
+Cần xem thông tin chính xác vềbiến thểmàu sắc, loại
+da phù hợp và bảng thành phần.
+2
+Khách hàng
+Cần theo dõi trạng thái đơn hàng và quá trình vận
+chuyển theo thời gian thực.
+3
+Khách hàng
+Cần được ngăn chặn khi cốtình đặt các sản phẩm đã
+hết hàng hoặc đã quá hạn sửdụng.
+4
+Nhân viên Bán hàng
+Cần cơ chếtựđộng giữtồn kho biến thể/màu sắc ngay
+khi khách hàng bắt đầu thanh toán.
+5
+Nhân viên Bán hàng
+Cần truy cập hồsơ khách hàng tập trung và lịch sử
+đơn hàng đểhỗtrợ.
+6
+Nhân viên Kho
+Cần quản lý tồn kho theo từng biến thể, sốlô sản xuất
+và hạn sửdụng.
+7
+Quản lý
+Cần nhận báo cáo rủi ro hạn sửdụng theo thời gian
+thực đối với các lô hàng sắp hết hạn.
+8
+Quản lý
+Cần xem báo cáo doanh sốtổng hợp phân loại theo
+danh mục và thương hiệu.
+9
+Quản trịviên
+Cần duy trì một danh mục sản phẩm duy nhất, nhất
+quán trên toàn hệthống.
+10
+Đơn vịvận chuyển
+Cần nhận chỉdẫn bảo quản đặc biệt đối với các kiện
+hàng mỹphẩm dễvỡ/mẫn cảm.
+2.2
+Yêu cầu chức năng & Phi chức năng (System
+Requirements)
+2.2.1
+Yêu cầu chức năng (Functional Requirements - FR)
+Các yêu cầu chức năng được đánh mã từFR01 đến FR20 và phân loại độưu tiên theo
+chuẩn MoSCoW, được trình bày trong Bảng 2.2.
+12
+Bảng 2.2: Danh sách Yêu cầu Chức năng (Functional Requirements)
+Mã YC
+Phân loại
+Yêu cầu phát biểu (Natural Language)
+Độưu tiên
+FR01
+Tài khoản
+Hệthống cho phép khách hàng đăng ký tài
+khoản mới.
+Must
+FR02
+Tài khoản
+Hệthống lưu trữthông tin cấu hình và loại da
+của khách hàng.
+Should
+FR03
+Sản phẩm
+Hệthống cho phép admin tạo/cập nhật biến thể,
+màu sắc, thành phần.
+Must
+FR04
+Sản phẩm
+Hệthống cho phép khách hàng tìm kiếm theo từ
+khóa hoặc thành phần.
+Must
+FR05
+Giỏhàng
+Hệthống cho phép khách hàng thêm các biến
+thể/màu sắc vào giỏ.
+Must
+FR06
+Giỏhàng
+Hệthống tựđộng tính tổng giá trịcủa giỏhàng.
+Must
+FR07
+Giỏhàng
+Hệthống xác thực tính khảdụng của sản phẩm
+trước khi xác nhận giỏ.
+Must
+FR08
+Đơn hàng
+Hệthống cho phép khách hàng tiến hành đặt
+hàng.
+Must
+FR09
+Đơn hàng
+Hệthống tựđộng giữhàng biến thểngay khi bắt
+đầu checkout.
+Must
+FR10
+Đơn hàng
+Hệthống cho phép khách hàng xem trạng thái
+đơn hàng thời gian thực.
+Must
+FR11
+Đơn hàng
+Hệthống cho phép nhân viên bán hàng hủy đơn
+hàng khi cần.
+Should
+FR12
+Thanh toán
+Hệthống gửi yêu cầu thanh toán tới Cổng thanh
+toán bên ngoài.
+Must
+FR13
+Thanh toán
+Hệthống ghi nhận trạng thái xác nhận thanh
+toán từđơn vịcung cấp.
+Must
+FR14
+Tồn kho
+Hệthống cập nhật giảm sốlượng tồn kho ngay
+sau khi đơn xác nhận.
+Must
+FR15
+Tồn kho
+Hệthống theo dõi tồn kho theo biến thể, sốlô
+và hạn sửdụng.
+Must
+FR16
+Tồn kho
+Hệthống tựđộng gắn cờcảnh báo các sản phẩm
+sắp hết hạn trong 30 ngày.
+Should
+FR17
+Vận chuyển
+Hệthống cho phép ghi chú hướng dẫn bảo quản
+đặc biệt với hàng dễvỡ.
+Should
+FR18
+Báo cáo
+Hệthống tạo báo cáo doanh sốnhóm theo danh
+mục và thương hiệu.
+Must
+FR19
+Báo cáo
+Hệthống tạo báo cáo rủi ro cận hạn sửdụng
+(Expiry-Risk) cho Quản lý.
+Must
+FR20
+Quản trị
+Hệthống cho phép Quản trịviên quản lý tài
+khoản nhân viên.
+Must
+13
+2.2.2
+Yêu cầu phi chức năng (Non-Functional Requirements -
+NFR)
+• 4.1 Hiệu năng (NFR01): Hệthống phải trảvềkết quảtìm kiếm sản phẩm trong
+vòng dưới 2 giây dưới điều kiện vận hành bình thường.
+• 4.2 Bảo mật (NFR02): Hệthống phải mã hóa toàn bộdữliệu nhạy cảm của
+khách hàng (bao gồm cấu hình da) và giao dịch thanh toán bằng chuẩn mã hóa
+AES-256.
+• 4.3 Khảnăng sửdụng (NFR03): Hệthống phải cung cấp giao diện tương thích
+tốt (responsive) hoạt động mượt mà trên cảtrình duyệt máy tính và di động.
+• 4.4 Độsẵn sàng (NFR04): Hệthống phải đạt độsẵn sàng 99.9% thời gian vận
+hành (ngoại trừcác khoảng thời gian bảo trì được lên lịch trước).
+• 4.5 Độtin cậy (NFR05): Hệthống phải bảo toàn toàn bộdữliệu đơn hàng đã
+xác nhận, đảm bảo không mất mát dữliệu nếu xảy ra sựcốmáy chủđột ngột.
+• 4.6 Khảnăng mởrộng (NFR06): Kiến trúc hệthống phải hỗtrợtới 5.000 người
+dùng truy cập đồng thời trong các đợt sựkiện khuyến mãi lớn mà không làm giảm
+hiệu năng.
+• 4.7 Khảnăng bảo trì (NFR07): Hệthống sửdụng kiến trúc mô-đun hóa đểdễ
+dàng tích hợp thêm các cổng thanh toán mới trong tương lai.
+• 4.8 Toàn vẹn dữliệu (NFR08): Hệthống ngăn chặn không cho phép xác nhận
+đơn hàng nếu lô sản phẩm được chọn đã bịđánh dấu là "Hết hạn"(Expired).
+2.2.3
+Phân loại độưu tiên yêu cầu (MoSCoW)
+• Must Have (Bắt buộc phải có): Đăng ký tài khoản, Quản lý danh mục, Tìm
+kiếm sản phẩm, Đặt hàng, Xửlý thanh toán, Theo dõi tồn kho theo hạn dùng, Tạo
+báo cáo doanh số.
+• Should Have (Nên có): Lưu hồsơ da khách hàng, Cảnh báo hàng cận hạn, Hướng
+dẫn bảo quản vận chuyển, Hủy đơn hàng.
+• Could Have (Có thểcó): Đánh giá sản phẩm từkhách hàng.
+• Won’t Have (Chưa làm trong đợt này): Tích hợp cổng thông tin nâng cao cho
+Nhà cung cấp.
+2.3
+Mô hình Use Case (Use Case Model)
+2.3.1
+Phân tích tác nhân (Actor Analysis)
+• Customer (Tác nhân con người): Tương tác trực tiếp với giao diện đểduyệt
+sản phẩm, quản lý giỏhàng và thực hiện đặt hàng.
+• Administrator (Tác nhân con người): Tương tác với hệthống quản trịbackend
+đểcấu hình danh mục sản phẩm tổng.
+14
+• Sales Staff (Tác nhân con người): Tương tác với phân hệquản lý đơn hàng để
+xem thông tin khách hàng và xửlý ngoại lệ.
+• Warehouse Staff (Tác nhân con người): Tương tác với phân hệtồn kho để
+nhập lô hàng mới và xác minh hạn sửdụng.
+• Manager (Tác nhân con người): Tương tác với bảng điều khiển (Dashboard) để
+xem phân tích doanh sốvà rủi ro hết hạn.
+• Payment Gateway (Tác nhân hệthống): API bên ngoài tiếp nhận yêu cầu
+thanh toán và trảvềmã xác thực giao dịch.
+• Shipping Provider (Tác nhân hệthống): API bên ngoài tiếp nhận yêu cầu vận
+chuyển và trảvềmã theo dõi hành trình.
+2.3.2
+Xác định Use Case & Sơ đồUML Use Case
+Danh sách 13 Use Case chính của hệthống bao gồm: Đăng ký tài khoản (Register
+Account), Tìm kiếm sản phẩm (Search Products), Quản lý giỏhàng (Manage Cart),
+Đặt hàng (Place Order), Theo dõi đơn hàng (Track Order), Quản lý danh mục sản phẩm
+(Manage Product Catalogue), Quản lý tồn kho (Manage Inventory), Cảnh báo hàng cận
+hạn (Flag Near-Expiry Stock), Xửlý thanh toán (Process Payments), Quản lý vận chuyển
+(Manage Shipping), Tạo báo cáo doanh số(Generate Sales Reports), Tạo báo cáo rủi ro
+hết hạn (Generate Expiry-Risk Reports), Gửi đánh giá (Submit Review).
+15
+Hình 2.1: Sơ đồtổng thểUML Use Case Diagram của Hệthống ABC Cosmetics Shop
+16
+2.4
+Mô tảchi tiết Use Case & Sơ đồhoạt động (Activity
+Diagrams)
+2.4.1
+Use Case 1: Đặt hàng (Place Order / Checkout)
+Bảng 2.3: Đặc tảUse Case Đặt hàng (Place Order / Checkout)
+Mục
+Nội dung chi tiết
+Tên Use Case
+Place Order (Checkout)
+Tác nhân chính
+Customer
+Tác nhân hỗtrợ
+Payment Gateway, Shipping Provider
+Mục tiêu
+Khách hàng có thểmua các biến thểmỹphẩm đã chọn theo tổng
+giá trịđơn hàng được chấp nhận.
+Kích hoạt (Trigger)
+Khách hàng chọn "Checkout".
+Tiền điều kiện
+Khách hàng đã đăng nhập và giỏhàng không rỗng.
+Hậu điều kiện
+Đơn hàng xác nhận được ghi nhận, thanh toán được thu, và tồn
+kho biến thểbịgiảm.
+Kịch bản chính
+1. Khách hàng cung cấp địa chỉgiao hàng và lựa chọn phương
+thức vận chuyển.
+2. Hệthống kiểm tra giỏhàng, tính khảdụng của biến thểvà
+hạn sửdụng, sau đó hiển thịtổng tiền.
+3. Khách hàng đồng ý mua. Hệthống tạm thời giữtồn kho biến
+thể.
+4. Hệthống gửi mã tham chiếu đơn hàng và sốtiền sang Payment
+Gateway.
+5. Khách hàng chọn phương thức thanh toán và hoàn tất các
+bước trên cổng dịch vụ.
+6. Hệthống xác thực giao dịch thanh toán thành công.
+7. Hệthống tạo đơn hàng, trừvĩnh viễn tồn kho đã giữvà hiển
+thịxác nhận.
+Luồng thay thế
+1. Nếu biến thểhết hạn hoặc hết hàng, hệthống xác định lỗi.
+Khách hàng điều chỉnh lại giỏhàng.
+2. Sau khi thanh toán thất bại, hệthống giải phóng kho đã giữ.
+Khách hàng có thểchọn phương thức khác hoặc quay lại giỏhàng.
+Ngoại lệ
+Nếu dịch vụthanh toán không khảdụng, hệthống báo lỗi và giải
+phóng kho đã giữ.
+Quy tắc nghiệp vụ
+Chỉcác sản phẩm chưa hết hạn, còn hàng mới được đặt. Mỗi đơn
+hàng sửdụng 1 chuyến giao.
+Độưu tiên
+Must Have
+17
+Hình 2.2: Sơ đồhoạt động (Activity Diagram) - Place Order
+18
+2.4.2
+Use Case 2: Tìm kiếm sản phẩm (Search Products)
+Bảng 2.4: Đặc tảUse Case Tìm kiếm sản phẩm (Search Products)
+Mục
+Nội dung chi tiết
+Tên Use Case
+Search Products
+Tác nhân chính
+Customer
+Mục tiêu
+Khách hàng có thểxác định các sản phẩm mỹphẩm cụthểtheo
+từkhóa, màu sắc hoặc thành phần trước khi chọn.
+Kích hoạt (Trigger)
+Khách hàng bắt đầu tìm kiếm.
+Tiền điều kiện
+Danh mục sản phẩm công khai sẵn sàng truy cập.
+Hậu điều kiện
+Các sản phẩm trùng khớp hoặc thông báo không tìm thấy được
+hiển thị. Tồn kho và giỏhàng giữnguyên.
+Kịch bản chính
+1. Khách hàng nhập tiêu chí tìm kiếm (từkhóa, màu sắc, hoặc
+thành phần).
+2. Hệthống kiểm tra truy vấn hợp lệvà tìm kiếm trong danh
+mục.
+3. Hệthống hiển thịcác phiên bản trùng khớp kèm giá và tình
+trạng còn hàng.
+4. Khách hàng so sánh kết quảvà chọn sản phẩm.
+5. Hệthống hiển thịchi tiết sản phẩm và các biến thểkhảdụng.
+Luồng thay thế
+1. Nếu đầu vào không hợp lệhoặc không có sản phẩm khớp, hệ
+thống giải thích kết quảvà gợi ý sản phẩm phổbiến.
+Ngoại lệ
+Nếu dịch vụtìm kiếm bịgián đoạn, hệthống báo lỗi và cho phép
+thửlại.
+Quy tắc nghiệp vụ
+Khách hàng sửdụng 1 phương thức đầu vào cho mỗi lần tìm
+kiếm.
+Độưu tiên
+Must Have
+19
+Hình 2.3: Sơ đồhoạt động (Activity Diagram) - Search Products
+20
+2.4.3
+Use Case 3: Quản lý giỏhàng (Manage Cart)
+Bảng 2.5: Đặc tảUse Case Quản lý giỏhàng (Manage Shopping Cart)
+Mục
+Nội dung chi tiết
+Tên Use Case
+Manage Shopping Cart
+Tác nhân chính
+Customer
+Mục tiêu
+Khách hàng có thểxem lại và điều chỉnh các biến thểmỹphẩm
+cũng như sốlượng đã chọn trước khi checkout.
+Kích hoạt (Trigger)
+Khách hàng nhấn "Add to Cart"hoặc mởgiỏhàng.
+Tiền điều kiện
+Một biến thểsản phẩm đã được chọn hoặc giỏhàng đã tồn tại.
+Hậu điều kiện
+Các thay đổi được chấp nhận được lưu lại và tổng giá trịgiỏhàng
+được cập nhật.
+Kịch bản chính
+1. Khách hàng chọn biến thể/màu sắc mỹphẩm và nhấn "Add
+to Cart".
+2. Hệthống kiểm tra sốlượng yêu cầu có còn đủtrong kho hay
+không.
+3. Hệthống thêm biến thểvào giỏhàng đang hoạt động.
+4. Hệthống tính toán lại và hiển thịtổng tiền mới của giỏhàng.
+Luồng thay thế
+1. Nếu tồn kho không đủ, hệthống hiển thịcảnh báo "Out of
+Stock"và chặn việc thêm hàng.
+Ngoại lệ
+Nếu không thểkiểm tra tồn kho hiện tại, hệthống ngăn thêm
+sản phẩm cho đến khi kiểm tra thành công.
+Quy tắc nghiệp vụ
+Sốlượng phải là sốnguyên dương. Việc thêm sản phẩm vào giỏ
+không tựđộng giữtồn kho.
+Độưu tiên
+Must Have
+Hình 2.4: Sơ đồhoạt động (Activity Diagram) - Manage Cart
+21
+2.4.4
+Use Case 4: Quản lý tồn kho (Maintain Inventory)
+Bảng 2.6: Đặc tảUse Case Quản lý tồn kho (Maintain Inventory)
+Mục
+Nội dung chi tiết
+Tên Use Case
+Maintain Inventory
+Tác nhân chính
+Warehouse Staff
+Mục tiêu
+Nhân viên kho có thểgiữsốlượng tồn kho, sốlô và hạn sửdụng
+nhất quán với thực tếnhập kho.
+Kích hoạt (Trigger)
+Lô hàng mỹphẩm mới cập kho.
+Tiền điều kiện
+Nhân viên kho đã đăng nhập với quyền quản lý kho.
+Hậu điều kiện
+Bản ghi tồn kho phản ánh chính xác sốlượng thực tế, sốlô và
+hạn sửdụng.
+Kịch bản chính
+1. Nhân viên kho chọn biến thểsản phẩm (SKU).
+2. Nhân viên nhập sốlượng nhận, sốlô và hạn sửdụng.
+3. Hệthống kiểm tra tính hợp lệcủa dữliệu nhập.
+4. Hệthống lưu bản ghi và cập nhật sốlượng tồn kho.
+5. Hệthống hiển thịcập nhật thành công và sốlượng tồn kho
+mới.
+Luồng thay thế
+1. Nếu hạn sửdụng nhập vào nhỏhơn 30 ngày so với ngày hiện tại,
+hệthống lưu bản ghi và kích hoạt cảnh báo "Flag Near-Expiry
+Stock"cho lô đó.
+Ngoại lệ
+Nếu phản hồi lưu bịmất, hệthống kiểm tra xem cập nhật đã
+được ghi nhận chưa trước khi chấp nhận thửlại.
+Quy tắc nghiệp vụ
+Tồn kho tăng khi ghi nhận hàng nhận. Mỹphẩm tuân thủnghiêm
+ngặt quy tắc FEFO (First-Expired, First-Out).
+Độưu tiên
+Must Have
+22
+Hình 2.5: Sơ đồhoạt động (Activity Diagram) - Manage Inventory
+23
+2.4.5
+Use Case 5: Lập báo cáo rủi ro hết hạn (Generate Expiry-
+Risk Reports)
+Bảng 2.7: Đặc tảUse Case Tạo báo cáo rủi ro hạn sửdụng (Generate Expiry-Risk Reports)
+Mục
+Nội dung chi tiết
+Tên Use Case
+Generate Expiry-Risk Reports
+Tác nhân chính
+Manager
+Mục tiêu
+Quản lý có thểxem tất cảsản phẩm mỹphẩm sắp hết hạn để
+lên kếhoạch khuyến mãi.
+Kích hoạt (Trigger)
+Quản lý yêu cầu báo cáo hết hạn.
+Tiền điều kiện
+Quản lý đã đăng nhập với quyền quản lý.
+Hậu điều kiện
+Báo cáo rủi ro hạn sửdụng được tạo và hiển thị.
+Kịch bản chính
+1. Quản lý yêu cầu báo cáo rủi ro hết hạn với ngưỡng thời gian
+xác định (ví dụ: 60 ngày).
+2. Hệthống truy vấn CSDL tồn kho cho tất cảcác lô hết hạn
+trong khoảng ngưỡng.
+3. Hệthống tổng hợp dữliệu, sắp xếp theo ngày hết hạn gần
+nhất.
+4. Hệthống hiển thịbáo cáo.
+Luồng thay thế
+1. Nếu không có lô nào sắp hết hạn, hệthống hiển thịthông báo
+"No inventory at risk".
+Ngoại lệ
+Nếu CSDL không phản hồi, hệthống hiển thịlỗi và yêu cầu Quản
+lý thửlại sau.
+Quy tắc nghiệp vụ
+Báo cáo phải phân tách các mục theo biến thểvà sốlô sản xuất.
+Độưu tiên
+Must Have
+24
+Hình 2.6: Sơ đồhoạt động (Activity Diagram) - Generate Expiry-Risk Reports
+2.5
+Sơ đồlàn bơi (Swimlane Diagrams)
+2.5.1
+Quy trình đặt hàng & Thanh toán (Checkout Process)
+Sơ đồlàn bơi thểhiện sựphân luồng tương tác giữa Customer, ABC System và Payment
+Gateway trong tiến trình đặt hàng.
+25
+Hình 2.7: Sơ đồlàn bơi (Swimlane Diagram) - Checkout Process
+2.5.2
+Quy trình nhập kho & Kiểm soát hạn dùng (Inventory
+Receiving)
+Sơ đồlàn bơi thểhiện sựphối hợp giữa Warehouse Staff và ABC System khi nhập kho
+và kiểm soát hạn sửdụng.
+26
+Hình 2.8: Sơ đồlàn bơi (Swimlane Diagram) - Inventory Receiving
+2.6
+Ma trận truy vết & Kiểm chứng yêu cầu (Traceability
+& Validation)
+2.6.1
+Ma trận truy vết (Requirement Traceability Matrix)
+Bảng 2.8 thểhiện mối liên hệtruy vết từVấn đềthực tế(ởChương 1) →Nhu cầu
+Stakeholder →Yêu cầu hệthống →Use Case tương ứng.
+27
+Bảng 2.8: Ma trận truy vết yêu cầu (Requirement Traceability Matrix)
+Vấn đềkhảo sát (A01)
+Nhu cầu Stakeholder
+Mã Yêu cầu
+Use Case tương ứng
+Dữ
+liệu
+sản
+phẩm/màu
+sắc
+không đồng nhất
+Xem thông tin màu
+sắc chính xác
+FR04
+Search Products
+Dữliệu hạn dùng bị
+cũ/lỗi thời
+Theo dõi lô và hạn sử
+dụng
+FR15
+Manage Inventory
+Dữliệu hạn dùng bị
+cũ/lỗi thời
+Cấm đặt hàng bịquá
+hạn
+NFR08
+Place Order
+Xửlý đơn hàng thủ
+công
+Tựđộng giữhàng khi
+checkout
+FR09
+Place Order
+Trạng thái đơn hàng
+không rõ ràng
+Theo dõi trạng thái
+thời gian thực
+FR10
+Track Order
+Báo cáo doanh sốlàm
+thủcông
+Báo
+cáo
+doanh
+số
+tổng hợp
+FR18
+Generate
+Sales
+Reports
+Thiếu thông tin cảnh
+báo cận hạn
+Báo cáo rủi ro cận hạn
+dùng
+FR19
+Generate Expiry-Risk
+Reports
+Dữliệu khách hàng
+phân tán
+Hồsơ khách hàng tập
+trung
+FR01
+Register Account
+2.6.2
+Kiểm chứng và chuẩn hóa yêu cầu (Requirement Validation)
+Trong quá trình phân tích, các phát biểu yêu cầu mơ hồban đầu đã được chuẩn hóa
+thành các yêu cầu đo lường được:
+• Chưa chuẩn: "Hệthống phải bảo mật."→Chuẩn hóa (NFR02): "Hệthống phải
+mã hóa toàn bộdữliệu nhạy cảm của khách hàng và giao dịch bằng mã hóa AES-
+256."
+• Chưa chuẩn: "Hệthống cần quản lý sản phẩm tốt."→Chuẩn hóa (FR03): "Hệ
+thống cho phép admin tạo/cập nhật biến thểsản phẩm, màu sắc và thành phần."
+• Chưa chuẩn: "Hệthống phải chặn các đơn hàng lỗi."→Chuẩn hóa (NFR08):
+"Hệthống ngăn chặn không cho xác nhận đơn hàng nếu lô sản phẩm được chọn bị
+đánh dấu là Expired."
+2.7
+ỨNG DỤNG AI TRONG THƯƠNG MẠI ĐIỆN
+TỬ& DEMO MÃ NGUỒN
+Việc tích hợp Trí tuệnhân tạo (AI) vào hệthống thương mại điện tửcủa ABC Cosmetics
+Shop giúp giải quyết các thách thức lớn vềcá nhân hóa trải nghiệm và tối ưu hóa vận
+hành:
+• Gợi ý sản phẩm cá nhân hóa (Personalized Recommendations): Sửdụng
+thuật toán học máy không giám sát (K-Means Clustering) đểphân nhóm khách
+hàng dựa trên hành vi mua hàng và cấu hình loại da (ví dụ: da nhạy cảm vs. tập
+28
+trung chống lão hóa). Giao diện frontend từđó tựđộng đềxuất các dòng mỹphẩm
+phù hợp nhất, giúp tăng tỷlệchuyển đổi đơn hàng.
+• Dựbáo nhu cầu tồn kho (Demand Forecasting): Các mô hình AI dựbáo
+phân tích dữliệu bán hàng trong lịch sửđểdựđoán nhu cầu kho, giảm thiểu tối đa
+rủi ro các lô hàng mỹphẩm bịhết hạn trong kho.
+2.7.1
+Demo mã nguồn Python: Phân nhóm khách hàng bằng
+K-Means
+Đoạn mã Python dưới đây minh họa tiến trình phân nhóm khách hàng dựa trên độtuổi,
+chi tiêu trung bình và chỉsốda nhạy cảm đểhỗtrợthuật toán gợi ý:
+1
+import pandas as pd
+2
+from sklearn.cluster import KMeans
+3
+from sklearn.preprocessing import StandardScaler
+4
+5
+# Dữliệu mẫu khách hàng (Tuổi, Chi tiêu TB, Chỉsốda nhạy cảm)
+6
+data = {
+7
+'CustomerID': [101, 102, 103, 104, 105],
+8
+'Age': [22, 35, 24, 40, 27],
+9
+'Avg_Spend': [300, 1500, 450, 2000, 600],
+10
+'Sensitive_Skin': [8, 2, 9, 3, 7]
+11
+}
+12
+13
+df = pd.DataFrame(data)
+14
+15
+# Chuẩn hóa dữliệu
+16
+scaler = StandardScaler()
+17
+scaled_features = scaler.fit_transform(df[['Age', 'Avg_Spend', 'Sensitive_Skin']])
+18
+19
+# Huấn luyện mô hình K-Means với 2 cụm khách hàng
+20
+kmeans = KMeans(n_clusters=2, random_state=42, n_init=10)
+21
+df['Cluster'] = kmeans.fit_predict(scaled_features)
+22
+23
+print("Kết quảphân nhóm khách hàng phục vụgợi ý AI:")
+24
+print(df[['CustomerID', 'Cluster']])
+29
+Tài liệu tham khảo
+[1] Trần Đình Quế. Phân tích và Thiết kếHệthống Thông tin.
+30

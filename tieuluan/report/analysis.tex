@@ -1,0 +1,127 @@
+\chapter{Requirements Analysis}
+\section{Actors and use case scope}
+A Visitor browses public product information. A Customer specialises that role and performs authenticated shopping and post-purchase actions. Staff actors are Merchandiser, Warehouse Staff, Customer Service, Finance Staff, Manager, and Administrator. A person may hold more than one staff role, but permissions are checked for each action. Payment Provider and Shipping Provider exchange messages across the software boundary. The database, scheduler, and application services are internal design elements rather than external actors.
+
+Figure~\ref{fig:customer-uc} shows the customer/payment view. Place order includes checkout validation, stock reservation, and payment initiation in its successful flow. Payment event reconciliation is a distinct externally triggered interaction: the customer's browser does not confirm the transfer of funds. The generalisation triangle points to Visitor so Customer inherits public browsing. An operations view complements these customer goals with catalogue, inventory, fulfilment, returns, refunds, reports, and administration.
+\diagram{01-customer-use-cases}{Customer services and the external payment boundary, created in Visual Paradigm.}{fig:customer-uc}
+
+\section{Use case catalogue}
+\begin{longtable}{P{.09\linewidth}P{.32\linewidth}P{.23\linewidth}P{.25\linewidth}}
+\caption{Actor goals and requirement coverage}\label{tab:ucs}\\
+\toprule ID & Goal & Primary actor & Requirements \\\midrule\endfirsthead
+\toprule ID & Goal & Primary actor & Requirements \\\midrule\endhead
+UC01 & Browse fashion catalogue & Visitor, Customer & FR01\\
+UC02 & Manage account & Customer & FR02\\
+UC03 & Manage variant cart & Customer & FR03\\
+UC04 & Place order & Customer & FR04--06\\
+UC05 & Reconcile payment event & Payment Provider; Finance Staff for exceptions & FR07\\
+UC06 & Track order & Customer & FR08\\
+UC07 & Cancel order & Customer, Customer Service & FR09\\
+UC08 & Request return or exchange & Customer & FR10\\
+UC09 & Maintain catalogue & Merchandiser & FR11\\
+UC10 & Receive and adjust stock & Warehouse Staff & FR12\\
+UC11 & Fulfil paid order & Warehouse Staff & FR13\\
+UC12 & Reconcile delivery event & Shipping Provider, Customer Service & FR14\\
+UC13 & Inspect return and allocate exchange & Warehouse Staff, Customer Service & FR15\\
+UC14 & Process refund & Finance Staff, Payment Provider & FR16\\
+UC15 & View management reports & Manager, Finance Staff & FR17\\
+UC16 & Administer access & Administrator & FR18\\
+UC17 & Receive transaction notifications & Customer & FR19\\
+UC18 & Submit purchased-product review & Customer & FR20\\
+\bottomrule
+\end{longtable}
+
+\section{Detailed use case specifications}
+The specifications distinguish preconditions from validation performed during a use case. A precondition is a state assumed when the interaction begins; malformed input, insufficient stock, and provider failures remain explicit exception flows. The minimum guarantee states what remains true even when the goal is not achieved.
+
+\subsection{UC01: Browse fashion catalogue}
+\textbf{Goal and trigger.} A Visitor or Customer finds a suitable garment and selects an exact variant. The trigger is a search, filter change, or product selection. No authentication is required to browse.
+
+\textbf{Main flow.} (1) The actor enters keywords and optional category, size, colour, and price filters. (2) The system returns published products with matching variants. (3) The actor opens a product. (4) The system displays photographs, material/care information, size chart, price, and variant availability. (5) The actor chooses size and colour. (6) The system resolves the exact SKU and enables adding an available selection to the cart.
+
+\textbf{Alternatives.} No matching results produce a clear empty result and editable filters. An unavailable size/colour remains visible with an explanation and another selection option. Unpublished products cannot be purchased through old links. Before authenticated cart mutation, an unauthenticated visitor is asked to sign in; public viewing does not create a customer cart.
+
+\textbf{Postconditions.} The actor can identify the selected SKU. Browsing neither allocates stock nor creates an order. A cached availability display remains advisory; UC04 performs the authoritative allocation. FR01 and BR01--02 apply.
+\diagram{03-search-activity}{Product discovery with guarded alternatives and explicit merge nodes for retries.}{fig:search}
+
+\subsection{UC02: Manage account}
+\textbf{Actor, trigger, and conditions.} A Customer requests registration, sign-in, profile maintenance, address changes, or sign-out. Profile and address changes require an authenticated session owned by that customer.
+
+\textbf{Main flow.} Validate registration data and email uniqueness; store a password hash; authenticate using server-side checks; display the owner's profile; validate and persist an authorised change; confirm its result. Sign-out invalidates the active session. Registration creates only customer privileges.
+
+\textbf{Exceptions and guarantees.} Invalid credentials return a generic error and are rate-limited. A reused email cannot create a duplicate identity. Expired sessions require reauthentication before mutation. Address changes affect future checkout choices and never rewrite existing order snapshots. FR02, FR18, BR04, and BR14 apply.
+
+\subsection{UC03: Manage variant cart}
+\textbf{Precondition and trigger.} The Customer is authenticated and chooses to add, change, or remove an exact SKU.
+
+\textbf{Main flow.} Resolve an active SKU; validate a positive integer quantity; add or update the unique customer-cart/SKU line; increment the cart revision; display current estimates and explain that stock is not reserved. Removal deletes the selected cart line.
+
+\textbf{Exceptions and guarantees.} A stale cart revision requires refreshing rather than silently overwriting another browser's edit. Discontinued or unavailable selections receive a per-line explanation. Checkout revalidates all prices and stock even when cart display was recently refreshed. Cart changes never decrement inventory. FR03 and BR02 apply.
+
+\subsection{UC04: Place order}
+\textbf{Actors and trigger.} The Customer consents to the final checkout quote; Payment Provider supports online payment. The Customer is authenticated and has a nonempty cart.
+
+\textbf{Main success flow.}
+\begin{enumerate}[nosep]
+\item Load the customer-owned cart and requested address; calculate current item prices, discount allocation if configured, and delivery charge.
+\item Present exact SKU quantities, recipient details, and the final VND total. Obtain explicit consent to that quote.
+\item On submission, check the request key and quote/cart revision; lock required SKU inventory records in deterministic order.
+\item Validate all variants and quantities. Create the PendingPayment order, immutable order lines/address, and active reservations in one database transaction. Record an outbound payment command.
+\item Commit the transaction. Initiate payment outside the inventory transaction with a stable provider idempotency key; save the resulting provider reference.
+\item Return the existing or new order reference and hosted payment instruction. The customer completes any provider authentication.
+\item UC05 subsequently verifies the payment outcome. A successful eligible event moves the order to Confirmed and converts the temporary hold into a fulfilment allocation.
+\end{enumerate}
+
+\textbf{Alternatives and exceptions.} A changed price, shipping quote, or cart revision requires renewed consent. Insufficient stock for any line rolls back the entire order/allocation transaction. A repeated request with the same key returns the same order; changed payload with a reused key is rejected. A timeout after order creation displays PendingPayment and allows safe resumption; it does not create another order or assume that the provider failed. The system reconciles payment status before further financial action. When the hold expires, release it and close the order under BR03; a late captured payment enters a compensation queue.
+
+\textbf{Postconditions.} Success creates one attributable order with exact snapshots and stock allocation. Minimum guarantee: no partial allocation, no unconsented total, no duplicate order for one request, and no dispatch authorised by a browser redirect. FR04--07 and BR02--08 apply.
+\diagram{04-checkout-swimlane}{Checkout, stock allocation, hosted payment, and verified event processing by responsibility.}{fig:checkout}
+
+\subsection{UC05: Reconcile payment event}
+\textbf{Trigger and actor.} Payment Provider sends an outcome notification. Finance Staff initiate controlled reconciliation of unresolved provider objects. An incoming unverified message is input to validate, not a trusted precondition.
+
+\textbf{Main flow.} (1) Verify the signature and record the event durably. (2) Deduplicate its provider/event identifier. (3) Resolve the payment object and its order; validate reference, total, and currency against the order snapshot. (4) Lock the order/payment state. (5) If capture succeeded and the order is still eligible, record captured funds, set payment Succeeded, set order Confirmed, and retain fulfilment allocations. (6) Record processing evidence and schedule notification through an outbox.
+
+\textbf{Exceptions.} Invalid signatures are rejected without changing business state. A duplicate event acknowledges previously completed work. Out-of-order events cannot regress verified success; uncertain status triggers retrieval of the authoritative provider object. Mismatched amount/currency/reference enters an exception queue and blocks fulfilment. Failure allows retry while a valid hold remains. Capture after cancellation or expiry is recorded as real money received and schedules an idempotent compensation refund; it cannot revive the closed order. Processing must not depend on event arrival order, a behaviour documented for provider integrations\cite{stripewebhook}.
+
+\textbf{Guarantees.} Each valid financial effect is recorded once, and only an eligible fully allocated order becomes fulfilment-ready. FR07, BR03, and BR06 apply.
+
+\subsection{UC06: Track order}
+The authenticated Customer opens an owned order. The system displays the immutable purchase/address details, payment outcome, fulfilment state, shipment reference, and separately identified return/refund progress. An unknown or other customer's order is inaccessible even if its identifier is guessed. Missing carrier updates show the last verified event and its time rather than a fabricated arrival estimate. Viewing changes no transaction state. FR08 and BR13--14 apply.
+
+\subsection{UC07: Cancel order}
+The Customer or Customer Service requests cancellation of an owned/authorised order in PendingPayment or Confirmed. The system locks the order, verifies packing has not begun, changes fulfilment to Cancelled, releases active reservations once, and records actor/reason. It then requests cancellation of an unresolved provider payment or schedules refund of captured funds. If packing acquired the transition first, cancellation is refused and the customer sees the current state. Repeated cancellation returns the existing outcome. Refund remains independently pending until verified provider completion. FR09 and BR07--08, BR12--13 apply.
+
+\subsection{UC08: Request return or exchange}
+\textbf{Preconditions and trigger.} The authenticated Customer chooses delivered lines from an owned order. The trigger is submission of quantities, reason, requested remedy, and optional replacement size/colour.
+
+\textbf{Main flow.} Validate the policy window and disclosed exclusions; lock original line return allocations; calculate the remaining eligible quantity after prior completed and active requests; record the request and line quantities; return instructions and a reference. Customer Service reviews eligibility and records an approved/rejected decision with a reason.
+
+\textbf{Alternatives.} Expired windows or excessive quantities are rejected with explanations. Concurrent overlapping requests cannot both allocate the same unit. A rejected or withdrawn request releases its provisional quantity allocation. An exchange request is a preference, not a replacement-stock guarantee; UC13 decides stock availability after receipt/inspection. No request approval restores stock or proves a refund. FR10 and BR09--11 apply.
+
+\subsection{UC09: Maintain catalogue}
+The authorised Merchandiser creates or edits a product design, links category, material, and size chart information and colour images, defines unique variant SKUs, and validates price and publication data. The system refuses duplicate SKU or product, size, and colour identity, incomplete publication, and negative prices. Referenced variants are deactivated rather than physically deleted. Updating a live price affects new quotes, not historical order lines. FR11 and BR01, BR04 apply.
+
+\subsection{UC10: Receive and adjust stock}
+Warehouse Staff identify the received SKU, count saleable units, provide a supplier receipt or adjustment reference and reason, and submit the stock movement. The system checks role, validates quantity, prevents duplicate receipt references, and atomically updates on-hand and movement history. A downward correction cannot make on-hand less than committed reservations; the discrepancy is escalated instead of silently creating negative availability. Damaged receipts are recorded outside saleable stock. The supplier remains a stakeholder, not an authenticated software actor. FR12 and BR02, BR14 apply.
+
+\subsection{UC11: Fulfil paid order}
+Warehouse Staff select a Confirmed order with verified captured payment and active allocations. The system atomically enters Packing, generates a SKU/quantity pick list, and records packing checks. Staff verify exact size/colour and recipient snapshot, then request shipment creation through the carrier adapter. On successful dispatch registration, record the shipment and consume reservations while decrementing on-hand stock. A duplicate dispatch action returns the existing shipment. Wrong-SKU scans block packing completion. Carrier timeout leaves a recoverable Packing exception; it does not consume stock twice or create a second shipment blindly. Customers cannot cancel once packing begins in the baseline policy. FR13 and BR06--08 apply.
+
+\subsection{UC12: Reconcile delivery event}
+Shipping Provider submits tracking events. The system authenticates the message, identifies the known shipment, deduplicates the event, records its timestamp/evidence, and performs an allowed shipment/order transition. Older in-transit events cannot undo Delivered. Unknown shipments or contradictory events enter an exception queue. Temporary failed attempts allow redelivery. Customer Service may close permanent non-delivery only with verified evidence while the order is Shipped; the system records DeliveryFailed and schedules an independent full captured-amount refund including delivery. Stock remains physically outside the warehouse until a carrier return is actually received, counted, and inspected through UC10 with a unique receipt reference. Only saleable units are restored; a lost parcel produces no stock increase. This path does not use the delivered-order customer-return eligibility rule. FR14 and BR08, BR10, BR13, BR15 apply.
+
+\subsection{UC13: Inspect return and allocate exchange}
+Warehouse Staff receive the referenced parcel and record per-line inspected quantities and condition. Customer Service records whether the accepted remedy is refund or exchange. The system confirms that receipt quantities do not exceed the approved request, restores only saleable accepted units, and records damaged units separately. For an exchange, it atomically reserves the equal-price replacement SKU and creates a linked replacement fulfilment. Unavailable replacement stock prompts the Customer to choose refund or withdrawal; it does not promise nonexistent stock. Replacement dispatch follows the same SKU packing controls but creates no new customer charge. Repeated inspection references cannot restock twice. FR15 and BR09--11 apply.
+
+\subsection{UC14: Process refund}
+Finance Staff confirm an eligible refund arising from cancellation, accepted return, permanent non-delivery closure, or late-payment compensation. The system locks refund commitments, determines the remaining refundable captured amount, allocates any line-level entitlement, and persists an idempotent refund request. The provider call occurs after local commit. The system records Pending until verified provider completion then marks Succeeded and updates confirmed refunded funds. Timeouts reconcile the existing refund object before retry; failed refunds retain a visible exception and may be retried against the same entitlement. Already pending commitments cannot be spent again by a concurrent refund request. A provider refund failure does not reverse a physical warehouse inspection. FR16 and BR10, BR12--13 apply.
+
+\subsection{UC15--UC18: Supporting services}
+\textbf{UC15, reports.} Manager or Finance Staff select a date range and permitted measure. The system aggregates the defined order/stock/payment/refund sources and labels timezone and event-date basis. No-data results show an explicit empty state. Reports never equate order value with collected cash.
+
+\textbf{UC16, access.} Administrator provisions staff roles, changes permissions, and revokes accounts. The system checks administrative authorisation, audits the change, invalidates revoked access, and refuses self-service customer elevation. Other business use cases still enforce their own permissions; access control is a pervasive requirement rather than an include arrow attached to every ellipse.
+
+\textbf{UC17, notifications.} After a committed business event, a worker sends the relevant customer notice and records delivery attempts. Retry failures enter a notification queue. The customer may inspect the same authoritative status in UC06 even if email delivery fails.
+
+\textbf{UC18, optional reviews.} An authenticated Customer with a delivered product submits a rating and comment. The system checks purchase eligibility and the unique customer/order/product review, validates content, and queues moderation before publication. Rejected content receives a moderation reason. This Could feature may be deferred.

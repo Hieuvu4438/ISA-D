@@ -1,0 +1,1393 @@
+DIAGRAM	BkO43IWAUtAAEAuU	Customer services and payment boundary	28
+VIEW	BkO43IWAUtAAEAuU	VwTI3IWAUtAAEAyh	UseCase	UC01 Browse fashion catalogue
+VIEW	BkO43IWAUtAAEAuU	hwTI3IWAUtAAEAyY	Actor	Visitor
+VIEW	BkO43IWAUtAAEAuU	ZwTI3IWAUtAAEAyb	Actor	Customer
+VIEW	BkO43IWAUtAAEAuU	TwTI3IWAUtAAEAyt	UseCase	UC02 Manage account
+VIEW	BkO43IWAUtAAEAuU	bwTI3IWAUtAAEAy5	UseCase	UC03 Manage variant cart
+VIEW	BkO43IWAUtAAEAuU	XwTI3IWAUtAAEAzF	UseCase	UC04 Place order
+VIEW	BkO43IWAUtAAEAuU	FwTI3IWAUtAAEAye	Actor	Payment Provider
+VIEW	BkO43IWAUtAAEAuU	_wTI3IWAUtAAEAzR	UseCase	UC06 Track order
+VIEW	BkO43IWAUtAAEAuU	IITI3IWAUtAAEAzd	UseCase	UC07 Cancel order
+VIEW	BkO43IWAUtAAEAuU	EITI3IWAUtAAEAzp	UseCase	UC08 Request return or exchange
+VIEW	BkO43IWAUtAAEAuU	sITI3IWAUtAAEAz1	UseCase	Validate checkout
+VIEW	BkO43IWAUtAAEAuU	SITI3IWAUtAAEA0B	UseCase	Reserve SKU stock
+VIEW	BkO43IWAUtAAEAuU	aITI3IWAUtAAEA0N	UseCase	Initiate online payment
+VIEW	BkO43IWAUtAAEAuU	OITI3IWAUtAAEA0Z	UseCase	UC05 Reconcile payment event
+VIEW	BkO43IWAUtAAEAuU	ywTI3IWAUtAAEAyV	System	Atelier Fashion Ecommerce
+VIEW	BkO43IWAUtAAEAuU	J0O43IWAUtAAEA4N	Generalization	
+VIEW	BkO43IWAUtAAEAuU	90O43IWAUtAAEA4Q	Association	
+VIEW	BkO43IWAUtAAEAuU	H0O43IWAUtAAEA4X	Association	
+VIEW	BkO43IWAUtAAEAuU	v0O43IWAUtAAEA4e	Association	
+VIEW	BkO43IWAUtAAEAuU	wMO43IWAUtAAEA4l	Association	
+VIEW	BkO43IWAUtAAEAuU	EMO43IWAUtAAEA4s	Association	
+VIEW	BkO43IWAUtAAEAuU	sMO43IWAUtAAEA4z	Association	
+VIEW	BkO43IWAUtAAEAuU	yMO43IWAUtAAEA46	Association	
+VIEW	BkO43IWAUtAAEAuU	mMO43IWAUtAAEA5B	Include	
+VIEW	BkO43IWAUtAAEAuU	.MO43IWAUtAAEA5E	Include	
+VIEW	BkO43IWAUtAAEAuU	JMO43IWAUtAAEA5H	Include	
+VIEW	BkO43IWAUtAAEAuU	VMO43IWAUtAAEA5K	Association	
+VIEW	BkO43IWAUtAAEAuU	DMO43IWAUtAAEA5R	Association	
+DIAGRAM	BLFE3IWAUtAAEA.r	Customer service finance management and administration	18
+VIEW	BLFE3IWAUtAAEA.r	IITI3IWAUtAAEAzd	UseCase	UC07 Cancel order
+VIEW	BLFE3IWAUtAAEA.r	IoeE3IWAUtAAEA6I	Actor	Customer Service
+VIEW	BLFE3IWAUtAAEA.r	1LFE3IWAUtAAEA.y	Actor	Finance Staff
+VIEW	BLFE3IWAUtAAEA.r	TLFE3IWAUtAAEA.1	Actor	Manager
+VIEW	BLFE3IWAUtAAEA.r	HLFE3IWAUtAAEA.4	Actor	Administrator
+VIEW	BLFE3IWAUtAAEA.r	FwTI3IWAUtAAEAye	Actor	Payment Provider
+VIEW	BLFE3IWAUtAAEA.r	EITI3IWAUtAAEAzp	UseCase	UC08 Request return or exchange
+VIEW	BLFE3IWAUtAAEA.r	UrFE3IWAUtAAEA_W	UseCase	UC14 Process refund
+VIEW	BLFE3IWAUtAAEA.r	irFE3IWAUtAAEA_i	UseCase	UC15 View management reports
+VIEW	BLFE3IWAUtAAEA.r	GrFE3IWAUtAAEA_u	UseCase	UC16 Administer access
+VIEW	BLFE3IWAUtAAEA.r	ywTI3IWAUtAAEAyV	System	Atelier Fashion Ecommerce
+VIEW	BLFE3IWAUtAAEA.r	.rFE3IWAUtAAEA_6	Association	
+VIEW	BLFE3IWAUtAAEA.r	JrFE3IWAUtAAEBAB	Association	
+VIEW	BLFE3IWAUtAAEA.r	lrFE3IWAUtAAEBAI	Association	
+VIEW	BLFE3IWAUtAAEA.r	9rFE3IWAUtAAEBAP	Association	
+VIEW	BLFE3IWAUtAAEA.r	LrFE3IWAUtAAEBAW	Association	
+VIEW	BLFE3IWAUtAAEA.r	nrFE3IWAUtAAEBAd	Association	
+VIEW	BLFE3IWAUtAAEA.r	frFE3IWAUtAAEBAk	Association	
+DIAGRAM	oBN83IWAUtAAEBAz	Notifications optional reviews and finance reconciliation	11
+VIEW	oBN83IWAUtAAEBAz	CBN83IWAUtAAEBA9	UseCase	UC17 Receive transaction notifications
+VIEW	oBN83IWAUtAAEBAz	ZwTI3IWAUtAAEAyb	Actor	Customer
+VIEW	oBN83IWAUtAAEBAz	FwTI3IWAUtAAEAye	Actor	Payment Provider
+VIEW	oBN83IWAUtAAEBAz	1LFE3IWAUtAAEA.y	Actor	Finance Staff
+VIEW	oBN83IWAUtAAEBAz	uBN83IWAUtAAEBBJ	UseCase	UC18 Submit purchased-product review
+VIEW	oBN83IWAUtAAEBAz	OITI3IWAUtAAEA0Z	UseCase	UC05 Reconcile payment event
+VIEW	oBN83IWAUtAAEBAz	ywTI3IWAUtAAEAyV	System	Atelier Fashion Ecommerce
+VIEW	oBN83IWAUtAAEBAz	5BN83IWAUtAAEBBX	Association	
+VIEW	oBN83IWAUtAAEBAz	9BN83IWAUtAAEBBe	Association	
+VIEW	oBN83IWAUtAAEBAz	rBN83IWAUtAAEBBl	Association	
+VIEW	oBN83IWAUtAAEBAz	XBN83IWAUtAAEBBs	Association	
+DIAGRAM	kjJS3IWAUtAAEBOe	Catalogue warehouse and delivery use cases	18
+VIEW	kjJS3IWAUtAAEBOe	8oeE3IWAUtAAEA6O	UseCase	UC09 Maintain catalogue
+VIEW	kjJS3IWAUtAAEBOe	jIeE3IWAUtAAEA6C	Actor	Merchandiser
+VIEW	kjJS3IWAUtAAEBOe	_IeE3IWAUtAAEA6F	Actor	Warehouse Staff
+VIEW	kjJS3IWAUtAAEBOe	IoeE3IWAUtAAEA6I	Actor	Customer Service
+VIEW	kjJS3IWAUtAAEBOe	UoeE3IWAUtAAEA6L	Actor	Shipping Provider
+VIEW	kjJS3IWAUtAAEBOe	aoeE3IWAUtAAEA6a	UseCase	UC10 Receive and adjust stock
+VIEW	kjJS3IWAUtAAEBOe	uoeE3IWAUtAAEA6m	UseCase	UC11 Fulfil paid order
+VIEW	kjJS3IWAUtAAEBOe	JoeE3IWAUtAAEA6y	UseCase	UC13 Inspect return and allocate exchange
+VIEW	kjJS3IWAUtAAEBOe	NoeE3IWAUtAAEA6.	UseCase	UC12 Reconcile delivery event
+VIEW	kjJS3IWAUtAAEBOe	ywTI3IWAUtAAEAyV	System	Atelier Fashion Ecommerce
+VIEW	kjJS3IWAUtAAEBOe	njJS3IWAUtAAEBO0	Association	
+VIEW	kjJS3IWAUtAAEBOe	3TJS3IWAUtAAEBO7	Association	
+VIEW	kjJS3IWAUtAAEBOe	IzJS3IWAUtAAEBPC	Association	
+VIEW	kjJS3IWAUtAAEBOe	czJS3IWAUtAAEBPJ	Association	
+VIEW	kjJS3IWAUtAAEBOe	6zJS3IWAUtAAEBPQ	Association	
+VIEW	kjJS3IWAUtAAEBOe	xzJS3IWAUtAAEBPX	Association	
+VIEW	kjJS3IWAUtAAEBOe	TzJS3IWAUtAAEBPe	Association	
+VIEW	kjJS3IWAUtAAEBOe	_zJS3IWAUtAAEBPl	Association	
+DIAGRAM	.LFk3IWAUtAAEBKf	Analysis class model payment shipment and post-purchase service	15
+VIEW	.LFk3IWAUtAAEBKf	nUWk3IWAUtAAEBIz	Class	Order
+VIEW	.LFk3IWAUtAAEBKf	JLFk3IWAUtAAEBKj	Class	Payment
+VIEW	.LFk3IWAUtAAEBKf	dLFk3IWAUtAAEBKq	Class	Refund
+VIEW	.LFk3IWAUtAAEBKf	rLFk3IWAUtAAEBKw	Class	Shipment
+VIEW	.LFk3IWAUtAAEBKf	PLFk3IWAUtAAEBK2	Class	ReturnRequest
+VIEW	.LFk3IWAUtAAEBKf	QrFk3IWAUtAAEBK8	Class	ReturnLine
+VIEW	.LFk3IWAUtAAEBKf	_UWk3IWAUtAAEBI6	Class	OrderLine
+VIEW	.LFk3IWAUtAAEBKf	krFk3IWAUtAAEBLF	Class	ExchangeFulfilment
+VIEW	.LFk3IWAUtAAEBKf	SrFk3IWAUtAAEBLM	Association	
+VIEW	.LFk3IWAUtAAEBKf	GrFk3IWAUtAAEBLT	Association	
+VIEW	.LFk3IWAUtAAEBKf	urFk3IWAUtAAEBLa	Association	
+VIEW	.LFk3IWAUtAAEBKf	xrFk3IWAUtAAEBLh	Association	
+VIEW	.LFk3IWAUtAAEBKf	FrFk3IWAUtAAEBLo	Association	
+VIEW	.LFk3IWAUtAAEBKf	trFk3IWAUtAAEBLv	Association	
+VIEW	.LFk3IWAUtAAEBKf	TrFk3IWAUtAAEBL2	Association	
+DIAGRAM	D09k3IWAUtAAEBMk	Analysis class model shopping intention and purchase commitment	14
+VIEW	D09k3IWAUtAAEBMk	hUWk3IWAUtAAEBIi	Class	Customer
+VIEW	D09k3IWAUtAAEBMk	VUWk3IWAUtAAEBIn	Class	Cart
+VIEW	D09k3IWAUtAAEBMk	DUWk3IWAUtAAEBIs	Class	CartLine
+VIEW	D09k3IWAUtAAEBMk	D_bE3IWAUtAAEBGJ	Class	ProductVariant
+VIEW	D09k3IWAUtAAEBMk	nUWk3IWAUtAAEBIz	Class	Order
+VIEW	D09k3IWAUtAAEBMk	_UWk3IWAUtAAEBI6	Class	OrderLine
+VIEW	D09k3IWAUtAAEBMk	I0Wk3IWAUtAAEBJC	Class	AddressSnapshot
+VIEW	D09k3IWAUtAAEBMk	YM9k3IWAUtAAEBM7	Association	
+VIEW	D09k3IWAUtAAEBMk	0M9k3IWAUtAAEBNC	Association	
+VIEW	D09k3IWAUtAAEBMk	CM9k3IWAUtAAEBNJ	Association	
+VIEW	D09k3IWAUtAAEBMk	qM9k3IWAUtAAEBNQ	Association	
+VIEW	D09k3IWAUtAAEBMk	mM9k3IWAUtAAEBNX	Association	
+VIEW	D09k3IWAUtAAEBMk	eM9k3IWAUtAAEBNe	Association	
+VIEW	D09k3IWAUtAAEBMk	xM9k3IWAUtAAEBNl	Association	
+DIAGRAM	MwBs3IWAUtAAEAl3	Analysis class model stock commitment independent of carts	7
+VIEW	MwBs3IWAUtAAEAl3	nUWk3IWAUtAAEBIz	Class	Order
+VIEW	MwBs3IWAUtAAEAl3	D_bE3IWAUtAAEBGJ	Class	ProductVariant
+VIEW	MwBs3IWAUtAAEAl3	wYBs3IWAUtAAEBCf	Class	Reservation
+VIEW	MwBs3IWAUtAAEAl3	7_bE3IWAUtAAEBGR	Class	InventoryBalance
+VIEW	MwBs3IWAUtAAEAl3	SYBs3IWAUtAAEBCp	Association	
+VIEW	MwBs3IWAUtAAEAl3	uYBs3IWAUtAAEBCw	Association	
+VIEW	MwBs3IWAUtAAEAl3	JYBs3IWAUtAAEBC3	Association	
+DIAGRAM	4B6S3IWAUtAAEBMH	Analysis class model catalogue variants and inventory	9
+VIEW	4B6S3IWAUtAAEBMH	m_bE3IWAUtAAEBF8	Class	Category
+VIEW	4B6S3IWAUtAAEBMH	V_bE3IWAUtAAEBGC	Class	Product
+VIEW	4B6S3IWAUtAAEBMH	D_bE3IWAUtAAEBGJ	Class	ProductVariant
+VIEW	4B6S3IWAUtAAEBMH	7_bE3IWAUtAAEBGR	Class	InventoryBalance
+VIEW	4B6S3IWAUtAAEBMH	v_bE3IWAUtAAEBGX	Class	SizeChart
+VIEW	4B6S3IWAUtAAEBMH	mJ6S3IWAUtAAEBMT	Association	
+VIEW	4B6S3IWAUtAAEBMH	JJ6S3IWAUtAAEBMa	Association	
+VIEW	4B6S3IWAUtAAEBMH	LJ6S3IWAUtAAEBMh	Association	
+VIEW	4B6S3IWAUtAAEBMH	fJ6S3IWAUtAAEBMo	Association	
+DIAGRAM	3gWU3IWAUtAAEAg0	UC04 Successful checkout allocation before provider interaction	12
+VIEW	3gWU3IWAUtAAEAg0	SIWU3IWAUtAAEAg3	InteractionLifeLine	customer:Customer
+VIEW	3gWU3IWAUtAAEAg0	NIWU3IWAUtAAEAhD	InteractionLifeLine	checkout:CheckoutService
+VIEW	3gWU3IWAUtAAEAg0	TIWU3IWAUtAAEAhG	InteractionLifeLine	db:TransactionalStore
+VIEW	3gWU3IWAUtAAEAg0	nIWU3IWAUtAAEAhJ	InteractionLifeLine	provider:PaymentProvider
+VIEW	3gWU3IWAUtAAEAg0	woWU3IWAUtAAEAhN	Message	submit(consentedQuote, key)
+VIEW	3gWU3IWAUtAAEAg0	ioWU3IWAUtAAEAhV	Message	lock SKUs; validate quote
+VIEW	3gWU3IWAUtAAEAg0	6oWU3IWAUtAAEAhb	Message	valid quote and stock
+VIEW	3gWU3IWAUtAAEAg0	.oWU3IWAUtAAEAhi	Message	commit order, holds, outbox
+VIEW	3gWU3IWAUtAAEAg0	poWU3IWAUtAAEAho	Message	committed order reference
+VIEW	3gWU3IWAUtAAEAg0	1oWU3IWAUtAAEAhu	Message	create/resume payment(key)
+VIEW	3gWU3IWAUtAAEAg0	joWU3IWAUtAAEAh0	Message	providerRef and hosted URL
+VIEW	3gWU3IWAUtAAEAg0	7oWU3IWAUtAAEAh6	Message	PendingPayment and URL
+DIAGRAM	6Y.s3IWAUtAAEAkW	UC05 Verify and reconcile a payment outcome exactly once	14
+VIEW	6Y.s3IWAUtAAEAkW	6Y.s3IWAUtAAEAkY	InteractionLifeLine	provider:PaymentProvider
+VIEW	6Y.s3IWAUtAAEAkW	ZY.s3IWAUtAAEAkc	InteractionLifeLine	adapter:WebhookAdapter
+VIEW	6Y.s3IWAUtAAEAkW	NY.s3IWAUtAAEAkf	InteractionLifeLine	payment:PaymentService
+VIEW	6Y.s3IWAUtAAEAkW	jY.s3IWAUtAAEAki	InteractionLifeLine	db:TransactionalStore
+VIEW	6Y.s3IWAUtAAEAkW	Z4.s3IWAUtAAEAlQ	InteractionOperand	Operand
+VIEW	6Y.s3IWAUtAAEAkW	x4.s3IWAUtAAEAlP	CombinedFragment	CombinedFragment
+VIEW	6Y.s3IWAUtAAEAkW	7Y.s3IWAUtAAEAkl	Message	signed outcome(eventId)
+VIEW	6Y.s3IWAUtAAEAkW	A4.s3IWAUtAAEAkr	Message	verify; persist inbox event
+VIEW	6Y.s3IWAUtAAEAkW	Y4.s3IWAUtAAEAkx	Message	durable receipt
+VIEW	6Y.s3IWAUtAAEAkW	s4.s3IWAUtAAEAk3	Message	acknowledge delivery
+VIEW	6Y.s3IWAUtAAEAkW	S4.s3IWAUtAAEAk9	Message	process persisted event
+VIEW	6Y.s3IWAUtAAEAkW	G4.s3IWAUtAAEAlD	Message	lock and apply guarded update
+VIEW	6Y.s3IWAUtAAEAkW	e4.s3IWAUtAAEAlJ	Message	commit payment and outbox
+VIEW	6Y.s3IWAUtAAEAkW	t4.s3IWAUtAAEAlX	Message	refund with stable key
+DIAGRAM	SLhS3IWAUtAAEBNK	Order fulfilment lifecycle separate from money and returns	18
+VIEW	SLhS3IWAUtAAEBNK	KLhS3IWAUtAAEBNM	InitialPseudoState	
+VIEW	SLhS3IWAUtAAEBNK	GLhS3IWAUtAAEBNP	State2	PendingPayment
+VIEW	SLhS3IWAUtAAEBNK	hLhS3IWAUtAAEBNS	State2	Confirmed
+VIEW	SLhS3IWAUtAAEBNK	NLhS3IWAUtAAEBNV	State2	Packing
+VIEW	SLhS3IWAUtAAEBNK	bLhS3IWAUtAAEBNY	State2	Shipped
+VIEW	SLhS3IWAUtAAEBNK	PLhS3IWAUtAAEBNb	State2	Delivered
+VIEW	SLhS3IWAUtAAEBNK	wrhS3IWAUtAAEBNe	State2	Cancelled
+VIEW	SLhS3IWAUtAAEBNK	MrhS3IWAUtAAEBNh	State2	Expired
+VIEW	SLhS3IWAUtAAEBNK	yrhS3IWAUtAAEBNk	State2	DeliveryFailed
+VIEW	SLhS3IWAUtAAEBNK	WrhS3IWAUtAAEBNn	Transition2	
+VIEW	SLhS3IWAUtAAEBNK	RrhS3IWAUtAAEBNq	Transition2	verifiedCapture
+VIEW	SLhS3IWAUtAAEBNK	VrhS3IWAUtAAEBNt	Transition2	startPacking
+VIEW	SLhS3IWAUtAAEBNK	zrhS3IWAUtAAEBNw	Transition2	dispatch
+VIEW	SLhS3IWAUtAAEBNK	XrhS3IWAUtAAEBNz	Transition2	verifiedDelivery
+VIEW	SLhS3IWAUtAAEBNK	gbhS3IWAUtAAEBN2	Transition2	cancel
+VIEW	SLhS3IWAUtAAEBNK	UbhS3IWAUtAAEBN5	Transition2	cancel
+VIEW	SLhS3IWAUtAAEBNK	qbhS3IWAUtAAEBN8	Transition2	holdExpired
+VIEW	SLhS3IWAUtAAEBNK	JbhS3IWAUtAAEBN_	Transition2	closeFailure
+DIAGRAM	rzK43IWAUtAAEAnS	UC01 Search and select an available fashion variant	27
+VIEW	rzK43IWAUtAAEAnS	rzK43IWAUtAAEAnU	InitialNode	
+VIEW	rzK43IWAUtAAEAnS	HzK43IWAUtAAEAnX	MergeNode	
+VIEW	rzK43IWAUtAAEAnS	vzK43IWAUtAAEAna	ActivityAction	Enter keyword and filters
+VIEW	rzK43IWAUtAAEAnS	QLK43IWAUtAAEAnd	ActivityAction	Find published products matching variant filters
+VIEW	rzK43IWAUtAAEAnS	ELK43IWAUtAAEAng	DecisionNode	
+VIEW	rzK43IWAUtAAEAnS	sLK43IWAUtAAEAnj	ActivityAction	Show no matching results and suggest changing filters
+VIEW	rzK43IWAUtAAEAnS	SLK43IWAUtAAEAnm	ActivityAction	Show product details, images, material and size chart
+VIEW	rzK43IWAUtAAEAnS	6LK43IWAUtAAEAnp	MergeNode	
+VIEW	rzK43IWAUtAAEAnS	OLK43IWAUtAAEAns	ActivityAction	Choose exact size and colour
+VIEW	rzK43IWAUtAAEAnS	hLK43IWAUtAAEAnv	DecisionNode	
+VIEW	rzK43IWAUtAAEAnS	ZLK43IWAUtAAEAny	ActivityAction	Explain selected SKU unavailable and allow another selection
+VIEW	rzK43IWAUtAAEAnS	NLK43IWAUtAAEAn1	ActivityAction	Add selected SKU and quantity to cart without reserving stock
+VIEW	rzK43IWAUtAAEAnS	DLK43IWAUtAAEAn4	ActivityFinalNode	
+VIEW	rzK43IWAUtAAEAnS	zLK43IWAUtAAEAn7	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	HLK43IWAUtAAEAn.	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	PLK43IWAUtAAEAoB	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	grK43IWAUtAAEAoE	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	YrK43IWAUtAAEAoH	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	0rK43IWAUtAAEAoK	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	CrK43IWAUtAAEAoN	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	qrK43IWAUtAAEAoQ	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	WrK43IWAUtAAEAoT	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	erK43IWAUtAAEAoW	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	RrK43IWAUtAAEAoZ	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	5rK43IWAUtAAEAoc	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	NrK43IWAUtAAEAof	ControlFlow	
+VIEW	rzK43IWAUtAAEAnS	DrK43IWAUtAAEAoi	ControlFlow	
+DIAGRAM	3ia43IWAUtAAEApK	UC04 Checkout responsibilities and asynchronous payment	30
+VIEW	3ia43IWAUtAAEApK	_ia43IWAUtAAEApP	ActivityPartition	Customer
+VIEW	3ia43IWAUtAAEApK	GSa43IWAUtAAEAph	ActivityAction	Consent and submit checkout
+VIEW	3ia43IWAUtAAEApK	CSa43IWAUtAAEApb	InitialNode	
+VIEW	3ia43IWAUtAAEApK	ISa43IWAUtAAEApT	ActivityPartition	Atelier system
+VIEW	3ia43IWAUtAAEApK	uSa43IWAUtAAEApk	ActivityAction	Revalidate and atomically create order plus 15-minute stock hold
+VIEW	3ia43IWAUtAAEApK	RSa43IWAUtAAEApn	DecisionNode	
+VIEW	3ia43IWAUtAAEApK	9Sa43IWAUtAAEApw	ActivityAction	Persist payment request and send idempotently
+VIEW	3ia43IWAUtAAEApK	USa43IWAUtAAEApX	ActivityPartition	Payment Provider
+VIEW	3ia43IWAUtAAEApK	LSa43IWAUtAAEApz	ActivityAction	Host payment and process customer authorisation
+VIEW	3ia43IWAUtAAEApK	ySa43IWAUtAAEApe	ActivityAction	Review SKU quantities, address and final quoted total
+VIEW	3ia43IWAUtAAEApK	5Sa43IWAUtAAEApq	ActivityAction	Show validation/stock error; no order or hold is committed
+VIEW	3ia43IWAUtAAEApK	NSa43IWAUtAAEApt	ActivityFinalNode	
+VIEW	3ia43IWAUtAAEApK	_Sa43IWAUtAAEAp5	ActivityAction	Verify and deduplicate event; apply guarded payment update
+VIEW	3ia43IWAUtAAEApK	nSa43IWAUtAAEAp2	ActivityAction	Send signed outcome event (retries may occur)
+VIEW	3ia43IWAUtAAEApK	Iya43IWAUtAAEAp8	ActivityFinalNode	
+VIEW	3ia43IWAUtAAEApK	Pia43IWAUtAAEApM	ActivitySwimlane2	Swimlane3
+VIEW	3ia43IWAUtAAEApK	Eya43IWAUtAAEAp_	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	Mya43IWAUtAAEAqC	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	iya43IWAUtAAEAqF	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	aya43IWAUtAAEAqI	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	Wya43IWAUtAAEAqL	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	.ya43IWAUtAAEAqO	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	Jya43IWAUtAAEAqR	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	lya43IWAUtAAEAqU	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	tya43IWAUtAAEAqX	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	zya43IWAUtAAEAqa	ControlFlow	
+VIEW	3ia43IWAUtAAEApK	Hya43IWAUtAAEAqd	ControlFlow	
+DIAGRAM	BkDk3IWAUtAAEBOS	UC13 Inspect an approved return before stock restoration	24
+VIEW	BkDk3IWAUtAAEBOS	FkDk3IWAUtAAEBOX	ActivityPartition	Customer Service
+VIEW	BkDk3IWAUtAAEBOS	PkDk3IWAUtAAEBOm	ActivityAction	Confirm approved request and receipt instructions
+VIEW	BkDk3IWAUtAAEBOS	XkDk3IWAUtAAEBOj	InitialNode	
+VIEW	BkDk3IWAUtAAEBOS	4UDk3IWAUtAAEBOs	ActivityAction	Check receipt reference and remaining approved quantity
+VIEW	BkDk3IWAUtAAEBOS	9kDk3IWAUtAAEBOb	ActivityPartition	Atelier system
+VIEW	BkDk3IWAUtAAEBOS	rkDk3IWAUtAAEBOf	ActivityPartition	Warehouse Staff
+VIEW	BkDk3IWAUtAAEBOS	QUDk3IWAUtAAEBOp	ActivityAction	Receive parcel; count and inspect each returned SKU
+VIEW	BkDk3IWAUtAAEBOS	aUDk3IWAUtAAEBO1	ActivityAction	Resolve discrepancy; no stock change is committed
+VIEW	BkDk3IWAUtAAEBOS	MUDk3IWAUtAAEBOv	DecisionNode	
+VIEW	BkDk3IWAUtAAEBOS	CUDk3IWAUtAAEBOy	ActivityAction	Record inspection; restock only saleable quantities once
+VIEW	BkDk3IWAUtAAEBOS	uUDk3IWAUtAAEBO7	ActivityFinalNode	
+VIEW	BkDk3IWAUtAAEBOS	2UDk3IWAUtAAEBO4	ActivityFinalNode	
+VIEW	BkDk3IWAUtAAEBOS	JkDk3IWAUtAAEBOU	ActivitySwimlane2	Swimlane4
+VIEW	BkDk3IWAUtAAEBOS	BUDk3IWAUtAAEBO.	ControlFlow	
+VIEW	BkDk3IWAUtAAEBOS	pUDk3IWAUtAAEBPB	ControlFlow	
+VIEW	BkDk3IWAUtAAEBOS	lUDk3IWAUtAAEBPE	ControlFlow	
+VIEW	BkDk3IWAUtAAEBOS	dUDk3IWAUtAAEBPH	ControlFlow	
+VIEW	BkDk3IWAUtAAEBOS	zUDk3IWAUtAAEBPK	ControlFlow	
+VIEW	BkDk3IWAUtAAEBOS	HUDk3IWAUtAAEBPN	ControlFlow	
+VIEW	BkDk3IWAUtAAEBOS	PUDk3IWAUtAAEBPQ	ControlFlow	
+VIEW	BkDk3IWAUtAAEBOS	g0Dk3IWAUtAAEBPT	ControlFlow	
+DIAGRAM	yPHk3IWAUtAAEBP4	UC13 Resolve inspected return as refund or equal-price exchange	21
+VIEW	yPHk3IWAUtAAEBP4	KPHk3IWAUtAAEBP6	InitialNode	
+VIEW	yPHk3IWAUtAAEBP4	6PHk3IWAUtAAEBP9	ActivityAction	Load accepted inspected lines and customer remedy choice
+VIEW	yPHk3IWAUtAAEBP4	OPHk3IWAUtAAEBQA	DecisionNode	
+VIEW	yPHk3IWAUtAAEBP4	RPHk3IWAUtAAEBQD	ActivityAction	Atomically reserve equal-price replacement size or colour
+VIEW	yPHk3IWAUtAAEBP4	5PHk3IWAUtAAEBQG	ActivityAction	Schedule UC14 refund against remaining captured entitlement
+VIEW	yPHk3IWAUtAAEBP4	1PHk3IWAUtAAEBQJ	DecisionNode	
+VIEW	yPHk3IWAUtAAEBP4	DPHk3IWAUtAAEBQM	ActivityAction	Confirm linked exchange; fulfil with SKU packing checks
+VIEW	yPHk3IWAUtAAEBP4	rPHk3IWAUtAAEBQP	ActivityAction	Ask customer to choose refund or withdraw exchange request
+VIEW	yPHk3IWAUtAAEBP4	XPHk3IWAUtAAEBQS	ActivityFinalNode	
+VIEW	yPHk3IWAUtAAEBP4	vPHk3IWAUtAAEBQV	ActivityFinalNode	
+VIEW	yPHk3IWAUtAAEBP4	_PHk3IWAUtAAEBQY	ActivityFinalNode	
+VIEW	yPHk3IWAUtAAEBP4	QvHk3IWAUtAAEBQb	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	YvHk3IWAUtAAEBQe	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	0vHk3IWAUtAAEBQh	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	CvHk3IWAUtAAEBQk	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	qvHk3IWAUtAAEBQn	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	WvHk3IWAUtAAEBQq	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	evHk3IWAUtAAEBQt	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	xvHk3IWAUtAAEBQw	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	FvHk3IWAUtAAEBQz	ControlFlow	
+VIEW	yPHk3IWAUtAAEBP4	NvHk3IWAUtAAEBQ2	ControlFlow	
+DIAGRAM	7Xnk3IWAUtAAEBRY	UC10 Receive stock with an auditable movement reference	15
+VIEW	7Xnk3IWAUtAAEBRY	XXnk3IWAUtAAEBRa	InitialNode	
+VIEW	7Xnk3IWAUtAAEBRY	_Xnk3IWAUtAAEBRd	ActivityAction	Identify SKU; count saleable and damaged received units
+VIEW	7Xnk3IWAUtAAEBRY	o3nk3IWAUtAAEBRg	ActivityAction	Verify staff role, receipt key, SKU and quantity
+VIEW	7Xnk3IWAUtAAEBRY	03nk3IWAUtAAEBRj	DecisionNode	
+VIEW	7Xnk3IWAUtAAEBRY	83nk3IWAUtAAEBRm	ActivityAction	Atomically post saleable stock and an auditable movement
+VIEW	7Xnk3IWAUtAAEBRY	K3nk3IWAUtAAEBRp	ActivityAction	Show invalid data or existing receipt result; no repeat posting
+VIEW	7Xnk3IWAUtAAEBRY	W3nk3IWAUtAAEBRs	ActivityFinalNode	
+VIEW	7Xnk3IWAUtAAEBRY	O3nk3IWAUtAAEBRv	ActivityFinalNode	
+VIEW	7Xnk3IWAUtAAEBRY	.3nk3IWAUtAAEBRy	ControlFlow	
+VIEW	7Xnk3IWAUtAAEBRY	J3nk3IWAUtAAEBR1	ControlFlow	
+VIEW	7Xnk3IWAUtAAEBRY	F3nk3IWAUtAAEBR4	ControlFlow	
+VIEW	7Xnk3IWAUtAAEBRY	t3nk3IWAUtAAEBR7	ControlFlow	
+VIEW	7Xnk3IWAUtAAEBRY	z3nk3IWAUtAAEBR.	ControlFlow	
+VIEW	7Xnk3IWAUtAAEBRY	73nk3IWAUtAAEBSB	ControlFlow	
+VIEW	7Xnk3IWAUtAAEBRY	P3nk3IWAUtAAEBSE	ControlFlow	
+DIAGRAM	DkS83IWAUtAAEAhE	Modular application architecture and provider adapters	16
+VIEW	DkS83IWAUtAAEAhE	xRPU3IWAUtAAEAi4	Component	Storefront and staff UI
+VIEW	DkS83IWAUtAAEAhE	dRPU3IWAUtAAEAi7	Component	Application modules
+VIEW	DkS83IWAUtAAEAhE	zRPU3IWAUtAAEAi.	Component	Transactional repository
+VIEW	DkS83IWAUtAAEAhE	nRPU3IWAUtAAEAjB	Component	Outbox and inbox worker
+VIEW	DkS83IWAUtAAEAhE	fRPU3IWAUtAAEAjE	Component	Payment adapter
+VIEW	DkS83IWAUtAAEAhE	wxPU3IWAUtAAEAjH	Component	Shipping adapter
+VIEW	DkS83IWAUtAAEAhE	ExPU3IWAUtAAEAjK	Component	External payment service
+VIEW	DkS83IWAUtAAEAhE	sxPU3IWAUtAAEAjN	Component	External shipping service
+VIEW	DkS83IWAUtAAEAhE	JiS83IWAUtAAEBAF	Dependency	HTTPS
+VIEW	DkS83IWAUtAAEAhE	jiS83IWAUtAAEBAI	Dependency	transactions
+VIEW	DkS83IWAUtAAEAhE	niS83IWAUtAAEBAL	Dependency	persisted jobs
+VIEW	DkS83IWAUtAAEAhE	ASS83IWAUtAAEBAO	Dependency	money API
+VIEW	DkS83IWAUtAAEAhE	ESS83IWAUtAAEBAR	Dependency	shipments
+VIEW	DkS83IWAUtAAEAhE	CSS83IWAUtAAEBAU	Dependency	provider API
+VIEW	DkS83IWAUtAAEAhE	GSS83IWAUtAAEBAX	Dependency	carrier API
+VIEW	DkS83IWAUtAAEAhE	.SS83IWAUtAAEBAa	Dependency	outbox/inbox
+DIAGRAM	bZmM3IWAUtAAEAjW	Deployment topology and recovery boundaries	14
+VIEW	bZmM3IWAUtAAEAjW	7ZmM3IWAUtAAEAjY	Node	Browser device
+VIEW	bZmM3IWAUtAAEAjW	fZmM3IWAUtAAEAjb	Node	HTTPS reverse proxy
+VIEW	bZmM3IWAUtAAEAjW	w5mM3IWAUtAAEAje	Node	Application host
+VIEW	bZmM3IWAUtAAEAjW	E5mM3IWAUtAAEAjh	Node	Worker host
+VIEW	bZmM3IWAUtAAEAjW	s5mM3IWAUtAAEAjk	Node	Database primary
+VIEW	bZmM3IWAUtAAEAjW	S5mM3IWAUtAAEAjn	Node	Backup storage
+VIEW	bZmM3IWAUtAAEAjW	65mM3IWAUtAAEAjq	Node	Provider endpoints
+VIEW	bZmM3IWAUtAAEAjW	O5mM3IWAUtAAEAjt	Association	HTTPS
+VIEW	bZmM3IWAUtAAEAjW	55mM3IWAUtAAEAj0	Association	HTTPS
+VIEW	bZmM3IWAUtAAEAjW	N5mM3IWAUtAAEAj7	Association	DB/TLS
+VIEW	bZmM3IWAUtAAEAjW	j5mM3IWAUtAAEAkC	Association	DB/TLS
+VIEW	bZmM3IWAUtAAEAjW	b5mM3IWAUtAAEAkJ	Association	backup + logs
+VIEW	bZmM3IWAUtAAEAjW	P5mM3IWAUtAAEAkQ	Association	HTTPS API
+VIEW	bZmM3IWAUtAAEAjW	gFmM3IWAUtAAEAkX	Association	signed HTTPS events
+MODEL	3hjI3IWAUtAAEAjJ	DataType	boolean
+MODEL	PhjI3IWAUtAAEAjK	DataType	byte
+MODEL	PhjI3IWAUtAAEAjL	DataType	char
+MODEL	PhjI3IWAUtAAEAjM	DataType	double
+MODEL	PhjI3IWAUtAAEAjN	DataType	float
+MODEL	vhjI3IWAUtAAEAjO	DataType	int
+MODEL	vhjI3IWAUtAAEAjP	DataType	long
+MODEL	vhjI3IWAUtAAEAjQ	DataType	short
+MODEL	vhjI3IWAUtAAEAjR	DataType	void
+MODEL	vhjI3IWAUtAAEAjS	DataType	string
+MODEL	fhjI3IWAUtAAEAjT	ApiProfile	
+MODEL	fhjI3IWAUtAAEAjU	WSDLContainer	WSDLContainer
+MODEL	gRjI3IWAUtAAEAkC	PMStatusContainer	
+MODEL	QRjI3IWAUtAAEAkK	PMDifficultyContainer	
+MODEL	wRjI3IWAUtAAEAkO	PMPriorityContainer	
+MODEL	wRjI3IWAUtAAEAkS	PMVersionContainer	
+MODEL	wRjI3IWAUtAAEAkV	PMIterationContainer	
+MODEL	wRjI3IWAUtAAEAkY	PMPhaseContainer	
+MODEL	IRjI3IWAUtAAEAkd	PMDisciplineContainer	
+MODEL	IRjI3IWAUtAAEAkk	PMAuthorContainer	
+MODEL	IRjI3IWAUtAAEAkm	BRKeywords	
+MODEL	4RjI3IWAUtAAEAkx	ChartTypeContainer	ChartTypeContainer
+MODEL	ERjI3IWAUtAAEAk8	BMMInfluencerCategoryContainer	
+MODEL	URjI3IWAUtAAEAlN	BMMBusinessRuleEnforcementLevelContainer	
+MODEL	0RjI3IWAUtAAEAlU	BMMAssetCategoryContainer	
+MODEL	MRjI3IWAUtAAEAlY	BMMAssessmentCategoryContainer	
+MODEL	MRjI3IWAUtAAEAld	ProjectFormat	ProjectFormat
+MODEL	JRjI3IWAUtAAEAsp	BusinessRuleTypeContainer	
+MODEL	JRjI3IWAUtAAEAsv	BrainstormNoteTagContainer	
+MODEL	lFjI3IWAUtAAEAtD	Stereotype	Case Story
+MODEL	tFjI3IWAUtAAEAtE	Stereotype	Context
+MODEL	DFjI3IWAUtAAEAtF	UeXcelerInfo	
+MODEL	DFjI3IWAUtAAEAtG	DBLookupContainer	
+MODEL	jFjI3IWAUtAAEAtH	WFScenarioContainer	
+MODEL	jFjI3IWAUtAAEAtI	GenericModel	WebModelContainer
+MODEL	zFjI3IWAUtAAEAtJ	Stereotype	requirement
+MODEL	7FjI3IWAUtAAEAtS	ViewpointLookup	Viewpoint Lookup
+MODEL	YljI3IWAUtAAEAtr	StyleSetContainer	StyleSet
+MODEL	ywTI3IWAUtAAEAyV	System	Atelier Fashion Ecommerce
+MODEL	hwTI3IWAUtAAEAyY	Actor	Visitor
+MODEL	ZwTI3IWAUtAAEAyb	Actor	Customer
+MODEL	FwTI3IWAUtAAEAye	Actor	Payment Provider
+MODEL	ooTI3IWAUtAAEA1a	Stereotype	Include
+MODEL	1UTI3IWAUtAAEA2U	ModelRelationshipContainer	relationships
+MODEL	25Qo3IWAUtAAEA2b	InitialNode	
+MODEL	R5Qo3IWAUtAAEA2f	ActivityAction	Enter keyword and filters
+MODEL	F5Qo3IWAUtAAEA2i	ActivityAction	Find published products matching variant filters
+MODEL	95Qo3IWAUtAAEA2m	DecisionNode	
+MODEL	b5Qo3IWAUtAAEA2p	ActivityAction	Show no matching results and suggest changing filters
+MODEL	35Qo3IWAUtAAEA2s	ActivityAction	Show product details, images, material and size chart
+MODEL	AFQo3IWAUtAAEA2v	ActivityAction	Choose exact size and colour
+MODEL	oFQo3IWAUtAAEA2y	DecisionNode	
+MODEL	0FQo3IWAUtAAEA21	ActivityAction	Explain selected SKU unavailable and allow another selection
+MODEL	CFQo3IWAUtAAEA24	ActivityAction	Add selected SKU and quantity to cart without reserving stock
+MODEL	aFQo3IWAUtAAEA28	ActivityFinalNode	
+MODEL	Wn0o3IWAUtAAEA4J	ActivitySwimlane2	Swimlane
+MODEL	eJWo3IWAUtAAEA6L	MergeNode	
+MODEL	pJWo3IWAUtAAEA6Y	MergeNode	
+MODEL	SsLo3IWAUtAAEAhi	InitialNode	
+MODEL	gcLo3IWAUtAAEAhs	MergeNode	
+MODEL	.8Lo3IWAUtAAEAhv	ActivityAction	Enter keyword and filters
+MODEL	wiLo3IWAUtAAEAhy	ActivityAction	Find published products matching variant filters
+MODEL	LiLo3IWAUtAAEAh1	DecisionNode	
+MODEL	8yLo3IWAUtAAEAh4	ActivityAction	Show no matching results and suggest changing filters
+MODEL	QKLo3IWAUtAAEAh7	ActivityAction	Show product details, images, material and size chart
+MODEL	TKLo3IWAUtAAEAh.	MergeNode	
+MODEL	16Lo3IWAUtAAEAiB	ActivityAction	Choose exact size and colour
+MODEL	FeLo3IWAUtAAEAiE	DecisionNode	
+MODEL	CZLo3IWAUtAAEAiH	ActivityAction	Explain selected SKU unavailable and allow another selection
+MODEL	Y5Lo3IWAUtAAEAiK	ActivityAction	Add selected SKU and quantity to cart without reserving stock
+MODEL	75Lo3IWAUtAAEAiN	ActivityFinalNode	
+MODEL	aNI43IWAUtAAEAji	InitialNode	
+MODEL	mNI43IWAUtAAEAjl	MergeNode	
+MODEL	eNI43IWAUtAAEAjo	ActivityAction	Enter keyword and filters
+MODEL	xNI43IWAUtAAEAjr	ActivityAction	Find published products matching variant filters
+MODEL	FNI43IWAUtAAEAju	DecisionNode	
+MODEL	tNI43IWAUtAAEAjx	ActivityAction	Show no matching results and suggest changing filters
+MODEL	TNI43IWAUtAAEAj0	ActivityAction	Show product details, images, material and size chart
+MODEL	HNI43IWAUtAAEAj3	MergeNode	
+MODEL	vNI43IWAUtAAEAj6	ActivityAction	Choose exact size and colour
+MODEL	QtI43IWAUtAAEAj9	DecisionNode	
+MODEL	EtI43IWAUtAAEAkA	ActivityAction	Explain selected SKU unavailable and allow another selection
+MODEL	stI43IWAUtAAEAkD	ActivityAction	Add selected SKU and quantity to cart without reserving stock
+MODEL	StI43IWAUtAAEAkG	ActivityFinalNode	
+MODEL	M4E43IWAUtAAEAlW	ActivitySwimlane2	Swimlane2
+MODEL	rzK43IWAUtAAEAnU	InitialNode	
+MODEL	HzK43IWAUtAAEAnX	MergeNode	
+MODEL	vzK43IWAUtAAEAna	ActivityAction	Enter keyword and filters
+MODEL	QLK43IWAUtAAEAnd	ActivityAction	Find published products matching variant filters
+MODEL	ELK43IWAUtAAEAng	DecisionNode	
+MODEL	sLK43IWAUtAAEAnj	ActivityAction	Show no matching results and suggest changing filters
+MODEL	SLK43IWAUtAAEAnm	ActivityAction	Show product details, images, material and size chart
+MODEL	6LK43IWAUtAAEAnp	MergeNode	
+MODEL	OLK43IWAUtAAEAns	ActivityAction	Choose exact size and colour
+MODEL	hLK43IWAUtAAEAnv	DecisionNode	
+MODEL	ZLK43IWAUtAAEAny	ActivityAction	Explain selected SKU unavailable and allow another selection
+MODEL	NLK43IWAUtAAEAn1	ActivityAction	Add selected SKU and quantity to cart without reserving stock
+MODEL	DLK43IWAUtAAEAn4	ActivityFinalNode	
+MODEL	Pia43IWAUtAAEApM	ActivitySwimlane2	Swimlane3
+MODEL	jIeE3IWAUtAAEA6C	Actor	Merchandiser
+MODEL	_IeE3IWAUtAAEA6F	Actor	Warehouse Staff
+MODEL	IoeE3IWAUtAAEA6I	Actor	Customer Service
+MODEL	UoeE3IWAUtAAEA6L	Actor	Shipping Provider
+MODEL	1LFE3IWAUtAAEA.y	Actor	Finance Staff
+MODEL	TLFE3IWAUtAAEA.1	Actor	Manager
+MODEL	HLFE3IWAUtAAEA.4	Actor	Administrator
+MODEL	N1dE3IWAUtAAEBDj	InitialPseudoState	
+MODEL	T1dE3IWAUtAAEBDn	State2	PendingPayment
+MODEL	n1dE3IWAUtAAEBDq	State2	Confirmed
+MODEL	f1dE3IWAUtAAEBDt	State2	Packing
+MODEL	QNdE3IWAUtAAEBDw	State2	Shipped
+MODEL	4NdE3IWAUtAAEBDz	State2	Delivered
+MODEL	MNdE3IWAUtAAEBD2	State2	Cancelled
+MODEL	iNdE3IWAUtAAEBD5	State2	Expired
+MODEL	1gbE3IWAUtAAEBEz	InitialPseudoState	
+MODEL	dgbE3IWAUtAAEBE2	State2	PendingPayment
+MODEL	zgbE3IWAUtAAEBE5	State2	Confirmed
+MODEL	HgbE3IWAUtAAEBE8	State2	Packing
+MODEL	vgbE3IWAUtAAEBE_	State2	Shipped
+MODEL	gQbE3IWAUtAAEBFC	State2	Delivered
+MODEL	4QbE3IWAUtAAEBFF	State2	Cancelled
+MODEL	0QbE3IWAUtAAEBFI	State2	Expired
+MODEL	m_bE3IWAUtAAEBF8	Class	Category
+MODEL	V_bE3IWAUtAAEBGC	Class	Product
+MODEL	D_bE3IWAUtAAEBGJ	Class	ProductVariant
+MODEL	7_bE3IWAUtAAEBGR	Class	InventoryBalance
+MODEL	v_bE3IWAUtAAEBGX	Class	SizeChart
+MODEL	U7PE3IWAUtAAEBHW	InitialPseudoState	
+MODEL	s7PE3IWAUtAAEBHZ	State2	PendingPayment
+MODEL	S7PE3IWAUtAAEBHc	State2	Confirmed
+MODEL	67PE3IWAUtAAEBHf	State2	Packing
+MODEL	O7PE3IWAUtAAEBHi	State2	Shipped
+MODEL	h7PE3IWAUtAAEBHl	State2	Delivered
+MODEL	p7PE3IWAUtAAEBHo	State2	Cancelled
+MODEL	V7PE3IWAUtAAEBHr	State2	Expired
+MODEL	hUWk3IWAUtAAEBIi	Class	Customer
+MODEL	VUWk3IWAUtAAEBIn	Class	Cart
+MODEL	DUWk3IWAUtAAEBIs	Class	CartLine
+MODEL	nUWk3IWAUtAAEBIz	Class	Order
+MODEL	_UWk3IWAUtAAEBI6	Class	OrderLine
+MODEL	I0Wk3IWAUtAAEBJC	Class	AddressSnapshot
+MODEL	JLFk3IWAUtAAEBKj	Class	Payment
+MODEL	dLFk3IWAUtAAEBKq	Class	Refund
+MODEL	rLFk3IWAUtAAEBKw	Class	Shipment
+MODEL	PLFk3IWAUtAAEBK2	Class	ReturnRequest
+MODEL	QrFk3IWAUtAAEBK8	Class	ReturnLine
+MODEL	krFk3IWAUtAAEBLF	Class	ExchangeFulfilment
+MODEL	JkDk3IWAUtAAEBOU	ActivitySwimlane2	Swimlane4
+MODEL	KPHk3IWAUtAAEBP6	InitialNode	
+MODEL	6PHk3IWAUtAAEBP9	ActivityAction	Load accepted inspected lines and customer remedy choice
+MODEL	OPHk3IWAUtAAEBQA	DecisionNode	
+MODEL	RPHk3IWAUtAAEBQD	ActivityAction	Atomically reserve equal-price replacement size or colour
+MODEL	5PHk3IWAUtAAEBQG	ActivityAction	Schedule UC14 refund against remaining captured entitlement
+MODEL	1PHk3IWAUtAAEBQJ	DecisionNode	
+MODEL	DPHk3IWAUtAAEBQM	ActivityAction	Confirm linked exchange; fulfil with SKU packing checks
+MODEL	rPHk3IWAUtAAEBQP	ActivityAction	Ask customer to choose refund or withdraw exchange request
+MODEL	XPHk3IWAUtAAEBQS	ActivityFinalNode	
+MODEL	vPHk3IWAUtAAEBQV	ActivityFinalNode	
+MODEL	_PHk3IWAUtAAEBQY	ActivityFinalNode	
+MODEL	XXnk3IWAUtAAEBRa	InitialNode	
+MODEL	_Xnk3IWAUtAAEBRd	ActivityAction	Identify SKU; count saleable and damaged received units
+MODEL	o3nk3IWAUtAAEBRg	ActivityAction	Verify staff role, receipt key, SKU and quantity
+MODEL	03nk3IWAUtAAEBRj	DecisionNode	
+MODEL	83nk3IWAUtAAEBRm	ActivityAction	Atomically post saleable stock and an auditable movement
+MODEL	K3nk3IWAUtAAEBRp	ActivityAction	Show invalid data or existing receipt result; no repeat posting
+MODEL	W3nk3IWAUtAAEBRs	ActivityFinalNode	
+MODEL	O3nk3IWAUtAAEBRv	ActivityFinalNode	
+MODEL	eIWU3IWAUtAAEAhA	Frame	UC04 Successful checkout allocation before provider interaction
+MODEL	xRPU3IWAUtAAEAi4	Component	Storefront and staff UI
+MODEL	dRPU3IWAUtAAEAi7	Component	Application modules
+MODEL	zRPU3IWAUtAAEAi.	Component	Transactional repository
+MODEL	nRPU3IWAUtAAEAjB	Component	Outbox and inbox worker
+MODEL	fRPU3IWAUtAAEAjE	Component	Payment adapter
+MODEL	wxPU3IWAUtAAEAjH	Component	Shipping adapter
+MODEL	ExPU3IWAUtAAEAjK	Component	External payment service
+MODEL	sxPU3IWAUtAAEAjN	Component	External shipping service
+MODEL	6S403IWAUtAAEAkJ	Node	Browser device
+MODEL	BS403IWAUtAAEAkM	Node	HTTPS reverse proxy
+MODEL	pS403IWAUtAAEAkP	Node	Application host
+MODEL	VS403IWAUtAAEAkS	Node	Worker host
+MODEL	9S403IWAUtAAEAkV	Node	Database primary
+MODEL	LS403IWAUtAAEAkY	Node	Backup storage
+MODEL	nS403IWAUtAAEAkb	Node	Provider endpoints
+MODEL	5j503IWAUtAAEAlz	Node	Browser device
+MODEL	tj503IWAUtAAEAl2	Node	HTTPS reverse proxy
+MODEL	Tj503IWAUtAAEAl5	Node	Application host
+MODEL	Hj503IWAUtAAEAl8	Node	Worker host
+MODEL	Pj503IWAUtAAEAl_	Node	Database primary
+MODEL	gT503IWAUtAAEAmC	Node	Backup storage
+MODEL	4T503IWAUtAAEAmF	Node	Provider endpoints
+MODEL	7ZmM3IWAUtAAEAjY	Node	Browser device
+MODEL	fZmM3IWAUtAAEAjb	Node	HTTPS reverse proxy
+MODEL	w5mM3IWAUtAAEAje	Node	Application host
+MODEL	E5mM3IWAUtAAEAjh	Node	Worker host
+MODEL	s5mM3IWAUtAAEAjk	Node	Database primary
+MODEL	S5mM3IWAUtAAEAjn	Node	Backup storage
+MODEL	65mM3IWAUtAAEAjq	Node	Provider endpoints
+MODEL	eY.s3IWAUtAAEAkZ	Frame	UC05 Verify and reconcile a payment outcome exactly once
+MODEL	wYBs3IWAUtAAEBCf	Class	Reservation
+MODEL	KLhS3IWAUtAAEBNM	InitialPseudoState	
+MODEL	GLhS3IWAUtAAEBNP	State2	PendingPayment
+MODEL	hLhS3IWAUtAAEBNS	State2	Confirmed
+MODEL	NLhS3IWAUtAAEBNV	State2	Packing
+MODEL	bLhS3IWAUtAAEBNY	State2	Shipped
+MODEL	PLhS3IWAUtAAEBNb	State2	Delivered
+MODEL	wrhS3IWAUtAAEBNe	State2	Cancelled
+MODEL	MrhS3IWAUtAAEBNh	State2	Expired
+MODEL	yrhS3IWAUtAAEBNk	State2	DeliveryFailed
+MODEL	gRjI3IWAUtAAEAkD	PMStatus	Proposed
+MODEL	gRjI3IWAUtAAEAkE	PMStatus	Approved
+MODEL	QRjI3IWAUtAAEAkF	PMStatus	Planned
+MODEL	QRjI3IWAUtAAEAkG	PMStatus	Designed
+MODEL	QRjI3IWAUtAAEAkH	PMStatus	Implemented
+MODEL	QRjI3IWAUtAAEAkI	PMStatus	Tested
+MODEL	QRjI3IWAUtAAEAkJ	PMStatus	Deployed
+MODEL	QRjI3IWAUtAAEAkL	PMDifficulty	Easy
+MODEL	QRjI3IWAUtAAEAkM	PMDifficulty	Medium
+MODEL	QRjI3IWAUtAAEAkN	PMDifficulty	Difficult
+MODEL	wRjI3IWAUtAAEAkP	PMPriority	Low
+MODEL	wRjI3IWAUtAAEAkQ	PMPriority	Medium
+MODEL	wRjI3IWAUtAAEAkR	PMPriority	High
+MODEL	wRjI3IWAUtAAEAkT	PMVersion	1.0
+MODEL	wRjI3IWAUtAAEAkU	PMVersion	2.0
+MODEL	wRjI3IWAUtAAEAkW	PMIteration	Iteration 1
+MODEL	wRjI3IWAUtAAEAkX	PMIteration	Iteration 2
+MODEL	wRjI3IWAUtAAEAkZ	PMPhase	Inception
+MODEL	wRjI3IWAUtAAEAka	PMPhase	Elaboration
+MODEL	wRjI3IWAUtAAEAkb	PMPhase	Construction
+MODEL	IRjI3IWAUtAAEAkc	PMPhase	Transition
+MODEL	IRjI3IWAUtAAEAke	PMDiscipline	Business Modeling
+MODEL	IRjI3IWAUtAAEAkf	PMDiscipline	Requirements
+MODEL	IRjI3IWAUtAAEAkg	PMDiscipline	Analysis & Design
+MODEL	IRjI3IWAUtAAEAkh	PMDiscipline	Implementation
+MODEL	IRjI3IWAUtAAEAki	PMDiscipline	Testing
+MODEL	IRjI3IWAUtAAEAkj	PMDiscipline	QA & Maintenance
+MODEL	IRjI3IWAUtAAEAkl	ValueSpecification	Admin
+MODEL	oRjI3IWAUtAAEAkn	BRKeyword	must
+MODEL	oRjI3IWAUtAAEAko	BRKeyword	must be
+MODEL	oRjI3IWAUtAAEAkp	BRKeyword	if
+MODEL	oRjI3IWAUtAAEAkq	BRKeyword	when
+MODEL	YRjI3IWAUtAAEAkr	BRKeyword	must not
+MODEL	YRjI3IWAUtAAEAks	BRKeyword	only
+MODEL	YRjI3IWAUtAAEAkt	BRKeyword	may
+MODEL	YRjI3IWAUtAAEAku	BRKeyword	may not
+MODEL	YRjI3IWAUtAAEAkv	BRKeyword	need
+MODEL	4RjI3IWAUtAAEAkw	BRKeyword	need not
+MODEL	4RjI3IWAUtAAEAky	ChartType	RACI
+MODEL	4RjI3IWAUtAAEAk3	ChartType	CRUD
+MODEL	ERjI3IWAUtAAEAk9	BMMInfluencerCategory	Competitor
+MODEL	ERjI3IWAUtAAEAk.	BMMInfluencerCategory	Customer
+MODEL	ERjI3IWAUtAAEAk_	BMMInfluencerCategory	Environment
+MODEL	ERjI3IWAUtAAEAlA	BMMInfluencerCategory	Partner
+MODEL	ERjI3IWAUtAAEAlB	BMMInfluencerCategory	Regulation
+MODEL	kRjI3IWAUtAAEAlC	BMMInfluencerCategory	Supplier
+MODEL	kRjI3IWAUtAAEAlD	BMMInfluencerCategory	Technology
+MODEL	kRjI3IWAUtAAEAlE	BMMInfluencerCategory	Assumption
+MODEL	kRjI3IWAUtAAEAlF	BMMInfluencerCategory	Corporate
+MODEL	kRjI3IWAUtAAEAlG	BMMInfluencerCategory	Explicit Value
+MODEL	kRjI3IWAUtAAEAlH	BMMInfluencerCategory	Implicit Value
+MODEL	kRjI3IWAUtAAEAlI	BMMInfluencerCategory	Habit
+MODEL	URjI3IWAUtAAEAlJ	BMMInfluencerCategory	Infrastructure
+MODEL	URjI3IWAUtAAEAlK	BMMInfluencerCategory	Issue
+MODEL	URjI3IWAUtAAEAlL	BMMInfluencerCategory	Management
+MODEL	URjI3IWAUtAAEAlM	BMMInfluencerCategory	Resource
+MODEL	URjI3IWAUtAAEAlO	BMMBusinessRuleEnforcementLevel	Strictly enforced
+MODEL	URjI3IWAUtAAEAlP	BMMBusinessRuleEnforcementLevel	Deferred enforcement
+MODEL	0RjI3IWAUtAAEAlQ	BMMBusinessRuleEnforcementLevel	Pre-authorized override
+MODEL	0RjI3IWAUtAAEAlR	BMMBusinessRuleEnforcementLevel	Post-justified override
+MODEL	0RjI3IWAUtAAEAlS	BMMBusinessRuleEnforcementLevel	Override with explanation
+MODEL	0RjI3IWAUtAAEAlT	BMMBusinessRuleEnforcementLevel	Guideline
+MODEL	0RjI3IWAUtAAEAlV	BMMAssetCategory	Fixed Assets
+MODEL	0RjI3IWAUtAAEAlW	BMMAssetCategory	Resources
+MODEL	0RjI3IWAUtAAEAlX	BMMAssetCategory	Offerings
+MODEL	MRjI3IWAUtAAEAlZ	BMMAssessmentCategory	Strength
+MODEL	MRjI3IWAUtAAEAla	BMMAssessmentCategory	Weakness
+MODEL	MRjI3IWAUtAAEAlb	BMMAssessmentCategory	Opportunity
+MODEL	MRjI3IWAUtAAEAlc	BMMAssessmentCategory	Threat
+MODEL	MRjI3IWAUtAAEAle	ProjectFillColorModel	
+MODEL	MRjI3IWAUtAAEAlf	ProjectFillColorModel	
+MODEL	MRjI3IWAUtAAEAlg	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlh	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAli	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlj	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlk	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAll	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlm	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAln	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlo	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlp	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlq	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlr	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAls	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlt	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlu	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlv	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlw	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlx	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAly	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAlz	ProjectFillColorModel	
+MODEL	sRjI3IWAUtAAEAl0	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl1	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl2	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl3	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl4	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl5	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl6	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl7	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl8	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl9	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl.	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAl_	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmA	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmB	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmC	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmD	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmE	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmF	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmG	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmH	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmI	ProjectFillColorModel	
+MODEL	cRjI3IWAUtAAEAmJ	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmK	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmL	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmM	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmN	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmO	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmP	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmQ	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmR	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmS	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmT	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmU	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmV	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmW	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmX	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmY	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmZ	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAma	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmb	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmc	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmd	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAme	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmf	ProjectFillColorModel	
+MODEL	8RjI3IWAUtAAEAmg	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmh	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmi	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmj	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmk	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAml	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmm	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmn	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmo	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmp	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmq	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmr	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAms	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmt	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmu	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmv	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmw	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmx	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmy	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAmz	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAm0	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAm1	ProjectFillColorModel	
+MODEL	CRjI3IWAUtAAEAm2	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm3	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm4	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm5	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm6	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm7	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm8	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm9	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm.	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAm_	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnA	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnB	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnC	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnD	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnE	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnF	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnG	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnH	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnI	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnJ	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnK	ProjectFillColorModel	
+MODEL	iRjI3IWAUtAAEAnL	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnM	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnN	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnO	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnP	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnQ	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnR	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnS	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnT	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnU	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnV	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnW	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnX	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnY	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnZ	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAna	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnb	ProjectFillColorModel	
+MODEL	SRjI3IWAUtAAEAnc	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnd	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAne	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnf	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAng	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnh	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAni	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnj	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnk	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnl	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnm	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnn	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAno	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnp	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnq	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnr	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAns	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnt	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnu	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnv	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnw	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAnx	ProjectFillColorModel	
+MODEL	yRjI3IWAUtAAEAny	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAnz	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn0	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn1	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn2	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn3	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn4	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn5	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn6	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn7	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn8	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn9	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn.	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAn_	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAoA	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAoB	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAoC	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAoD	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAoE	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAoF	ProjectFillColorModel	
+MODEL	KRjI3IWAUtAAEAoG	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoH	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoI	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoJ	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoK	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoL	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoM	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoN	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoO	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoP	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoQ	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoR	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoS	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoT	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoU	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoV	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoW	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoX	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoY	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoZ	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAoa	ProjectFillColorModel	
+MODEL	qRjI3IWAUtAAEAob	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAoc	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAod	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAoe	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAof	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAog	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAoh	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAoi	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAoj	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAok	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAol	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAom	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAon	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAoo	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAop	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAoq	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAor	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAos	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAot	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAou	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAov	ProjectFillColorModel	
+MODEL	aRjI3IWAUtAAEAow	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAox	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAoy	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAoz	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo0	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo1	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo2	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo3	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo4	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo5	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo6	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo7	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo8	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo9	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo.	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEAo_	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEApA	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEApB	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEApC	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEApD	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEApE	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEApF	ProjectFillColorModel	
+MODEL	6RjI3IWAUtAAEApG	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApH	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApI	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApJ	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApK	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApL	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApM	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApN	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApO	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApP	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApQ	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApR	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApS	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApT	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApU	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApV	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApW	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApX	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApY	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApZ	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApa	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApb	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApc	ProjectFillColorModel	
+MODEL	GRjI3IWAUtAAEApd	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApe	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApf	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApg	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEAph	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApi	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApj	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApk	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApl	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApm	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApn	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApo	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApp	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApq	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApr	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEAps	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApt	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApu	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApv	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApw	ProjectFillColorModel	
+MODEL	mRjI3IWAUtAAEApx	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEApy	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEApz	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp0	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp1	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp2	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp3	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp4	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp5	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp6	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp7	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp8	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp9	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp.	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAp_	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqA	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqB	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqC	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqD	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqE	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqF	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqG	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqH	ProjectFillColorModel	
+MODEL	WRjI3IWAUtAAEAqI	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqJ	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqK	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqL	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqM	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqN	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqO	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqP	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqQ	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqR	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqS	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqT	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqU	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqV	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqW	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqX	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqY	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqZ	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqa	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqb	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqc	ProjectFillColorModel	
+MODEL	2RjI3IWAUtAAEAqd	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqe	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqf	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqg	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqh	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqi	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqj	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqk	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAql	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqm	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqn	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqo	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqp	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqq	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqr	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqs	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqt	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqu	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqv	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqw	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqx	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqy	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAqz	ProjectFillColorModel	
+MODEL	ORjI3IWAUtAAEAq0	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq1	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq2	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq3	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq4	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq5	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq6	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq7	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq8	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq9	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq.	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEAq_	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArA	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArB	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArC	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArD	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArE	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArF	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArG	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArH	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArI	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArJ	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArK	ProjectFillColorModel	
+MODEL	uRjI3IWAUtAAEArL	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArM	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArN	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArO	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArP	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArQ	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArR	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArS	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArT	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArU	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArV	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArW	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArX	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArY	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArZ	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEAra	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArb	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArc	ProjectFillColorModel	
+MODEL	eRjI3IWAUtAAEArd	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEAre	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEArf	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEArg	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEArh	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEAri	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEArj	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEArk	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEArl	ProjectFillColorModel	
+MODEL	.RjI3IWAUtAAEArm	ProjectDefaultLineModel	
+MODEL	.RjI3IWAUtAAEArn	ProjectDefaultLineModel	
+MODEL	.RjI3IWAUtAAEAro	ProjectDefaultLineModel	
+MODEL	.RjI3IWAUtAAEArp	ProjectDefaultLineModel	
+MODEL	.RjI3IWAUtAAEArq	ProjectDefaultLineModel	
+MODEL	.RjI3IWAUtAAEArr	ProjectDefaultLineModel	
+MODEL	.RjI3IWAUtAAEArs	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEArt	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAru	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEArv	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEArw	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEArx	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAry	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEArz	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr0	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr1	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr2	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr3	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr4	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr5	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr6	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr7	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr8	ProjectDefaultLineModel	
+MODEL	BRjI3IWAUtAAEAr9	ProjectDefaultLineModel	
+MODEL	hRjI3IWAUtAAEAr.	ProjectDefaultLineModel	
+MODEL	hRjI3IWAUtAAEAr_	ProjectDefaultLineModel	
+MODEL	hRjI3IWAUtAAEAsA	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsB	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsC	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsD	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsE	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsF	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsG	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsH	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsI	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsJ	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsK	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsL	ProjectElementFontModel	
+MODEL	hRjI3IWAUtAAEAsM	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsN	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsO	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsP	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsQ	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsR	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsS	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsT	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsU	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsV	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsW	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsX	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsY	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsZ	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsa	ProjectElementFontModel	
+MODEL	RRjI3IWAUtAAEAsb	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsc	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsd	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAse	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsf	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsg	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsh	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsi	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsj	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsk	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsl	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsm	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAsn	ProjectElementFontModel	
+MODEL	xRjI3IWAUtAAEAso	ProjectElementFontModel	
+MODEL	JRjI3IWAUtAAEAsq	BusinessRuleType	Facts
+MODEL	JRjI3IWAUtAAEAsr	BusinessRuleType	Constraints
+MODEL	JRjI3IWAUtAAEAss	BusinessRuleType	Action enablers
+MODEL	JRjI3IWAUtAAEAst	BusinessRuleType	Inferences
+MODEL	JRjI3IWAUtAAEAsu	BusinessRuleType	Computations
+MODEL	JRjI3IWAUtAAEAsw	BrainstormNoteTag	Task
+MODEL	JRjI3IWAUtAAEAsy	BrainstormNoteTag	Decision
+MODEL	JRjI3IWAUtAAEAs0	BrainstormNoteTag	Participant
+MODEL	pRjI3IWAUtAAEAs3	BrainstormNoteTag	Event
+MODEL	HFjI3IWAUtAAEAtT	ViewpointStakeholder	Enterprise Architects
+MODEL	HFjI3IWAUtAAEAtU	ViewpointStakeholder	Process Architects
+MODEL	nFjI3IWAUtAAEAtV	ViewpointStakeholder	Domain Architects
+MODEL	nFjI3IWAUtAAEAtW	ViewpointStakeholder	Managers
+MODEL	XFjI3IWAUtAAEAtX	ViewpointStakeholder	Employees
+MODEL	XFjI3IWAUtAAEAtY	ViewpointStakeholder	Shareholders
+MODEL	3FjI3IWAUtAAEAtZ	ViewpointStakeholder	Operational Managers
+MODEL	3FjI3IWAUtAAEAta	ViewpointStakeholder	Product Developers
+MODEL	PFjI3IWAUtAAEAtb	ViewpointStakeholder	Product Managers
+MODEL	PFjI3IWAUtAAEAtc	ViewpointStakeholder	Application Architects
+MODEL	PFjI3IWAUtAAEAtd	ViewpointStakeholder	Infrastructure Architects
+MODEL	vFjI3IWAUtAAEAte	ViewpointStakeholder	Information Architects
+MODEL	vFjI3IWAUtAAEAtf	ViewpointStakeholder	Stakeholders
+MODEL	fFjI3IWAUtAAEAtg	ViewpointStakeholder	Business Managers
+MODEL	fFjI3IWAUtAAEAth	ViewpointStakeholder	ICT Architects
+MODEL	_FjI3IWAUtAAEAti	ViewpointStakeholder	Business Analysts
+MODEL	_FjI3IWAUtAAEAtj	ViewpointStakeholder	Requirements Managers
+MODEL	AljI3IWAUtAAEAtk	ViewpointStakeholder	CxOs
+MODEL	AljI3IWAUtAAEAtl	ViewpointStakeholder	Business Architects
+MODEL	gljI3IWAUtAAEAtm	ViewpointStakeholder	Top Managers
+MODEL	QljI3IWAUtAAEAtn	ViewpointStakeholder	CEO
+MODEL	QljI3IWAUtAAEAto	ViewpointStakeholder	CIO
+MODEL	YljI3IWAUtAAEAtp	Viewpoint	TOGAF - Organization Impacted
+MODEL	0ljI3IWAUtAAEAt6	Viewpoint	TOGAF - Constraints (with Details) Viewpoint
+MODEL	cljI3IWAUtAAEAuC	Viewpoint	TOGAF - Gap Analysis
+MODEL	CljI3IWAUtAAEAuG	Viewpoint	TOGAF - Governance Structure Viewpoint
+MODEL	iljI3IWAUtAAEAuL	Viewpoint	TOGAF - Principle Catalog
+MODEL	qljI3IWAUtAAEAuW	Viewpoint	TOGAF - Driver Viewpoint
+MODEL	aljI3IWAUtAAEAub	Viewpoint	TOGAF - Business Goals and Drivers Viewpoint
+MODEL	GljI3IWAUtAAEAui	Viewpoint	TOGAF - Solution Concept Viewpoint
+MODEL	2ljI3IWAUtAAEAux	Viewpoint	TOGAF - Goal & Principle Alignment Viewpoint
+MODEL	uljI3IWAUtAAEAu6	Viewpoint	TOGAF - Capability Viewpoint
+MODEL	.ljI3IWAUtAAEAu.	Viewpoint	TOGAF - Business Transformation Viewpoint
+MODEL	hljI3IWAUtAAEAvF	Viewpoint	TOGAF - Stakeholder Viewpoint
+MODEL	RljI3IWAUtAAEAvK	Viewpoint	TOGAF - Actors and Business Viewpoint
+MODEL	xljI3IWAUtAAEAvR	Viewpoint	TOGAF - Business Baseline Architecture Viewpoint
+MODEL	pljI3IWAUtAAEAve	Viewpoint	TOGAF - Introductory Viewpoint
+MODEL	lljI3IWAUtAAEAvx	Viewpoint	TOGAF - Data Baseline Viewpoint
+MODEL	VljI3IWAUtAAEAv0	Viewpoint	TOGAF - Data Target Viewpoint
+MODEL	NljI3IWAUtAAEAv9	Viewpoint	TOGAF - Application Component Viewpoint
+MODEL	tljI3IWAUtAAEAwC	Viewpoint	TOGAF - Technology Viewpoint
+MODEL	9ljI3IWAUtAAEAwN	Viewpoint	TOGAF - Gap Application Analysis
+MODEL	TljI3IWAUtAAEAwY	Viewpoint	TOGAF - Architecture Migration Viewpoint
+MODEL	zljI3IWAUtAAEAwd	Viewpoint	TOGAF - Gap and Work Package Viewpoint
+MODEL	rljI3IWAUtAAEAwo	Viewpoint	TOGAF - Project Context Diagram
+MODEL	nljI3IWAUtAAEAw7	Viewpoint	TOGAF - Technology Gap Analysis
+MODEL	PljI3IWAUtAAEAxM	Viewpoint	TOGAF - Form - Architecture Work
+MODEL	gVjI3IWAUtAAEAxV	Viewpoint	TOGAF - Requirement Catalog
+MODEL	QVjI3IWAUtAAEAxa	Viewpoint	TOGAF - Business Constraints for Implementation
+MODEL	oVjI3IWAUtAAEAxi	Viewpoint	TOGAF - Architecture Roadmap Use Cases Realization
+MODEL	4VjI3IWAUtAAEAxo	Viewpoint	Organization Viewpoint
+MODEL	4VjI3IWAUtAAEAxp	Viewpoint	Business Process Cooperation Viewpoint
+MODEL	EVjI3IWAUtAAEAxq	Viewpoint	Product Viewpoint
+MODEL	EVjI3IWAUtAAEAxr	Viewpoint	Application Cooperation Viewpoint
+MODEL	EVjI3IWAUtAAEAxs	Viewpoint	Application Usage Viewpoint
+MODEL	kVjI3IWAUtAAEAxt	Viewpoint	Application Structure
+MODEL	kVjI3IWAUtAAEAxu	Viewpoint	Implementation and Deployment Platform Viewpoint
+MODEL	kVjI3IWAUtAAEAxv	Viewpoint	Technology Viewpoint
+MODEL	UVjI3IWAUtAAEAxw	Viewpoint	Technology Usage Viewpoint
+MODEL	UVjI3IWAUtAAEAxx	Viewpoint	Information Structure Viewpoint
+MODEL	UVjI3IWAUtAAEAxy	Viewpoint	Service Realization Viewpoint
+MODEL	0VjI3IWAUtAAEAxz	Viewpoint	Physical Viewpoint
+MODEL	0VjI3IWAUtAAEAx0	Viewpoint	Layered Viewpoint
+MODEL	MVjI3IWAUtAAEAx1	Viewpoint	Stakeholder Viewpoint
+MODEL	MVjI3IWAUtAAEAx2	Viewpoint	Goal Realization Viewpoint
+MODEL	MVjI3IWAUtAAEAx3	Viewpoint	Requirements Realization Viewpoint
+MODEL	sVjI3IWAUtAAEAx4	Viewpoint	Motivation Viewpoint
+MODEL	sVjI3IWAUtAAEAx5	Viewpoint	Strategy Viewpoint
+MODEL	sVjI3IWAUtAAEAx6	Viewpoint	Capability Map Viewpoint
+MODEL	cVjI3IWAUtAAEAx7	Viewpoint	Value Stream Viewpoint
+MODEL	cVjI3IWAUtAAEAx8	Viewpoint	Outcome Realization Viewpoint
+MODEL	cVjI3IWAUtAAEAx9	Viewpoint	Resource Map Viewpoint
+MODEL	8VjI3IWAUtAAEAx.	Viewpoint	Project Viewpoint
+MODEL	8VjI3IWAUtAAEAx_	Viewpoint	Migration Viewpoint
+MODEL	CVjI3IWAUtAAEAyA	Viewpoint	Implementation and Migration Viewpoint
+MODEL	CVjI3IWAUtAAEAyB	Viewpoint	Introductory Viewpoint
+MODEL	CVjI3IWAUtAAEAyC	Viewpoint	Actor Cooperation Viewpoint
+MODEL	iVjI3IWAUtAAEAyD	Viewpoint	Business Function Viewpoint
+MODEL	iVjI3IWAUtAAEAyE	Viewpoint	Business Process Viewpoint
+MODEL	SVjI3IWAUtAAEAyF	Viewpoint	Application Behavior Viewpoint
+MODEL	SVjI3IWAUtAAEAyG	Viewpoint	Application Structure Viewpoint
+MODEL	yVjI3IWAUtAAEAyH	Viewpoint	Infrastructure Viewpoint
+MODEL	yVjI3IWAUtAAEAyI	Viewpoint	Infrastructure Usage Viewpoint
+MODEL	yVjI3IWAUtAAEAyJ	Viewpoint	Landscape Map Viewpoint
+MODEL	KVjI3IWAUtAAEAyK	Viewpoint	Goal Contribution Viewpoint
+MODEL	KVjI3IWAUtAAEAyL	Viewpoint	Principles Viewpoint
+MODEL	qVjI3IWAUtAAEAyM	Viewpoint	Architecture Implementation and Migration Viewpoint
+MODEL	VwTI3IWAUtAAEAyh	UseCase	UC01 Browse fashion catalogue
+MODEL	TwTI3IWAUtAAEAyt	UseCase	UC02 Manage account
+MODEL	bwTI3IWAUtAAEAy5	UseCase	UC03 Manage variant cart
+MODEL	XwTI3IWAUtAAEAzF	UseCase	UC04 Place order
+MODEL	_wTI3IWAUtAAEAzR	UseCase	UC06 Track order
+MODEL	IITI3IWAUtAAEAzd	UseCase	UC07 Cancel order
+MODEL	EITI3IWAUtAAEAzp	UseCase	UC08 Request return or exchange
+MODEL	sITI3IWAUtAAEAz1	UseCase	Validate checkout
+MODEL	SITI3IWAUtAAEA0B	UseCase	Reserve SKU stock
+MODEL	aITI3IWAUtAAEA0N	UseCase	Initiate online payment
+MODEL	OITI3IWAUtAAEA0Z	UseCase	UC05 Reconcile payment event
+MODEL	8oeE3IWAUtAAEA6O	UseCase	UC09 Maintain catalogue
+MODEL	aoeE3IWAUtAAEA6a	UseCase	UC10 Receive and adjust stock
+MODEL	uoeE3IWAUtAAEA6m	UseCase	UC11 Fulfil paid order
+MODEL	JoeE3IWAUtAAEA6y	UseCase	UC13 Inspect return and allocate exchange
+MODEL	NoeE3IWAUtAAEA6.	UseCase	UC12 Reconcile delivery event
+MODEL	UrFE3IWAUtAAEA_W	UseCase	UC14 Process refund
+MODEL	irFE3IWAUtAAEA_i	UseCase	UC15 View management reports
+MODEL	GrFE3IWAUtAAEA_u	UseCase	UC16 Administer access
+MODEL	CBN83IWAUtAAEBA9	UseCase	UC17 Receive transaction notifications
+MODEL	uBN83IWAUtAAEBBJ	UseCase	UC18 Submit purchased-product review
+MODEL	1UTI3IWAUtAAEA2V	ModelRelationshipContainer	Generalization
+MODEL	NUTI3IWAUtAAEA2W	ModelRelationshipContainer	Association
+MODEL	NUTI3IWAUtAAEA2X	ModelRelationshipContainer	Include
+MODEL	KdQo3IWAUtAAEA4D	ModelRelationshipContainer	ControlFlow
+MODEL	P9dE3IWAUtAAEBEt	ModelRelationshipContainer	Transition2
+MODEL	8cWU3IWAUtAAEAiW	ModelRelationshipContainer	Message
+MODEL	JFPU3IWAUtAAEAkB	ModelRelationshipContainer	Dependency
+MODEL	Rn0o3IWAUtAAEA4N	ActivityPartition	Customer
+MODEL	1n0o3IWAUtAAEA4R	ActivityPartition	Atelier system
+MODEL	Dn0o3IWAUtAAEA4V	ActivityPartition	Payment Provider
+MODEL	bn0o3IWAUtAAEA4Z	InitialNode	
+MODEL	nn0o3IWAUtAAEA4c	ActivityAction	Review SKU quantities, address and final quoted total
+MODEL	AX0o3IWAUtAAEA4f	ActivityAction	Consent and submit checkout
+MODEL	oX0o3IWAUtAAEA4i	ActivityAction	Revalidate and atomically create order plus 15-minute stock hold
+MODEL	UX0o3IWAUtAAEA4l	DecisionNode	
+MODEL	8X0o3IWAUtAAEA4o	ActivityAction	Show validation/stock error; no order or hold is committed
+MODEL	qX0o3IWAUtAAEA4r	ActivityFinalNode	
+MODEL	GX0o3IWAUtAAEA4u	ActivityAction	Persist payment request and send idempotently
+MODEL	uX0o3IWAUtAAEA4x	ActivityAction	Host payment and process customer authorisation
+MODEL	RX0o3IWAUtAAEA40	ActivityAction	Send signed outcome event (retries may occur)
+MODEL	FX0o3IWAUtAAEA43	ActivityAction	Verify and deduplicate event; apply guarded payment update
+MODEL	tX0o3IWAUtAAEA46	ActivityFinalNode	
+MODEL	C4E43IWAUtAAEAlZ	ActivityPartition	Customer
+MODEL	G4E43IWAUtAAEAld	ActivityPartition	Atelier system
+MODEL	e4E43IWAUtAAEAlh	ActivityPartition	Payment Provider
+MODEL	J4E43IWAUtAAEAll	InitialNode	
+MODEL	F4E43IWAUtAAEAlo	ActivityAction	Review SKU quantities, address and final quoted total
+MODEL	d4E43IWAUtAAEAlr	ActivityAction	Consent and submit checkout
+MODEL	L4E43IWAUtAAEAlu	ActivityAction	Revalidate and atomically create order plus 15-minute stock hold
+MODEL	n4E43IWAUtAAEAlx	DecisionNode	
+MODEL	_4E43IWAUtAAEAl0	ActivityAction	Show validation/stock error; no order or hold is committed
+MODEL	IEE43IWAUtAAEAl3	ActivityFinalNode	
+MODEL	4EE43IWAUtAAEAl6	ActivityAction	Persist payment request and send idempotently
+MODEL	MEE43IWAUtAAEAl9	ActivityAction	Host payment and process customer authorisation
+MODEL	SEE43IWAUtAAEAmA	ActivityAction	Send signed outcome event (retries may occur)
+MODEL	6EE43IWAUtAAEAmD	ActivityAction	Verify and deduplicate event; apply guarded payment update
+MODEL	uEE43IWAUtAAEAmG	ActivityFinalNode	
+MODEL	_ia43IWAUtAAEApP	ActivityPartition	Customer
+MODEL	ISa43IWAUtAAEApT	ActivityPartition	Atelier system
+MODEL	USa43IWAUtAAEApX	ActivityPartition	Payment Provider
+MODEL	CSa43IWAUtAAEApb	InitialNode	
+MODEL	ySa43IWAUtAAEApe	ActivityAction	Review SKU quantities, address and final quoted total
+MODEL	GSa43IWAUtAAEAph	ActivityAction	Consent and submit checkout
+MODEL	uSa43IWAUtAAEApk	ActivityAction	Revalidate and atomically create order plus 15-minute stock hold
+MODEL	RSa43IWAUtAAEApn	DecisionNode	
+MODEL	5Sa43IWAUtAAEApq	ActivityAction	Show validation/stock error; no order or hold is committed
+MODEL	NSa43IWAUtAAEApt	ActivityFinalNode	
+MODEL	9Sa43IWAUtAAEApw	ActivityAction	Persist payment request and send idempotently
+MODEL	LSa43IWAUtAAEApz	ActivityAction	Host payment and process customer authorisation
+MODEL	nSa43IWAUtAAEAp2	ActivityAction	Send signed outcome event (retries may occur)
+MODEL	_Sa43IWAUtAAEAp5	ActivityAction	Verify and deduplicate event; apply guarded payment update
+MODEL	Iya43IWAUtAAEAp8	ActivityFinalNode	
+MODEL	FkDk3IWAUtAAEBOX	ActivityPartition	Customer Service
+MODEL	9kDk3IWAUtAAEBOb	ActivityPartition	Atelier system
+MODEL	rkDk3IWAUtAAEBOf	ActivityPartition	Warehouse Staff
+MODEL	XkDk3IWAUtAAEBOj	InitialNode	
+MODEL	PkDk3IWAUtAAEBOm	ActivityAction	Confirm approved request and receipt instructions
+MODEL	QUDk3IWAUtAAEBOp	ActivityAction	Receive parcel; count and inspect each returned SKU
+MODEL	4UDk3IWAUtAAEBOs	ActivityAction	Check receipt reference and remaining approved quantity
+MODEL	MUDk3IWAUtAAEBOv	DecisionNode	
+MODEL	CUDk3IWAUtAAEBOy	ActivityAction	Record inspection; restock only saleable quantities once
+MODEL	aUDk3IWAUtAAEBO1	ActivityAction	Resolve discrepancy; no stock change is committed
+MODEL	2UDk3IWAUtAAEBO4	ActivityFinalNode	
+MODEL	uUDk3IWAUtAAEBO7	ActivityFinalNode	
+MODEL	SIWU3IWAUtAAEAg3	InteractionLifeLine	customer:Customer
+MODEL	NIWU3IWAUtAAEAhD	InteractionLifeLine	checkout:CheckoutService
+MODEL	TIWU3IWAUtAAEAhG	InteractionLifeLine	db:TransactionalStore
+MODEL	nIWU3IWAUtAAEAhJ	InteractionLifeLine	provider:PaymentProvider
+MODEL	6Y.s3IWAUtAAEAkY	InteractionLifeLine	provider:PaymentProvider
+MODEL	ZY.s3IWAUtAAEAkc	InteractionLifeLine	adapter:WebhookAdapter
+MODEL	NY.s3IWAUtAAEAkf	InteractionLifeLine	payment:PaymentService
+MODEL	jY.s3IWAUtAAEAki	InteractionLifeLine	db:TransactionalStore
+MODEL	x4.s3IWAUtAAEAlP	CombinedFragment	CombinedFragment
+MODEL	J0O43IWAUtAAEA4N	Generalization		hwTI3IWAUtAAEAyY	ZwTI3IWAUtAAEAyb
+MODEL	90O43IWAUtAAEA4Q	Association		hwTI3IWAUtAAEAyY	VwTI3IWAUtAAEAyh		
+MODEL	H0O43IWAUtAAEA4X	Association		ZwTI3IWAUtAAEAyb	TwTI3IWAUtAAEAyt		
+MODEL	v0O43IWAUtAAEA4e	Association		ZwTI3IWAUtAAEAyb	bwTI3IWAUtAAEAy5		
+MODEL	wMO43IWAUtAAEA4l	Association		ZwTI3IWAUtAAEAyb	XwTI3IWAUtAAEAzF		
+MODEL	EMO43IWAUtAAEA4s	Association		ZwTI3IWAUtAAEAyb	_wTI3IWAUtAAEAzR		
+MODEL	sMO43IWAUtAAEA4z	Association		ZwTI3IWAUtAAEAyb	IITI3IWAUtAAEAzd		
+MODEL	yMO43IWAUtAAEA46	Association		ZwTI3IWAUtAAEAyb	EITI3IWAUtAAEAzp		
+MODEL	VMO43IWAUtAAEA5K	Association		FwTI3IWAUtAAEAye	aITI3IWAUtAAEA0N		
+MODEL	DMO43IWAUtAAEA5R	Association		FwTI3IWAUtAAEAye	OITI3IWAUtAAEA0Z		
+MODEL	.rFE3IWAUtAAEA_6	Association		IoeE3IWAUtAAEA6I	IITI3IWAUtAAEAzd		
+MODEL	JrFE3IWAUtAAEBAB	Association		IoeE3IWAUtAAEA6I	EITI3IWAUtAAEAzp		
+MODEL	lrFE3IWAUtAAEBAI	Association		1LFE3IWAUtAAEA.y	UrFE3IWAUtAAEA_W		
+MODEL	9rFE3IWAUtAAEBAP	Association		FwTI3IWAUtAAEAye	UrFE3IWAUtAAEA_W		
+MODEL	LrFE3IWAUtAAEBAW	Association		1LFE3IWAUtAAEA.y	irFE3IWAUtAAEA_i		
+MODEL	nrFE3IWAUtAAEBAd	Association		TLFE3IWAUtAAEA.1	irFE3IWAUtAAEA_i		
+MODEL	frFE3IWAUtAAEBAk	Association		HLFE3IWAUtAAEA.4	GrFE3IWAUtAAEA_u		
+MODEL	SrFk3IWAUtAAEBLM	Association		nUWk3IWAUtAAEBIz	JLFk3IWAUtAAEBKj	1	0..*
+MODEL	GrFk3IWAUtAAEBLT	Association		JLFk3IWAUtAAEBKj	dLFk3IWAUtAAEBKq	1	0..*
+MODEL	urFk3IWAUtAAEBLa	Association		nUWk3IWAUtAAEBIz	rLFk3IWAUtAAEBKw	1	0..1
+MODEL	xrFk3IWAUtAAEBLh	Association		nUWk3IWAUtAAEBIz	PLFk3IWAUtAAEBK2	1	0..*
+MODEL	FrFk3IWAUtAAEBLo	Association		PLFk3IWAUtAAEBK2	QrFk3IWAUtAAEBK8	1	1..*
+MODEL	trFk3IWAUtAAEBLv	Association		QrFk3IWAUtAAEBK8	_UWk3IWAUtAAEBI6	0..*	1
+MODEL	TrFk3IWAUtAAEBL2	Association		QrFk3IWAUtAAEBK8	krFk3IWAUtAAEBLF	1	0..1
+MODEL	YM9k3IWAUtAAEBM7	Association		hUWk3IWAUtAAEBIi	VUWk3IWAUtAAEBIn	1	0..1
+MODEL	0M9k3IWAUtAAEBNC	Association		VUWk3IWAUtAAEBIn	DUWk3IWAUtAAEBIs	1	0..*
+MODEL	CM9k3IWAUtAAEBNJ	Association		DUWk3IWAUtAAEBIs	D_bE3IWAUtAAEBGJ	0..*	1
+MODEL	qM9k3IWAUtAAEBNQ	Association		hUWk3IWAUtAAEBIi	nUWk3IWAUtAAEBIz	1	0..*
+MODEL	mM9k3IWAUtAAEBNX	Association		nUWk3IWAUtAAEBIz	_UWk3IWAUtAAEBI6	1	1..*
+MODEL	eM9k3IWAUtAAEBNe	Association		_UWk3IWAUtAAEBI6	D_bE3IWAUtAAEBGJ	0..*	1
+MODEL	xM9k3IWAUtAAEBNl	Association		nUWk3IWAUtAAEBIz	I0Wk3IWAUtAAEBJC	1	1
+MODEL	O5mM3IWAUtAAEAjt	Association	HTTPS	7ZmM3IWAUtAAEAjY	fZmM3IWAUtAAEAjb		
+MODEL	55mM3IWAUtAAEAj0	Association	HTTPS	fZmM3IWAUtAAEAjb	w5mM3IWAUtAAEAje		
+MODEL	N5mM3IWAUtAAEAj7	Association	DB/TLS	w5mM3IWAUtAAEAje	s5mM3IWAUtAAEAjk		
+MODEL	j5mM3IWAUtAAEAkC	Association	DB/TLS	E5mM3IWAUtAAEAjh	s5mM3IWAUtAAEAjk		
+MODEL	b5mM3IWAUtAAEAkJ	Association	backup + logs	s5mM3IWAUtAAEAjk	S5mM3IWAUtAAEAjn		
+MODEL	P5mM3IWAUtAAEAkQ	Association	HTTPS API	E5mM3IWAUtAAEAjh	65mM3IWAUtAAEAjq		
+MODEL	gFmM3IWAUtAAEAkX	Association	signed HTTPS events	65mM3IWAUtAAEAjq	fZmM3IWAUtAAEAjb		
+MODEL	SYBs3IWAUtAAEBCp	Association		nUWk3IWAUtAAEBIz	wYBs3IWAUtAAEBCf	1	0..*
+MODEL	uYBs3IWAUtAAEBCw	Association		D_bE3IWAUtAAEBGJ	wYBs3IWAUtAAEBCf	1	0..*
+MODEL	JYBs3IWAUtAAEBC3	Association		D_bE3IWAUtAAEBGJ	7_bE3IWAUtAAEBGR	1	1
+MODEL	5BN83IWAUtAAEBBX	Association		ZwTI3IWAUtAAEAyb	CBN83IWAUtAAEBA9		
+MODEL	9BN83IWAUtAAEBBe	Association		ZwTI3IWAUtAAEAyb	uBN83IWAUtAAEBBJ		
+MODEL	rBN83IWAUtAAEBBl	Association		FwTI3IWAUtAAEAye	OITI3IWAUtAAEA0Z		
+MODEL	XBN83IWAUtAAEBBs	Association		1LFE3IWAUtAAEA.y	OITI3IWAUtAAEA0Z		
+MODEL	mJ6S3IWAUtAAEBMT	Association		m_bE3IWAUtAAEBF8	V_bE3IWAUtAAEBGC	1	0..*
+MODEL	JJ6S3IWAUtAAEBMa	Association		V_bE3IWAUtAAEBGC	D_bE3IWAUtAAEBGJ	1	0..*
+MODEL	LJ6S3IWAUtAAEBMh	Association		D_bE3IWAUtAAEBGJ	7_bE3IWAUtAAEBGR	1	1
+MODEL	fJ6S3IWAUtAAEBMo	Association		v_bE3IWAUtAAEBGX	V_bE3IWAUtAAEBGC	0..1	0..*
+MODEL	njJS3IWAUtAAEBO0	Association		jIeE3IWAUtAAEA6C	8oeE3IWAUtAAEA6O		
+MODEL	3TJS3IWAUtAAEBO7	Association		_IeE3IWAUtAAEA6F	aoeE3IWAUtAAEA6a		
+MODEL	IzJS3IWAUtAAEBPC	Association		_IeE3IWAUtAAEA6F	uoeE3IWAUtAAEA6m		
+MODEL	czJS3IWAUtAAEBPJ	Association		_IeE3IWAUtAAEA6F	JoeE3IWAUtAAEA6y		
+MODEL	6zJS3IWAUtAAEBPQ	Association		IoeE3IWAUtAAEA6I	JoeE3IWAUtAAEA6y		
+MODEL	xzJS3IWAUtAAEBPX	Association		UoeE3IWAUtAAEA6L	uoeE3IWAUtAAEA6m		
+MODEL	TzJS3IWAUtAAEBPe	Association		UoeE3IWAUtAAEA6L	NoeE3IWAUtAAEA6.		
+MODEL	_zJS3IWAUtAAEBPl	Association		IoeE3IWAUtAAEA6I	NoeE3IWAUtAAEA6.		
+MODEL	mMO43IWAUtAAEA5B	Include		XwTI3IWAUtAAEAzF	sITI3IWAUtAAEAz1
+MODEL	.MO43IWAUtAAEA5E	Include		XwTI3IWAUtAAEAzF	SITI3IWAUtAAEA0B
+MODEL	JMO43IWAUtAAEA5H	Include		XwTI3IWAUtAAEAzF	aITI3IWAUtAAEA0N
+MODEL	zLK43IWAUtAAEAn7	ControlFlow		rzK43IWAUtAAEAnU	HzK43IWAUtAAEAnX
+MODEL	HLK43IWAUtAAEAn.	ControlFlow		vzK43IWAUtAAEAna	QLK43IWAUtAAEAnd
+MODEL	PLK43IWAUtAAEAoB	ControlFlow		QLK43IWAUtAAEAnd	ELK43IWAUtAAEAng
+MODEL	grK43IWAUtAAEAoE	ControlFlow		SLK43IWAUtAAEAnm	6LK43IWAUtAAEAnp
+MODEL	YrK43IWAUtAAEAoH	ControlFlow		OLK43IWAUtAAEAns	hLK43IWAUtAAEAnv
+MODEL	0rK43IWAUtAAEAoK	ControlFlow		NLK43IWAUtAAEAn1	DLK43IWAUtAAEAn4
+MODEL	CrK43IWAUtAAEAoN	ControlFlow		HzK43IWAUtAAEAnX	vzK43IWAUtAAEAna
+MODEL	qrK43IWAUtAAEAoQ	ControlFlow		6LK43IWAUtAAEAnp	OLK43IWAUtAAEAns
+MODEL	WrK43IWAUtAAEAoT	ControlFlow		ELK43IWAUtAAEAng	SLK43IWAUtAAEAnm
+MODEL	erK43IWAUtAAEAoW	ControlFlow		ELK43IWAUtAAEAng	sLK43IWAUtAAEAnj
+MODEL	RrK43IWAUtAAEAoZ	ControlFlow		sLK43IWAUtAAEAnj	HzK43IWAUtAAEAnX
+MODEL	5rK43IWAUtAAEAoc	ControlFlow		hLK43IWAUtAAEAnv	NLK43IWAUtAAEAn1
+MODEL	NrK43IWAUtAAEAof	ControlFlow		hLK43IWAUtAAEAnv	ZLK43IWAUtAAEAny
+MODEL	DrK43IWAUtAAEAoi	ControlFlow		ZLK43IWAUtAAEAny	6LK43IWAUtAAEAnp
+MODEL	Eya43IWAUtAAEAp_	ControlFlow		CSa43IWAUtAAEApb	ySa43IWAUtAAEApe
+MODEL	Mya43IWAUtAAEAqC	ControlFlow		ySa43IWAUtAAEApe	GSa43IWAUtAAEAph
+MODEL	iya43IWAUtAAEAqF	ControlFlow		GSa43IWAUtAAEAph	uSa43IWAUtAAEApk
+MODEL	aya43IWAUtAAEAqI	ControlFlow		uSa43IWAUtAAEApk	RSa43IWAUtAAEApn
+MODEL	Wya43IWAUtAAEAqL	ControlFlow		5Sa43IWAUtAAEApq	NSa43IWAUtAAEApt
+MODEL	.ya43IWAUtAAEAqO	ControlFlow		9Sa43IWAUtAAEApw	LSa43IWAUtAAEApz
+MODEL	Jya43IWAUtAAEAqR	ControlFlow		LSa43IWAUtAAEApz	nSa43IWAUtAAEAp2
+MODEL	lya43IWAUtAAEAqU	ControlFlow		nSa43IWAUtAAEAp2	_Sa43IWAUtAAEAp5
+MODEL	tya43IWAUtAAEAqX	ControlFlow		_Sa43IWAUtAAEAp5	Iya43IWAUtAAEAp8
+MODEL	zya43IWAUtAAEAqa	ControlFlow		RSa43IWAUtAAEApn	9Sa43IWAUtAAEApw
+MODEL	Hya43IWAUtAAEAqd	ControlFlow		RSa43IWAUtAAEApn	5Sa43IWAUtAAEApq
+MODEL	BUDk3IWAUtAAEBO.	ControlFlow		XkDk3IWAUtAAEBOj	PkDk3IWAUtAAEBOm
+MODEL	pUDk3IWAUtAAEBPB	ControlFlow		PkDk3IWAUtAAEBOm	QUDk3IWAUtAAEBOp
+MODEL	lUDk3IWAUtAAEBPE	ControlFlow		QUDk3IWAUtAAEBOp	4UDk3IWAUtAAEBOs
+MODEL	dUDk3IWAUtAAEBPH	ControlFlow		4UDk3IWAUtAAEBOs	MUDk3IWAUtAAEBOv
+MODEL	zUDk3IWAUtAAEBPK	ControlFlow		aUDk3IWAUtAAEBO1	2UDk3IWAUtAAEBO4
+MODEL	HUDk3IWAUtAAEBPN	ControlFlow		CUDk3IWAUtAAEBOy	uUDk3IWAUtAAEBO7
+MODEL	PUDk3IWAUtAAEBPQ	ControlFlow		MUDk3IWAUtAAEBOv	CUDk3IWAUtAAEBOy
+MODEL	g0Dk3IWAUtAAEBPT	ControlFlow		MUDk3IWAUtAAEBOv	aUDk3IWAUtAAEBO1
+MODEL	QvHk3IWAUtAAEBQb	ControlFlow		KPHk3IWAUtAAEBP6	6PHk3IWAUtAAEBP9
+MODEL	YvHk3IWAUtAAEBQe	ControlFlow		6PHk3IWAUtAAEBP9	OPHk3IWAUtAAEBQA
+MODEL	0vHk3IWAUtAAEBQh	ControlFlow		RPHk3IWAUtAAEBQD	1PHk3IWAUtAAEBQJ
+MODEL	CvHk3IWAUtAAEBQk	ControlFlow		5PHk3IWAUtAAEBQG	XPHk3IWAUtAAEBQS
+MODEL	qvHk3IWAUtAAEBQn	ControlFlow		rPHk3IWAUtAAEBQP	vPHk3IWAUtAAEBQV
+MODEL	WvHk3IWAUtAAEBQq	ControlFlow		DPHk3IWAUtAAEBQM	_PHk3IWAUtAAEBQY
+MODEL	evHk3IWAUtAAEBQt	ControlFlow		OPHk3IWAUtAAEBQA	RPHk3IWAUtAAEBQD
+MODEL	xvHk3IWAUtAAEBQw	ControlFlow		OPHk3IWAUtAAEBQA	5PHk3IWAUtAAEBQG
+MODEL	FvHk3IWAUtAAEBQz	ControlFlow		1PHk3IWAUtAAEBQJ	DPHk3IWAUtAAEBQM
+MODEL	NvHk3IWAUtAAEBQ2	ControlFlow		1PHk3IWAUtAAEBQJ	rPHk3IWAUtAAEBQP
+MODEL	.3nk3IWAUtAAEBRy	ControlFlow		XXnk3IWAUtAAEBRa	_Xnk3IWAUtAAEBRd
+MODEL	J3nk3IWAUtAAEBR1	ControlFlow		_Xnk3IWAUtAAEBRd	o3nk3IWAUtAAEBRg
+MODEL	F3nk3IWAUtAAEBR4	ControlFlow		o3nk3IWAUtAAEBRg	03nk3IWAUtAAEBRj
+MODEL	t3nk3IWAUtAAEBR7	ControlFlow		83nk3IWAUtAAEBRm	W3nk3IWAUtAAEBRs
+MODEL	z3nk3IWAUtAAEBR.	ControlFlow		K3nk3IWAUtAAEBRp	O3nk3IWAUtAAEBRv
+MODEL	73nk3IWAUtAAEBSB	ControlFlow		03nk3IWAUtAAEBRj	83nk3IWAUtAAEBRm
+MODEL	P3nk3IWAUtAAEBSE	ControlFlow		03nk3IWAUtAAEBRj	K3nk3IWAUtAAEBRp
+MODEL	WrhS3IWAUtAAEBNn	Transition2		KLhS3IWAUtAAEBNM	GLhS3IWAUtAAEBNP
+MODEL	RrhS3IWAUtAAEBNq	Transition2	verifiedCapture	GLhS3IWAUtAAEBNP	hLhS3IWAUtAAEBNS
+MODEL	VrhS3IWAUtAAEBNt	Transition2	startPacking	hLhS3IWAUtAAEBNS	NLhS3IWAUtAAEBNV
+MODEL	zrhS3IWAUtAAEBNw	Transition2	dispatch	NLhS3IWAUtAAEBNV	bLhS3IWAUtAAEBNY
+MODEL	XrhS3IWAUtAAEBNz	Transition2	verifiedDelivery	bLhS3IWAUtAAEBNY	PLhS3IWAUtAAEBNb
+MODEL	gbhS3IWAUtAAEBN2	Transition2	cancel	GLhS3IWAUtAAEBNP	wrhS3IWAUtAAEBNe
+MODEL	UbhS3IWAUtAAEBN5	Transition2	cancel	hLhS3IWAUtAAEBNS	wrhS3IWAUtAAEBNe
+MODEL	qbhS3IWAUtAAEBN8	Transition2	holdExpired	GLhS3IWAUtAAEBNP	MrhS3IWAUtAAEBNh
+MODEL	JbhS3IWAUtAAEBN_	Transition2	closeFailure	bLhS3IWAUtAAEBNY	yrhS3IWAUtAAEBNk
+MODEL	woWU3IWAUtAAEAhN	Message	submit(consentedQuote, key)	SIWU3IWAUtAAEAg3	NIWU3IWAUtAAEAhD
+MODEL	ioWU3IWAUtAAEAhV	Message	lock SKUs; validate quote	NIWU3IWAUtAAEAhD	TIWU3IWAUtAAEAhG
+MODEL	6oWU3IWAUtAAEAhb	Message	valid quote and stock	TIWU3IWAUtAAEAhG	NIWU3IWAUtAAEAhD
+MODEL	.oWU3IWAUtAAEAhi	Message	commit order, holds, outbox	NIWU3IWAUtAAEAhD	TIWU3IWAUtAAEAhG
+MODEL	poWU3IWAUtAAEAho	Message	committed order reference	TIWU3IWAUtAAEAhG	NIWU3IWAUtAAEAhD
+MODEL	1oWU3IWAUtAAEAhu	Message	create/resume payment(key)	NIWU3IWAUtAAEAhD	nIWU3IWAUtAAEAhJ
+MODEL	joWU3IWAUtAAEAh0	Message	providerRef and hosted URL	nIWU3IWAUtAAEAhJ	NIWU3IWAUtAAEAhD
+MODEL	7oWU3IWAUtAAEAh6	Message	PendingPayment and URL	NIWU3IWAUtAAEAhD	SIWU3IWAUtAAEAg3
+MODEL	7Y.s3IWAUtAAEAkl	Message	signed outcome(eventId)	6Y.s3IWAUtAAEAkY	ZY.s3IWAUtAAEAkc
+MODEL	A4.s3IWAUtAAEAkr	Message	verify; persist inbox event	ZY.s3IWAUtAAEAkc	jY.s3IWAUtAAEAki
+MODEL	Y4.s3IWAUtAAEAkx	Message	durable receipt	jY.s3IWAUtAAEAki	ZY.s3IWAUtAAEAkc
+MODEL	s4.s3IWAUtAAEAk3	Message	acknowledge delivery	ZY.s3IWAUtAAEAkc	6Y.s3IWAUtAAEAkY
+MODEL	S4.s3IWAUtAAEAk9	Message	process persisted event	ZY.s3IWAUtAAEAkc	NY.s3IWAUtAAEAkf
+MODEL	G4.s3IWAUtAAEAlD	Message	lock and apply guarded update	NY.s3IWAUtAAEAkf	jY.s3IWAUtAAEAki
+MODEL	e4.s3IWAUtAAEAlJ	Message	commit payment and outbox	jY.s3IWAUtAAEAki	NY.s3IWAUtAAEAkf
+MODEL	t4.s3IWAUtAAEAlX	Message	refund with stable key	NY.s3IWAUtAAEAkf	6Y.s3IWAUtAAEAkY
+MODEL	JiS83IWAUtAAEBAF	Dependency	HTTPS	xRPU3IWAUtAAEAi4	dRPU3IWAUtAAEAi7
+MODEL	jiS83IWAUtAAEBAI	Dependency	transactions	dRPU3IWAUtAAEAi7	zRPU3IWAUtAAEAi.
+MODEL	niS83IWAUtAAEBAL	Dependency	persisted jobs	nRPU3IWAUtAAEAjB	zRPU3IWAUtAAEAi.
+MODEL	ASS83IWAUtAAEBAO	Dependency	money API	nRPU3IWAUtAAEAjB	fRPU3IWAUtAAEAjE
+MODEL	ESS83IWAUtAAEBAR	Dependency	shipments	nRPU3IWAUtAAEAjB	wxPU3IWAUtAAEAjH
+MODEL	CSS83IWAUtAAEBAU	Dependency	provider API	fRPU3IWAUtAAEAjE	ExPU3IWAUtAAEAjK
+MODEL	GSS83IWAUtAAEBAX	Dependency	carrier API	wxPU3IWAUtAAEAjH	sxPU3IWAUtAAEAjN
+MODEL	.SS83IWAUtAAEBAa	Dependency	outbox/inbox	dRPU3IWAUtAAEAi7	nRPU3IWAUtAAEAjB
+MODEL	Z4.s3IWAUtAAEAlQ	InteractionOperand	Operand

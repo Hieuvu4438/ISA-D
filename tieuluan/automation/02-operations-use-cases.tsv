@@ -1,0 +1,19 @@
+02-operations-use-cases	USE_CASE_DIAGRAM	Catalogue warehouse and delivery use cases
+N	customer_boundary	System	Atelier Fashion Ecommerce	210	30	650	650		
+N	merch	Actor	Merchandiser	40	80	100	90		
+N	warehouse	Actor	Warehouse Staff	40	300	100	90		
+N	support	Actor	Customer Service	40	550	100	90		
+N	carrier	Actor	Shipping Provider	930	320	100	90		
+N	catalogue	UseCase	UC09 Maintain catalogue	260	95	270	65		
+N	stock	UseCase	UC10 Receive and adjust stock	260	235	270	65		
+N	fulfil	UseCase	UC11 Fulfil paid order	260	365	270	65		
+N	inspect	UseCase	UC13 Inspect return and allocate exchange	260	535	320	65		
+N	delivery	UseCase	UC12 Reconcile delivery event	590	365	245	65		
+R	1	Association	merch	catalogue					140,125;260,127	
+R	2	Association	warehouse	stock					140,335;260,267	
+R	3	Association	warehouse	fulfil					140,350;260,397	
+R	4	Association	warehouse	inspect					140,375;260,567	
+R	5	Association	support	inspect					140,590;260,567	
+R	6	Association	carrier	fulfil					930,345;545,345;545,397;530,397	
+R	7	Association	carrier	delivery					930,380;835,397	
+R	8	Association	support	delivery					140,605;180,650;790,650;790,430	

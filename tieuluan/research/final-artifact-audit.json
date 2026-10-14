@@ -1,0 +1,30 @@
+{
+  "pages": 72,
+  "native_diagrams": 18,
+  "native_models": 1070,
+  "use_cases": 18,
+  "figure_pages": [
+    21,
+    23,
+    25,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    39,
+    41,
+    43,
+    45,
+    48,
+    50,
+    52,
+    57
+  ],
+  "text_bounds_violations": [],
+  "duplicate_canonical_models": [],
+  "reopened_project": "AUDIT and EXPORTALL completed after Visual Paradigm restart",
+  "cover_identity": true
+}

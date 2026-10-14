@@ -1,0 +1,17 @@
+12-components	COMPONENT_DIAGRAM	Modular application architecture and provider adapters
+N	cmp-web	Component	Storefront and staff UI	40	40	230	90		
+N	cmp-app	Component	Application modules	370	40	230	90		
+N	cmp-db	Component	Transactional repository	700	40	230	90		
+N	cmp-worker	Component	Outbox and inbox worker	370	280	230	90		
+N	cmp-pay	Component	Payment adapter	40	280	230	90		
+N	cmp-ship	Component	Shipping adapter	700	280	230	90		
+N	cmp-payment	Component	External payment service	40	490	230	90		
+N	cmp-carrier	Component	External shipping service	700	490	230	90		
+R	1	Dependency	cmp-web	cmp-app	HTTPS					
+R	2	Dependency	cmp-app	cmp-db	transactions					
+R	3	Dependency	cmp-worker	cmp-db	persisted jobs					
+R	4	Dependency	cmp-worker	cmp-pay	money API					
+R	5	Dependency	cmp-worker	cmp-ship	shipments					
+R	6	Dependency	cmp-pay	cmp-payment	provider API					
+R	7	Dependency	cmp-ship	cmp-carrier	carrier API					
+R	8	Dependency	cmp-app	cmp-worker	outbox/inbox					

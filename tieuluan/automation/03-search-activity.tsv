@@ -1,0 +1,28 @@
+03-search-activity	ACTIVITY_DIAGRAM	UC01 Search and select an available fashion variant
+N	s-start	InitialNode		345	18	20	15		
+N	s-input-merge	MergeNode		330	48	50	38		
+N	s-input	ActivityAction	Enter keyword and filters	225	99	260	45		
+N	s-query	ActivityAction	Find published products\nmatching variant filters	225	168	260	49		
+N	s-found	DecisionNode		330	240	50	38		
+N	s-empty	ActivityAction	Show no matching results\nand suggest changing filters	600	237	260	49		
+N	s-view	ActivityAction	Show product details, images,\nmaterial and size chart	225	336	260	49		
+N	s-select-merge	MergeNode		330	396	50	38		
+N	s-select	ActivityAction	Choose exact size and colour	225	450	260	45		
+N	s-available	DecisionNode		330	519	50	38		
+N	s-unavailable	ActivityAction	Explain selected SKU unavailable\nand allow another selection	600	516	260	49		
+N	s-add	ActivityAction	Add selected SKU and quantity\nto cart without reserving stock	225	621	260	49		
+N	s-end	ActivityFinalNode		340	702	30	22		
+R	1	ControlFlow	s-start	s-input-merge					
+R	2	ControlFlow	s-input	s-query					
+R	3	ControlFlow	s-query	s-found					
+R	4	ControlFlow	s-view	s-select-merge					
+R	5	ControlFlow	s-select	s-available					
+R	6	ControlFlow	s-add	s-end					
+R	13	ControlFlow	s-input-merge	s-input					
+R	14	ControlFlow	s-select-merge	s-select					
+R	7	ControlFlow	s-found	s-view				matches exist	
+R	8	ControlFlow	s-found	s-empty				no matches	
+R	9	ControlFlow	s-empty	s-input-merge					730,237;730,63;380,63
+R	10	ControlFlow	s-available	s-add				available > 0	
+R	11	ControlFlow	s-available	s-unavailable				available = 0	
+R	12	ControlFlow	s-unavailable	s-select-merge					730,516;730,411;380,411

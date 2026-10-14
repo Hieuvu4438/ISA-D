@@ -1,0 +1,68 @@
+\chapter{Traceability and Validation}
+\section{Validation approach and evidence status}
+Validation asks whether the proposed system addresses stakeholder needs and whether its models agree with business rules. Verification asks whether particular obligations can be checked against an implementation or artifact. This report completes a design review and artifact verification: native UML exports were inspected, report compilation was checked, and the traceability below covers the requirement baseline. The acceptance scenarios are specifications for future implementation testing; they are not reported as executed production tests.
+
+Each functional requirement has an origin, actor goal, applicable rule, design location, and observable acceptance outcome. The business problem codes P01--P07 and stakeholder needs N01--N10 are defined in Chapter 2. Where no current defect is necessary to justify a supporting feature, its stakeholder need remains sufficient origin evidence. Must requirements are release gates; Should and Could requirements retain traceability even if their implementation is deferred.
+
+\section{Functional requirement traceability}
+\begin{longtable}{P{.08\linewidth}P{.13\linewidth}P{.16\linewidth}P{.18\linewidth}P{.33\linewidth}}
+\caption{Complete functional traceability and acceptance outcomes}\label{tab:trace-fr}\\
+\toprule FR & Origin & Use case / rules & Model or design & Acceptance scenario and expected result \\\midrule\endfirsthead
+\toprule FR & Origin & Use case / rules & Model or design & Acceptance scenario and expected result \\\midrule\endhead
+FR01 & N01; P01 & UC01; BR01 & Fig.~\ref{fig:search}, \ref{fig:catalogue-class} & AT01: Filter blue/M; returned products have a matching variant. Unavailable combinations cannot be added as available purchases.\\
+FR02 & N01,N07 & UC02; BR14 & Account and interface design & AT02: Register, sign in, edit owned address, sign out; another account's address and staff role elevation are denied.\\
+FR03 & N01; P01,P02 & UC03; BR02 & Fig.~\ref{fig:order-class} & AT03: Add two exact SKUs, change/remove quantity; no InventoryBalance or Reservation changes. Stale cart revisions are rejected.\\
+FR04 & N01; P03 & UC04; BR04--05 & Fig.~\ref{fig:checkout-sequence} & AT04: Changed quote requires consent again. Same request key yields one order; same key with different payload is refused.\\
+FR05 & N03; P02 & UC04; BR02--03 & Fig.~\ref{fig:reservation-class} & AT05: Two buyers compete for the last unit: only one reservation succeeds. A shortage on a second line leaves no partial order/hold.\\
+FR06 & N08; P06 & UC04; BR06 & Fig.~\ref{fig:checkout-sequence} & AT06: Retry an uncertain payment-create response; provider key/reference is reused and no second charge object is created blindly.\\
+FR07 & N05; P04,P06 & UC05; BR03,06 & Fig.~\ref{fig:payment-sequence} & AT07: Forged/mismatched events cannot confirm an order. Duplicate events cause one effect. Late capture on an Expired order schedules compensation.\\
+FR08 & N01,N04 & UC06; BR13--14 & Order interface and snapshots & AT08: Customer sees separate payment/delivery/refund status for owned orders; guessed foreign order identifiers reveal no details.\\
+FR09 & N01,N04 & UC07; BR07--08 & Fig.~\ref{fig:order-state} & AT09: Cancel a Confirmed order before packing; release once. In a packing/cancel race only one transition wins; after Packing cancellation is denied.\\
+FR10 & N01,N04; P06 & UC08; BR09 & Fig.~\ref{fig:aftersales-class} & AT10: Request one eligible delivered unit; concurrent requests cannot exceed remaining quantity. An out-of-window request gives a policy explanation.\\
+FR11 & N02; P01,P03 & UC09; BR01,04 & Fig.~\ref{fig:catalogue-class} & AT11: Duplicate SKU/size-colour tuple or incomplete publication is refused. Changing a live price leaves old line snapshots unchanged.\\
+FR12 & N03,N10; P02 & UC10; BR02 & Fig.~\ref{fig:receiving} & AT12: Valid receipt adds saleable units and one movement. Repeated receipt does not add twice; downward adjustment below reserved stock is refused.\\
+FR13 & N03; P01,P04 & UC11; BR06--08 & Fig.~\ref{fig:order-state} & AT13: Unpaid order cannot pack. Wrong-SKU scan blocks dispatch. Repeated dispatch does not consume stock twice or create a second shipment.\\
+FR14 & N09; P07 & UC12; BR13,15 & Shipment/event data design & AT14: Signed delivery advances once; old transit cannot undo Delivered. Temporary failure permits retry; authorised permanent failure closes Shipped and schedules a full refund once. Carrier return restocks only inspected saleable goods once; lost goods do not. Unknown references enter exceptions.\\
+FR15 & N03,N04; P05 & UC13; BR10--11 & Fig.~\ref{fig:inspection}, \ref{fig:remedy} & AT15: Return two units, only one saleable: restock one. Replayed receipt has no second effect; unavailable exchange stock prompts customer choice.\\
+FR16 & N05; P06 & UC14; BR12--13 & Refund mapping and arithmetic & AT16: Concurrent refund attempts cannot exceed captured/line entitlement. Timeout remains pending; only verified completion marks Succeeded.\\
+FR17 & N06; P07 & UC15; BR13 & Reporting definitions & AT17: Place/capture/refund on different days; each appears in its defined event period. Net cash is not labelled profit or order value.\\
+FR18 & N07; P06 & UC16; BR14 & Role/audit design & AT18: Exercise each role and denied action; sensitive effects have actor/event references. Revoked staff access and cross-customer reads are refused.\\
+FR19 & N01,N04 & UC17; BR13 & Durable outbox design & AT19: Notification delivery fails after commit: the order remains confirmed, notice is retried, and authoritative status remains readable.\\
+FR20 & N01,N06 & UC18; BR14 & Review mapping & AT20: Delivered buyer submits once; unpublished moderation queue retains it. Unpurchased product and duplicate order/product review are refused.\\
+\bottomrule
+\end{longtable}
+
+\section{Nonfunctional verification plan}
+\begin{longtable}{P{.1\linewidth}P{.31\linewidth}P{.47\linewidth}}
+\caption{Nonfunctional requirement evidence to collect before release}\label{tab:trace-nfr}\\
+\toprule NFR & Design support & Required acceptance evidence \\\midrule\endfirsthead
+\toprule NFR & Design support & Required acceptance evidence \\\midrule\endhead
+NFR01 & Catalogue indexes; short local allocation transaction & NFT01: Test 100 concurrent sessions against 10,000 variants with a published workload mix and hardware. Record internal p95 search $\leq2$ s and allocation $\leq3$ s; disclose provider time separately.\\
+NFR02 & Monitored proxy/application/worker and separate provider incident classification & NFT02: Measure successful core journeys over a calendar month and verify the 99.5\% service target under the defined maintenance exclusions.\\
+NFR03 & Locks, versions, uniqueness, inbox/outbox, commitment caps & NFT03: Run AT05, AT07, AT09, AT10, AT15, and AT16 concurrently with retries/crashes; reconcile balances, allocations, and monetary effects.\\
+NFR04 & Server authorisation, staff MFA, secure sessions/credentials, callback signatures & NFT04: Security review of allowed/denied role and ownership cases, session revocation, injection handling, and invalid signatures against the selected ASVS controls.\\
+NFR05 & Hosted payment UI; minimised contact data; controlled logs & NFT05: Inspect storage, backups, logs, and customer responses for raw card credentials, secrets, unnecessary personal information, and excessive access.\\
+NFR06 & Labelled controls, keyboard flows, visible focus and textual statuses & NFT06: Manual keyboard and screen-reader journeys plus automated accessibility checks on browsing, cart, checkout, and returns; evaluate applicable WCAG 2.2 AA criteria.\\
+NFR07 & Isolated backups, database logs, replay/reconciliation procedure & NFT07: Restore a representative failure within 4 h, demonstrate no more than 15 min data-loss exposure, and reconcile outstanding provider operations before replay.\\
+NFR08 & Module/adaptor separation; policy versioning; correlation IDs & NFT08: Replace a provider test adapter without changing stock rules; trace one checkout and one partial return across API, transaction, and worker evidence.\\
+NFR09 & Append-only actor/event audit and unique movement/financial references & NFT09: Reconstruct every effect in sampled stock, cancellation, inspection, and refund histories; detect any missing or unauthorised reference.\\
+\bottomrule
+\end{longtable}
+
+\section{Critical scenario walkthroughs}
+\subsection{Last unit and multi-line atomicity}
+Two customers both observe one available M/blue SKU. Their carts do not allocate it. Checkout A obtains the inventory lock and reserves it; checkout B subsequently observes zero availability and fails without creating a purchase commitment. If A also requests an unavailable second SKU, A rolls back the first allocation before releasing its locks. This outcome depends on a transaction covering every line, not on a stock check performed before the transaction.
+
+\subsection{Payment capture versus hold expiry}
+Callback processing and expiry both lock the same order. If a valid callback confirms the still-active allocation first, expiry sees Confirmed and does not release it. If expiry closes and releases first, the callback records real capture evidence but cannot revive the order or promise released stock. The durable compensation commitment prevents the retailer retaining unexplained customer funds. Loss of a callback is handled through provider reconciliation; a browser redirect cannot substitute for it.
+
+\subsection{Cancellation versus packing}
+A customer and warehouse worker concurrently request mutually exclusive transitions from Confirmed. The first committed guarded change wins. A successful cancellation releases allocations and prevents later packing. Successful entry into Packing prevents customer cancellation under the agreed policy. Any captured-money refund is tracked independently and must not rewrite the packing/physical-delivery facts.
+
+\subsection{Partial returns, discounts, and duplicate receipts}
+A customer requests two of three delivered units, then submits the same request again. The remaining quantity is computed under the original line lock and allocated only once. Inspection may accept two units but classify only one as saleable, producing one stock restoration. Unit-ordinal refund allocation preserves the original discount remainder. Replayed receipt and provider refund callbacks cannot independently repeat either stock or money effects.
+
+\section{Requirement quality review and change control}
+Stable identifiers, actors, resources, and observable outcomes make the requirements reviewable. Explicit load profiles and trust checks replace vague speed/security claims. Numeric targets remain proposed; optional reviews do not block stock, order, and refund correctness. Seller payouts, manufacturing, and expiry inventory remain outside scope.
+
+The return window and exchange policy require retailer approval; UML defines notation. Provider documentation supports patterns, not local market availability. Changes must update rules, use cases, diagrams, data constraints, and acceptance scenarios together. Artifact verification does not establish application performance, connectivity, or customer acceptance.

@@ -26,3 +26,19 @@ __pycache__/
 /VDHIEU/work/tools/
 /VDHIEU/work/backups/
 /VDHIEU/work/vp-plugin-sample/
+
+# Additional LaTeX compilation intermediates
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+
+# Local thesis build tools and Visual Paradigm workspace state
+/tieuluan/automation/tectonic/
+/tieuluan/automation/tectonic.zip
+/tieuluan/automation/vp-workspace/
+/tieuluan/automation/classes/
+/tieuluan/automation/job.tsv
+/tieuluan/automation/done.txt
+/tieuluan/automation/error.txt
+/tieuluan/automation/plugin-loaded.txt
