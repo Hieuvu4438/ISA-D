@@ -6,6 +6,7 @@ import type { OrderDetail } from '../lib/types'
 import { ErrorPanel, formatMoney } from '../ui'
 import { formatOrderDate, orderStatusLabels } from './OrdersPage'
 import { PurchaseInfo } from '../components/PurchaseInfo'
+import { ReturnPanel } from '../components/ReturnPanel'
 
 export function OrderPage() {
   const { orderId = '' } = useParams()
@@ -58,6 +59,7 @@ export function OrderPage() {
       </div>
       <p className="demo-note">Tên sản phẩm và giá được ghi nhận tại thời điểm đặt đơn. Đây là đơn hàng minh họa.</p>
       {order.demo_order && <PurchaseInfo key={order.order_id} order={order} onChange={setOrder} />}
+      {order.demo_order && order.status === 'delivered' && <ReturnPanel key={`returns-${order.order_id}`} orderId={order.order_id} />}
     </article>}
   </div>
 }

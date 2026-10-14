@@ -6,7 +6,7 @@ import { ErrorPanel, formatMoney } from '../ui'
 import { orderStatusLabels, formatOrderDate } from './OrdersPage'
 
 const sections: { id: AdminSection; label: string }[] = [{ id: 'inventory', label: 'Tồn kho' }, { id: 'purchases', label: 'Đơn hàng' }, { id: 'users', label: 'Tài khoản' }, { id: 'audit', label: 'Lịch sử thao tác' }]
-const actionLabels: Record<string, string> = { 'inventory.set': 'Điều chỉnh tồn kho', 'order.status': 'Đổi trạng thái đơn', 'account.role': 'Đổi quyền tài khoản' }
+const actionLabels: Record<string, string> = { 'inventory.set': 'Điều chỉnh tồn kho', 'order.status': 'Đổi trạng thái đơn', 'account.role': 'Đổi quyền tài khoản', 'return.request': 'Tạo yêu cầu trả hàng', 'return.status': 'Xử lý trả hàng' }
 
 export function AdminPage() {
   const [section, setSection] = useState<AdminSection>('inventory')
@@ -60,7 +60,7 @@ export function AdminPage() {
     finally { locked.current = false; if (alive.current) setBusy(false) }
   }
   return <div className="page-shell shopping-page admin-page" aria-busy={loading || busy}><header className="page-heading"><h1>Quản trị Cortis.</h1><p>Quản lý tồn kho, xử lý đơn và kiểm soát quyền truy cập.</p></header>
-    <nav className="admin-sections" aria-label="Chức năng quản trị">{sections.map(item => <button className={section === item.id ? 'primary-button' : 'secondary-button'} aria-pressed={section === item.id} disabled={busy} key={item.id} onClick={() => switchSection(item.id)}>{item.label}</button>)}</nav>
+    <nav className="admin-sections" aria-label="Chức năng quản trị">{sections.map(item => <button className={section === item.id ? 'primary-button' : 'secondary-button'} aria-pressed={section === item.id} disabled={busy} key={item.id} onClick={() => switchSection(item.id)}>{item.label}</button>)}<Link className="secondary-button" to="/admin/returns">Trả hàng</Link></nav>
     {loading && <p role="status">Đang tải dữ liệu quản trị…</p>}{error && <ErrorPanel message={error} onRetry={busy ? undefined : () => { setDetail(null); setGeneration(value => value + 1) }} />}{denied && <Link className="text-link" to="/account">Đăng nhập bằng tài khoản quản trị</Link>}{notice && <p className="account-notice" role="status">{notice}</p>}
     {data && !loading && <>
       <div className="admin-toolbar"><p role="status">{data.total} mục</p>{(section === 'inventory' || section === 'users') && <form onSubmit={event => { event.preventDefault(); setFilter(query.trim()); setOffset(0) }}><label htmlFor="admin-search">{section === 'inventory' ? 'Tìm tên hoặc mã sản phẩm' : 'Tìm email tài khoản'}</label><div className="admin-search-row"><input id="admin-search" value={query} disabled={busy} maxLength={120} onChange={event => setQuery(event.target.value)} /><button className="secondary-button" disabled={busy}>Tìm</button></div></form>}

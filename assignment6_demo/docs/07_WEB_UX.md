@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+Returns amendment: ReturnPanel trong đơn demo delivered và `/admin/returns` cho duyệt/kiểm nhận/cách ly/đóng hồ sơ. Recovery mất phản hồi giữ nguyên key/body; UI không xác nhận hoàn tiền thật. Evidence và final visual confirmation pending sau CSS tại [23](23_RETURNS.md).
+
 **E5 amendment:** Account admin link→`/admin` operational inventory/orders/users/audit UI theo [20](20_ADMIN_OPERATIONS.md), không giả đầy đủ catalog CRUD. Direct URL vẫn bị server/client role gates; input labels/keyboard/loading/conflict recovery.
 
 **E4 amendment:** `/checkout` quote/COD/address/uncertain-result retry; `/purchases` history; ORD lookup/detail/cancel theo [19](19_CHECKOUT_ORDERS.md). Phí và tổng rõ trước confirm, không giả thanh toán/logistics thật.

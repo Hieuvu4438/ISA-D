@@ -1,0 +1,230 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "e2e/returns.spec.ts"
+    ],
+    "configFile": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\playwright.config.ts",
+    "rootDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/PROJECTS/ISA-D/assignment6_demo/artifacts/frontend/playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "snapshotDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/frontend/e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "returns.spec.ts",
+      "file": "returns.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real return lifecycle: partial quantities, withdrawal, approval, quarantine/restock and demo closure",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2320,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Đã đóng hồ sơ demo', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Đã đóng hồ sơ demo', { exact: true }) resolved to 2 elements:\n    1) <option value=\"closed\">Đã đóng hồ sơ demo</option> aka getByLabel('Trạng thái trả hàng')\n    2) <p>Đã đóng hồ sơ demo</p> aka getByRole('paragraph').filter({ hasText: 'Đã đóng hồ sơ demo' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Đã đóng hồ sơ demo', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Đã đóng hồ sơ demo', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <option value=\"closed\">Đã đóng hồ sơ demo</option>\u001b[22m\n\u001b[2m    - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Đã đóng hồ sơ demo', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Đã đóng hồ sơ demo', { exact: true }) resolved to 2 elements:\n    1) <option value=\"closed\">Đã đóng hồ sơ demo</option> aka getByLabel('Trạng thái trả hàng')\n    2) <p>Đã đóng hồ sơ demo</p> aka getByRole('paragraph').filter({ hasText: 'Đã đóng hồ sơ demo' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Đã đóng hồ sơ demo', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Đã đóng hồ sơ demo', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <option value=\"closed\">Đã đóng hồ sơ demo</option>\u001b[22m\n\u001b[2m    - unexpected value \"hidden\"\u001b[22m\n\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\returns.spec.ts:75:73",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\returns.spec.ts",
+                      "column": 73,
+                      "line": 75
+                    },
+                    "snippet": "  73 |     await page.getByLabel('Lý do xử lý').fill('Ghi nhận đối soát trong hệ thống demo')\n  74 |     await page.getByRole('button', { name: `Đóng hồ sơ demo ${id}`, exact: true }).click()\n> 75 |     await expect(page.getByText('Đã đóng hồ sơ demo', { exact: true })).toBeVisible()\n     |                                                                         ^\n  76 |     await buyerPage.reload()\n  77 |     await expect(returns.getByText('Đã đóng hồ sơ demo', { exact: true })).toBeVisible()\n  78 |     await expect(returns.getByText(/Chưa thực hiện hoàn tiền thật/)).toBeVisible()"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\returns.spec.ts",
+                        "column": 73,
+                        "line": 75
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Đã đóng hồ sơ demo', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Đã đóng hồ sơ demo', { exact: true }) resolved to 2 elements:\n    1) <option value=\"closed\">Đã đóng hồ sơ demo</option> aka getByLabel('Trạng thái trả hàng')\n    2) <p>Đã đóng hồ sơ demo</p> aka getByRole('paragraph').filter({ hasText: 'Đã đóng hồ sơ demo' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Đã đóng hồ sơ demo', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Đã đóng hồ sơ demo', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <option value=\"closed\">Đã đóng hồ sơ demo</option>\u001b[22m\n\u001b[2m    - unexpected value \"hidden\"\u001b[22m\n\n\n  73 |     await page.getByLabel('Lý do xử lý').fill('Ghi nhận đối soát trong hệ thống demo')\n  74 |     await page.getByRole('button', { name: `Đóng hồ sơ demo ${id}`, exact: true }).click()\n> 75 |     await expect(page.getByText('Đã đóng hồ sơ demo', { exact: true })).toBeVisible()\n     |                                                                         ^\n  76 |     await buyerPage.reload()\n  77 |     await expect(returns.getByText('Đã đóng hồ sơ demo', { exact: true })).toBeVisible()\n  78 |     await expect(returns.getByText(/Chưa thực hiện hoàn tiền thật/)).toBeVisible()\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\returns.spec.ts:75:73"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:27:55.482Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\returns-real-return-lifecy-649a2-ne-restock-and-demo-closure\\test-failed-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\returns-real-return-lifecy-649a2-ne-restock-and-demo-closure\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\returns-real-return-lifecy-649a2-ne-restock-and-demo-closure\\error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\returns-real-return-lifecy-649a2-ne-restock-and-demo-closure\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\returns-real-return-lifecy-649a2-ne-restock-and-demo-closure\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\returns.spec.ts",
+                    "column": 73,
+                    "line": 75
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "9b8cd1bc48a798eff244-9272860bc36472f1ff63",
+          "file": "returns.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "admin return direct URL is denied for an anonymous browser",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 194,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:28:00.072Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9b8cd1bc48a798eff244-48b2e0eea53308e85b72",
+          "file": "returns.spec.ts",
+          "line": 101,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T23:27:54.886Z",
+    "duration": 6985.234,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

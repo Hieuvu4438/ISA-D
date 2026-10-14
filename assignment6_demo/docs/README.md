@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Trả hàng từng phần, kiểm nhận/cách ly, demo đối soát và evidence: [23_RETURNS.md](23_RETURNS.md).
+
 Admin operations contracts/sequence/pending: [20_ADMIN_OPERATIONS.md](20_ADMIN_OPERATIONS.md).
 
 Checkout/COD/order/stock ledger contract: [19_CHECKOUT_ORDERS.md](19_CHECKOUT_ORDERS.md).

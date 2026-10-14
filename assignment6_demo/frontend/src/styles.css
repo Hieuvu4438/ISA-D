@@ -44,6 +44,8 @@
   .admin-record p { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
   .admin-record form { display: grid; gap: 12px; max-width: 320px; width: 100%; }
   .admin-record .shopping-actions { flex: 1; align-content: start; min-width: 240px; }
+  .admin-return-record > div, .admin-return-record > .shopping-actions { flex: 1 1 280px; min-width: 0; }
+  .admin-return-record > .shopping-actions:empty { display: none; }
   .admin-record button { overflow-wrap: anywhere; }
   .admin-email, .admin-record code { overflow-wrap: anywhere; }
   .admin-order-detail { margin-top: 32px; }

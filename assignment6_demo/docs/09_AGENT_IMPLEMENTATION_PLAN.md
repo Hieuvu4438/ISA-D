@@ -142,6 +142,8 @@ Mốc catalog recovery 2026-10-15: đã sửa hành vi bộ lọc false, khoản
 
 ## Checklist của bước triển khai
 
+E4/E5 returns amendment2026-10-15: [23_RETURNS](23_RETURNS.md), customer/admin/quantity reservations/inspection/restock/quarantine/demo closure và audit đã có evidence backend224/browser2. Đổi hàng, tiền thật và final visual confirmation còn pending; không đánh dấu toàn bộ milestone complete.
+
 - [ ] M0: scaffold, dependency locks và smoke install sạch.
 - [ ] M1: seed/provenance/repositories/static route đạt gate.
 - [ ] M2: model pair CPU/index/calibration infrastructure thật.

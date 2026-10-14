@@ -158,6 +158,20 @@ export interface OrderDetail extends OrderSummary {
   shipping_address?: ShippingAddress
 }
 export interface ShippingAddress { recipient: string; phone: string; address_line: string; city: string }
+export type ReturnStatus = 'requested' | 'approved' | 'rejected' | 'withdrawn' | 'received' | 'closed'
+export interface ReturnCase {
+  return_id: string; order_id: string; status: ReturnStatus; version: number
+  items: { product_id: string; product_name: string; quantity: number; unit_price_vnd: number }[]
+  reason: string; created_at: string; updated_at: string; merchandise_value_vnd: number
+  refund_status: 'not_processed' | 'demo_recorded'; refund_amount_vnd: number
+  operator_note?: string; receipt?: { product_id: string; restock_quantity: number }[]
+}
+export interface OrderReturns {
+  request_id: string; returns: ReturnCase[]; order_version: number
+  eligibility: { eligible: boolean; ineligible_reason: string | null; deadline: string | null; window_days: number; policy: string
+    items: (OrderDetail['items'][number] & { remaining_quantity: number })[] }
+}
+export interface CreateReturnRequest { version: number; idempotency_key: string; reason: string; items: { product_id: string; quantity: number }[] }
 export interface CheckoutQuote { quote_id: string; cart_version: number; expires_at: number; items: OrderDetail['items']; subtotal_vnd: number; shipping_fee_vnd: number; total_vnd: number; currency: 'VND'; payment_method: 'cod' }
 export interface PurchaseRequest { quote_id: string; idempotency_key: string; shipping_address: ShippingAddress }
 

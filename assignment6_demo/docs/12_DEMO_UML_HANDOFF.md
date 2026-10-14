@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+Returns amendment: [23](23_RETURNS.md) có state diagram và sequence owner request→approval→receipt/restock/quarantine→demo closure, cùng lỗi/recovery/concurrency. Mermaid không thay editable .vpp; chưa claim bàn giao UML complete.
+
 **E5 amendment:** Admin mutation/auth/version/audit sequence và code/tests mapping ở [20](20_ADMIN_OPERATIONS.md); editable .vpp vẫn pending.
 
 **E4 amendment:** Checkout atomic/idempotency sequence và code/test mapping tại [19](19_CHECKOUT_ORDERS.md); `.vpp` editable vẫn pending.

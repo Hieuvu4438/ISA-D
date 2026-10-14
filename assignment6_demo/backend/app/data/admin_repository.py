@@ -125,6 +125,10 @@ class AdminRepository:
                     db.execute("UPDATE inventory SET quantity=quantity+? WHERE product_id=?", (item["quantity"], item["product_id"]))
                 db.execute("UPDATE inventory_state SET revision=revision+1 WHERE singleton=1")
             db.execute("UPDATE purchases SET status=?,version=version+1 WHERE order_id=?", (status, order_id))
+            if status == "delivered":
+                payload = json.loads(row["payload"])
+                payload["delivered_at"] = datetime.now(UTC).isoformat().replace("+00:00", "Z")
+                db.execute("UPDATE purchases SET payload=? WHERE order_id=?", (json.dumps(payload, ensure_ascii=False), order_id))
             self.audit(db, actor, "order.status", order_id, {"status": row["status"], "version": row["version"]}, {"status": status, "version": row["version"] + 1}, reason)
             return {"order_id": order_id, "status": status, "version": row["version"] + 1}
 

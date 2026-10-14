@@ -3,6 +3,7 @@ import type {
   CartResponse, WishlistResponse,
   CheckoutQuote, PurchaseRequest, OrderSummary,
   AdminPageData,
+  OrderReturns, CreateReturnRequest, ReturnCase,
   CreditsResponse, FieldError, MetaResponse, OrderResponse, OrderSummaryResponse,
   ProductResponse, ProductsResponse, SearchOptions, SearchResponse,
   TextSearchRequest, TranscriptionResponse,
@@ -108,6 +109,10 @@ export type AdminSection = 'inventory' | 'purchases' | 'users' | 'audit'
 export const getAdminPage = (section: AdminSection, params: URLSearchParams, signal?: AbortSignal) => request<AdminPageData>(`/admin/${section}?${params}`, {}, signal)
 export const getAdminOrder = (id: string, signal?: AbortSignal) => request<OrderResponse>(`/admin/purchases/${encodeURIComponent(id)}`, {}, signal)
 export const adminChange = (path: string, body: object) => request(`/admin/${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Cortis-Intent': 'admin' }, body: JSON.stringify(body) })
+export const getOrderReturns = (id: string, signal?: AbortSignal) => request<OrderReturns>(`/purchases/${encodeURIComponent(id)}/returns`, {}, signal)
+export const createReturn = (id: string, body: CreateReturnRequest) => shoppingWrite<{ return: ReturnCase; replayed: boolean }>(`/purchases/${encodeURIComponent(id)}/returns`, body)
+export const withdrawReturn = (id: string, version: number) => shoppingWrite<{ return: ReturnCase }>(`/returns/${encodeURIComponent(id)}/withdraw`, { version })
+export const getAdminReturns = (params: URLSearchParams, signal?: AbortSignal) => request<{ returns: ReturnCase[]; total: number; offset: number; limit: number }>(`/admin/returns?${params}`, {}, signal)
 
 export interface AccountUser { user_id: string; email: string; display_name: string; role: 'user' | 'admin' }
 export interface AccountResponse { request_id: string; user: AccountUser }

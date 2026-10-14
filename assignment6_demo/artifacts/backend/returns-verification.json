@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "c9c6a1d",
+  "source_sha256": {
+    "backend/app/data/return_repository.py": "6bf1dc7c40f84a2e421db8794f7a6bf3860f59e0a60f4ae2e4085c24d9322bb7",
+    "backend/app/data/admin_repository.py": "da60c107872b1ddfd9deb9548b58fc9381bf3a53c0630cdeb2b7ac898fa1002b",
+    "backend/app/presentation/returns.py": "1a5d98b18cd2adfab5b7762c9e952a7465657760e5678efaaf573250fa6aea5a",
+    "backend/app/main.py": "552c545243d54ea6e8c4d72857464aa530db000a940048ee664b1fb412ed9922",
+    "backend/tests/test_returns.py": "6eadc7a1b408527b23ac19ffaf1cdaee0f483e0101923fdf9aa7eb724a6435c4",
+    "frontend/src/components/ReturnPanel.tsx": "b23e6a320959297a53773710161805f86dbdfce317f1826ce507b1aef0b224db",
+    "frontend/src/pages/AdminReturnsPage.tsx": "13597a85c28a7c4f057ea6044404a328b53f67dd633646cc1a4c5c433bd3c091",
+    "frontend/src/styles.css": "af4ca4e7602fb056c3bdd3eb4a4f39308a1d06405d19357c251c38303ad991e5",
+    "frontend/e2e/returns.spec.ts": "a504d9565242b83df9771fcc44af02bea46c81db6f99498dc301a3b87b04bd8a"
+  },
+  "full_backend": {
+    "tests": 224,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "targeted_backend": {
+    "tests": 21,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "exit_codes": {
+    "backend_full": 0,
+    "backend_targeted": 0,
+    "ruff": 0,
+    "frontend_build": 0,
+    "frontend_lint": 0,
+    "frontend_unit": 0,
+    "browser_final_functional": 0
+  },
+  "frontend_unit_passed": 17,
+  "browser_final_functional": {
+    "startTime": "2026-10-14T23:30:40.750Z",
+    "duration": 4918.9220000000005,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "responsive_final_dom": {
+    "viewports": [
+      360,
+      768,
+      1440
+    ],
+    "surfaces": [
+      "admin",
+      "customer"
+    ],
+    "horizontal_overflow": false,
+    "admin_record_width_min_px": 260
+  },
+  "accessibility_before_final_layout_amendment": {
+    "violations": 0,
+    "heading_order_fixed": true
+  },
+  "screenshots": "pre-final-layout evidence only; final responsive visual confirmation pending",
+  "fixture_retirement": {
+    "scope": "reserved E2E fixture retirement",
+    "active_privileged_fixture_accounts": 0,
+    "active_fixture_sessions": 0,
+    "passed": true,
+    "credentials_printed": false
+  },
+  "scope": "Operational demo returns; no actual refunds or exchanges",
+  "providers_called": false,
+  "pending": [
+    "final visual confirmation after mobile column fix",
+    "real payments/refunds and exchange fulfillment",
+    "variants/sizes",
+    "product metadata/assets CRUD and index publication",
+    "catalog photo/data repair",
+    "frozen quality and provider-specific speech evidence",
+    "editable UML and clean checkout acceptance"
+  ]
+}

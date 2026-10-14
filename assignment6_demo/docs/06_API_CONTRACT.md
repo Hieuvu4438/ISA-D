@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Returns amendment: customer GET/POST purchases/{ORD-id}/returns, POST returns/{RMA-id}/withdraw; admin GET returns và POST returns/{RMA-id}/status với role/intent/version/strict receipt. Hợp đồng/error/idempotency/privacy tại [23](23_RETURNS.md); API trả hàng không tiết lộ owner/address/key.
+
 **E5 amendment:** `/admin/inventory`, users/role,purchases/status/detail,audit schemas/version/security tại [20](20_ADMIN_OPERATIONS.md). Admin identity recheck trong transaction; protected admin detail có address, customer endpoints vẫn owner-only.
 
 **E4 amendment:** checkout quote/purchases/history/cancel, ORD IDs, inventory_revision và owner address detail tại [19](19_CHECKOUT_ORDERS.md). Stock API dùng ledger, stock JSON chỉ seed. Legacy O001 APIs vẫn giữ ownership.

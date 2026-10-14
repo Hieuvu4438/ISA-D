@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+Returns amendment: table purchase_returns với ownership/idempotency/version/payload, snapshot giá, cumulative quantities và receipt theo [23](23_RETURNS.md). delivered_at được ghi trong transaction giao hàng; audit cũ là fallback có bằng chứng. refund_status=demo_recorded không phải payment transfer.
+
 **E5 amendment:** admin_user_versions và admin_audit SQLite, stock/order/role mutations coupling audit theo [20](20_ADMIN_OPERATIONS.md). Không raw credentials/request bodies/PII trong audit; no-op không tạo event.
 
 **E4 amendment:** Inventory/quotes/purchases SQLite và order snapshot/idempotency tại [19](19_CHECKOUT_ORDERS.md). Product stock_quantity JSON là seed; live quantity ledger không reset startup. Runtime inventory revision tách model/catalog fingerprint.

@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Trả hàng demo từng phần và xử lý admin có tại [docs/23_RETURNS.md](docs/23_RETURNS.md); [bằng chứng](artifacts/backend/RETURNS_REPORT.md) ghi backend224/browser2 và giới hạn. Đổi hàng, hoàn tiền thật và final visual confirmation vẫn pending.
+
 **Admin operations E5:** admin đăng nhập vào Tài khoản→Mở trang quản trị (`/admin`) để chỉnh tồn kho, xử lý ORD, xem thông tin nhận hàng, đổi role và xem audit. Version/revision chống ghi đè, role recheck và audit commit cùng transaction. [Contract](docs/20_ADMIN_OPERATIONS.md), [evidence](artifacts/backend/ADMIN_OPERATIONS_REPORT.md). Full catalog CRUD/variants/account lock/returns và data/quality gates vẫn pending.
 
 **Checkout E4:** `/checkout` có báo giá/phí/địa chỉ/COD demo; `/purchases` lịch sử, detail/hủy đơn. Stock ledger SQLite, transaction đặt đơn+xóa giỏ+trừ stock, idempotency chống đặt trùng và hủy hoàn stock một lần. API sản phẩm/search/browse/cart đọc cùng ledger. [Contract](docs/19_CHECKOUT_ORDERS.md), [evidence](artifacts/backend/CHECKOUT_REPORT.md). Không thu tiền/giao hàng thật; full admin, variants, returns và data/quality gates còn pending.
