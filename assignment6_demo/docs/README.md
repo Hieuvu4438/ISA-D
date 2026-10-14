@@ -40,6 +40,8 @@ Yêu cầu mới của người dùng ưu tiên cao nhất. Trong bộ tài li�
 
 [Đối chiếu module với website ecommerce hiện có](21_ECOMMERCE_REFERENCE_REVIEW.md) ghi nguồn tham khảo, edge cases và phần còn thiếu; không phải bằng chứng test live.
 
+[Recovery bộ sưu tập](22_CATALOG_RECOVERY.md) ghi hành vi bộ lọc/khoảng giá/kết quả rỗng và evidence browser/API thật.
+
 ## Hai mốc hoàn thành riêng
 
 - **Bàn giao tài liệu hiện tại:** đủ đặc tả end to end, liên kết hợp lệ, không có secret, truy vết scope gốc và yêu cầu bổ sung. Đây là nhiệm vụ hiện tại để người dùng kiểm tra.

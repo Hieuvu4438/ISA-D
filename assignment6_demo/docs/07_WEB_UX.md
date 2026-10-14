@@ -104,3 +104,7 @@ Người dùng xác nhận Cortis theo hướng showroom mẫu vật: ảnh ch�
 Tabs có role/tablist, keyboard trái/phải, aria-selected và label; form control có label thật; lỗi aria-describedby. Loading/results announce `aria-live=polite`; modal nếu có focus trap/escape/return focus. Preview có alt mô tả sản phẩm; drag-drop luôn có file picker tương đương. Không phân biệt stock/error chỉ bằng màu; contrast text≥4.5:1; tôn trọng reduced-motion.
 
 Kiểm tra 360/768/1440px, bàn phím toàn workflow, axe với serious/critical issues=0 và console errors=0 cho happy path. Mic hardware/permission review thủ công bổ sung E2E; mock browser permission không chứng minh voice thật.
+
+## Bổ sung recovery bộ sưu tập
+
+Hành vi filter/price/empty/offset/invalid URL/combobox và evidence regression được ghi trong [22_CATALOG_RECOVERY.md](22_CATALOG_RECOVERY.md). Điều kiện đã áp dụng giữ trong URL; thao tác recovery giữ các lựa chọn còn liên quan, còn reset toàn bộ có nhãn riêng.

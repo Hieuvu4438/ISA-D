@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "390c18d",
+  "source_sha256": {
+    "frontend/src/pages/BrowsePage.tsx": "c313d0cf1901ff294475d715afff513485b11f15655693385b82bdf4a3f92242",
+    "frontend/e2e/browse-recovery.spec.ts": "ca92eed44b612bc763066847533f77467870300d41a59a1a4a51f47c3ea30c25"
+  },
+  "build_exit": 0,
+  "lint_exit": 0,
+  "unit_tests": {
+    "passed": 17,
+    "exit": 0
+  },
+  "browser": {
+    "startTime": "2026-10-14T23:19:53.901Z",
+    "duration": 7469.9619999999995,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_exit": 0,
+  "browser_environment": "PLAYWRIGHT_BROWSERS_PATH=<workspace>/runtime/browsers; local server8000+production preview5173",
+  "initial_attempt": "browser launch failed before app interaction because browser cache env was missing; corrected using docs/FRONTEND_VERIFICATION.md",
+  "live_encoder_scope": "Existing hybrid E2E invoked the real local encoder; no frozen quality evaluation, provider speech calls or visual acceptance claim in this milestone",
+  "backend_changed": false,
+  "pending": [
+    "variants/sizes",
+    "catalog metadata/assets repair",
+    "admin product CRUD and index publication",
+    "returns/refunds",
+    "independent quality/provider-specific live evidence",
+    "full clean-checkout acceptance"
+  ]
+}

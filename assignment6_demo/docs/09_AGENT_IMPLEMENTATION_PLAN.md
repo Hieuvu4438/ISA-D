@@ -138,6 +138,8 @@ Tất cả script chạy với Python của `backend/.venv`, working directory l
 
 > Implement website trong `assignment6_demo` theo docs/01–12. Đọc hợp đồng 04–08 trước khi viết code. Dùng Python 3.12/FastAPI, React TypeScript/Vite, CPU CLIP aligned 512D theo revisions ở 05, Azure Speech vi-VN region southeastasia từ backend environment. Catalog phải giữ ảnh chụp thật trên mạng và attribution. Thực hiện M0→M6, giữ Search Order/View Order scoped C001 và text/image/voice/multimodal. Không dùng dữ liệu fake để pass integration live/model gate. Chạy verification thích hợp, ghi evidence và pending vào báo cáo. Live Azure cần quyền sử dụng và giới hạn 5 calls; không gọi trong CI/startup. Khi thiếu dependency, UI báo capability unavailable và report website chưa đạt gate đó. Không sửa ngoài assignment6_demo.
 
+Mốc catalog recovery 2026-10-15: đã sửa hành vi bộ lọc false, khoảng giá, empty/out-of-range/invalid URL và combobox; [docs22](22_CATALOG_RECOVERY.md) có lệnh thực chạy và evidence13 browser tests. Không thay trạng thái complete của E2/E3/E6 khi các gate còn thiếu.
+
 ## Checklist của bước triển khai
 
 - [ ] M0: scaffold, dependency locks và smoke install sạch.
