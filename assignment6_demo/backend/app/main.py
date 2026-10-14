@@ -26,6 +26,9 @@ from app.data.shopping_repository import ShoppingRepository
 from app.data.purchase_repository import PurchaseRepository
 from app.application.purchase_service import PurchaseService
 from app.presentation.purchases import mount_purchases
+from app.data.admin_repository import AdminRepository
+from app.application.admin_service import AdminService
+from app.presentation.admin import mount_admin
 from app.application.catalog_search import CatalogSearch
 from app.application.query_service import QueryService
 from app.application.search_service import SearchService
@@ -192,6 +195,7 @@ def create_app(settings=None, container=None):
         inventory = PurchaseRepository(application.state.accounts.repository,
                                        application.state.services.products.products if application.state.services.products else [])
         application.state.purchases = PurchaseService(inventory, application.state.services.products)
+        application.state.admin = AdminService(AdminRepository(application.state.accounts.repository), application.state.services.products)
         application.state.shopping.inventory = inventory
         application.state.services.search.inventory = inventory
         if application.state.services.catalog_search:
@@ -509,6 +513,7 @@ def create_app(settings=None, container=None):
     mount_catalog(application, query_fields)
     mount_shopping(application, query_fields)
     mount_purchases(application, query_fields)
+    mount_admin(application, query_fields)
     return application
 
 

@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+**E5 amendment:** AdminService/AdminRepository/routes qua main DI, locked role/version/invariants/audit transaction, code/sequence tại [20](20_ADMIN_OPERATIONS.md).
+
 **E4 amendment:** PurchaseService supply catalog snapshot, PurchaseRepository giữ atomic SQL transaction/invariants; ledger overlay cho search/browse/products/cart theo [19](19_CHECKOUT_ORDERS.md). Tách revision inventory khỏi encoder fingerprint.
 
 **E3 amendment:** ShoppingRepository/ShoppingService/routes thêm qua main DI, account-scoped SQL transactions/CAS version và price hydration, sequence tại [18](18_CART_WISHLIST.md).

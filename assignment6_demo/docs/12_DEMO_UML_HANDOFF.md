@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+**E5 amendment:** Admin mutation/auth/version/audit sequence và code/tests mapping ở [20](20_ADMIN_OPERATIONS.md); editable .vpp vẫn pending.
+
 **E4 amendment:** Checkout atomic/idempotency sequence và code/test mapping tại [19](19_CHECKOUT_ORDERS.md); `.vpp` editable vẫn pending.
 
 **E3 amendment:** Cart mutation/version-conflict sequence và code/test mapping tại [18](18_CART_WISHLIST.md). Vẫn cần editable .vpp ngoài Mermaid.

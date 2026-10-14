@@ -92,7 +92,7 @@ export function AccountPage() {
             <button className="primary-button">Đổi mật khẩu</button>
           </fieldset></form>
         </section>
-        {user.role === 'admin' && <section className="account-panel"><h2>Tổng quan quản trị</h2>{overview ? <dl className="account-counts"><dt>Sản phẩm</dt><dd>{overview.products}</dd><dt>Đơn hàng minh họa</dt><dd>{overview.orders}</dd><dt>Khách hàng</dt><dd>{overview.accounts.user ?? 0}</dd><dt>Quản trị viên</dt><dd>{overview.accounts.admin ?? 0}</dd></dl> : <p role="status">Đang tải tổng quan…</p>}</section>}
+        {user.role === 'admin' && <section className="account-panel"><h2>Tổng quan quản trị</h2><Link className="primary-button" to="/admin">Mở trang quản trị</Link>{overview ? <dl className="account-counts"><dt>Sản phẩm</dt><dd>{overview.products}</dd><dt>Đơn hàng minh họa</dt><dd>{overview.orders}</dd><dt>Khách hàng</dt><dd>{overview.accounts.user ?? 0}</dd><dt>Quản trị viên</dt><dd>{overview.accounts.admin ?? 0}</dd></dl> : <p role="status">Đang tải tổng quan…</p>}</section>}
       </div>}
     </>}
   </div>

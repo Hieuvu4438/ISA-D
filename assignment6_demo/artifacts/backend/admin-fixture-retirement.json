@@ -1,0 +1,7 @@
+{
+  "scope": "reserved browser fixture retirement audit",
+  "active_admin_fixture_accounts": 0,
+  "passed": true,
+  "credentials_printed": false,
+  "runtime_db_committed": false
+}

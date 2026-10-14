@@ -2,6 +2,7 @@ import type {
   BrowseResponse, ProductSummary,
   CartResponse, WishlistResponse,
   CheckoutQuote, PurchaseRequest, OrderSummary,
+  AdminPageData,
   CreditsResponse, FieldError, MetaResponse, OrderResponse, OrderSummaryResponse,
   ProductResponse, ProductsResponse, SearchOptions, SearchResponse,
   TextSearchRequest, TranscriptionResponse,
@@ -103,6 +104,10 @@ export const createQuote = () => shoppingWrite<{ quote: CheckoutQuote }>('/check
 export const placePurchase = (body: PurchaseRequest) => shoppingWrite<OrderResponse & { replayed: boolean }>('/purchases', body)
 export const cancelPurchase = (id: string, version: number) => shoppingWrite<OrderResponse>(`/purchases/${encodeURIComponent(id)}/cancel`, { version })
 export const getPurchases = (offset = 0, signal?: AbortSignal) => request<{ orders: OrderSummary[]; total: number; offset: number; limit: number }>(`/purchases?offset=${offset}&limit=20`, {}, signal)
+export type AdminSection = 'inventory' | 'purchases' | 'users' | 'audit'
+export const getAdminPage = (section: AdminSection, params: URLSearchParams, signal?: AbortSignal) => request<AdminPageData>(`/admin/${section}?${params}`, {}, signal)
+export const getAdminOrder = (id: string, signal?: AbortSignal) => request<OrderResponse>(`/admin/purchases/${encodeURIComponent(id)}`, {}, signal)
+export const adminChange = (path: string, body: object) => request(`/admin/${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Cortis-Intent': 'admin' }, body: JSON.stringify(body) })
 
 export interface AccountUser { user_id: string; email: string; display_name: string; role: 'user' | 'admin' }
 export interface AccountResponse { request_id: string; user: AccountUser }

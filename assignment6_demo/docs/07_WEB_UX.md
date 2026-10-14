@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+**E5 amendment:** Account admin link→`/admin` operational inventory/orders/users/audit UI theo [20](20_ADMIN_OPERATIONS.md), không giả đầy đủ catalog CRUD. Direct URL vẫn bị server/client role gates; input labels/keyboard/loading/conflict recovery.
+
 **E4 amendment:** `/checkout` quote/COD/address/uncertain-result retry; `/purchases` history; ORD lookup/detail/cancel theo [19](19_CHECKOUT_ORDERS.md). Phí và tổng rõ trước confirm, không giả thanh toán/logistics thật.
 
 **E3 amendment:** Product quantity/add/save, `/cart`/`wishlist`, header navigation, conflict/expiry/error recovery tại [18](18_CART_WISHLIST.md). Checkout/variant selection vẫn pending, không UI success giả.

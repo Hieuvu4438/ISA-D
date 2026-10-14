@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "31e7470",
+  "scope": "admin operations; overall incomplete",
+  "source_sha256": {
+    "backend/app/data/admin_repository.py": "168fd22035b6cc392f73d8aa844d6e462c53c8dd9e436950b7a581300363ee21",
+    "backend/app/application/admin_service.py": "4255a7dda7cfb62548626f3a0e328ac9a727539b767ec4d96767f46d0f66f5ee",
+    "backend/app/presentation/admin.py": "6c2c5fb4c05ce05d316dcac0bdc41942b320eca9601a8ea86e7929ad23fc051b",
+    "backend/tests/test_admin_operations.py": "ee4797c7da2e0a111d6d7f9d27384acc432d0005fad2093f8c1d8b3f92c7f0ff",
+    "frontend/src/pages/AdminPage.tsx": "04447247032f179bb6c5be6a05b0bd07fcda559aa515210d66f916a911734611",
+    "frontend/e2e/admin.spec.ts": "71a9fd4cae9e295c1ab780f7fb5abfe4663abe7d265cf5869b044e5ba67a53c0",
+    "scripts/admin_browser_fixture.py": "13d7b6bbdd932a2fddc5733cb8e1461f68d4833df66ab6f7328c13189983dd8c"
+  },
+  "full_backend_before_final_amendments": {
+    "tests": 214,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "final_targeted_backend": {
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "backend_exit_codes": {
+    "full": 0,
+    "targeted": 0,
+    "ruff": 0
+  },
+  "frontend": {
+    "typecheck_exit": 0,
+    "lint_exit": 0,
+    "build_exit": 0,
+    "unit_tests_passed": 17
+  },
+  "browser_final_functional": {
+    "startTime": "2026-10-14T23:10:19.415Z",
+    "duration": 8526.563999999998,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_confirmation_with_responsive": {
+    "startTime": "2026-10-14T23:09:11.105Z",
+    "duration": 13098.148000000001,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "responsive": {
+    "viewports": [
+      360,
+      768,
+      1440
+    ],
+    "axe_violations": 0,
+    "horizontal_overflow": false,
+    "rounds": 2
+  },
+  "provider_calls_this_milestone": false,
+  "pending": [
+    "full admin product metadata/assets CRUD and index publication",
+    "variants/sizes",
+    "account lock/delete",
+    "returns/refunds",
+    "catalog photo repair",
+    "frozen quality and provider-specific live evidence",
+    "editable UML and clean checkout acceptance"
+  ]
+}

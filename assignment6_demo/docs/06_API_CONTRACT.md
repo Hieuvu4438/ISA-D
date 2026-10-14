@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+**E5 amendment:** `/admin/inventory`, users/role,purchases/status/detail,audit schemas/version/security tại [20](20_ADMIN_OPERATIONS.md). Admin identity recheck trong transaction; protected admin detail có address, customer endpoints vẫn owner-only.
+
 **E4 amendment:** checkout quote/purchases/history/cancel, ORD IDs, inventory_revision và owner address detail tại [19](19_CHECKOUT_ORDERS.md). Stock API dùng ledger, stock JSON chỉ seed. Legacy O001 APIs vẫn giữ ownership.
 
 **E3 amendment:** Cart/wishlist endpoints, desired-state mutations/version/stock handling/commerce intent header và errors tại [18](18_CART_WISHLIST.md). Role ownership lấy server identity, require login.

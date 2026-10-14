@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+**E5 operations:** Admin inventory adjustment/revision, ORD fulfillment/status/cancel, private address detail, user role/version/session revocation và transactional audit + `/admin` UI implemented theo [20](20_ADMIN_OPERATIONS.md). Evidence riêng `artifacts/backend/ADMIN_OPERATIONS_REPORT.md`. Product metadata/asset CRUD/index publication, variants, account lock/delete, returns và E6 gates pending; không coi toàn E5 complete.
+
 **E4 checkout core:** Quote/COD/atomic stock-order-cart/idempotency/persistent inventory, owner history/detail/cancel + UI implemented theo [19](19_CHECKOUT_ORDERS.md). Evidence `artifacts/backend/CHECKOUT_REPORT.md`. Live product/search/browse/cart stock từ ledger, không reset khi restart. Admin fulfillment/returns/variants/full data-quality vẫn pending.
 
 **E3 shopping core:** Cart/wishlist per-account SQLite, strict API, cart version concurrency guard, current price/stock checks, product actions và routes `/cart`/`wishlist` đã implement theo [18](18_CART_WISHLIST.md). Verification ở `artifacts/backend/SHOPPING_REPORT.md`. Chưa checkout/variants/stock-order transaction/full admin; data gate còn pending17.

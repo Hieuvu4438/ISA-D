@@ -100,9 +100,11 @@ def mount_accounts(application, settings, query_fields):
         query_fields(request)
         identity(request, "admin")
         services = request.app.state.services
+        with account_service(request).repository.connection() as db:
+            placed_orders = db.execute("SELECT COUNT(*) FROM purchases").fetchone()[0]
         return {"request_id": request.state.request_id,
                 "accounts": account_service(request).repository.counts(),
                 "products": len(services.require("products").products),
-                "orders": len(services.require("orders").orders)}
+                "orders": len(services.require("orders").orders) + placed_orders}
 
     application.include_router(router)

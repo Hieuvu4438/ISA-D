@@ -1,0 +1,293 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "e2e/admin.spec.ts"
+    ],
+    "configFile": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\playwright.config.ts",
+    "rootDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/PROJECTS/ISA-D/assignment6_demo/artifacts/frontend/playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "snapshotDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/frontend/e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "admin.spec.ts",
+      "file": "admin.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real admin inventory: adjust, audit and restore; version conflict never overwrites",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1517,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Lý do: Browser operational stock audit', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Lý do: Browser operational stock audit', { exact: true }) resolved to 2 elements:\n    1) <p>Lý do: Browser operational stock audit</p> aka getByText('Lý do: Browser operational').first()\n    2) <p>Lý do: Browser operational stock audit</p> aka getByText('Lý do: Browser operational').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Lý do: Browser operational stock audit', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Lý do: Browser operational stock audit', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Lý do: Browser operational stock audit', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Lý do: Browser operational stock audit', { exact: true }) resolved to 2 elements:\n    1) <p>Lý do: Browser operational stock audit</p> aka getByText('Lý do: Browser operational').first()\n    2) <p>Lý do: Browser operational stock audit</p> aka getByText('Lý do: Browser operational').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Lý do: Browser operational stock audit', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Lý do: Browser operational stock audit', { exact: true })\u001b[22m\n\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\admin.spec.ts:63:93",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\admin.spec.ts",
+                      "column": 93,
+                      "line": 63
+                    },
+                    "snippet": "  61 |     expect((await (await page.request.get('/api/v1/products/P001')).json()).product.stock_quantity).toBe(1)\n  62 |     await page.getByRole('button', { name: 'Lịch sử thao tác', exact: true }).click()\n> 63 |     await expect(page.getByText('Lý do: Browser operational stock audit', { exact: true })).toBeVisible()\n     |                                                                                             ^\n  64 |   } finally {\n  65 |     const current = await (await page.request.get('/api/v1/admin/inventory?q=P001')).json()\n  66 |     const restored = await page.request.post('/api/v1/admin/inventory/P001', { headers: adminHeaders, data: { quantity: before, revision: current.revision, reason: 'E2E stock restoration' } })"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\admin.spec.ts",
+                        "column": 93,
+                        "line": 63
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Lý do: Browser operational stock audit', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Lý do: Browser operational stock audit', { exact: true }) resolved to 2 elements:\n    1) <p>Lý do: Browser operational stock audit</p> aka getByText('Lý do: Browser operational').first()\n    2) <p>Lý do: Browser operational stock audit</p> aka getByText('Lý do: Browser operational').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Lý do: Browser operational stock audit', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Lý do: Browser operational stock audit', { exact: true })\u001b[22m\n\n\n  61 |     expect((await (await page.request.get('/api/v1/products/P001')).json()).product.stock_quantity).toBe(1)\n  62 |     await page.getByRole('button', { name: 'Lịch sử thao tác', exact: true }).click()\n> 63 |     await expect(page.getByText('Lý do: Browser operational stock audit', { exact: true })).toBeVisible()\n     |                                                                                             ^\n  64 |   } finally {\n  65 |     const current = await (await page.request.get('/api/v1/admin/inventory?q=P001')).json()\n  66 |     const restored = await page.request.post('/api/v1/admin/inventory/P001', { headers: adminHeaders, data: { quantity: before, revision: current.revision, reason: 'E2E stock restoration' } })\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\admin.spec.ts:63:93"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:09:11.673Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\admin-real-admin-inventory-eeafb-n-conflict-never-overwrites\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\admin-real-admin-inventory-eeafb-n-conflict-never-overwrites\\error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\admin-real-admin-inventory-eeafb-n-conflict-never-overwrites\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\admin-real-admin-inventory-eeafb-n-conflict-never-overwrites\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\admin.spec.ts",
+                    "column": 93,
+                    "line": 63
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-efe5287ef1c06d547ba9",
+          "file": "admin.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "real admin role UI: promote user, revoke previous session, deny normal user access",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2690,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:09:15.300Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-9e9680a0a2ef384a0a75",
+          "file": "admin.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "real admin fulfillment: owner order -> shipped -> delivered with private detail access",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2054,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:09:19.458Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-3137a5f13e03933a6b79",
+          "file": "admin.spec.ts",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "admin direct URL denial and responsive accessibility on inventory",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2202,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:09:21.518Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-e2dc94a46d335389992f",
+          "file": "admin.spec.ts",
+          "line": 128,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T23:09:11.105Z",
+    "duration": 13098.148000000001,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -195,6 +195,13 @@ export interface Cart {
 }
 export interface CartResponse { request_id: string; cart: Cart }
 export interface WishlistResponse { request_id: string; items: { product_id: string; product: ProductSummary | null }[]; total: number }
+export interface AdminPageData {
+  request_id: string; total: number; offset: number; limit: number; revision?: number
+  items?: { product_id: string; quantity: number; product: ProductSummary | null }[]
+  users?: { user_id: string; email: string; display_name: string; role: 'user' | 'admin'; version: number }[]
+  orders?: (OrderDetail & { version: number })[]
+  events?: { audit_id: number; actor_id: string; action: string; subject_id: string; before: Record<string, unknown>; after: Record<string, unknown>; reason: string; created_at: string }[]
+}
 export interface ProductResponse { request_id: string; product: ProductDetail }
 export interface CreditsResponse { request_id: string; credits: Credit[] }
 export interface OrderResponse { request_id: string; order: OrderDetail }

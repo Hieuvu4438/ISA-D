@@ -13,12 +13,13 @@ import { AccountPage } from './pages/AccountPage';
 import { BrowsePage } from './pages/BrowsePage';
 import { CartPage, WishlistPage } from './pages/ShoppingPages';
 import { CheckoutPage, PurchaseHistoryPage } from './pages/CheckoutPage';
+import { AdminPage } from './pages/AdminPage';
 
 function Shell() {
   const location = useLocation();
   useEffect(() => {
     if (location.pathname !== '/') window.scrollTo(0, 0);
-    document.title = `${location.pathname === '/checkout' ? 'Xác nhận đặt hàng' : location.pathname === '/purchases' ? 'Đơn đã đặt' : location.pathname === '/cart' ? 'Giỏ hàng' : location.pathname === '/wishlist' ? 'Món đồ đã lưu' : location.pathname === '/account' ? 'Tài khoản' : location.pathname === '/catalog' ? 'Bộ sưu tập' : location.pathname.startsWith('/orders') ? 'Đơn hàng' : location.pathname.startsWith('/products') ? 'Chi tiết sản phẩm' : location.pathname === '/credits' ? 'Nguồn ảnh' : 'Tìm món đồ đúng với bạn'} · Cortis`;
+    document.title = `${location.pathname === '/admin' ? 'Quản trị' : location.pathname === '/checkout' ? 'Xác nhận đặt hàng' : location.pathname === '/purchases' ? 'Đơn đã đặt' : location.pathname === '/cart' ? 'Giỏ hàng' : location.pathname === '/wishlist' ? 'Món đồ đã lưu' : location.pathname === '/account' ? 'Tài khoản' : location.pathname === '/catalog' ? 'Bộ sưu tập' : location.pathname.startsWith('/orders') ? 'Đơn hàng' : location.pathname.startsWith('/products') ? 'Chi tiết sản phẩm' : location.pathname === '/credits' ? 'Nguồn ảnh' : 'Tìm món đồ đúng với bạn'} · Cortis`;
   }, [location.pathname]);
   return <>
     <a className="skip-link" href="#main-content">Đi đến nội dung</a>
@@ -39,6 +40,7 @@ function Shell() {
       <Route path="/wishlist" element={<WishlistPage />} />
       <Route path="/checkout" element={<CheckoutPage />} />
       <Route path="/purchases" element={<PurchaseHistoryPage />} />
+      <Route path="/admin" element={<AdminPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes></main>
     <footer className="site-footer"><div><span className="footer-brand">cortis.</span><p>Khám phá theo cách của bạn.</p></div><p>Giá và tồn kho là dữ liệu minh họa.<br /><NavLink to="/credits">Ảnh thật, nguồn rõ ràng <ArrowUpRight size={13} aria-hidden="true" /></NavLink></p></footer>

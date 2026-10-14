@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Admin operations contracts/sequence/pending: [20_ADMIN_OPERATIONS.md](20_ADMIN_OPERATIONS.md).
+
 Checkout/COD/order/stock ledger contract: [19_CHECKOUT_ORDERS.md](19_CHECKOUT_ORDERS.md).
 
 Cart/wishlist E3 contracts và verification mapping: [18_CART_WISHLIST.md](18_CART_WISHLIST.md).
@@ -35,6 +37,8 @@ Yêu cầu mới của người dùng ưu tiên cao nhất. Trong bộ tài li�
 | [13_REFERENCES.md](13_REFERENCES.md) | Nguồn kỹ thuật được kiểm tra | Người review |
 | [14_SPEC_REVIEW.md](14_SPEC_REVIEW.md) | Kiểm chứng bộ đặc tả, giới hạn | Người dùng |
 | [IMAGE_CREDITS.md](IMAGE_CREDITS.md) | Nguồn/tác giả/giấy phép của 12 ảnh mẫu | Dataset, người review |
+
+[Đối chiếu module với website ecommerce hiện có](21_ECOMMERCE_REFERENCE_REVIEW.md) ghi nguồn tham khảo, edge cases và phần còn thiếu; không phải bằng chứng test live.
 
 ## Hai mốc hoàn thành riêng
 

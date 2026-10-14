@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+**E5 amendment:** admin_user_versions và admin_audit SQLite, stock/order/role mutations coupling audit theo [20](20_ADMIN_OPERATIONS.md). Không raw credentials/request bodies/PII trong audit; no-op không tạo event.
+
 **E4 amendment:** Inventory/quotes/purchases SQLite và order snapshot/idempotency tại [19](19_CHECKOUT_ORDERS.md). Product stock_quantity JSON là seed; live quantity ledger không reset startup. Runtime inventory revision tách model/catalog fingerprint.
 
 **E3 amendment:** Account DB thêm cart_versions/cart_items/wishlist_items theo [18](18_CART_WISHLIST.md). Runtime DB không commit, metadata/price/stock hydrate từ catalog; cart không reserve stock/order.

@@ -31,6 +31,22 @@
   .skip-link:focus { top: 12px; }
 }
 @layer components {
+  .admin-sections { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .admin-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; margin: 24px 0; }
+  .admin-toolbar form { max-width: 420px; width: 100%; }
+  .admin-toolbar label, .admin-record label, .admin-reason { display: grid; gap: 8px; font-size: 14px; }
+  .admin-reason { max-width: 680px; margin: 24px 0; }
+  .admin-search-row { display: flex; gap: 12px; }
+  .admin-records { display: grid; gap: 24px; }
+  .admin-record { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 24px; min-width: 0; }
+  .admin-record > div { min-width: 0; flex: 1; }
+  .admin-record h2 { font-size: 20px; margin-bottom: 10px; overflow-wrap: anywhere; }
+  .admin-record p { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+  .admin-record form { display: grid; gap: 12px; max-width: 320px; width: 100%; }
+  .admin-record .shopping-actions { flex: 1; align-content: start; min-width: 240px; }
+  .admin-record button { overflow-wrap: anywhere; }
+  .admin-email, .admin-record code { overflow-wrap: anywhere; }
+  .admin-order-detail { margin-top: 32px; }
   .checkout-layout { margin-top: 28px; }
   .checkout-layout .account-panel { max-width: none; }
   .checkout-layout .shopping-summary li { margin-bottom: 16px; }
