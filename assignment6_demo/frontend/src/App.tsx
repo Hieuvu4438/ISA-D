@@ -11,19 +11,20 @@ import { CreditsPage } from './pages/CreditsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { AccountPage } from './pages/AccountPage';
 import { BrowsePage } from './pages/BrowsePage';
+import { CartPage, WishlistPage } from './pages/ShoppingPages';
 
 function Shell() {
   const location = useLocation();
   useEffect(() => {
     if (location.pathname !== '/') window.scrollTo(0, 0);
-    document.title = `${location.pathname === '/account' ? 'Tài khoản' : location.pathname === '/catalog' ? 'Bộ sưu tập' : location.pathname.startsWith('/orders') ? 'Đơn hàng' : location.pathname.startsWith('/products') ? 'Chi tiết sản phẩm' : location.pathname === '/credits' ? 'Nguồn ảnh' : 'Tìm món đồ đúng với bạn'} · Cortis`;
+    document.title = `${location.pathname === '/cart' ? 'Giỏ hàng' : location.pathname === '/wishlist' ? 'Món đồ đã lưu' : location.pathname === '/account' ? 'Tài khoản' : location.pathname === '/catalog' ? 'Bộ sưu tập' : location.pathname.startsWith('/orders') ? 'Đơn hàng' : location.pathname.startsWith('/products') ? 'Chi tiết sản phẩm' : location.pathname === '/credits' ? 'Nguồn ảnh' : 'Tìm món đồ đúng với bạn'} · Cortis`;
   }, [location.pathname]);
   return <>
     <a className="skip-link" href="#main-content">Đi đến nội dung</a>
     <header className="site-header"><div className="header-inner">
       <NavLink to="/" className="wordmark" aria-label="Cortis — trang chủ"><span className="brand-symbol" aria-hidden="true"><Sparkles size={25} strokeWidth={1.6} /></span>cortis<span className="brand-dot">.</span></NavLink>
       <nav aria-label="Điều hướng chính"><NavLink to="/catalog">Bộ sưu tập</NavLink><NavLink to="/" end><Search size={17} aria-hidden="true" /><span>Tìm sản phẩm</span></NavLink><NavLink to="/orders"><Package size={17} aria-hidden="true" /><span>Đơn hàng</span></NavLink><NavLink to="/credits"><span>Nguồn ảnh</span><ArrowUpRight size={16} aria-hidden="true" /></NavLink></nav>
-      <NavLink className="text-link" to="/account">Tài khoản</NavLink>
+      <div className="header-shopping"><NavLink className="text-link" to="/wishlist">Yêu thích</NavLink><NavLink className="text-link" to="/cart">Giỏ hàng</NavLink><NavLink className="text-link" to="/account">Tài khoản</NavLink></div>
     </div></header>
     <main id="main-content" tabIndex={-1}><Routes>
       <Route path="/" element={<SearchPage />} />
@@ -33,6 +34,8 @@ function Shell() {
       <Route path="/credits" element={<CreditsPage />} />
       <Route path="/account" element={<AccountPage />} />
       <Route path="/catalog" element={<BrowsePage />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/wishlist" element={<WishlistPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes></main>
     <footer className="site-footer"><div><span className="footer-brand">cortis.</span><p>Khám phá theo cách của bạn.</p></div><p>Giá và tồn kho là dữ liệu minh họa.<br /><NavLink to="/credits">Ảnh thật, nguồn rõ ràng <ArrowUpRight size={13} aria-hidden="true" /></NavLink></p></footer>

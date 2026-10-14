@@ -174,6 +174,17 @@ export interface BrowseResponse extends ProductsResponse {
   lexical_fingerprint: string
   retrieval: 'catalog' | 'bm25' | 'exact_sku'
 }
+export interface CartItem {
+  product_id: string; product: ProductSummary | null; quantity: number
+  unit_price_vnd: number; line_total_vnd: number; available_quantity: number
+  issue: 'PRODUCT_UNAVAILABLE' | 'OUT_OF_STOCK' | 'INSUFFICIENT_STOCK' | null
+}
+export interface Cart {
+  version: number; items: CartItem[]; item_count: number; subtotal_vnd: number
+  currency: 'VND'; has_issues: boolean; stock_reserved: false
+}
+export interface CartResponse { request_id: string; cart: Cart }
+export interface WishlistResponse { request_id: string; items: { product_id: string; product: ProductSummary | null }[]; total: number }
 export interface ProductResponse { request_id: string; product: ProductDetail }
 export interface CreditsResponse { request_id: string; credits: Credit[] }
 export interface OrderResponse { request_id: string; order: OrderDetail }

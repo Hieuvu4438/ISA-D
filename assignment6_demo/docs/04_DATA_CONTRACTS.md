@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+**E3 amendment:** Account DB thêm cart_versions/cart_items/wishlist_items theo [18](18_CART_WISHLIST.md). Runtime DB không commit, metadata/price/stock hydrate từ catalog; cart không reserve stock/order.
+
 **E1 amendment:** Account/session/throttle SQLite ở [15](15_ECOMMERCE_EXPANSION.md); customer mapping nullable unique chỉ do provisioning CLI. Registration không sửa catalog/order JSON và không sở hữu C001 mặc định.
 
 ## Nguồn dữ liệu

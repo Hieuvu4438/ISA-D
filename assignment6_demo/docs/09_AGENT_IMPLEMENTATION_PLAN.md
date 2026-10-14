@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+**E3 shopping core:** Cart/wishlist per-account SQLite, strict API, cart version concurrency guard, current price/stock checks, product actions và routes `/cart`/`wishlist` đã implement theo [18](18_CART_WISHLIST.md). Verification ở `artifacts/backend/SHOPPING_REPORT.md`. Chưa checkout/variants/stock-order transaction/full admin; data gate còn pending17.
+
 **E3 data repair batch1:** Rà contact sheets 180 assets; 16 SKU descriptive metadata corrected, 8 invalid images replaced with reviewed Commons photographs, source/license/hash notes pinned, rollback/preview tools added. Index rebuilt + real HTTP/CPU smoke evidence in [17](17_CATALOG_REPAIR.md). Full visual/data gate still fails for remaining expansion assets; variants/cart/checkout/admin pending.
 
 **15/10/2026 — E2:** BM25 tiếng Việt/aliases/typo bounded + RRF trên encoder CPU thật; API `/catalog`/`suggestions`, color/sort, facets/pagination và UI URL state đã implement theo [16](16_SEARCH_BROWSE.md). Evidence riêng tại `artifacts/backend/SEARCH_BROWSE_REPORT.md`. Natural-language constraints/frozen independent quality vẫn pending; E2 chưa đạt toàn bộ scope mở rộng. E3–E6 tiếp tục giữ nguyên.

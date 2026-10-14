@@ -1,5 +1,6 @@
 import type {
   BrowseResponse, ProductSummary,
+  CartResponse, WishlistResponse,
   CreditsResponse, FieldError, MetaResponse, OrderResponse, OrderSummaryResponse,
   ProductResponse, ProductsResponse, SearchOptions, SearchResponse,
   TextSearchRequest, TranscriptionResponse,
@@ -90,6 +91,13 @@ export const getOrder = (id: string, signal?: AbortSignal) => request<OrderRespo
 export const getOrderSummary = (id: string, signal?: AbortSignal) => request<OrderSummaryResponse>(`/orders?order_id=${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
 export const getCatalogPage = (params: URLSearchParams, signal?: AbortSignal) => request<BrowseResponse>(`/catalog?${params}`, {}, signal)
 export const getSuggestions = (q: string, signal?: AbortSignal) => request<{ products: ProductSummary[] }>(`/suggestions?q=${encodeURIComponent(q)}`, {}, signal)
+export const getCart = (signal?: AbortSignal) => request<CartResponse>('/cart', {}, signal)
+export const getWishlist = (signal?: AbortSignal) => request<WishlistResponse>('/wishlist', {}, signal)
+function shoppingWrite<T>(path: string, body: object): Promise<T> {
+  return request(path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Cortis-Intent': 'commerce' }, body: JSON.stringify(body) })
+}
+export const setCartQuantity = (product_id: string, quantity: number, version: number) => shoppingWrite<CartResponse>('/cart/items', { product_id, quantity, version })
+export const saveWishlist = (product_id: string, saved: boolean) => shoppingWrite<WishlistResponse>('/wishlist/items', { product_id, saved })
 
 export interface AccountUser { user_id: string; email: string; display_name: string; role: 'user' | 'admin' }
 export interface AccountResponse { request_id: string; user: AccountUser }

@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+**E3 amendment:** Cart mutation/version-conflict sequence và code/test mapping tại [18](18_CART_WISHLIST.md). Vẫn cần editable .vpp ngoài Mermaid.
+
 **E2 amendment:** Browse/suggestions/hybrid sequence và code/test mapping ở [16](16_SEARCH_BROWSE.md), bổ sung CatalogSearch và validate_request. Vẫn cần `.vpp` editable để nghiệm thu UML.
 
 **E1 amendment:** Sequence account login/session/ownership và code mapping tại [15](15_ECOMMERCE_EXPANSION.md). UML order hiện resolve identity từ phiên; C001 chỉ là fixture owner explicit. `.vpp` editable vẫn pending.

@@ -20,6 +20,9 @@ from app.application.account_service import AccountService
 from app.data.account_repository import AccountRepository
 from app.presentation.accounts import mount_accounts, identity
 from app.presentation.catalog import mount_catalog
+from app.presentation.shopping import mount_shopping
+from app.application.shopping_service import ShoppingService
+from app.data.shopping_repository import ShoppingRepository
 from app.application.catalog_search import CatalogSearch
 from app.application.query_service import QueryService
 from app.application.search_service import SearchService
@@ -181,6 +184,8 @@ def create_app(settings=None, container=None):
         application.state.accounts = AccountService(AccountRepository(
             settings.account_db_path or settings.root / "runtime" / "commerce" / "accounts.sqlite3"
         ))
+        application.state.shopping = ShoppingService(ShoppingRepository(application.state.accounts.repository),
+                                                      application.state.services.products)
         yield
         application.state.services.close()
 
@@ -486,6 +491,7 @@ def create_app(settings=None, container=None):
 
     mount_accounts(application, settings, query_fields)
     mount_catalog(application, query_fields)
+    mount_shopping(application, query_fields)
     return application
 
 

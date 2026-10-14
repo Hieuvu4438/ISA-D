@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+**E3 amendment:** Cart/wishlist endpoints, desired-state mutations/version/stock handling/commerce intent header và errors tại [18](18_CART_WISHLIST.md). Role ownership lấy server identity, require login.
+
 **E2 amendment:** `/catalog`/`suggestions`, filters.color, SearchOptions.search_strategy/sort, rank_score/lexical_score/meta strategy/corrections và no_matches tại [16](16_SEARCH_BROWSE.md). API default semantic, UI hybrid; no vector/NPZ/raw storage exposed.
 
 **E1 amendment:** Endpoints auth/account/admin, cookie/intent/errors ở [15](15_ECOMMERCE_EXPANSION.md), ưu tiên trên C001 fixed bên dưới. GET order: login bắt buộc, 401 anonymous, 404 foreign/missing. Nguồn voice groq đã thêm theo yêu cầu. Search/vector giữ baseline.

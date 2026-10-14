@@ -16,8 +16,8 @@ Nguồn chính thức đã đọc: [H&M shopping](https://www2.hm.com/en_gb/cust
 | Catalog/phân loại | Danh mục/breadcrumb/detail, size/màu/stock từng SKU, ảnh thật và size guide; ID lạ, hết hàng, size thiếu, ảnh hỏng, provenance/hash, direct reload | Baseline catalog có; variants/merchandising pending |
 | Search | Autocomplete, synonyms, có/không dấu, typo, SKU exact, hybrid BM25/encoder thật, ảnh/multimodal/voice; rỗng/dài/Unicode/OOD/negation/đa nghĩa/giá/brand/ảnh hỏng/timeout/race | Encoder baseline có; hybrid và edge cases mở rộng pending |
 | Lọc/sort/phân trang | Facets category/brand/color/size/price/availability, counts/clear/URL state, relevance/price; filters kết hợp rỗng, min>max, type sai/boundary, trang cũ, thay filter khi request đang chạy | Baseline filters có; browse facets/sorts pending |
-| Wishlist | Thêm/xóa/lưu theo user/chuyển giỏ; click lặp, đổi tài khoản, SKU ngừng bán | Pending |
-| Giỏ hàng | SKU/quantity/giá server/update/remove/tổng VND; stock đổi, số âm/boolean, SKU sai, race/session đổi | Pending |
+| Wishlist | Thêm/xóa/lưu theo user/chuyển giỏ; click lặp, đổi tài khoản, SKU ngừng bán | E3 core implemented theo18; guest/variant expansion pending |
+| Giỏ hàng | SKU/quantity/giá server/update/remove/tổng VND; stock đổi, số âm/boolean, SKU sai, race/session đổi | E3 core implemented theo18; variants/checkout/inventory transaction pending |
 | Checkout | Địa chỉ/phí rõ/COD/trạng thái thanh toán/idempotency/transaction stock+order; double submit, race stock cuối, timeout/retry, giá đổi, rollback | Pending; provider thanh toán thật cần cấu hình riêng |
 | Đơn hàng | List/detail/lookup ownership, trạng thái/hủy/trả hàng; foreign/missing cùng lỗi, hủy sau shipped, hủy lặp hoàn stock một lần, snapshot name/price | Detail baseline; auth E1; list/mutations pending |
 | Admin | Dashboard/product/variants/inventory/order/users/roles/audit; user gọi admin, self-demotion/last-admin, input sai, stale update, index lệch | Gate+overview E1; CRUD/audit pending |

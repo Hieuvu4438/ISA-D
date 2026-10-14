@@ -1,0 +1,54 @@
+{
+  "milestone": "E3 shopping core",
+  "base_commit": "04515a919aa6f723cdb38c9225056947d99b35a4",
+  "source_sha256": {
+    "backend/app/main.py": "4b1cb1f930abd75d3e508b5ae42c533ce44c7c18fdc9cadb3ad9152cbc503372",
+    "backend/app/application/shopping_service.py": "a0b8f7cdedb3ec8d27a68f068d74b162fc6b06807c1e6869ed21656ecec6cdd8",
+    "backend/app/data/shopping_repository.py": "bd6c6bc00bb411ddc219728fbc50abd2ad6e44085cb816076f9303c4ef84ae07",
+    "backend/app/presentation/shopping.py": "4a88a68efd6e12ce32e4eff0bb464edf31bec280243753c5aebea0f322aee4b8",
+    "frontend/src/pages/ShoppingPages.tsx": "282d0198277b936acaac89abee76f55d68c4962d5bd6e0a86c7f79a3a5728b93",
+    "frontend/src/components/ProductShopping.tsx": "2dcd50a83109ab21ed10587f9b6f8277444777d9c91c9e4a4063015af616ccc7",
+    "frontend/src/pages/ProductPage.tsx": "ced8a9ab38ed4d2eb9734d8985387f30f7924cb88b061b7c72ebedf71e673065",
+    "frontend/src/App.tsx": "80ac5c7eb732971001f2ad7b4785082217d8207ac72a0580a42ceb104ef13c28",
+    "backend/tests/test_shopping.py": "19f6cc57640cfc6f7c9010ab1173180edd10f78030fdca8163744959568098a2",
+    "frontend/e2e/shopping.spec.ts": "97c1117a242e556aa4d4f292456786e28041ec7b155e0695c4ef692b87852c46"
+  },
+  "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+  "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+  "verification": {
+    "backend_tests": 191,
+    "backend_failures": 0,
+    "backend_errors": 0,
+    "backend_exit": 0,
+    "shopping_focused_tests": 17,
+    "frontend_unit_tests": 17,
+    "frontend_lint_exit": 0,
+    "frontend_typecheck_exit": 0,
+    "frontend_build_exit": 0,
+    "production_browser_passed": 4,
+    "post_title_and_aria_functional_passed": 4,
+    "browser_apis_mocked": false,
+    "race_response_delay_on_real_api": true,
+    "viewports": [
+      360,
+      768,
+      1440
+    ],
+    "axe_violations": 0,
+    "document_overflow": false
+  },
+  "database": "SQLite account-scoped real database; price/stock change unit case uses catalog double",
+  "provider_calls": 0,
+  "stock_reserved": false,
+  "full_ecommerce_gate_verified": false,
+  "pending": [
+    "Remaining catalog photo/metadata repairs",
+    "Variant and size-level stock",
+    "Checkout/COD/idempotency/stock-order transaction",
+    "Order list/cancel/returns",
+    "Full admin/audit",
+    "Independent model/OOD/frozen benchmarks",
+    "Editable .vpp",
+    "Provider-specific live voice regression"
+  ]
+}

@@ -70,6 +70,7 @@ describe('secondary page workflows', () => {
     const fetch = vi.fn()
       .mockImplementationOnce(() => new Promise<Response>(resolve => { first = resolve }))
       .mockImplementationOnce(() => new Promise<Response>(resolve => { second = resolve }))
+      .mockResolvedValue(response({ items: [], total: 0 }))
     vi.stubGlobal('fetch', fetch)
     const router = await renderPage('/products/P001')
     expect(node.textContent).toContain('Đang tải sản phẩm')
@@ -79,7 +80,7 @@ describe('secondary page workflows', () => {
     await act(async () => { first(response(product('P001', 'Phản hồi cũ'))) })
     expect(node.querySelector('h1')?.textContent).toBe('Sản phẩm mới')
     expect(node.textContent).not.toContain('Phản hồi cũ')
-    expect(fetch.mock.calls.every(([url]) => String(url).startsWith('/api/v1/products/'))).toBe(true)
+    expect(fetch.mock.calls.every(([url]) => String(url).startsWith('/api/v1/products/') || url === '/api/v1/wishlist')).toBe(true)
   })
 
   it('requires explicit order submit, rejects invalid IDs, normalizes and links the summary', async () => {

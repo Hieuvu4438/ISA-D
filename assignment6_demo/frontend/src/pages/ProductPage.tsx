@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowUpRight, ChevronRight } from 'lucide-react'
 import { ApiError, getProduct } from '../lib/api'
 import type { ProductDetail } from '../lib/types'
 import { ProductImage, ErrorPanel, formatMoney, categoryLabels, formatTransformation } from '../ui'
+import { ProductShopping } from '../components/ProductShopping'
 
 export function ProductPage() {
   const location = useLocation()
@@ -58,6 +59,7 @@ export function ProductPage() {
           <div><dt>Mã sản phẩm</dt><dd>{product.product_id}</dd></div>
         </dl>
         <p className="demo-note">Giá và tồn kho là dữ liệu minh họa.</p>
+        <ProductShopping key={product.product_id} product={product} />
         <section className="credit-block" aria-labelledby="product-credit-title">
           <h2 id="product-credit-title">Về bức ảnh</h2>
           <p>Tác giả: {product.image_credit.author}</p>

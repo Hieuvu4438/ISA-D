@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Cart/wishlist E3 contracts và verification mapping: [18_CART_WISHLIST.md](18_CART_WISHLIST.md).
+
 Data repair/source audit và reproducibility: [17_CATALOG_REPAIR.md](17_CATALOG_REPAIR.md), gồm fixes/pending và bằng chứng riêng.
 
 E2 search/browse amendment: [16_SEARCH_BROWSE.md](16_SEARCH_BROWSE.md), gồm API, thuật toán, UI, UML và pending.
