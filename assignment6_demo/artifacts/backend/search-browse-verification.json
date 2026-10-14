@@ -1,0 +1,56 @@
+{
+  "milestone": "E2 search/browse core",
+  "base_commit": "c65cd0a0a37ff4dedfdc9fa26ca6f785896f402d",
+  "source_sha256": {
+    "backend/app/application/catalog_search.py": "574d1a9697afcd5a0f54119c8d0c669b72867815416b66b35f8e4574fdf2e35d",
+    "backend/app/application/search_service.py": "dd22f6266b4bc1af023f58ecc5b01576f4fb2f801411d160530875be3376605d",
+    "backend/app/presentation/catalog.py": "5db294b89a1a7fbd82b10977814bad6072679f170bcb194469b91b438fffd885",
+    "backend/app/domain/__init__.py": "2277152a46eeed323ef49a86cb2b3f8693e95748c14a0baa695bc8505834b885",
+    "backend/app/main.py": "40ee5221105fb9c4255f1d9792924bae2a327d12f4b2e1560ab627db64f85093",
+    "frontend/src/pages/BrowsePage.tsx": "5f47a82ab4e2fe7040bc0449bc67931c31af648ea875e33c1b459d82425fb2a5",
+    "frontend/src/pages/SearchPage.tsx": "f751d9ebb829d1d7a3ed9d06551eec1c9be9517d40c3b960d14b49cf81191cd8",
+    "frontend/src/catalog.tsx": "c5cf988ac87a506e05ca3fb902dd07dc190978ab6fe804884f80af8073c88796",
+    "frontend/src/pages/ProductPage.tsx": "361b2eae08efc9d434c8c14d6f76606867979080e6810ff2064386007a5e4c37",
+    "frontend/e2e/browse.spec.ts": "47fe83d5e2dea73cf2d2b9e90f2b1226a0d298e541a8c85ff176066601939790",
+    "scripts/verify_search_expansion.py": "4cfc2c816dd89429bf73fb03510c11aa923af73eb4afcf38d478016b87a40cb1",
+    "evaluation/search_expansion.json": "0c2190b4c6685880720a5143e8933b656da7534daa43ba9d494f827c71826e27"
+  },
+  "dataset_sha256": "4dad2213287b7b772057ec9f5af0f9907cc9ef6e366c210ad9a6661a8568cf50",
+  "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+  "index_fingerprint": "8f0419c620ae62b207ee7a4ddce6706d42c885b09b2c74ea31dfdba45710d373",
+  "verification": {
+    "full_backend_tests": 170,
+    "full_backend_exit": 0,
+    "post_openapi_catalog_suite_tests": 36,
+    "catalog_suite_exit": 0,
+    "frontend_unit_tests": 17,
+    "typecheck_exit": 0,
+    "lint_exit": 0,
+    "build_exit": 0,
+    "production_browser_suites_passed": 8,
+    "post_lazy_loading_functional_passed": 5,
+    "real_cpu_requests": 50,
+    "hybrid_category_smoke_hits": 24,
+    "hybrid_category_smoke_total": 24,
+    "semantic_category_smoke_hits": 16,
+    "semantic_category_smoke_total": 24,
+    "axe_violations": 0,
+    "viewports": [
+      360,
+      768,
+      1440
+    ]
+  },
+  "full_quality_gate_verified": false,
+  "dataset_visual_gate_verified": false,
+  "provider_live_calls": 0,
+  "pending": [
+    "Correct and fully review 120-item dataset expansion",
+    "Natural-language intent constraints/negation/size",
+    "Independent frozen text/image/multimodal and OOD calibration",
+    "Variants/cart/wishlist/checkout/order mutations/full admin",
+    "Full system concurrency/cold performance",
+    "Editable .vpp",
+    "Provider-specific fashion voice live regression"
+  ]
+}

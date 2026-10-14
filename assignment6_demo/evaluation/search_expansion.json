@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "purpose": "E2 text category smoke comparison; labels chosen from shopping intent before running, not frozen multimodal acceptance set",
+  "queries": [
+    {"id":"T01","text":"giày chạy bộ","category":"running_shoes","family":"standard"},
+    {"id":"T02","text":"giày chạy địa hình","category":"trail_shoes","family":"standard"},
+    {"id":"T03","text":"giày thường ngày","category":"casual_shoes","family":"standard"},
+    {"id":"T04","text":"giày boots","category":"boots","family":"standard"},
+    {"id":"T05","text":"dép sandal","category":"sandals","family":"standard"},
+    {"id":"T06","text":"túi xách","category":"bag","family":"standard"},
+    {"id":"T07","text":"balo","category":"backpack","family":"standard"},
+    {"id":"T08","text":"túi tote","category":"tote_bag","family":"standard"},
+    {"id":"T09","text":"áo thun","category":"t_shirt","family":"standard"},
+    {"id":"T10","text":"áo khoác","category":"jacket","family":"standard"},
+    {"id":"T11","text":"đồng hồ","category":"watch","family":"standard"},
+    {"id":"T12","text":"kính mát","category":"sunglasses","family":"standard"},
+    {"id":"V01","text":"running shoes","category":"running_shoes","family":"variant"},
+    {"id":"V02","text":"trail shoes","category":"trail_shoes","family":"variant"},
+    {"id":"V03","text":"snekaer","category":"casual_shoes","family":"variant"},
+    {"id":"V04","text":"boot","category":"boots","family":"variant"},
+    {"id":"V05","text":"sandals","category":"sandals","family":"variant"},
+    {"id":"V06","text":"handbag","category":"bag","family":"variant"},
+    {"id":"V07","text":"ba lo","category":"backpack","family":"variant"},
+    {"id":"V08","text":"tote bag","category":"tote_bag","family":"variant"},
+    {"id":"V09","text":"ao phong","category":"t_shirt","family":"variant"},
+    {"id":"V10","text":"ao khoac","category":"jacket","family":"variant"},
+    {"id":"V11","text":"dong ho","category":"watch","family":"variant"},
+    {"id":"V12","text":"kinh ram","category":"sunglasses","family":"variant"}
+  ]
+}

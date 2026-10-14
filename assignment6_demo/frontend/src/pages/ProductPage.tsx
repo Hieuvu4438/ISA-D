@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useLocation } from 'react-router-dom'
 import { ArrowLeft, ArrowUpRight, ChevronRight } from 'lucide-react'
 import { ApiError, getProduct } from '../lib/api'
 import type { ProductDetail } from '../lib/types'
 import { ProductImage, ErrorPanel, formatMoney, categoryLabels, formatTransformation } from '../ui'
 
 export function ProductPage() {
+  const location = useLocation()
+  const source = (location.state as { from?: string } | null)?.from
+  const returnTo = typeof source === 'string' && (source === '/' || /^\/catalog(?:\?|$)/.test(source)) ? source : '/catalog'
   const { productId = '' } = useParams()
   const [product, setProduct] = useState<ProductDetail | null>(null)
   const [loading, setLoading] = useState(true)
@@ -32,7 +35,7 @@ export function ProductPage() {
 
   return <div className="page-shell">
     <nav className="breadcrumb" aria-label="Đường dẫn">
-      <Link to="/"><ArrowLeft size={16} aria-hidden="true" /> Trở lại bộ sưu tập</Link>
+      <Link to={returnTo}><ArrowLeft size={16} aria-hidden="true" /> Trở lại bộ sưu tập</Link>
       <ChevronRight size={14} aria-hidden="true" />
       <span aria-current="page">Chi tiết sản phẩm</span>
     </nav>

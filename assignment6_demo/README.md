@@ -1,5 +1,9 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+**Dataset cần rà lại:** kiểm tra trực quan E2 phát hiện ảnh infographic và metadata màu/brand sai trong đợt import 120. Xem [findings](artifacts/backend/catalog-review-findings.json); các câu “toàn bộ ảnh/metadata đạt” trong báo cáo baseline bên dưới chưa chứng minh catalog 180 hiện tại.
+
+**Mốc search/browse E2:** trang `/catalog` có tìm từ khóa/SKU, category/brand/color/price/stock facets, sort/phân trang server và URL state. Trang search mặc định kết hợp BM25 + encoder CPU thật qua RRF, giữ cosine riêng. Xem [contract](docs/16_SEARCH_BROWSE.md) và [evidence](artifacts/backend/SEARCH_BROWSE_REPORT.md). Natural-language constraints/frozen independent quality/checkout/full admin còn pending.
+
 **Mở rộng ecommerce đang triển khai:** đã thêm `/account` (đăng ký, đăng nhập, profile, đổi mật khẩu, đăng xuất) và API phân quyền user/admin lưu SQLite. Đơn hàng yêu cầu đăng nhập, không còn truy cập mặc định C001. Catalog hiện có 180 sản phẩm; các số 60 bên dưới là báo cáo baseline lịch sử. Research, module matrix và pending tại [docs/15_ECOMMERCE_EXPANSION.md](docs/15_ECOMMERCE_EXPANSION.md); chưa hoàn tất giỏ hàng/checkout/full admin/search hybrid.
 
 Tạo admin hoặc owner demo bằng CLI sau setup backend; mật khẩu nhập qua terminal, không nằm trong arguments/Git:

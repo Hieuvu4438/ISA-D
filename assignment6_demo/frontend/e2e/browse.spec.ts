@@ -1,0 +1,118 @@
+import { test, expect } from '@playwright/test'
+import AxeBuilder from '@axe-core/playwright'
+import { expectNoHorizontalOverflow } from './helpers'
+
+test('real catalog API: filters, counts, sorting, pagination and URL reload/back', async ({ page }) => {
+  const fullCatalogRequests: string[] = []
+  page.on('request', request => { if (new URL(request.url()).pathname === '/api/v1/products') fullCatalogRequests.push(request.url()) })
+  await page.goto('/catalog')
+  await expect(page.getByTestId('product-card')).toHaveCount(24)
+  await page.getByRole('button', { name: 'Trang sau' }).click()
+  await expect(page).toHaveURL(/offset=24/)
+  const secondPage = await page.getByTestId('product-card').first().textContent()
+  await page.reload()
+  await expect(page.getByTestId('product-card').first()).toHaveText(secondPage!)
+  await page.getByRole('button', { name: 'Trang trước' }).click()
+  await expect(page.getByTestId('product-card').first()).toContainText('Giày chạy bộ On Cloud')
+  await page.getByRole('button', { name: 'Áo thun', exact: true }).click()
+  await expect(page).toHaveURL(/category=t_shirt/)
+  await expect(page.getByTestId('product-card')).toHaveCount(15)
+  expect(fullCatalogRequests).toEqual([])
+  await page.getByTestId('product-card').first().locator('a').click()
+  await page.getByRole('link', { name: 'Trở lại bộ sưu tập' }).click()
+  await expect(page).toHaveURL(/category=t_shirt/)
+  await expect(page.getByTestId('product-card')).toHaveCount(15)
+  await expect(page.getByTestId('product-card').first()).toContainText('Áo thun')
+  await page.getByLabel('Sắp xếp', { exact: true }).selectOption('price_desc')
+  const result = await page.request.get('/api/v1/catalog?category=t_shirt&sort=price_desc')
+  const body = await result.json()
+  await expect(page.getByTestId('product-card').first()).toContainText(body.products[0].name)
+  await page.reload()
+  await expect(page.getByLabel('Sắp xếp', { exact: true })).toHaveValue('price_desc')
+  await page.getByRole('button', { name: 'Xóa lọc', exact: true }).click()
+  await expect(page.getByTestId('product-card')).toHaveCount(24)
+  await page.goBack()
+  await expect(page).toHaveURL(/category=t_shirt/)
+  await expect(page.getByTestId('product-card')).toHaveCount(15)
+})
+
+test('real lexical retrieval: accent aliases, visible typo, exact and missing SKU', async ({ page }) => {
+  for (const query of ['ao phong', 't-shirt']) {
+    await page.goto(`/catalog?q=${encodeURIComponent(query)}`)
+    await expect(page.getByTestId('product-card')).toHaveCount(15)
+  }
+  await page.goto('/catalog?q=snekaer')
+  await expect(page.getByText('Đã tìm thêm từ gần đúng: snekaer → sneaker.')).toBeVisible()
+  await page.goto('/catalog?q=p001')
+  await expect(page.getByTestId('product-card')).toHaveCount(1)
+  await expect(page.getByTestId('product-card')).toContainText('On Cloud')
+  await page.goto('/catalog?q=P999')
+  await expect(page.getByRole('heading', { name: 'Chưa tìm thấy sản phẩm này' })).toBeVisible()
+  await page.getByRole('button', { name: 'Xem toàn bộ bộ sưu tập' }).click()
+  await expect(page.getByTestId('product-card')).toHaveCount(24)
+})
+
+test('real suggestions: keyboard selects product without changing query text', async ({ page }) => {
+  await page.goto('/catalog')
+  const input = page.getByRole('combobox', { name: 'Tên sản phẩm hoặc mã sản phẩm' })
+  await input.fill('P00')
+  await expect(page.getByRole('listbox')).toBeVisible()
+  await input.press('ArrowUp')
+  await expect(page.getByRole('listbox').getByRole('option').last()).toHaveAttribute('aria-selected', 'true')
+  await input.press('ArrowDown')
+  await expect(page.getByRole('listbox').getByRole('option').first()).toHaveAttribute('aria-selected', 'true')
+  await input.press('Enter')
+  await expect(page).toHaveURL(/\/products\/P001$/)
+  await expect(page.locator('.detail-copy h1')).toContainText('On Cloud')
+})
+
+test('real HTTP: bad price/filter input recovers, delayed old query cannot overwrite new page', async ({ page }) => {
+  await page.goto('/catalog?min_price=2&max_price=1')
+  await expect(page.getByRole('alert')).toContainText('Bộ lọc không hợp lệ')
+  await page.getByRole('button', { name: 'Xóa lọc', exact: true }).click()
+  await expect(page.getByTestId('product-card')).toHaveCount(24)
+  await page.route('**/api/v1/catalog?**', async route => {
+    const response = await route.fetch()
+    if (new URL(route.request().url()).searchParams.get('category') === 't_shirt') await new Promise(resolve => setTimeout(resolve, 600))
+    await route.fulfill({ response })
+  })
+  await page.getByRole('button', { name: 'Áo thun', exact: true }).click()
+  await page.getByRole('button', { name: 'Áo khoác', exact: true }).click()
+  await expect(page).toHaveURL(/category=jacket/)
+  await expect(page.getByTestId('product-card')).toHaveCount(15)
+  await expect(page.getByTestId('product-card').first()).toContainText('Áo khoác')
+  await page.waitForTimeout(800)
+  await expect(page.getByTestId('product-card')).toHaveCount(15)
+})
+
+test('real encoder: hybrid reranking keeps cosine separate and respects hard filters', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByTestId('product-card').first()).toBeVisible()
+  await page.getByTestId('search-text').fill('áo thun')
+  await page.getByTestId('filter-category').selectOption('t_shirt')
+  const pending = page.waitForResponse(response => new URL(response.url()).pathname === '/api/v1/search' && response.request().method() === 'POST')
+  await page.getByTestId('search-submit').click()
+  const response = await pending
+  expect(response.status()).toBe(200)
+  const body = await response.json()
+  expect(body.meta.ranking_strategy).toBe('rrf')
+  expect(body.meta.model_fingerprint).toMatch(/^[0-9a-f]{64}$/)
+  expect(body.results.length).toBeGreaterThan(0)
+  expect(body.results[0].product.category).toBe('t_shirt')
+  expect(body.results.every((row: { product: { category: string } }) => row.product.category === 't_shirt')).toBe(true)
+  expect(body.results.every((row: { score: number; rank_score: number }) => row.score >= -1 && row.score <= 1 && row.rank_score > 0 && row.rank_score < .04)).toBe(true)
+  await expect(page.getByText('Thứ hạng kết hợp mô tả AI và từ khóa. Điểm cosine chỉ thể hiện độ tương đồng AI.')).toBeVisible()
+})
+
+test('real browse page: responsive screenshots and accessibility at desktop/mobile', async ({ page }) => {
+  for (const width of [360, 768, 1440]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await page.goto('/catalog?category=t_shirt&sort=price_asc')
+    await expect(page.getByTestId('product-card')).toHaveCount(15)
+    if (width <= 800) await page.getByRole('button', { name: 'Bộ lọc', exact: true }).click()
+    await expectNoHorizontalOverflow(page)
+    const axe = await new AxeBuilder({ page }).analyze()
+    expect(axe.violations).toEqual([])
+    await page.screenshot({ path: `../artifacts/frontend/screenshots/browse/catalog-${width}.png`, fullPage: true })
+  }
+})

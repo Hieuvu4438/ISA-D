@@ -3,6 +3,7 @@ import type { QueryMode, SearchOptions, SearchResponse, VoiceSource } from './li
 
 export const initialOptions = (): SearchOptions => ({
   top_k: 5, result_policy: 'nearest',
+  search_strategy: 'hybrid', sort: 'relevance',
   filters: { category: null, brand: null, min_price: null, max_price: null, in_stock: false },
 });
 export interface Draft {

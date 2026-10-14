@@ -1,4 +1,5 @@
 import type {
+  BrowseResponse, ProductSummary,
   CreditsResponse, FieldError, MetaResponse, OrderResponse, OrderSummaryResponse,
   ProductResponse, ProductsResponse, SearchOptions, SearchResponse,
   TextSearchRequest, TranscriptionResponse,
@@ -87,6 +88,8 @@ export const getProduct = (id: string, signal?: AbortSignal) => request<ProductR
 export const getCredits = (signal?: AbortSignal) => request<CreditsResponse>('/credits', {}, signal)
 export const getOrder = (id: string, signal?: AbortSignal) => request<OrderResponse>(`/orders/${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
 export const getOrderSummary = (id: string, signal?: AbortSignal) => request<OrderSummaryResponse>(`/orders?order_id=${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
+export const getCatalogPage = (params: URLSearchParams, signal?: AbortSignal) => request<BrowseResponse>(`/catalog?${params}`, {}, signal)
+export const getSuggestions = (q: string, signal?: AbortSignal) => request<{ products: ProductSummary[] }>(`/suggestions?q=${encodeURIComponent(q)}`, {}, signal)
 
 export interface AccountUser { user_id: string; email: string; display_name: string; role: 'user' | 'admin' }
 export interface AccountResponse { request_id: string; user: AccountUser }

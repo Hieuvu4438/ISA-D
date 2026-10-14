@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+**E2 amendment:** `/catalog` server facets/sort/pagination/URL state và keyboard autocomplete, semantic hybrid controls/cosine label tại [16](16_SEARCH_BROWSE.md). Navigation/breadcrumb giữ query nguồn, mobile category rail/filters/2-column navigation; không tải toàn catalog ở browse route.
+
 **E1 amendment:** Route `/account` có login/register/profile/password/logout và overview chỉ admin. Header dùng Tài khoản thay nhãn C001 fixed. Order error có link đăng nhập. Contract/edge cases ở [15](15_ECOMMERCE_EXPANSION.md).
 
 ## Cấu trúc trang và route

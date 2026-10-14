@@ -1,0 +1,460 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "e2e/browse.spec.ts"
+    ],
+    "configFile": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\playwright.config.ts",
+    "rootDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/PROJECTS/ISA-D/assignment6_demo/artifacts/frontend/playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "snapshotDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/frontend/e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browse.spec.ts",
+      "file": "browse.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real catalog API: filters, counts, sorting, pagination and URL reload/back",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30589,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts",
+                        "column": 53,
+                        "line": 19
+                      },
+                      "message": "Error: locator.selectOption: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Sắp xếp', { exact: true })\u001b[22m\n\n\n  17 |   await expect(page.getByTestId('product-card')).toHaveCount(15)\n  18 |   await expect(page.getByTestId('product-card').first()).toContainText('Áo thun')\n> 19 |   await page.getByLabel('Sắp xếp', { exact: true }).selectOption('price_desc')\n     |                                                     ^\n  20 |   const result = await page.request.get('/api/v1/catalog?category=t_shirt&sort=price_desc')\n  21 |   const body = await result.json()\n  22 |   await expect(page.getByTestId('product-card').first()).toContainText(body.products[0].name)\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts:19:53"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T17:53:28.494Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-catalog-API-fi-99332-ination-and-URL-reload-back\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-catalog-API-fi-99332-ination-and-URL-reload-back\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-catalog-API-fi-99332-ination-and-URL-reload-back\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5c72c9889f434a3c409e-f9be2af44294650d8f7f",
+          "file": "browse.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "real lexical retrieval: accent aliases, visible typo, exact and missing SKU",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T17:54:02.964Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5c72c9889f434a3c409e-72e0edcd049fd0ac4ce2",
+          "file": "browse.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "real suggestions: keyboard selects product without changing query text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 638,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T17:54:03.610Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5c72c9889f434a3c409e-cfc89f94ebecdb0c4b0a",
+          "file": "browse.spec.ts",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "real HTTP: bad price/filter input recovers, delayed old query cannot overwrite new page",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10796,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('product-card')\nExpected: \u001b[32m14\u001b[39m\nReceived: \u001b[31m15\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByTestId('product-card') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('product-card')\u001b[22m\n\u001b[2m    - locator resolved to 0 elements\u001b[22m\n\u001b[2m    - unexpected value \"0\"\u001b[22m\n\u001b[2m    22 × locator resolved to 15 elements\u001b[22m\n\u001b[2m       - unexpected value \"15\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('product-card')\nExpected: \u001b[32m14\u001b[39m\nReceived: \u001b[31m15\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByTestId('product-card') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('product-card')\u001b[22m\n\u001b[2m    - locator resolved to 0 elements\u001b[22m\n\u001b[2m    - unexpected value \"0\"\u001b[22m\n\u001b[2m    22 × locator resolved to 15 elements\u001b[22m\n\u001b[2m       - unexpected value \"15\"\u001b[22m\n\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts:73:50",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts",
+                      "column": 50,
+                      "line": 73
+                    },
+                    "snippet": "  71 |   await page.getByRole('button', { name: 'Áo khoác', exact: true }).click()\n  72 |   await expect(page).toHaveURL(/category=jacket/)\n> 73 |   await expect(page.getByTestId('product-card')).toHaveCount(14)\n     |                                                  ^\n  74 |   await expect(page.getByTestId('product-card').first()).toContainText('Áo khoác')\n  75 |   await page.waitForTimeout(800)\n  76 |   await expect(page.getByTestId('product-card')).toHaveCount(14)"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts",
+                        "column": 50,
+                        "line": 73
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('product-card')\nExpected: \u001b[32m14\u001b[39m\nReceived: \u001b[31m15\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByTestId('product-card') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('product-card')\u001b[22m\n\u001b[2m    - locator resolved to 0 elements\u001b[22m\n\u001b[2m    - unexpected value \"0\"\u001b[22m\n\u001b[2m    22 × locator resolved to 15 elements\u001b[22m\n\u001b[2m       - unexpected value \"15\"\u001b[22m\n\n\n  71 |   await page.getByRole('button', { name: 'Áo khoác', exact: true }).click()\n  72 |   await expect(page).toHaveURL(/category=jacket/)\n> 73 |   await expect(page.getByTestId('product-card')).toHaveCount(14)\n     |                                                  ^\n  74 |   await expect(page.getByTestId('product-card').first()).toContainText('Áo khoác')\n  75 |   await page.waitForTimeout(800)\n  76 |   await expect(page.getByTestId('product-card')).toHaveCount(14)\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts:73:50"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T17:54:04.254Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-HTTP-bad-price-73a7a-y-cannot-overwrite-new-page\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-HTTP-bad-price-73a7a-y-cannot-overwrite-new-page\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-HTTP-bad-price-73a7a-y-cannot-overwrite-new-page\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts",
+                    "column": 50,
+                    "line": 73
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5c72c9889f434a3c409e-fe80367f5d54eb0d6038",
+          "file": "browse.spec.ts",
+          "line": 60,
+          "column": 1
+        },
+        {
+          "title": "real encoder: hybrid reranking keeps cosine separate and respects hard filters",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30433,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts",
+                        "column": 55,
+                        "line": 82
+                      },
+                      "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('textbox', { name: /mô tả/i })\u001b[22m\n\n\n  80 |   await page.goto('/')\n  81 |   await expect(page.getByTestId('product-card').first()).toBeVisible()\n> 82 |   await page.getByRole('textbox', { name: /mô tả/i }).fill('áo thun')\n     |                                                       ^\n  83 |   const pending = page.waitForResponse(response => new URL(response.url()).pathname === '/api/v1/search' && response.request().method() === 'POST')\n  84 |   await page.getByTestId('search-submit').click()\n  85 |   const response = await pending\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts:82:55"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T17:54:16.018Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-encoder-hybrid-f3c32-e-and-respects-hard-filters\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-encoder-hybrid-f3c32-e-and-respects-hard-filters\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-encoder-hybrid-f3c32-e-and-respects-hard-filters\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5c72c9889f434a3c409e-ed7b617313698cb5ce95",
+          "file": "browse.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "real browse page: responsive screenshots and accessibility at desktop/mobile",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1111,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure the order of headings is semantically correct\",\u001b[39m\n\u001b[31m+     \"help\": \"Heading levels should only increase by one\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"heading-order\",\u001b[39m\n\u001b[31m+     \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": null,\u001b[39m\n\u001b[31m+             \"id\": \"heading-order\",\u001b[39m\n\u001b[31m+             \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+             \"message\": \"Heading order invalid\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Heading order invalid\",\u001b[39m\n\u001b[31m+         \"html\": \"<h3>Áo thun On Perspiration stain on white xanh navy</h3>\",\u001b[39m\n\u001b[31m+         \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"a[href=\\\"/products/P141\\\"] > .product-card-copy > h3\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.semantics\",\u001b[39m\n\u001b[31m+       \"best-practice\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure the order of headings is semantically correct\",\u001b[39m\n\u001b[31m+     \"help\": \"Heading levels should only increase by one\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"heading-order\",\u001b[39m\n\u001b[31m+     \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": null,\u001b[39m\n\u001b[31m+             \"id\": \"heading-order\",\u001b[39m\n\u001b[31m+             \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+             \"message\": \"Heading order invalid\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Heading order invalid\",\u001b[39m\n\u001b[31m+         \"html\": \"<h3>Áo thun On Perspiration stain on white xanh navy</h3>\",\u001b[39m\n\u001b[31m+         \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"a[href=\\\"/products/P141\\\"] > .product-card-copy > h3\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.semantics\",\u001b[39m\n\u001b[31m+       \"best-practice\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts:104:28",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts",
+                      "column": 28,
+                      "line": 104
+                    },
+                    "snippet": "  102 |     await expectNoHorizontalOverflow(page)\n  103 |     const axe = await new AxeBuilder({ page }).analyze()\n> 104 |     expect(axe.violations).toEqual([])\n      |                            ^\n  105 |     await page.screenshot({ path: `../artifacts/frontend/screenshots/browse/catalog-${width}.png`, fullPage: true })\n  106 |   }\n  107 | })"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts",
+                        "column": 28,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure the order of headings is semantically correct\",\u001b[39m\n\u001b[31m+     \"help\": \"Heading levels should only increase by one\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"heading-order\",\u001b[39m\n\u001b[31m+     \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": null,\u001b[39m\n\u001b[31m+             \"id\": \"heading-order\",\u001b[39m\n\u001b[31m+             \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+             \"message\": \"Heading order invalid\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Heading order invalid\",\u001b[39m\n\u001b[31m+         \"html\": \"<h3>Áo thun On Perspiration stain on white xanh navy</h3>\",\u001b[39m\n\u001b[31m+         \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"a[href=\\\"/products/P141\\\"] > .product-card-copy > h3\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.semantics\",\u001b[39m\n\u001b[31m+       \"best-practice\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  102 |     await expectNoHorizontalOverflow(page)\n  103 |     const axe = await new AxeBuilder({ page }).analyze()\n> 104 |     expect(axe.violations).toEqual([])\n      |                            ^\n  105 |     await page.screenshot({ path: `../artifacts/frontend/screenshots/browse/catalog-${width}.png`, fullPage: true })\n  106 |   }\n  107 | })\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts:104:28"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T17:54:47.478Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-browse-page-re-34dc5-ssibility-at-desktop-mobile\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-browse-page-re-34dc5-ssibility-at-desktop-mobile\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\browse-real-browse-page-re-34dc5-ssibility-at-desktop-mobile\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\browse.spec.ts",
+                    "column": 28,
+                    "line": 104
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5c72c9889f434a3c409e-460cd5275a6da9eab419",
+          "file": "browse.spec.ts",
+          "line": 96,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T17:53:27.842Z",
+    "duration": 81078.999,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

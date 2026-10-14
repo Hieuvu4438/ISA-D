@@ -7,6 +7,7 @@ export type ResultPolicy = 'nearest' | 'relevant'
 export interface Filters {
   category?: Category | null
   brand?: string | null
+  color?: string | null
   min_price?: number | null
   max_price?: number | null
   in_stock?: boolean
@@ -16,6 +17,8 @@ export interface SearchOptions {
   top_k: number
   result_policy: ResultPolicy
   filters: Filters
+  search_strategy?: 'semantic' | 'hybrid'
+  sort?: 'relevance' | 'price_asc' | 'price_desc' | 'name'
 }
 
 export interface ProductSummary {
@@ -60,6 +63,8 @@ export interface SearchResult {
   product: ProductSummary
   score: number
   component_scores: { text: number | null; image: number | null }
+  rank_score?: number
+  lexical_score?: number | null
 }
 
 export interface SearchResponse {
@@ -80,7 +85,10 @@ export interface SearchResponse {
     result_policy: ResultPolicy
     threshold: number | null
     policy_fingerprint: string | null
-    empty_reason: 'catalog_empty' | 'filters' | 'threshold' | null
+    empty_reason: 'catalog_empty' | 'filters' | 'threshold' | 'no_matches' | null
+    ranking_strategy?: 'semantic' | 'rrf' | 'exact_sku'
+    sort?: string
+    corrections?: { input: string; matched: string }[]
     timing_ms: Record<'validation' | 'encoding' | 'retrieval' | 'filtering' | 'threshold' | 'ranking' | 'hydration' | 'total', number>
     trace: { step: string; status: 'ok' | 'skipped'; input_count: number; output_count: number }[]
   }
@@ -157,6 +165,15 @@ export type TextSearchRequest =
   | { mode: 'voice'; text: string; voice_source: VoiceSource; options: SearchOptions }
 
 export interface ProductsResponse { request_id: string; products: ProductSummary[]; total: number; offset: number; limit: number }
+export interface BrowseResponse extends ProductsResponse {
+  query: { text: string; sort: string; filters: Filters }
+  facets: Record<'category' | 'brand' | 'color', { value: string; count: number }[]>
+  corrections: { input: string; matched: string }[]
+  empty_reason: 'catalog_empty' | 'filters' | 'no_matches' | null
+  catalog_fingerprint: string
+  lexical_fingerprint: string
+  retrieval: 'catalog' | 'bm25' | 'exact_sku'
+}
 export interface ProductResponse { request_id: string; product: ProductDetail }
 export interface CreditsResponse { request_id: string; credits: Credit[] }
 export interface OrderResponse { request_id: string; order: OrderDetail }

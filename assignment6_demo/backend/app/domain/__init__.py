@@ -31,11 +31,12 @@ CategoryCode = Literal[
 class Filters(StrictModel):
     category: CategoryCode | None = None
     brand: str | None = None
+    color: str | None = None
     min_price: StrictInt | None = Field(default=None, ge=0, le=1_000_000_000)
     max_price: StrictInt | None = Field(default=None, ge=0, le=1_000_000_000)
     in_stock: StrictBool = False
 
-    @field_validator("brand")
+    @field_validator("brand", "color")
     @classmethod
     def brand_valid(cls, value):
         if value is None:
@@ -55,6 +56,8 @@ class Filters(StrictModel):
 class SearchOptions(StrictModel):
     top_k: StrictInt = Field(default=5, ge=1, le=20)
     result_policy: Literal["nearest", "relevant"] = "nearest"
+    search_strategy: Literal["semantic", "hybrid"] = "semantic"
+    sort: Literal["relevance", "price_asc", "price_desc", "name"] = "relevance"
     filters: Filters = Field(default_factory=Filters)
 
 

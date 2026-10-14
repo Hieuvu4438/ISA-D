@@ -1,5 +1,7 @@
 # AI tìm kiếm tiếng Việt và chỉ mục
 
+**E2 amendment:** [16](16_SEARCH_BROWSE.md) thêm BM25/RRF hybrid optional; cosine model/fusion giữ nguyên và score tách rank_score. Filter→cosine threshold→full eligible RRF→sort→Top-k. API baseline default semantic; UI default hybrid. Không coi policies cosine cũ là full hybrid quality evidence.
+
 ## Model pair bắt buộc
 
 | Vai trò | Model ID | Commit revision đã tra cứu 08/10/2026 |

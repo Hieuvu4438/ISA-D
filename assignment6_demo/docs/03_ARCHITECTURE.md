@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+**E2 amendment:** CatalogSearch lexical adapter, catalog route và SearchService.validate_request/RRF mapping tại [16](16_SEARCH_BROWSE.md); lexical snapshot độc lập model/index, fingerprint config+catalog. All eligible trước Top-k, semantic scores giữ riêng.
+
 **E1 amendment:** Accounts dùng SQLite cùng DI AccountService/AccountRepository/route adapter mới. Mapping/sequence ở [15](15_ECOMMERCE_EXPANSION.md). Order scope từ session server, không còn C001 anonymous.
 
 ## Stack và tổ chức

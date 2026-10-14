@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+E2 search/browse amendment: [16_SEARCH_BROWSE.md](16_SEARCH_BROWSE.md), gồm API, thuật toán, UI, UML và pending.
+
 **Mở rộng 15/10/2026:** Scope ecommerce đầy đủ và contract accounts tại [15_ECOMMERCE_EXPANSION.md](15_ECOMMERCE_EXPANSION.md), ưu tiên trên scope demo-only baseline. Toàn hệ thống chưa hoàn tất.
 
 Revision 2 · 08/10/2026 · đặc tả website đầy đủ. Backend CPU và frontend Cortis đã triển khai; browser verification đang chạy. Dùng [BACKEND_QUICKSTART.md](BACKEND_QUICKSTART.md) để chạy backend và [README](../README.md) để mở frontend. Bằng chứng ở `artifacts/backend/` và `artifacts/frontend/`; Azure live và benchmark chất lượng độc lập phải có báo cáo riêng trước khi nghiệm thu đầy đủ.

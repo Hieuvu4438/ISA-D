@@ -1,0 +1,46 @@
+{
+  "scope": "E2 observed catalog defects, not full visual audit",
+  "catalog_sha256": "4dad2213287b7b772057ec9f5af0f9907cc9ef6e366c210ad9a6661a8568cf50",
+  "all_photos_and_metadata_verified": false,
+  "identical_image_groups": [],
+  "findings": [
+    {
+      "product_id": "P147",
+      "status": "failed",
+      "evidence": "data/images/P147.jpg inspected with view_image",
+      "issue": "Image is an LCA academic infographic, not a catalog product photograph."
+    },
+    {
+      "product_id": "P141",
+      "status": "failed",
+      "evidence": "artifacts/frontend/screenshots/browse/catalog-1440.png",
+      "issue": "Photo shows a white fabric/stain closeup; metadata claims navy shirt and brand On without visible evidence."
+    },
+    {
+      "product_id": "P143",
+      "status": "failed",
+      "evidence": "artifacts/frontend/screenshots/browse/catalog-1440.png",
+      "issue": "Photo shows green T-shirt; metadata claims red."
+    },
+    {
+      "product_id": "P144",
+      "status": "failed",
+      "evidence": "artifacts/frontend/screenshots/browse/catalog-1440.png",
+      "issue": "Photo shows green T-shirt; metadata claims white."
+    },
+    {
+      "product_id": "P145",
+      "status": "failed",
+      "evidence": "artifacts/frontend/screenshots/browse/catalog-1440.png",
+      "issue": "Photo shows blue T-shirt; metadata claims black."
+    },
+    {
+      "product_id": "P146",
+      "status": "failed",
+      "evidence": "artifacts/frontend/screenshots/browse/catalog-1440.png",
+      "issue": "Photo shows blue T-shirt; metadata claims grey."
+    }
+  ],
+  "next_action": "Full visual/provenance audit of 120-item expansion; replace invalid/non-photo assets using real sources, remove unsupported brand/color claims and duplicate-photo SKUs; rebuild index and recalibrate after data fixes.",
+  "repeated_original_image_groups": []
+}

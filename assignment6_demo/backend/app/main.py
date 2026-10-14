@@ -19,6 +19,8 @@ from app.application.embedding_service import AIEmbeddingService
 from app.application.account_service import AccountService
 from app.data.account_repository import AccountRepository
 from app.presentation.accounts import mount_accounts, identity
+from app.presentation.catalog import mount_catalog
+from app.application.catalog_search import CatalogSearch
 from app.application.query_service import QueryService
 from app.application.search_service import SearchService
 from app.application.speech_service import SpeechService
@@ -84,6 +86,7 @@ class Container:
             settings.root, self.products.products if self.products else [], self.encoder.model_fingerprint
         )
         self.search = SearchService(self.products, self.encoder, self.index, settings.root)
+        self.catalog_search = CatalogSearch(self.products) if self.products else None
         self.queries = QueryService(self.encoder)
         self.speech = SpeechService(settings)
         self.runner = AsyncBoundedRunner()
@@ -267,12 +270,13 @@ def create_app(settings=None, container=None):
     def services(request):
         return request.app.state.services
 
-    async def search_result(request, build):
+    async def search_result(request, build, options, mode, text=None, text_weight=None):
         started = perf_counter()
         svc = services(request)
         svc.require("products")
         if not svc.search.available:
             raise AppError(503, svc.search.reason_code, "Tìm kiếm chưa sẵn sàng.")
+        svc.search.validate_request(options, mode, text, text_weight)
         result = await svc.runner.run(lambda: svc.search.search(build(svc.queries)), settings.search_timeout)
         result["meta"]["timing_ms"]["total"] = (perf_counter() - started) * 1000
         return {"request_id": request.state.request_id, **result}
@@ -443,14 +447,15 @@ def create_app(settings=None, container=None):
         if not request.headers.get("content-type", "").lower().startswith("application/json"):
             raise AppError(415, "MEDIA_TYPE_UNSUPPORTED", "Cần gửi application/json.")
         return await search_result(
-            request, lambda queries: queries.build_text(body.mode, body.text, body.options, body.voice_source)
+            request, lambda queries: queries.build_text(body.mode, body.text, body.options, body.voice_source),
+            body.options, body.mode, body.text,
         )
 
     @application.post("/api/v1/search/image", openapi_extra=form_schema("image", ["options"]))
     async def image_search(request: Request):
         fields, blob, mime = await multipart(request, ("image", "options"), "image")
         options = options_value(fields["options"])
-        return await search_result(request, lambda queries: queries.build_image(blob, options, mime))
+        return await search_result(request, lambda queries: queries.build_image(blob, options, mime), options, "image")
 
     @application.post(
         "/api/v1/search/multimodal", openapi_extra=form_schema("image", ["text", "text_weight", "options"])
@@ -465,7 +470,8 @@ def create_app(settings=None, container=None):
         except (TypeError, ValueError, AppError) as exc:
             raise AppError(422, "VALIDATION_ERROR", "Text hoặc trọng số không hợp lệ.") from exc
         return await search_result(
-            request, lambda queries: queries.build_multimodal(fields["text"], blob, options, weight, mime)
+            request, lambda queries: queries.build_multimodal(fields["text"], blob, options, weight, mime),
+            options, "multimodal", fields["text"], weight,
         )
 
     @application.post("/api/v1/speech/transcriptions", openapi_extra=form_schema("audio", ["language"]))
@@ -479,6 +485,7 @@ def create_app(settings=None, container=None):
         return {"request_id": request.state.request_id, **result}
 
     mount_accounts(application, settings, query_fields)
+    mount_catalog(application, query_fields)
     return application
 
 

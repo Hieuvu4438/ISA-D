@@ -9,6 +9,7 @@ from app.domain import AppError
 from app.data.product_repository import digest
 from app.data.vector_index import SCORING_VERSION
 from app.application.ranking_service import RankingService
+from app.application.catalog_search import CatalogSearch, matches
 
 
 class SearchService:
@@ -16,6 +17,7 @@ class SearchService:
         self.repository = repository
         self.encoder = encoder
         self.index = index
+        self.lexical = CatalogSearch(repository) if repository else None
         self._policies = []
         self.policy_fingerprint = None
         if index.available:
@@ -73,6 +75,19 @@ class SearchService:
             "Chưa có ngưỡng liên quan cho truy vấn này; hãy chọn sản phẩm gần nhất.",
         )
 
+    def validate_request(self, options, mode, text=None, text_weight=None):
+        from types import SimpleNamespace
+
+        try:
+            self.lexical.validate_filters(options.filters)
+        except AppError as exc:
+            exc.field = f"options.{exc.field}" if exc.field else None
+            raise
+        if options.search_strategy == "hybrid" and text is not None:
+            self.lexical.prepare(text)
+        if options.result_policy == "relevant":
+            self._policy(SimpleNamespace(mode=mode, text_weight=text_weight))
+
     def search(self, query):
         if not self.available:
             raise AppError(503, self.reason_code, "Tìm kiếm chưa sẵn sàng.")
@@ -92,20 +107,11 @@ class SearchService:
             raise AppError(503, "INDEX_OUT_OF_SYNC", "Chỉ mục không khớp dữ liệu sản phẩm.")
         mark = perf_counter()
         filters = options.filters
-        if filters.brand is not None and filters.brand not in {p["brand"] for p in products.values()}:
-            raise AppError(422, "VALIDATION_ERROR", "Thương hiệu không thuộc danh mục.", "options.filters.brand")
+        self.lexical.validate_filters(filters)
         eligible = []
         for candidate in candidates:
             p = products[candidate["product_id"]]
-            if filters.category is not None and p["category"] != filters.category:
-                continue
-            if filters.brand is not None and p["brand"] != filters.brand:
-                continue
-            if filters.min_price is not None and p["price_vnd"] < filters.min_price:
-                continue
-            if filters.max_price is not None and p["price_vnd"] > filters.max_price:
-                continue
-            if filters.in_stock and p["stock_quantity"] <= 0:
+            if not matches(p, filters):
                 continue
             eligible.append(candidate)
         timings["filtering"] = (perf_counter() - mark) * 1000
@@ -129,7 +135,18 @@ class SearchService:
             }
         )
         mark = perf_counter()
-        selected = RankingService.rank(eligible, options.top_k)
+        hybrid = options.search_strategy == "hybrid" and query.input_summary.get("text") is not None
+        plan = None
+        if hybrid:
+            eligible, plan = self.lexical.fuse(eligible, query.input_summary["text"])
+            if before and not eligible:
+                empty_reason = "no_matches" if plan.exact_id else empty_reason
+        if options.sort != "relevance":
+            selected = sorted(eligible, key=lambda c: self.lexical.sort_key(products[c["product_id"]], options.sort, {}))[:options.top_k]
+        elif hybrid:
+            selected = sorted(eligible, key=lambda c: (-c["rank_score"], c["product_id"]))[:options.top_k]
+        else:
+            selected = RankingService.rank(eligible, options.top_k)
         timings["ranking"] = (perf_counter() - mark) * 1000
         trace.append({"step": "ranking", "status": "ok", "input_count": len(eligible), "output_count": len(selected)})
         mark = perf_counter()
@@ -146,6 +163,8 @@ class SearchService:
                     "product": self.repository.summary(products[c["product_id"]]),
                     "score": c["score"],
                     "component_scores": components,
+                    "rank_score": c.get("rank_score", c["score"]),
+                    "lexical_score": c.get("lexical_score"),
                 }
             )
         timings["hydration"] = (perf_counter() - mark) * 1000
@@ -170,5 +189,9 @@ class SearchService:
                 "empty_reason": empty_reason,
                 "timing_ms": timings,
                 "trace": trace,
+                "ranking_strategy": "exact_sku" if plan and plan.exact_id else "rrf" if hybrid else "semantic",
+                "sort": options.sort,
+                "lexical_fingerprint": self.lexical.fingerprint if hybrid else None,
+                "corrections": plan.corrections if plan else [],
             },
         }

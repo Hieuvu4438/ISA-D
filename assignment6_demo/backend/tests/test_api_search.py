@@ -184,3 +184,25 @@ def test_relevant_missing_policy_is_explicit_and_nearest_still_works(api):
     assert response.status_code == 503
     assert response.json()["error"]["code"] == "RELEVANCE_POLICY_UNAVAILABLE"
     assert_search(client.post("/api/v1/search", json={"mode": "text", "text": "giày"}), "text")
+
+
+def test_bad_catalog_filter_and_hybrid_limits_rejected_before_encoder(api):
+    client, encoder = api
+    for options in [{"filters": {"brand": "unknown"}}, {"filters": {"color": "unknown"}}, {"result_policy": "relevant"}]:
+        response = client.post("/api/v1/search", json={"mode": "text", "text": "giày", "options": options})
+        assert response.status_code in (422, 503)
+    assert encoder.calls == 0
+    response = client.post("/api/v1/search", json={"mode": "text", "text": "a " * 65, "options": {"search_strategy": "hybrid"}})
+    assert response.status_code == 422 and encoder.calls == 0
+
+
+def test_hybrid_exact_sku_and_unknown_sku(api):
+    client, encoder = api
+    response = client.post("/api/v1/search", json={"mode": "text", "text": "P001", "options": {"search_strategy": "hybrid"}})
+    body = assert_search(response, "text")
+    assert [r["product"]["product_id"] for r in body["results"]] == ["P001"]
+    assert body["meta"]["ranking_strategy"] == "exact_sku"
+    response = client.post("/api/v1/search", json={"mode": "text", "text": "P999", "options": {"search_strategy": "hybrid"}})
+    assert response.status_code == 200 and response.json()["results"] == []
+    assert response.json()["meta"]["empty_reason"] == "no_matches"
+    assert encoder.calls == 2

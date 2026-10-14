@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowDown, ArrowRight, ArrowUpRight, AudioLines, Camera, Check, ChevronDown, Clock3, Download, ImagePlus, LoaderCircle, Mic, SlidersHorizontal, Square, Type, Upload, X } from 'lucide-react';
 import { useCatalog } from '../catalog';
 import { useSearchState, initialOptions, type Draft } from '../state';
@@ -25,9 +25,10 @@ function signature(draft: Draft, mode: QueryMode) {
   return JSON.stringify({ text: mode === 'image' ? null : draft.text.normalize('NFC').trim().replace(/\s+/g, ' '), image: draft.image ? [draft.image.name, draft.image.size, draft.image.lastModified] : null,
     options: draft.options, weight: mode === 'multimodal' ? draft.weight : null, source: mode === 'voice' ? draft.voiceSource : null });
 }
-function ProductCard({ product, result, onOpen }: { product: ProductSummary; result?: SearchResult; onOpen: () => void }) {
+export function ProductCard({ product, result, onOpen }: { product: ProductSummary; result?: SearchResult; onOpen: () => void }) {
+  const location = useLocation();
   return <article className="product-card" data-testid={result ? 'result-card' : 'product-card'}>
-    <Link to={`/products/${product.product_id}`} className="product-card-link" onClick={onOpen}>
+    <Link to={`/products/${product.product_id}`} state={{ from: `${location.pathname}${location.search}` }} className="product-card-link" onClick={onOpen}>
       <div className="product-card-media"><ProductImage src={product.image_url} alt={product.name} retry={false} />
         {result && <span className="rank-label">{String(result.rank).padStart(2, '0')}</span>}
         {!product.in_stock && <span className="stock-tag">Hết hàng</span>}
@@ -239,11 +240,15 @@ export function SearchPage() {
           <label className="checkbox-label"><input type="checkbox" checked={!!draft.options.filters.in_stock} onChange={event => updateFilters({ in_stock: event.target.checked })} />Chỉ còn hàng</label>
           <div className="advanced-options"><label htmlFor="top-k">Số kết quả</label><select id="top-k" data-testid="top-k" value={draft.options.top_k} onChange={event => updateOptions({ top_k: Number(event.target.value) })}>{[1, 3, 5, 10, 20].map(value => <option key={value} value={value}>{value} sản phẩm</option>)}</select>
             <label htmlFor="result-policy">Cách hiển thị</label><select id="result-policy" data-testid="result-policy" value={draft.options.result_policy} onChange={event => updateOptions({ result_policy: event.target.value as SearchOptions['result_policy'] })}><option value="nearest">Sản phẩm gần nhất</option><option value="relevant" disabled={!relevantAvailable}>Chỉ sản phẩm liên quan</option></select><p>{relevantAvailable ? 'Liên quan: chỉ giữ sản phẩm đạt ngưỡng đã hiệu chỉnh.' : 'Chưa có ngưỡng liên quan cho lựa chọn này.'}</p>
+            {mode !== 'image' && <><label htmlFor="search-strategy">Cách tìm kiếm</label><select id="search-strategy" value={draft.options.search_strategy ?? 'semantic'} onChange={event => updateOptions({ search_strategy: event.target.value as SearchOptions['search_strategy'] })}><option value="hybrid">Mô tả + từ khóa</option><option value="semantic">Chỉ tương đồng AI</option></select></>}
+            <label htmlFor="search-sort">Sắp xếp kết quả</label><select id="search-sort" value={draft.options.sort ?? 'relevance'} onChange={event => updateOptions({ sort: event.target.value as SearchOptions['sort'] })}><option value="relevance">Phù hợp nhất</option><option value="price_asc">Giá tăng dần</option><option value="price_desc">Giá giảm dần</option><option value="name">Tên sản phẩm</option></select>
           </div><button className="secondary-button filter-apply" type="button" disabled={!!pending} onClick={() => void submit()}>Áp dụng và tìm lại<ArrowRight size={15} aria-hidden="true" /></button>
         </div>
       </aside>
       <div className="catalog-content" data-testid="search-results" aria-busy={pending === 'search'}><div className="results-toolbar"><span role="status" aria-live="polite">{pending === 'search' ? 'Đang tìm sản phẩm…' : `${response ? response.results.length : visibleCatalog.length} sản phẩm`}</span><span>{response ? <><Clock3 size={14} aria-hidden="true" />{(response.meta.timing_ms.total / 1000).toFixed(2)} giây</> : 'Ảnh chụp thực tế'}</span></div>
         {response && <div className="submitted-context"><span>{modes.find(item => item.id === response.query.mode)?.label} · {response.meta.result_policy === 'nearest' ? 'Các sản phẩm gần nhất · chưa lọc mức liên quan' : 'Chỉ giữ kết quả đạt ngưỡng đã hiệu chỉnh'}</span>
+          {response.meta.ranking_strategy === 'rrf' && <p>Thứ hạng kết hợp mô tả AI và từ khóa. Điểm cosine chỉ thể hiện độ tương đồng AI.</p>}
+          {!!response.meta.corrections?.length && <p>Từ khóa gần đúng: {response.meta.corrections.map(item => `${item.input} → ${item.matched}`).join(', ')}.</p>}
           <div className="effective-filters">{effective?.category && <span>{categoryLabels[effective.category]}</span>}{effective?.brand && <span>{effective.brand}</span>}{effective?.min_price != null && <span>Từ {formatMoney(effective.min_price)}</span>}{effective?.max_price != null && <span>Đến {formatMoney(effective.max_price)}</span>}{effective?.in_stock && <span>Chỉ còn hàng</span>}{response.query.text_weight != null && <span>Mô tả {Math.round(response.query.text_weight * 100)}% / ảnh {Math.round((1 - response.query.text_weight) * 100)}%</span>}</div>
           {dirty && <p className="draft-notice" role="status">Đã đổi điều kiện, hãy tìm lại. Kết quả bên dưới vẫn thuộc lượt tìm trước.</p>}
           <button type="button" className="text-link" onClick={() => { state.setResponse(mode, null); setError(''); }}>Về danh mục sản phẩm</button>
