@@ -1,5 +1,7 @@
 # Yêu cầu và use case website
 
+**E1 amendment:** [15](15_ECOMMERCE_EXPANSION.md) mở rộng account/admin/cart/checkout. UC-05/07 cần login và ownership account DB; C001 map explicit bằng CLI. Giữ FR-01–13, thay scope giới hạn cũ theo yêu cầu mới.
+
 Revision 1. Các từ **phải** là điều kiện bắt buộc để nghiệm thu website; **đề xuất** là giả định có thể điều chỉnh bằng evidence và cập nhật đặc tả.
 
 ## Scope và actor

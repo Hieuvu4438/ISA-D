@@ -1,0 +1,53 @@
+{
+  "milestone": "E1 accounts",
+  "base_commit": "a421c761e4c5aa88df0db542bd97100cad26af11",
+  "source_sha256": {
+    "backend/app/main.py": "b03ab77c5b2092b4c9974fb5882c03494a1d845115631790f9a02b83dfd6dbd2",
+    "backend/app/settings.py": "5963071f199b6803e22facabcefecbd9ebef75208d1343415932247b9072dfde",
+    "backend/app/application/account_service.py": "592d112ed82616488dcb7b9b147838807b1277e8fcd1c4a56d0d6ecd6c1c8c40",
+    "backend/app/data/account_repository.py": "df69a38a5b663f5d6f60e1dd027b26ea16e4012ef48964c7344b13407333af1a",
+    "backend/app/presentation/accounts.py": "e3f2b76c687d26d3f17ff90551d0b2edffbd37c41673e0b5411dba19f26d574a",
+    "frontend/src/pages/AccountPage.tsx": "d9ed04aab007318bedeec084295f89fa67011d933a95aeb2e4ffc449aff883e6",
+    "frontend/src/lib/api.ts": "1a2ff340d75feebdb94740e05c3642460167a9106c0f56f354d38a503e25a63c",
+    "backend/tests/test_accounts.py": "51e976f4cf29fb966b64a8f7140627df87fe923f94c8b9b492b56f0cd5637b18",
+    "frontend/e2e/accounts.spec.ts": "e3239ade45e36f41cacf24939becd56ff7e35197bb9290595bc0a4684e0675d7"
+  },
+  "dataset_sha256": "4dad2213287b7b772057ec9f5af0f9907cc9ef6e366c210ad9a6661a8568cf50",
+  "backend": {
+    "tests": 133,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0
+  },
+  "browser": {
+    "passed": 2,
+    "failed": 0,
+    "exit_code": 0,
+    "production_preview": true,
+    "mocked_api": false,
+    "viewports": [
+      360,
+      768,
+      1440
+    ],
+    "axe_violations": 0
+  },
+  "frontend": {
+    "unit_tests": 17,
+    "typecheck_exit": 0,
+    "lint_exit": 0,
+    "build_exit": 0
+  },
+  "runtime": {
+    "python": "Python 3.12.13",
+    "node": "v22.17.1",
+    "model_available": false,
+    "provider_calls": 0
+  },
+  "limits": [
+    "Only accounts browser cases run; existing C001 anonymous tests need authenticated fixtures",
+    "No model quality or live Groq/Azure verified in this milestone",
+    "No cart, checkout, full admin CRUD or hybrid search yet",
+    "No editable Visual Paradigm project verified"
+  ]
+}

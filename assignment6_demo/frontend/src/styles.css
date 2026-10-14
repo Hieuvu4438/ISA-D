@@ -31,6 +31,19 @@
   .skip-link:focus { top: 12px; }
 }
 @layer components {
+  .account-page { padding-top: 40px; padding-bottom: 64px; }
+  .account-panel { background: var(--paper); padding: 28px; border: 1px solid var(--line); min-width: 0; max-width: 600px; }
+  .account-panel h2 { margin-bottom: 16px; }
+  .account-panel h3 { margin-top: 24px; }
+  .account-panel p { color: var(--muted); }
+  .account-email { overflow-wrap: anywhere; }
+  .account-mode { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+  .account-form fieldset { display: grid; gap: 18px; margin: 20px 0 0; padding: 0; border: 0; min-width: 0; }
+  .account-form label { display: grid; gap: 8px; font-size: 14px; }
+  .account-form p { font-size: 13px; }
+  .account-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; }
+  .account-notice { margin: 18px 0; color: var(--wine); }
+  .account-counts { display: grid; grid-template-columns: 1fr auto; gap: 16px; font-variant-numeric: tabular-nums; }
   .site-header { border-bottom: 1px solid var(--line); }
   .header-inner { max-width: 1360px; margin: auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
   .wordmark { display: inline-flex; align-items: center; font-size: 32px; font-weight: 600; line-height: 1; letter-spacing: -.04em; min-height: 44px; }

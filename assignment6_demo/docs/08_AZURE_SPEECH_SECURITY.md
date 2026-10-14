@@ -1,5 +1,7 @@
 # Azure Speech tiếng Việt và bảo vệ dữ liệu demo
 
+**E1 amendment:** Session/role/CSRF/password ở [15](15_ECOMMERCE_EXPANSION.md), thay scope C001 fixed. Groq theo yêu cầu mới; evidence provider tách riêng. Không tự gọi live provider trong account tests.
+
 Revision 2. Adapter và frontend voice đã triển khai; tests mặc định dùng provider/microphone giả có nhãn. Website local đã chạy nhưng chưa có evidence Azure live. Người dùng đã cho phép tối đa 5 lượt nhận dạng và sẽ cấu hình `.env`; key chưa sẵn sàng ở lần kiểm tra gần nhất. Workflow thực tế ở [AZURE_LIVE_CHECK.md](AZURE_LIVE_CHECK.md), contract HTTP ở 06, UX/state ở 07.
 
 ## Cấu hình Azure bắt buộc

@@ -1,5 +1,16 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+**Mở rộng ecommerce đang triển khai:** đã thêm `/account` (đăng ký, đăng nhập, profile, đổi mật khẩu, đăng xuất) và API phân quyền user/admin lưu SQLite. Đơn hàng yêu cầu đăng nhập, không còn truy cập mặc định C001. Catalog hiện có 180 sản phẩm; các số 60 bên dưới là báo cáo baseline lịch sử. Research, module matrix và pending tại [docs/15_ECOMMERCE_EXPANSION.md](docs/15_ECOMMERCE_EXPANSION.md); chưa hoàn tất giỏ hàng/checkout/full admin/search hybrid.
+
+Tạo admin hoặc owner demo bằng CLI sau setup backend; mật khẩu nhập qua terminal, không nằm trong arguments/Git:
+
+```powershell
+& .\backend\.venv\Scripts\python.exe scripts/create_account.py --email admin@example.test --name Admin --role admin
+& .\backend\.venv\Scripts\python.exe scripts/create_account.py --email owner@example.test --name Owner --demo-customer C001
+```
+
+Không có mật khẩu/admin mặc định. Tài khoản web mới không sở hữu các đơn demo. SQLite nằm `runtime/commerce/`, persistent qua restart và Compose volume, được ignore; browser chỉ gọi API. COOKIE_SECURE=false cho HTTP local, true khi sử dụng HTTPS. Evidence mốc tài khoản ở [ACCOUNTS_REPORT.md](artifacts/backend/ACCOUNTS_REPORT.md).
+
 Frontend React/TypeScript và backend FastAPI đã kết nối cho tìm kiếm tiếng Việt, ảnh, text + ảnh, transcript voice, lọc, chi tiết sản phẩm, nguồn ảnh và đơn hàng khách demo. Catalog có **60 sản phẩm / 12 danh mục**, mỗi danh mục 4–6 mẫu, và **30 đơn hàng**. Toàn bộ ảnh là ảnh chụp thật tải từ mạng, có nguồn và giấy phép. Xem [hướng dẫn chạy backend](docs/BACKEND_QUICKSTART.md) và [dữ liệu demo](docs/DEMO_DATA.md).
 
 Chạy tại thư mục này bằng PowerShell:

@@ -16,6 +16,9 @@ from starlette.datastructures import UploadFile
 from starlette.exceptions import HTTPException
 
 from app.application.embedding_service import AIEmbeddingService
+from app.application.account_service import AccountService
+from app.data.account_repository import AccountRepository
+from app.presentation.accounts import mount_accounts, identity
 from app.application.query_service import QueryService
 from app.application.search_service import SearchService
 from app.application.speech_service import SpeechService
@@ -103,7 +106,7 @@ def error_response(request, error):
         "retryable": error.retryable,
         "field_errors": [{"field": error.field, "message": error.message}] if error.field else [],
     }
-    headers = {"Retry-After": "2" if error.code == "SEARCH_BUSY" else "5"} if error.status == 429 else {}
+    headers = {"Retry-After": "900" if error.code == "AUTH_RATE_LIMITED" else "2" if error.code == "SEARCH_BUSY" else "5"} if error.status == 429 else {}
     return JSONResponse({"error": body}, status_code=error.status, headers=headers)
 
 
@@ -172,6 +175,9 @@ def create_app(settings=None, container=None):
     @asynccontextmanager
     async def lifespan(application):
         application.state.services = container or Container(settings)
+        application.state.accounts = AccountService(AccountRepository(
+            settings.account_db_path or settings.root / "runtime" / "commerce" / "accounts.sqlite3"
+        ))
         yield
         application.state.services.close()
 
@@ -190,7 +196,8 @@ def create_app(settings=None, container=None):
         CORSMiddleware,
         allow_origins=cors_origins,
         allow_methods=["GET", "POST"],
-        allow_headers=["Content-Type"],
+        allow_headers=["Content-Type", "X-Cortis-Intent"],
+        allow_credentials=True,
         expose_headers=["X-Request-ID"],
     )
 
@@ -198,6 +205,8 @@ def create_app(settings=None, container=None):
     async def request_boundary(request, call_next):
         request.state.request_id = str(uuid4())
         try:
+            if request.method == "POST" and request.headers.get("origin") and request.headers["origin"] not in cors_origins:
+                raise AppError(403, "CSRF_REJECTED", "Nguồn yêu cầu không được phép.")
             if (
                 any(
                     name in request.headers
@@ -410,7 +419,8 @@ def create_app(settings=None, container=None):
         return FileResponse(path, media_type=mime, headers={"ETag": etag})
 
     def order_value(request, order_id):
-        order = services(request).require("orders").find_order(settings.customer_id, identifier(order_id, "O"))
+        account = identity(request)
+        order = services(request).require("orders").find_order(account["customer_id"], identifier(order_id, "O"))
         if order is None:
             raise AppError(404, "ORDER_NOT_FOUND", "Không tìm thấy đơn hàng.")
         return {"request_id": request.state.request_id, "order": {k: v for k, v in order.items() if k != "customer_id"}}
@@ -468,6 +478,7 @@ def create_app(settings=None, container=None):
         )
         return {"request_id": request.state.request_id, **result}
 
+    mount_accounts(application, settings, query_fields)
     return application
 
 

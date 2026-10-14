@@ -37,3 +37,8 @@ artifacts/frontend/screenshots/
 models/
 runtime/models/
 runtime/index/
+runtime/commerce/
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm

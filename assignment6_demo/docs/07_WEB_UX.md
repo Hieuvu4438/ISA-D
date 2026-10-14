@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+**E1 amendment:** Route `/account` có login/register/profile/password/logout và overview chỉ admin. Header dùng Tài khoản thay nhãn C001 fixed. Order error có link đăng nhập. Contract/edge cases ở [15](15_ECOMMERCE_EXPANSION.md).
+
 ## Cấu trúc trang và route
 
 | Route | Nội dung | Backend |

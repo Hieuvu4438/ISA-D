@@ -28,6 +28,8 @@ class Settings:
     search_timeout: float = 10.0
     customer_id: str = "C001"
     load_models: bool = True
+    account_db_path: Path | None = None
+    cookie_secure: bool = False
 
     def __post_init__(self):
         if not 1 <= self.local_speech_cpu_threads <= 16:
@@ -56,4 +58,5 @@ class Settings:
             groq_speech_model=os.getenv("GROQ_SPEECH_MODEL", "whisper-large-v3"),
             groq_speech_timeout=float(os.getenv("GROQ_SPEECH_TIMEOUT", "30")),
             customer_id=os.getenv("DEMO_CUSTOMER_ID", "C001"),
+            cookie_secure=os.getenv("COOKIE_SECURE", "false").strip().lower() == "true",
         )

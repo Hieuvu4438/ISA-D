@@ -9,6 +9,7 @@ import { OrdersPage } from './pages/OrdersPage';
 import { OrderPage } from './pages/OrderPage';
 import { CreditsPage } from './pages/CreditsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { AccountPage } from './pages/AccountPage';
 
 function Shell() {
   const location = useLocation();
@@ -21,7 +22,7 @@ function Shell() {
     <header className="site-header"><div className="header-inner">
       <NavLink to="/" className="wordmark" aria-label="Cortis — trang chủ"><span className="brand-symbol" aria-hidden="true"><Sparkles size={25} strokeWidth={1.6} /></span>cortis<span className="brand-dot">.</span></NavLink>
       <nav aria-label="Điều hướng chính"><NavLink to="/" end><Search size={17} aria-hidden="true" /><span>Tìm sản phẩm</span></NavLink><NavLink to="/orders"><Package size={17} aria-hidden="true" /><span>Đơn hàng</span></NavLink><NavLink to="/credits"><span>Nguồn ảnh</span><ArrowUpRight size={16} aria-hidden="true" /></NavLink></nav>
-      <span className="demo-label">Dữ liệu minh họa<span>Khách hàng C001</span></span>
+      <NavLink className="text-link" to="/account">Tài khoản</NavLink>
     </div></header>
     <main id="main-content" tabIndex={-1}><Routes>
       <Route path="/" element={<SearchPage />} />
@@ -29,6 +30,7 @@ function Shell() {
       <Route path="/orders" element={<OrdersPage />} />
       <Route path="/orders/:orderId" element={<OrderPage />} />
       <Route path="/credits" element={<CreditsPage />} />
+      <Route path="/account" element={<AccountPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes></main>
     <footer className="site-footer"><div><span className="footer-brand">cortis.</span><p>Khám phá theo cách của bạn.</p></div><p>Giá và tồn kho là dữ liệu minh họa.<br /><NavLink to="/credits">Ảnh thật, nguồn rõ ràng <ArrowUpRight size={13} aria-hidden="true" /></NavLink></p></footer>

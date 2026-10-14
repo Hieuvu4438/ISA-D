@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+**E1 amendment:** Accounts dùng SQLite cùng DI AccountService/AccountRepository/route adapter mới. Mapping/sequence ở [15](15_ECOMMERCE_EXPANSION.md). Order scope từ session server, không còn C001 anonymous.
+
 ## Stack và tổ chức
 
 Python 3.12, FastAPI/Pydantic, NumPy, Pillow, PyTorch CPU, Sentence Transformers, Azure Speech SDK. Frontend React + TypeScript + Vite, React Router, một API client. Dùng JSON read-only cho demo, NPZ cho vectors; không thêm Redis/Celery/vector DB ở quy mô này. Package versions khóa sau smoke test tại milestone M0; không gọi “latest” trong bản bàn giao.

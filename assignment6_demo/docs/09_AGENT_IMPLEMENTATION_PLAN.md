@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+**15/10/2026 — E1:** Accounts SQLite/session/user-admin/profile/password/UI `/account` và scope đơn theo login đã implement. Research/ma trận/mốc E0–E6 tại [15](15_ECOMMERCE_EXPANSION.md); evidence tại `artifacts/backend/ACCOUNTS_REPORT.md`. E2 search/facets, E3 cart/variants, E4 checkout/order, E5 admin, E6 full verification pending. Các số baseline dưới đây không chứng minh phiên bản mới.
+
 **Trạng thái triển khai Cortis:** M0 backend, M1 data, M2 model/index CPU thật, M3 API và M5 Azure adapter đã triển khai và kiểm tra. Backend hiện có 103 tests đạt, 271 expanded API checks và benchmark 90 requests; catalog 60 sản phẩm/12 danh mục/30 đơn. RUN_REPORT.md thuộc baseline 12 sản phẩm; evidence mới ở expanded-demo.json/performance.json. Người dùng đã yêu cầu frontend đầy đủ: M4 đã có giao diện showroom bằng code, build/typecheck và 17 tests đạt; 19/19 production browser wiring tests đạt; hai semantic quality tests vẫn fail, xem FRONTEND_VERIFICATION.md. Branch coverage và frozen quality/live Azure gates vẫn chưa đạt toàn bộ. M6 cần công khai từng gate đã đo và còn thiếu. Azure live cần key trong environment và kiểm tra riêng, chưa nghiệm thu bằng stub. Lệnh backend ở [BACKEND_QUICKSTART.md](BACKEND_QUICKSTART.md), frontend ở [README](../README.md).
 
 ## Hợp đồng của Agent

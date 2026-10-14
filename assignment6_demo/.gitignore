@@ -26,3 +26,7 @@ artifacts/frontend/screenshots/initial-valid/
 .impeccable/review/
 .impeccable/direction-question.json
 data/.*.tmp
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm

@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+**E1 amendment:** Account/session/throttle SQLite ở [15](15_ECOMMERCE_EXPANSION.md); customer mapping nullable unique chỉ do provisioning CLI. Registration không sửa catalog/order JSON và không sở hữu C001 mặc định.
+
 ## Nguồn dữ liệu
 
 Người dùng chốt catalog thời trang 60 sản phẩm và khoảng 30 đơn hàng, ưu tiên 12 danh mục đa dạng với 4–6 mẫu mỗi danh mục. P001–P012 được giữ làm mẫu ban đầu. Giá/tồn kho/đơn hàng là dữ liệu giả định; tên, brand, màu và mô tả ảnh phải phù hợp với ảnh thật. Không dùng ảnh túi cho một sản phẩm giày hoặc cùng ảnh cho nhiều SKU để tăng số sản phẩm.

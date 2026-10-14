@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+**E1 amendment:** Sequence account login/session/ownership và code mapping tại [15](15_ECOMMERCE_EXPANSION.md). UML order hiện resolve identity từ phiên; C001 chỉ là fixture owner explicit. `.vpp` editable vẫn pending.
+
 **Hiện tại:** frontend và backend chạy local; các sơ đồ dưới đây vẫn là kiến trúc đích, chưa phải file Visual Paradigm được bàn giao. Mapping code thực và các khác biệt được ghi ngay dưới đây. Không coi PlantUML trong Markdown là `.vpp` đã hoàn thành.
 
 ## Mapping code hiện tại

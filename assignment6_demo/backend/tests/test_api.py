@@ -15,8 +15,8 @@ def client():
     return TestClient(create_app(Settings(root=ROOT, load_models=False)))
 
 
-def test_catalog_orders_and_credits_work_without_models():
-    with client() as api:
+def test_catalog_orders_and_credits_work_without_models(tmp_path):
+    with TestClient(create_app(Settings(root=ROOT, load_models=False, account_db_path=tmp_path / "accounts.sqlite3"))) as api:
         assert api.get("/health/live").status_code == 200
         assert api.get("/health/ready").status_code == 503
         products = api.get("/api/v1/products").json()
@@ -28,6 +28,9 @@ def test_catalog_orders_and_credits_work_without_models():
         assert detail["image_credit"]["license_url"].startswith("https://")
         assert api.get("/api/v1/media/products/P001").headers["content-type"] == "image/jpeg"
         assert len(api.get("/api/v1/credits").json()["credits"]) == catalog_size
+        assert api.get("/api/v1/orders?order_id=O001").status_code == 401
+        api.app.state.accounts.register("owner@example.test", "Owner", "test owner passphrase 2026", "cli", customer_id="C001")
+        assert api.post("/api/v1/auth/login", headers={"X-Cortis-Intent": "account"}, json={"email": "owner@example.test", "password": "test owner passphrase 2026"}).status_code == 200
         assert api.get("/api/v1/orders?order_id=O001").status_code == 200
         own = api.get("/api/v1/orders/O001").json()["order"]
         assert own["total_vnd"] == sum(i["line_total_vnd"] for i in own["items"])

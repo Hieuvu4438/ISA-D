@@ -35,7 +35,7 @@ export function OrderPage() {
       <ChevronRight size={14} aria-hidden="true" /><span aria-current="page">Chi tiết đơn hàng</span>
     </nav>
     {loading && <p className="page-loading" role="status">Đang tải đơn hàng…</p>}
-    {error && <ErrorPanel title="Chưa tìm được đơn hàng" message={error} onRetry={() => setAttempt(value => value + 1)} />}
+    {error && <><ErrorPanel title="Chưa tìm được đơn hàng" message={error} onRetry={() => setAttempt(value => value + 1)} /><Link className="text-link" to="/account">Đăng nhập hoặc kiểm tra tài khoản</Link></>}
     {!loading && order && <article>
       <header className="page-heading order-detail-heading">
         <div><h1>Đơn hàng {order.order_id}.</h1>

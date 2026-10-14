@@ -88,6 +88,19 @@ export const getCredits = (signal?: AbortSignal) => request<CreditsResponse>('/c
 export const getOrder = (id: string, signal?: AbortSignal) => request<OrderResponse>(`/orders/${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
 export const getOrderSummary = (id: string, signal?: AbortSignal) => request<OrderSummaryResponse>(`/orders?order_id=${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
 
+export interface AccountUser { user_id: string; email: string; display_name: string; role: 'user' | 'admin' }
+export interface AccountResponse { request_id: string; user: AccountUser }
+export const getAccount = (signal?: AbortSignal) => request<AccountResponse>('/auth/me', {}, signal)
+function accountWrite<T>(path: string, body: object): Promise<T> {
+  return request(path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Cortis-Intent': 'account' }, body: JSON.stringify(body) })
+}
+export const loginAccount = (email: string, password: string) => accountWrite<AccountResponse>('/auth/login', { email, password })
+export const registerAccount = (email: string, password: string, display_name: string) => accountWrite<AccountResponse>('/auth/register', { email, password, display_name })
+export const logoutAccount = () => accountWrite('/auth/logout', {})
+export const updateProfile = (display_name: string) => accountWrite<AccountResponse>('/account/profile', { display_name })
+export const changePassword = (current_password: string, password: string) => accountWrite<AccountResponse>('/account/password', { current_password, password })
+export const getAdminOverview = (signal?: AbortSignal) => request<{ accounts: Record<string, number>; products: number; orders: number }>('/admin/overview', {}, signal)
+
 export function searchText(body: TextSearchRequest, signal?: AbortSignal): Promise<SearchResponse> {
   return request('/search', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }, signal)
 }

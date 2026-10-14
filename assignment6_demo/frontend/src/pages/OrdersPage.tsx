@@ -88,7 +88,7 @@ export function OrdersPage() {
     </div>
     <div aria-live="polite" aria-atomic="true">
       {loading && <p className="page-loading" role="status">Đang kiểm tra mã đơn hàng…</p>}
-      {error && <ErrorPanel title="Chưa tìm được đơn hàng" message={error} onRetry={() => { void lookup() }} />}
+      {error && <><ErrorPanel title="Chưa tìm được đơn hàng" message={error} onRetry={() => { void lookup() }} /><Link className="text-link" to="/account">Đăng nhập hoặc kiểm tra tài khoản</Link></>}
       {order && <section className="order-summary" aria-labelledby="order-summary-title">
         <div>
           <h2 id="order-summary-title">Đơn hàng {order.order_id}</h2>
