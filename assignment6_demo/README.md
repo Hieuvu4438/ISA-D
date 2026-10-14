@@ -1,20 +1,22 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Khóa/mở khóa tài khoản, session revocation và transaction epoch guards: [docs/24_ACCOUNT_ACCESS.md](docs/24_ACCOUNT_ACCESS.md), [evidence](artifacts/backend/ACCOUNT_ACCESS_REPORT.md). Các mục milestone bên dưới là lịch sử; bảng hiện trạng tổng hợp tại [docs15](docs/15_ECOMMERCE_EXPANSION.md).
+
 Trả hàng demo từng phần và xử lý admin có tại [docs/23_RETURNS.md](docs/23_RETURNS.md); [bằng chứng](artifacts/backend/RETURNS_REPORT.md) ghi backend224/browser2 và giới hạn. Đổi hàng, hoàn tiền thật và final visual confirmation vẫn pending.
 
-**Admin operations E5:** admin đăng nhập vào Tài khoản→Mở trang quản trị (`/admin`) để chỉnh tồn kho, xử lý ORD, xem thông tin nhận hàng, đổi role và xem audit. Version/revision chống ghi đè, role recheck và audit commit cùng transaction. [Contract](docs/20_ADMIN_OPERATIONS.md), [evidence](artifacts/backend/ADMIN_OPERATIONS_REPORT.md). Full catalog CRUD/variants/account lock/returns và data/quality gates vẫn pending.
+**Admin operations E5:** admin đăng nhập vào Tài khoản→Mở trang quản trị (`/admin`) để chỉnh tồn kho, xử lý ORD, xem thông tin nhận hàng, đổi role và xem audit. Version/revision chống ghi đè, role recheck và audit commit cùng transaction. [Contract](docs/20_ADMIN_OPERATIONS.md), [evidence](artifacts/backend/ADMIN_OPERATIONS_REPORT.md). Returns theo23 và khóa/mở khóa theo24 đã có mốc riêng; full catalog CRUD/variants và data/quality gates vẫn pending.
 
-**Checkout E4:** `/checkout` có báo giá/phí/địa chỉ/COD demo; `/purchases` lịch sử, detail/hủy đơn. Stock ledger SQLite, transaction đặt đơn+xóa giỏ+trừ stock, idempotency chống đặt trùng và hủy hoàn stock một lần. API sản phẩm/search/browse/cart đọc cùng ledger. [Contract](docs/19_CHECKOUT_ORDERS.md), [evidence](artifacts/backend/CHECKOUT_REPORT.md). Không thu tiền/giao hàng thật; full admin, variants, returns và data/quality gates còn pending.
+**Checkout E4:** `/checkout` có báo giá/phí/địa chỉ/COD demo; `/purchases` lịch sử, detail/hủy đơn. Stock ledger SQLite, transaction đặt đơn+xóa giỏ+trừ stock, idempotency chống đặt trùng và hủy hoàn stock một lần. API sản phẩm/search/browse/cart đọc cùng ledger. [Contract](docs/19_CHECKOUT_ORDERS.md), [evidence](artifacts/backend/CHECKOUT_REPORT.md). Không thu tiền/giao hàng thật; full admin, variants, exchange/refund integration và data/quality gates còn pending.
 
-**Shopping E3:** `/cart` và `/wishlist` lưu riêng theo tài khoản SQLite; product detail thêm chọn số lượng/thêm giỏ/lưu yêu thích. Giá/tổng từ server, quantity có kiểm tra stock/version chống ghi đè hai phiên. [Contract](docs/18_CART_WISHLIST.md), [evidence](artifacts/backend/SHOPPING_REPORT.md). Checkout/order transaction/variants/full admin và sửa toàn catalog còn pending; giỏ chưa giữ hàng.
+**Shopping E3:** `/cart` và `/wishlist` lưu riêng theo tài khoản SQLite; product detail thêm chọn số lượng/thêm giỏ/lưu yêu thích. Giá/tổng từ server, quantity có kiểm tra stock/version chống ghi đè hai phiên. [Contract](docs/18_CART_WISHLIST.md), [evidence](artifacts/backend/SHOPPING_REPORT.md). Checkout/order transaction theo19 đã có; variants/full admin và sửa toàn catalog còn pending; giỏ chưa giữ hàng.
 
 **Data repair đợt 1:** đã sửa metadata 16 SKU và thay 8 ảnh sai nội dung bằng ảnh chụp Commons có review/hash/provenance; index CPU rebuild. [Báo cáo và pending](docs/17_CATALOG_REPAIR.md). Gate ảnh/metadata toàn 180 SKU còn thiếu, chưa nghiệm thu toàn ecommerce.
 
 **Dataset cần rà lại:** kiểm tra trực quan E2 phát hiện ảnh infographic và metadata màu/brand sai trong đợt import 120. Xem [findings](artifacts/backend/catalog-review-findings.json); các câu “toàn bộ ảnh/metadata đạt” trong báo cáo baseline bên dưới chưa chứng minh catalog 180 hiện tại.
 
-**Mốc search/browse E2:** trang `/catalog` có tìm từ khóa/SKU, category/brand/color/price/stock facets, sort/phân trang server và URL state. Trang search mặc định kết hợp BM25 + encoder CPU thật qua RRF, giữ cosine riêng. Xem [contract](docs/16_SEARCH_BROWSE.md) và [evidence](artifacts/backend/SEARCH_BROWSE_REPORT.md). Natural-language constraints/frozen independent quality/checkout/full admin còn pending.
+**Mốc search/browse E2:** trang `/catalog` có tìm từ khóa/SKU, category/brand/color/price/stock facets, sort/phân trang server và URL state. Trang search mặc định kết hợp BM25 + encoder CPU thật qua RRF, giữ cosine riêng. Xem [contract](docs/16_SEARCH_BROWSE.md) và [evidence](artifacts/backend/SEARCH_BROWSE_REPORT.md). Natural-language constraints/frozen independent quality/full admin còn pending.
 
-**Mở rộng ecommerce đang triển khai:** đã thêm `/account` (đăng ký, đăng nhập, profile, đổi mật khẩu, đăng xuất) và API phân quyền user/admin lưu SQLite. Đơn hàng yêu cầu đăng nhập, không còn truy cập mặc định C001. Catalog hiện có 180 sản phẩm; các số 60 bên dưới là báo cáo baseline lịch sử. Research, module matrix và pending tại [docs/15_ECOMMERCE_EXPANSION.md](docs/15_ECOMMERCE_EXPANSION.md); chưa hoàn tất giỏ hàng/checkout/full admin/search hybrid.
+**Mở rộng ecommerce đang triển khai:** đã thêm `/account` (đăng ký, đăng nhập, profile, đổi mật khẩu, đăng xuất) và API phân quyền user/admin lưu SQLite. Đơn hàng yêu cầu đăng nhập, không còn truy cập mặc định C001. Catalog hiện có 180 sản phẩm; các số 60 bên dưới là báo cáo baseline lịch sử. Research, module matrix và pending tại [docs/15_ECOMMERCE_EXPANSION.md](docs/15_ECOMMERCE_EXPANSION.md); chưa đạt full acceptance.
 
 Tạo admin hoặc owner demo bằng CLI sau setup backend; mật khẩu nhập qua terminal, không nằm trong arguments/Git:
 
@@ -25,7 +27,7 @@ Tạo admin hoặc owner demo bằng CLI sau setup backend; mật khẩu nhập 
 
 Không có mật khẩu/admin mặc định. Tài khoản web mới không sở hữu các đơn demo. SQLite nằm `runtime/commerce/`, persistent qua restart và Compose volume, được ignore; browser chỉ gọi API. COOKIE_SECURE=false cho HTTP local, true khi sử dụng HTTPS. Evidence mốc tài khoản ở [ACCOUNTS_REPORT.md](artifacts/backend/ACCOUNTS_REPORT.md).
 
-Frontend React/TypeScript và backend FastAPI đã kết nối cho tìm kiếm tiếng Việt, ảnh, text + ảnh, transcript voice, lọc, chi tiết sản phẩm, nguồn ảnh và đơn hàng khách demo. Catalog có **60 sản phẩm / 12 danh mục**, mỗi danh mục 4–6 mẫu, và **30 đơn hàng**. Toàn bộ ảnh là ảnh chụp thật tải từ mạng, có nguồn và giấy phép. Xem [hướng dẫn chạy backend](docs/BACKEND_QUICKSTART.md) và [dữ liệu demo](docs/DEMO_DATA.md).
+Baseline lịch sử trước mở rộng: frontend React/TypeScript và backend FastAPI kết nối cho tìm kiếm tiếng Việt, ảnh, text + ảnh, transcript voice, lọc, chi tiết sản phẩm, nguồn ảnh và đơn khách demo; **60 sản phẩm / 12 danh mục** và **30 đơn hàng**. Các nhận định ảnh/provenance baseline không chứng minh catalog180 hiện tại đã đạt visual gate. Xem [hướng dẫn chạy backend](docs/BACKEND_QUICKSTART.md) và [dữ liệu demo](docs/DEMO_DATA.md).
 
 Chạy tại thư mục này bằng PowerShell:
 

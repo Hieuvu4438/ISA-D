@@ -85,14 +85,14 @@ def mount_accounts(application, settings, query_fields):
         check_write(request)
         account = identity(request)
         account["display_name"] = name_value(body.display_name)
-        account_service(request).repository.update_name(account["user_id"], account["display_name"])
+        account_service(request).repository.update_name(account["user_id"], account["display_name"], expected_epoch=account["auth_epoch"])
         return envelope(request, account)
 
     @router.post("/account/password")
     def password(body: PasswordRequest, request: Request, response: Response):
         check_write(request)
         account = identity(request)
-        account_service(request).change_password(account, body.current_password, body.password, peer(request))
+        account = account_service(request).change_password(account, body.current_password, body.password, peer(request))
         return session(request, response, account)
 
     @router.get("/admin/overview")

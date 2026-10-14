@@ -4,6 +4,7 @@ import json
 
 from app.domain import AppError
 from app.data.purchase_repository import PurchaseRepository
+from app.data.account_repository import AccountRepository
 
 
 class AdminRepository:
@@ -24,9 +25,9 @@ class AdminRepository:
             """)
 
     @staticmethod
-    def require_admin(db, actor):
-        row = db.execute("SELECT role FROM accounts WHERE user_id=?", (actor,)).fetchone()
-        if not row or row[0] != "admin":
+    def require_admin(db, actor, expected_epoch=None):
+        row = AccountRepository.require_active(db, actor, expected_epoch)
+        if row["role"] != "admin":
             raise AppError(403, "FORBIDDEN", "Tài khoản không có quyền quản trị.")
 
     @staticmethod
@@ -41,10 +42,10 @@ class AdminRepository:
             revision = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
             return {"rows": [dict(row) for row in db.execute("SELECT product_id,quantity FROM inventory ORDER BY product_id")], "revision": revision}
 
-    def stock(self, actor, product_id, quantity, revision, reason):
+    def stock(self, actor, product_id, quantity, revision, reason, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
-            self.require_admin(db, actor)
+            self.require_admin(db, actor, expected_epoch)
             current = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
             row = db.execute("SELECT quantity FROM inventory WHERE product_id=?", (product_id,)).fetchone()
             if not row:
@@ -58,21 +59,28 @@ class AdminRepository:
                 current += 1
             return {"product_id": product_id, "quantity": quantity, "revision": current}
 
-    def users(self, offset, limit, query=""):
-        clause = " WHERE instr(lower(a.email),lower(?))>0" if query else ""
-        params = [query] if query else []
+    def users(self, offset, limit, query="", access_state=None):
+        conditions, params = [], []
+        if query:
+            conditions.append("instr(lower(a.email),lower(?))>0")
+            params.append(query)
+        if access_state:
+            conditions.append("COALESCE(x.state,'active')=?")
+            params.append(access_state)
+        clause = " WHERE " + " AND ".join(conditions) if conditions else ""
+        joined = " FROM accounts a LEFT JOIN account_access x ON a.user_id=x.user_id"
         with self.accounts.connection() as db:
             db.execute("BEGIN")
-            total = db.execute("SELECT COUNT(*) FROM accounts a" + clause, params).fetchone()[0]
-            rows = db.execute("""SELECT a.user_id,a.email,a.display_name,a.role,COALESCE(v.version,0) AS version
-                                 FROM accounts a LEFT JOIN admin_user_versions v ON a.user_id=v.user_id
-                              """ + clause + " ORDER BY a.created_at,a.user_id LIMIT ? OFFSET ?", [*params, limit, offset]).fetchall()
+            total = db.execute("SELECT COUNT(*)" + joined + clause, params).fetchone()[0]
+            rows = db.execute("SELECT a.user_id,a.email,a.display_name,a.role,COALESCE(v.version,0) AS version,COALESCE(x.state,'active') AS access_state"
+                              + joined + " LEFT JOIN admin_user_versions v ON a.user_id=v.user_id"
+                              + clause + " ORDER BY a.created_at,a.user_id LIMIT ? OFFSET ?", [*params, limit, offset]).fetchall()
             return {"users": [dict(row) for row in rows], "total": total, "offset": offset, "limit": limit}
 
-    def role(self, actor, user_id, role, version, reason):
+    def role(self, actor, user_id, role, version, reason, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
-            self.require_admin(db, actor)
+            self.require_admin(db, actor, expected_epoch)
             target = db.execute("SELECT user_id,email,display_name,role FROM accounts WHERE user_id=?", (user_id,)).fetchone()
             if not target:
                 raise AppError(404, "ACCOUNT_NOT_FOUND", "Không tìm thấy tài khoản.")
@@ -83,14 +91,46 @@ class AdminRepository:
             if version != current:
                 raise AppError(409, "ACCOUNT_CHANGED", "Quyền tài khoản đã thay đổi. Hãy tải lại danh sách.")
             if target["role"] != role:
-                if target["role"] == "admin" and db.execute("SELECT COUNT(*) FROM accounts WHERE role='admin'").fetchone()[0] <= 1:
+                state = db.execute("SELECT state FROM account_access WHERE user_id=?", (user_id,)).fetchone()
+                if target["role"] == "admin" and (not state or state[0] == "active") and self.active_admin_count(db) <= 1:
                     raise AppError(409, "LAST_ADMIN", "Phải giữ ít nhất một quản trị viên.")
                 db.execute("UPDATE accounts SET role=? WHERE user_id=?", (role, user_id))
                 db.execute("INSERT INTO admin_user_versions VALUES(?,?) ON CONFLICT(user_id) DO UPDATE SET version=excluded.version", (user_id, current + 1))
-                db.execute("DELETE FROM sessions WHERE user_id=?", (user_id,))
+                self.accounts.invalidate_sessions(db, user_id)
                 self.audit(db, actor, "account.role", user_id, {"role": target["role"]}, {"role": role}, reason)
                 current += 1
             return {**dict(target), "role": role, "version": current}
+
+    @staticmethod
+    def active_admin_count(db):
+        return db.execute("""SELECT COUNT(*) FROM accounts a LEFT JOIN account_access x ON a.user_id=x.user_id
+                             WHERE a.role='admin' AND COALESCE(x.state,'active')='active'""").fetchone()[0]
+
+    def access(self, actor, user_id, state, version, reason, expected_epoch=None):
+        with self.accounts.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            self.require_admin(db, actor, expected_epoch)
+            row = db.execute("""SELECT a.user_id,a.email,a.display_name,a.role,COALESCE(x.state,'active') AS access_state,
+                                COALESCE(v.version,0) AS version FROM accounts a
+                                LEFT JOIN account_access x ON a.user_id=x.user_id
+                                LEFT JOIN admin_user_versions v ON a.user_id=v.user_id WHERE a.user_id=?""", (user_id,)).fetchone()
+            if not row:
+                raise AppError(404, "ACCOUNT_NOT_FOUND", "Không tìm thấy tài khoản.")
+            if actor == user_id and state != row["access_state"]:
+                raise AppError(409, "SELF_ACCESS_CHANGE", "Không thể tự khóa tài khoản của phiên quản trị hiện tại.")
+            if version != row["version"]:
+                raise AppError(409, "ACCOUNT_CHANGED", "Tài khoản đã thay đổi. Hãy tải lại danh sách.")
+            if row["access_state"] == state:
+                return dict(row)
+            if state == "locked" and row["role"] == "admin" and self.active_admin_count(db) <= 1:
+                raise AppError(409, "LAST_ADMIN", "Phải giữ ít nhất một quản trị viên hoạt động.")
+            db.execute("""INSERT INTO account_access(user_id,state,epoch) VALUES(?,?,0)
+                          ON CONFLICT(user_id) DO UPDATE SET state=excluded.state""", (user_id, state))
+            self.accounts.invalidate_sessions(db, user_id)
+            db.execute("INSERT INTO admin_user_versions VALUES(?,?) ON CONFLICT(user_id) DO UPDATE SET version=excluded.version", (user_id, version + 1))
+            self.audit(db, actor, "account.access", user_id, {"access_state": row["access_state"], "version": version},
+                       {"access_state": state, "version": version + 1}, reason)
+            return {**dict(row), "access_state": state, "version": version + 1}
 
     def orders(self, offset, limit, status=None):
         clause, params = (" WHERE status=?", [status]) if status else ("", [])
@@ -106,10 +146,10 @@ class AdminRepository:
                                "items": payload["items"]})
             return {"orders": orders, "total": total, "offset": offset, "limit": limit}
 
-    def transition(self, actor, order_id, status, version, reason):
+    def transition(self, actor, order_id, status, version, reason, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
-            self.require_admin(db, actor)
+            self.require_admin(db, actor, expected_epoch)
             row = db.execute("SELECT status,version,payload FROM purchases WHERE order_id=?", (order_id,)).fetchone()
             if not row:
                 raise AppError(404, "ORDER_NOT_FOUND", "Không tìm thấy đơn hàng.")

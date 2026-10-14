@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Access amendment: GET admin/users thêm filter/DTO access_state; POST admin/users/{uuid}/access nhận state/version/reason. Auth DTO giữ4 trường, locked login cùng401 INVALID_CREDENTIALS; guards/errors/compatibility tại [24](24_ACCOUNT_ACCESS.md).
+
 Returns amendment: customer GET/POST purchases/{ORD-id}/returns, POST returns/{RMA-id}/withdraw; admin GET returns và POST returns/{RMA-id}/status với role/intent/version/strict receipt. Hợp đồng/error/idempotency/privacy tại [23](23_RETURNS.md); API trả hàng không tiết lộ owner/address/key.
 
 **E5 amendment:** `/admin/inventory`, users/role,purchases/status/detail,audit schemas/version/security tại [20](20_ADMIN_OPERATIONS.md). Admin identity recheck trong transaction; protected admin detail có address, customer endpoints vẫn owner-only.

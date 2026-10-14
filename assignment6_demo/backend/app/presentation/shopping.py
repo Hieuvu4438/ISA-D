@@ -26,24 +26,26 @@ def mount_shopping(application, query_fields):
                 raise AppError(403, "CSRF_REJECTED", "Hãy tải lại trang và thử lại.")
             if not request.headers.get("content-type", "").lower().startswith("application/json"):
                 raise AppError(415, "MEDIA_TYPE_UNSUPPORTED", "Cần gửi application/json.")
-        return identity(request)["user_id"]
+        return identity(request)
 
     @router.get("/cart")
     def cart(request: Request):
-        return {"request_id": request.state.request_id, "cart": request.app.state.shopping.cart(account(request))}
+        return {"request_id": request.state.request_id, "cart": request.app.state.shopping.cart(account(request)["user_id"])}
 
     @router.post("/cart/items")
     def quantity(body: CartUpdate, request: Request):
-        value = request.app.state.shopping.set_quantity(account(request, True), body.product_id, body.quantity, body.version)
+        user = account(request, True)
+        value = request.app.state.shopping.set_quantity(user["user_id"], body.product_id, body.quantity, body.version, expected_epoch=user["auth_epoch"])
         return {"request_id": request.state.request_id, "cart": value}
 
     @router.get("/wishlist")
     def wishlist(request: Request):
-        return {"request_id": request.state.request_id, **request.app.state.shopping.wishlist(account(request))}
+        return {"request_id": request.state.request_id, **request.app.state.shopping.wishlist(account(request)["user_id"])}
 
     @router.post("/wishlist/items")
     def save(body: WishlistUpdate, request: Request):
-        value = request.app.state.shopping.save(account(request, True), body.product_id, body.saved)
+        user = account(request, True)
+        value = request.app.state.shopping.save(user["user_id"], body.product_id, body.saved, expected_epoch=user["auth_epoch"])
         return {"request_id": request.state.request_id, **value}
 
     application.include_router(router)

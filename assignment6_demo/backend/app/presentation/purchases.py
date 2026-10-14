@@ -46,7 +46,7 @@ def mount_purchases(application, query_fields):
                 raise AppError(403, "CSRF_REJECTED", "Hãy tải lại trang và thử lại.")
             if not request.headers.get("content-type", "").lower().startswith("application/json"):
                 raise AppError(415, "MEDIA_TYPE_UNSUPPORTED", "Cần gửi application/json.")
-        return identity(request)["user_id"]
+        return identity(request)
 
     def order_id(value):
         if not re.fullmatch(r"ORD-[0-9A-F]{16}", value):
@@ -55,11 +55,13 @@ def mount_purchases(application, query_fields):
 
     @router.post("/checkout/quote")
     def quote(body: QuoteRequest, request: Request):
-        return {"request_id": request.state.request_id, "quote": request.app.state.purchases.quote(account(request, True))}
+        user = account(request, True)
+        return {"request_id": request.state.request_id, "quote": request.app.state.purchases.quote(user["user_id"], expected_epoch=user["auth_epoch"])}
 
     @router.post("/purchases", status_code=201)
     def place(body: PurchaseRequest, request: Request):
-        order, replayed = request.app.state.purchases.place(account(request, True), body.quote_id, body.idempotency_key, body.shipping_address.model_dump())
+        user = account(request, True)
+        order, replayed = request.app.state.purchases.place(user["user_id"], body.quote_id, body.idempotency_key, body.shipping_address.model_dump(), expected_epoch=user["auth_epoch"])
         return {"request_id": request.state.request_id, "order": order, "replayed": replayed}
 
     @router.get("/purchases", openapi_extra={"parameters": [
@@ -79,10 +81,11 @@ def mount_purchases(application, query_fields):
 
     @router.get("/purchases/{purchase_id}")
     def detail(purchase_id: str, request: Request):
-        return {"request_id": request.state.request_id, "order": request.app.state.purchases.repository.detail(account(request), order_id(purchase_id))}
+        return {"request_id": request.state.request_id, "order": request.app.state.purchases.repository.detail(account(request)["user_id"], order_id(purchase_id))}
 
     @router.post("/purchases/{purchase_id}/cancel")
     def cancel(purchase_id: str, body: VersionRequest, request: Request):
-        return {"request_id": request.state.request_id, "order": request.app.state.purchases.repository.cancel(account(request, True), order_id(purchase_id), body.version)}
+        user = account(request, True)
+        return {"request_id": request.state.request_id, "order": request.app.state.purchases.repository.cancel(user["user_id"], order_id(purchase_id), body.version, expected_epoch=user["auth_epoch"])}
 
     application.include_router(router)

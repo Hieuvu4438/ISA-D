@@ -31,7 +31,7 @@ def main():
             row = db.execute("SELECT user_id FROM accounts WHERE email=?", (args.email,)).fetchone()
             if row:
                 db.execute("UPDATE accounts SET role='user' WHERE user_id=?", (row[0],))
-                db.execute("DELETE FROM sessions WHERE user_id=?", (row[0],))
+                repository.invalidate_sessions(db, row[0])
         print("Retired reserved E2E administrator privileges and sessions")
 
 

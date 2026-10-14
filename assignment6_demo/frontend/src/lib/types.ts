@@ -212,7 +212,7 @@ export interface WishlistResponse { request_id: string; items: { product_id: str
 export interface AdminPageData {
   request_id: string; total: number; offset: number; limit: number; revision?: number
   items?: { product_id: string; quantity: number; product: ProductSummary | null }[]
-  users?: { user_id: string; email: string; display_name: string; role: 'user' | 'admin'; version: number }[]
+  users?: { user_id: string; email: string; display_name: string; role: 'user' | 'admin'; access_state: 'active' | 'locked'; version: number }[]
   orders?: (OrderDetail & { version: number })[]
   events?: { audit_id: number; actor_id: string; action: string; subject_id: string; before: Record<string, unknown>; after: Record<string, unknown>; reason: string; created_at: string }[]
 }

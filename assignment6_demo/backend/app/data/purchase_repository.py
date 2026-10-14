@@ -57,9 +57,10 @@ class PurchaseRepository:
         payload = json.loads(row["payload"])
         return {**payload, "order_id": row["order_id"], "status": row["status"], "version": row["version"]}
 
-    def quote(self, user_id, products):
+    def quote(self, user_id, products, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
+            self.accounts.require_active(db, user_id, expected_epoch)
             version = db.execute("SELECT version FROM cart_versions WHERE user_id=?", (user_id,)).fetchone()
             rows = db.execute("SELECT product_id,quantity FROM cart_items WHERE user_id=? ORDER BY product_id", (user_id,)).fetchall()
             if not rows:
@@ -89,10 +90,11 @@ class PurchaseRepository:
                        (self.quote_hash(token), user_id, version[0] if version else 0, canonical(payload), expires_at))
             return {**payload, "quote_id": token, "cart_version": version[0] if version else 0, "expires_at": expires_at}
 
-    def place(self, user_id, quote_id, key, shipping_address, products):
+    def place(self, user_id, quote_id, key, shipping_address, products, expected_epoch=None):
         request_hash = hashlib.sha256(canonical({"quote_id": quote_id, "shipping_address": shipping_address}).encode()).hexdigest()
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
+            self.accounts.require_active(db, user_id, expected_epoch)
             previous = db.execute("SELECT * FROM purchases WHERE user_id=? AND idempotency_key=?", (user_id, key)).fetchone()
             if previous:
                 if previous["request_hash"] != request_hash:
@@ -141,9 +143,10 @@ class PurchaseRepository:
             orders = [{k: v for k, v in self.public(row).items() if k in ("order_id", "status", "version", "date", "total_vnd", "payment_method", "payment_status", "demo_order")} for row in rows]
             return {"orders": orders, "total": total, "offset": offset, "limit": limit}
 
-    def cancel(self, user_id, order_id, version):
+    def cancel(self, user_id, order_id, version, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
+            self.accounts.require_active(db, user_id, expected_epoch)
             row = db.execute("SELECT * FROM purchases WHERE user_id=? AND order_id=?", (user_id, order_id)).fetchone()
             if not row:
                 raise AppError(404, "ORDER_NOT_FOUND", "Không tìm thấy đơn hàng.")

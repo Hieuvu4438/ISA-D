@@ -76,11 +76,12 @@ class ReturnRepository:
             rows = db.execute("SELECT * FROM purchase_returns WHERE order_id=? ORDER BY rowid DESC", (order_id,)).fetchall()
             return {"eligibility": self.availability(db, order), "returns": [self.public(row) for row in rows], "order_version": order["version"]}
 
-    def create(self, user_id, order_id, version, key, items, reason):
+    def create(self, user_id, order_id, version, key, items, reason, expected_epoch=None):
         items = sorted(items, key=lambda item: item["product_id"])
         request_hash = hashlib.sha256(canonical({"order_id": order_id, "version": version, "items": items, "reason": reason}).encode()).hexdigest()
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
+            self.accounts.require_active(db, user_id, expected_epoch)
             order = self.owned_order(db, user_id, order_id)
             previous = db.execute("SELECT * FROM purchase_returns WHERE user_id=? AND idempotency_key=?", (user_id, key)).fetchone()
             if previous:
@@ -113,9 +114,10 @@ class ReturnRepository:
             AdminRepository.audit(db, user_id, "return.request", return_id, {}, {"status": "requested", "items": items}, reason)
             return self.public(db.execute("SELECT * FROM purchase_returns WHERE return_id=?", (return_id,)).fetchone()), False
 
-    def withdraw(self, user_id, return_id, version):
+    def withdraw(self, user_id, return_id, version, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
+            self.accounts.require_active(db, user_id, expected_epoch)
             row = db.execute("SELECT * FROM purchase_returns WHERE user_id=? AND return_id=?", (user_id, return_id)).fetchone()
             if not row:
                 raise AppError(404, "RETURN_NOT_FOUND", "Không tìm thấy yêu cầu trả hàng.")
@@ -133,10 +135,10 @@ class ReturnRepository:
             rows = db.execute("SELECT * FROM purchase_returns" + clause + " ORDER BY rowid DESC LIMIT ? OFFSET ?", [*params, limit, offset]).fetchall()
             return {"returns": [self.public(row) for row in rows], "total": total, "offset": offset, "limit": limit}
 
-    def transition(self, actor, return_id, status, version, reason, receipt=None):
+    def transition(self, actor, return_id, status, version, reason, receipt=None, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
-            AdminRepository.require_admin(db, actor)
+            AdminRepository.require_admin(db, actor, expected_epoch)
             row = db.execute("SELECT * FROM purchase_returns WHERE return_id=?", (return_id,)).fetchone()
             if not row:
                 raise AppError(404, "RETURN_NOT_FOUND", "Không tìm thấy yêu cầu trả hàng.")

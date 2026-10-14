@@ -40,13 +40,13 @@ class ShoppingService:
                 "subtotal_vnd": sum(row["line_total_vnd"] for row in items), "currency": "VND",
                 "has_issues": any(row["issue"] for row in items), "stock_reserved": False}
 
-    def set_quantity(self, user_id, product_id, quantity, version):
+    def set_quantity(self, user_id, product_id, quantity, version, expected_epoch=None):
         if quantity:
             product = self.product(product_id)
             if product["stock_quantity"] < quantity:
                 raise AppError(409, "INSUFFICIENT_STOCK", "Số lượng vượt tồn kho hiện tại. Hãy chọn số lượng thấp hơn.", "quantity")
         # Zero permits removal of a discontinued product.
-        self.repository.set_quantity(user_id, product_id, quantity, version)
+        self.repository.set_quantity(user_id, product_id, quantity, version, expected_epoch=expected_epoch)
         return self.cart(user_id)
 
     def wishlist(self, user_id):
@@ -60,8 +60,8 @@ class ShoppingService:
             items.append({"product_id": product_id, "product": self.products.summary(product) if product else None})
         return {"items": items, "total": len(items)}
 
-    def save(self, user_id, product_id, saved):
+    def save(self, user_id, product_id, saved, expected_epoch=None):
         if saved:
             self.product(product_id)
-        self.repository.save(user_id, product_id, saved)
+        self.repository.save(user_id, product_id, saved, expected_epoch=expected_epoch)
         return self.wishlist(user_id)

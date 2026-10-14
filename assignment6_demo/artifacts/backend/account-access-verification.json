@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "a820ebd",
+  "scope": "admin account access and transaction session revocation guards; overall incomplete",
+  "source_sha256": {
+    "backend/app/data/account_repository.py": "610bea9e5a1019fa79e8d2a5b21794135a87b38eeecacf1ebec93019beeb5a3f",
+    "backend/app/data/admin_repository.py": "3d060c773bc69f044cbf917ce5162752a94391c45f31d7bc273537f8a46358e6",
+    "backend/app/data/shopping_repository.py": "c76fd051e2045c266b3d0a5aad6366d0ba5a48194b4da578c144ae76a843fb1c",
+    "backend/app/data/purchase_repository.py": "a677192f605e649e7b42b3e2b5c77df771a80ed09650883bc378c0c578ddb4e9",
+    "backend/app/data/return_repository.py": "5e3e00811ea8ea6a255784e3fac69b0c0e93f9c0dd3a4cd15c3d7b6ef572c148",
+    "backend/app/application/account_service.py": "c2d4288d676de87a2785c62dcda4aad475d7d3a61b36b4a245630b6908686571",
+    "backend/app/application/admin_service.py": "4e618dd23ce387572f503a3925e2a0c7eacbc430cd95d3dec7cab7500321f2fc",
+    "backend/app/application/shopping_service.py": "6373786ed340a7bde63dfc2900e171a43ce7c1d04d78d13d08c8590b3de99738",
+    "backend/app/application/purchase_service.py": "766337e13a4d990fde682d2ca74e40694dfbb33f81037dae843fd7eaed066e2d",
+    "backend/app/presentation/accounts.py": "669e388a093096332d2fa3644a8aa90e9c39a2e248e86f5407c0728953ccd0c6",
+    "backend/app/presentation/admin.py": "d4628a51b47eab071837e72fd066a192a04e49b082bbdd7d74f39150ea79c6c8",
+    "backend/app/presentation/shopping.py": "36cd886caacbb0d67e4a956ceeed3949c7a7d2418ab58d7e4b0ac35f5653ccc6",
+    "backend/app/presentation/purchases.py": "6afd3cbfc123a3babaad800b7588b8dbb80b6019f417255236ef2b465df5359a",
+    "backend/app/presentation/returns.py": "e4c2f146215bcfebbc519a7ef093ff967e8edecb47797485ab5c4ea04c41481c",
+    "backend/tests/test_account_access.py": "632f27f92bd9fb66ffd2817b8b15e16403b930310a9706117253fa30a73ac392",
+    "backend/tests/test_admin_operations.py": "ceade5433d27ced28be7ab3754148b5a71740987b82860faf7c3da28bd078451",
+    "frontend/src/pages/AdminPage.tsx": "4ff73ad1b1186356abbc526594111eeb222e6cde7866f1ed257d6efdf59ea2a8",
+    "frontend/src/lib/types.ts": "acf6352360d98a4884b7b304606e22e00396bd6b84537619d19a6fff87f9b61e",
+    "frontend/e2e/account-access.spec.ts": "9582edecac73d181278f1bffe619ccf55ba48b909bcc31a8c04e3d3a976b714f",
+    "scripts/admin_browser_fixture.py": "0827a86b354084a42981c2a75304d5bd3ec8c0dd18fd97d5d43698b8f0771cc2"
+  },
+  "full_backend": {
+    "tests": 246,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "new_cases_in_full_run": 22,
+  "targeted_before_upgrade_case": {
+    "tests": 21,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "initial_regression_before_admin_dto_assertion_update": {
+    "tests": 58,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0
+  },
+  "frontend_unit_passed": 17,
+  "exit_codes": {
+    "backend_full": 0,
+    "backend_targeted": 0,
+    "initial_regression": 1,
+    "ruff": 0,
+    "frontend_build": 0,
+    "frontend_lint": 0,
+    "frontend_unit": 0,
+    "browser_access": 0,
+    "browser_regression": 0
+  },
+  "browser_access": {
+    "startTime": "2026-10-14T23:43:03.095Z",
+    "duration": 9939.902,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_regression": {
+    "startTime": "2026-10-14T23:46:44.264Z",
+    "duration": 17505.203999999998,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "new_controls_visual": {
+    "viewports": [
+      360,
+      768,
+      1440
+    ],
+    "axe_violations": 0,
+    "horizontal_overflow": false,
+    "admin_record_min_width_px": 260,
+    "batched_capture_rounds": 1
+  },
+  "fixture_retirement": {
+    "scope": "reserved E2E fixtures after access and regression runs",
+    "active_privileged_fixture_accounts": 0,
+    "active_fixture_sessions": 0,
+    "locked_access_fixtures": 0,
+    "passed": true,
+    "credentials_printed": false
+  },
+  "provider_calls": false,
+  "model_evidence": "Existing checkout regression calls the real local encoder once; no new independent quality evaluation",
+  "pending": [
+    "variants/sizes and metadata/assets CRUD/index publication",
+    "account delete/anonymize",
+    "exchange/refund integrations",
+    "returns final visual confirmation per docs23",
+    "catalog photo/data repair",
+    "frozen quality and provider-specific live speech",
+    "editable UML and clean checkout acceptance"
+  ]
+}

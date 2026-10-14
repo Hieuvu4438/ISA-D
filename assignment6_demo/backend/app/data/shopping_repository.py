@@ -29,9 +29,10 @@ class ShoppingRepository:
             rows = db.execute("SELECT product_id,quantity FROM cart_items WHERE user_id=? ORDER BY product_id", (user_id,)).fetchall()
             return version[0] if version else 0, [dict(row) for row in rows]
 
-    def set_quantity(self, user_id, product_id, quantity, version):
+    def set_quantity(self, user_id, product_id, quantity, version, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
+            self.accounts.require_active(db, user_id, expected_epoch)
             db.execute("INSERT OR IGNORE INTO cart_versions(user_id) VALUES (?)", (user_id,))
             current = db.execute("SELECT version FROM cart_versions WHERE user_id=?", (user_id,)).fetchone()[0]
             if current != version:
@@ -52,9 +53,10 @@ class ShoppingRepository:
         with self.accounts.connection() as db:
             return [row[0] for row in db.execute("SELECT product_id FROM wishlist_items WHERE user_id=? ORDER BY product_id", (user_id,))]
 
-    def save(self, user_id, product_id, saved):
+    def save(self, user_id, product_id, saved, expected_epoch=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
+            self.accounts.require_active(db, user_id, expected_epoch)
             if saved:
                 exists = db.execute("SELECT 1 FROM wishlist_items WHERE user_id=? AND product_id=?", (user_id, product_id)).fetchone()
                 count = db.execute("SELECT COUNT(*) FROM wishlist_items WHERE user_id=?", (user_id,)).fetchone()[0]

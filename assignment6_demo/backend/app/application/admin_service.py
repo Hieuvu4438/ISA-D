@@ -23,9 +23,9 @@ class AdminService:
             rows.append({**row, "product": self.products.summary(product) if product else None})
         return {"items": rows[offset:offset + limit], "total": len(rows), "offset": offset, "limit": limit, "revision": snapshot["revision"]}
 
-    def stock(self, actor, product_id, quantity, revision, reason):
+    def stock(self, actor, product_id, quantity, revision, reason, expected_epoch=None):
         if not self.products:
             raise AppError(503, "CATALOG_UNAVAILABLE", "Danh mục chưa sẵn sàng.")
         if not self.products.get_by_id(product_id):
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm trong danh mục hiện tại.")
-        return self.repository.stock(actor, product_id, quantity, revision, reason)
+        return self.repository.stock(actor, product_id, quantity, revision, reason, expected_epoch=expected_epoch)

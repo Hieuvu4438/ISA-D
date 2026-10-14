@@ -12,15 +12,15 @@ Nguồn chính thức đã đọc: [H&M shopping](https://www2.hm.com/en_gb/cust
 
 | Module | Chức năng và edge cases cần kiểm tra | Trạng thái |
 | --- | --- | --- |
-| Tài khoản/quyền | Register/login/logout/profile/password, user/admin; email trùng/race, giả role/customer, brute force, expiry/replay, revoke phiên khi đổi mật khẩu, CSRF | E1 implement, evidence riêng |
+| Tài khoản/quyền | Register/login/logout/profile/password, user/admin; email trùng/race, giả role/customer, brute force, expiry/replay, revoke phiên khi đổi mật khẩu, CSRF | E1 và lock/unlock/epoch guards theo24 implemented; delete/anonymize pending |
 | Catalog/phân loại | Danh mục/breadcrumb/detail, size/màu/stock từng SKU, ảnh thật và size guide; ID lạ, hết hàng, size thiếu, ảnh hỏng, provenance/hash, direct reload | Baseline catalog có; variants/merchandising pending |
-| Search | Autocomplete, synonyms, có/không dấu, typo, SKU exact, hybrid BM25/encoder thật, ảnh/multimodal/voice; rỗng/dài/Unicode/OOD/negation/đa nghĩa/giá/brand/ảnh hỏng/timeout/race | Encoder baseline có; hybrid và edge cases mở rộng pending |
-| Lọc/sort/phân trang | Facets category/brand/color/size/price/availability, counts/clear/URL state, relevance/price; filters kết hợp rỗng, min>max, type sai/boundary, trang cũ, thay filter khi request đang chạy | Baseline filters có; browse facets/sorts pending |
+| Search | Autocomplete, synonyms, có/không dấu, typo, SKU exact, hybrid BM25/encoder thật, ảnh/multimodal/voice; rỗng/dài/Unicode/OOD/negation/đa nghĩa/giá/brand/ảnh hỏng/timeout/race | Hybrid/lexical theo16 có; natural-language constraints và independent quality gate pending |
+| Lọc/sort/phân trang | Facets category/brand/color/size/price/availability, counts/clear/URL state, relevance/price; filters kết hợp rỗng, min>max, type sai/boundary, trang cũ, thay filter khi request đang chạy | Browse/facets/sort/URL/recovery theo16/22 có; size/variant filtering pending |
 | Wishlist | Thêm/xóa/lưu theo user/chuyển giỏ; click lặp, đổi tài khoản, SKU ngừng bán | E3 core implemented theo18; guest/variant expansion pending |
-| Giỏ hàng | SKU/quantity/giá server/update/remove/tổng VND; stock đổi, số âm/boolean, SKU sai, race/session đổi | E3 core implemented theo18; variants/checkout/inventory transaction pending |
+| Giỏ hàng | SKU/quantity/giá server/update/remove/tổng VND; stock đổi, số âm/boolean, SKU sai, race/session đổi | E3 core theo18, checkout/inventory transaction theo19; variants pending |
 | Checkout | Địa chỉ/phí rõ/COD/trạng thái thanh toán/idempotency/transaction stock+order; double submit, race stock cuối, timeout/retry, giá đổi, rollback | E4 COD/transaction core implemented theo19; payment/logistics provider thật pending |
-| Đơn hàng | List/detail/lookup ownership, trạng thái/hủy/trả hàng; foreign/missing cùng lỗi, hủy sau shipped, hủy lặp hoàn stock một lần, snapshot name/price | E4 history/detail/lookup/cancel; admin fulfillment và returns pending |
-| Admin | Dashboard/product/variants/inventory/order/users/roles/audit; user gọi admin, self-demotion/last-admin, input sai, stale update, index lệch | E5 inventory/fulfillment/role/audit implemented theo20; product metadata/asset CRUD, variants và lock/delete pending |
+| Đơn hàng | List/detail/lookup ownership, trạng thái/hủy/trả hàng; foreign/missing cùng lỗi, hủy sau shipped, hủy lặp hoàn stock một lần, snapshot name/price | E4 history/detail/cancel, admin fulfillment20 và returns demo23 có; exchange/refund thật pending |
+| Admin | Dashboard/product/variants/inventory/order/users/roles/audit; user gọi admin, self-demotion/last-admin, input sai, stale update, index lệch | E5 inventory/fulfillment/role/audit20, returns23, lock/unlock24 implemented; product metadata/asset CRUD, variants và delete pending |
 | Speech | Groq theo yêu cầu, local/Azure chọn explicit, sửa transcript; thiếu key/WAV sai/no-match/timeout/429/không fallback giả | Adapter/evidence lịch sử có; regression fashion thật pending |
 | UI/vận hành | Tiếng Việt/responsive/accessibility/navigation/loading/empty/error/DB persistence/clean install; keyboard/axe/offline/reload/race/restart/secrets | E1 riêng; full-system pending |
 

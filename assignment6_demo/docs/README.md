@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Khóa/mở khóa, session revocation và transaction epoch guards: [24_ACCOUNT_ACCESS.md](24_ACCOUNT_ACCESS.md).
+
 Trả hàng từng phần, kiểm nhận/cách ly, demo đối soát và evidence: [23_RETURNS.md](23_RETURNS.md).
 
 Admin operations contracts/sequence/pending: [20_ADMIN_OPERATIONS.md](20_ADMIN_OPERATIONS.md).

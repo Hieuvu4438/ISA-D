@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+Access amendment: account_access(user_id,state,epoch), default row-missing active/0, shared admin_user_versions cho role/access và atomic audit/revocation theo [24](24_ACCOUNT_ACCESS.md). Không đổi7 cột accounts hay vector; auth_epoch chỉ ở identity nội bộ.
+
 Returns amendment: table purchase_returns với ownership/idempotency/version/payload, snapshot giá, cumulative quantities và receipt theo [23](23_RETURNS.md). delivered_at được ghi trong transaction giao hàng; audit cũ là fallback có bằng chứng. refund_status=demo_recorded không phải payment transfer.
 
 **E5 amendment:** admin_user_versions và admin_audit SQLite, stock/order/role mutations coupling audit theo [20](20_ADMIN_OPERATIONS.md). Không raw credentials/request bodies/PII trong audit; no-op không tạo event.

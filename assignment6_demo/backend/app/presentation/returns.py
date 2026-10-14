@@ -49,7 +49,7 @@ def mount_returns(application, query_fields):
                 raise AppError(403, "CSRF_REJECTED", "Hãy tải lại trang và thử lại.")
             if not request.headers.get("content-type", "").lower().startswith("application/json"):
                 raise AppError(415, "MEDIA_TYPE_UNSUPPORTED", "Cần gửi application/json.")
-        return identity(request, "admin" if admin else None)["user_id"]
+        return identity(request, "admin" if admin else None)
 
     def identifier(value, prefix):
         if not re.fullmatch(prefix + r"-[A-F0-9]{16}", value):
@@ -59,17 +59,19 @@ def mount_returns(application, query_fields):
     @router.get("/purchases/{purchase_id}/returns")
     def order_returns(purchase_id: str, request: Request):
         query_fields(request)
-        return {"request_id": request.state.request_id, **request.app.state.returns.order_returns(actor(request), identifier(purchase_id, "ORD"))}
+        return {"request_id": request.state.request_id, **request.app.state.returns.order_returns(actor(request)["user_id"], identifier(purchase_id, "ORD"))}
 
     @router.post("/purchases/{purchase_id}/returns", status_code=201)
     def create(purchase_id: str, body: ReturnRequest, request: Request):
-        result, replayed = request.app.state.returns.create(actor(request, write=True), identifier(purchase_id, "ORD"), body.version,
-                                                          body.idempotency_key, [i.model_dump() for i in body.items], body.reason)
+        user = actor(request, write=True)
+        result, replayed = request.app.state.returns.create(user["user_id"], identifier(purchase_id, "ORD"), body.version,
+                                                          body.idempotency_key, [i.model_dump() for i in body.items], body.reason, expected_epoch=user["auth_epoch"])
         return {"request_id": request.state.request_id, "return": result, "replayed": replayed}
 
     @router.post("/returns/{return_id}/withdraw")
     def withdraw(return_id: str, body: VersionRequest, request: Request):
-        return {"request_id": request.state.request_id, "return": request.app.state.returns.withdraw(actor(request, write=True), identifier(return_id, "RMA"), body.version)}
+        user = actor(request, write=True)
+        return {"request_id": request.state.request_id, "return": request.app.state.returns.withdraw(user["user_id"], identifier(return_id, "RMA"), body.version, expected_epoch=user["auth_epoch"])}
 
     @router.get("/admin/returns", openapi_extra={"parameters": [
         {"name": "offset", "in": "query", "schema": {"type": "integer", "minimum": 0, "maximum": 1_000_000, "default": 0}},
@@ -92,8 +94,9 @@ def mount_returns(application, query_fields):
 
     @router.post("/admin/returns/{return_id}/status")
     def transition(return_id: str, body: ReturnTransition, request: Request):
-        result = request.app.state.returns.transition(actor(request, admin=True, write=True), identifier(return_id, "RMA"), body.status,
-                                                     body.version, body.reason, [i.model_dump() for i in body.receipt] if body.receipt else None)
+        user = actor(request, admin=True, write=True)
+        result = request.app.state.returns.transition(user["user_id"], identifier(return_id, "RMA"), body.status,
+                                                     body.version, body.reason, [i.model_dump() for i in body.receipt] if body.receipt else None, expected_epoch=user["auth_epoch"])
         return {"request_id": request.state.request_id, "return": result}
 
     application.include_router(router)

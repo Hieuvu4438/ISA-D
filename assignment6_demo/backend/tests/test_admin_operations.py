@@ -109,7 +109,7 @@ def test_role_change_revokes_sessions_and_guards_self_and_stale(api):
     login(api, "admin@example.test")
     assert old_cookie
     rows = api.get("/api/v1/admin/users").json()["users"]
-    assert all(set(row) == {"user_id", "email", "display_name", "role", "version"} for row in rows)
+    assert all(set(row) == {"user_id", "email", "display_name", "role", "version", "access_state"} for row in rows)
     body = {"role": "admin", "version": 0, "reason": "Promote approved operator"}
     response = api.post(f"/api/v1/admin/users/{api.user_id}/role", headers=H, json=body)
     assert response.status_code == 200 and response.json()["user"]["version"] == 1

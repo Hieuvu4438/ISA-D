@@ -68,7 +68,7 @@ class AccountService:
         self.throttle(email, peer)
         account = self.repository.by_email(email)
         valid = verify_password(password, account["password_hash"] if account else self.dummy_hash)
-        if not account or not valid:
+        if not account or not valid or account["access_state"] != "active":
             raise AppError(401, "INVALID_CREDENTIALS", "Email hoặc mật khẩu chưa đúng.")
         return account
 
@@ -82,7 +82,7 @@ class AccountService:
 
     def issue(self, account, old_token=None):
         token = secrets.token_urlsafe(32)
-        self.repository.issue(account["user_id"], token, int(time.time()) + 8 * 3600, old_token)
+        self.repository.issue(account["user_id"], token, int(time.time()) + 8 * 3600, old_token, expected_epoch=account["auth_epoch"])
         return token
 
     def change_password(self, account, current, new, peer):
@@ -90,5 +90,7 @@ class AccountService:
         self.throttle(account["email"], peer, "password")
         if not verify_password(current, account["password_hash"]):
             raise AppError(401, "INVALID_CREDENTIALS", "Mật khẩu hiện tại chưa đúng.", "current_password")
-        if not self.repository.change_password(account["user_id"], account["password_hash"], hash_password(new)):
+        updated = self.repository.change_password(account["user_id"], account["password_hash"], hash_password(new), expected_epoch=account["auth_epoch"])
+        if not updated:
             raise AppError(409, "ACCOUNT_CHANGED", "Thông tin đã thay đổi. Hãy đăng nhập lại.")
+        return updated

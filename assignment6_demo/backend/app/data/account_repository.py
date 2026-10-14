@@ -5,6 +5,8 @@ from pathlib import Path
 import sqlite3
 import time
 
+from app.domain import AppError
+
 
 class AccountRepository:
     def __init__(self, path: Path):
@@ -27,6 +29,11 @@ class AccountRepository:
                     bucket TEXT NOT NULL, attempted_at INTEGER NOT NULL
                 );
                 CREATE INDEX IF NOT EXISTS attempts_bucket ON auth_attempts(bucket, attempted_at);
+                CREATE TABLE IF NOT EXISTS account_access (
+                    user_id TEXT PRIMARY KEY REFERENCES accounts(user_id) ON DELETE CASCADE,
+                    state TEXT NOT NULL CHECK(state IN ('active','locked')),
+                    epoch INTEGER NOT NULL DEFAULT 0 CHECK(epoch>=0)
+                );
             """)
 
     @contextmanager
@@ -48,7 +55,8 @@ class AccountRepository:
 
     def by_email(self, email):
         with self.connection() as db:
-            row = db.execute("SELECT * FROM accounts WHERE email=?", (email,)).fetchone()
+            row = db.execute("""SELECT a.*,COALESCE(x.state,'active') AS access_state,COALESCE(x.epoch,0) AS auth_epoch
+                                FROM accounts a LEFT JOIN account_access x ON a.user_id=x.user_id WHERE a.email=?""", (email,)).fetchone()
             return dict(row) if row else None
 
     @staticmethod
@@ -59,12 +67,30 @@ class AccountRepository:
         if not token or len(token) > 128:
             return None
         with self.connection() as db:
-            row = db.execute("""SELECT a.* FROM accounts a JOIN sessions s ON a.user_id=s.user_id
-                                WHERE s.token_hash=? AND s.expires_at>?""", (self.digest(token), now)).fetchone()
+            row = db.execute("""SELECT a.*,COALESCE(x.state,'active') AS access_state,COALESCE(x.epoch,0) AS auth_epoch
+                                FROM accounts a JOIN sessions s ON a.user_id=s.user_id
+                                LEFT JOIN account_access x ON a.user_id=x.user_id
+                                WHERE s.token_hash=? AND s.expires_at>? AND COALESCE(x.state,'active')='active'""", (self.digest(token), now)).fetchone()
             return dict(row) if row else None
 
-    def issue(self, user_id, token, expires_at, old_token=None):
+    @staticmethod
+    def require_active(db, user_id, expected_epoch=None):
+        row = db.execute("""SELECT a.*,COALESCE(x.state,'active') AS access_state,COALESCE(x.epoch,0) AS auth_epoch
+                            FROM accounts a LEFT JOIN account_access x ON a.user_id=x.user_id WHERE a.user_id=?""", (user_id,)).fetchone()
+        if not row or row["access_state"] != "active" or (expected_epoch is not None and row["auth_epoch"] != expected_epoch):
+            raise AppError(401, "AUTH_REQUIRED", "Vui lòng đăng nhập để tiếp tục.")
+        return row
+
+    @staticmethod
+    def invalidate_sessions(db, user_id):
+        db.execute("""INSERT INTO account_access(user_id,state,epoch) VALUES(?,'active',1)
+                      ON CONFLICT(user_id) DO UPDATE SET epoch=account_access.epoch+1""", (user_id,))
+        db.execute("DELETE FROM sessions WHERE user_id=?", (user_id,))
+
+    def issue(self, user_id, token, expires_at, old_token=None, expected_epoch=None):
         with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            self.require_active(db, user_id, expected_epoch)
             db.execute("DELETE FROM sessions WHERE expires_at<=?", (int(time.time()),))
             if old_token:
                 db.execute("DELETE FROM sessions WHERE token_hash=?", (self.digest(old_token),))
@@ -86,17 +112,21 @@ class AccountRepository:
             db.executemany("INSERT INTO auth_attempts VALUES (?, ?)", [(bucket, now) for bucket, _ in buckets])
         return True
 
-    def update_name(self, user_id, name):
+    def update_name(self, user_id, name, expected_epoch=None):
         with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            self.require_active(db, user_id, expected_epoch)
             db.execute("UPDATE accounts SET display_name=? WHERE user_id=?", (name, user_id))
 
-    def change_password(self, user_id, expected_hash, new_hash):
+    def change_password(self, user_id, expected_hash, new_hash, expected_epoch=None):
         with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            self.require_active(db, user_id, expected_epoch)
             changed = db.execute("UPDATE accounts SET password_hash=? WHERE user_id=? AND password_hash=?",
                                  (new_hash, user_id, expected_hash)).rowcount
             if changed:
-                db.execute("DELETE FROM sessions WHERE user_id=?", (user_id,))
-            return bool(changed)
+                self.invalidate_sessions(db, user_id)
+            return dict(self.require_active(db, user_id)) if changed else None
 
     def counts(self):
         with self.connection() as db:

@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+Access amendment: identity snapshot chứa auth_epoch server-only, truyền Presentation→Application→Data để kiểm active/epoch dưới write lock cho mọi mutation được bảo vệ; [24](24_ACCOUNT_ACCESS.md) ghi phạm vi và sequence. Không dùng ContextVar ngầm hay nhận epoch từ browser.
+
 Returns amendment2026-10-15: presentation returns.py→ReturnRepository SQLite qua main DI, state machine/quantity/window/atomic stock/audit theo [23](23_RETURNS.md). Không thêm inference vào Data, không thay vector/model.
 
 **E5 amendment:** AdminService/AdminRepository/routes qua main DI, locked role/version/invariants/audit transaction, code/sequence tại [20](20_ADMIN_OPERATIONS.md).

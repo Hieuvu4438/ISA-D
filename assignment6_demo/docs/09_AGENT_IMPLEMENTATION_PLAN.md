@@ -142,6 +142,8 @@ Mốc catalog recovery 2026-10-15: đã sửa hành vi bộ lọc false, khoản
 
 ## Checklist của bước triển khai
 
+E1/E5 account access2026-10-15: lock/unlock, shared version/audit, revoke sessions và14 HTTP stale-epoch mutation interleavings theo [24](24_ACCOUNT_ACCESS.md). Không đánh dấu E5 full CRUD hoặc toàn hệ thống complete; delete/anonymize và các gate còn thiếu vẫn pending.
+
 E4/E5 returns amendment2026-10-15: [23_RETURNS](23_RETURNS.md), customer/admin/quantity reservations/inspection/restock/quarantine/demo closure và audit đã có evidence backend224/browser2. Đổi hàng, tiền thật và final visual confirmation còn pending; không đánh dấu toàn bộ milestone complete.
 
 - [ ] M0: scaffold, dependency locks và smoke install sạch.
