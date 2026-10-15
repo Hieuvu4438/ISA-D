@@ -1,0 +1,2090 @@
+{
+  "applied": false,
+  "reviewed_product_count": 26,
+  "replaced_image_count": 18,
+  "catalog_fingerprint": "d314b582afc37e4e047d03a25ce0370d291a5db29e8114e1e9499bc1e3462530",
+  "changes": [
+    {
+      "product_id": "P141",
+      "before": {
+        "product": {
+          "product_id": "P141",
+          "name": "Áo thun xanh ô liu in chữ Ideal",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh ô liu",
+          "price_vnd": 495000,
+          "stock_quantity": 18,
+          "description": "Áo thun tay ngắn màu xanh ô liu, cổ tròn, in chữ Ideal màu trắng ở phía trước.",
+          "image_path": "data/images/P141.jpg",
+          "image_asset_id": "P141"
+        },
+        "asset": {
+          "source_title": "File:Ambigram Ideal, polysymmetrical logo printed on a green T-shirt.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ambigram_Ideal,_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg/960px-Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Basile Morin",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-14T18:11:52.919316+00:00",
+          "sha256": "7ee88459d80f60896f3fea0a6fadacfa840860aa617c6fb87231f6fa1e91e2e9",
+          "bytes": 152539,
+          "format": "JPEG",
+          "width": 960,
+          "height": 960,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P141",
+          "product_id": "P141",
+          "local_path": "data/images/P141.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R067 on candidate contact sheet: a complete olive-green T-shirt with white Ideal print, isolated on white; no On mark. Replaces fabric-stain closeup."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P141",
+          "name": "Áo thun xanh ô liu in chữ Ideal",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh ô liu",
+          "price_vnd": 495000,
+          "stock_quantity": 18,
+          "description": "Áo thun tay ngắn màu xanh ô liu, cổ tròn, in chữ Ideal màu trắng ở phía trước.",
+          "image_path": "data/images/P141.jpg",
+          "image_asset_id": "P141"
+        },
+        "asset": {
+          "source_title": "File:Ambigram Ideal, polysymmetrical logo printed on a green T-shirt.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ambigram_Ideal,_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg/960px-Ambigram_Ideal%2C_polysymmetrical_logo_printed_on_a_green_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Basile Morin",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-14T18:11:52.919316+00:00",
+          "sha256": "7ee88459d80f60896f3fea0a6fadacfa840860aa617c6fb87231f6fa1e91e2e9",
+          "bytes": 152539,
+          "format": "JPEG",
+          "width": 960,
+          "height": 960,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P141",
+          "product_id": "P141",
+          "local_path": "data/images/P141.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R067 on candidate contact sheet: a complete olive-green T-shirt with white Ideal print, isolated on white; no On mark. Replaces fabric-stain closeup."
+        }
+      },
+      "visual_notes": "Reviewed R067 on candidate contact sheet: a complete olive-green T-shirt with white Ideal print, isolated on white; no On mark. Replaces fabric-stain closeup."
+    },
+    {
+      "product_id": "P142",
+      "before": {
+        "product": {
+          "product_id": "P142",
+          "name": "Áo thun vàng in họa tiết tròn",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "vàng",
+          "price_vnd": 495000,
+          "stock_quantity": 19,
+          "description": "Áo thun tay ngắn màu vàng, cổ tròn, phía trước in họa tiết tròn màu tối.",
+          "image_path": "data/images/P142.jpg",
+          "image_asset_id": "P142"
+        },
+        "asset": {
+          "asset_id": "P142",
+          "product_id": "P142",
+          "local_path": "data/images/P142.jpg",
+          "source_title": "File:T-shirt medieval (6814570079).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:T-shirt_medieval_(6814570079).jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/T-shirt_medieval_%286814570079%29.jpg/960px-T-shirt_medieval_%286814570079%29.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/T-shirt_medieval_%286814570079%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "ines saraiva  from Belgium / Portugal",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "description": "Mẫu áo thun xanh rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Universidade de Coimbra . 1290\n   www.uc.pt \n en.wikipedia.org/wiki/University_of_Coimbra \n \nCoimbra, Portugal, 12/2011.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "ce0044fbbe238f9fa90acd4b5630be95f7cfedbf936811604655759444ee90db",
+          "bytes": 241734,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1440,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P142 on sheet-141-160: yellow hanging T-shirt with dark round printed emblem; previous green label inaccurate."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P142",
+          "name": "Áo thun vàng in họa tiết tròn",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "vàng",
+          "price_vnd": 495000,
+          "stock_quantity": 19,
+          "description": "Áo thun tay ngắn màu vàng, cổ tròn, phía trước in họa tiết tròn màu tối.",
+          "image_path": "data/images/P142.jpg",
+          "image_asset_id": "P142"
+        },
+        "asset": {
+          "asset_id": "P142",
+          "product_id": "P142",
+          "local_path": "data/images/P142.jpg",
+          "source_title": "File:T-shirt medieval (6814570079).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:T-shirt_medieval_(6814570079).jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/T-shirt_medieval_%286814570079%29.jpg/960px-T-shirt_medieval_%286814570079%29.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/T-shirt_medieval_%286814570079%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "ines saraiva  from Belgium / Portugal",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "description": "Mẫu áo thun xanh rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Universidade de Coimbra . 1290\n   www.uc.pt \n en.wikipedia.org/wiki/University_of_Coimbra \n \nCoimbra, Portugal, 12/2011.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "ce0044fbbe238f9fa90acd4b5630be95f7cfedbf936811604655759444ee90db",
+          "bytes": 241734,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1440,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P142 on sheet-141-160: yellow hanging T-shirt with dark round printed emblem; previous green label inaccurate."
+        }
+      },
+      "visual_notes": "Reviewed original P142 on sheet-141-160: yellow hanging T-shirt with dark round printed emblem; previous green label inaccurate."
+    },
+    {
+      "product_id": "P143",
+      "before": {
+        "product": {
+          "product_id": "P143",
+          "name": "Áo thun xanh ô liu nhìn từ phía sau",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh ô liu",
+          "price_vnd": 495000,
+          "stock_quantity": 20,
+          "description": "Áo thun tay ngắn màu xanh ô liu treo trên móc; ảnh chụp phần lưng trơn và cổ áo.",
+          "image_path": "data/images/P143.jpg",
+          "image_asset_id": "P143"
+        },
+        "asset": {
+          "asset_id": "P143",
+          "product_id": "P143",
+          "local_path": "data/images/P143.jpg",
+          "source_title": "File:Ironed green T-shirt (002).JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_green_T-shirt_(002).JPG",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Ironed_green_T-shirt_%28002%29.JPG/960px-Ironed_green_T-shirt_%28002%29.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Ironed_green_T-shirt_%28002%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Juan de Vojníkov",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun đỏ đô, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Ironed green cotton T-shirt from the other side..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "31ce4a01d6215aa69843f5e91c8cb9f3e2548b9d1104bde9248c4f01dc29c7f6",
+          "bytes": 257623,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1280,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P143: rear view of olive-green T-shirt on hanger, no red color or visible brand."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P143",
+          "name": "Áo thun xanh ô liu nhìn từ phía sau",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh ô liu",
+          "price_vnd": 495000,
+          "stock_quantity": 20,
+          "description": "Áo thun tay ngắn màu xanh ô liu treo trên móc; ảnh chụp phần lưng trơn và cổ áo.",
+          "image_path": "data/images/P143.jpg",
+          "image_asset_id": "P143"
+        },
+        "asset": {
+          "asset_id": "P143",
+          "product_id": "P143",
+          "local_path": "data/images/P143.jpg",
+          "source_title": "File:Ironed green T-shirt (002).JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_green_T-shirt_(002).JPG",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Ironed_green_T-shirt_%28002%29.JPG/960px-Ironed_green_T-shirt_%28002%29.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Ironed_green_T-shirt_%28002%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Juan de Vojníkov",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun đỏ đô, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Ironed green cotton T-shirt from the other side..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "31ce4a01d6215aa69843f5e91c8cb9f3e2548b9d1104bde9248c4f01dc29c7f6",
+          "bytes": 257623,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1280,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P143: rear view of olive-green T-shirt on hanger, no red color or visible brand."
+        }
+      },
+      "visual_notes": "Reviewed original P143: rear view of olive-green T-shirt on hanger, no red color or visible brand."
+    },
+    {
+      "product_id": "P144",
+      "before": {
+        "product": {
+          "product_id": "P144",
+          "name": "Áo thun xanh ô liu cổ tròn",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh ô liu",
+          "price_vnd": 495000,
+          "stock_quantity": 3,
+          "description": "Áo thun tay ngắn màu xanh ô liu, cổ tròn, phía trước trơn, treo trên móc.",
+          "image_path": "data/images/P144.jpg",
+          "image_asset_id": "P144"
+        },
+        "asset": {
+          "asset_id": "P144",
+          "product_id": "P144",
+          "local_path": "data/images/P144.jpg",
+          "source_title": "File:Ironed green T-shirt (001).JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_green_T-shirt_(001).JPG",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Ironed_green_T-shirt_%28001%29.JPG/960px-Ironed_green_T-shirt_%28001%29.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Ironed_green_T-shirt_%28001%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Juan de Vojníkov",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun trắng, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Ironed green cotton T-shirt from the front..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "6150cf49e65755bcefdbc6412014e2c329849992143a43d8eb6a1a0546350971",
+          "bytes": 249423,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1280,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P144: front view of olive-green T-shirt; same garment family as P143, keep different shot IDs for now, consolidation pending."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P144",
+          "name": "Áo thun xanh ô liu cổ tròn",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh ô liu",
+          "price_vnd": 495000,
+          "stock_quantity": 3,
+          "description": "Áo thun tay ngắn màu xanh ô liu, cổ tròn, phía trước trơn, treo trên móc.",
+          "image_path": "data/images/P144.jpg",
+          "image_asset_id": "P144"
+        },
+        "asset": {
+          "asset_id": "P144",
+          "product_id": "P144",
+          "local_path": "data/images/P144.jpg",
+          "source_title": "File:Ironed green T-shirt (001).JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_green_T-shirt_(001).JPG",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Ironed_green_T-shirt_%28001%29.JPG/960px-Ironed_green_T-shirt_%28001%29.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Ironed_green_T-shirt_%28001%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Juan de Vojníkov",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun trắng, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Ironed green cotton T-shirt from the front..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "6150cf49e65755bcefdbc6412014e2c329849992143a43d8eb6a1a0546350971",
+          "bytes": 249423,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1280,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P144: front view of olive-green T-shirt; same garment family as P143, keep different shot IDs for now, consolidation pending."
+        }
+      },
+      "visual_notes": "Reviewed original P144: front view of olive-green T-shirt; same garment family as P143, keep different shot IDs for now, consolidation pending."
+    },
+    {
+      "product_id": "P145",
+      "before": {
+        "product": {
+          "product_id": "P145",
+          "name": "Áo thun xanh dương nhìn từ phía sau",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh dương",
+          "price_vnd": 520000,
+          "stock_quantity": 4,
+          "description": "Áo thun tay ngắn màu xanh dương treo trên móc; ảnh chụp phần lưng trơn.",
+          "image_path": "data/images/P145.jpg",
+          "image_asset_id": "P145"
+        },
+        "asset": {
+          "asset_id": "P145",
+          "product_id": "P145",
+          "local_path": "data/images/P145.jpg",
+          "source_title": "File:Ironed blue T-shirt (002).JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_blue_T-shirt_(002).JPG",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Ironed_blue_T-shirt_%28002%29.JPG/960px-Ironed_blue_T-shirt_%28002%29.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Ironed_blue_T-shirt_%28002%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Juan de Vojníkov",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun đen, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Ironed blue cotton T-shirt from the behind..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "7a5683d3fdea99221a31009858ae2afccaddf4a498a71879665faabbadf54f05",
+          "bytes": 305384,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1280,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P145: blue T-shirt rear view; no black or brand evidence."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P145",
+          "name": "Áo thun xanh dương nhìn từ phía sau",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh dương",
+          "price_vnd": 520000,
+          "stock_quantity": 4,
+          "description": "Áo thun tay ngắn màu xanh dương treo trên móc; ảnh chụp phần lưng trơn.",
+          "image_path": "data/images/P145.jpg",
+          "image_asset_id": "P145"
+        },
+        "asset": {
+          "asset_id": "P145",
+          "product_id": "P145",
+          "local_path": "data/images/P145.jpg",
+          "source_title": "File:Ironed blue T-shirt (002).JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_blue_T-shirt_(002).JPG",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Ironed_blue_T-shirt_%28002%29.JPG/960px-Ironed_blue_T-shirt_%28002%29.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Ironed_blue_T-shirt_%28002%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Juan de Vojníkov",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun đen, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Ironed blue cotton T-shirt from the behind..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "7a5683d3fdea99221a31009858ae2afccaddf4a498a71879665faabbadf54f05",
+          "bytes": 305384,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1280,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P145: blue T-shirt rear view; no black or brand evidence."
+        }
+      },
+      "visual_notes": "Reviewed original P145: blue T-shirt rear view; no black or brand evidence."
+    },
+    {
+      "product_id": "P146",
+      "before": {
+        "product": {
+          "product_id": "P146",
+          "name": "Áo thun xanh dương cổ tròn",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh dương",
+          "price_vnd": 520000,
+          "stock_quantity": 5,
+          "description": "Áo thun tay ngắn màu xanh dương, cổ tròn, phía trước trơn, treo trên móc.",
+          "image_path": "data/images/P146.jpg",
+          "image_asset_id": "P146"
+        },
+        "asset": {
+          "asset_id": "P146",
+          "product_id": "P146",
+          "local_path": "data/images/P146.jpg",
+          "source_title": "File:Ironed blue T-shirt (001).JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_blue_T-shirt_(001).JPG",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Ironed_blue_T-shirt_%28001%29.JPG/960px-Ironed_blue_T-shirt_%28001%29.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Ironed_blue_T-shirt_%28001%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Juan de Vojníkov",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun xám, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Ironed blue cotton T-shirt from the front..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "31247ccba755ee1b08129412260412c96766b62c1af1cdf83b9b75c15efeff6c",
+          "bytes": 301297,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1280,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P146: blue T-shirt front view; same garment family as P145, consolidation pending."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P146",
+          "name": "Áo thun xanh dương cổ tròn",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh dương",
+          "price_vnd": 520000,
+          "stock_quantity": 5,
+          "description": "Áo thun tay ngắn màu xanh dương, cổ tròn, phía trước trơn, treo trên móc.",
+          "image_path": "data/images/P146.jpg",
+          "image_asset_id": "P146"
+        },
+        "asset": {
+          "asset_id": "P146",
+          "product_id": "P146",
+          "local_path": "data/images/P146.jpg",
+          "source_title": "File:Ironed blue T-shirt (001).JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_blue_T-shirt_(001).JPG",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Ironed_blue_T-shirt_%28001%29.JPG/960px-Ironed_blue_T-shirt_%28001%29.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Ironed_blue_T-shirt_%28001%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Juan de Vojníkov",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun xám, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Ironed blue cotton T-shirt from the front..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "31247ccba755ee1b08129412260412c96766b62c1af1cdf83b9b75c15efeff6c",
+          "bytes": 301297,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 1280,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed original P146: blue T-shirt front view; same garment family as P145, consolidation pending."
+        }
+      },
+      "visual_notes": "Reviewed original P146: blue T-shirt front view; same garment family as P145, consolidation pending."
+    },
+    {
+      "product_id": "P147",
+      "before": {
+        "product": {
+          "product_id": "P147",
+          "name": "Áo thun trắng in hình làm tạp chí",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "trắng",
+          "price_vnd": 520000,
+          "stock_quantity": 6,
+          "description": "Áo thun trắng cổ tròn, tay ngắn; phía trước có chữ và hình minh họa màu đen về cách làm tạp chí nhỏ.",
+          "image_path": "data/images/P147.jpg",
+          "image_asset_id": "P147"
+        },
+        "asset": {
+          "source_title": "File:White T-shirt plotted used by T-shirt pen plotter - simple graphic \"How to make a zine\" - event GRADE Paris 2026.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg/960px-White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Valerio Bozzolan",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-14T18:11:57.935738+00:00",
+          "sha256": "0fecd8f4d28c158077c2d200c3b1a4a45183f7980692960f58d61b6e6c2c2ff2",
+          "bytes": 405836,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1707,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P147",
+          "product_id": "P147",
+          "local_path": "data/images/P147.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R072: real white T-shirt laid flat with dark zine-making graphic, supported by Commons photographic description. Replaces academic infographic."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P147",
+          "name": "Áo thun trắng in hình làm tạp chí",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "trắng",
+          "price_vnd": 520000,
+          "stock_quantity": 6,
+          "description": "Áo thun trắng cổ tròn, tay ngắn; phía trước có chữ và hình minh họa màu đen về cách làm tạp chí nhỏ.",
+          "image_path": "data/images/P147.jpg",
+          "image_asset_id": "P147"
+        },
+        "asset": {
+          "source_title": "File:White T-shirt plotted used by T-shirt pen plotter - simple graphic \"How to make a zine\" - event GRADE Paris 2026.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg/960px-White_T-shirt_plotted_used_by_T-shirt_pen_plotter_-_simple_graphic_%22How_to_make_a_zine%22_-_event_GRADE_Paris_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Valerio Bozzolan",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-14T18:11:57.935738+00:00",
+          "sha256": "0fecd8f4d28c158077c2d200c3b1a4a45183f7980692960f58d61b6e6c2c2ff2",
+          "bytes": 405836,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1707,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P147",
+          "product_id": "P147",
+          "local_path": "data/images/P147.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R072: real white T-shirt laid flat with dark zine-making graphic, supported by Commons photographic description. Replaces academic infographic."
+        }
+      },
+      "visual_notes": "Reviewed R072: real white T-shirt laid flat with dark zine-making graphic, supported by Commons photographic description. Replaces academic infographic."
+    },
+    {
+      "product_id": "P148",
+      "before": {
+        "product": {
+          "product_id": "P148",
+          "name": "Áo thun loang màu cam đỏ vàng",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "cam, đỏ và vàng",
+          "price_vnd": 545000,
+          "stock_quantity": 7,
+          "description": "Áo thun tay ngắn cổ tròn, họa tiết loang màu cam, đỏ và vàng trên toàn thân áo.",
+          "image_path": "data/images/P148.jpg",
+          "image_asset_id": "P148"
+        },
+        "asset": {
+          "asset_id": "P148",
+          "product_id": "P148",
+          "local_path": "data/images/P148.jpg",
+          "source_title": "File:TieDyeShirtMpegMan.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:TieDyeShirtMpegMan.jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/TieDyeShirtMpegMan.jpg/960px-TieDyeShirtMpegMan.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/TieDyeShirtMpegMan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "The original uploader was  MpegMan  at  English Wikipedia .",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "description": "Mẫu áo thun xanh rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: A tie dyed shirt. Photo taken my MpegMan..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "e4326b909f74bbc09e2a05dcb312b3bb22675c5ef9c332b215cc2297fe3b42a7",
+          "bytes": 191605,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 803,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed P148: full shirt with orange/red/yellow tie-dye pattern, not green."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P148",
+          "name": "Áo thun loang màu cam đỏ vàng",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "cam, đỏ và vàng",
+          "price_vnd": 545000,
+          "stock_quantity": 7,
+          "description": "Áo thun tay ngắn cổ tròn, họa tiết loang màu cam, đỏ và vàng trên toàn thân áo.",
+          "image_path": "data/images/P148.jpg",
+          "image_asset_id": "P148"
+        },
+        "asset": {
+          "asset_id": "P148",
+          "product_id": "P148",
+          "local_path": "data/images/P148.jpg",
+          "source_title": "File:TieDyeShirtMpegMan.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:TieDyeShirtMpegMan.jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/TieDyeShirtMpegMan.jpg/960px-TieDyeShirtMpegMan.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/TieDyeShirtMpegMan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "The original uploader was  MpegMan  at  English Wikipedia .",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "description": "Mẫu áo thun xanh rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: A tie dyed shirt. Photo taken my MpegMan..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "e4326b909f74bbc09e2a05dcb312b3bb22675c5ef9c332b215cc2297fe3b42a7",
+          "bytes": 191605,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 803,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed P148: full shirt with orange/red/yellow tie-dye pattern, not green."
+        }
+      },
+      "visual_notes": "Reviewed P148: full shirt with orange/red/yellow tie-dye pattern, not green."
+    },
+    {
+      "product_id": "P149",
+      "before": {
+        "product": {
+          "product_id": "P149",
+          "name": "Áo thun đen in chữ trắng và hồng",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "đen",
+          "price_vnd": 545000,
+          "stock_quantity": 8,
+          "description": "Áo thun đen cổ tròn, tay ngắn; phía trước in nhiều dòng chữ trắng và hồng. Ảnh chụp áo khi đang mặc.",
+          "image_path": "data/images/P149.jpg",
+          "image_asset_id": "P149"
+        },
+        "asset": {
+          "asset_id": "P149",
+          "product_id": "P149",
+          "local_path": "data/images/P149.jpg",
+          "source_title": "File:Colton Cotton talks on the phone.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Colton_Cotton_talks_on_the_phone.jpg",
+          "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Colton_Cotton_talks_on_the_phone.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Colton_Cotton_talks_on_the_phone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Colton Cotton",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun đỏ đô, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Colton Cotton talks on the phone..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "e3949c64195e420de0d6a219f13b13f72a46e0c7867e857df934477e9b8023fd",
+          "bytes": 116189,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 540,
+          "height": 720,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed P149: man wearing black shirt with visible A.EAGLE lettering; no On branding. Avoid attributing brand from partial text alone."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P149",
+          "name": "Áo thun đen in chữ trắng và hồng",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "đen",
+          "price_vnd": 545000,
+          "stock_quantity": 8,
+          "description": "Áo thun đen cổ tròn, tay ngắn; phía trước in nhiều dòng chữ trắng và hồng. Ảnh chụp áo khi đang mặc.",
+          "image_path": "data/images/P149.jpg",
+          "image_asset_id": "P149"
+        },
+        "asset": {
+          "asset_id": "P149",
+          "product_id": "P149",
+          "local_path": "data/images/P149.jpg",
+          "source_title": "File:Colton Cotton talks on the phone.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Colton_Cotton_talks_on_the_phone.jpg",
+          "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Colton_Cotton_talks_on_the_phone.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Colton_Cotton_talks_on_the_phone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Colton Cotton",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun đỏ đô, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Colton Cotton talks on the phone..",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "e3949c64195e420de0d6a219f13b13f72a46e0c7867e857df934477e9b8023fd",
+          "bytes": 116189,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 540,
+          "height": 720,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed P149: man wearing black shirt with visible A.EAGLE lettering; no On branding. Avoid attributing brand from partial text alone."
+        }
+      },
+      "visual_notes": "Reviewed P149: man wearing black shirt with visible A.EAGLE lettering; no On branding. Avoid attributing brand from partial text alone."
+    },
+    {
+      "product_id": "P150",
+      "before": {
+        "product": {
+          "product_id": "P150",
+          "name": "Áo thun xanh lá in bảng ký tự",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh lá",
+          "price_vnd": 545000,
+          "stock_quantity": 9,
+          "description": "Áo thun tay ngắn xanh lá, cổ tròn; phía trước in các bảng ký tự trắng và đen cùng dải màu vàng.",
+          "image_path": "data/images/P150.jpg",
+          "image_asset_id": "P150"
+        },
+        "asset": {
+          "asset_id": "P150",
+          "product_id": "P150",
+          "local_path": "data/images/P150.jpg",
+          "source_title": "File:Green YourSIGN T-shirt.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Green_YourSIGN_T-shirt.jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Green_YourSIGN_T-shirt.jpg/960px-Green_YourSIGN_T-shirt.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Green_YourSIGN_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "I would appreciate  being notified  if you use my work outside Wikimedia.\n Do not copy this image illegally by ignoring ",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun trắng, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Green  T-shirt YourSIGN with letters and signs which, after cut up, will be sticked with any text on the  yellow  strip with velcro strip.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "a6e4ba5b8493d2f21cf17e6168249c16e84d127fdd25eebf07e5fbca61c57612",
+          "bytes": 234132,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 961,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed P150: complete bright-green shirt with yellow band and white/black typography; no On mark."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P150",
+          "name": "Áo thun xanh lá in bảng ký tự",
+          "brand": "Không xác định",
+          "category": "t_shirt",
+          "color": "xanh lá",
+          "price_vnd": 545000,
+          "stock_quantity": 9,
+          "description": "Áo thun tay ngắn xanh lá, cổ tròn; phía trước in các bảng ký tự trắng và đen cùng dải màu vàng.",
+          "image_path": "data/images/P150.jpg",
+          "image_asset_id": "P150"
+        },
+        "asset": {
+          "asset_id": "P150",
+          "product_id": "P150",
+          "local_path": "data/images/P150.jpg",
+          "source_title": "File:Green YourSIGN T-shirt.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Green_YourSIGN_T-shirt.jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Green_YourSIGN_T-shirt.jpg/960px-Green_YourSIGN_T-shirt.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Green_YourSIGN_T-shirt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "I would appreciate  being notified  if you use my work outside Wikimedia.\n Do not copy this image illegally by ignoring ",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "description": "Mẫu áo thun trắng, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Green  T-shirt YourSIGN with letters and signs which, after cut up, will be sticked with any text on the  yellow  strip with velcro strip.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "a6e4ba5b8493d2f21cf17e6168249c16e84d127fdd25eebf07e5fbca61c57612",
+          "bytes": 234132,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 961,
+          "format": "JPEG",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed P150: complete bright-green shirt with yellow band and white/black typography; no On mark."
+        }
+      },
+      "visual_notes": "Reviewed P150: complete bright-green shirt with yellow band and white/black typography; no On mark."
+    },
+    {
+      "product_id": "P153",
+      "before": {
+        "product": {
+          "product_id": "P153",
+          "name": "Áo khoác đen có khóa kéo và cổ bẻ",
+          "brand": "Không xác định",
+          "category": "jacket",
+          "color": "đen",
+          "price_vnd": 2300000,
+          "stock_quantity": 12,
+          "description": "Áo khoác đen có bề mặt bóng, cổ bẻ, khóa kéo và túi phía trước; ảnh chụp trên ma-nơ-canh.",
+          "image_path": "data/images/P153.jpg",
+          "image_asset_id": "P153"
+        },
+        "asset": {
+          "source_title": "File:Unknown Pleasures knit sweater & leather jacket - Joy Division Exhibition, Manchester, 2010 (2010-05-19 13.05.47 by Man Alive!).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition,_Manchester,_2010_(2010-05-19_13.05.47_by_Man_Alive!).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg/960px-Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Man Alive!",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "retrieved_at": "2026-10-14T18:12:07.003583+00:00",
+          "sha256": "e644aa36eaa9e9155ec0d775ce44696296a5e173a600f27b91fb5348f50a0ba0",
+          "bytes": 318203,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1280,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P153",
+          "product_id": "P153",
+          "local_path": "data/images/P153.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R078: real black leather-style jacket on display mannequin over a graphic top; zipper/lapels visible. Replaces photograph of apples named Leatherjacket."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P153",
+          "name": "Áo khoác đen có khóa kéo và cổ bẻ",
+          "brand": "Không xác định",
+          "category": "jacket",
+          "color": "đen",
+          "price_vnd": 2300000,
+          "stock_quantity": 12,
+          "description": "Áo khoác đen có bề mặt bóng, cổ bẻ, khóa kéo và túi phía trước; ảnh chụp trên ma-nơ-canh.",
+          "image_path": "data/images/P153.jpg",
+          "image_asset_id": "P153"
+        },
+        "asset": {
+          "source_title": "File:Unknown Pleasures knit sweater & leather jacket - Joy Division Exhibition, Manchester, 2010 (2010-05-19 13.05.47 by Man Alive!).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition,_Manchester,_2010_(2010-05-19_13.05.47_by_Man_Alive!).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg/960px-Unknown_Pleasures_knit_sweater_%26_leather_jacket_-_Joy_Division_Exhibition%2C_Manchester%2C_2010_%282010-05-19_13.05.47_by_Man_Alive%21%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Man Alive!",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "retrieved_at": "2026-10-14T18:12:07.003583+00:00",
+          "sha256": "e644aa36eaa9e9155ec0d775ce44696296a5e173a600f27b91fb5348f50a0ba0",
+          "bytes": 318203,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1280,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P153",
+          "product_id": "P153",
+          "local_path": "data/images/P153.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R078: real black leather-style jacket on display mannequin over a graphic top; zipper/lapels visible. Replaces photograph of apples named Leatherjacket."
+        }
+      },
+      "visual_notes": "Reviewed R078: real black leather-style jacket on display mannequin over a graphic top; zipper/lapels visible. Replaces photograph of apples named Leatherjacket."
+    },
+    {
+      "product_id": "P140",
+      "before": {
+        "product": {
+          "product_id": "P140",
+          "name": "Túi tote be in chữ USENIX",
+          "brand": "Không xác định",
+          "category": "tote_bag",
+          "color": "be",
+          "price_vnd": 375000,
+          "stock_quantity": 17,
+          "description": "Túi tote màu be, hai quai ngắn; mặt trước in chữ USENIX và họa tiết xanh, tím, đỏ.",
+          "image_path": "data/images/P140.jpg",
+          "image_asset_id": "P140"
+        },
+        "asset": {
+          "source_title": "File:USENIX tote bag.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:USENIX_tote_bag.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/USENIX_tote_bag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/USENIX_tote_bag.jpg/960px-USENIX_tote_bag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Jonathan Schilling",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-14T18:11:39.900790+00:00",
+          "sha256": "6258bedc1baba802e104e8c39a4eea7a4c54d85c5a34f8e8ddd800acfa047df8",
+          "bytes": 304500,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1280,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P140",
+          "product_id": "P140",
+          "local_path": "data/images/P140.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R056: complete beige canvas tote with two handles and USENIX/SAGE printed emblem; no landscape or portrait substitution."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P140",
+          "name": "Túi tote be in chữ USENIX",
+          "brand": "Không xác định",
+          "category": "tote_bag",
+          "color": "be",
+          "price_vnd": 375000,
+          "stock_quantity": 17,
+          "description": "Túi tote màu be, hai quai ngắn; mặt trước in chữ USENIX và họa tiết xanh, tím, đỏ.",
+          "image_path": "data/images/P140.jpg",
+          "image_asset_id": "P140"
+        },
+        "asset": {
+          "source_title": "File:USENIX tote bag.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:USENIX_tote_bag.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/USENIX_tote_bag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/USENIX_tote_bag.jpg/960px-USENIX_tote_bag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Jonathan Schilling",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-14T18:11:39.900790+00:00",
+          "sha256": "6258bedc1baba802e104e8c39a4eea7a4c54d85c5a34f8e8ddd800acfa047df8",
+          "bytes": 304500,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1280,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P140",
+          "product_id": "P140",
+          "local_path": "data/images/P140.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R056: complete beige canvas tote with two handles and USENIX/SAGE printed emblem; no landscape or portrait substitution."
+        }
+      },
+      "visual_notes": "Reviewed R056: complete beige canvas tote with two handles and USENIX/SAGE printed emblem; no landscape or portrait substitution."
+    },
+    {
+      "product_id": "P171",
+      "before": {
+        "product": {
+          "product_id": "P171",
+          "name": "Kính mát Ray-Ban gọng đen mắt xanh",
+          "brand": "Ray-Ban",
+          "category": "sunglasses",
+          "color": "đen và xanh",
+          "price_vnd": 1800000,
+          "stock_quantity": 12,
+          "description": "Kính mát gọng đen, mắt kính xanh sẫm; ảnh chụp nghiêng trên mặt bàn, có chữ Ray-Ban trên mắt kính.",
+          "image_path": "data/images/P171.jpg",
+          "image_asset_id": "P171"
+        },
+        "asset": {
+          "source_title": "File:Polarized sunglasses (2026).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Polarized_sunglasses_(2026).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Polarized_sunglasses_%282026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Polarized_sunglasses_%282026%29.jpg/960px-Polarized_sunglasses_%282026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Gpkp",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-14T18:12:47.932279+00:00",
+          "sha256": "462d040b1f8c4294cb8afaee1eb70504fbd7c5071a2c5b815e00ee2ad7e3b0fb",
+          "bytes": 111467,
+          "format": "JPEG",
+          "width": 960,
+          "height": 723,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P171",
+          "product_id": "P171",
+          "local_path": "data/images/P171.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R110: real black frame sunglasses on table, Ray-Ban mark visible on lens; replaces workshop photograph with no sunglasses product."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P171",
+          "name": "Kính mát Ray-Ban gọng đen mắt xanh",
+          "brand": "Ray-Ban",
+          "category": "sunglasses",
+          "color": "đen và xanh",
+          "price_vnd": 1800000,
+          "stock_quantity": 12,
+          "description": "Kính mát gọng đen, mắt kính xanh sẫm; ảnh chụp nghiêng trên mặt bàn, có chữ Ray-Ban trên mắt kính.",
+          "image_path": "data/images/P171.jpg",
+          "image_asset_id": "P171"
+        },
+        "asset": {
+          "source_title": "File:Polarized sunglasses (2026).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Polarized_sunglasses_(2026).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Polarized_sunglasses_%282026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Polarized_sunglasses_%282026%29.jpg/960px-Polarized_sunglasses_%282026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Gpkp",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-14T18:12:47.932279+00:00",
+          "sha256": "462d040b1f8c4294cb8afaee1eb70504fbd7c5071a2c5b815e00ee2ad7e3b0fb",
+          "bytes": 111467,
+          "format": "JPEG",
+          "width": 960,
+          "height": 723,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P171",
+          "product_id": "P171",
+          "local_path": "data/images/P171.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R110: real black frame sunglasses on table, Ray-Ban mark visible on lens; replaces workshop photograph with no sunglasses product."
+        }
+      },
+      "visual_notes": "Reviewed R110: real black frame sunglasses on table, Ray-Ban mark visible on lens; replaces workshop photograph with no sunglasses product."
+    },
+    {
+      "product_id": "P175",
+      "before": {
+        "product": {
+          "product_id": "P175",
+          "name": "Kính mát thể thao gọng đen trên nền cát",
+          "brand": "Không xác định",
+          "category": "sunglasses",
+          "color": "đen",
+          "price_vnd": 1825000,
+          "stock_quantity": 16,
+          "description": "Kính mát thể thao gọng đen, mắt tối màu; ảnh chụp kính đặt trên nền cát sáng.",
+          "image_path": "data/images/P175.jpg",
+          "image_asset_id": "P175"
+        },
+        "asset": {
+          "source_title": "File:Mezmay, Sports sunglasses, Black sunglasses, Russia.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Black_sunglasses,_Russia.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Vyacheslav Argenberg",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "retrieved_at": "2026-10-14T18:12:39.233319+00:00",
+          "sha256": "58a37f80695c08495cb8a1d0689e30c63e17058fbc8b8a7542c705cc98e0de8b",
+          "bytes": 309850,
+          "format": "JPEG",
+          "width": 960,
+          "height": 638,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P175",
+          "product_id": "P175",
+          "local_path": "data/images/P175.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R103: real black sports sunglasses on pale ground, clearly visible frame/lenses. Replaces historic portrait wearing optical eyeglasses."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P175",
+          "name": "Kính mát thể thao gọng đen trên nền cát",
+          "brand": "Không xác định",
+          "category": "sunglasses",
+          "color": "đen",
+          "price_vnd": 1825000,
+          "stock_quantity": 16,
+          "description": "Kính mát thể thao gọng đen, mắt tối màu; ảnh chụp kính đặt trên nền cát sáng.",
+          "image_path": "data/images/P175.jpg",
+          "image_asset_id": "P175"
+        },
+        "asset": {
+          "source_title": "File:Mezmay, Sports sunglasses, Black sunglasses, Russia.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Black_sunglasses,_Russia.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Black_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Vyacheslav Argenberg",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "retrieved_at": "2026-10-14T18:12:39.233319+00:00",
+          "sha256": "58a37f80695c08495cb8a1d0689e30c63e17058fbc8b8a7542c705cc98e0de8b",
+          "bytes": 309850,
+          "format": "JPEG",
+          "width": 960,
+          "height": 638,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P175",
+          "product_id": "P175",
+          "local_path": "data/images/P175.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R103: real black sports sunglasses on pale ground, clearly visible frame/lenses. Replaces historic portrait wearing optical eyeglasses."
+        }
+      },
+      "visual_notes": "Reviewed R103: real black sports sunglasses on pale ground, clearly visible frame/lenses. Replaces historic portrait wearing optical eyeglasses."
+    },
+    {
+      "product_id": "P177",
+      "before": {
+        "product": {
+          "product_id": "P177",
+          "name": "Kính mát thể thao mắt phản quang",
+          "brand": "Không xác định",
+          "category": "sunglasses",
+          "color": "đen và bạc",
+          "price_vnd": 550000,
+          "stock_quantity": 18,
+          "description": "Kính mát thể thao gọng đen, mắt kính phản quang màu bạc; ảnh chụp trên mặt đá.",
+          "image_path": "data/images/P177.jpg",
+          "image_asset_id": "P177"
+        },
+        "asset": {
+          "source_title": "File:Mezmay, Sports sunglasses, Reflective mirrored sunglasses, Russia.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Reflective_mirrored_sunglasses,_Russia.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Vyacheslav Argenberg",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "retrieved_at": "2026-10-14T18:12:37.831035+00:00",
+          "sha256": "6a5844c5161347f7659cf79cb4e4bce197cdeba4d66b0eef7f425274ba088183",
+          "bytes": 187504,
+          "format": "JPEG",
+          "width": 960,
+          "height": 638,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P177",
+          "product_id": "P177",
+          "local_path": "data/images/P177.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R102: real curved sports sunglasses with reflective lenses on stone. Replaces historical portrait; no On brand evidence."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P177",
+          "name": "Kính mát thể thao mắt phản quang",
+          "brand": "Không xác định",
+          "category": "sunglasses",
+          "color": "đen và bạc",
+          "price_vnd": 550000,
+          "stock_quantity": 18,
+          "description": "Kính mát thể thao gọng đen, mắt kính phản quang màu bạc; ảnh chụp trên mặt đá.",
+          "image_path": "data/images/P177.jpg",
+          "image_asset_id": "P177"
+        },
+        "asset": {
+          "source_title": "File:Mezmay, Sports sunglasses, Reflective mirrored sunglasses, Russia.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Reflective_mirrored_sunglasses,_Russia.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Reflective_mirrored_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Vyacheslav Argenberg",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "retrieved_at": "2026-10-14T18:12:37.831035+00:00",
+          "sha256": "6a5844c5161347f7659cf79cb4e4bce197cdeba4d66b0eef7f425274ba088183",
+          "bytes": 187504,
+          "format": "JPEG",
+          "width": 960,
+          "height": 638,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P177",
+          "product_id": "P177",
+          "local_path": "data/images/P177.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R102: real curved sports sunglasses with reflective lenses on stone. Replaces historical portrait; no On brand evidence."
+        }
+      },
+      "visual_notes": "Reviewed R102: real curved sports sunglasses with reflective lenses on stone. Replaces historical portrait; no On brand evidence."
+    },
+    {
+      "product_id": "P180",
+      "before": {
+        "product": {
+          "product_id": "P180",
+          "name": "Kính mát đen trên nền đá",
+          "brand": "Không xác định",
+          "category": "sunglasses",
+          "color": "đen",
+          "price_vnd": 550000,
+          "stock_quantity": 3,
+          "description": "Kính mát gọng đen và mắt kính tối màu, đặt trên mặt đá; ảnh chụp nghiêng với nền núi ở xa.",
+          "image_path": "data/images/P180.jpg",
+          "image_asset_id": "P180"
+        },
+        "asset": {
+          "source_title": "File:Mezmay, Sports sunglasses, Russia.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Russia.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Mezmay%2C_Sports_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Mezmay%2C_Sports_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Vyacheslav Argenberg",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "retrieved_at": "2026-10-14T18:12:45.349687+00:00",
+          "sha256": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d",
+          "bytes": 102564,
+          "format": "JPEG",
+          "width": 960,
+          "height": 638,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P180",
+          "product_id": "P180",
+          "local_path": "data/images/P180.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R106: real black sports sunglasses resting on rock, lenses visible. Replaces nineteenth-century portrait with a child."
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P180",
+          "name": "Kính mát đen trên nền đá",
+          "brand": "Không xác định",
+          "category": "sunglasses",
+          "color": "đen",
+          "price_vnd": 550000,
+          "stock_quantity": 3,
+          "description": "Kính mát gọng đen và mắt kính tối màu, đặt trên mặt đá; ảnh chụp nghiêng với nền núi ở xa.",
+          "image_path": "data/images/P180.jpg",
+          "image_asset_id": "P180"
+        },
+        "asset": {
+          "source_title": "File:Mezmay, Sports sunglasses, Russia.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Russia.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Mezmay%2C_Sports_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Mezmay%2C_Sports_sunglasses%2C_Russia.jpg/960px-Mezmay%2C_Sports_sunglasses%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Vyacheslav Argenberg",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "retrieved_at": "2026-10-14T18:12:45.349687+00:00",
+          "sha256": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d",
+          "bytes": 102564,
+          "format": "JPEG",
+          "width": 960,
+          "height": 638,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P180",
+          "product_id": "P180",
+          "local_path": "data/images/P180.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Reviewed R106: real black sports sunglasses resting on rock, lenses visible. Replaces nineteenth-century portrait with a child."
+        }
+      },
+      "visual_notes": "Reviewed R106: real black sports sunglasses resting on rock, lenses visible. Replaces nineteenth-century portrait with a child."
+    },
+    {
+      "product_id": "P121",
+      "before": {
+        "product": {
+          "product_id": "P121",
+          "name": "Balo On USMC-04375 xám",
+          "brand": "On",
+          "category": "backpack",
+          "color": "xám",
+          "price_vnd": 1525000,
+          "stock_quantity": 16,
+          "description": "Mẫu balo xám, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Sgt. Michael A. Hauck, a primary marksmanship instructor with Headquarters Company, reaches into his daypack which is covered with the chevrons of Mar.",
+          "image_path": "data/images/P121.jpg",
+          "image_asset_id": "P121"
+        },
+        "asset": {
+          "asset_id": "P121",
+          "product_id": "P121",
+          "local_path": "data/images/P121.jpg",
+          "source_title": "File:USMC-04375.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:USMC-04375.jpg",
+          "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/USMC-04375.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/USMC-04375.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Lance Cpl. Ryan C. Heiser",
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/File:USMC-04375.jpg#Licensing",
+          "description": "Mẫu balo xám, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Sgt. Michael A. Hauck, a primary marksmanship instructor with Headquarters Company, reaches into his daypack which is covered with the chevrons of Mar.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "b0541f62165d981ad1e86060fddd43b561c53e77fa1e4e1155c26da1d4296fe9",
+          "bytes": 197120,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 837,
+          "height": 1260,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:USMC-04375.jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P121",
+          "name": "Balo xám đen nhiều ngăn khóa kéo",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "xám và đen",
+          "price_vnd": 1525000,
+          "stock_quantity": 16,
+          "description": "Balo màu xám đen đặt trên thảm, có các ngăn khóa kéo phía trước, viền sáng màu và hai quai đeo vai.",
+          "image_path": "data/images/P121.jpg",
+          "image_asset_id": "P121"
+        },
+        "asset": {
+          "source_title": "File:Backpack1.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Backpack1.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Backpack1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Backpack1.JPG/960px-Backpack1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Trongphu",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "retrieved_at": "2026-10-15T02:22:48.875648+00:00",
+          "sha256": "1644adfc649a2478eb5f491aec2c0e439dc278813169e49856799902bd7d53e4",
+          "bytes": 309744,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1280,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P121",
+          "product_id": "P121",
+          "local_path": "data/images/P121.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed batch2-candidates.jpg and full R202: complete grey/black backpack on carpet, two shoulder straps and front zip pockets. Brand label not confidently legible; do not keep unsupported On claim. Replaces military-person scene. Photograph bytes unchanged."
+        }
+      },
+      "visual_notes": "Primary agent viewed batch2-candidates.jpg and full R202: complete grey/black backpack on carpet, two shoulder straps and front zip pockets. Brand label not confidently legible; do not keep unsupported On claim. Replaces military-person scene. Photograph bytes unchanged."
+    },
+    {
+      "product_id": "P122",
+      "before": {
+        "product": {
+          "product_id": "P122",
+          "name": "Balo Không xác định Clothes-travel-voyage-backpack xanh navy",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "xanh navy",
+          "price_vnd": 1525000,
+          "stock_quantity": 17,
+          "description": "Mẫu balo xanh navy, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: clothes-travel-voyage-backpack.",
+          "image_path": "data/images/P122.jpg",
+          "image_asset_id": "P122"
+        },
+        "asset": {
+          "asset_id": "P122",
+          "product_id": "P122",
+          "local_path": "data/images/P122.jpg",
+          "source_title": "File:Clothes-travel-voyage-backpack (24324553095).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Clothes-travel-voyage-backpack_(24324553095).jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Clothes-travel-voyage-backpack_%2824324553095%29.jpg/960px-Clothes-travel-voyage-backpack_%2824324553095%29.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Clothes-travel-voyage-backpack_%2824324553095%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "www.Pixel.la Free Stock Photos",
+          "license": "CC0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "description": "Mẫu balo xanh navy, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: clothes-travel-voyage-backpack.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "944059dc6a18b6c79afc37c8faaca49a9ef509fb9671e04f8035bd81c1d97b34",
+          "bytes": 168936,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 540,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:Clothes-travel-voyage-backpack_(24324553095).jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P122",
+          "name": "Balo Adidas xanh navy đáy đen",
+          "brand": "Adidas",
+          "category": "backpack",
+          "color": "xanh navy và đen",
+          "price_vnd": 1525000,
+          "stock_quantity": 17,
+          "description": "Balo xanh navy với phần đáy màu đen, ngăn khóa kéo phía trước và biểu tượng Adidas sáng màu trên thân túi.",
+          "image_path": "data/images/P122.jpg",
+          "image_asset_id": "P122"
+        },
+        "asset": {
+          "source_title": "File:Adidas bag, frong.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Adidas_bag,_frong.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Adidas_bag%2C_frong.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Adidas_bag%2C_frong.jpg/960px-Adidas_bag%2C_frong.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Juandev",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "retrieved_at": "2026-10-15T02:22:59.883673+00:00",
+          "sha256": "63ce8caecbaad5afa72c12e56ea5dc8a94177b2440498b4671686b6650406955",
+          "bytes": 176371,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1280,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P122",
+          "product_id": "P122",
+          "local_path": "data/images/P122.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed R204 on batch2 contact sheet: one complete navy backpack with black lower panel and visible Adidas emblem; source description explicitly identifies Adidas. Replaces travel-items flat lay where backpack shape was obscured."
+        }
+      },
+      "visual_notes": "Primary agent viewed R204 on batch2 contact sheet: one complete navy backpack with black lower panel and visible Adidas emblem; source description explicitly identifies Adidas. Replaces travel-items flat lay where backpack shape was obscured."
+    },
+    {
+      "product_id": "P123",
+      "before": {
+        "product": {
+          "product_id": "P123",
+          "name": "Balo Không xác định With worn-out backpack and rêu",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "rêu",
+          "price_vnd": 1550000,
+          "stock_quantity": 18,
+          "description": "Mẫu balo rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+          "image_path": "data/images/P123.jpg",
+          "image_asset_id": "P123"
+        },
+        "asset": {
+          "asset_id": "P123",
+          "product_id": "P123",
+          "local_path": "data/images/P123.jpg",
+          "source_title": "File:With a worn-out backpack and a notebook (4).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(4).jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/With_a_worn-out_backpack_and_a_notebook_%284%29.jpg/960px-With_a_worn-out_backpack_and_a_notebook_%284%29.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/With_a_worn-out_backpack_and_a_notebook_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Виктор Пинчук",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "description": "Mẫu balo rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "da66ea8ade680141a5c0bcb0f695e5e7125ac0a8a547964edb2c47bedd618a54",
+          "bytes": 140255,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 720,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(4).jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P123",
+          "name": "Balo Eastpak Sugarbush đen phối be",
+          "brand": "Eastpak",
+          "category": "backpack",
+          "color": "đen và be",
+          "price_vnd": 1550000,
+          "stock_quantity": 18,
+          "description": "Balo Eastpak thân đen, phần đáy và chi tiết quai màu be, có nhãn Eastpak phía trước, miếng trang trí hình thoi và nhiều ngăn khóa kéo.",
+          "image_path": "data/images/P123.jpg",
+          "image_asset_id": "P123"
+        },
+        "asset": {
+          "source_title": "File:Eastpak Sugarbush backpack black.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Eastpak_Sugarbush_backpack_black.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Eastpak_Sugarbush_backpack_black.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Eastpak_Sugarbush_backpack_black.jpg/960px-Eastpak_Sugarbush_backpack_black.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Ubcule",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-15T02:23:00.842958+00:00",
+          "sha256": "5b6ea4dcee0f4c405d1db48ad798d454e63cc4c0f2a17a8c4de58f6d460e1328",
+          "bytes": 199575,
+          "format": "JPEG",
+          "width": 960,
+          "height": 960,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P123",
+          "product_id": "P123",
+          "local_path": "data/images/P123.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed full R205: one Eastpak backpack with dark body, beige base/handle/zip pulls, diamond patch and readable Eastpak badge. Source identifies Sugarbush black; photograph has cool lighting, not a fabricated navy variant. Replaces indoor interview scene."
+        }
+      },
+      "visual_notes": "Primary agent viewed full R205: one Eastpak backpack with dark body, beige base/handle/zip pulls, diamond patch and readable Eastpak badge. Source identifies Sugarbush black; photograph has cool lighting, not a fabricated navy variant. Replaces indoor interview scene."
+    },
+    {
+      "product_id": "P124",
+      "before": {
+        "product": {
+          "product_id": "P124",
+          "name": "Balo Không xác định With worn-out backpack and nâu",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "nâu",
+          "price_vnd": 1550000,
+          "stock_quantity": 19,
+          "description": "Mẫu balo nâu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+          "image_path": "data/images/P124.jpg",
+          "image_asset_id": "P124"
+        },
+        "asset": {
+          "asset_id": "P124",
+          "product_id": "P124",
+          "local_path": "data/images/P124.jpg",
+          "source_title": "File:With a worn-out backpack and a notebook (1).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(1).jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/With_a_worn-out_backpack_and_a_notebook_%281%29.jpg/960px-With_a_worn-out_backpack_and_a_notebook_%281%29.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/With_a_worn-out_backpack_and_a_notebook_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Виктор Пинчук",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "description": "Mẫu balo nâu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "1687b868150754d24e34ca33c9838730efe8e2c9a7699d639d318c06991294bf",
+          "bytes": 149746,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 720,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(1).jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P124",
+          "name": "Balo dây rút vàng họa tiết biểu cảm",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "vàng, đen và trắng",
+          "price_vnd": 1550000,
+          "stock_quantity": 19,
+          "description": "Balo dây rút có họa tiết nhiều khuôn mặt biểu cảm màu vàng, xen các mảng đen trắng, hai dây đeo mảnh màu đen trên nền vải sáng.",
+          "image_path": "data/images/P124.jpg",
+          "image_asset_id": "P124"
+        },
+        "asset": {
+          "source_title": "File:005Aa. Lightweight fabric backpack.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:005Aa._Lightweight_fabric_backpack.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/005Aa._Lightweight_fabric_backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/005Aa._Lightweight_fabric_backpack.jpg/960px-005Aa._Lightweight_fabric_backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "GAlexandrova",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-15T02:23:02.045484+00:00",
+          "sha256": "b49b23df58c5b8e978aefb24270af9fbf59d2d598ce5ecf5f8b8f883f1e776f1",
+          "bytes": 335030,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1280,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P124",
+          "product_id": "P124",
+          "local_path": "data/images/P124.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed R207 on batch2 sheet: real drawstring fabric backpack, yellow emoji print, black shoulder cords, photographed on light textile. No supported brand. Replaces unrelated room/event photograph."
+        }
+      },
+      "visual_notes": "Primary agent viewed R207 on batch2 sheet: real drawstring fabric backpack, yellow emoji print, black shoulder cords, photographed on light textile. No supported brand. Replaces unrelated room/event photograph."
+    },
+    {
+      "product_id": "P125",
+      "before": {
+        "product": {
+          "product_id": "P125",
+          "name": "Balo Không xác định With worn-out backpack and đỏ đậm",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "đỏ đậm",
+          "price_vnd": 1550000,
+          "stock_quantity": 20,
+          "description": "Mẫu balo đỏ đậm, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: With a worn-out backpack and a notebook, traveling the planet.",
+          "image_path": "data/images/P125.jpg",
+          "image_asset_id": "P125"
+        },
+        "asset": {
+          "asset_id": "P125",
+          "product_id": "P125",
+          "local_path": "data/images/P125.jpg",
+          "source_title": "File:With a worn-out backpack and a notebook (3).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(3).jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/With_a_worn-out_backpack_and_a_notebook_%283%29.jpg/960px-With_a_worn-out_backpack_and_a_notebook_%283%29.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/With_a_worn-out_backpack_and_a_notebook_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Виктор Пинчук",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "description": "Mẫu balo đỏ đậm, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: With a worn-out backpack and a notebook, traveling the planet.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "ee29972b5c5d2b7da514c8dc6e67e738c652e8bd032ecd6492f86f77f5ff431b",
+          "bytes": 160755,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 720,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(3).jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P125",
+          "name": "Balo Qwstion Zip Pack xám nhạt",
+          "brand": "Qwstion",
+          "category": "backpack",
+          "color": "xám nhạt và đen",
+          "price_vnd": 1550000,
+          "stock_quantity": 20,
+          "description": "Balo Qwstion Zip Pack màu xám nhạt, thân dáng chữ nhật bo góc, khóa kéo phía trên, quai xách màu đen và chi tiết móc ở hai bên.",
+          "image_path": "data/images/P125.jpg",
+          "image_asset_id": "P125"
+        },
+        "asset": {
+          "source_title": "File:02-QWSTION-ZIP-PACK-LIMESTONE-FRONT.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:02-QWSTION-ZIP-PACK-LIMESTONE-FRONT.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/02-QWSTION-ZIP-PACK-LIMESTONE-FRONT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/02-QWSTION-ZIP-PACK-LIMESTONE-FRONT.jpg/960px-02-QWSTION-ZIP-PACK-LIMESTONE-FRONT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "QWSTION",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-15T02:23:02.827378+00:00",
+          "sha256": "32f04057c705b16e889bfc7d2b4b5447e7fca578362dff80ca4c1290e08c7463",
+          "bytes": 57792,
+          "format": "JPEG",
+          "width": 960,
+          "height": 960,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P125",
+          "product_id": "P125",
+          "local_path": "data/images/P125.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed full R208: complete light-grey Qwstion Zip Pack front with dark top handle, zipper and side fittings on white. Source by QWSTION identifies model; distinct from existing washed-black backpack. Replaces group event photograph."
+        }
+      },
+      "visual_notes": "Primary agent viewed full R208: complete light-grey Qwstion Zip Pack front with dark top handle, zipper and side fittings on white. Source by QWSTION identifies model; distinct from existing washed-black backpack. Replaces group event photograph."
+    },
+    {
+      "product_id": "P126",
+      "before": {
+        "product": {
+          "product_id": "P126",
+          "name": "Balo Không xác định With worn-out backpack and đen",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "đen",
+          "price_vnd": 1575000,
+          "stock_quantity": 3,
+          "description": "Mẫu balo đen, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+          "image_path": "data/images/P126.jpg",
+          "image_asset_id": "P126"
+        },
+        "asset": {
+          "asset_id": "P126",
+          "product_id": "P126",
+          "local_path": "data/images/P126.jpg",
+          "source_title": "File:With a worn-out backpack and a notebook (2).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(2).jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/With_a_worn-out_backpack_and_a_notebook_%282%29.jpg/960px-With_a_worn-out_backpack_and_a_notebook_%282%29.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/With_a_worn-out_backpack_and_a_notebook_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Виктор Пинчук",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "description": "Mẫu balo đen, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "abd1f2d6fa6a42b90e3e3b3bf38f31e775f4f53965750ded825527236cc6353a",
+          "bytes": 176934,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 720,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(2).jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P126",
+          "name": "Balo Arc'teryx Alpha Fast and Light 40 đen",
+          "brand": "Arc'teryx",
+          "category": "backpack",
+          "color": "đen",
+          "price_vnd": 1575000,
+          "stock_quantity": 3,
+          "description": "Balo Arc'teryx màu đen, thân cao, có dây đan chéo phía trước, quai xách trên đỉnh và biểu tượng cùng tên hãng sáng màu trên thân.",
+          "image_path": "data/images/P126.jpg",
+          "image_asset_id": "P126"
+        },
+        "asset": {
+          "source_title": "File:Arcteryx Alpha Fast light 40 black backpack.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Arcteryx_Alpha_Fast_light_40_black_backpack.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Arcteryx_Alpha_Fast_light_40_black_backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Arcteryx_Alpha_Fast_light_40_black_backpack.jpg/960px-Arcteryx_Alpha_Fast_light_40_black_backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Jjanhone",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-15T02:23:03.801631+00:00",
+          "sha256": "bf8e2ca9c2294d8b0b4af3fbbecaf75eb2f081b2ba3d2ba41333c3512af5b8bd",
+          "bytes": 115152,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1241,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P126",
+          "product_id": "P126",
+          "local_path": "data/images/P126.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed R209 on batch2 sheet: complete black tall backpack, skeletal-bird logo and Arc'teryx text, front crossed cords. Source identifies Alpha Fast and Light40; no invented performance claims. Replaces unrelated room/event photograph."
+        }
+      },
+      "visual_notes": "Primary agent viewed R209 on batch2 sheet: complete black tall backpack, skeletal-bird logo and Arc'teryx text, front crossed cords. Source identifies Alpha Fast and Light40; no invented performance claims. Replaces unrelated room/event photograph."
+    },
+    {
+      "product_id": "P127",
+      "before": {
+        "product": {
+          "product_id": "P127",
+          "name": "Balo Không xác định With worn-out backpack and xám",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "xám",
+          "price_vnd": 1575000,
+          "stock_quantity": 4,
+          "description": "Mẫu balo xám, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Poster for the author's evening at Library No. 42 in Moscow.",
+          "image_path": "data/images/P127.jpg",
+          "image_asset_id": "P127"
+        },
+        "asset": {
+          "asset_id": "P127",
+          "product_id": "P127",
+          "local_path": "data/images/P127.jpg",
+          "source_title": "File:With a worn-out backpack and a notebook, traveling the planet, poster.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook,_traveling_the_planet,_poster.jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/With_a_worn-out_backpack_and_a_notebook%2C_traveling_the_planet%2C_poster.jpg/960px-With_a_worn-out_backpack_and_a_notebook%2C_traveling_the_planet%2C_poster.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/With_a_worn-out_backpack_and_a_notebook%2C_traveling_the_planet%2C_poster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Виктор Пинчук",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "description": "Mẫu balo xám, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Poster for the author's evening at Library No. 42 in Moscow.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "367db1e83561acf6d241bb1b23f466569e6cced7252d35e5e3053044d821f3d1",
+          "bytes": 131719,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 640,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook,_traveling_the_planet,_poster.jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P127",
+          "name": "Balo xám phối xanh đậm gắn huy hiệu",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "xám và xanh đậm",
+          "price_vnd": 1575000,
+          "stock_quantity": 4,
+          "description": "Balo màu xám với viền xanh đậm, ngăn khóa kéo phía trước và các huy hiệu nhỏ gắn trên mặt túi, chụp trên nền thảm.",
+          "image_path": "data/images/P127.jpg",
+          "image_asset_id": "P127"
+        },
+        "asset": {
+          "source_title": "File:Gray Backpack.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Gray_Backpack.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Gray_Backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Gray_Backpack.jpg/960px-Gray_Backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Tylerskipworth64",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-15T02:23:04.787514+00:00",
+          "sha256": "d4178cd3e7419aec140ccef6b7208ad57d926de591315070afbde2ff34773558",
+          "bytes": 193909,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1282,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P127",
+          "product_id": "P127",
+          "local_path": "data/images/P127.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed R210 on batch2 sheet: one grey backpack with darker blue trim, front zipper and decorative pins; real room lighting gives blue cast. Brand badge not confidently read, source only says grey backpack. Replaces portrait/event poster."
+        }
+      },
+      "visual_notes": "Primary agent viewed R210 on batch2 sheet: one grey backpack with darker blue trim, front zipper and decorative pins; real room lighting gives blue cast. Brand badge not confidently read, source only says grey backpack. Replaces portrait/event poster."
+    },
+    {
+      "product_id": "P128",
+      "before": {
+        "product": {
+          "product_id": "P128",
+          "name": "Balo Không xác định Backpacking in Grand Teton xanh navy",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "xanh navy",
+          "price_vnd": 1575000,
+          "stock_quantity": 5,
+          "description": "Mẫu balo xanh navy, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Backpacker in  Grand Teton National Park.",
+          "image_path": "data/images/P128.jpg",
+          "image_asset_id": "P128"
+        },
+        "asset": {
+          "asset_id": "P128",
+          "product_id": "P128",
+          "local_path": "data/images/P128.jpg",
+          "source_title": "File:Backpacking in Grand Teton NP-NPS.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Backpacking_in_Grand_Teton_NP-NPS.jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Backpacking_in_Grand_Teton_NP-NPS.jpg/960px-Backpacking_in_Grand_Teton_NP-NPS.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Backpacking_in_Grand_Teton_NP-NPS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "National Park Service",
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/File:Backpacking_in_Grand_Teton_NP-NPS.jpg#Licensing",
+          "description": "Mẫu balo xanh navy, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Backpacker in  Grand Teton National Park.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "a07e60f61a6457444429ec1117a35e3b0e6cbcdf0643e47ee04ba747de0f3fda",
+          "bytes": 236913,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 636,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:Backpacking_in_Grand_Teton_NP-NPS.jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P128",
+          "name": "Balo VAUDE Asymmetric xanh rêu",
+          "brand": "VAUDE",
+          "category": "backpack",
+          "color": "xanh rêu",
+          "price_vnd": 1575000,
+          "stock_quantity": 5,
+          "description": "Balo VAUDE Asymmetric màu xanh rêu, thân cao có nắp trên, nhiều dây đai điều chỉnh, túi bên và đai ôm hông, chụp trên nền trắng.",
+          "image_path": "data/images/P128.jpg",
+          "image_asset_id": "P128"
+        },
+        "asset": {
+          "source_title": "File:VAUDE Asymmetric Backpack.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:VAUDE_Asymmetric_Backpack.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/VAUDE_Asymmetric_Backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/VAUDE_Asymmetric_Backpack.jpg/960px-VAUDE_Asymmetric_Backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "VAUDE-Photos",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "retrieved_at": "2026-10-15T02:23:06.032284+00:00",
+          "sha256": "11877d2cf18baa908556868608a8e86d579675e8fda16edd82fa783b15b394fd",
+          "bytes": 355652,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1248,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P128",
+          "product_id": "P128",
+          "local_path": "data/images/P128.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed R211 on batch2 sheet: complete muted-green VAUDE hiking backpack on white, visible fabric folds, straps and hip belt. Source by VAUDE-Photos identifies Asymmetric. Replaces distant hiking landscape; does not claim synthetic waterproof/performance specifications."
+        }
+      },
+      "visual_notes": "Primary agent viewed R211 on batch2 sheet: complete muted-green VAUDE hiking backpack on white, visible fabric folds, straps and hip belt. Source by VAUDE-Photos identifies Asymmetric. Replaces distant hiking landscape; does not claim synthetic waterproof/performance specifications."
+    },
+    {
+      "product_id": "P129",
+      "before": {
+        "product": {
+          "product_id": "P129",
+          "name": "Balo On backpacking travel to europe rêu",
+          "brand": "On",
+          "category": "backpack",
+          "color": "rêu",
+          "price_vnd": 1575000,
+          "stock_quantity": 6,
+          "description": "Mẫu balo rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: A photo taken on a backpacking budgeted trip to Europe.",
+          "image_path": "data/images/P129.jpg",
+          "image_asset_id": "P129"
+        },
+        "asset": {
+          "asset_id": "P129",
+          "product_id": "P129",
+          "local_path": "data/images/P129.jpg",
+          "source_title": "File:A backpacking travel to europe R002-005.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:A_backpacking_travel_to_europe_R002-005.jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/A_backpacking_travel_to_europe_R002-005.jpg/960px-A_backpacking_travel_to_europe_R002-005.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/A_backpacking_travel_to_europe_R002-005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "kokorowashinjin",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "description": "Mẫu balo rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: A photo taken on a backpacking budgeted trip to Europe.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "ca185cab491dd0135f496701e2575bb41e41ce1b27af8a456ebf49a6942e2a77",
+          "bytes": 111128,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 640,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:A_backpacking_travel_to_europe_R002-005.jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P129",
+          "name": "Balo hồng viền khóa kéo đen",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "hồng và đen",
+          "price_vnd": 1575000,
+          "stock_quantity": 6,
+          "description": "Balo màu hồng có các đường khóa kéo và viền đen, ngăn lớn và ngăn nhỏ phía trước, đặt trên bề mặt gỗ cạnh tường sáng màu.",
+          "image_path": "data/images/P129.jpg",
+          "image_asset_id": "P129"
+        },
+        "asset": {
+          "source_title": "File:Zaino rosa.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Zaino_rosa.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Zaino_rosa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Zaino_rosa.jpg/960px-Zaino_rosa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Carola.Puglia24",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-15T02:23:07.190495+00:00",
+          "sha256": "b8db638e36d5b474a776bc21711f3086c3aa2124b1195d9b9c77bcf99427c0ad",
+          "bytes": 233550,
+          "format": "JPEG",
+          "width": 960,
+          "height": 1172,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P129",
+          "product_id": "P129",
+          "local_path": "data/images/P129.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed R215 on batch2 sheet: complete bright-pink school backpack with black zippers/trim resting on wood. Small badge insufficient to certify brand; no On evidence. Replaces Paris skyline where no product is identifiable."
+        }
+      },
+      "visual_notes": "Primary agent viewed R215 on batch2 sheet: complete bright-pink school backpack with black zippers/trim resting on wood. Small badge insufficient to certify brand; no On evidence. Replaces Paris skyline where no product is identifiable."
+    },
+    {
+      "product_id": "P130",
+      "before": {
+        "product": {
+          "product_id": "P130",
+          "name": "Balo Không xác định Backpack AM 2014.66.1-1 nâu",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "nâu",
+          "price_vnd": 1600000,
+          "stock_quantity": 7,
+          "description": "Mẫu balo nâu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Green canvas backpack with external tubular steel hollow frame; embroidered Alpine Sports Club badge; card tag attached for Newman's travel.",
+          "image_path": "data/images/P130.jpg",
+          "image_asset_id": "P130"
+        },
+        "asset": {
+          "asset_id": "P130",
+          "product_id": "P130",
+          "local_path": "data/images/P130.jpg",
+          "source_title": "File:Backpack (AM 2014.66.1-1).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Backpack_(AM_2014.66.1-1).jpg",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Backpack_%28AM_2014.66.1-1%29.jpg/960px-Backpack_%28AM_2014.66.1-1%29.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Backpack_%28AM_2014.66.1-1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "author": "Alexto Production",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "description": "Mẫu balo nâu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Green canvas backpack with external tubular steel hollow frame; embroidered Alpine Sports Club badge; card tag attached for Newman's travel.",
+          "retrieved_at": "2026-10-08T05:00:00Z",
+          "sha256": "d9479bd5b423f35b805ff6ae5f7f354a59de8105f678d114842e92de18bfa913",
+          "bytes": 105496,
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ],
+          "real_photo_review": "passed",
+          "width": 960,
+          "height": 688,
+          "format": "JPEG",
+          "review_evidence": "https://commons.wikimedia.org/wiki/File:Backpack_(AM_2014.66.1-1).jpg",
+          "review_notes": "Real fashion photograph from Wikimedia Commons"
+        }
+      },
+      "after": {
+        "product": {
+          "product_id": "P130",
+          "name": "Balo đen nhìn từ mặt lưng",
+          "brand": "Không xác định",
+          "category": "backpack",
+          "color": "đen",
+          "price_vnd": 1600000,
+          "stock_quantity": 7,
+          "description": "Mặt lưng của một balo màu đen, có hai quai đeo vai bản rộng, quai xách ở phía trên và các dây điều chỉnh ở dưới, chụp trên sàn.",
+          "image_path": "data/images/P130.jpg",
+          "image_asset_id": "P130"
+        },
+        "asset": {
+          "source_title": "File:Blackpack-001.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Blackpack-001.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Blackpack-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Blackpack-001.jpg/960px-Blackpack-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kent Madsen",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "retrieved_at": "2026-10-15T02:23:08.134041+00:00",
+          "sha256": "95399ea8da5639043513f3b018e8b4084997702f5440cc35c4fb359226ae5b36",
+          "bytes": 108714,
+          "format": "JPEG",
+          "width": 960,
+          "height": 960,
+          "transformations": "Commons server thumbnail; local bytes unmodified",
+          "asset_id": "P130",
+          "product_id": "P130",
+          "local_path": "data/images/P130.jpg",
+          "real_photo_review": "passed",
+          "review_evidence": "data/catalog_repair_review.json",
+          "review_notes": "Primary agent viewed R216 on batch2 sheet: real black backpack rear with two padded shoulder straps and top handle, on floor beside slippers. Back-only product view is explicitly described; not another angle of any selected backpack. Replaces historical green museum pack with incorrect brown label."
+        }
+      },
+      "visual_notes": "Primary agent viewed R216 on batch2 sheet: real black backpack rear with two padded shoulder straps and top handle, on floor beside slippers. Back-only product view is explicitly described; not another angle of any selected backpack. Replaces historical green museum pack with incorrect brown label."
+    }
+  ],
+  "full_catalog_visual_gate_verified": false,
+  "index_rebuild_required": false
+}

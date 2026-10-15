@@ -1,0 +1,47 @@
+{
+  "scope": "One actual Vietnamese human FLEURS upload via running application to Groq; not fashion microphone quality acceptance",
+  "attempts": 1,
+  "azure_calls": 0,
+  "source": {
+    "dataset": "google/fleurs",
+    "configuration": "vi_vn",
+    "split": "test",
+    "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "audio_archive_url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/vi_vn/audio/test.tar.gz",
+    "reference_url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/vi_vn/test.tsv",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Conneau et al., FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech (2022), Google FLEURS dataset.",
+    "purpose": "Independent real Vietnamese STT smoke test; not shop-specific microphone acceptance",
+    "downloaded_archive_bytes": 583680
+  },
+  "case": {
+    "id": "FLEURS-VI-01",
+    "audio_path": "fleurs-vi-01.wav",
+    "reference": "Văn hóa và bộ lạc cổ xưa đã bắt đầu giữ những con vật này để dễ lấy sữa, tóc, thịt, và da.",
+    "normalized_reference": "văn hóa và bộ lạc cổ xưa đã bắt đầu giữ những con vật này để dễ lấy sữa tóc thịt và da",
+    "speaker_gender": "MALE",
+    "original_filename": "10057024225045006889.wav",
+    "duration_seconds": 11.34,
+    "sha256": "0e7433f8275d79809a8aa8de7343752e354c00d3981adfcff08e08376124601f",
+    "original_sha256": "33318a8f837de6c2953248729f658292c31520b57aa36ee0fe55c234d55c4b54",
+    "format": "PCM16 mono 16000 Hz",
+    "synthesized": false
+  },
+  "http_status": 200,
+  "elapsed_seconds": 0.76,
+  "response": {
+    "request_id": "d3ecc6df-da22-468b-8461-361fb0e76173",
+    "transcript": "Văn hóa và bộ lạc cổ xưa đã bắt đầu giữ những con vật này để dễ lấy sữa, tóc, thịt và da",
+    "language": "vi-VN",
+    "provider": "groq",
+    "audio_duration_ms": 11340,
+    "timing_ms": {
+      "validation": 0.017,
+      "provider": 747.024,
+      "total": 747.043
+    }
+  },
+  "verified": true
+}

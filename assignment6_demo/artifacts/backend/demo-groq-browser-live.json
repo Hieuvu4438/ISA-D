@@ -1,0 +1,185 @@
+{
+  "scope": "One real human FLEURS upload to Groq in browser, followed by explicitly edited fashion transcript; not a fashion recording or physical microphone test",
+  "groq_calls": 1,
+  "azure_calls": 0,
+  "transcript": {
+    "request_id": "3edf754b-8c6f-4964-9301-3fed0253fff9",
+    "transcript": "Văn hóa và bộ lạc cổ xưa đã bắt đầu giữ những con vật này để dễ lấy sữa, tóc, thịt và da",
+    "language": "vi-VN",
+    "provider": "groq",
+    "audio_duration_ms": 11340,
+    "timing_ms": {
+      "validation": 0.016,
+      "provider": 577.479,
+      "total": 577.497
+    }
+  },
+  "edited_query": "đồng hồ Citizen",
+  "search": {
+    "request_id": "58cc79c4-b105-4e0e-9a3c-b46b7f7e5e5a",
+    "query": {
+      "mode": "voice",
+      "text": "đồng hồ Citizen",
+      "image_summary": null,
+      "voice_source": "groq",
+      "text_weight": null,
+      "options": {
+        "top_k": 5,
+        "result_policy": "nearest",
+        "search_strategy": "hybrid",
+        "sort": "relevance",
+        "filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": false
+        },
+        "interpret_price": true,
+        "interpret_exclusions": true,
+        "interpret_scope": true
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "product": {
+          "product_id": "P167",
+          "name": "Đồng hồ Citizen mặt trắng dây nâu",
+          "category": "watch",
+          "brand": "Citizen",
+          "color": "trắng, nâu và bạc",
+          "price_vnd": 2725000,
+          "in_stock": true,
+          "sale_state": "active",
+          "sizes": [],
+          "available_sizes": [],
+          "image_url": "/api/v1/media/products/P167"
+        },
+        "score": 0.7748457193374634,
+        "component_scores": {
+          "text": 0.7748458385467529,
+          "image": null
+        },
+        "rank_score": 0.01639344262295082,
+        "lexical_score": 0
+      }
+    ],
+    "meta": {
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+      "index_fingerprint": "1903765b5e724df63aa88b6e58332db58784bea00fa0dd6879e21c9bf4388b17",
+      "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
+      "result_policy": "nearest",
+      "threshold": null,
+      "policy_fingerprint": null,
+      "empty_reason": null,
+      "timing_ms": {
+        "validation": 0.12259999857633375,
+        "encoding": 10.684000000765081,
+        "retrieval": 0.8067000017035753,
+        "filtering": 2.885699999751523,
+        "threshold": 0,
+        "ranking": 0.14600000213249587,
+        "hydration": 0.05750000127591193,
+        "total": 17.7350000012666
+      },
+      "trace": [
+        {
+          "step": "validation",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "encoding",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "retrieval",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 181
+        },
+        {
+          "step": "filtering",
+          "status": "ok",
+          "input_count": 181,
+          "output_count": 1
+        },
+        {
+          "step": "threshold",
+          "status": "skipped",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "ranking",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "hydration",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        }
+      ],
+      "ranking_strategy": "rrf",
+      "sort": "relevance",
+      "lexical_fingerprint": "eb3ee4b9a9b2268df22c44cbd22f272bf1225869920c36b43139300c3a8d5173",
+      "corrections": [],
+      "inventory_revision": 118,
+      "price_interpretation": {
+        "enabled": true,
+        "parser_version": "vi_vnd_price_v1",
+        "applied": false,
+        "clauses": [],
+        "inferred_filters": {
+          "min_price": null,
+          "max_price": null
+        },
+        "effective_filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": false
+        },
+        "lexical_text": "đồng hồ Citizen"
+      },
+      "exclusion_interpretation": {
+        "enabled": true,
+        "parser_version": "metadata_exclusions_v1",
+        "applied": false,
+        "clauses": [],
+        "lexical_text": "đồng hồ Citizen"
+      },
+      "scope_interpretation": {
+        "enabled": true,
+        "parser_version": "brand_category_color_size_scope_v3",
+        "applied": true,
+        "clauses": [
+          {
+            "text": "Citizen",
+            "field": "brand",
+            "value": "Citizen"
+          },
+          {
+            "text": "đồng hồ",
+            "field": "category",
+            "value": "watch"
+          }
+        ],
+        "lexical_text": "",
+        "warnings": []
+      }
+    }
+  }
+}

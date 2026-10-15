@@ -1,5 +1,7 @@
 # E3 data integrity — repair batch 1
 
+Cập nhật mốc bàn giao35: đã thay thêm9 ảnh và metadata P061/P064/P067/P070/P088/P098/P117/P164/P167 theo `data/catalog_repair_batch3_review.json`, xuất bản seed/live riêng và kiểm tra CPU/browser. Danh sách pending bên dưới là lịch sử, loại các ID đã sửa ở đây và P121–P130 của đợt2. Vẫn chưa xác nhận whole-catalog visual gate; phần rà toàn bộ được giữ làm backlog sau demo theo yêu cầu rút gọn mới.
+
 Cập nhật 15/10/2026: P121–P130 đã được thay ảnh và sửa metadata trong [đợt 2](32_CATALOG_REPAIR_BATCH2.md). Các fingerprint và evidence bên dưới mô tả lịch sử đợt 1; bản preview/applied đợt 1 được giữ tại `artifacts/validation/catalog-repair-batch1-preview.json` và `catalog-repair-batch1-applied.json`. Các nhóm khác trong danh sách pending vẫn chưa được đánh dấu đạt.
 
 Rà trực quan toàn bộ 180 asset qua 9 contact sheets phát hiện nhiều false-positive từ tìm ảnh bằng filename. Các từ “backpack”, “Leatherjacket”, “sunglasses” trong tên nguồn không chứng minh ảnh là sản phẩm. Tên/màu/brand tự gán trước đây cũng sai. Không chấp nhận trường real_photo_review=passed được importer tự điền như bằng chứng nhìn ảnh.

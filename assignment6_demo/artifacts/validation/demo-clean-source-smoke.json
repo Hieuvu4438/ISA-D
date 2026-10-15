@@ -1,0 +1,565 @@
+{
+  "scope": "Clean exported application source, fresh SQLite and real CPU; cached models/dependencies reused, not fresh dependency download",
+  "source_export": {
+    "source_files": 393,
+    "fresh_database": true,
+    "models": "hard-linked existing pinned local files",
+    "dependencies": "existing backend venv and frontend node_modules; no claim of fresh network install"
+  },
+  "ready": {
+    "request_id": "306cb570-6a6d-4691-a5e2-13fb9c6166e2",
+    "status": "ready",
+    "search_available": true,
+    "reason_codes": []
+  },
+  "meta": {
+    "request_id": "c05b9f21-41d3-4f3a-a974-bf8e4366aa56",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": false,
+        "reason_code": "RELEVANCE_POLICY_UNAVAILABLE",
+        "modes": [],
+        "multimodal_weights": []
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "0746d23246d058d88c9b7e4f8966beda99f83469f8a9e0960480777a3988cd92",
+      "catalog_fingerprint": "ab5cb4b7695fc0d93ab088e071f81551ed8806f9e16f72a55cb36d7968c080e2",
+      "product_count": 180
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "backpack",
+        "bag",
+        "boots",
+        "casual_shoes",
+        "jacket",
+        "running_shoes",
+        "sandals",
+        "sunglasses",
+        "t_shirt",
+        "tote_bag",
+        "trail_shoes",
+        "watch"
+      ],
+      "brands": [
+        "Adele Dejak",
+        "Adidas",
+        "Arc'teryx",
+        "Asics",
+        "Birkenstock",
+        "Brooks",
+        "Candino",
+        "Citizen",
+        "Converse",
+        "Eastpak",
+        "Fjällräven",
+        "Fossil",
+        "Hard Rock Cafe",
+        "Hermès",
+        "Junghans",
+        "Không xác định",
+        "Les cuirs d'Agathe",
+        "Marshal",
+        "Minaal",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On",
+        "Opta",
+        "Polo Ralph Lauren",
+        "Prada",
+        "Qwstion",
+        "Ray-Ban",
+        "Salomon",
+        "Seiko",
+        "Skunkfunk",
+        "Timberland",
+        "Uniqlo",
+        "VAUDE",
+        "Vans",
+        "World Balance",
+        "XD Design"
+      ],
+      "min_price": 350000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "azure",
+      "configuration_state": "unconfigured",
+      "region": "southeastasia",
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "watch_count": 15,
+  "text_search": {
+    "request_id": "75f495cf-f756-4057-905f-d8ed0a6bfc51",
+    "query": {
+      "mode": "text",
+      "text": "balo màu hồng",
+      "image_summary": null,
+      "voice_source": null,
+      "text_weight": null,
+      "options": {
+        "top_k": 5,
+        "result_policy": "nearest",
+        "search_strategy": "hybrid",
+        "sort": "relevance",
+        "filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": false
+        },
+        "interpret_price": true,
+        "interpret_exclusions": true,
+        "interpret_scope": true
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "product": {
+          "product_id": "P129",
+          "name": "Balo hồng viền khóa kéo đen",
+          "category": "backpack",
+          "brand": "Không xác định",
+          "color": "hồng và đen",
+          "price_vnd": 1575000,
+          "in_stock": true,
+          "sale_state": "active",
+          "sizes": [],
+          "available_sizes": [],
+          "image_url": "/api/v1/media/products/P129"
+        },
+        "score": 0.7434077262878418,
+        "component_scores": {
+          "text": 0.7434077262878418,
+          "image": null
+        },
+        "rank_score": 0.01639344262295082,
+        "lexical_score": 0.0
+      }
+    ],
+    "meta": {
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+      "index_fingerprint": "0746d23246d058d88c9b7e4f8966beda99f83469f8a9e0960480777a3988cd92",
+      "catalog_fingerprint": "ab5cb4b7695fc0d93ab088e071f81551ed8806f9e16f72a55cb36d7968c080e2",
+      "result_policy": "nearest",
+      "threshold": null,
+      "policy_fingerprint": null,
+      "empty_reason": null,
+      "timing_ms": {
+        "validation": 0.45449999743141234,
+        "encoding": 9.184099999401951,
+        "retrieval": 0.48349999997299165,
+        "filtering": 1.5416999995068181,
+        "threshold": 0,
+        "ranking": 0.11989999984507449,
+        "hydration": 0.042499999835854396,
+        "total": 13.951200002338737
+      },
+      "trace": [
+        {
+          "step": "validation",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "encoding",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "retrieval",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 180
+        },
+        {
+          "step": "filtering",
+          "status": "ok",
+          "input_count": 180,
+          "output_count": 1
+        },
+        {
+          "step": "threshold",
+          "status": "skipped",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "ranking",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "hydration",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        }
+      ],
+      "ranking_strategy": "rrf",
+      "sort": "relevance",
+      "lexical_fingerprint": "165807960835e0393bbef018e1af25fa2675342007f8c679d88e46ec09cdb62b",
+      "corrections": [],
+      "inventory_revision": 0,
+      "price_interpretation": {
+        "enabled": true,
+        "parser_version": "vi_vnd_price_v1",
+        "applied": false,
+        "clauses": [],
+        "inferred_filters": {
+          "min_price": null,
+          "max_price": null
+        },
+        "effective_filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": false
+        },
+        "lexical_text": "balo màu hồng"
+      },
+      "exclusion_interpretation": {
+        "enabled": true,
+        "parser_version": "metadata_exclusions_v1",
+        "applied": false,
+        "clauses": [],
+        "lexical_text": "balo màu hồng"
+      },
+      "scope_interpretation": {
+        "enabled": true,
+        "parser_version": "brand_category_color_size_scope_v3",
+        "applied": true,
+        "clauses": [
+          {
+            "text": "balo",
+            "field": "category",
+            "value": "backpack"
+          },
+          {
+            "text": "hồng",
+            "field": "color",
+            "value": "hồng"
+          }
+        ],
+        "lexical_text": "",
+        "warnings": []
+      }
+    }
+  },
+  "image_search": {
+    "request_id": "aacf31f7-c8ca-453e-8304-5c5dafeb9e61",
+    "query": {
+      "mode": "image",
+      "text": null,
+      "image_summary": {
+        "format": "JPEG",
+        "width": 960,
+        "height": 748,
+        "byte_size": 168498
+      },
+      "voice_source": null,
+      "text_weight": null,
+      "options": {
+        "top_k": 5,
+        "result_policy": "nearest",
+        "search_strategy": "semantic",
+        "sort": "relevance",
+        "filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": false
+        },
+        "interpret_price": true,
+        "interpret_exclusions": true,
+        "interpret_scope": true
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "product": {
+          "product_id": "P001",
+          "name": "Giày chạy bộ On Cloud màu đen",
+          "category": "running_shoes",
+          "brand": "On",
+          "color": "đen",
+          "price_vnd": 1800000,
+          "in_stock": true,
+          "sale_state": "active",
+          "sizes": [],
+          "available_sizes": [],
+          "image_url": "/api/v1/media/products/P001"
+        },
+        "score": 0.8025829792022705,
+        "component_scores": {
+          "text": null,
+          "image": 0.8025829792022705
+        },
+        "rank_score": 0.8025829792022705,
+        "lexical_score": null
+      },
+      {
+        "rank": 2,
+        "product": {
+          "product_id": "P066",
+          "name": "Giày chạy bộ On On Cloud Running Shoes xám",
+          "category": "running_shoes",
+          "brand": "On",
+          "color": "xám",
+          "price_vnd": 1325000,
+          "in_stock": true,
+          "sale_state": "active",
+          "sizes": [],
+          "available_sizes": [],
+          "image_url": "/api/v1/media/products/P066"
+        },
+        "score": 0.7039470672607422,
+        "component_scores": {
+          "text": null,
+          "image": 0.7039471864700317
+        },
+        "rank_score": 0.7039470672607422,
+        "lexical_score": null
+      },
+      {
+        "rank": 3,
+        "product": {
+          "product_id": "P064",
+          "name": "Giày chạy bộ On Cloudflow đen xám",
+          "category": "running_shoes",
+          "brand": "On",
+          "color": "đen và xám",
+          "price_vnd": 1300000,
+          "in_stock": true,
+          "sale_state": "active",
+          "sizes": [],
+          "available_sizes": [],
+          "image_url": "/api/v1/media/products/P064"
+        },
+        "score": 0.6543015837669373,
+        "component_scores": {
+          "text": null,
+          "image": 0.6543015837669373
+        },
+        "rank_score": 0.6543015837669373,
+        "lexical_score": null
+      },
+      {
+        "rank": 4,
+        "product": {
+          "product_id": "P010",
+          "name": "Giày New Balance 2002R nâu xám",
+          "category": "casual_shoes",
+          "brand": "New Balance",
+          "color": "nâu xám",
+          "price_vnd": 2400000,
+          "in_stock": true,
+          "sale_state": "active",
+          "sizes": [],
+          "available_sizes": [],
+          "image_url": "/api/v1/media/products/P010"
+        },
+        "score": 0.6309612989425659,
+        "component_scores": {
+          "text": null,
+          "image": 0.6309612989425659
+        },
+        "rank_score": 0.6309612989425659,
+        "lexical_score": null
+      },
+      {
+        "rank": 5,
+        "product": {
+          "product_id": "P078",
+          "name": "Giày địa hình Không xác định New Balance Trail More đen",
+          "category": "trail_shoes",
+          "brand": "Không xác định",
+          "color": "đen",
+          "price_vnd": 1500000,
+          "in_stock": true,
+          "sale_state": "active",
+          "sizes": [],
+          "available_sizes": [],
+          "image_url": "/api/v1/media/products/P078"
+        },
+        "score": 0.6269994378089905,
+        "component_scores": {
+          "text": null,
+          "image": 0.6269994974136353
+        },
+        "rank_score": 0.6269994378089905,
+        "lexical_score": null
+      }
+    ],
+    "meta": {
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+      "index_fingerprint": "0746d23246d058d88c9b7e4f8966beda99f83469f8a9e0960480777a3988cd92",
+      "catalog_fingerprint": "ab5cb4b7695fc0d93ab088e071f81551ed8806f9e16f72a55cb36d7968c080e2",
+      "result_policy": "nearest",
+      "threshold": null,
+      "policy_fingerprint": null,
+      "empty_reason": null,
+      "timing_ms": {
+        "validation": 7.217799997306429,
+        "encoding": 55.65320000096108,
+        "retrieval": 0.6290999990596902,
+        "filtering": 0.26640000214683823,
+        "threshold": 0,
+        "ranking": 0.04199999966658652,
+        "hydration": 0.06620000203838572,
+        "total": 66.11100000009174
+      },
+      "trace": [
+        {
+          "step": "validation",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "encoding",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "retrieval",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 180
+        },
+        {
+          "step": "filtering",
+          "status": "ok",
+          "input_count": 180,
+          "output_count": 180
+        },
+        {
+          "step": "threshold",
+          "status": "skipped",
+          "input_count": 180,
+          "output_count": 180
+        },
+        {
+          "step": "ranking",
+          "status": "ok",
+          "input_count": 180,
+          "output_count": 5
+        },
+        {
+          "step": "hydration",
+          "status": "ok",
+          "input_count": 5,
+          "output_count": 5
+        }
+      ],
+      "ranking_strategy": "semantic",
+      "sort": "relevance",
+      "lexical_fingerprint": null,
+      "corrections": [],
+      "inventory_revision": 0,
+      "price_interpretation": {
+        "enabled": false,
+        "parser_version": "vi_vnd_price_v1",
+        "applied": false,
+        "clauses": [],
+        "inferred_filters": {
+          "min_price": null,
+          "max_price": null
+        },
+        "effective_filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": false
+        },
+        "lexical_text": ""
+      },
+      "exclusion_interpretation": {
+        "enabled": false,
+        "parser_version": "metadata_exclusions_v1",
+        "applied": false,
+        "clauses": [],
+        "lexical_text": ""
+      },
+      "scope_interpretation": {
+        "enabled": false,
+        "parser_version": "brand_category_color_size_scope_v3",
+        "applied": false,
+        "clauses": [],
+        "lexical_text": "",
+        "warnings": []
+      }
+    }
+  },
+  "register": 201,
+  "cart": 200,
+  "quote": 200,
+  "cod_order": 201,
+  "owned_detail": 200,
+  "cancel": 200,
+  "stock_restored": true,
+  "speech_calls": 0
+}

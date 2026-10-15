@@ -1,0 +1,19 @@
+{
+  "credentials_in_git": false,
+  "checks": [
+    {
+      "email": "cortis-demo-admin@example.test",
+      "role": "admin",
+      "login": 200,
+      "admin_inventory": 200,
+      "logged_out": true
+    },
+    {
+      "email": "cortis-demo-user@example.test",
+      "role": "user",
+      "login": 200,
+      "admin_inventory": 403,
+      "logged_out": true
+    }
+  ]
+}

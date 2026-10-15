@@ -1,5 +1,7 @@
 # Chạy backend demo
 
+Cập nhật bàn giao15/10/2026: dùng [docs35](35_DEMO_HANDOFF.md) cho bản demo hiện tại. Seed180/live181 sản phẩm, user/admin/COD đã có; Groq được kiểm tra thật ở mốc35. Setup mặc định cài package app và build index, không chạy calibration; thêm `-Calibrate` khi muốn kiểm định riêng. Các số liệu60 sản phẩm và trạng thái chờ speech bên dưới thuộc lịch sử baseline.
+
 Backend và frontend Cortis đã kết nối trên catalog 60 sản phẩm/12 danh mục và 30 đơn. 271 API checks và 90 warm CPU benchmark requests đã chạy; xem DEMO_DATA. 15 fixtures hiện tại chỉ kiểm tra/calibration demo, chưa là frozen test độc lập. Voice adapter Azure và persistent budget đã triển khai; quyền tối đa5 lượt đã xác nhận nhưng còn thiếu key/5 WAV thật, xem AZURE_LIVE_CHECK. Setup/startup/test mặc định không gọi Azure.
 
 Từ PowerShell tại `assignment6_demo`, dùng Python 3.12:

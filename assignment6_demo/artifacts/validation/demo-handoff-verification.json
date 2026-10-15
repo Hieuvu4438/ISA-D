@@ -1,0 +1,220 @@
+{
+  "recorded_at": "2026-10-15T03:20:17.460000+00:00",
+  "scope": "Customer demo completion per latest explicit user scope; advanced acceptance deferred",
+  "source_base": "fbdca93ab22b2fa8cc8088080df39a16f543abc1",
+  "seed_catalog_fingerprint": "ab5cb4b7695fc0d93ab088e071f81551ed8806f9e16f72a55cb36d7968c080e2",
+  "seed_index_fingerprint": "0746d23246d058d88c9b7e4f8966beda99f83469f8a9e0960480777a3988cd92",
+  "live_meta": {
+    "request_id": "4acc0d9f-4b18-4e7e-92c1-1e965724acc1",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": false,
+        "reason_code": "RELEVANCE_POLICY_UNAVAILABLE",
+        "modes": [],
+        "multimodal_weights": []
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "1903765b5e724df63aa88b6e58332db58784bea00fa0dd6879e21c9bf4388b17",
+      "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
+      "product_count": 181
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "backpack",
+        "bag",
+        "boots",
+        "casual_shoes",
+        "jacket",
+        "running_shoes",
+        "sandals",
+        "sunglasses",
+        "t_shirt",
+        "tote_bag",
+        "trail_shoes",
+        "watch"
+      ],
+      "brands": [
+        "Adele Dejak",
+        "Adidas",
+        "Arc'teryx",
+        "Asics",
+        "Birkenstock",
+        "Brooks",
+        "Candino",
+        "Citizen",
+        "Converse",
+        "Eastpak",
+        "Fjällräven",
+        "Fossil",
+        "Hard Rock Cafe",
+        "Hermès",
+        "Junghans",
+        "Không xác định",
+        "Les cuirs d'Agathe",
+        "Marshal",
+        "Minaal",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On",
+        "Opta",
+        "Polo Ralph Lauren",
+        "Prada",
+        "Qwstion",
+        "Ray-Ban",
+        "Salomon",
+        "Seiko",
+        "Skunkfunk",
+        "Timberland",
+        "Uniqlo",
+        "VAUDE",
+        "Vans",
+        "World Balance",
+        "XD Design"
+      ],
+      "min_price": 350000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "groq",
+      "configuration_state": "configured_unverified",
+      "region": null,
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "products_after_restart": [
+    {
+      "product_id": "P061",
+      "stock_quantity": 10,
+      "photo_sha256": "5172f8641a8b2a3ad8fd99144083180650db0fdde130694165ea527de7b52ac6",
+      "metadata_match": true
+    },
+    {
+      "product_id": "P064",
+      "stock_quantity": 13,
+      "photo_sha256": "7d13d7bbf4e5dda81d001ff2b0eac22645fe2a482b5f363249a8c8f5a0fdd280",
+      "metadata_match": true
+    },
+    {
+      "product_id": "P067",
+      "stock_quantity": 16,
+      "photo_sha256": "f0fc3c76c8a9f253b1be662c4edf90c58b11150a20318c817b764a591ec346c5",
+      "metadata_match": true
+    },
+    {
+      "product_id": "P070",
+      "stock_quantity": 19,
+      "photo_sha256": "5f09d2a141a9e0c67d0ee46743a3c315f4bf769ffd20aaa7309e3ab300914b68",
+      "metadata_match": true
+    },
+    {
+      "product_id": "P088",
+      "stock_quantity": 19,
+      "photo_sha256": "91706e7c67072c4a46a39ffd62638f5e4c7a513e64327601ff521a1d0c578863",
+      "metadata_match": true
+    },
+    {
+      "product_id": "P098",
+      "stock_quantity": 11,
+      "photo_sha256": "e046824f5e7099974779a0c09a61bffc4d6023fabd5c4164b4a80bf3a54b4c99",
+      "metadata_match": true
+    },
+    {
+      "product_id": "P117",
+      "stock_quantity": 12,
+      "photo_sha256": "fe9ddf6eef910b19137d493a84650fe87751c14ddbac22660cbdabe4efd7794f",
+      "metadata_match": true
+    },
+    {
+      "product_id": "P164",
+      "stock_quantity": 5,
+      "photo_sha256": "17862062e4c5798d9f3b38e3cfe80f8f078f544b95ffebc925d6b13f6a2fad7b",
+      "metadata_match": true
+    },
+    {
+      "product_id": "P167",
+      "stock_quantity": 8,
+      "photo_sha256": "c97098b27fd88c4c03aa06a2c25e1a1f7811fc6d28d43994096209d1d622e2d8",
+      "metadata_match": true
+    }
+  ],
+  "seed_invariants_preserved": true,
+  "orders_unchanged": true,
+  "reserved_admins": 0,
+  "reserved_sessions": 0,
+  "intentional_demo_admin_accounts": 1,
+  "groq_live_calls_this_milestone": 2,
+  "azure_calls": 0,
+  "checks": {
+    "targeted_backend_passed": 151,
+    "browser_passed": 20,
+    "clean_source_frontend_build": true,
+    "clean_source_fresh_db_commerce": true
+  },
+  "full_catalog_visual_verified": false,
+  "independent_relevance_verified": false,
+  "azure_verified": false,
+  "final_verified_at": "2026-10-15T03:23:42.721952+00:00",
+  "deadline_started_at": "2026-10-15T03:06:38+00:00",
+  "deadline_minutes": 40,
+  "hash_mode": "LF-normalized text SHA256",
+  "sha256": {
+    "scripts/setup_backend.ps1": "b53ffbc3a12d79bd5d049d1c86f816fa8379b4e4414b6221e268295e99c0d25c",
+    "scripts/prepare_demo.py": "00175c3bf018f7cb7974559c8da3da382649ca21d8df117bc9742ea54564d9ff",
+    "frontend/e2e/demo-handoff.spec.ts": "91660a76ce855094001f5b875b7ad0323d7198feb5ab29bec255a8a828db1bd0",
+    "data/products.json": "2e673087a97ebd775317f24498ce42319b633432a2846650c3065b133abb76dc",
+    "data/image_sources.json": "f05d79354431b4d9f7873b7ce6d9b7b248618e1e261d6b9bf0752edfff88a046",
+    "data/catalog_repair_batch3_review.json": "9d263fba415ecafd1551811ce40e2e2a264598f4dbd6626863c8fc12a720e8ca",
+    "docs/35_DEMO_HANDOFF.md": "eef82ba4beb82e9f0c7b4af38f0deda2d7732763a53cb0b80360b461447dd402",
+    "artifacts/validation/demo-handoff-data-tests.xml": "f67fdef1c88df308c5aedf9e27fc1caf71bcd1af2f8bae3a4e53d24ccb038b25",
+    "artifacts/frontend/demo-handoff-results.json": "3cd0d3c95bcf7c79e41cc930ee1e4c815b09ab8a6ce5833d94f6f2619b92ed2e",
+    "artifacts/validation/demo-clean-source-smoke.json": "142171b3569255ec27332cfe82331f722a90da1a5a52f5122f48cc26505aee8c",
+    "artifacts/backend/demo-groq-live.json": "dbccfbe1fd314a69c70c7d1221a1cb9a751cb7de6dd80024258bfb3f82bac404",
+    "artifacts/backend/demo-groq-browser-live.json": "39b8bf993a85f384d0d8c8be85b3a9a0949635426db20bf4044034d9d455c004"
+  },
+  "demo_scope_complete": true,
+  "production_research_scope_complete": false
+}

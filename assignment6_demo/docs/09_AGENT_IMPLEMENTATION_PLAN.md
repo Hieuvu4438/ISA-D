@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+**Mốc35 — chốt demo theo yêu cầu mới của người dùng:** hoàn tất phạm vi giao diện và các luồng ecommerce phổ biến trong hạn40phút; không tiếp tục mở rộng edge cases. [Bàn giao](35_DEMO_HANDOFF.md), [evidence](../artifacts/validation/DEMO_HANDOFF_REPORT.md). Đã sửa thêm9 ảnh thật, seed/live index, cấu hình Groq local và test live API/browser, chuẩn bị user/admin demo, sửa setup để cài app package và tách calibration tùy chọn, kiểm tra nguồn sạch/DB mới. Các pending ở mốc cũ là backlog ngoài bản demo; không đổi chúng thành production verified.
+
 Mốc34: size có marker được lọc theo SKU/stock snapshot cho browse/suggestions/search; OR, conflict/warning, manual intersection, tồn đúng cỡ và trạng thái cỡ trên card theo [34](34_SIZE_SEARCH_SCOPE.md), [evidence](../artifacts/backend/SIZE_SCOPE_REPORT.md). Đã sửa autocomplete lọc trước hydrate và search ghi snapshot vào repository chung. Không đổi payment COD/demo; còn quality/data/voice acceptance và các phần variant nâng cao.
 
 Mốc33: đã triển khai màu có marker trong mô tả thành điều kiện lọc cho browse/suggestions và mọi search mode có text, OR/intersection, cảnh báo mơ hồ và conflict recovery; [contract33](33_COLOR_SEARCH_SCOPE.md), [evidence](../artifacts/backend/COLOR_SCOPE_REPORT.md). Model/browser và doubles có bằng chứng riêng. Thanh toán COD/demo; toàn catalog, independent quality và live voice acceptance vẫn pending.

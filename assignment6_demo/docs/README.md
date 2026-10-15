@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+**Bàn giao demo theo yêu cầu rút gọn mới nhất:** [35_DEMO_HANDOFF.md](35_DEMO_HANDOFF.md). Chốt các luồng phổ biến có UI, COD/demo, không chặn bởi edge case nâng cao và gate production/nghiên cứu cũ. Bằng chứng live/model/browser được tách riêng; Azure không được nhận đã verified.
+
 Mốc tìm kiếm34: [kích cỡ từ mô tả và tồn kho đúng SKU](34_SIZE_SEARCH_SCOPE.md), gồm autocomplete snapshot, OR/conflict, warning và trạng thái cỡ trên card; evidence doubles/fresh SQLite/browser/CPU riêng.
 
 Mốc tìm kiếm33: [màu rõ trong mô tả](33_COLOR_SEARCH_SCOPE.md) trở thành điều kiện lọc, với OR/conflict/warning và opt-out; có evidence doubles/browser/CPU riêng.

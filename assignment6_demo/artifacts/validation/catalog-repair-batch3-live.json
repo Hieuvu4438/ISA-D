@@ -1,0 +1,2139 @@
+{
+  "scope": "Nine visually reviewed product-photo replacements through actual local admin API and CPU publication",
+  "speech_calls": 0,
+  "products": [
+    {
+      "product_id": "P061",
+      "before": {
+        "product_id": "P061",
+        "name": "Giày chạy bộ Không xác định OutDoor 2018, Friedrichshafen 1X7A0304 xanh lá",
+        "category": "running_shoes",
+        "brand": "Không xác định",
+        "color": "xanh lá",
+        "price_vnd": 1275000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P061",
+        "description": "Mẫu giày chạy bộ xanh lá, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: OutDoor 2018.",
+        "stock_quantity": 10,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:OutDoor_2018,_Friedrichshafen_(1X7A0304).jpg",
+          "author": "Matti Blume",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P061",
+            "size": null,
+            "stock_quantity": 10,
+            "color": "xanh lá",
+            "price_vnd": 1275000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P061",
+        "name": "Giày chạy bộ Mizuno Wave Inspire 13 đen phối màu",
+        "category": "running_shoes",
+        "brand": "Mizuno",
+        "color": "đen, xám, vàng và đỏ",
+        "price_vnd": 1275000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P061",
+        "description": "Đôi giày Mizuno Wave Inspire 13 có thân lưới đen xám, dây buộc tối màu, logo bên hông sáng màu và các chi tiết đế vàng đỏ, chụp trên nền vải nâu.",
+        "stock_quantity": 10,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mizuno_Wave_Inspire_13_running_shoes_(Image_1).jpg",
+          "author": "Ubcule",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P061",
+            "size": null,
+            "stock_quantity": 10,
+            "color": "đen, xám, vàng và đỏ",
+            "price_vnd": 1275000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "5172f8641a8b2a3ad8fd99144083180650db0fdde130694165ea527de7b52ac6",
+      "publication": {
+        "published": true,
+        "product_id": "P061",
+        "revision": 13,
+        "catalog_fingerprint": "1a4f9b7c4de71181c1c825b0040c316fdeef42d0143456f3e271f4e9cd86d885",
+        "index_fingerprint": "1e38688d26b0df47bf9d8e107bb9da297475c1906ee5288b7093be391e18d960",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "d08f4e04-222f-400c-9bdc-e3a78baa66b6",
+        "query": {
+          "mode": "text",
+          "text": "P061",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "running_shoes",
+              "brand": null,
+              "color": "đen, xám, vàng và đỏ",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P061",
+              "name": "Giày chạy bộ Mizuno Wave Inspire 13 đen phối màu",
+              "category": "running_shoes",
+              "brand": "Mizuno",
+              "color": "đen, xám, vàng và đỏ",
+              "price_vnd": 1275000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P061"
+            },
+            "score": 0.6504738330841064,
+            "component_scores": {
+              "text": 0.6504738330841064,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "1e38688d26b0df47bf9d8e107bb9da297475c1906ee5288b7093be391e18d960",
+          "catalog_fingerprint": "1a4f9b7c4de71181c1c825b0040c316fdeef42d0143456f3e271f4e9cd86d885",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.14490000103251077,
+            "encoding": 15.590499999234453,
+            "retrieval": 0.47650000124122016,
+            "filtering": 0.2043999993475154,
+            "threshold": 0,
+            "ranking": 0.07569999797851779,
+            "hydration": 0.031100000342121348,
+            "total": 18.76780000020517
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "ae2da469252b19b396082c309f001cadf25c239f48c5d81ba9767acbc837795a",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "running_shoes",
+              "brand": null,
+              "color": "đen, xám, vàng và đỏ",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P061"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P061"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P061",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P064",
+      "before": {
+        "product_id": "P064",
+        "name": "Giày chạy bộ Salomon Salomon trail running shoes trắng",
+        "category": "running_shoes",
+        "brand": "Salomon",
+        "color": "trắng",
+        "price_vnd": 1300000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P064",
+        "description": "Mẫu giày chạy bộ trắng, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Salomon trail running shoes women Speedcross.",
+        "stock_quantity": 13,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Salomon_trail_running_shoes_women_Speedcross.jpg",
+          "author": "Jjanhone",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P064",
+            "size": null,
+            "stock_quantity": 13,
+            "color": "trắng",
+            "price_vnd": 1300000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P064",
+        "name": "Giày chạy bộ On Cloudflow đen xám",
+        "category": "running_shoes",
+        "brand": "On",
+        "color": "đen và xám",
+        "price_vnd": 1300000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P064",
+        "description": "Đôi giày On Cloudflow thân lưới đen xám, logo On sáng màu ở bên hông, dây buộc xám và đế chia các khoang, đặt trên nền gạch sáng.",
+        "stock_quantity": 13,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:On_Cloudflow_running_shoes.jpg",
+          "author": "Deansfa",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P064",
+            "size": null,
+            "stock_quantity": 13,
+            "color": "đen và xám",
+            "price_vnd": 1300000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "7d13d7bbf4e5dda81d001ff2b0eac22645fe2a482b5f363249a8c8f5a0fdd280",
+      "publication": {
+        "published": true,
+        "product_id": "P064",
+        "revision": 14,
+        "catalog_fingerprint": "e8ad7abf726ce168121a767e18d6c62e1a15a76d38c600cbb9f5bd28a23bb6cc",
+        "index_fingerprint": "2b8bf5fb28da3d9cfb1d61b328259da219c736c788856387b404f55bbaca3c87",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "13c59b77-f401-4723-bb1f-8dd43ed08f79",
+        "query": {
+          "mode": "text",
+          "text": "P064",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "running_shoes",
+              "brand": null,
+              "color": "đen và xám",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P064",
+              "name": "Giày chạy bộ On Cloudflow đen xám",
+              "category": "running_shoes",
+              "brand": "On",
+              "color": "đen và xám",
+              "price_vnd": 1300000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P064"
+            },
+            "score": 0.683798611164093,
+            "component_scores": {
+              "text": 0.683798611164093,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2b8bf5fb28da3d9cfb1d61b328259da219c736c788856387b404f55bbaca3c87",
+          "catalog_fingerprint": "e8ad7abf726ce168121a767e18d6c62e1a15a76d38c600cbb9f5bd28a23bb6cc",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.09510000018053688,
+            "encoding": 11.208500000066124,
+            "retrieval": 0.4777999965881463,
+            "filtering": 0.1864000005298294,
+            "threshold": 0,
+            "ranking": 0.07329999789362773,
+            "hydration": 0.036699999327538535,
+            "total": 15.28150000012829
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "f6e2cc8c84d9f3e884a73be2cf814c4f8101e24f64ace662d028618c8836fe4f",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "running_shoes",
+              "brand": null,
+              "color": "đen và xám",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P064"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P064"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P064",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P067",
+      "before": {
+        "product_id": "P067",
+        "name": "Giày chạy bộ On Altra Running Shoes Demo đỏ",
+        "category": "running_shoes",
+        "brand": "On",
+        "color": "đỏ",
+        "price_vnd": 1325000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P067",
+        "description": "Mẫu giày chạy bộ đỏ, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Altra sponsoring a demo run of their shoes at the Marathon Sports store on Boston..",
+        "stock_quantity": 16,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Altra_Running_Shoes_Demo_2019.jpg",
+          "author": "Whoisjohngalt",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P067",
+            "size": null,
+            "stock_quantity": 16,
+            "color": "đỏ",
+            "price_vnd": 1325000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P067",
+        "name": "Giày chạy bộ World Balance Hyper Track xanh phối xanh lá",
+        "category": "running_shoes",
+        "brand": "World Balance",
+        "color": "xanh dương và xanh lá",
+        "price_vnd": 1325000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P067",
+        "description": "Đôi giày World Balance Hyper Track có thân xanh dương, dây buộc và chi tiết viền xanh lá sáng, đế trắng, chụp cạnh hộp World Balance.",
+        "stock_quantity": 16,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:World_Balance_Hyper_Track_running_shoes.jpg",
+          "author": "GadgetsGuy ( talk ) 05:53, 5 January 2021 (UTC)",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P067",
+            "size": null,
+            "stock_quantity": 16,
+            "color": "xanh dương và xanh lá",
+            "price_vnd": 1325000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "f0fc3c76c8a9f253b1be662c4edf90c58b11150a20318c817b764a591ec346c5",
+      "publication": {
+        "published": true,
+        "product_id": "P067",
+        "revision": 15,
+        "catalog_fingerprint": "ea17ec461d97cca7555e138c7b9640fdb7bda76f98ce99513a1a0a3dd84b452d",
+        "index_fingerprint": "beda93e36f5c67bd2c3b5bf958e6283ca983198a8d203e977987bad59c90f6cf",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "c5f981d6-883e-4605-b158-0b168e8da5c7",
+        "query": {
+          "mode": "text",
+          "text": "P067",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "running_shoes",
+              "brand": null,
+              "color": "xanh dương và xanh lá",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P067",
+              "name": "Giày chạy bộ World Balance Hyper Track xanh phối xanh lá",
+              "category": "running_shoes",
+              "brand": "World Balance",
+              "color": "xanh dương và xanh lá",
+              "price_vnd": 1325000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P067"
+            },
+            "score": 0.5889725685119629,
+            "component_scores": {
+              "text": 0.5889724493026733,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "beda93e36f5c67bd2c3b5bf958e6283ca983198a8d203e977987bad59c90f6cf",
+          "catalog_fingerprint": "ea17ec461d97cca7555e138c7b9640fdb7bda76f98ce99513a1a0a3dd84b452d",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.1604999997653067,
+            "encoding": 15.460500002518529,
+            "retrieval": 0.5200000014156103,
+            "filtering": 0.2193000000261236,
+            "threshold": 0,
+            "ranking": 0.08019999950192869,
+            "hydration": 0.036699999327538535,
+            "total": 18.936999997094972
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "06a33108e8099beb35aef2d91a8baaba24e57b8ba48cbf822f76214a77a5fb08",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "running_shoes",
+              "brand": null,
+              "color": "xanh dương và xanh lá",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P067"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P067"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P067",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P070",
+      "before": {
+        "product_id": "P070",
+        "name": "Giày chạy bộ On Running shoes display.JPG đen",
+        "category": "running_shoes",
+        "brand": "On",
+        "color": "đen",
+        "price_vnd": 1350000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P070",
+        "description": "Mẫu giày chạy bộ đen, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Running shoes on display at a shoe store.",
+        "stock_quantity": 19,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Running_shoes_display.JPG",
+          "author": "MarkBuckawicki",
+          "license": "CC0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P070",
+            "size": null,
+            "stock_quantity": 19,
+            "color": "đen",
+            "price_vnd": 1350000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P070",
+        "name": "Giày chạy bộ New Balance 1225 xám phối xanh đỏ",
+        "category": "running_shoes",
+        "brand": "New Balance",
+        "color": "xám, xanh dương, đỏ và trắng",
+        "price_vnd": 1350000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P070",
+        "description": "Đôi giày New Balance 1225 có thân xám bạc, dây buộc trắng, logo N cùng các chi tiết xanh đỏ ở bên hông, đặt trên hộp giày.",
+        "stock_quantity": 19,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_Balance_1225_Running_Shoes.jpg",
+          "author": "slgckgc",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P070",
+            "size": null,
+            "stock_quantity": 19,
+            "color": "xám, xanh dương, đỏ và trắng",
+            "price_vnd": 1350000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "5f09d2a141a9e0c67d0ee46743a3c315f4bf769ffd20aaa7309e3ab300914b68",
+      "publication": {
+        "published": true,
+        "product_id": "P070",
+        "revision": 16,
+        "catalog_fingerprint": "d0e95b49fece7a69d45df22966349fcb9b59e7d9e1aa975d574030902d988990",
+        "index_fingerprint": "2d41d53273fc9ae160648d33121cd8fed2f539f241ef01886099377081cb4ab4",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "23ecaa6a-28f7-4a83-9ac5-130b4d5ec904",
+        "query": {
+          "mode": "text",
+          "text": "P070",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "running_shoes",
+              "brand": null,
+              "color": "xám, xanh dương, đỏ và trắng",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P070",
+              "name": "Giày chạy bộ New Balance 1225 xám phối xanh đỏ",
+              "category": "running_shoes",
+              "brand": "New Balance",
+              "color": "xám, xanh dương, đỏ và trắng",
+              "price_vnd": 1350000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P070"
+            },
+            "score": 0.6206290125846863,
+            "component_scores": {
+              "text": 0.6206290125846863,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2d41d53273fc9ae160648d33121cd8fed2f539f241ef01886099377081cb4ab4",
+          "catalog_fingerprint": "d0e95b49fece7a69d45df22966349fcb9b59e7d9e1aa975d574030902d988990",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.09669999781181104,
+            "encoding": 8.601099998486461,
+            "retrieval": 0.4731999979412649,
+            "filtering": 0.18360000103712082,
+            "threshold": 0,
+            "ranking": 0.07579999873996712,
+            "hydration": 0.02939999831141904,
+            "total": 11.441099999501603
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "3dc043e9892587b1c840bd38dc1904b9f0c4da099fc5853558e26dac7acadf16",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "running_shoes",
+              "brand": null,
+              "color": "xám, xanh dương, đỏ và trắng",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P070"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P070"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P070",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P088",
+      "before": {
+        "product_id": "P088",
+        "name": "Giày thường ngày Không xác định Vegetarian Shoes Panther Hemp be",
+        "category": "casual_shoes",
+        "brand": "Không xác định",
+        "color": "be",
+        "price_vnd": 1375000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P088",
+        "description": "Mẫu giày thường ngày be, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Vegetarian Shoes Panther Hemp Sneaker.",
+        "stock_quantity": 19,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Vegetarian_Shoes_Panther_Hemp_Sneaker.jpg",
+          "author": "Glenb67",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P088",
+            "size": null,
+            "stock_quantity": 19,
+            "color": "be",
+            "price_vnd": 1375000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P088",
+        "name": "Giày Converse Jack Purcell trắng cổ thấp",
+        "category": "casual_shoes",
+        "brand": "Converse",
+        "color": "trắng và đen",
+        "price_vnd": 1375000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P088",
+        "description": "Đôi giày Converse Jack Purcell cổ thấp màu trắng, dây buộc trắng, mũi cao su có đường cong đen và đế trắng, chụp trên nền vải sáng.",
+        "stock_quantity": 19,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Converse_Jack_Purcell_sneakers_on_white_canvas.jpg",
+          "author": "Mizael Contreras",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P088",
+            "size": null,
+            "stock_quantity": 19,
+            "color": "trắng và đen",
+            "price_vnd": 1375000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "91706e7c67072c4a46a39ffd62638f5e4c7a513e64327601ff521a1d0c578863",
+      "publication": {
+        "published": true,
+        "product_id": "P088",
+        "revision": 17,
+        "catalog_fingerprint": "bc2e0762f935cb08b41c81a1ecd5fcc979d5e53046bd53d4b95255cf8f7ef851",
+        "index_fingerprint": "4eb22b22e0d84a6eeae61c1e83cab6c472fd9c3b2af74ad3cffdcbf1718cebd0",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "ed392f51-beb9-46fe-930d-08517fc44353",
+        "query": {
+          "mode": "text",
+          "text": "P088",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "casual_shoes",
+              "brand": null,
+              "color": "trắng và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P088",
+              "name": "Giày Converse Jack Purcell trắng cổ thấp",
+              "category": "casual_shoes",
+              "brand": "Converse",
+              "color": "trắng và đen",
+              "price_vnd": 1375000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P088"
+            },
+            "score": 0.6805054545402527,
+            "component_scores": {
+              "text": 0.6805054545402527,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "4eb22b22e0d84a6eeae61c1e83cab6c472fd9c3b2af74ad3cffdcbf1718cebd0",
+          "catalog_fingerprint": "bc2e0762f935cb08b41c81a1ecd5fcc979d5e53046bd53d4b95255cf8f7ef851",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.09890000001178123,
+            "encoding": 9.45290000163368,
+            "retrieval": 0.4799999987881165,
+            "filtering": 0.20709999807877466,
+            "threshold": 0,
+            "ranking": 0.07980000009411015,
+            "hydration": 0.03170000127283856,
+            "total": 12.47470000089379
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 2
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 2,
+              "output_count": 2
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "a552dffeed1a5a079f3bdf4c0dd0c7f3b623884454bed203bc270b06d78b7413",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "casual_shoes",
+              "brand": null,
+              "color": "trắng và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P088"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P088"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P088",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P098",
+      "before": {
+        "product_id": "P098",
+        "name": "Giày boots Không xác định Traditional Clothing Leather Boots be",
+        "category": "boots",
+        "brand": "Không xác định",
+        "color": "be",
+        "price_vnd": 1800000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P098",
+        "description": "Mẫu giày boots be, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Mongolian Traditional Clothing and Jewelry Gallery, National Museum of Mongolia, Ulaanbaatar. Complete indexed photo collection at WorldHistoryPics.co.",
+        "stock_quantity": 11,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Traditional_Clothing_Leather_Boots_(35322784830).jpg",
+          "author": "Gary Todd  from Xinzheng, China",
+          "license": "CC0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P098",
+            "size": null,
+            "stock_quantity": 11,
+            "color": "be",
+            "price_vnd": 1800000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P098",
+        "name": "Giày boots da nâu buộc dây cổ lửng",
+        "category": "boots",
+        "brand": "Không xác định",
+        "color": "nâu và đen",
+        "price_vnd": 1800000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P098",
+        "description": "Đôi boots da nâu cổ lửng có dây buộc tối màu, quai kéo phía sau, đường may quanh mũi và viền đế sáng, gót thấp với mặt đế đen, chụp trên nền sáng.",
+        "stock_quantity": 11,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Leather_Boots_(51011160965).jpg",
+          "author": "ajay_suresh",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P098",
+            "size": null,
+            "stock_quantity": 11,
+            "color": "nâu và đen",
+            "price_vnd": 1800000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "e046824f5e7099974779a0c09a61bffc4d6023fabd5c4164b4a80bf3a54b4c99",
+      "publication": {
+        "published": true,
+        "product_id": "P098",
+        "revision": 18,
+        "catalog_fingerprint": "577f578e8e0ca516b3791a8266c764c1750a7f954ddf5507bd16de3796ff0a50",
+        "index_fingerprint": "bfdab009f1b259264715614442cc0dd4ca3899ed5a185af2ee820a55a1dbf46a",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "d4a0a252-9585-4b43-93a2-3b780f83e388",
+        "query": {
+          "mode": "text",
+          "text": "P098",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "boots",
+              "brand": null,
+              "color": "nâu và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P098",
+              "name": "Giày boots da nâu buộc dây cổ lửng",
+              "category": "boots",
+              "brand": "Không xác định",
+              "color": "nâu và đen",
+              "price_vnd": 1800000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P098"
+            },
+            "score": 0.6752550601959229,
+            "component_scores": {
+              "text": 0.6752551198005676,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "bfdab009f1b259264715614442cc0dd4ca3899ed5a185af2ee820a55a1dbf46a",
+          "catalog_fingerprint": "577f578e8e0ca516b3791a8266c764c1750a7f954ddf5507bd16de3796ff0a50",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.1024999983201269,
+            "encoding": 8.979299997008638,
+            "retrieval": 0.47930000073392875,
+            "filtering": 0.21999999808031134,
+            "threshold": 0,
+            "ranking": 0.07980000009411015,
+            "hydration": 0.03400000059627928,
+            "total": 12.028600001940504
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "95a84c31284c102dd20f41bcf33f39d8ba1ea5ad1465cca5880c27cd3cfabf4d",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "boots",
+              "brand": null,
+              "color": "nâu và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P098"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P098"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P098",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P117",
+      "before": {
+        "product_id": "P117",
+        "name": "Túi xách Prada 1935-45 Prada handbag, tooled đỏ rượu",
+        "category": "bag",
+        "brand": "Prada",
+        "color": "đỏ rượu",
+        "price_vnd": 1750000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P117",
+        "description": "Mẫu túi xách đỏ rượu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Brown leather handbag, tooled and gilded, made by Prada in the late 30s-early 40s.",
+        "stock_quantity": 12,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:1935-45_Prada_handbag,_tooled_and_gilded_leather_03.jpg",
+          "author": "Photographer for the Rhode Island School of Design - Museum of Art",
+          "license": "CC0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P117",
+            "size": null,
+            "stock_quantity": 12,
+            "color": "đỏ rượu",
+            "price_vnd": 1750000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P117",
+        "name": "Túi xách đan nâu quai dài",
+        "category": "bag",
+        "brand": "Không xác định",
+        "color": "nâu và cam",
+        "price_vnd": 1750000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P117",
+        "description": "Túi xách thủ công có thân đan màu nâu, hai quai dài nâu cam, viền miệng túi sáng màu và dây trang trí phía trước, chụp trên nền xám.",
+        "stock_quantity": 12,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Handbag_Calceta_platano.JPG",
+          "author": "User: (WT-shared) CONOCER at wts wikivoyage",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P117",
+            "size": null,
+            "stock_quantity": 12,
+            "color": "nâu và cam",
+            "price_vnd": 1750000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "fe9ddf6eef910b19137d493a84650fe87751c14ddbac22660cbdabe4efd7794f",
+      "publication": {
+        "published": true,
+        "product_id": "P117",
+        "revision": 19,
+        "catalog_fingerprint": "c7f1f797e0a33dc0899854db72b50ae9ee86f00c02110e1de052141bf1f2f5b6",
+        "index_fingerprint": "b16f81c90f1e2fa53881c36ebac7dda2bcca733a9c3371ab52b0c16eb3a0dc9b",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "583c552f-9ee6-4886-b0f1-665312aed609",
+        "query": {
+          "mode": "text",
+          "text": "P117",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "bag",
+              "brand": null,
+              "color": "nâu và cam",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P117",
+              "name": "Túi xách đan nâu quai dài",
+              "category": "bag",
+              "brand": "Không xác định",
+              "color": "nâu và cam",
+              "price_vnd": 1750000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P117"
+            },
+            "score": 0.652859091758728,
+            "component_scores": {
+              "text": 0.652859091758728,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "b16f81c90f1e2fa53881c36ebac7dda2bcca733a9c3371ab52b0c16eb3a0dc9b",
+          "catalog_fingerprint": "c7f1f797e0a33dc0899854db72b50ae9ee86f00c02110e1de052141bf1f2f5b6",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.16239999968092889,
+            "encoding": 7.383300002402393,
+            "retrieval": 0.4808999983652029,
+            "filtering": 0.1878000002761837,
+            "threshold": 0,
+            "ranking": 0.07700000060140155,
+            "hydration": 0.029999999242136255,
+            "total": 10.4207000003953
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "46d1d3f437487eab5739e2b971ad4e662a73f794dee2f7b115e81ceeffd5a203",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "bag",
+              "brand": null,
+              "color": "nâu và cam",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P117"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P117"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P117",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P164",
+      "before": {
+        "product_id": "P164",
+        "name": "Đồng hồ Không xác định The making of the đen toàn bộ",
+        "category": "watch",
+        "brand": "Không xác định",
+        "color": "đen toàn bộ",
+        "price_vnd": 2700000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P164",
+        "description": "Mẫu đồng hồ đen toàn bộ, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: The making of the wristwatch '84 leather strap, 2014.",
+        "stock_quantity": 5,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:The_making_of_the_wristwatch_%2784_leather_strap,_2014.jpg",
+          "author": "Film by Freek Zonderland www.freekfilms.tv for studio ninaber",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P164",
+            "size": null,
+            "stock_quantity": 5,
+            "color": "đen toàn bộ",
+            "price_vnd": 2700000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P164",
+        "name": "Đồng hồ Fossil mặt trắng dây ánh vàng",
+        "category": "watch",
+        "brand": "Fossil",
+        "color": "trắng và vàng",
+        "price_vnd": 2700000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P164",
+        "description": "Đồng hồ Fossil mặt tròn màu trắng, chữ số và kim ánh vàng, ba mặt số phụ, ô lịch nhỏ và dây mắt kim loại ánh vàng, chụp chính diện trên nền trắng.",
+        "stock_quantity": 5,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Fossil_wristwatch_with_white_background.jpg",
+          "author": "Cvmontuy",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P164",
+            "size": null,
+            "stock_quantity": 5,
+            "color": "trắng và vàng",
+            "price_vnd": 2700000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "17862062e4c5798d9f3b38e3cfe80f8f078f544b95ffebc925d6b13f6a2fad7b",
+      "publication": {
+        "published": true,
+        "product_id": "P164",
+        "revision": 20,
+        "catalog_fingerprint": "764ed955bec877441cceb6c60b6e5ee784739503b1bc9f33fb5cd59c96f6ace3",
+        "index_fingerprint": "677fcdd9d7ba613562e52d8b4b8de4ae29ee3bac123c87742d5058a81b431b35",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "3828dc70-7310-4fe0-9f09-3bbe559e37fc",
+        "query": {
+          "mode": "text",
+          "text": "P164",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "watch",
+              "brand": null,
+              "color": "trắng và vàng",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P164",
+              "name": "Đồng hồ Fossil mặt trắng dây ánh vàng",
+              "category": "watch",
+              "brand": "Fossil",
+              "color": "trắng và vàng",
+              "price_vnd": 2700000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P164"
+            },
+            "score": 0.592670202255249,
+            "component_scores": {
+              "text": 0.5926700234413147,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "677fcdd9d7ba613562e52d8b4b8de4ae29ee3bac123c87742d5058a81b431b35",
+          "catalog_fingerprint": "764ed955bec877441cceb6c60b6e5ee784739503b1bc9f33fb5cd59c96f6ace3",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.08769999840296805,
+            "encoding": 8.400000002438901,
+            "retrieval": 0.46719999954802915,
+            "filtering": 0.19069999689236283,
+            "threshold": 0,
+            "ranking": 0.07539999933214858,
+            "hydration": 0.028300000849412754,
+            "total": 11.153600000398
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "1a8dcbaac5fbe730e20b2082f4bab17267801624827c691e9b45b5f69d3462d1",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "watch",
+              "brand": null,
+              "color": "trắng và vàng",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P164"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P164"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P164",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P167",
+      "before": {
+        "product_id": "P167",
+        "name": "Đồng hồ On Wristwatch AM 2004.20.7-7 mặt xanh dây thép",
+        "category": "watch",
+        "brand": "On",
+        "color": "mặt xanh dây thép",
+        "price_vnd": 2725000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P167",
+        "description": "Mẫu đồng hồ mặt xanh dây thép, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Wrist watch with detachable face guard, belonged to 38337 Private Percy Broady, 2nd Battalion, Auckland Infantry Regiment, WW1 wrist watch with detach.",
+        "stock_quantity": 8,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Wristwatch_(AM_2004.20.7-7).jpg",
+          "author": "Unknown author Unknown author",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P167",
+            "size": null,
+            "stock_quantity": 8,
+            "color": "mặt xanh dây thép",
+            "price_vnd": 2725000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P167",
+        "name": "Đồng hồ Citizen mặt trắng dây nâu",
+        "category": "watch",
+        "brand": "Citizen",
+        "color": "trắng, nâu và bạc",
+        "price_vnd": 2725000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P167",
+        "description": "Đồng hồ Citizen có mặt trắng, chữ số Ả Rập đen, ô lịch, vỏ ánh bạc và dây nâu vân nổi, chụp mặt trước trên nền đen có phản chiếu.",
+        "stock_quantity": 8,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Citizen_wristwatch.jpg",
+          "author": "Petar Milošević",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P167",
+            "size": null,
+            "stock_quantity": 8,
+            "color": "trắng, nâu và bạc",
+            "price_vnd": 2725000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "c97098b27fd88c4c03aa06a2c25e1a1f7811fc6d28d43994096209d1d622e2d8",
+      "publication": {
+        "published": true,
+        "product_id": "P167",
+        "revision": 21,
+        "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
+        "index_fingerprint": "1903765b5e724df63aa88b6e58332db58784bea00fa0dd6879e21c9bf4388b17",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "97195224-a6c3-47c8-8224-44ad9b55bd22",
+        "query": {
+          "mode": "text",
+          "text": "P167",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "watch",
+              "brand": null,
+              "color": "trắng, nâu và bạc",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P167",
+              "name": "Đồng hồ Citizen mặt trắng dây nâu",
+              "category": "watch",
+              "brand": "Citizen",
+              "color": "trắng, nâu và bạc",
+              "price_vnd": 2725000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P167"
+            },
+            "score": 0.6834040880203247,
+            "component_scores": {
+              "text": 0.6834040880203247,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "1903765b5e724df63aa88b6e58332db58784bea00fa0dd6879e21c9bf4388b17",
+          "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.10009999823523685,
+            "encoding": 9.028299999044975,
+            "retrieval": 0.47389999963343143,
+            "filtering": 0.234499999351101,
+            "threshold": 0,
+            "ranking": 0.08180000077118166,
+            "hydration": 0.03409999771974981,
+            "total": 12.06570000067586
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "eb3ee4b9a9b2268df22c44cbd22f272bf1225869920c36b43139300c3a8d5173",
+          "corrections": [],
+          "inventory_revision": 107,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "watch",
+              "brand": null,
+              "color": "trắng, nâu và bạc",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P167"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P167"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P167",
+            "warnings": []
+          }
+        }
+      }
+    }
+  ]
+}

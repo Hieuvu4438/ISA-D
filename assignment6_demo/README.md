@@ -1,5 +1,11 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+**Bản demo khách hàng đã chốt theo phạm vi mới:** giao diện user/admin, tìm kiếm mô tả/ảnh/giọng nói, bộ lọc, sản phẩm và kho, yêu thích, giỏ, COD và đơn hàng. Mở **http://localhost:5173** trên máy hiện tại. [Hướng dẫn chạy, tài khoản và kịch bản demo](docs/35_DEMO_HANDOFF.md).
+
+Tài khoản user/admin local có trong `runtime/demo/access.json`; Groq cấu hình ở `.env`. Hai file được ignore và không đưa vào Git. Trên máy mới chạy `scripts/setup_backend.ps1`, `scripts/prepare_demo.py`, backend và frontend theo docs35. Setup mặc định dùng nearest; `-Calibrate` là kiểm định riêng.
+
+**Kiểm chứng bàn giao:** 151 tests dữ liệu/search và 20 bài trình duyệt đạt; Groq gọi thật thành công qua API và browser. [Báo cáo](artifacts/validation/DEMO_HANDOFF_REPORT.md). Các mục bên dưới ghi lịch sử từng milestone và tiêu chí mở rộng, không phải phần còn chặn bản demo đã chốt.
+
 Tìm kiếm hiểu kích cỡ như “áo thun size M” hoặc “giày cỡ 42”, kiểm tra tồn đúng cỡ khi bật “Chỉ còn hàng”, hiển thị cỡ hết hàng trên card: [contract34](docs/34_SIZE_SEARCH_SCOPE.md), [evidence](artifacts/backend/SIZE_SCOPE_REPORT.md). Cỡ cần được admin khai báo theo luồng phân kho26; không suy size từ ảnh.
 
 Tìm kiếm hiểu màu được nêu rõ như “balo màu hồng”, lọc trước xếp hạng, hỗ trợ lựa chọn “hoặc”, báo mâu thuẫn và cho tắt tự hiểu: [contract33](docs/33_COLOR_SEARCH_SCOPE.md), [evidence](artifacts/backend/COLOR_SCOPE_REPORT.md). Bộ lọc màu phối dựa trên metadata, không nhận diện màu từ ảnh.
