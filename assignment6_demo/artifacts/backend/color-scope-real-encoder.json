@@ -1,0 +1,1997 @@
+{
+  "scope": "Actual local CPU color hard-filter properties; not independent relevance or live STT",
+  "speech_calls": 0,
+  "meta": {
+    "request_id": "09aa7789-3ee3-4f3f-832e-34f82a441040",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": false,
+        "reason_code": "RELEVANCE_POLICY_UNAVAILABLE",
+        "modes": [],
+        "multimodal_weights": []
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+      "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+      "product_count": 181
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "backpack",
+        "bag",
+        "boots",
+        "casual_shoes",
+        "jacket",
+        "running_shoes",
+        "sandals",
+        "sunglasses",
+        "t_shirt",
+        "tote_bag",
+        "trail_shoes",
+        "watch"
+      ],
+      "brands": [
+        "Adele Dejak",
+        "Adidas",
+        "Arc'teryx",
+        "Asics",
+        "Birkenstock",
+        "Brooks",
+        "Candino",
+        "Converse",
+        "Eastpak",
+        "Fjällräven",
+        "Hard Rock Cafe",
+        "Hermès",
+        "Junghans",
+        "Không xác định",
+        "Les cuirs d'Agathe",
+        "Marshal",
+        "Minaal",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On",
+        "Opta",
+        "Polo Ralph Lauren",
+        "Prada",
+        "Qwstion",
+        "Ray-Ban",
+        "Salomon",
+        "Seiko",
+        "Skunkfunk",
+        "Timberland",
+        "Uniqlo",
+        "VAUDE",
+        "Vans",
+        "XD Design"
+      ],
+      "min_price": 350000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "azure",
+      "configuration_state": "unconfigured",
+      "region": "southeastasia",
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "results": [
+    {
+      "mode": "text",
+      "strategy": "semantic",
+      "response": {
+        "request_id": "ee28383c-ce25-4238-bbda-31c292450b82",
+        "query": {
+          "mode": "text",
+          "text": "balo màu hồng",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P129",
+              "name": "Balo hồng viền khóa kéo đen",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "hồng và đen",
+              "price_vnd": 1575000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P129"
+            },
+            "score": 0.7434077262878418,
+            "component_scores": {
+              "text": 0.7434077858924866,
+              "image": null
+            },
+            "rank_score": 0.7434077262878418,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.1343000003544148,
+            "encoding": 12.34199999817065,
+            "retrieval": 0.46940000174799934,
+            "filtering": 1.513600000180304,
+            "threshold": 0,
+            "ranking": 0.0017999991541728377,
+            "hydration": 0.033700001949910074,
+            "total": 16.40879999831668
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "balo màu hồng"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "balo màu hồng"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_scope_v2",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "balo",
+                "field": "category",
+                "value": "backpack"
+              },
+              {
+                "text": "hồng",
+                "field": "color",
+                "value": "hồng"
+              }
+            ],
+            "lexical_text": "",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "hybrid",
+      "response": {
+        "request_id": "fd330a39-f33f-4dbc-842b-5a74fb74a2a4",
+        "query": {
+          "mode": "text",
+          "text": "balo màu hồng",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P129",
+              "name": "Balo hồng viền khóa kéo đen",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "hồng và đen",
+              "price_vnd": 1575000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P129"
+            },
+            "score": 0.7434077262878418,
+            "component_scores": {
+              "text": 0.7434077858924866,
+              "image": null
+            },
+            "rank_score": 0.01639344262295082,
+            "lexical_score": 0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.10429999747429974,
+            "encoding": 9.508200000709621,
+            "retrieval": 0.4482000003918074,
+            "filtering": 1.5099999982339796,
+            "threshold": 0,
+            "ranking": 0.14420000297832303,
+            "hydration": 0.04900000203633681,
+            "total": 13.717000001634005
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "balo màu hồng"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "balo màu hồng"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_scope_v2",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "balo",
+                "field": "category",
+                "value": "backpack"
+              },
+              {
+                "text": "hồng",
+                "field": "color",
+                "value": "hồng"
+              }
+            ],
+            "lexical_text": "",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "hybrid",
+      "response": {
+        "request_id": "ce2e6e80-c5c0-4dee-b290-10f87377b52e",
+        "query": {
+          "mode": "voice",
+          "text": "balo màu hồng",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P129",
+              "name": "Balo hồng viền khóa kéo đen",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "hồng và đen",
+              "price_vnd": 1575000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P129"
+            },
+            "score": 0.7434077262878418,
+            "component_scores": {
+              "text": 0.7434077858924866,
+              "image": null
+            },
+            "rank_score": 0.01639344262295082,
+            "lexical_score": 0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.18360000103712082,
+            "encoding": 10.432499999296851,
+            "retrieval": 0.4752000022563152,
+            "filtering": 1.551500001369277,
+            "threshold": 0,
+            "ranking": 0.13829999807057902,
+            "hydration": 0.0562999994144775,
+            "total": 14.917399999831105
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "balo màu hồng"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "balo màu hồng"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_scope_v2",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "balo",
+                "field": "category",
+                "value": "backpack"
+              },
+              {
+                "text": "hồng",
+                "field": "color",
+                "value": "hồng"
+              }
+            ],
+            "lexical_text": "",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "hybrid",
+      "response": {
+        "request_id": "63273883-5344-4798-898e-0b4e91ff9e4e",
+        "query": {
+          "mode": "multimodal",
+          "text": "balo màu hồng",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 309744
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P129",
+              "name": "Balo hồng viền khóa kéo đen",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "hồng và đen",
+              "price_vnd": 1575000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P129"
+            },
+            "score": 0.9205447435379028,
+            "component_scores": {
+              "text": 0.7434077858924866,
+              "image": 0.6842859983444214
+            },
+            "rank_score": 0.01639344262295082,
+            "lexical_score": 0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 5.902799999603303,
+            "encoding": 61.08239999957732,
+            "retrieval": 0.5347000005713198,
+            "filtering": 1.5008000009402167,
+            "threshold": 0,
+            "ranking": 0.121900000522146,
+            "hydration": 0.04079999780515209,
+            "total": 71.69869999779621
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "balo màu hồng"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "balo màu hồng"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_scope_v2",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "balo",
+                "field": "category",
+                "value": "backpack"
+              },
+              {
+                "text": "hồng",
+                "field": "color",
+                "value": "hồng"
+              }
+            ],
+            "lexical_text": "",
+            "warnings": []
+          }
+        }
+      }
+    }
+  ],
+  "either": {
+    "request_id": "e83caf4e-492d-4c57-86c6-c245ff11a3d7",
+    "products": [
+      {
+        "product_id": "P032",
+        "name": "Balo Minaal màu xám đen",
+        "category": "backpack",
+        "brand": "Minaal",
+        "color": "xám và đen",
+        "price_vnd": 1420000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P032"
+      },
+      {
+        "product_id": "P033",
+        "name": "Balo XD Design Bobby Urban màu xám",
+        "category": "backpack",
+        "brand": "XD Design",
+        "color": "xám",
+        "price_vnd": 1455000,
+        "in_stock": false,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P033"
+      },
+      {
+        "product_id": "P121",
+        "name": "Balo xám đen nhiều ngăn khóa kéo",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "xám và đen",
+        "price_vnd": 1525000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P121"
+      },
+      {
+        "product_id": "P125",
+        "name": "Balo Qwstion Zip Pack xám nhạt",
+        "category": "backpack",
+        "brand": "Qwstion",
+        "color": "xám nhạt và đen",
+        "price_vnd": 1550000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P125"
+      },
+      {
+        "product_id": "P127",
+        "name": "Balo xám phối xanh đậm gắn huy hiệu",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "xám và xanh đậm",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P127"
+      },
+      {
+        "product_id": "P129",
+        "name": "Balo hồng viền khóa kéo đen",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "hồng và đen",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P129"
+      }
+    ],
+    "total": 6,
+    "offset": 0,
+    "limit": 100,
+    "query": {
+      "text": "balo màu hồng hoặc xám",
+      "sort": "relevance",
+      "filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      }
+    },
+    "price_interpretation": {
+      "enabled": true,
+      "parser_version": "vi_vnd_price_v1",
+      "applied": false,
+      "clauses": [],
+      "inferred_filters": {
+        "min_price": null,
+        "max_price": null
+      },
+      "effective_filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      },
+      "lexical_text": "balo màu hồng hoặc xám"
+    },
+    "exclusion_interpretation": {
+      "enabled": true,
+      "parser_version": "metadata_exclusions_v1",
+      "applied": false,
+      "clauses": [],
+      "lexical_text": "balo màu hồng hoặc xám"
+    },
+    "scope_interpretation": {
+      "enabled": true,
+      "parser_version": "brand_category_color_scope_v2",
+      "applied": true,
+      "clauses": [
+        {
+          "text": "balo",
+          "field": "category",
+          "value": "backpack"
+        },
+        {
+          "text": "hồng",
+          "field": "color",
+          "value": "hồng"
+        },
+        {
+          "text": "xám",
+          "field": "color",
+          "value": "xám"
+        }
+      ],
+      "lexical_text": "",
+      "warnings": []
+    },
+    "facets": {
+      "category": [
+        {
+          "value": "backpack",
+          "count": 6
+        },
+        {
+          "value": "bag",
+          "count": 0
+        },
+        {
+          "value": "boots",
+          "count": 0
+        },
+        {
+          "value": "casual_shoes",
+          "count": 0
+        },
+        {
+          "value": "jacket",
+          "count": 0
+        },
+        {
+          "value": "running_shoes",
+          "count": 0
+        },
+        {
+          "value": "sandals",
+          "count": 0
+        },
+        {
+          "value": "sunglasses",
+          "count": 0
+        },
+        {
+          "value": "t_shirt",
+          "count": 0
+        },
+        {
+          "value": "tote_bag",
+          "count": 0
+        },
+        {
+          "value": "trail_shoes",
+          "count": 0
+        },
+        {
+          "value": "watch",
+          "count": 0
+        }
+      ],
+      "brand": [
+        {
+          "value": "Adele Dejak",
+          "count": 0
+        },
+        {
+          "value": "Adidas",
+          "count": 0
+        },
+        {
+          "value": "Arc'teryx",
+          "count": 0
+        },
+        {
+          "value": "Asics",
+          "count": 0
+        },
+        {
+          "value": "Birkenstock",
+          "count": 0
+        },
+        {
+          "value": "Brooks",
+          "count": 0
+        },
+        {
+          "value": "Candino",
+          "count": 0
+        },
+        {
+          "value": "Converse",
+          "count": 0
+        },
+        {
+          "value": "Eastpak",
+          "count": 0
+        },
+        {
+          "value": "Fjällräven",
+          "count": 0
+        },
+        {
+          "value": "Hard Rock Cafe",
+          "count": 0
+        },
+        {
+          "value": "Hermès",
+          "count": 0
+        },
+        {
+          "value": "Junghans",
+          "count": 0
+        },
+        {
+          "value": "Không xác định",
+          "count": 3
+        },
+        {
+          "value": "Les cuirs d'Agathe",
+          "count": 0
+        },
+        {
+          "value": "Marshal",
+          "count": 0
+        },
+        {
+          "value": "Minaal",
+          "count": 1
+        },
+        {
+          "value": "Mizuno",
+          "count": 0
+        },
+        {
+          "value": "New Balance",
+          "count": 0
+        },
+        {
+          "value": "Nike",
+          "count": 0
+        },
+        {
+          "value": "On",
+          "count": 0
+        },
+        {
+          "value": "Opta",
+          "count": 0
+        },
+        {
+          "value": "Polo Ralph Lauren",
+          "count": 0
+        },
+        {
+          "value": "Prada",
+          "count": 0
+        },
+        {
+          "value": "Qwstion",
+          "count": 1
+        },
+        {
+          "value": "Ray-Ban",
+          "count": 0
+        },
+        {
+          "value": "Salomon",
+          "count": 0
+        },
+        {
+          "value": "Seiko",
+          "count": 0
+        },
+        {
+          "value": "Skunkfunk",
+          "count": 0
+        },
+        {
+          "value": "Timberland",
+          "count": 0
+        },
+        {
+          "value": "Uniqlo",
+          "count": 0
+        },
+        {
+          "value": "VAUDE",
+          "count": 0
+        },
+        {
+          "value": "Vans",
+          "count": 0
+        },
+        {
+          "value": "XD Design",
+          "count": 1
+        }
+      ],
+      "color": [
+        {
+          "value": "be",
+          "count": 0
+        },
+        {
+          "value": "cam",
+          "count": 0
+        },
+        {
+          "value": "cam đất",
+          "count": 0
+        },
+        {
+          "value": "cam, đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "cam, đỏ và vàng",
+          "count": 0
+        },
+        {
+          "value": "gọng bạc mắt xám",
+          "count": 0
+        },
+        {
+          "value": "gọng vàng mắt nâu",
+          "count": 0
+        },
+        {
+          "value": "gọng đồi mồi",
+          "count": 0
+        },
+        {
+          "value": "hồng và đen",
+          "count": 1
+        },
+        {
+          "value": "màu kem",
+          "count": 0
+        },
+        {
+          "value": "mặt bạc",
+          "count": 0
+        },
+        {
+          "value": "mặt trắng dây nâu",
+          "count": 0
+        },
+        {
+          "value": "mặt xanh dây thép",
+          "count": 0
+        },
+        {
+          "value": "mặt đen dây da",
+          "count": 0
+        },
+        {
+          "value": "nâu",
+          "count": 0
+        },
+        {
+          "value": "nâu bò",
+          "count": 0
+        },
+        {
+          "value": "nâu và nhiều màu",
+          "count": 0
+        },
+        {
+          "value": "nâu xám",
+          "count": 0
+        },
+        {
+          "value": "nâu đậm",
+          "count": 0
+        },
+        {
+          "value": "nâu, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "rêu",
+          "count": 0
+        },
+        {
+          "value": "trắng",
+          "count": 0
+        },
+        {
+          "value": "trắng ngà và xanh xám",
+          "count": 0
+        },
+        {
+          "value": "trắng và nâu",
+          "count": 0
+        },
+        {
+          "value": "trắng và xanh",
+          "count": 0
+        },
+        {
+          "value": "trắng và đen",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ sẫm",
+          "count": 0
+        },
+        {
+          "value": "trắng, đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng, đỏ rượu, xám",
+          "count": 0
+        },
+        {
+          "value": "tím, hồng và xanh lá",
+          "count": 0
+        },
+        {
+          "value": "vàng",
+          "count": 0
+        },
+        {
+          "value": "vàng nâu và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "vàng, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xanh",
+          "count": 0
+        },
+        {
+          "value": "xanh denim",
+          "count": 0
+        },
+        {
+          "value": "xanh dương",
+          "count": 0
+        },
+        {
+          "value": "xanh lá",
+          "count": 0
+        },
+        {
+          "value": "xanh navy",
+          "count": 0
+        },
+        {
+          "value": "xanh navy và đen",
+          "count": 0
+        },
+        {
+          "value": "xanh nhạt",
+          "count": 0
+        },
+        {
+          "value": "xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xanh tím",
+          "count": 0
+        },
+        {
+          "value": "xanh ô liu",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám",
+          "count": 1
+        },
+        {
+          "value": "xám nhạt và đen",
+          "count": 1
+        },
+        {
+          "value": "xám và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh đậm",
+          "count": 1
+        },
+        {
+          "value": "xám và đen",
+          "count": 2
+        },
+        {
+          "value": "xám xanh",
+          "count": 0
+        },
+        {
+          "value": "xám, nâu và vàng",
+          "count": 0
+        },
+        {
+          "value": "xám, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen",
+          "count": 0
+        },
+        {
+          "value": "đen toàn bộ",
+          "count": 0
+        },
+        {
+          "value": "đen và be",
+          "count": 0
+        },
+        {
+          "value": "đen và bạc",
+          "count": 0
+        },
+        {
+          "value": "đen và nâu",
+          "count": 0
+        },
+        {
+          "value": "đen và tím",
+          "count": 0
+        },
+        {
+          "value": "đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh lá đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ rượu",
+          "count": 0
+        },
+        {
+          "value": "đỏ và trắng",
+          "count": 0
+        }
+      ],
+      "size": [
+        {
+          "value": "L",
+          "count": 0
+        },
+        {
+          "value": "M",
+          "count": 0
+        }
+      ]
+    },
+    "corrections": [],
+    "empty_reason": null,
+    "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+    "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+    "inventory_revision": 103,
+    "retrieval": "bm25"
+  },
+  "missing": {
+    "request_id": "9c07a970-222b-4353-ac4d-1da345b3e972",
+    "products": [],
+    "total": 0,
+    "offset": 0,
+    "limit": 24,
+    "query": {
+      "text": "balo màu tím",
+      "sort": "relevance",
+      "filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      }
+    },
+    "price_interpretation": {
+      "enabled": true,
+      "parser_version": "vi_vnd_price_v1",
+      "applied": false,
+      "clauses": [],
+      "inferred_filters": {
+        "min_price": null,
+        "max_price": null
+      },
+      "effective_filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      },
+      "lexical_text": "balo màu tím"
+    },
+    "exclusion_interpretation": {
+      "enabled": true,
+      "parser_version": "metadata_exclusions_v1",
+      "applied": false,
+      "clauses": [],
+      "lexical_text": "balo màu tím"
+    },
+    "scope_interpretation": {
+      "enabled": true,
+      "parser_version": "brand_category_color_scope_v2",
+      "applied": true,
+      "clauses": [
+        {
+          "text": "balo",
+          "field": "category",
+          "value": "backpack"
+        },
+        {
+          "text": "tím",
+          "field": "color",
+          "value": "tím"
+        }
+      ],
+      "lexical_text": "",
+      "warnings": []
+    },
+    "facets": {
+      "category": [
+        {
+          "value": "backpack",
+          "count": 0
+        },
+        {
+          "value": "bag",
+          "count": 0
+        },
+        {
+          "value": "boots",
+          "count": 0
+        },
+        {
+          "value": "casual_shoes",
+          "count": 0
+        },
+        {
+          "value": "jacket",
+          "count": 0
+        },
+        {
+          "value": "running_shoes",
+          "count": 0
+        },
+        {
+          "value": "sandals",
+          "count": 0
+        },
+        {
+          "value": "sunglasses",
+          "count": 0
+        },
+        {
+          "value": "t_shirt",
+          "count": 0
+        },
+        {
+          "value": "tote_bag",
+          "count": 0
+        },
+        {
+          "value": "trail_shoes",
+          "count": 0
+        },
+        {
+          "value": "watch",
+          "count": 0
+        }
+      ],
+      "brand": [
+        {
+          "value": "Adele Dejak",
+          "count": 0
+        },
+        {
+          "value": "Adidas",
+          "count": 0
+        },
+        {
+          "value": "Arc'teryx",
+          "count": 0
+        },
+        {
+          "value": "Asics",
+          "count": 0
+        },
+        {
+          "value": "Birkenstock",
+          "count": 0
+        },
+        {
+          "value": "Brooks",
+          "count": 0
+        },
+        {
+          "value": "Candino",
+          "count": 0
+        },
+        {
+          "value": "Converse",
+          "count": 0
+        },
+        {
+          "value": "Eastpak",
+          "count": 0
+        },
+        {
+          "value": "Fjällräven",
+          "count": 0
+        },
+        {
+          "value": "Hard Rock Cafe",
+          "count": 0
+        },
+        {
+          "value": "Hermès",
+          "count": 0
+        },
+        {
+          "value": "Junghans",
+          "count": 0
+        },
+        {
+          "value": "Không xác định",
+          "count": 0
+        },
+        {
+          "value": "Les cuirs d'Agathe",
+          "count": 0
+        },
+        {
+          "value": "Marshal",
+          "count": 0
+        },
+        {
+          "value": "Minaal",
+          "count": 0
+        },
+        {
+          "value": "Mizuno",
+          "count": 0
+        },
+        {
+          "value": "New Balance",
+          "count": 0
+        },
+        {
+          "value": "Nike",
+          "count": 0
+        },
+        {
+          "value": "On",
+          "count": 0
+        },
+        {
+          "value": "Opta",
+          "count": 0
+        },
+        {
+          "value": "Polo Ralph Lauren",
+          "count": 0
+        },
+        {
+          "value": "Prada",
+          "count": 0
+        },
+        {
+          "value": "Qwstion",
+          "count": 0
+        },
+        {
+          "value": "Ray-Ban",
+          "count": 0
+        },
+        {
+          "value": "Salomon",
+          "count": 0
+        },
+        {
+          "value": "Seiko",
+          "count": 0
+        },
+        {
+          "value": "Skunkfunk",
+          "count": 0
+        },
+        {
+          "value": "Timberland",
+          "count": 0
+        },
+        {
+          "value": "Uniqlo",
+          "count": 0
+        },
+        {
+          "value": "VAUDE",
+          "count": 0
+        },
+        {
+          "value": "Vans",
+          "count": 0
+        },
+        {
+          "value": "XD Design",
+          "count": 0
+        }
+      ],
+      "color": [
+        {
+          "value": "be",
+          "count": 0
+        },
+        {
+          "value": "cam",
+          "count": 0
+        },
+        {
+          "value": "cam đất",
+          "count": 0
+        },
+        {
+          "value": "cam, đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "cam, đỏ và vàng",
+          "count": 0
+        },
+        {
+          "value": "gọng bạc mắt xám",
+          "count": 0
+        },
+        {
+          "value": "gọng vàng mắt nâu",
+          "count": 0
+        },
+        {
+          "value": "gọng đồi mồi",
+          "count": 0
+        },
+        {
+          "value": "hồng và đen",
+          "count": 0
+        },
+        {
+          "value": "màu kem",
+          "count": 0
+        },
+        {
+          "value": "mặt bạc",
+          "count": 0
+        },
+        {
+          "value": "mặt trắng dây nâu",
+          "count": 0
+        },
+        {
+          "value": "mặt xanh dây thép",
+          "count": 0
+        },
+        {
+          "value": "mặt đen dây da",
+          "count": 0
+        },
+        {
+          "value": "nâu",
+          "count": 0
+        },
+        {
+          "value": "nâu bò",
+          "count": 0
+        },
+        {
+          "value": "nâu và nhiều màu",
+          "count": 0
+        },
+        {
+          "value": "nâu xám",
+          "count": 0
+        },
+        {
+          "value": "nâu đậm",
+          "count": 0
+        },
+        {
+          "value": "nâu, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "rêu",
+          "count": 0
+        },
+        {
+          "value": "trắng",
+          "count": 0
+        },
+        {
+          "value": "trắng ngà và xanh xám",
+          "count": 0
+        },
+        {
+          "value": "trắng và nâu",
+          "count": 0
+        },
+        {
+          "value": "trắng và xanh",
+          "count": 0
+        },
+        {
+          "value": "trắng và đen",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ sẫm",
+          "count": 0
+        },
+        {
+          "value": "trắng, đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng, đỏ rượu, xám",
+          "count": 0
+        },
+        {
+          "value": "tím, hồng và xanh lá",
+          "count": 0
+        },
+        {
+          "value": "vàng",
+          "count": 0
+        },
+        {
+          "value": "vàng nâu và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "vàng, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xanh",
+          "count": 0
+        },
+        {
+          "value": "xanh denim",
+          "count": 0
+        },
+        {
+          "value": "xanh dương",
+          "count": 0
+        },
+        {
+          "value": "xanh lá",
+          "count": 0
+        },
+        {
+          "value": "xanh navy",
+          "count": 0
+        },
+        {
+          "value": "xanh navy và đen",
+          "count": 0
+        },
+        {
+          "value": "xanh nhạt",
+          "count": 0
+        },
+        {
+          "value": "xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xanh tím",
+          "count": 0
+        },
+        {
+          "value": "xanh ô liu",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám",
+          "count": 0
+        },
+        {
+          "value": "xám nhạt và đen",
+          "count": 0
+        },
+        {
+          "value": "xám và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xám và đen",
+          "count": 0
+        },
+        {
+          "value": "xám xanh",
+          "count": 0
+        },
+        {
+          "value": "xám, nâu và vàng",
+          "count": 0
+        },
+        {
+          "value": "xám, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen",
+          "count": 0
+        },
+        {
+          "value": "đen toàn bộ",
+          "count": 0
+        },
+        {
+          "value": "đen và be",
+          "count": 0
+        },
+        {
+          "value": "đen và bạc",
+          "count": 0
+        },
+        {
+          "value": "đen và nâu",
+          "count": 0
+        },
+        {
+          "value": "đen và tím",
+          "count": 0
+        },
+        {
+          "value": "đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh lá đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ rượu",
+          "count": 0
+        },
+        {
+          "value": "đỏ và trắng",
+          "count": 0
+        }
+      ],
+      "size": [
+        {
+          "value": "L",
+          "count": 0
+        },
+        {
+          "value": "M",
+          "count": 0
+        }
+      ]
+    },
+    "corrections": [],
+    "empty_reason": "no_matches",
+    "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+    "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+    "inventory_revision": 103,
+    "retrieval": "bm25"
+  }
+}

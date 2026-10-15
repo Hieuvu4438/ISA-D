@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Amendment33: `scope_interpretation.clauses[].field` thêm `color`; parser `brand_category_color_scope_v2`, vẫn dùng `interpret_scope`. Màu rõ trong mô tả là hard constraint, OR trong cùng trường, có conflict/warning và opt-out theo [33](33_COLOR_SEARCH_SCOPE.md). JSON/vector/cosine không đổi.
+
 Amendment31: admin products/Pnnn/sale-state POST, public sale_state, draft inventory_revision và status active/archived; PRODUCT_ARCHIVED khi mua theo [31](31_PRODUCT_AVAILABILITY.md). Detail/media giữ truy cập, public quantities0 khi archived.
 
 Amendment30: strict interpret_scope và scope_interpretation cho SearchOptions/catalog/suggestions, SCOPE_FILTER_CONFLICT/SCOPE_EXCLUSION_CONFLICT theo [30](30_SEARCH_SCOPE.md). Không đổi JSON vector/cosine contract.

@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-10-15T02:49:04.749476+00:00",
+  "base_commit": "b0cd2498146713bce74184cf7e8cdd96b3a5ae24",
+  "parser_version": "brand_category_color_scope_v2",
+  "live_index": {
+    "available": true,
+    "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+    "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+    "product_count": 181
+  },
+  "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+  "unchanged_data": [
+    "products",
+    "orders",
+    "image_sources"
+  ],
+  "speech_calls": 0,
+  "independent_quality_verified": false,
+  "sha256": {
+    "backend/app/application/scope_query.py": "b6af40bc4574076a8ceae3e4e7324d9b98b9639302e0c5c350e841cd1bf2cb20",
+    "backend/tests/test_color_scope.py": "40508e196827b617eaaf56b1c57bc4ccc4017231eb2f749d03d0ed915a0a6bff",
+    "frontend/src/lib/types.ts": "700d363f957a75faa8c496e2c40d42371d0ee117355da78f75b65b9fc7ae68e9",
+    "frontend/src/components/ScopeInterpretationNotice.tsx": "2ae2208d734407d062c2a8e87c847e60b73270650075eedea809dafe6788f387",
+    "frontend/src/pages/BrowsePage.tsx": "5cc57e6228854d671c67ee486e21f7c22209892889231bdaf6edb2f75083852d",
+    "frontend/src/pages/SearchPage.tsx": "942cd20a6bb8d6d565f19aee7ee192de4cce804309ca37af84d917fe710acc8d",
+    "frontend/e2e/color-scope.spec.ts": "7f5f4859af95464c0276d1db60e2d9b98e4a3e4ffcf6181017450b6de34b6372",
+    "frontend/e2e/scope.spec.ts": "eec2d5cc5643432296cd9a3e6cfeb29d566040b7a84ea934418beaf9a3dcb464",
+    "artifacts/validation/color-scope-full-tests.xml": "a5e99209b6c528be4def419000023e4df0f53b1666deb68d1ab6b1895767942e",
+    "artifacts/validation/color-scope-tests.xml": "716c5eac6ca42f7219a7374db0ed17b2a89ef56d06a4827668dfd57ad70990aa",
+    "artifacts/validation/color-scope-brand-category-regression.json": "822099fbfe976dddb636fd10a7a73fe86349a5dee96c0102aa877c22b78778dd",
+    "artifacts/validation/color-scope-search-regression.json": "d6c245fc44105587554bf180ce909d5d12bfa8844d4742a71c3d28df71ea5528",
+    "artifacts/backend/color-scope-real-encoder.json": "8872500f563fa611cbb3c75627f4a60b0c2fc67546ab64f46f0ba6adebd422e7",
+    "artifacts/frontend/color-scope-initial.json": "90d017c94cfcf0a81a7de06d2ae3d760b435dbf9470db7ccf2cd9b1315383b8b",
+    "artifacts/frontend/color-scope-results.json": "962216c0fea2d5b140f0f182b516de19cdd22d1ffc17414b8b3acc63cfd55c61",
+    "artifacts/frontend/screenshots/color-scope/search-1440.png": "1a6b10eb3315fa3c6a9cdc9a0320832df1798dcb1307766a694a17d5e98ca8f6",
+    "artifacts/frontend/screenshots/color-scope/search-360.png": "5592f6f4c371e2b2262d97da1f2b401c19840bdd1406a67d5bf90e979ae1fb3b"
+  },
+  "checks": {
+    "full_backend_passed": 472,
+    "targeted_backend_passed": 133,
+    "frontend_unit_passed": 17,
+    "browser_passed": 5,
+    "cpu_regression_requests": 50,
+    "build_exit": 0,
+    "lint_exit": 0,
+    "ruff_exit": 0
+  }
+}

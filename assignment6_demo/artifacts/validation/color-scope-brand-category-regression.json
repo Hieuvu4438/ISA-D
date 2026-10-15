@@ -1,0 +1,1947 @@
+{
+  "scope": "Live CPU metadata-scope property smoke, not independent relevance quality or STT",
+  "speech_calls": 0,
+  "results": [
+    {
+      "mode": "text",
+      "response": {
+        "request_id": "7040b4ef-0973-46fe-8e5d-f81847ce4730",
+        "query": {
+          "mode": "text",
+          "text": "giày chạy bộ Nike; dưới 1 triệu; không màu đỏ",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P013",
+              "name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+              "category": "running_shoes",
+              "brand": "Nike",
+              "color": "đen và xanh đậm",
+              "price_vnd": 755000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P013"
+            },
+            "score": 0.7294371724128723,
+            "component_scores": {
+              "text": 0.7294372320175171,
+              "image": null
+            },
+            "rank_score": 0.7294371724128723,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.136500002554385,
+            "encoding": 12.818700000934768,
+            "retrieval": 0.4794999986188486,
+            "filtering": 0.9005000028992072,
+            "threshold": 0,
+            "ranking": 0.0026999987312592566,
+            "hydration": 0.03060000017285347,
+            "total": 16.329599999153288
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "dưới 1 triệu",
+                "min_price": null,
+                "max_price": 999999
+              }
+            ],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": 999999
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": 999999,
+              "in_stock": false
+            },
+            "lexical_text": "giày chạy bộ Nike; ; không màu đỏ"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "không màu đỏ",
+                "field": "color",
+                "value": "đỏ"
+              }
+            ],
+            "lexical_text": "giày chạy bộ Nike"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_scope_v2",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "Nike",
+                "field": "brand",
+                "value": "Nike"
+              },
+              {
+                "text": "giày chạy bộ",
+                "field": "category",
+                "value": "running_shoes"
+              }
+            ],
+            "lexical_text": "",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "response": {
+        "request_id": "069a0386-b1f9-4ba0-866e-35a979c4c23a",
+        "query": {
+          "mode": "voice",
+          "text": "giày chạy bộ Nike; dưới 1 triệu; không màu đỏ",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P013",
+              "name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+              "category": "running_shoes",
+              "brand": "Nike",
+              "color": "đen và xanh đậm",
+              "price_vnd": 755000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P013"
+            },
+            "score": 0.7294371724128723,
+            "component_scores": {
+              "text": 0.7294372320175171,
+              "image": null
+            },
+            "rank_score": 0.01639344262295082,
+            "lexical_score": 0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.14039999950909987,
+            "encoding": 10.676699999748962,
+            "retrieval": 0.4398000019136816,
+            "filtering": 0.8401999984926078,
+            "threshold": 0,
+            "ranking": 0.10870000187424012,
+            "hydration": 0.027599999157246202,
+            "total": 14.20710000093095
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "dưới 1 triệu",
+                "min_price": null,
+                "max_price": 999999
+              }
+            ],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": 999999
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": 999999,
+              "in_stock": false
+            },
+            "lexical_text": "giày chạy bộ Nike; ; không màu đỏ"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "không màu đỏ",
+                "field": "color",
+                "value": "đỏ"
+              }
+            ],
+            "lexical_text": "giày chạy bộ Nike"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_scope_v2",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "Nike",
+                "field": "brand",
+                "value": "Nike"
+              },
+              {
+                "text": "giày chạy bộ",
+                "field": "category",
+                "value": "running_shoes"
+              }
+            ],
+            "lexical_text": "",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "response": {
+        "request_id": "f2fe2195-de7d-451c-b166-41c43c620411",
+        "query": {
+          "mode": "multimodal",
+          "text": "giày chạy bộ Nike; dưới 1 triệu; không màu đỏ",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 443,
+            "byte_size": 86899
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P013",
+              "name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+              "category": "running_shoes",
+              "brand": "Nike",
+              "color": "đen và xanh đậm",
+              "price_vnd": 755000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P013"
+            },
+            "score": 0.9645938873291016,
+            "component_scores": {
+              "text": 0.7294372320175171,
+              "image": 0.8117622137069702
+            },
+            "rank_score": 0.01639344262295082,
+            "lexical_score": 0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 2.2438000014517456,
+            "encoding": 53.19059999965248,
+            "retrieval": 0.5030000029364601,
+            "filtering": 0.8957999998528976,
+            "threshold": 0,
+            "ranking": 0.11169999925186858,
+            "hydration": 0.037500001781154424,
+            "total": 59.22130000180914
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "dưới 1 triệu",
+                "min_price": null,
+                "max_price": 999999
+              }
+            ],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": 999999
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": 999999,
+              "in_stock": false
+            },
+            "lexical_text": "giày chạy bộ Nike; ; không màu đỏ"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "không màu đỏ",
+                "field": "color",
+                "value": "đỏ"
+              }
+            ],
+            "lexical_text": "giày chạy bộ Nike"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_scope_v2",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "Nike",
+                "field": "brand",
+                "value": "Nike"
+              },
+              {
+                "text": "giày chạy bộ",
+                "field": "category",
+                "value": "running_shoes"
+              }
+            ],
+            "lexical_text": "",
+            "warnings": []
+          }
+        }
+      }
+    }
+  ],
+  "either": {
+    "request_id": "c1553b45-c4e4-47fa-aa99-d442758d7f86",
+    "products": [
+      {
+        "product_id": "P003",
+        "name": "Giày chạy bộ Asics Gel-Cumulus 22 xanh",
+        "category": "running_shoes",
+        "brand": "Asics",
+        "color": "xanh đậm",
+        "price_vnd": 1900000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P003"
+      },
+      {
+        "product_id": "P013",
+        "name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+        "category": "running_shoes",
+        "brand": "Nike",
+        "color": "đen và xanh đậm",
+        "price_vnd": 755000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P013"
+      },
+      {
+        "product_id": "P014",
+        "name": "Giày chạy bộ Asics Hyperspeed tím xanh lá",
+        "category": "running_shoes",
+        "brand": "Asics",
+        "color": "tím, hồng và xanh lá",
+        "price_vnd": 790000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P014"
+      }
+    ],
+    "total": 3,
+    "offset": 0,
+    "limit": 100,
+    "query": {
+      "text": "giay chay bo Nike hoac Asics",
+      "sort": "relevance",
+      "filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      }
+    },
+    "price_interpretation": {
+      "enabled": true,
+      "parser_version": "vi_vnd_price_v1",
+      "applied": false,
+      "clauses": [],
+      "inferred_filters": {
+        "min_price": null,
+        "max_price": null
+      },
+      "effective_filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      },
+      "lexical_text": "giay chay bo Nike hoac Asics"
+    },
+    "exclusion_interpretation": {
+      "enabled": true,
+      "parser_version": "metadata_exclusions_v1",
+      "applied": false,
+      "clauses": [],
+      "lexical_text": "giay chay bo Nike hoac Asics"
+    },
+    "scope_interpretation": {
+      "enabled": true,
+      "parser_version": "brand_category_color_scope_v2",
+      "applied": true,
+      "clauses": [
+        {
+          "text": "Nike",
+          "field": "brand",
+          "value": "Nike"
+        },
+        {
+          "text": "Asics",
+          "field": "brand",
+          "value": "Asics"
+        },
+        {
+          "text": "giay chay bo",
+          "field": "category",
+          "value": "running_shoes"
+        }
+      ],
+      "lexical_text": "",
+      "warnings": []
+    },
+    "facets": {
+      "category": [
+        {
+          "value": "backpack",
+          "count": 0
+        },
+        {
+          "value": "bag",
+          "count": 0
+        },
+        {
+          "value": "boots",
+          "count": 0
+        },
+        {
+          "value": "casual_shoes",
+          "count": 0
+        },
+        {
+          "value": "jacket",
+          "count": 0
+        },
+        {
+          "value": "running_shoes",
+          "count": 3
+        },
+        {
+          "value": "sandals",
+          "count": 0
+        },
+        {
+          "value": "sunglasses",
+          "count": 0
+        },
+        {
+          "value": "t_shirt",
+          "count": 0
+        },
+        {
+          "value": "tote_bag",
+          "count": 0
+        },
+        {
+          "value": "trail_shoes",
+          "count": 0
+        },
+        {
+          "value": "watch",
+          "count": 0
+        }
+      ],
+      "brand": [
+        {
+          "value": "Adele Dejak",
+          "count": 0
+        },
+        {
+          "value": "Adidas",
+          "count": 0
+        },
+        {
+          "value": "Arc'teryx",
+          "count": 0
+        },
+        {
+          "value": "Asics",
+          "count": 2
+        },
+        {
+          "value": "Birkenstock",
+          "count": 0
+        },
+        {
+          "value": "Brooks",
+          "count": 0
+        },
+        {
+          "value": "Candino",
+          "count": 0
+        },
+        {
+          "value": "Converse",
+          "count": 0
+        },
+        {
+          "value": "Eastpak",
+          "count": 0
+        },
+        {
+          "value": "Fjällräven",
+          "count": 0
+        },
+        {
+          "value": "Hard Rock Cafe",
+          "count": 0
+        },
+        {
+          "value": "Hermès",
+          "count": 0
+        },
+        {
+          "value": "Junghans",
+          "count": 0
+        },
+        {
+          "value": "Không xác định",
+          "count": 0
+        },
+        {
+          "value": "Les cuirs d'Agathe",
+          "count": 0
+        },
+        {
+          "value": "Marshal",
+          "count": 0
+        },
+        {
+          "value": "Minaal",
+          "count": 0
+        },
+        {
+          "value": "Mizuno",
+          "count": 0
+        },
+        {
+          "value": "New Balance",
+          "count": 0
+        },
+        {
+          "value": "Nike",
+          "count": 1
+        },
+        {
+          "value": "On",
+          "count": 0
+        },
+        {
+          "value": "Opta",
+          "count": 0
+        },
+        {
+          "value": "Polo Ralph Lauren",
+          "count": 0
+        },
+        {
+          "value": "Prada",
+          "count": 0
+        },
+        {
+          "value": "Qwstion",
+          "count": 0
+        },
+        {
+          "value": "Ray-Ban",
+          "count": 0
+        },
+        {
+          "value": "Salomon",
+          "count": 0
+        },
+        {
+          "value": "Seiko",
+          "count": 0
+        },
+        {
+          "value": "Skunkfunk",
+          "count": 0
+        },
+        {
+          "value": "Timberland",
+          "count": 0
+        },
+        {
+          "value": "Uniqlo",
+          "count": 0
+        },
+        {
+          "value": "VAUDE",
+          "count": 0
+        },
+        {
+          "value": "Vans",
+          "count": 0
+        },
+        {
+          "value": "XD Design",
+          "count": 0
+        }
+      ],
+      "color": [
+        {
+          "value": "be",
+          "count": 0
+        },
+        {
+          "value": "cam",
+          "count": 0
+        },
+        {
+          "value": "cam đất",
+          "count": 0
+        },
+        {
+          "value": "cam, đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "cam, đỏ và vàng",
+          "count": 0
+        },
+        {
+          "value": "gọng bạc mắt xám",
+          "count": 0
+        },
+        {
+          "value": "gọng vàng mắt nâu",
+          "count": 0
+        },
+        {
+          "value": "gọng đồi mồi",
+          "count": 0
+        },
+        {
+          "value": "hồng và đen",
+          "count": 0
+        },
+        {
+          "value": "màu kem",
+          "count": 0
+        },
+        {
+          "value": "mặt bạc",
+          "count": 0
+        },
+        {
+          "value": "mặt trắng dây nâu",
+          "count": 0
+        },
+        {
+          "value": "mặt xanh dây thép",
+          "count": 0
+        },
+        {
+          "value": "mặt đen dây da",
+          "count": 0
+        },
+        {
+          "value": "nâu",
+          "count": 0
+        },
+        {
+          "value": "nâu bò",
+          "count": 0
+        },
+        {
+          "value": "nâu và nhiều màu",
+          "count": 0
+        },
+        {
+          "value": "nâu xám",
+          "count": 0
+        },
+        {
+          "value": "nâu đậm",
+          "count": 0
+        },
+        {
+          "value": "nâu, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "rêu",
+          "count": 0
+        },
+        {
+          "value": "trắng",
+          "count": 0
+        },
+        {
+          "value": "trắng ngà và xanh xám",
+          "count": 0
+        },
+        {
+          "value": "trắng và nâu",
+          "count": 0
+        },
+        {
+          "value": "trắng và xanh",
+          "count": 0
+        },
+        {
+          "value": "trắng và đen",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ sẫm",
+          "count": 0
+        },
+        {
+          "value": "trắng, đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng, đỏ rượu, xám",
+          "count": 0
+        },
+        {
+          "value": "tím, hồng và xanh lá",
+          "count": 1
+        },
+        {
+          "value": "vàng",
+          "count": 0
+        },
+        {
+          "value": "vàng nâu và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "vàng, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xanh",
+          "count": 0
+        },
+        {
+          "value": "xanh denim",
+          "count": 0
+        },
+        {
+          "value": "xanh dương",
+          "count": 0
+        },
+        {
+          "value": "xanh lá",
+          "count": 0
+        },
+        {
+          "value": "xanh navy",
+          "count": 0
+        },
+        {
+          "value": "xanh navy và đen",
+          "count": 0
+        },
+        {
+          "value": "xanh nhạt",
+          "count": 0
+        },
+        {
+          "value": "xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xanh tím",
+          "count": 0
+        },
+        {
+          "value": "xanh ô liu",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm",
+          "count": 1
+        },
+        {
+          "value": "xanh đậm, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám",
+          "count": 0
+        },
+        {
+          "value": "xám nhạt và đen",
+          "count": 0
+        },
+        {
+          "value": "xám và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xám và đen",
+          "count": 0
+        },
+        {
+          "value": "xám xanh",
+          "count": 0
+        },
+        {
+          "value": "xám, nâu và vàng",
+          "count": 0
+        },
+        {
+          "value": "xám, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen",
+          "count": 0
+        },
+        {
+          "value": "đen toàn bộ",
+          "count": 0
+        },
+        {
+          "value": "đen và be",
+          "count": 0
+        },
+        {
+          "value": "đen và bạc",
+          "count": 0
+        },
+        {
+          "value": "đen và nâu",
+          "count": 0
+        },
+        {
+          "value": "đen và tím",
+          "count": 0
+        },
+        {
+          "value": "đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh lá đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh đậm",
+          "count": 1
+        },
+        {
+          "value": "đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ rượu",
+          "count": 0
+        },
+        {
+          "value": "đỏ và trắng",
+          "count": 0
+        }
+      ],
+      "size": [
+        {
+          "value": "L",
+          "count": 0
+        },
+        {
+          "value": "M",
+          "count": 0
+        }
+      ]
+    },
+    "corrections": [],
+    "empty_reason": null,
+    "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+    "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+    "inventory_revision": 103,
+    "retrieval": "bm25"
+  },
+  "uncertain": {
+    "request_id": "eec0065f-0966-4838-9833-b616e48a359c",
+    "products": [
+      {
+        "product_id": "P042",
+        "name": "Áo thun Nike Jordan màu trắng",
+        "category": "t_shirt",
+        "brand": "Nike",
+        "color": "trắng, đen và đỏ",
+        "price_vnd": 1770000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P042"
+      },
+      {
+        "product_id": "P181",
+        "name": "Áo polo Nike trắng viền đỏ rượu",
+        "category": "t_shirt",
+        "brand": "Nike",
+        "color": "trắng, đỏ rượu, xám",
+        "price_vnd": 890000,
+        "in_stock": false,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P181"
+      },
+      {
+        "product_id": "P007",
+        "name": "Giày Nike Air Force 1 trắng",
+        "category": "casual_shoes",
+        "brand": "Nike",
+        "color": "trắng",
+        "price_vnd": 2300000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P007"
+      },
+      {
+        "product_id": "P013",
+        "name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+        "category": "running_shoes",
+        "brand": "Nike",
+        "color": "đen và xanh đậm",
+        "price_vnd": 755000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P013"
+      },
+      {
+        "product_id": "P026",
+        "name": "Dép Adidas Adilette xanh đen sọc trắng",
+        "category": "sandals",
+        "brand": "Adidas",
+        "color": "xanh đậm, đen và trắng",
+        "price_vnd": 1210000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P026"
+      },
+      {
+        "product_id": "P146",
+        "name": "Áo thun xanh dương cổ tròn",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "xanh dương",
+        "price_vnd": 520000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P146"
+      },
+      {
+        "product_id": "P142",
+        "name": "Áo thun vàng in họa tiết tròn",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "vàng",
+        "price_vnd": 495000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P142"
+      },
+      {
+        "product_id": "P144",
+        "name": "Áo thun xanh ô liu cổ tròn",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "xanh ô liu",
+        "price_vnd": 495000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P144"
+      },
+      {
+        "product_id": "P041",
+        "name": "Áo thun trơn màu đen",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [
+          "M",
+          "L"
+        ],
+        "available_sizes": [
+          "M",
+          "L"
+        ],
+        "image_url": "/api/v1/media/products/P041"
+      },
+      {
+        "product_id": "P145",
+        "name": "Áo thun xanh dương nhìn từ phía sau",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "xanh dương",
+        "price_vnd": 520000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P145"
+      },
+      {
+        "product_id": "P148",
+        "name": "Áo thun loang màu cam đỏ vàng",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "cam, đỏ và vàng",
+        "price_vnd": 545000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P148"
+      },
+      {
+        "product_id": "P150",
+        "name": "Áo thun xanh lá in bảng ký tự",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "xanh lá",
+        "price_vnd": 545000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P150"
+      },
+      {
+        "product_id": "P141",
+        "name": "Áo thun xanh ô liu in chữ Ideal",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "xanh ô liu",
+        "price_vnd": 495000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P141"
+      },
+      {
+        "product_id": "P147",
+        "name": "Áo thun trắng in hình làm tạp chí",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "trắng",
+        "price_vnd": 520000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P147"
+      },
+      {
+        "product_id": "P149",
+        "name": "Áo thun đen in chữ trắng và hồng",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "đen",
+        "price_vnd": 545000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P149"
+      },
+      {
+        "product_id": "P043",
+        "name": "Áo thun tay dài màu xanh đậm",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "xanh đậm",
+        "price_vnd": 1805000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P043"
+      },
+      {
+        "product_id": "P143",
+        "name": "Áo thun xanh ô liu nhìn từ phía sau",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "xanh ô liu",
+        "price_vnd": 495000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P143"
+      },
+      {
+        "product_id": "P044",
+        "name": "Áo thun Hard Rock Cafe Buenos Aires màu nâu",
+        "category": "t_shirt",
+        "brand": "Hard Rock Cafe",
+        "color": "nâu, xanh và vàng",
+        "price_vnd": 1840000,
+        "in_stock": false,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P044"
+      },
+      {
+        "product_id": "P045",
+        "name": "Áo thun polo trắng cổ bẻ",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "trắng",
+        "price_vnd": 1875000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P045"
+      }
+    ],
+    "total": 19,
+    "offset": 0,
+    "limit": 24,
+    "query": {
+      "text": "Nike hoac ao thun",
+      "sort": "relevance",
+      "filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      }
+    },
+    "price_interpretation": {
+      "enabled": true,
+      "parser_version": "vi_vnd_price_v1",
+      "applied": false,
+      "clauses": [],
+      "inferred_filters": {
+        "min_price": null,
+        "max_price": null
+      },
+      "effective_filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      },
+      "lexical_text": "Nike hoac ao thun"
+    },
+    "exclusion_interpretation": {
+      "enabled": true,
+      "parser_version": "metadata_exclusions_v1",
+      "applied": false,
+      "clauses": [],
+      "lexical_text": "Nike hoac ao thun"
+    },
+    "scope_interpretation": {
+      "enabled": true,
+      "parser_version": "brand_category_color_scope_v2",
+      "applied": false,
+      "clauses": [],
+      "lexical_text": "Nike hoac ao thun",
+      "warnings": [
+        "Có nhiều hãng, loại hoặc màu sản phẩm chưa rõ phạm vi. Chỉ tự gộp các lựa chọn nối trực tiếp bằng hoặc/or; hãy chọn bộ lọc nếu cần."
+      ]
+    },
+    "facets": {
+      "category": [
+        {
+          "value": "backpack",
+          "count": 0
+        },
+        {
+          "value": "bag",
+          "count": 0
+        },
+        {
+          "value": "boots",
+          "count": 0
+        },
+        {
+          "value": "casual_shoes",
+          "count": 1
+        },
+        {
+          "value": "jacket",
+          "count": 0
+        },
+        {
+          "value": "running_shoes",
+          "count": 1
+        },
+        {
+          "value": "sandals",
+          "count": 1
+        },
+        {
+          "value": "sunglasses",
+          "count": 0
+        },
+        {
+          "value": "t_shirt",
+          "count": 16
+        },
+        {
+          "value": "tote_bag",
+          "count": 0
+        },
+        {
+          "value": "trail_shoes",
+          "count": 0
+        },
+        {
+          "value": "watch",
+          "count": 0
+        }
+      ],
+      "brand": [
+        {
+          "value": "Adele Dejak",
+          "count": 0
+        },
+        {
+          "value": "Adidas",
+          "count": 1
+        },
+        {
+          "value": "Arc'teryx",
+          "count": 0
+        },
+        {
+          "value": "Asics",
+          "count": 0
+        },
+        {
+          "value": "Birkenstock",
+          "count": 0
+        },
+        {
+          "value": "Brooks",
+          "count": 0
+        },
+        {
+          "value": "Candino",
+          "count": 0
+        },
+        {
+          "value": "Converse",
+          "count": 0
+        },
+        {
+          "value": "Eastpak",
+          "count": 0
+        },
+        {
+          "value": "Fjällräven",
+          "count": 0
+        },
+        {
+          "value": "Hard Rock Cafe",
+          "count": 1
+        },
+        {
+          "value": "Hermès",
+          "count": 0
+        },
+        {
+          "value": "Junghans",
+          "count": 0
+        },
+        {
+          "value": "Không xác định",
+          "count": 13
+        },
+        {
+          "value": "Les cuirs d'Agathe",
+          "count": 0
+        },
+        {
+          "value": "Marshal",
+          "count": 0
+        },
+        {
+          "value": "Minaal",
+          "count": 0
+        },
+        {
+          "value": "Mizuno",
+          "count": 0
+        },
+        {
+          "value": "New Balance",
+          "count": 0
+        },
+        {
+          "value": "Nike",
+          "count": 4
+        },
+        {
+          "value": "On",
+          "count": 0
+        },
+        {
+          "value": "Opta",
+          "count": 0
+        },
+        {
+          "value": "Polo Ralph Lauren",
+          "count": 0
+        },
+        {
+          "value": "Prada",
+          "count": 0
+        },
+        {
+          "value": "Qwstion",
+          "count": 0
+        },
+        {
+          "value": "Ray-Ban",
+          "count": 0
+        },
+        {
+          "value": "Salomon",
+          "count": 0
+        },
+        {
+          "value": "Seiko",
+          "count": 0
+        },
+        {
+          "value": "Skunkfunk",
+          "count": 0
+        },
+        {
+          "value": "Timberland",
+          "count": 0
+        },
+        {
+          "value": "Uniqlo",
+          "count": 0
+        },
+        {
+          "value": "VAUDE",
+          "count": 0
+        },
+        {
+          "value": "Vans",
+          "count": 0
+        },
+        {
+          "value": "XD Design",
+          "count": 0
+        }
+      ],
+      "color": [
+        {
+          "value": "be",
+          "count": 0
+        },
+        {
+          "value": "cam",
+          "count": 0
+        },
+        {
+          "value": "cam đất",
+          "count": 0
+        },
+        {
+          "value": "cam, đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "cam, đỏ và vàng",
+          "count": 1
+        },
+        {
+          "value": "gọng bạc mắt xám",
+          "count": 0
+        },
+        {
+          "value": "gọng vàng mắt nâu",
+          "count": 0
+        },
+        {
+          "value": "gọng đồi mồi",
+          "count": 0
+        },
+        {
+          "value": "hồng và đen",
+          "count": 0
+        },
+        {
+          "value": "màu kem",
+          "count": 0
+        },
+        {
+          "value": "mặt bạc",
+          "count": 0
+        },
+        {
+          "value": "mặt trắng dây nâu",
+          "count": 0
+        },
+        {
+          "value": "mặt xanh dây thép",
+          "count": 0
+        },
+        {
+          "value": "mặt đen dây da",
+          "count": 0
+        },
+        {
+          "value": "nâu",
+          "count": 0
+        },
+        {
+          "value": "nâu bò",
+          "count": 0
+        },
+        {
+          "value": "nâu và nhiều màu",
+          "count": 0
+        },
+        {
+          "value": "nâu xám",
+          "count": 0
+        },
+        {
+          "value": "nâu đậm",
+          "count": 0
+        },
+        {
+          "value": "nâu, xanh và vàng",
+          "count": 1
+        },
+        {
+          "value": "rêu",
+          "count": 0
+        },
+        {
+          "value": "trắng",
+          "count": 3
+        },
+        {
+          "value": "trắng ngà và xanh xám",
+          "count": 0
+        },
+        {
+          "value": "trắng và nâu",
+          "count": 0
+        },
+        {
+          "value": "trắng và xanh",
+          "count": 0
+        },
+        {
+          "value": "trắng và đen",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ sẫm",
+          "count": 0
+        },
+        {
+          "value": "trắng, đen và đỏ",
+          "count": 1
+        },
+        {
+          "value": "trắng, đỏ rượu, xám",
+          "count": 1
+        },
+        {
+          "value": "tím, hồng và xanh lá",
+          "count": 0
+        },
+        {
+          "value": "vàng",
+          "count": 1
+        },
+        {
+          "value": "vàng nâu và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "vàng, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xanh",
+          "count": 0
+        },
+        {
+          "value": "xanh denim",
+          "count": 0
+        },
+        {
+          "value": "xanh dương",
+          "count": 2
+        },
+        {
+          "value": "xanh lá",
+          "count": 1
+        },
+        {
+          "value": "xanh navy",
+          "count": 0
+        },
+        {
+          "value": "xanh navy và đen",
+          "count": 0
+        },
+        {
+          "value": "xanh nhạt",
+          "count": 0
+        },
+        {
+          "value": "xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xanh tím",
+          "count": 0
+        },
+        {
+          "value": "xanh ô liu",
+          "count": 3
+        },
+        {
+          "value": "xanh đậm",
+          "count": 1
+        },
+        {
+          "value": "xanh đậm, đen và trắng",
+          "count": 1
+        },
+        {
+          "value": "xám",
+          "count": 0
+        },
+        {
+          "value": "xám nhạt và đen",
+          "count": 0
+        },
+        {
+          "value": "xám và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xám và đen",
+          "count": 0
+        },
+        {
+          "value": "xám xanh",
+          "count": 0
+        },
+        {
+          "value": "xám, nâu và vàng",
+          "count": 0
+        },
+        {
+          "value": "xám, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen",
+          "count": 2
+        },
+        {
+          "value": "đen toàn bộ",
+          "count": 0
+        },
+        {
+          "value": "đen và be",
+          "count": 0
+        },
+        {
+          "value": "đen và bạc",
+          "count": 0
+        },
+        {
+          "value": "đen và nâu",
+          "count": 0
+        },
+        {
+          "value": "đen và tím",
+          "count": 0
+        },
+        {
+          "value": "đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh lá đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh đậm",
+          "count": 1
+        },
+        {
+          "value": "đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ rượu",
+          "count": 0
+        },
+        {
+          "value": "đỏ và trắng",
+          "count": 0
+        }
+      ],
+      "size": [
+        {
+          "value": "L",
+          "count": 1
+        },
+        {
+          "value": "M",
+          "count": 1
+        }
+      ]
+    },
+    "corrections": [],
+    "empty_reason": null,
+    "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+    "lexical_fingerprint": "2169b472b1199f0021cd5fd6cf04680081ab64cc9c5bdd962993b1e70cb4231f",
+    "inventory_revision": 103,
+    "retrieval": "bm25"
+  }
+}

@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Tìm kiếm hiểu màu được nêu rõ như “balo màu hồng”, lọc trước xếp hạng, hỗ trợ lựa chọn “hoặc”, báo mâu thuẫn và cho tắt tự hiểu: [contract33](docs/33_COLOR_SEARCH_SCOPE.md), [evidence](artifacts/backend/COLOR_SCOPE_REPORT.md). Bộ lọc màu phối dựa trên metadata, không nhận diện màu từ ảnh.
+
 Đợt sửa dữ liệu mới: thay 10 ảnh balo sai P121–P130, kiểm tra seed và runtime release riêng; [chi tiết](docs/32_CATALOG_REPAIR_BATCH2.md), [evidence](artifacts/validation/CATALOG_REPAIR_BATCH2_REPORT.md). 127 backend tests, browser thật và regression CPU sau restart đạt; full independent quality/voice acceptance vẫn pending.
 
 Admin→Sản phẩm hỗ trợ **Tạm ngừng bán/Mở bán lại** có lý do và audit. Ngừng bán ẩn sản phẩm khỏi tìm kiếm/danh mục, chặn cart/quote cũ, giữ kho và lịch sử: [contract31](docs/31_PRODUCT_AVAILABILITY.md), [evidence](artifacts/backend/PRODUCT_AVAILABILITY_REPORT.md).

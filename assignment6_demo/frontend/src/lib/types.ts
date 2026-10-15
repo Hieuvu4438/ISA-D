@@ -38,7 +38,7 @@ export interface ExclusionInterpretation {
 
 export interface ScopeInterpretation {
   enabled: boolean; parser_version: string; applied: boolean; lexical_text: string; warnings: string[]
-  clauses: { text: string; field: 'category' | 'brand'; value: string }[]
+  clauses: { text: string; field: 'category' | 'brand' | 'color'; value: string }[]
 }
 
 export interface ProductSummary {

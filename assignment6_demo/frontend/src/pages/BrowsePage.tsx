@@ -99,7 +99,7 @@ export function BrowsePage() {
           <label className="checkbox-label"><input type="checkbox" checked={stockChecked} onChange={event => { setStockChecked(event.target.checked); change('in_stock', event.target.checked ? 'true' : '') }} />Chỉ còn hàng</label>
           <label className="checkbox-label"><input type="checkbox" checked={priceChecked} onChange={event => { setPriceChecked(event.target.checked); change('interpret_price', event.target.checked ? '' : 'false') }} />Tự hiểu điều kiện giá trong mô tả</label>
           <label className="checkbox-label"><input type="checkbox" checked={exclusionsChecked} onChange={event => { setExclusionsChecked(event.target.checked); change('interpret_exclusions', event.target.checked ? '' : 'false') }} />Tự hiểu loại trừ màu, hãng, danh mục</label>
-          <label className="checkbox-label"><input type="checkbox" checked={scopeChecked} onChange={event => { setScopeChecked(event.target.checked); change('interpret_scope', event.target.checked ? '' : 'false') }} />Tự hiểu hãng và loại sản phẩm</label>
+          <label className="checkbox-label"><input type="checkbox" checked={scopeChecked} onChange={event => { setScopeChecked(event.target.checked); change('interpret_scope', event.target.checked ? '' : 'false') }} />Tự hiểu hãng, loại và màu sản phẩm</label>
         </div>
       </aside>
       <section className="catalog-content" aria-label="Sản phẩm trong bộ sưu tập" aria-busy={loading}>
