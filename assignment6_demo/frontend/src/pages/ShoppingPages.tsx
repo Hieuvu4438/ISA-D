@@ -58,7 +58,13 @@ export function CartPage() {
           <form className="cart-quantity" onSubmit={event => submit(event, item.product_id, item.variant_id)}><label htmlFor={`quantity-${item.variant_id ?? item.product_id}`}>Số lượng<input id={`quantity-${item.variant_id ?? item.product_id}`} name="quantity" type="number" min="1" max="99" step="1" defaultValue={item.quantity} required disabled={busy || !item.product} /></label><button className="secondary-button" type="submit" disabled={busy || !item.product}>Cập nhật</button><button className="text-link" type="button" disabled={busy} onClick={() => { void change(item.product_id, 0, item.variant_id) }}><Trash2 size={16} aria-hidden="true" />Xóa<span className="visually-hidden"> {item.product?.name ?? item.product_id}</span></button></form>
         </div><strong className="shopping-line-total">{formatMoney(item.line_total_vnd)}</strong>
       </article>)}</section>
-      <aside className="shopping-summary"><h2>Tạm tính</h2><p>{cart.item_count} sản phẩm</p><strong>{formatMoney(cart.subtotal_vnd)}</strong><p>Giá và tồn kho là dữ liệu demo. Giỏ hàng chưa giữ hàng; giá và tồn kho được kiểm tra lại khi đặt đơn.</p>{cart.has_issues ? <p>Hãy xử lý các sản phẩm không còn đủ hàng trước khi đặt đơn.</p> : <Link className="primary-button" to="/checkout">Tiếp tục đặt hàng</Link>}<Link className="secondary-button" to="/catalog">Tiếp tục chọn sản phẩm</Link></aside>
+      <aside className="shopping-summary"><h2>Tạm tính</h2><p>{cart.item_count} sản phẩm</p><strong>{formatMoney(cart.subtotal_vnd)}</strong><p>Giá và tồn kho là dữ liệu demo. Giỏ hàng chưa giữ hàng; giá và tồn kho được kiểm tra lại khi đặt đơn.</p>{cart.has_issues ? <p>Hãy xử lý các sản phẩm không còn đủ hàng trước khi đặt đơn.</p> : <Link className="primary-button" to="/checkout">Tiếp tục đặt hàng</Link>}<Link className="secondary-button" to="/catalog">Tiếp tục chọn sản phẩm</Link>
+        <div className="summary-trust-badges" aria-label="Cam kết mua sắm an tâm">
+          <div className="trust-badge-row"><span aria-hidden="true">✦</span><p>Thanh toán COD khi nhận hàng</p></div>
+          <div className="trust-badge-row"><span aria-hidden="true">✦</span><p>Miễn phí giao hàng từ 2.000.000 ₫</p></div>
+          <div className="trust-badge-row"><span aria-hidden="true">✦</span><p>Hỗ trợ đổi kích cỡ trong 7 ngày</p></div>
+        </div>
+      </aside>
     </div>)}
   </div>
 }

@@ -10,6 +10,7 @@ import { categoryLabels, ErrorPanel, formatMoney, ProductImage } from '../ui';
 import { PriceInterpretationNotice } from '../components/PriceInterpretationNotice';
 import { ExclusionInterpretationNotice } from '../components/ExclusionInterpretationNotice';
 import { ScopeInterpretationNotice } from '../components/ScopeInterpretationNotice';
+import { use3DTilt } from '../lib/use3DTilt';
 
 const modes = [
   { id: 'text' as const, label: 'Mô tả', icon: Type },
@@ -30,14 +31,16 @@ function signature(draft: Draft, mode: QueryMode) {
 }
 export function ProductCard({ product, result, onOpen, requestedSizes = [] }: { product: ProductSummary; result?: SearchResult; onOpen: () => void; requestedSizes?: string[] }) {
   const location = useLocation();
+  const { ref, onMouseMove, onMouseLeave } = use3DTilt<HTMLElement>({ maxTilt: 6, scale: 1.02 });
   const matchedSizes = requestedSizes.filter(size => product.sizes?.includes(size));
   const requestedAvailable = matchedSizes.some(size => product.available_sizes?.includes(size));
-  return <article className="product-card" data-testid={result ? 'result-card' : 'product-card'}>
+  return <article ref={ref} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave} className="product-card tilt-card" data-testid={result ? 'result-card' : 'product-card'}>
     <Link to={`/products/${product.product_id}`} state={{ from: `${location.pathname}${location.search}` }} className="product-card-link" onClick={onOpen}>
       <div className="product-card-media"><ProductImage src={product.image_url} alt={product.name} retry={false} />
         {result && <span className="rank-label">{String(result.rank).padStart(2, '0')}</span>}
         {(!product.in_stock || matchedSizes.length > 0 && !requestedAvailable) && <span className="stock-tag">{matchedSizes.length ? 'Hết cỡ đã tìm' : 'Hết hàng'}</span>}
         <span className="product-open" aria-hidden="true"><ArrowUpRight size={20} /></span>
+        <div className="glare-effect" />
       </div>
       <div className="product-card-copy"><div className="product-brand">{product.brand}<span>{categoryLabels[product.category]}</span></div><h3>{product.name}</h3><p className="product-color">{product.color}</p>
         <div className="product-price-row"><strong>{formatMoney(product.price_vnd)}</strong>{result && <span className="cosine-score">Cosine {result.score.toFixed(3)}</span>}</div>
@@ -200,7 +203,10 @@ export function SearchPage() {
         <div className="mode-tabs" role="tablist" aria-label="Cách tìm sản phẩm">{modes.map((item, index) => <button key={item.id} id={`tab-${item.id}`} type="button" role="tab" aria-selected={mode === item.id} aria-controls={`panel-${item.id}`} tabIndex={mode === item.id ? 0 : -1} onClick={() => switchMode(item.id)} onKeyDown={event => tabKey(event, index)}><item.icon size={17} aria-hidden="true" />{item.label}</button>)}</div>
         <div id={`panel-${mode}`} role="tabpanel" aria-labelledby={`tab-${mode}`} className="search-input-panel">
           {mode === 'voice' && <div className="voice-workspace"><p className="voice-intro">Nói một câu tiếng Việt, tối đa 15 giây. {catalog.meta?.speech.provider === 'local' ? 'Nhận dạng trên máy chủ bằng Whisper CPU; không gửi âm thanh đến Azure.' : catalog.meta?.speech.provider === 'groq' ? 'Nhận dạng tốc độ cao bằng Groq Whisper Large v3; không cần GPU máy chủ.' : 'Âm thanh chỉ được gửi đến Azure khi bạn bấm nhận dạng.'}</p>
-            <div className="record-row">{micPhase === 'recording' ? <button className="secondary-button recording-button" type="button" onClick={() => void stopRecording()}><Square size={15} fill="currentColor" aria-hidden="true" />Dừng ghi âm</button>
+            <div className="record-row">{micPhase === 'recording' ? <>
+              <button className="secondary-button recording-button" type="button" onClick={() => void stopRecording()}><Square size={15} fill="currentColor" aria-hidden="true" />Dừng ghi âm</button>
+              <div className="voice-waveform" aria-hidden="true"><span className="wave-bar" /><span className="wave-bar" /><span className="wave-bar" /><span className="wave-bar" /><span className="wave-bar" /></div>
+            </>
               : <button className="secondary-button" type="button" disabled={micPhase === 'permission' || !!pending} onClick={() => void startRecording()}><Mic size={17} aria-hidden="true" />{micPhase === 'permission' ? 'Đang xin quyền…' : 'Bắt đầu ghi âm'}</button>}
               <span className="record-timer">{duration.toFixed(1)} / 15 giây</span>
               {micPhase !== 'idle' && <button className="icon-button" aria-label="Hủy ghi âm" type="button" onClick={cancel}><X size={18} /></button>}

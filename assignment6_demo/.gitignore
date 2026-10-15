@@ -23,6 +23,7 @@ artifacts/backend/coverage.sqlite
 artifacts/frontend/playwright/
 artifacts/frontend/screenshots/initial/
 artifacts/frontend/screenshots/initial-valid/
+artifacts/validation/
 .impeccable/review/
 .impeccable/direction-question.json
 data/.*.tmp

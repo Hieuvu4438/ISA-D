@@ -5,6 +5,7 @@ import { ApiError, getProduct } from '../lib/api'
 import type { ProductDetail } from '../lib/types'
 import { ProductImage, ErrorPanel, formatMoney, categoryLabels, formatTransformation } from '../ui'
 import { ProductShopping } from '../components/ProductShopping'
+import { use3DTilt } from '../lib/use3DTilt'
 
 export function ProductPage() {
   const location = useLocation()
@@ -15,6 +16,7 @@ export function ProductPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<{ message: string; missing: boolean } | null>(null)
   const [attempt, setAttempt] = useState(0)
+  const imageTilt = use3DTilt<HTMLDivElement>({ maxTilt: 5, scale: 1.015 })
 
   useEffect(() => {
     const controller = new AbortController()
@@ -44,7 +46,10 @@ export function ProductPage() {
     {error && <ErrorPanel title={error.missing ? 'Không tìm thấy sản phẩm' : 'Chưa tải được sản phẩm'}
       message={error.message} onRetry={() => setAttempt(value => value + 1)} />}
     {!loading && product && <article className="detail-layout">
-      <div className="detail-image"><ProductImage src={product.image_url} alt={product.name} /></div>
+      <div ref={imageTilt.ref} onMouseMove={imageTilt.onMouseMove} onMouseLeave={imageTilt.onMouseLeave} className="detail-image tilt-card">
+        <ProductImage src={product.image_url} alt={product.name} />
+        <div className="glare-effect" />
+      </div>
       <div className="detail-copy">
         <h1>{product.name}</h1>
         <p className="detail-description">{product.description}</p>
@@ -60,6 +65,42 @@ export function ProductPage() {
         </dl>
         <p className="demo-note">Giá và tồn kho là dữ liệu minh họa.</p>
         <ProductShopping key={product.product_id} product={product} />
+
+        <div className="product-atelier-perks" aria-label="Cam kết Cortis Atelier">
+          <div className="perk-item">
+            <span className="perk-bullet" aria-hidden="true">✦</span>
+            <div><strong>Đồng kiểm khi nhận hàng (COD)</strong><p>Mở hộp kiểm tra đúng mẫu mã, màu sắc trước khi thanh toán.</p></div>
+          </div>
+          <div className="perk-item">
+            <span className="perk-bullet" aria-hidden="true">✦</span>
+            <div><strong>Đổi kích cỡ trong 7 ngày</strong><p>Hỗ trợ đổi kích cỡ nhanh chóng nếu không vừa vặn.</p></div>
+          </div>
+          <div className="perk-item">
+            <span className="perk-bullet" aria-hidden="true">✦</span>
+            <div><strong>Ảnh mẫu vật thực tế 100%</strong><p>Không dùng ảnh render 3D giả lập; nguồn ảnh và giấy phép minh bạch.</p></div>
+          </div>
+        </div>
+
+        <div className="product-accordion-group">
+          <details className="product-accordion-item" open>
+            <summary>Đặc điểm thiết kế & kỹ thuật chế tác</summary>
+            <div className="accordion-content">
+              <p>Sản phẩm đại diện cho ngôn ngữ thiết kế tối giản, tinh xảo của thương hiệu Cortis. Từng đường may và chi tiết kết cấu được tinh chỉnh để tôn vinh vóc dáng người mặc trong môi trường đô thị hiện đại.</p>
+            </div>
+          </details>
+          <details className="product-accordion-item">
+            <summary>Chính sách giao nhận & Thanh toán COD</summary>
+            <div className="accordion-content">
+              <p>Giao hàng toàn quốc từ 2–4 ngày làm việc. Miễn phí vận chuyển cho đơn hàng từ 2.000.000 ₫ (phí tiêu chuẩn 30.000 ₫). Thanh toán tiền mặt khi nhận hàng (COD) an toàn tuyệt đối.</p>
+            </div>
+          </details>
+          <details className="product-accordion-item">
+            <summary>Hướng dẫn bảo quản sản phẩm</summary>
+            <div className="accordion-content">
+              <p>Bảo quản nơi khô ráo, tránh ánh nắng trực tiếp thời gian dài. Giặt nhẹ bằng nước lạnh và phơi trong bóng râm để giữ màu sắc và độ bền sợi vải.</p>
+            </div>
+          </details>
+        </div>
         <section className="credit-block" aria-labelledby="product-credit-title">
           <h2 id="product-credit-title">Về bức ảnh</h2>
           <p>Tác giả: {product.image_credit.author}</p>

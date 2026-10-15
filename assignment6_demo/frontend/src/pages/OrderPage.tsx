@@ -45,6 +45,22 @@ export function OrderPage() {
         </div>
         <span className="status-label order-status">{orderStatusLabels[order.status]}</span>
       </header>
+      <div className="order-stepper" aria-label="Tiến trình đơn hàng">
+        <div className={`step-node ${['processing', 'shipped', 'delivered'].includes(order.status) ? 'is-complete' : ''} ${order.status === 'processing' ? 'is-active' : ''}`}>
+          <div className="step-circle">{['shipped', 'delivered'].includes(order.status) ? '✓' : '1'}</div>
+          <span className="step-text">Đã tiếp nhận</span>
+        </div>
+        <div className={`step-line ${['shipped', 'delivered'].includes(order.status) ? 'is-complete' : ''}`} />
+        <div className={`step-node ${['shipped', 'delivered'].includes(order.status) ? 'is-complete' : ''} ${order.status === 'shipped' ? 'is-active' : ''}`}>
+          <div className="step-circle">{order.status === 'delivered' ? '✓' : '2'}</div>
+          <span className="step-text">Đang giao hàng</span>
+        </div>
+        <div className={`step-line ${order.status === 'delivered' ? 'is-complete' : ''}`} />
+        <div className={`step-node ${order.status === 'delivered' ? 'is-complete' : ''} ${order.status === 'delivered' ? 'is-active' : ''}`}>
+          <div className="step-circle">{order.status === 'delivered' ? '✓' : '3'}</div>
+          <span className="step-text">Đã hoàn tất</span>
+        </div>
+      </div>
       <div className="order-table-wrap">
         <table className="order-table">
           <caption className="visually-hidden">Sản phẩm trong đơn hàng {order.order_id}</caption>

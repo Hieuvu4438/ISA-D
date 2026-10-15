@@ -188,4 +188,18 @@ Catalog có 181 asset tải từ Wikimedia Commons. Rà trực quan đã phát h
 
 Dùng thumbnail Wikimedia khi nguồn có sẵn; không chỉnh sửa hình ảnh local. P006 là ảnh chụp thật đã có xử lý màu chọn lọc tại nguồn. Các ảnh CC BY-SA tiếp tục theo giấy phép tương ứng khi phân phối lại.
 
-Kiểm tra trực quan: [12 ảnh gốc](assets/asset-contact-sheet.jpg), [ảnh mở rộng 1](assets/expansion-contact-1.jpg), [ảnh mở rộng 2](assets/expansion-contact-2.jpg), [ảnh mở rộng 3](assets/expansion-contact-3.jpg). Contact sheet chỉ ghép các ảnh đã tải để duyệt, không phải ảnh sản phẩm tạo mới.
+## Nguồn ảnh nhóm nhạc CORTIS (Trang trí Runway & Lookbook 3D)
+
+Các hình ảnh dưới đây được sử dụng để xây dựng trang Landing Page thời trang CORTIS 2026 Runway & Lookbook. Toàn bộ là ảnh chụp thực tế từ sự kiện và hoạt động báo chí, tải về từ Wikimedia Commons với giấy phép Creative Commons hợp lệ:
+
+| Đối tượng | Tiêu đề | Nguồn ảnh | Tác giả / Bản quyền | Giấy phép | File local |
+| --- | --- | --- | --- | --- | --- |
+| CORTIS (Full Group) | CORTIS at TikTok Awards Korea (2025) | [Nguồn](https://commons.wikimedia.org/wiki/File:Cortis_at_TikTok_Awards_Korea.jpg) | TikTok Awards Korea / Wikimedia Commons | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Ảnh](../frontend/public/images/cortis/cortis_group_tiktok.jpg) |
+| CORTIS (Full Group) | CORTIS at 40th Golden Disc Awards (2026) | [Nguồn](https://commons.wikimedia.org/wiki/File:Cortis_at_40th_Golden_Disc_Awards,_2026.jpg) | Golden Disc Awards / Wikimedia Commons | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Ảnh](../frontend/public/images/cortis/cortis_group_gda.jpg) |
+| Martin | Martin at TikTok Awards Korea | [Nguồn](https://commons.wikimedia.org/wiki/File:Cortis_Martin_at_TikTok_Awards_Korea.jpg) | Wikimedia Commons contributors | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Ảnh](../frontend/public/images/cortis/cortis_martin.jpg) |
+| James | James at Incheon Airport | [Nguồn](https://commons.wikimedia.org/wiki/File:JAMES_of_CORTIS_at_Airport_in_20251001.png) | Newsen / Wikimedia Commons | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Ảnh](../frontend/public/images/cortis/cortis_james.png) |
+| Juhoon | Juhoon at Cultwo Show | [Nguồn](https://commons.wikimedia.org/wiki/File:JUHOON_of_CORTIS_at_Cultwo_Show_in_20250914.png) | SBS Radio / Wikimedia Commons | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Ảnh](../frontend/public/images/cortis/cortis_juhoon.png) |
+| Seonghyeon | Seonghyeon at Cultwo Show | [Nguồn](https://commons.wikimedia.org/wiki/File:SEONGHYEON_of_CORTIS_at_Cultwo_Show_in_20250914.png) | SBS Radio / Wikimedia Commons | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Ảnh](../frontend/public/images/cortis/cortis_seonghyeon.png) |
+| Keonho | Keonho at TikTok Awards Korea | [Nguồn](https://commons.wikimedia.org/wiki/File:Cortis_Keonho_at_TikTok_Awards_Korea.jpg) | Wikimedia Commons contributors | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Ảnh](../frontend/public/images/cortis/cortis_keonho.jpg) |
+
+Kiểm tra trực quan: [12 ảnh gốc](assets/asset-contact-sheet.jpg), [ảnh mở rộng 1](assets/expansion-contact-1.jpg), [ảnh mở rộng 2](assets/expansion-contact-2.jpg), [ảnh mở rộng 3](assets/expansion-contact-3.jpg). Contact sheet chỉ ghép các ảnh đã tải để duyệt, không phải ảnh sản phẩm tạo mới. Chi tiết checksum và metadata ảnh CORTIS được ghi trong `frontend/public/images/cortis/manifest.json`.
