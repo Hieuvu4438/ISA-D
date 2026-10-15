@@ -160,10 +160,10 @@ export function searchMultimodal(text: string, file: File, weight: number, optio
   return request('/search/multimodal', { method: 'POST', body }, signal)
 }
 
-export function transcribe(file: File, signal?: AbortSignal): Promise<TranscriptionResponse> {
+export function transcribe(file: File, signal?: AbortSignal, language: string = 'vi-VN'): Promise<TranscriptionResponse> {
   const body = new FormData()
   body.append('audio', file)
-  body.append('language', 'vi-VN')
+  body.append('language', language)
   return request('/speech/transcriptions', { method: 'POST', body }, signal, 95_000)
 }
 

@@ -239,7 +239,7 @@ Search deadline backend 10s từ nhận đủ body qua validation/queue/inferenc
 | Part | Bắt buộc/default | Validation |
 | --- | --- | --- |
 | `audio` | Bắt buộc file | WAV RIFF PCM signed 16-bit little-endian, mono, 16,000 Hz, 1–15 giây inclusive, ≤1 MiB =1,048,576 bytes |
-| `language` | Không; default `vi-VN` | Baseline chỉ cho phép `vi-VN`; language khác 422 |
+| `language` | Không; default `vi-VN` | Hỗ trợ tiếng Việt (`vi-VN`, `vi`) và tiếng Anh (`en-US`, `en`), `auto`; mã ngôn ngữ khác trả 422 `VALIDATION_ERROR` |
 
 Không nhận WebM/Opus/MP3, không tự transcode server, không nhận path/URL. Browser mic tạo WAV theo 08. File WAV đúng signature nhưng wrong codec/rate/channels/bit depth/length/header/data size trả 422 `AUDIO_INVALID`; format khác 415 `AUDIO_TYPE_UNSUPPORTED`; vượt bytes 413 `AUDIO_TOO_LARGE`. Duration tính từ actual valid frames/16,000, không tin metadata của client. Validation phải xong trước Azure.
 

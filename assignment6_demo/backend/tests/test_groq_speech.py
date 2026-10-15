@@ -75,3 +75,17 @@ def test_groq_recognizer_no_match(mock_post):
     with pytest.raises(AppError) as exc_info:
         recognizer(b"\x00" * 32000, "vi-VN")
     assert exc_info.value.code == "SPEECH_NO_MATCH"
+
+
+@patch("requests.post")
+def test_groq_recognizer_english(mock_post):
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = {"text": "blue denim jacket"}
+    mock_post.return_value = mock_response
+
+    recognizer = GroqSpeechRecognizer("test-key", model="whisper-large-v3")
+    text = recognizer(b"\x00" * 32000, "en-US")
+    assert text == "blue denim jacket"
+    sent_data = mock_post.call_args[1]["data"]
+    assert sent_data["language"] == "en"

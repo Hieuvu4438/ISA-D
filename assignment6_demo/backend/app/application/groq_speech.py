@@ -51,7 +51,14 @@ class GroqSpeechRecognizer:
             raise AppError(502, "SPEECH_AUTH_FAILED", "Chưa cấu hình GROQ_API_KEY.")
 
         wav_payload = audio_bytes if (audio_bytes and audio_bytes[:4] == b"RIFF") else _pcm_to_wav(pcm)
-        iso_language = "vi" if language in ("vi-VN", "vi", "vie") else language
+        if language in ("vi-VN", "vi", "vie"):
+            iso_language = "vi"
+        elif language in ("en-US", "en", "eng"):
+            iso_language = "en"
+        elif language == "auto":
+            iso_language = None
+        else:
+            iso_language = language
 
         headers = {
             "Authorization": f"Bearer {self._api_key}",
@@ -61,10 +68,11 @@ class GroqSpeechRecognizer:
         }
         data = {
             "model": self._model,
-            "language": iso_language,
             "temperature": "0",
             "response_format": "json",
         }
+        if iso_language:
+            data["language"] = iso_language
 
         try:
             response = requests.post(

@@ -98,7 +98,7 @@ def test_recognized_transcript_and_timing():
 
 @pytest.mark.parametrize(
     "key,region,language",
-    [("", "southeastasia", "vi-VN"), ("test-only", "eastus", "vi-VN"), ("test-only", "southeastasia", "en-US")],
+    [("", "southeastasia", "vi-VN"), ("test-only", "eastus", "vi-VN"), ("test-only", "southeastasia", "fr-FR")],
 )
 def test_missing_or_unsupported_configuration(key, region, language):
     service = SpeechService(
@@ -113,8 +113,36 @@ def test_missing_or_unsupported_configuration(key, region, language):
 def test_language_and_empty_recognition():
     service = SpeechService(settings(), provider=lambda *_: "")
     assert service.configuration_state == "configured_unverified"
-    assert_error(lambda: asyncio.run(service.transcribe(wav(), "en-US")), "VALIDATION_ERROR", 422)
+    assert_error(lambda: asyncio.run(service.transcribe(wav(), "fr-FR")), "VALIDATION_ERROR", 422)
     assert_error(lambda: asyncio.run(service.transcribe(wav())), "SPEECH_NO_MATCH", 422)
+    service.close()
+
+
+def test_multilingual_speech_support():
+    calls = []
+
+    def provider(pcm, language):
+        calls.append((pcm, language))
+        return "Black running shoes"
+
+    service = SpeechService(settings(), provider=provider)
+    result = asyncio.run(service.transcribe(wav(), "en-US"))
+    assert result["transcript"] == "Black running shoes"
+    assert result["language"] == "en-US"
+    assert calls[-1][1] == "en-US"
+
+    result_en = asyncio.run(service.transcribe(wav(), "en"))
+    assert result_en["transcript"] == "Black running shoes"
+    assert result_en["language"] == "en-US"
+    assert calls[-1][1] == "en-US"
+
+    result_vi = asyncio.run(service.transcribe(wav(), "vi-VN"))
+    assert result_vi["language"] == "vi-VN"
+    assert calls[-1][1] == "vi-VN"
+
+    result_auto = asyncio.run(service.transcribe(wav(), "auto"))
+    assert result_auto["language"] == "auto"
+    assert calls[-1][1] == "auto"
     service.close()
 
 
