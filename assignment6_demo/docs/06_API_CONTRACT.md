@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Amendment29: SearchOptions/catalog/suggestions thêm strict interpret_exclusions; search/catalog thêm exclusion_interpretation và EXCLUSION_QUERY_AMBIGUOUS/EXCLUSION_FILTER_CONFLICT theo [29](29_SEARCH_EXCLUSIONS.md).
+
 POST admin/products/Pnnn/draft/publish `{version}` thêm theo [28](28_CATALOG_PUBLICATION.md): explicit admin intent, bounded staging, atomic activation và publication fingerprints. Không deploy public.
 
 Admin product drafts API: list/get/save/upload private photo/preflight/discard theo [27](27_CATALOG_AUTHORING.md), strict DTO/OpenAPI/intent/epoch/CAS. published=false luôn; chưa có API publication.

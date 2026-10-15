@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Search/catalog/suggestions hiểu loại trừ metadata như “áo thun; không màu đỏ và đen; dưới 1 triệu”, có notice, opt-out và conflict recovery theo [contract29](docs/29_SEARCH_EXCLUSIONS.md). Không phải xử lý mọi dạng phủ định tự nhiên; [evidence](artifacts/backend/EXCLUSIONS_REPORT.md) ghi giới hạn và kiểm thử thật.
+
 Admin→Sản phẩm có **Xuất bản sản phẩm** để cập nhật đồng thời catalog, ảnh và indexCPU; giữ sau restart, stock sản phẩm mới0. [Contract28](docs/28_CATALOG_PUBLICATION.md), [evidence](artifacts/backend/CATALOG_PUBLICATION_REPORT.md). Các dòng “chưa publication” bên dưới là trạng thái lịch sử của mốc27. Khi đã có runtime release, không sửa seed/build index seed để cập nhật cửa hàng đang chạy; dùng authoring/publish. Relevant cần calibration theo index mới, nearest vẫn hoạt động.
 
 Ưu tiên mới: thanh toán giữ COD/demo; tập trung search và quản lý sản phẩm. Admin→Sản phẩm có soạn metadata/ảnh nguồn, bản nháp riêng và kiểm tra encoder CPU; **chưa xuất bản catalog/index**. [Contract27](docs/27_CATALOG_AUTHORING.md), [evidence](artifacts/backend/CATALOG_DRAFTS_REPORT.md).

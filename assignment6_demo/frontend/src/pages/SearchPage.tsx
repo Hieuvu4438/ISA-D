@@ -8,6 +8,7 @@ import { MicrophoneRecorder } from '../lib/voice';
 import type { Category, ProductSummary, QueryMode, SearchOptions, SearchResponse, SearchResult } from '../lib/types';
 import { categoryLabels, ErrorPanel, formatMoney, ProductImage } from '../ui';
 import { PriceInterpretationNotice } from '../components/PriceInterpretationNotice';
+import { ExclusionInterpretationNotice } from '../components/ExclusionInterpretationNotice';
 
 const modes = [
   { id: 'text' as const, label: 'Mô tả', icon: Type },
@@ -244,6 +245,7 @@ export function SearchPage() {
             <label htmlFor="result-policy">Cách hiển thị</label><select id="result-policy" data-testid="result-policy" value={draft.options.result_policy} onChange={event => updateOptions({ result_policy: event.target.value as SearchOptions['result_policy'] })}><option value="nearest">Sản phẩm gần nhất</option><option value="relevant" disabled={!relevantAvailable}>Chỉ sản phẩm liên quan</option></select><p>{relevantAvailable ? 'Liên quan: chỉ giữ sản phẩm đạt ngưỡng đã hiệu chỉnh.' : 'Chưa có ngưỡng liên quan cho lựa chọn này.'}</p>
             {mode !== 'image' && <><label htmlFor="search-strategy">Cách tìm kiếm</label><select id="search-strategy" value={draft.options.search_strategy ?? 'semantic'} onChange={event => updateOptions({ search_strategy: event.target.value as SearchOptions['search_strategy'] })}><option value="hybrid">Mô tả + từ khóa</option><option value="semantic">Chỉ tương đồng AI</option></select></>}
             {mode !== 'image' && <label className="checkbox-label"><input type="checkbox" checked={draft.options.interpret_price !== false} onChange={event => updateOptions({ interpret_price: event.target.checked })} />Tự hiểu điều kiện giá trong mô tả</label>}
+            {mode !== 'image' && <label className="checkbox-label"><input type="checkbox" checked={draft.options.interpret_exclusions !== false} onChange={event => updateOptions({ interpret_exclusions: event.target.checked })} />Tự hiểu loại trừ màu, hãng, danh mục</label>}
             <label htmlFor="search-sort">Sắp xếp kết quả</label><select id="search-sort" value={draft.options.sort ?? 'relevance'} onChange={event => updateOptions({ sort: event.target.value as SearchOptions['sort'] })}><option value="relevance">Phù hợp nhất</option><option value="price_asc">Giá tăng dần</option><option value="price_desc">Giá giảm dần</option><option value="name">Tên sản phẩm</option></select>
           </div><button className="secondary-button filter-apply" type="button" disabled={!!pending} onClick={() => void submit()}>Áp dụng và tìm lại<ArrowRight size={15} aria-hidden="true" /></button>
         </div>
@@ -253,6 +255,7 @@ export function SearchPage() {
           {response.meta.ranking_strategy === 'rrf' && <p>Thứ hạng kết hợp mô tả AI và từ khóa. Điểm cosine chỉ thể hiện độ tương đồng AI.</p>}
           {!!response.meta.corrections?.length && <p>Từ khóa gần đúng: {response.meta.corrections.map(item => `${item.input} → ${item.matched}`).join(', ')}.</p>}
           <PriceInterpretationNotice plan={response.meta.price_interpretation} showBounds={false} />
+          <ExclusionInterpretationNotice plan={response.meta.exclusion_interpretation} />
           <div className="effective-filters">{effective?.size && <span>Cỡ {effective.size}</span>}{effective?.category && <span>{categoryLabels[effective.category]}</span>}{effective?.brand && <span>{effective.brand}</span>}{effective?.min_price != null && <span>Từ {formatMoney(effective.min_price)}</span>}{effective?.max_price != null && <span>Đến {formatMoney(effective.max_price)}</span>}{effective?.in_stock && <span>Chỉ còn hàng</span>}{response.query.text_weight != null && <span>Mô tả {Math.round(response.query.text_weight * 100)}% / ảnh {Math.round((1 - response.query.text_weight) * 100)}%</span>}</div>
           {dirty && <p className="draft-notice" role="status">Đã đổi điều kiện, hãy tìm lại. Kết quả bên dưới vẫn thuộc lượt tìm trước.</p>}
           <button type="button" className="text-link" onClick={() => { state.setResponse(mode, null); setError(''); }}>Về danh mục sản phẩm</button>

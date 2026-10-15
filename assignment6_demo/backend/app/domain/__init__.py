@@ -61,6 +61,7 @@ class SearchOptions(StrictModel):
     sort: Literal["relevance", "price_asc", "price_desc", "name"] = "relevance"
     filters: Filters = Field(default_factory=Filters)
     interpret_price: StrictBool = True
+    interpret_exclusions: StrictBool = True
 
 
 class TextRequest(StrictModel):

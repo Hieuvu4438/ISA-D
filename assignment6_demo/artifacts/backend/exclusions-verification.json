@@ -1,0 +1,30 @@
+{
+  "base_commit": "d5bd9d5ee84634b67a044e04fa3619d2c08697eb",
+  "source_sha256": {
+    "backend/app/application/exclusion_query.py": "59d4229e2e0d059b57d14081ef3f5417615fa72a153446e428a239e23cd4a6df",
+    "backend/app/application/catalog_search.py": "29d298b88c9fb92a7b90fd8c7a5936ce2f344718bd73270e458ba9b21562b0cd",
+    "backend/app/application/search_service.py": "5345c1f0324bff43ba0b46d14be5c3bc96677503c966f316b07942924947e8df",
+    "backend/app/domain/__init__.py": "fbdaaedae795655b8c517a8a7ca7c85076f03938031411de3f5fc53035231cb0",
+    "backend/app/presentation/catalog.py": "129974df9d1b49c153d1426a6e8d42d5ab4235e9563a537dde80cb73681e4e2e",
+    "backend/tests/test_exclusion_query.py": "123af1ef6c92688822a5f31f43d7883cc78f13841c9ba494923c2ce19eb1efbb",
+    "frontend/src/components/ExclusionInterpretationNotice.tsx": "3e0bf5ed35c062329ad657ec086d9971729a8ad631107f1cae2c651f7387b348",
+    "frontend/src/pages/BrowsePage.tsx": "283fa1539b1c67af30ad481a085f1796f63796fe43a8997367762e2941ef8a6d",
+    "frontend/src/pages/SearchPage.tsx": "349cf30a6f8b6fadfc178e0295b9e0e385c70986ce700ebc058b7b9deea37e12",
+    "frontend/src/lib/api.ts": "bc118aeffc4a3767fd774e5c02674d72bf7fc90175e183356d2086f23a0a6dd1",
+    "frontend/src/lib/types.ts": "c4355ab82e35d79682e8b469d542345fc3384714469b3e29425e160301c16bb4",
+    "frontend/e2e/exclusions.spec.ts": "55749842347a7e2ed4443835b515f6b28216b14a57c1cd269e6e5f429e430d85",
+    "docs/29_SEARCH_EXCLUSIONS.md": "5e1a4aead3bbc925131cffe62a23d031c9fe4d24715b5f326ba7978084fced96"
+  },
+  "checks": {
+    "backend_full_before_final_two_guards": 397,
+    "final_targeted": 146,
+    "frontend_units": 17,
+    "real_browser_final": 3,
+    "real_browser_regression": 8,
+    "architecture_modules": 47
+  },
+  "report": "EXCLUSIONS_REPORT.md",
+  "speech_calls": 0,
+  "independent_relevance_quality": "pending",
+  "full_ecommerce_completion": false
+}

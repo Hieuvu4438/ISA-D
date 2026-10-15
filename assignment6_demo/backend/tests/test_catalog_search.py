@@ -144,7 +144,7 @@ def test_suggestions_limits_and_color_filter(api):
 def test_browse_openapi_parameters_match_public_wire_contract(api):
     schema = api.get("/openapi.json").json()
     parameters = {row["name"]: row["schema"] for row in schema["paths"]["/api/v1/catalog"]["get"]["parameters"]}
-    assert set(parameters) == {"q", "limit", "offset", "sort", "category", "brand", "color", "size", "min_price", "max_price", "in_stock", "interpret_price"}
+    assert set(parameters) == {"q", "limit", "offset", "sort", "category", "brand", "color", "size", "min_price", "max_price", "in_stock", "interpret_price", "interpret_exclusions"}
     assert parameters["limit"]["maximum"] == 100 and parameters["limit"]["default"] == 24
     assert parameters["sort"]["enum"] == ["relevance", "price_asc", "price_desc", "name"]
     suggestions = {row["name"]: row["schema"] for row in schema["paths"]["/api/v1/suggestions"]["get"]["parameters"]}

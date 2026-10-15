@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+Checkbox/notice loại trừ màu-hãng-category, URL opt-out và recovery theo [29](29_SEARCH_EXCLUSIONS.md). Không âm thầm tăng hạng entity đã loại; các câu chưa rõ trả lỗi giữ query/filter.
+
 Publication28 thêm nút/xác nhận inline, loading, conflict recovery và thông báo reload cửa hàng. Product mới stock0; ngưỡng relevant cần hiệu chỉnh index mới. [28](28_CATALOG_PUBLICATION.md) là contract hiện tại.
 
 Admin→Sản phẩm authoring theo [27](27_CATALOG_AUTHORING.md): list/editor/source/preview/preflight/discard, cảnh báo dirty/stale recovery. Không trình bày bản nháp như sản phẩm đã xuất bản.

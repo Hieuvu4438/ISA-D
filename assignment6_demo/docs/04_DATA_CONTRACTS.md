@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+Amendment29 không đổi schema catalog/vector: exclusion parser dùng metadata hãng/màu/category hiện có, response plan và lexical fingerprint version mới theo [29](29_SEARCH_EXCLUSIONS.md). Không suy màu ảnh thành metadata.
+
 Publication amendment: catalog_publication SQLite giữ durable pointer/hash/revision, immutable releases dưới runtime/catalog/releases theo [28](28_CATALOG_PUBLICATION.md). products.json seed không đổi; app startup đọc release đã kích hoạt, tồn kho ledger giữ nguyên.
 
 Authoring amendment: catalog_drafts và private content-addressed photo bytes/provenance theo [27](27_CATALOG_AUTHORING.md). Không đổi products.json/index/live catalog. Ảnh data/authoring/P181 chỉ là unpublished fixture có source riêng.

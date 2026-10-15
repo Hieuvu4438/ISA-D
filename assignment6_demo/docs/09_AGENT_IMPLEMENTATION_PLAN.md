@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+E2 amendment29: hard metadata exclusions trước ranking, catalog facets/suggestions/URL opt-out, search notice và evidence riêng tại [29](29_SEARCH_EXCLUSIONS.md). Positive intent/frozen independent relevance/catalog repairs vẫn pending; không đánh dấu E2 hoặc hệ thống complete. Thanh toán giữ COD/demo.
+
 Mốc publication28: immutable catalog/photo release + incremental realCPU index build + durable SQLite pointer/audit + reader drain/references/restart. Admin create/update/photo/publish đã có, archive/restore/color variants và search quality/data review vẫn cần làm. Thanh toán giữ COD/demo theo ưu tiên mới.
 
 Ưu tiên mới15/10: thanh toán đủ COD/demo; dừng mở rộng payment/refund provider và edge cases thương mại nâng cao. Tập trung search và product management để sớm bàn giao. Authoring27 có draft/CAS/private photo/provenance/CPU preflight; publication catalog/index vẫn là việc tiếp theo, chưa complete E5.

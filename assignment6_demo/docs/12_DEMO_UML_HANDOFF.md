@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+Sequence loại trừ metadata và conflict recovery tại [29](29_SEARCH_EXCLUSIONS.md): price→exclusion parsing→hard filtering→rank. Code mapping ExclusionInterpreter/ExclusionPlan → CatalogSearch/SearchService → catalog/SearchPage/BrowsePage. Mermaid không thay file VP editable.
+
 Sequence publication + code mapping tại [28](28_CATALOG_PUBLICATION.md): prepare/build→drain→DB pointer/audit→replace refs; không vẽ lưu draft như publication. VP editable vẫn pending.
 
 Authoring sequence/code mapping tại [27](27_CATALOG_AUTHORING.md); draft tách live snapshot, preflight không publication. Editable VP vẫn pending.

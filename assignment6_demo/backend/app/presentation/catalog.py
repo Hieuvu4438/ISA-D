@@ -13,6 +13,7 @@ def mount_catalog(application, query_fields):
         properties = {"q": {"type": "string", "maxLength": 500},
                       "limit": {"type": "integer", "minimum": 1, "maximum": 10 if suggestions else 100, "default": 6 if suggestions else 24}}
         properties["interpret_price"] = {"type": "boolean", "default": True}
+        properties["interpret_exclusions"] = {"type": "boolean", "default": True}
         if not suggestions:
             properties.update({"offset": {"type": "integer", "minimum": 0, "maximum": 1_000_000, "default": 0},
                                "sort": {"type": "string", "enum": ["relevance", "price_asc", "price_desc", "name"], "default": "relevance"},
@@ -34,7 +35,10 @@ def mount_catalog(application, query_fields):
 
     @router.get("/catalog", openapi_extra=query_schema())
     def browse(request: Request):
-        query_fields(request, ("q", "category", "brand", "color", "size", "min_price", "max_price", "in_stock", "sort", "offset", "limit", "interpret_price"))
+        query_fields(request, ("q", "category", "brand", "color", "size", "min_price", "max_price", "in_stock", "sort", "offset", "limit", "interpret_price", "interpret_exclusions"))
+        parse_exclusions = request.query_params.get("interpret_exclusions", "true")
+        if parse_exclusions not in ("true", "false"):
+            raise AppError(422, "VALIDATION_ERROR", "Tự hiểu loại trừ phải là true/false.", "interpret_exclusions")
         parse_price = request.query_params.get("interpret_price", "true")
         if parse_price not in ("true", "false"):
             raise AppError(422, "VALIDATION_ERROR", "Tự hiểu giá phải là true/false.", "interpret_price")
@@ -57,12 +61,15 @@ def mount_catalog(application, query_fields):
         if sort not in ("relevance", "price_asc", "price_desc", "name"):
             raise AppError(422, "VALIDATION_ERROR", "Cách sắp xếp không hợp lệ.", "sort")
         result = service(request).browse(request.query_params.get("q", ""), filters, sort,
-                                         number(request, "offset", 0, 0, 1_000_000), number(request, "limit", 24, 1, 100), parse_price=parse_price == "true")
+                                         number(request, "offset", 0, 0, 1_000_000), number(request, "limit", 24, 1, 100), parse_price=parse_price == "true", parse_exclusions=parse_exclusions == "true")
         return {"request_id": request.state.request_id, **result}
 
     @router.get("/suggestions", openapi_extra=query_schema(True))
     def suggestions(request: Request):
-        query_fields(request, ("q", "limit", "interpret_price"))
+        query_fields(request, ("q", "limit", "interpret_price", "interpret_exclusions"))
+        parse_exclusions = request.query_params.get("interpret_exclusions", "true")
+        if parse_exclusions not in ("true", "false"):
+            raise AppError(422, "VALIDATION_ERROR", "Tự hiểu loại trừ phải là true/false.", "interpret_exclusions")
         parse_price = request.query_params.get("interpret_price", "true")
         if parse_price not in ("true", "false"):
             raise AppError(422, "VALIDATION_ERROR", "Tự hiểu giá phải là true/false.", "interpret_price")
@@ -70,6 +77,6 @@ def mount_catalog(application, query_fields):
         if len(text) > 500:
             raise AppError(422, "TEXT_TOO_LONG", "Mô tả tối đa 500 ký tự.", "q")
         return {"request_id": request.state.request_id,
-                "products": service(request).suggestions(text, number(request, "limit", 6, 1, 10), parse_price=parse_price == "true"), "retrieval": "lexical"}
+                "products": service(request).suggestions(text, number(request, "limit", 6, 1, 10), parse_price=parse_price == "true", parse_exclusions=parse_exclusions == "true"), "retrieval": "lexical"}
 
     application.include_router(router)

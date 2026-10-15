@@ -6,6 +6,7 @@ import type { BrowseResponse, Category, ProductSummary } from '../lib/types'
 import { categoryLabels, ErrorPanel } from '../ui'
 import { ProductCard } from './SearchPage'
 import { PriceInterpretationNotice } from '../components/PriceInterpretationNotice'
+import { ExclusionInterpretationNotice } from '../components/ExclusionInterpretationNotice'
 
 export function BrowsePage() {
   const [params, setParams] = useSearchParams()
@@ -22,6 +23,8 @@ export function BrowsePage() {
   const [focused, setFocused] = useState(false)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const parsePrice = params.get('interpret_price') !== 'false'
+  const parseExclusions = params.get('interpret_exclusions') !== 'false'
+  const [exclusionsChecked, setExclusionsChecked] = useState(parseExclusions)
   const [priceChecked, setPriceChecked] = useState(parsePrice)
   const [stockChecked, setStockChecked] = useState(params.get('in_stock') === 'true')
   const navigate = useNavigate()
@@ -30,6 +33,7 @@ export function BrowsePage() {
     const current = new URLSearchParams(key)
     setLoading(true); setError(''); setPriceError(''); setInvalidRequest(false); setQuery(current.get('q') ?? '')
     setPriceChecked(current.get('interpret_price') !== 'false'); setStockChecked(current.get('in_stock') === 'true')
+    setExclusionsChecked(current.get('interpret_exclusions') !== 'false')
     getCatalogPage(new URLSearchParams(key), controller.signal).then(result => {
       if (!controller.signal.aborted) setData(result)
     }).catch(reason => { if (!controller.signal.aborted) { setError(reason instanceof Error ? reason.message : 'Chưa tải được sản phẩm.'); setInvalidRequest(reason instanceof ApiError && reason.status === 422) } })
@@ -40,12 +44,12 @@ export function BrowsePage() {
     const controller = new AbortController()
     setSuggestions([]); setSelected(-1)
     const timer = window.setTimeout(() => {
-      if (query.trim().length >= 2) getSuggestions(query, controller.signal, parsePrice).then(result => {
+      if (query.trim().length >= 2) getSuggestions(query, controller.signal, parsePrice, parseExclusions).then(result => {
         if (!controller.signal.aborted) setSuggestions(result.products)
       }).catch(() => { /* Suggestions are optional; the search form stays available. */ })
     }, 250)
     return () => { window.clearTimeout(timer); controller.abort() }
-  }, [query, parsePrice])
+  }, [query, parsePrice, parseExclusions])
   function change(name: string, value: string) {
     const next = new URLSearchParams(params)
     if (value) next.set(name, value); else next.delete(name)
@@ -90,6 +94,7 @@ export function BrowsePage() {
           <form className="browse-price" key={key} onSubmit={applyPrice} onChange={() => setPriceError('')}><fieldset><legend>Khoảng giá (VND)</legend><label htmlFor="browse-min">Thấp nhất</label><input name="min_price" id="browse-min" type="number" min="0" max="1000000000" step="1" defaultValue={params.get('min_price') ?? ''} placeholder="Không giới hạn" aria-invalid={!!priceError} aria-describedby={priceError ? 'browse-price-error' : undefined} /><label htmlFor="browse-max">Cao nhất</label><input name="max_price" id="browse-max" type="number" min="0" max="1000000000" step="1" defaultValue={params.get('max_price') ?? ''} placeholder="Không giới hạn" aria-invalid={!!priceError} aria-describedby={priceError ? 'browse-price-error' : undefined} /></fieldset>{priceError && <p id="browse-price-error" role="alert">{priceError}</p>}<button className="secondary-button" type="submit">Áp dụng khoảng giá</button></form>
           <label className="checkbox-label"><input type="checkbox" checked={stockChecked} onChange={event => { setStockChecked(event.target.checked); change('in_stock', event.target.checked ? 'true' : '') }} />Chỉ còn hàng</label>
           <label className="checkbox-label"><input type="checkbox" checked={priceChecked} onChange={event => { setPriceChecked(event.target.checked); change('interpret_price', event.target.checked ? '' : 'false') }} />Tự hiểu điều kiện giá trong mô tả</label>
+          <label className="checkbox-label"><input type="checkbox" checked={exclusionsChecked} onChange={event => { setExclusionsChecked(event.target.checked); change('interpret_exclusions', event.target.checked ? '' : 'false') }} />Tự hiểu loại trừ màu, hãng, danh mục</label>
         </div>
       </aside>
       <section className="catalog-content" aria-label="Sản phẩm trong bộ sưu tập" aria-busy={loading}>
@@ -98,6 +103,7 @@ export function BrowsePage() {
         {!!activeFilters.length && <div className="browse-active" aria-label="Bộ lọc đang áp dụng">{activeFilters.map(name => <button className="secondary-button" type="button" key={name} onClick={() => change(name, '')}>{name === 'category' ? categoryLabels[params.get(name) as Category] ?? params.get(name) : name === 'in_stock' ? 'Còn hàng' : name === 'min_price' ? `Từ ${params.get(name)} VND` : name === 'max_price' ? `Đến ${params.get(name)} VND` : params.get(name)}<X size={14} aria-hidden="true" /><span className="visually-hidden">Xóa bộ lọc {name}</span></button>)}</div>}
         {!!shown?.corrections.length && <p className="draft-notice">Đã tìm thêm từ gần đúng: {shown.corrections.map(item => `${item.input} → ${item.matched}`).join(', ')}.</p>}
         <PriceInterpretationNotice plan={shown?.price_interpretation} />
+        <ExclusionInterpretationNotice plan={shown?.exclusion_interpretation} />
         {error && <ErrorPanel message={error} onRetry={() => setAttempt(value => value + 1)} />}
         {invalidRequest && <button className="secondary-button" onClick={() => setParams({})}>Đặt lại tìm kiếm</button>}
         {loading && <p className="page-loading" role="status">Đang cập nhật bộ sưu tập…</p>}

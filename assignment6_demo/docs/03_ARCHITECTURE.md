@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+Application ExclusionInterpreter/ExclusionPlan tách metadata negatives khỏi lexical score, dùng chung catalog/suggestions/semantic/hybrid theo [29](29_SEARCH_EXCLUSIONS.md); không gọi Data inference/provider.
+
 Publication28 thay quy tắc chỉ update offline/restart cũ: CatalogPublication prepare immutable catalog/index trên runner, CatalogGate drain HTTP, transaction activate pointer/audit rồi thay các service refs không await. Startup đọc release từ commerce DB; [28](28_CATALOG_PUBLICATION.md) ghi invariant/sequence.
 
 Authoring amendment: routes catalog_drafts→CatalogDraftService→CatalogDraftRepository/DraftImageStorage, DTO domain/catalog_draft; main DI. Preflight computation bounded/pure, commit sau CAS/epoch recheck, sequence tại [27](27_CATALOG_AUTHORING.md). Publication vẫn pending.

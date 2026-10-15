@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Loại trừ metadata dùng chung search/catalog/suggestions: [29_SEARCH_EXCLUSIONS.md](29_SEARCH_EXCLUSIONS.md).
+
 Xuất bản catalog/ảnh/index đồng bộ, durable pointer và restart: [28_CATALOG_PUBLICATION.md](28_CATALOG_PUBLICATION.md).
 
 Soạn sản phẩm/ảnh riêng cho admin (chưa publication): [27_CATALOG_AUTHORING.md](27_CATALOG_AUTHORING.md). Thanh toán giữ mức COD/demo theo yêu cầu ưu tiên mới; tập trung search và quản lý sản phẩm.

@@ -1,0 +1,1289 @@
+{
+  "scope": "Live CPU hard exclusion properties, not independent relevance quality or speech recognition",
+  "speech_calls": 0,
+  "results": [
+    {
+      "mode": "text",
+      "strategy": "semantic",
+      "response": {
+        "request_id": "b825cc2c-a9a1-4860-abcf-06691d0bfd7e",
+        "query": {
+          "mode": "text",
+          "text": "áo thun; không màu đỏ",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7260560989379883,
+            "component_scores": {
+              "text": 0.7260561585426331,
+              "image": null
+            },
+            "rank_score": 0.7260560989379883,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.7259869575500488,
+            "component_scores": {
+              "text": 0.7259869575500488,
+              "image": null
+            },
+            "rank_score": 0.7259869575500488,
+            "lexical_score": null
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7249299883842468,
+            "component_scores": {
+              "text": 0.7249299883842468,
+              "image": null
+            },
+            "rank_score": 0.7249299883842468,
+            "lexical_score": null
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.7227315902709961,
+            "component_scores": {
+              "text": 0.7227317094802856,
+              "image": null
+            },
+            "rank_score": 0.7227315902709961,
+            "lexical_score": null
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.7139306664466858,
+            "component_scores": {
+              "text": 0.7139307260513306,
+              "image": null
+            },
+            "rank_score": 0.7139306664466858,
+            "lexical_score": null
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7072833180427551,
+            "component_scores": {
+              "text": 0.7072833180427551,
+              "image": null
+            },
+            "rank_score": 0.7072833180427551,
+            "lexical_score": null
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7051339745521545,
+            "component_scores": {
+              "text": 0.7051339745521545,
+              "image": null
+            },
+            "rank_score": 0.7051339745521545,
+            "lexical_score": null
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.7042543888092041,
+            "component_scores": {
+              "text": 0.7042543292045593,
+              "image": null
+            },
+            "rank_score": 0.7042543888092041,
+            "lexical_score": null
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.6998569965362549,
+            "component_scores": {
+              "text": 0.6998569965362549,
+              "image": null
+            },
+            "rank_score": 0.6998569965362549,
+            "lexical_score": null
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.6936633586883545,
+            "component_scores": {
+              "text": 0.6936632990837097,
+              "image": null
+            },
+            "rank_score": 0.6936633586883545,
+            "lexical_score": null
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.6928102374076843,
+            "component_scores": {
+              "text": 0.6928102970123291,
+              "image": null
+            },
+            "rank_score": 0.6928102374076843,
+            "lexical_score": null
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.6889045238494873,
+            "component_scores": {
+              "text": 0.6889045238494873,
+              "image": null
+            },
+            "rank_score": 0.6889045238494873,
+            "lexical_score": null
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P044",
+              "name": "Áo thun Hard Rock Cafe Buenos Aires màu nâu",
+              "category": "t_shirt",
+              "brand": "Hard Rock Cafe",
+              "color": "nâu, xanh và vàng",
+              "price_vnd": 1840000,
+              "in_stock": false,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P044"
+            },
+            "score": 0.5944920778274536,
+            "component_scores": {
+              "text": 0.5944920778274536,
+              "image": null
+            },
+            "rank_score": 0.5944920778274536,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+          "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.13300000136950985,
+            "encoding": 8.819900001981296,
+            "retrieval": 0.47479999921051785,
+            "filtering": 0.33770000300137326,
+            "threshold": 0,
+            "ranking": 0.005199999577598646,
+            "hydration": 0.08130000060191378,
+            "total": 11.746700001822319
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 13
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 13,
+              "output_count": 13
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 13,
+              "output_count": 13
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 13,
+              "output_count": 13
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 90,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "áo thun; không màu đỏ"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "không màu đỏ",
+                "field": "color",
+                "value": "đỏ"
+              }
+            ],
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "hybrid",
+      "response": {
+        "request_id": "ade7423a-4950-4e3f-8e2b-b01c402b473d",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun; không màu đỏ",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7249299883842468,
+            "component_scores": {
+              "text": 0.7249299883842468,
+              "image": null
+            },
+            "rank_score": 0.03149801587301587,
+            "lexical_score": 4.405436037919885
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7051339745521545,
+            "component_scores": {
+              "text": 0.7051339745521545,
+              "image": null
+            },
+            "rank_score": 0.03131881575727918,
+            "lexical_score": 4.476952072756543
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7072833180427551,
+            "component_scores": {
+              "text": 0.7072833180427551,
+              "image": null
+            },
+            "rank_score": 0.031024531024531024,
+            "lexical_score": 4.4230999846994745
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7260560989379883,
+            "component_scores": {
+              "text": 0.7260561585426331,
+              "image": null
+            },
+            "rank_score": 0.030886196246139225,
+            "lexical_score": 4.353280681803588
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.7259869575500488,
+            "component_scores": {
+              "text": 0.7259869575500488,
+              "image": null
+            },
+            "rank_score": 0.0304147465437788,
+            "lexical_score": 4.3361689111189765
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.6936633586883545,
+            "component_scores": {
+              "text": 0.6936632990837097,
+              "image": null
+            },
+            "rank_score": 0.0304147465437788,
+            "lexical_score": 4.458856263560151
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.7042543888092041,
+            "component_scores": {
+              "text": 0.7042543292045593,
+              "image": null
+            },
+            "rank_score": 0.030090497737556562,
+            "lexical_score": 4.405436037919885
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.7139306664466858,
+            "component_scores": {
+              "text": 0.7139307260513306,
+              "image": null
+            },
+            "rank_score": 0.02946912242686891,
+            "lexical_score": 4.3361689111189765
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.6998569965362549,
+            "component_scores": {
+              "text": 0.6998569965362549,
+              "image": null
+            },
+            "rank_score": 0.029418126757516764,
+            "lexical_score": 4.353280681803588
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.7227315902709961,
+            "component_scores": {
+              "text": 0.7227317094802856,
+              "image": null
+            },
+            "rank_score": 0.0293236301369863,
+            "lexical_score": 4.189869938233354
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.6889045238494873,
+            "component_scores": {
+              "text": 0.6889045238494873,
+              "image": null
+            },
+            "rank_score": 0.02904040404040404,
+            "lexical_score": 4.370528043514872
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.6928102374076843,
+            "component_scores": {
+              "text": 0.6928102970123291,
+              "image": null
+            },
+            "rank_score": 0.028790389395194696,
+            "lexical_score": 4.353280681803588
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P044",
+              "name": "Áo thun Hard Rock Cafe Buenos Aires màu nâu",
+              "category": "t_shirt",
+              "brand": "Hard Rock Cafe",
+              "color": "nâu, xanh và vàng",
+              "price_vnd": 1840000,
+              "in_stock": false,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P044"
+            },
+            "score": 0.5944920778274536,
+            "component_scores": {
+              "text": 0.5944920778274536,
+              "image": null
+            },
+            "rank_score": 0.02758751902587519,
+            "lexical_score": 4.302345796982735
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+          "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.15390000044135377,
+            "encoding": 10.09909999993397,
+            "retrieval": 0.4666999993787613,
+            "filtering": 0.3257999997003935,
+            "threshold": 0,
+            "ranking": 0.161899999511661,
+            "hydration": 0.08030000026337802,
+            "total": 13.255099998787045
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 13
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 13,
+              "output_count": 13
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 13,
+              "output_count": 13
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 13,
+              "output_count": 13
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "43119500d3bfcec305b6eee5736b253cb031870f2060f47b0c293b153b2de4a4",
+          "corrections": [],
+          "inventory_revision": 90,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "áo thun; không màu đỏ"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "không màu đỏ",
+                "field": "color",
+                "value": "đỏ"
+              }
+            ],
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "hybrid",
+      "response": {
+        "request_id": "1083bace-6d89-4382-91c1-4d1e189620c3",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun; không màu đỏ",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1440,
+            "byte_size": 71133
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.854778528213501,
+            "component_scores": {
+              "text": 0.7249299883842468,
+              "image": 0.6278315782546997
+            },
+            "rank_score": 0.032018442622950824,
+            "lexical_score": 4.405436037919885
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.8028073906898499,
+            "component_scores": {
+              "text": 0.7051339745521545,
+              "image": 0.5653785467147827
+            },
+            "rank_score": 0.03131881575727918,
+            "lexical_score": 4.476952072756543
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.8129769563674927,
+            "component_scores": {
+              "text": 0.7072833180427551,
+              "image": 0.5793233513832092
+            },
+            "rank_score": 0.03125763125763126,
+            "lexical_score": 4.4230999846994745
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.7878835201263428,
+            "component_scores": {
+              "text": 0.6936632990837097,
+              "image": 0.5532309412956238
+            },
+            "rank_score": 0.030834914611005692,
+            "lexical_score": 4.458856263560151
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.8064725399017334,
+            "component_scores": {
+              "text": 0.7042543292045593,
+              "image": 0.5720586776733398
+            },
+            "rank_score": 0.030536130536130537,
+            "lexical_score": 4.405436037919885
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.8349823355674744,
+            "component_scores": {
+              "text": 0.7259869575500488,
+              "image": 0.5954452157020569
+            },
+            "rank_score": 0.030158730158730156,
+            "lexical_score": 4.3361689111189765
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.8525033593177795,
+            "component_scores": {
+              "text": 0.7227317094802856,
+              "image": 0.6264293193817139
+            },
+            "rank_score": 0.029827662395050816,
+            "lexical_score": 4.189869938233354
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.8197121024131775,
+            "component_scores": {
+              "text": 0.7139307260513306,
+              "image": 0.5833350419998169
+            },
+            "rank_score": 0.029709507042253523,
+            "lexical_score": 4.3361689111189765
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.7487680315971375,
+            "component_scores": {
+              "text": 0.6889045238494873,
+              "image": 0.4960861802101135
+            },
+            "rank_score": 0.029437229437229435,
+            "lexical_score": 4.370528043514872
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.7767294645309448,
+            "component_scores": {
+              "text": 0.6998569965362549,
+              "image": 0.5293850898742676
+            },
+            "rank_score": 0.029418126757516764,
+            "lexical_score": 4.353280681803588
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.7428366541862488,
+            "component_scores": {
+              "text": 0.6928102970123291,
+              "image": 0.4827934503555298
+            },
+            "rank_score": 0.028790389395194696,
+            "lexical_score": 4.353280681803588
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7400409579277039,
+            "component_scores": {
+              "text": 0.7260561585426331,
+              "image": 0.4451230466365814
+            },
+            "rank_score": 0.028381642512077296,
+            "lexical_score": 4.353280681803588
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P044",
+              "name": "Áo thun Hard Rock Cafe Buenos Aires màu nâu",
+              "category": "t_shirt",
+              "brand": "Hard Rock Cafe",
+              "color": "nâu, xanh và vàng",
+              "price_vnd": 1840000,
+              "in_stock": false,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P044"
+            },
+            "score": 0.615553617477417,
+            "component_scores": {
+              "text": 0.5944920778274536,
+              "image": 0.37967514991760254
+            },
+            "rank_score": 0.02758751902587519,
+            "lexical_score": 4.302345796982735
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+          "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 8.430300000327406,
+            "encoding": 61.468199997761985,
+            "retrieval": 0.5099999980302528,
+            "filtering": 0.356099997588899,
+            "threshold": 0,
+            "ranking": 0.18799999816110358,
+            "hydration": 0.14310000187833793,
+            "total": 73.37170000027982
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 13
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 13,
+              "output_count": 13
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 13,
+              "output_count": 13
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 13,
+              "output_count": 13
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "43119500d3bfcec305b6eee5736b253cb031870f2060f47b0c293b153b2de4a4",
+          "corrections": [],
+          "inventory_revision": 90,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "áo thun; không màu đỏ"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "không màu đỏ",
+                "field": "color",
+                "value": "đỏ"
+              }
+            ],
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    }
+  ]
+}
