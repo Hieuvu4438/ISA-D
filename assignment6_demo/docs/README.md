@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Xuất bản catalog/ảnh/index đồng bộ, durable pointer và restart: [28_CATALOG_PUBLICATION.md](28_CATALOG_PUBLICATION.md).
+
 Soạn sản phẩm/ảnh riêng cho admin (chưa publication): [27_CATALOG_AUTHORING.md](27_CATALOG_AUTHORING.md). Thanh toán giữ mức COD/demo theo yêu cầu ưu tiên mới; tập trung search và quản lý sản phẩm.
 
 Biến thể kích cỡ, phân kho SKU, cart/order/return identity và lọc size: [26_PRODUCT_VARIANTS.md](26_PRODUCT_VARIANTS.md). Phần màu/asset CRUD và size guide vẫn pending.

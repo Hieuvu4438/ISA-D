@@ -106,4 +106,14 @@ def mount_catalog_drafts(application, query_fields, multipart, strict_json):
         result = service.record_preflight(user["user_id"], product_id, body.version, validation, user["auth_epoch"])
         return {"request_id": request.state.request_id, "draft": result}
 
+    @router.post("/products/{product_id}/draft/publish")
+    async def publish(product_id: str, body: DraftVersion, request: Request):
+        user = actor(request, True)
+        publisher = request.app.state.catalog_publication
+        prepared = await request.app.state.services.runner.run(lambda: publisher.prepare(pid(product_id), body.version), 30)
+        async with request.app.state.catalog_gate.write():
+            result = publisher.activate(request.app, prepared, user["user_id"], user["auth_epoch"])
+        return {"request_id": request.state.request_id, "publication": result,
+                "draft": request.app.state.catalog_drafts.detail(product_id)}
+
     application.include_router(router)

@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+Sequence publication + code mapping tại [28](28_CATALOG_PUBLICATION.md): prepare/build→drain→DB pointer/audit→replace refs; không vẽ lưu draft như publication. VP editable vẫn pending.
+
 Authoring sequence/code mapping tại [27](27_CATALOG_AUTHORING.md); draft tách live snapshot, preflight không publication. Editable VP vẫn pending.
 
 Size sequence/code mapping: [26](26_PRODUCT_VARIANTS.md). Tái dựng VP phải dùng SKU variant_id cho cart/quote/order/return/restock, giữ product_id cha cho detail/media; default SKU lịch sử không bị gán size tự động. Mermaid ở26 chưa thay project `.vpp` editable.

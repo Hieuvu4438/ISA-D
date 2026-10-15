@@ -1,5 +1,7 @@
 # Soạn sản phẩm và ảnh cho admin
 
+Update: [28_CATALOG_PUBLICATION.md](28_CATALOG_PUBLICATION.md) bổ sung publication đồng bộ. Các đoạn “chưa xuất bản” bên dưới ghi phạm vi mốc authoring trước đó; lưu/preflight vẫn chỉ tạo nháp, nút publish riêng mới activation.
+
 Ưu tiên người dùng mới: thanh toán giữ COD/demo; không mở rộng cổng thanh toán, hoàn tiền thực hoặc các edge cases thương mại nâng cao. Tập trung hoàn thiện tìm kiếm và quản lý sản phẩm để sớm bàn giao. Các yêu cầu mới này ưu tiên trên ma trận mở rộng cũ ở15.
 
 Mốc authoring bổ sung bản nháp riêng cho metadata/ảnh. **Chưa xuất bản catalog/index**, chưa phải hoàn tất module quản lý sản phẩm. Luồng xuất bản đồng bộ là bước tiếp theo; không dùng nút lưu bản nháp để giả đã cập nhật cửa hàng.

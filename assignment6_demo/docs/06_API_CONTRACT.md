@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+POST admin/products/Pnnn/draft/publish `{version}` thêm theo [28](28_CATALOG_PUBLICATION.md): explicit admin intent, bounded staging, atomic activation và publication fingerprints. Không deploy public.
+
 Admin product drafts API: list/get/save/upload private photo/preflight/discard theo [27](27_CATALOG_AUTHORING.md), strict DTO/OpenAPI/intent/epoch/CAS. published=false luôn; chưa có API publication.
 
 Size amendment: [26](26_PRODUCT_VARIANTS.md) thêm admin allocate variant, SKU inventory, product variants/sizes/available_sizes, cart variant_id, snapshot order/returns/receipt và size filters/facets. Trường mới additive; size phải explicit, không bỏ điều kiện hoặc chọn thay size hết hàng.

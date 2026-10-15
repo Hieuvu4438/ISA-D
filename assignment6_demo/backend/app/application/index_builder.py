@@ -15,20 +15,34 @@ from app.data.product_repository import digest, catalog_fingerprint, product_tex
 from app.data.vector_index import SCORING_VERSION, VectorIndex, unit
 
 
-def build_index(root, repository, encoder):
+def build_index(root, repository, encoder, previous_repository=None, previous_index=None):
     if not encoder.available:
         raise AppError(503, "MODEL_UNAVAILABLE", "Model tìm kiếm chưa sẵn sàng.")
     products = repository.products
-    texts = [product_text(p) for p in products]
+    reusable = {}
+    if previous_repository is not None and previous_index is not None and previous_index.available and previous_index.catalog_fingerprint == previous_repository.fingerprint and previous_index.model_fingerprint == encoder.model_fingerprint:
+        old = {p["product_id"]: p for p in previous_repository.products}
+        reusable = {pid: i for i, pid in enumerate(previous_index.ids) if pid in old}
+    changed = [p for p in products if p["product_id"] not in reusable or p != old[p["product_id"]] or repository.image_hashes[p["product_id"]] != previous_repository.image_hashes[p["product_id"]]]
+    texts = [product_text(p) for p in changed]
     for text in texts:
         encoder.validate_text(text)
     images = []
-    for product in products:
+    for product in changed:
         path, _, _ = repository.image_file(product["product_id"])
         with Image.open(path) as image:
             images.append(ImageOps.exif_transpose(image).convert("RGB").copy())
-    text_vectors = unit(encoder.encode_texts(texts)) if products else np.empty((0, 512), np.float32)
-    image_vectors = unit(encoder.encode_images(images)) if products else np.empty((0, 512), np.float32)
+    try:
+        encoded_text = unit(encoder.encode_texts(texts)) if changed else np.empty((0, 512), np.float32)
+        encoded_images = unit(encoder.encode_images(images)) if changed else np.empty((0, 512), np.float32)
+    finally:
+        for image in images:
+            image.close()
+    if encoded_text.shape != (len(changed), 512) or encoded_images.shape != (len(changed), 512):
+        raise AppError(500, "INVALID_VECTOR", "Encoder trả sai số dòng chỉ mục.")
+    fresh = {p["product_id"]: i for i, p in enumerate(changed)}
+    text_vectors = np.array([encoded_text[fresh[p["product_id"]]] if p["product_id"] in fresh else previous_index.text_vectors[reusable[p["product_id"]]] for p in products], dtype=np.float32).reshape((-1, 512))
+    image_vectors = np.array([encoded_images[fresh[p["product_id"]]] if p["product_id"] in fresh else previous_index.image_vectors[reusable[p["product_id"]]] for p in products], dtype=np.float32).reshape((-1, 512))
     vectors = unit(0.5 * text_vectors + 0.5 * image_vectors) if products else np.empty((0, 512), np.float32)
     payload = {
         "schema_version": 1,

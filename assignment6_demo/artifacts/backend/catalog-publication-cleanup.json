@@ -1,0 +1,12 @@
+{
+  "reserved_admins": 0,
+  "reserved_sessions": 0,
+  "active_release": [
+    [
+      "runtime/catalog/releases/c7d7796c87884b07b124ae58bbd8843f",
+      "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+      "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+      2
+    ]
+  ]
+}

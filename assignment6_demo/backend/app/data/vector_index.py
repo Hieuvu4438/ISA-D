@@ -23,6 +23,7 @@ def unit(value):
 
 class VectorIndex:
     def __init__(self, root, products, model_fingerprint):
+        self.model_fingerprint = model_fingerprint
         self.available = False
         self.error_code = "INDEX_MISSING"
         self.fingerprint = None

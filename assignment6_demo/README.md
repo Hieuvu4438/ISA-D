@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Admin→Sản phẩm có **Xuất bản sản phẩm** để cập nhật đồng thời catalog, ảnh và indexCPU; giữ sau restart, stock sản phẩm mới0. [Contract28](docs/28_CATALOG_PUBLICATION.md), [evidence](artifacts/backend/CATALOG_PUBLICATION_REPORT.md). Các dòng “chưa publication” bên dưới là trạng thái lịch sử của mốc27. Khi đã có runtime release, không sửa seed/build index seed để cập nhật cửa hàng đang chạy; dùng authoring/publish. Relevant cần calibration theo index mới, nearest vẫn hoạt động.
+
 Ưu tiên mới: thanh toán giữ COD/demo; tập trung search và quản lý sản phẩm. Admin→Sản phẩm có soạn metadata/ảnh nguồn, bản nháp riêng và kiểm tra encoder CPU; **chưa xuất bản catalog/index**. [Contract27](docs/27_CATALOG_AUTHORING.md), [evidence](artifacts/backend/CATALOG_DRAFTS_REPORT.md).
 
 Kích cỡ có kho riêng, chọn size xuyên giỏ/COD/đơn/trả hàng, admin phân kho và lọc size: [docs/26_PRODUCT_VARIANTS.md](docs/26_PRODUCT_VARIANTS.md), [evidence](artifacts/backend/VARIANTS_REPORT.md). Dữ liệu cũ không tự chia size; admin phân cỡ ở `/admin`. Màu/asset CRUD, giá biến thể và size guide vẫn pending. Các milestone bên dưới ghi lịch sử từng đợt.

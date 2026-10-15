@@ -105,10 +105,18 @@ class CatalogDraftService:
             raise AppError(404, "DRAFT_IMAGE_NOT_FOUND", "Bản nháp chưa có ảnh.")
         if version is not None and row["version"] != version:
             raise AppError(409, "DRAFT_CHANGED", "Ảnh bản nháp đã thay đổi. Hãy tải lại bản nháp.")
-        path, raw = self.images.read(row["asset"])
+        path, raw = self.read_asset(row["asset"])
         decoded, info = ImageService.decode(raw)
         decoded.close()
         return path, {"JPEG": "image/jpeg", "PNG": "image/png", "WEBP": "image/webp"}[info["format"]]
+
+    def read_asset(self, asset):
+        # Unedited inherited photos may live in an immutable published release.
+        pid = asset.get("product_id")
+        if self.products and self.products.image_hashes.get(pid) == asset.get("sha256") and asset.get("local_path", "").startswith("data/images/"):
+            path, _, _ = self.products.image_file(pid)
+            return path, path.read_bytes()
+        return self.images.read(asset)
 
     def preflight(self, product_id, version):
         _, row = self.selected(product_id, version)
@@ -116,7 +124,7 @@ class CatalogDraftService:
             raise AppError(409, "DRAFT_IMAGE_REQUIRED", "Bản nháp cần ảnh thật và đầy đủ nguồn trước khi kiểm tra.")
         if not self.encoder.available:
             raise AppError(503, "MODEL_UNAVAILABLE", "Cần model CPU thật để kiểm tra bản nháp; dữ liệu đã lưu vẫn được giữ.")
-        _, raw = self.images.read(row["asset"])
+        _, raw = self.read_asset(row["asset"])
         image, _ = ImageService.decode(raw)
         text = product_text(row["payload"])
         try:

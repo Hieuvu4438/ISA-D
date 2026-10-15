@@ -27,6 +27,8 @@ test('real admin authoring: create, photo provenance, CPU preflight, stale edit,
   await page.getByRole('button', { name: 'Sản phẩm', exact: true }).click()
   const endpoint = '/api/v1/admin/products/P181/draft'
   const initial = (await (await page.request.get(endpoint)).json()).draft
+  const liveBefore = await page.request.get('/api/v1/products/P181')
+  const productBefore = liveBefore.status() === 200 ? (await liveBefore.json()).product : null
   expect(initial.has_draft).toBe(false)
   const before = (await (await page.request.get('/api/v1/meta')).json()).index
   try {
@@ -56,7 +58,9 @@ test('real admin authoring: create, photo provenance, CPU preflight, stale edit,
     expect(draft.validation.image_sha256).toBe(source.sha256)
     expect(draft.published).toBe(false)
     await expect(page.getByRole('status').filter({ hasText: 'Đã kiểm tra encoder CPU' })).toBeVisible()
-    expect((await page.request.get('/api/v1/products/P181')).status()).toBe(404)
+    const liveAfter = await page.request.get('/api/v1/products/P181')
+    if (productBefore) expect((await liveAfter.json()).product).toEqual(productBefore)
+    else expect(liveAfter.status()).toBe(404)
     expect((await (await page.request.get('/api/v1/meta')).json()).index).toEqual(before)
     await page.getByLabel('Tìm mã, tên hoặc thương hiệu', { exact: true }).fill('P181')
     await page.getByRole('button', { name: 'Tìm sản phẩm', exact: true }).click()

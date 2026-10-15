@@ -1,7 +1,7 @@
 {
   "passed": true,
   "scope": "AST import directions and Data inference orchestration; not full architecture conformance",
-  "files_checked": 44,
+  "files_checked": 46,
   "negative_fixtures_rejected": 2,
   "findings": [],
   "limitations": [

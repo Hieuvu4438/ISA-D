@@ -3,6 +3,7 @@ import AxeBuilder from '@axe-core/playwright'
 import { expectNoHorizontalOverflow } from './helpers'
 
 test('real catalog API: filters, counts, sorting, pagination and URL reload/back', async ({ page }) => {
+  const shirtCount = Math.min(24, (await (await page.request.get('/api/v1/catalog?category=t_shirt')).json()).total)
   const fullCatalogRequests: string[] = []
   page.on('request', request => { if (new URL(request.url()).pathname === '/api/v1/products') fullCatalogRequests.push(request.url()) })
   await page.goto('/catalog')
@@ -16,12 +17,12 @@ test('real catalog API: filters, counts, sorting, pagination and URL reload/back
   await expect(page.getByTestId('product-card').first()).toContainText('Giày chạy bộ On Cloud')
   await page.getByRole('button', { name: 'Áo thun', exact: true }).click()
   await expect(page).toHaveURL(/category=t_shirt/)
-  await expect(page.getByTestId('product-card')).toHaveCount(15)
+  await expect(page.getByTestId('product-card')).toHaveCount(shirtCount)
   expect(fullCatalogRequests).toEqual([])
   await page.getByTestId('product-card').first().locator('a').click()
   await page.getByRole('link', { name: 'Trở lại bộ sưu tập' }).click()
   await expect(page).toHaveURL(/category=t_shirt/)
-  await expect(page.getByTestId('product-card')).toHaveCount(15)
+  await expect(page.getByTestId('product-card')).toHaveCount(shirtCount)
   await expect(page.getByTestId('product-card').first()).toContainText('Áo thun')
   await page.getByLabel('Sắp xếp', { exact: true }).selectOption('price_desc')
   const result = await page.request.get('/api/v1/catalog?category=t_shirt&sort=price_desc')
@@ -33,13 +34,14 @@ test('real catalog API: filters, counts, sorting, pagination and URL reload/back
   await expect(page.getByTestId('product-card')).toHaveCount(24)
   await page.goBack()
   await expect(page).toHaveURL(/category=t_shirt/)
-  await expect(page.getByTestId('product-card')).toHaveCount(15)
+  await expect(page.getByTestId('product-card')).toHaveCount(shirtCount)
 })
 
 test('real lexical retrieval: accent aliases, visible typo, exact and missing SKU', async ({ page }) => {
+  const shirtCount = Math.min(24, (await (await page.request.get('/api/v1/catalog?category=t_shirt')).json()).total)
   for (const query of ['ao phong', 't-shirt']) {
     await page.goto(`/catalog?q=${encodeURIComponent(query)}`)
-    await expect(page.getByTestId('product-card')).toHaveCount(15)
+    await expect(page.getByTestId('product-card')).toHaveCount(shirtCount)
   }
   await page.goto('/catalog?q=snekaer')
   await expect(page.getByText('Đã tìm thêm từ gần đúng: snekaer → sneaker.')).toBeVisible()
@@ -105,10 +107,11 @@ test('real encoder: hybrid reranking keeps cosine separate and respects hard fil
 })
 
 test('real browse page: responsive screenshots and accessibility at desktop/mobile', async ({ page }) => {
+  const shirtCount = Math.min(24, (await (await page.request.get('/api/v1/catalog?category=t_shirt')).json()).total)
   for (const width of [360, 768, 1440]) {
     await page.setViewportSize({ width, height: 1000 })
     await page.goto('/catalog?category=t_shirt&sort=price_asc')
-    await expect(page.getByTestId('product-card')).toHaveCount(15)
+    await expect(page.getByTestId('product-card')).toHaveCount(shirtCount)
     if (width <= 800) await page.getByRole('button', { name: 'Bộ lọc', exact: true }).click()
     await expectNoHorizontalOverflow(page)
     const axe = await new AxeBuilder({ page }).analyze()

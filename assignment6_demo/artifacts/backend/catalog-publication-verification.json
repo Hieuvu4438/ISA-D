@@ -1,0 +1,33 @@
+{
+  "base_commit": "141b825543eb67b4ea47ff6bd2126224d2ce3381",
+  "source_sha256": {
+    "backend/app/catalog_gate.py": "c444e62492f2ef068bc727ef4e32322d10a71da8a53573c7401ada5b43d9fcb2",
+    "backend/app/application/catalog_publication.py": "13dd907528c5c35ab9ad7ca9841a8294cf4c7870e8e36a3bffdfd8dc60bad667",
+    "backend/app/application/index_builder.py": "a3d127b535b13c10fcf74cdd678a72415ce6528672a9228993284b0d83ac479e",
+    "backend/app/application/catalog_draft_service.py": "8a4923af76bc9d8d940968e47f0dce306bbec2eb3ba8ed71190ac68fa86c21ef",
+    "backend/app/data/catalog_draft_repository.py": "ccade36ecbbda3d22b2df68000a35fb7ea0ce6e98022a548cd99a27e51de646e",
+    "backend/app/main.py": "b767f0441db54cd4e9ed0bcf6307e128ffbb3d1124ede5564cd173c3d62bfe3f",
+    "backend/app/presentation/catalog_drafts.py": "43f728f386fa93ba9c00a2f97e7c0e87b673b356c7ceed357cbc0440f457582a",
+    "backend/tests/test_catalog_publication.py": "c9218a5291991fe722901468e1ff8292306fc65a4f96fa7a41b6c2dcf87885a5",
+    "frontend/src/components/AdminCatalogPanel.tsx": "4accb710dba29480c87892a51adb63d23183c72df031f4f4b8cc3d68007d81ed",
+    "frontend/src/lib/api.ts": "624ff70e57af37460ec2c04dea8dc4328597e6ca143b183b86fde4a0ecc99255",
+    "frontend/e2e/catalog-publication.spec.ts": "62b6c3f1c8d554780645d229a07654693b1d3fb97ec5dabe466a52a9303a1c40",
+    "docs/28_CATALOG_PUBLICATION.md": "4b246202bd8c678a004a179739de472504b4d5b4c9764a5e0ad2aa382e9e1655"
+  },
+  "checks": {
+    "full_backend_before_final_category_guard": 359,
+    "final_publication_targeted": 7,
+    "frontend_units": 17,
+    "browser_publication_first_add": 1,
+    "browser_publication_confirmation": 1,
+    "browser_regression": 16
+  },
+  "evidence": "CATALOG_PUBLICATION_REPORT.md",
+  "limits": [
+    "No final 361-test full run claimed",
+    "Running backend browser evidence preceded final category guard",
+    "Image self-match is not independent relevance quality",
+    "No paid speech calls; Azure verification pending",
+    "Not full ecommerce completion"
+  ]
+}

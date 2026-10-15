@@ -117,6 +117,7 @@ function draftWrite(id: string, suffix: string, body: object) {
 export const saveProductDraft = (id: string, version: number, base_catalog_fingerprint: string, product: DraftMetadata) => draftWrite(id, '', { version, base_catalog_fingerprint, product })
 export const discardProductDraft = (id: string, version: number) => draftWrite(id, '/discard', { version })
 export const preflightProductDraft = (id: string, version: number) => draftWrite(id, '/preflight', { version })
+export const publishProductDraft = (id: string, version: number) => request<{ draft: ProductDraft; publication: { published: true; relevant_available: boolean } }>(`/admin/products/${encodeURIComponent(id)}/draft/publish`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Cortis-Intent': 'admin' }, body: JSON.stringify({ version }) }, undefined, 40_000)
 export function uploadDraftPhoto(id: string, version: number, file: File, provenance: PhotoProvenance) {
   const body = new FormData(); body.append('version', String(version)); body.append('provenance', JSON.stringify(provenance)); body.append('image', file)
   return request<{ draft: ProductDraft }>(`/admin/products/${encodeURIComponent(id)}/draft/image`, { method: 'POST', headers: { 'X-Cortis-Intent': 'admin' }, body })

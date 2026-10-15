@@ -35,6 +35,8 @@ from app.presentation.catalog_drafts import mount_catalog_drafts
 from app.application.catalog_draft_service import CatalogDraftService
 from app.data.catalog_draft_repository import CatalogDraftRepository
 from app.data.draft_image_storage import DraftImageStorage
+from app.application.catalog_publication import CatalogPublication, release_root
+from app.catalog_gate import CatalogGate
 from app.application.catalog_search import CatalogSearch
 from app.application.query_service import QueryService
 from app.application.search_service import SearchService
@@ -83,13 +85,13 @@ def strict_json(raw):
 
 
 class Container:
-    def __init__(self, settings):
+    def __init__(self, settings, catalog_root=None):
         self.settings = settings
         self.errors = {}
         self.products = self.orders = None
         for name, factory in [("products", ProductRepository), ("orders", OrderRepository)]:
             try:
-                setattr(self, name, factory(settings.root))
+                setattr(self, name, factory(catalog_root or settings.root) if name == "products" else factory(settings.root))
             except AppError as exc:
                 self.errors[name] = exc
         self.encoder = (
@@ -192,10 +194,17 @@ def create_app(settings=None, container=None):
 
     @asynccontextmanager
     async def lifespan(application):
-        application.state.services = container or Container(settings)
         application.state.accounts = AccountService(AccountRepository(
             settings.account_db_path or settings.root / "runtime" / "commerce" / "accounts.sqlite3"
         ))
+        draft_repository = CatalogDraftRepository(application.state.accounts.repository)
+        active = draft_repository.active()
+        application.state.services = container or Container(settings, release_root(settings.root, active))
+        if active and not container and (not application.state.services.products or application.state.services.products.fingerprint != active["catalog_fingerprint"]):
+            raise AppError(503, "CATALOG_RELEASE_UNAVAILABLE", "Checksum phiên bản catalog không khớp.")
+        if active and not container and application.state.services.index.available and application.state.services.index.fingerprint != active["index_fingerprint"]:
+            raise AppError(503, "INDEX_OUT_OF_SYNC", "Chỉ mục không khớp phiên bản đã xuất bản.")
+        application.state.catalog_gate = CatalogGate()
         application.state.shopping = ShoppingService(ShoppingRepository(application.state.accounts.repository),
                                                       application.state.services.products)
         inventory = PurchaseRepository(application.state.accounts.repository,
@@ -203,8 +212,9 @@ def create_app(settings=None, container=None):
         application.state.purchases = PurchaseService(inventory, application.state.services.products)
         application.state.admin = AdminService(AdminRepository(application.state.accounts.repository), application.state.services.products)
         application.state.returns = ReturnRepository(application.state.accounts.repository)
-        application.state.catalog_drafts = CatalogDraftService(CatalogDraftRepository(application.state.accounts.repository),
+        application.state.catalog_drafts = CatalogDraftService(draft_repository,
             application.state.services.products, DraftImageStorage(settings.root), application.state.services.encoder)
+        application.state.catalog_publication = CatalogPublication(settings.root, application.state.catalog_drafts, application.state.services)
         application.state.shopping.inventory = inventory
         application.state.services.search.inventory = inventory
         if application.state.services.catalog_search:
@@ -261,7 +271,11 @@ def create_app(settings=None, container=None):
                     strict_json(request._body)
                 elif request.url.path == "/api/v1/search":
                     raise AppError(415, "MEDIA_TYPE_UNSUPPORTED", "Cần gửi application/json.")
-            response = await call_next(request)
+            if request.url.path.endswith("/draft/publish"):
+                response = await call_next(request)
+            else:
+                async with request.app.state.catalog_gate.read():
+                    response = await call_next(request)
         except AppError as exc:
             response = error_response(request, exc)
         except Exception:
@@ -305,7 +319,8 @@ def create_app(settings=None, container=None):
         if not svc.search.available:
             raise AppError(503, svc.search.reason_code, "Tìm kiếm chưa sẵn sàng.")
         svc.search.validate_request(options, mode, text, text_weight)
-        result = await svc.runner.run(lambda: svc.search.search(build(svc.queries)), settings.search_timeout)
+        search = svc.search
+        result = await svc.runner.run(lambda: search.search(build(svc.queries)), settings.search_timeout)
         result["meta"]["timing_ms"]["total"] = (perf_counter() - started) * 1000
         return {"request_id": request.state.request_id, **result}
 

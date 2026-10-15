@@ -1,0 +1,300 @@
+{
+  "scope": "After actual CPU backend restart",
+  "passed": true,
+  "ready": {
+    "request_id": "fe65ce3d-41da-4575-9a3b-25665d44b45e",
+    "status": "ready",
+    "search_available": true,
+    "reason_codes": []
+  },
+  "meta": {
+    "request_id": "0661cef9-f462-422a-8f23-5975b8c0c612",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": false,
+        "reason_code": "RELEVANCE_POLICY_UNAVAILABLE",
+        "modes": [],
+        "multimodal_weights": []
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+      "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+      "product_count": 181
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "backpack",
+        "bag",
+        "boots",
+        "casual_shoes",
+        "jacket",
+        "running_shoes",
+        "sandals",
+        "sunglasses",
+        "t_shirt",
+        "tote_bag",
+        "trail_shoes",
+        "watch"
+      ],
+      "brands": [
+        "Adele Dejak",
+        "Adidas",
+        "Asics",
+        "Birkenstock",
+        "Brooks",
+        "Candino",
+        "Converse",
+        "Fjällräven",
+        "Hard Rock Cafe",
+        "Hermès",
+        "Junghans",
+        "Không xác định",
+        "Les cuirs d'Agathe",
+        "Marshal",
+        "Minaal",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On",
+        "Opta",
+        "Polo Ralph Lauren",
+        "Prada",
+        "Qwstion",
+        "Ray-Ban",
+        "Salomon",
+        "Seiko",
+        "Skunkfunk",
+        "Timberland",
+        "Uniqlo",
+        "Vans",
+        "XD Design"
+      ],
+      "min_price": 350000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "azure",
+      "configuration_state": "unconfigured",
+      "region": "southeastasia",
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "product": {
+    "request_id": "29e987ae-e134-4bc3-a0e2-93a354864035",
+    "product": {
+      "product_id": "P181",
+      "name": "Áo polo Nike trắng viền đỏ rượu",
+      "category": "t_shirt",
+      "brand": "Nike",
+      "color": "trắng, đỏ rượu, xám",
+      "price_vnd": 890000,
+      "in_stock": false,
+      "sizes": [],
+      "available_sizes": [],
+      "image_url": "/api/v1/media/products/P181",
+      "description": "Ảnh nghiêng áo polo trắng, cổ đỏ rượu và vai xám; tay áo có chữ ASB BANK. Thông tin thương hiệu theo hồ sơ Auckland Museum.",
+      "stock_quantity": 0,
+      "image_credit": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Polo_shirt_(AM_2017.66.47-2).jpg",
+        "author": "Auckland Museum",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "transformations": [
+          "Wikimedia 960px thumbnail; original upload bytes retained locally"
+        ]
+      },
+      "variants": [
+        {
+          "variant_id": "P181",
+          "size": null,
+          "stock_quantity": 0,
+          "color": "trắng, đỏ rượu, xám",
+          "price_vnd": 890000,
+          "in_stock": false
+        }
+      ]
+    },
+    "inventory_revision": 68
+  },
+  "search": {
+    "request_id": "64ebfaf4-ecb2-4898-a671-3eb5494675f3",
+    "query": {
+      "mode": "text",
+      "text": "P181",
+      "image_summary": null,
+      "voice_source": null,
+      "text_weight": null,
+      "options": {
+        "top_k": 5,
+        "result_policy": "nearest",
+        "search_strategy": "hybrid",
+        "sort": "relevance",
+        "filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": false
+        },
+        "interpret_price": true
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "product": {
+          "product_id": "P181",
+          "name": "Áo polo Nike trắng viền đỏ rượu",
+          "category": "t_shirt",
+          "brand": "Nike",
+          "color": "trắng, đỏ rượu, xám",
+          "price_vnd": 890000,
+          "in_stock": false,
+          "sizes": [],
+          "available_sizes": [],
+          "image_url": "/api/v1/media/products/P181"
+        },
+        "score": 0.6657119393348694,
+        "component_scores": {
+          "text": 0.6657119989395142,
+          "image": null
+        },
+        "rank_score": 1.0,
+        "lexical_score": 1.0
+      }
+    ],
+    "meta": {
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+      "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+      "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+      "result_policy": "nearest",
+      "threshold": null,
+      "policy_fingerprint": null,
+      "empty_reason": null,
+      "timing_ms": {
+        "validation": 0.523599999723956,
+        "encoding": 9.891300000163028,
+        "retrieval": 0.45870000030845404,
+        "filtering": 0.07829999958630651,
+        "threshold": 0,
+        "ranking": 0.08739999975659885,
+        "hydration": 0.03409999771974981,
+        "total": 13.852600000973325
+      },
+      "trace": [
+        {
+          "step": "validation",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "encoding",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "retrieval",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 181
+        },
+        {
+          "step": "filtering",
+          "status": "ok",
+          "input_count": 181,
+          "output_count": 181
+        },
+        {
+          "step": "threshold",
+          "status": "skipped",
+          "input_count": 181,
+          "output_count": 181
+        },
+        {
+          "step": "ranking",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "hydration",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        }
+      ],
+      "ranking_strategy": "exact_sku",
+      "sort": "relevance",
+      "lexical_fingerprint": "60d5fd2455dd3d50020c555f153f31d0aaf031abd77b893b1bc0561ddcbd3a27",
+      "corrections": [],
+      "inventory_revision": 68,
+      "price_interpretation": {
+        "enabled": true,
+        "parser_version": "vi_vnd_price_v1",
+        "applied": false,
+        "clauses": [],
+        "inferred_filters": {
+          "min_price": null,
+          "max_price": null
+        },
+        "effective_filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": false
+        },
+        "lexical_text": "P181"
+      }
+    }
+  }
+}

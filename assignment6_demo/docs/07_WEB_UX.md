@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+Publication28 thêm nút/xác nhận inline, loading, conflict recovery và thông báo reload cửa hàng. Product mới stock0; ngưỡng relevant cần hiệu chỉnh index mới. [28](28_CATALOG_PUBLICATION.md) là contract hiện tại.
+
 Admin→Sản phẩm authoring theo [27](27_CATALOG_AUTHORING.md): list/editor/source/preview/preflight/discard, cảnh báo dirty/stale recovery. Không trình bày bản nháp như sản phẩm đã xuất bản.
 
 Size amendment: product size selector, wishlist→detail khi cần chọn size, SKU keys/labels xuyên cart/checkout/order/return, admin phân kho và size filter URL theo [26](26_PRODUCT_VARIANTS.md). Size demo chưa có số đo; không hứa tư vấn độ vừa vặn.

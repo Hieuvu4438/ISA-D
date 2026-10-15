@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+Publication amendment: catalog_publication SQLite giữ durable pointer/hash/revision, immutable releases dưới runtime/catalog/releases theo [28](28_CATALOG_PUBLICATION.md). products.json seed không đổi; app startup đọc release đã kích hoạt, tồn kho ledger giữ nguyên.
+
 Authoring amendment: catalog_drafts và private content-addressed photo bytes/provenance theo [27](27_CATALOG_AUTHORING.md). Không đổi products.json/index/live catalog. Ảnh data/authoring/P181 chỉ là unpublished fixture có source riêng.
 
 Size amendment: product_variants SQLite, cột product_id lịch sử trong inventory/cart chứa khóa SKU; API tách parent product_id/variant_id và snapshots size theo [26](26_PRODUCT_VARIANTS.md). Raw catalog/ảnh/index không đổi, size/stock là demo có thao tác admin; kho gốc trở thành unallocated khi có size.

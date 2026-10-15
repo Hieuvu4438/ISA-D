@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { ApiError, discardProductDraft, getAdminProducts, getProductDraft, preflightProductDraft, saveProductDraft, uploadDraftPhoto } from '../lib/api'
+import { ApiError, discardProductDraft, getAdminProducts, getProductDraft, preflightProductDraft, publishProductDraft, saveProductDraft, uploadDraftPhoto } from '../lib/api'
 import type { AdminProductList, Category, DraftMetadata, PhotoProvenance, ProductDraft } from '../lib/types'
 import { categoryLabels, ErrorPanel, formatMoney, ProductImage } from '../ui'
 
@@ -10,7 +10,7 @@ export function AdminCatalogPanel() {
   const [query, setQuery] = useState(''), [filter, setFilter] = useState(''), [status, setStatus] = useState(''), [newId, setNewId] = useState('')
   const [draft, setDraft] = useState<ProductDraft | null>(null), [product, setProduct] = useState<DraftMetadata>(emptyProduct)
   const [loading, setLoading] = useState(true), [opening, setOpening] = useState(false), [busy, setBusy] = useState(false), [dirty, setDirty] = useState(false)
-  const [error, setError] = useState(''), [notice, setNotice] = useState(''), [conflict, setConflict] = useState(false), [pendingId, setPendingId] = useState(''), [confirmDiscard, setConfirmDiscard] = useState(false)
+  const [error, setError] = useState(''), [notice, setNotice] = useState(''), [conflict, setConflict] = useState(false), [pendingId, setPendingId] = useState(''), [confirmDiscard, setConfirmDiscard] = useState(false), [confirmPublish, setConfirmPublish] = useState(false)
   const alive = useRef(true), locked = useRef(false), readSequence = useRef(0), detailAbort = useRef<AbortController | null>(null)
   const editor = useRef<HTMLElement | null>(null)
   useEffect(() => {
@@ -40,7 +40,7 @@ export function AdminCatalogPanel() {
     try {
       const result = await getProductDraft(id, controller.signal)
       if (!controller.signal.aborted && token === readSequence.current) {
-        setDraft(result.draft); setProduct(result.draft.product ?? emptyProduct()); setDirty(false)
+        setDraft(result.draft); setProduct(result.draft.product ?? emptyProduct()); setDirty(false); setConfirmPublish(false)
         editor.current?.scrollIntoView({ block: 'start' })
       }
     } catch (reason) { if (!controller.signal.aborted) setError(reason instanceof Error ? reason.message : 'Chưa mở được bản nháp.') }
@@ -52,7 +52,7 @@ export function AdminCatalogPanel() {
     locked.current = true; setBusy(true); setError(''); setNotice(''); setConflict(false)
     try {
       const result = await operation()
-      if (alive.current) { setDraft(result.draft); setProduct(result.draft.product ?? emptyProduct()); setDirty(false); setConfirmDiscard(false); setNotice(success); setGeneration(value => value + 1) }
+      if (alive.current) { setDraft(result.draft); setProduct(result.draft.product ?? emptyProduct()); setDirty(false); setConfirmDiscard(false); setConfirmPublish(false); setNotice(success); setGeneration(value => value + 1) }
     } catch (reason) {
       if (alive.current) {
         setError(reason instanceof Error ? reason.message : 'Chưa xác nhận được thao tác. Hãy tải lại bản nháp để kiểm tra trước khi gửi tiếp.')
@@ -74,7 +74,7 @@ export function AdminCatalogPanel() {
     void action(() => uploadDraftPhoto(draft.product_id, draft.version, file, provenance), 'Đã lưu ảnh và nguồn cho bản nháp. Ảnh cửa hàng chưa thay đổi.')
   }
   return <section className="admin-catalog" aria-label="Soạn thảo sản phẩm" aria-busy={loading || opening || busy}>
-    <h2>Sản phẩm và bản nháp.</h2><p className="catalog-authoring-note">Lưu bản nháp để chuẩn bị nội dung và ảnh. Bản nháp chưa thay đổi cửa hàng; xuất bản đồng bộ catalog và tìm kiếm đang được hoàn thiện.</p>
+    <h2>Sản phẩm và bản nháp.</h2><p className="catalog-authoring-note">Soạn nội dung và ảnh trong bản nháp. Chọn xuất bản khi đã kiểm tra để cập nhật đồng thời cửa hàng và tìm kiếm.</p>
     <div className="admin-toolbar"><form onSubmit={event => { event.preventDefault(); setFilter(query.trim()); setOffset(0) }}><label htmlFor="catalog-admin-query">Tìm mã, tên hoặc thương hiệu</label><div className="admin-search-row"><input id="catalog-admin-query" value={query} maxLength={120} onChange={event => setQuery(event.target.value)} /><button className="secondary-button" disabled={busy}>Tìm sản phẩm</button></div></form><div><label htmlFor="catalog-admin-status">Phạm vi danh sách</label><select id="catalog-admin-status" value={status} disabled={busy} onChange={event => { setStatus(event.target.value); setOffset(0) }}><option value="">Tất cả</option><option value="draft">Có bản nháp</option><option value="live">Có trên cửa hàng</option></select></div></div>
     <form className="admin-create-product" onSubmit={event => { event.preventDefault(); if (/^P[0-9]{3}$/.test(newId)) void open(newId); else setError('Mã sản phẩm có dạng P181.') }}><label htmlFor="catalog-new-id">Mã sản phẩm cần tạo hoặc mở</label><div className="admin-search-row"><input id="catalog-new-id" value={newId} maxLength={4} pattern="P[0-9]{3}" required placeholder="Ví dụ: P181" onChange={event => setNewId(event.target.value.toUpperCase())} disabled={busy} /><button className="secondary-button" disabled={busy || opening}>Mở mã sản phẩm</button></div></form>
     {loading && <p role="status">Đang tải danh sách sản phẩm…</p>}
@@ -101,7 +101,8 @@ export function AdminCatalogPanel() {
         <label htmlFor="photo-license-url">Trang giấy phép</label><input id="photo-license-url" name="license_url" type="url" required maxLength={2000} defaultValue={draft.image?.license_url ?? ''} />
         <label htmlFor="photo-retrieved">Ngày lấy ảnh</label><input id="photo-retrieved" name="retrieved_at" type="date" required defaultValue={draft.image?.retrieved_at ?? ''} />
         <label className="checkbox-label"><input type="checkbox" required />Tôi đã xem ảnh, xác nhận là ảnh chụp thật, khớp sản phẩm và đã kiểm tra quyền sử dụng.</label><button className="secondary-button">Lưu ảnh cho bản nháp</button></fieldset></form>{(!draft.has_draft || dirty) && <p>Lưu nội dung sản phẩm trước khi tải ảnh.</p>}</details>
-      <section className="catalog-preflight" aria-label="Kiểm tra bản nháp"><h3>Kiểm tra trước khi xuất bản</h3><p>Kiểm tra ảnh và khả năng mã hóa dữ liệu bằng model CPU. Bước này chưa xuất bản hoặc đánh giá độ chính xác tìm kiếm.</p>{draft.validation && !dirty && <p role="status">Đã kiểm tra encoder CPU lúc {new Date(draft.validation.checked_at).toLocaleString('vi-VN')} · chưa xuất bản.</p>}<div className="shopping-actions"><button className="secondary-button" disabled={busy || dirty || !draft.has_draft || !draft.image} onClick={() => { void action(() => preflightProductDraft(draft.product_id, draft.version), 'Kiểm tra hoàn tất. Bản nháp chưa được xuất bản.') }}>Kiểm tra dữ liệu và ảnh</button><button className="text-link" disabled={busy || !draft.has_draft} onClick={() => setConfirmDiscard(true)}>Xóa bản nháp đã lưu</button></div>
+      <section className="catalog-preflight" aria-label="Kiểm tra bản nháp"><h3>Kiểm tra trước khi xuất bản</h3><p>Kiểm tra ảnh và khả năng mã hóa dữ liệu bằng model CPU. Sản phẩm mới được xuất bản với tồn kho 0; điều chỉnh số lượng tại Tồn kho sau đó.</p>{draft.validation && !dirty && <p role="status">Đã kiểm tra encoder CPU lúc {new Date(draft.validation.checked_at).toLocaleString('vi-VN')} · chưa xuất bản.</p>}<div className="shopping-actions"><button className="secondary-button" disabled={busy || dirty || !draft.has_draft || !draft.image} onClick={() => { void action(() => preflightProductDraft(draft.product_id, draft.version), 'Kiểm tra hoàn tất. Bản nháp chưa được xuất bản.') }}>Kiểm tra dữ liệu và ảnh</button><button className="primary-button" disabled={busy || dirty || !draft.has_draft || !draft.image} onClick={() => setConfirmPublish(true)}>Xuất bản sản phẩm</button><button className="text-link" disabled={busy || !draft.has_draft} onClick={() => setConfirmDiscard(true)}>Xóa bản nháp đã lưu</button></div>
+        {confirmPublish && <div className="draft-navigation-warning"><p>Xuất bản {draft.product_id} lên cửa hàng local? Tên, giá, ảnh và tìm kiếm sẽ đổi cùng nhau. Ngưỡng lọc mức liên quan cần hiệu chỉnh lại sau khi đổi catalog; tìm gần nhất vẫn hoạt động.</p><div className="shopping-actions"><button className="primary-button" disabled={busy || dirty} onClick={() => { void action(() => publishProductDraft(draft.product_id, draft.version), 'Đã xuất bản sản phẩm và chỉ mục tìm kiếm. Hãy tải lại trang cửa hàng để xem dữ liệu mới.') }}>{busy ? 'Đang chuẩn bị chỉ mục…' : 'Xác nhận xuất bản'}</button><button className="secondary-button" disabled={busy} onClick={() => setConfirmPublish(false)}>Tiếp tục soạn</button></div></div>}
         {confirmDiscard && <div className="draft-navigation-warning"><p>Xóa bản nháp {draft.product_id}? Nội dung trên cửa hàng được giữ nguyên.</p><div className="shopping-actions"><button className="secondary-button" disabled={busy} onClick={() => { void action(() => discardProductDraft(draft.product_id, draft.version), 'Đã xóa bản nháp. Cửa hàng được giữ nguyên.') }}>Xác nhận xóa bản nháp</button><button className="secondary-button" disabled={busy} onClick={() => setConfirmDiscard(false)}>Giữ bản nháp</button></div></div>}
       </section>
     </>}</section>

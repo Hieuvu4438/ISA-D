@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+Mốc publication28: immutable catalog/photo release + incremental realCPU index build + durable SQLite pointer/audit + reader drain/references/restart. Admin create/update/photo/publish đã có, archive/restore/color variants và search quality/data review vẫn cần làm. Thanh toán giữ COD/demo theo ưu tiên mới.
+
 Ưu tiên mới15/10: thanh toán đủ COD/demo; dừng mở rộng payment/refund provider và edge cases thương mại nâng cao. Tập trung search và product management để sớm bàn giao. Authoring27 có draft/CAS/private photo/provenance/CPU preflight; publication catalog/index vẫn là việc tiếp theo, chưa complete E5.
 
 Milestone E3/E5 size2026-10-15: SKU stock, explicit size choice, cart/order/cancel/return/receipt identity, size filter/facets và admin allocation theo [26](26_PRODUCT_VARIANTS.md). Evidence tách backend/browser/CPU ở VARIANTS_REPORT; variants màu/asset CRUD, variant price/size guide và các acceptance gate tổng thể vẫn pending. Không đánh dấu E3/E5 complete.
