@@ -61,7 +61,6 @@ export function SearchPage() {
   const [field, setField] = useState('');
   const [notice, setNotice] = useState('');
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [voiceLang, setVoiceLang] = useState<'vi-VN' | 'en-US' | 'auto'>('vi-VN');
   const [micPhase, setMicPhase] = useState<'idle' | 'permission' | 'recording'>('idle');
   const [duration, setDuration] = useState(0);
   const [cooldownUntil, setCooldownUntil] = useState(0);
@@ -163,7 +162,7 @@ export function SearchPage() {
     const token = ++sequence.current; const abort = new AbortController(); controller.current?.abort(); controller.current = abort;
     setPending('speech'); setError('');
     try {
-      const result = await transcribe(draft.audio, abort.signal, voiceLang);
+      const result = await transcribe(draft.audio, abort.signal);
       if (token !== sequence.current || abort.signal.aborted || modeRef.current !== 'voice') return;
       state.updateDraft('voice', { text: result.transcript, voiceSource: result.provider, transcriptModified: false });
       textRef.current?.focus(); setNotice('Đã nhận dạng. Bạn có thể sửa lời nói trước khi tìm sản phẩm.');
@@ -203,7 +202,7 @@ export function SearchPage() {
       <form className="search-desk" onSubmit={submit} aria-label="Tìm sản phẩm">
         <div className="mode-tabs" role="tablist" aria-label="Cách tìm sản phẩm">{modes.map((item, index) => <button key={item.id} id={`tab-${item.id}`} type="button" role="tab" aria-selected={mode === item.id} aria-controls={`panel-${item.id}`} tabIndex={mode === item.id ? 0 : -1} onClick={() => switchMode(item.id)} onKeyDown={event => tabKey(event, index)}><item.icon size={17} aria-hidden="true" />{item.label}</button>)}</div>
         <div id={`panel-${mode}`} role="tabpanel" aria-labelledby={`tab-${mode}`} className="search-input-panel">
-          {mode === 'voice' && <div className="voice-workspace"><p className="voice-intro">Nói một câu tiếng Việt hoặc tiếng Anh, tối đa 15 giây. {catalog.meta?.speech.provider === 'local' ? 'Nhận dạng trên máy chủ bằng Whisper CPU; không gửi âm thanh đến Azure.' : catalog.meta?.speech.provider === 'groq' ? 'Nhận dạng tốc độ cao bằng Groq Whisper Large v3; không cần GPU máy chủ.' : 'Âm thanh chỉ được gửi đến Azure khi bạn bấm nhận dạng.'}</p>
+          {mode === 'voice' && <div className="voice-workspace"><p className="voice-intro">Nói một câu tiếng Việt, tối đa 15 giây. {catalog.meta?.speech.provider === 'local' ? 'Nhận dạng trên máy chủ bằng Whisper CPU; không gửi âm thanh đến Azure.' : catalog.meta?.speech.provider === 'groq' ? 'Nhận dạng tốc độ cao bằng Groq Whisper Large v3; không cần GPU máy chủ.' : 'Âm thanh chỉ được gửi đến Azure khi bạn bấm nhận dạng.'}</p>
             <div className="record-row">{micPhase === 'recording' ? <>
               <button className="secondary-button recording-button" type="button" onClick={() => void stopRecording()}><Square size={15} fill="currentColor" aria-hidden="true" />Dừng ghi âm</button>
               <div className="voice-waveform" aria-hidden="true"><span className="wave-bar" /><span className="wave-bar" /><span className="wave-bar" /><span className="wave-bar" /><span className="wave-bar" /></div>
@@ -212,27 +211,11 @@ export function SearchPage() {
               <span className="record-timer">{duration.toFixed(1)} / 15 giây</span>
               {micPhase !== 'idle' && <button className="icon-button" aria-label="Hủy ghi âm" type="button" onClick={cancel}><X size={18} /></button>}
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', margin: '4px 0' }}>
-              <label className="audio-upload" style={{ margin: 0 }}><Upload size={16} aria-hidden="true" /> Hoặc tải WAV PCM16, mono 16 kHz<input type="file" accept=".wav,audio/wav" data-testid="voice-audio-input" onChange={event => chooseAudio(event.target.files?.[0])} /></label>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px' }}>
-                <label htmlFor="voice-language-select" style={{ color: 'var(--muted, #888)' }}>Ngôn ngữ:</label>
-                <select
-                  id="voice-language-select"
-                  data-testid="voice-language-select"
-                  value={voiceLang}
-                  onChange={event => setVoiceLang(event.target.value as 'vi-VN' | 'en-US' | 'auto')}
-                  style={{ padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.15)', background: 'var(--surface-dark, #1a1a1a)', color: 'inherit', fontSize: '13px' }}
-                >
-                  <option value="vi-VN">Tiếng Việt</option>
-                  <option value="en-US">English</option>
-                  <option value="auto">Tự động (Auto)</option>
-                </select>
-              </div>
-            </div>
+            <label className="audio-upload"><Upload size={16} aria-hidden="true" /> Hoặc tải WAV PCM16, mono 16 kHz<input type="file" accept=".wav,audio/wav" data-testid="voice-audio-input" onChange={event => chooseAudio(event.target.files?.[0])} /></label>
             {draft.audio && audioUrl && <div className="audio-preview"><audio src={audioUrl} controls aria-label="Nghe bản ghi âm" /><a className="text-link audio-download" href={audioUrl} download="cortis-voice.wav"><Download size={16} aria-hidden="true" />Lưu bản ghi WAV</a><button type="button" className="icon-button" aria-label="Xóa âm thanh" onClick={() => update({ audio: null })}><X size={17} /></button></div>}
             <button type="button" className="secondary-button recognize-button" disabled={!draft.audio || !speechAvailable || !!pending || micPhase !== 'idle' || cooldown > 0} onClick={() => void recognize()}>{pending === 'speech' ? <LoaderCircle className="spin" size={16} aria-hidden="true" /> : <AudioLines size={17} aria-hidden="true" />}Nhận dạng lời nói</button>
             {!speechAvailable && <p className="voice-unavailable">Nhận dạng lời nói chưa sẵn sàng. Bạn vẫn có thể nhập lời nói bên dưới để thử tìm kiếm.</p>}
-            <div className="transcript-origin"><span>{draft.voiceSource === 'local' ? `Whisper CPU · ${voiceLang === 'en-US' ? 'tiếng Anh' : 'tiếng Việt'}` : draft.voiceSource === 'groq' ? `Groq Whisper Large v3 · ${voiceLang === 'en-US' ? 'tiếng Anh' : 'tiếng Việt'}` : draft.voiceSource === 'azure' ? `Azure Speech · ${voiceLang === 'en-US' ? 'tiếng Anh' : 'tiếng Việt'}` : 'Transcript nhập tay · mô phỏng'}</span>{draft.transcriptModified && draft.voiceSource !== 'manual_transcript' && <span>Đã chỉnh sửa transcript</span>}
+            <div className="transcript-origin"><span>{draft.voiceSource === 'local' ? 'Whisper CPU · tiếng Việt' : draft.voiceSource === 'groq' ? 'Groq Whisper Large v3 · tiếng Việt' : draft.voiceSource === 'azure' ? 'Azure Speech · tiếng Việt' : 'Transcript nhập tay · mô phỏng'}</span>{draft.transcriptModified && draft.voiceSource !== 'manual_transcript' && <span>Đã chỉnh sửa transcript</span>}
               {draft.voiceSource !== 'manual_transcript' && <button type="button" className="text-link" onClick={() => update({ voiceSource: 'manual_transcript', transcriptModified: false })}>Chuyển sang nhập tay</button>}</div>
           </div>}
           {mode !== 'image' && <div className="text-input-group"><label htmlFor="search-text">{mode === 'voice' ? 'Lời nói của bạn' : 'Bạn đang tìm điều gì?'}</label>

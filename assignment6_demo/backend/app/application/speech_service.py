@@ -56,15 +56,6 @@ def decode_wav(blob: bytes) -> tuple[bytes, int]:
     return pcm, round(len(pcm) / 32)
 
 
-SUPPORTED_SPEECH_LANGUAGES = {
-    "vi-VN": "vi-VN",
-    "vi": "vi-VN",
-    "en-US": "en-US",
-    "en": "en-US",
-    "auto": "auto",
-}
-
-
 def _load_sdk():
     try:
         return importlib.import_module("azure.cognitiveservices.speech")
@@ -92,19 +83,19 @@ class SpeechService:
                     )
                 except Exception:
                     self._provider = None
-            self.available = self._provider is not None and self._language in SUPPORTED_SPEECH_LANGUAGES
+            self.available = self._provider is not None and self._language == "vi-VN"
         elif self.provider == "groq":
             self._timeout = getattr(settings, "groq_speech_timeout", 30.0)
             groq_key = getattr(settings, "groq_api_key", "").strip()
             groq_model = getattr(settings, "groq_speech_model", "whisper-large-v3")
             if provider is None:
                 self._provider = GroqSpeechRecognizer(groq_key, model=groq_model, timeout=self._timeout)
-            self.available = bool(groq_key and self._language in SUPPORTED_SPEECH_LANGUAGES)
+            self.available = bool(groq_key and self._language == "vi-VN")
         elif self.provider == "azure":
             self._sdk = None if provider is not None else _load_sdk()
             valid_key = isinstance(self._key, str) and bool(self._key.strip()) and not re.search(r"\s", self._key)
             self.available = bool(
-                valid_key and self._region == "southeastasia" and self._language in SUPPORTED_SPEECH_LANGUAGES
+                valid_key and self._region == "southeastasia" and self._language == "vi-VN"
                 and (provider is not None or self._sdk is not None)
             )
             self._provider = provider or self._recognize_azure
@@ -130,11 +121,8 @@ class SpeechService:
 
     async def transcribe(self, audio_bytes: bytes, language="vi-VN") -> dict:
         started = time.perf_counter()
-        if language is None:
-            language = self._language or "vi-VN"
-        if language not in SUPPORTED_SPEECH_LANGUAGES:
-            raise AppError(422, "VALIDATION_ERROR", "Ngôn ngữ phải là vi-VN hoặc en-US.", "language")
-        canonical_language = SUPPORTED_SPEECH_LANGUAGES[language]
+        if language != "vi-VN":
+            raise AppError(422, "VALIDATION_ERROR", "Ngôn ngữ phải là vi-VN.", "language")
         pcm, duration_ms = decode_wav(audio_bytes)
         validation_ms = (time.perf_counter() - started) * 1000
         if not self.available:
@@ -145,7 +133,7 @@ class SpeechService:
             self._busy = True
         provider_start = time.perf_counter()
         try:
-            native = self._executor.submit(self._run_provider, audio_bytes, pcm, canonical_language, duration_ms)
+            native = self._executor.submit(self._run_provider, audio_bytes, pcm, language, duration_ms)
         except Exception:
             self._release(None)
             raise AppError(503, "SPEECH_UNAVAILABLE", "Dịch vụ nhận dạng chưa sẵn sàng.") from None
@@ -172,7 +160,7 @@ class SpeechService:
         ended = time.perf_counter()
         return {
             "transcript": transcript,
-            "language": canonical_language,
+            "language": language,
             "provider": self.provider,
             "audio_duration_ms": duration_ms,
             "timing_ms": {
@@ -203,24 +191,13 @@ class SpeechService:
     def _recognize_azure(self, pcm, language):
         sdk = self._sdk
         config = sdk.SpeechConfig(subscription=self._key, region=self._region)
-        auto_detect_config = None
-        if language == "auto":
-            auto_detect_config = sdk.AutoDetectSourceLanguageConfig(languages=["vi-VN", "en-US"])
-        else:
-            config.speech_recognition_language = language
+        config.speech_recognition_language = language
         stream = sdk.audio.PushAudioInputStream(
             stream_format=sdk.audio.AudioStreamFormat(samples_per_second=16000, bits_per_sample=16, channels=1)
         )
         stream_closed = False
         try:
-            if auto_detect_config is not None:
-                recognizer = sdk.SpeechRecognizer(
-                    speech_config=config,
-                    auto_detect_source_language_config=auto_detect_config,
-                    audio_config=sdk.audio.AudioConfig(stream=stream),
-                )
-            else:
-                recognizer = sdk.SpeechRecognizer(speech_config=config, audio_config=sdk.audio.AudioConfig(stream=stream))
+            recognizer = sdk.SpeechRecognizer(speech_config=config, audio_config=sdk.audio.AudioConfig(stream=stream))
             recognition = recognizer.recognize_once_async()
             stream.write(pcm)
             stream.close()

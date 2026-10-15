@@ -537,9 +537,9 @@ def create_app(settings=None, container=None):
         fields, blob, mime = await multipart(request, ("audio", "language"), "audio")
         if mime not in ("audio/wav", "audio/x-wav", "audio/wave"):
             raise AppError(415, "AUDIO_TYPE_UNSUPPORTED", "Chỉ nhận WAV PCM 16-bit mono 16 kHz.", "audio")
-        raw_lang = fields.get("language")
-        lang = raw_lang.strip() if isinstance(raw_lang, str) and raw_lang.strip() else "vi-VN"
-        result = await services(request).speech.transcribe(blob, lang)
+        result = await services(request).speech.transcribe(
+            blob, fields["language"] if fields["language"] is not None else "vi-VN"
+        )
         return {"request_id": request.state.request_id, **result}
 
     mount_accounts(application, settings, query_fields)

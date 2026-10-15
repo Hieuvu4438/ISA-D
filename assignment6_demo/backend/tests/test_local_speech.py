@@ -68,20 +68,6 @@ def test_local_decoder_uses_vietnamese_and_discards_no_speech():
     assert calls[0][1]["vad_filter"] is True
 
 
-def test_local_decoder_supports_english():
-    from app.application.local_speech import LocalSpeechRecognizer
-
-    calls = []
-    def transcribe(audio, **kwargs):
-        calls.append((audio, kwargs))
-        return iter([SimpleNamespace(text=" Black running shoes", no_speech_prob=0.1, avg_logprob=-0.2)]), None
-
-    recognizer = LocalSpeechRecognizer(model=SimpleNamespace(transcribe=transcribe))
-    pcm = np.full(16000, 1000, dtype="<i2").tobytes()
-    assert recognizer(pcm, "en-US") == "Black running shoes"
-    assert calls[0][1]["language"] == "en"
-
-
 def test_local_model_load_is_cpu_only_and_cannot_download(tmp_path, monkeypatch):
     from app.application.local_speech import LocalSpeechRecognizer
 
