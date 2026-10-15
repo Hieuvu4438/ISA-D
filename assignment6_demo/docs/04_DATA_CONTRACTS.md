@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+Amendment30 dùng metadata brand/category và lexical aliases hiện có, response scope plan và lexical fingerprint version mới theo [30](30_SEARCH_SCOPE.md). Không đổi catalog/vector schema, không tự suy metadata từ ảnh.
+
 Amendment29 không đổi schema catalog/vector: exclusion parser dùng metadata hãng/màu/category hiện có, response plan và lexical fingerprint version mới theo [29](29_SEARCH_EXCLUSIONS.md). Không suy màu ảnh thành metadata.
 
 Publication amendment: catalog_publication SQLite giữ durable pointer/hash/revision, immutable releases dưới runtime/catalog/releases theo [28](28_CATALOG_PUBLICATION.md). products.json seed không đổi; app startup đọc release đã kích hoạt, tồn kho ledger giữ nguyên.

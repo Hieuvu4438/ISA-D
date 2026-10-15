@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Amendment30: strict interpret_scope và scope_interpretation cho SearchOptions/catalog/suggestions, SCOPE_FILTER_CONFLICT/SCOPE_EXCLUSION_CONFLICT theo [30](30_SEARCH_SCOPE.md). Không đổi JSON vector/cosine contract.
+
 Amendment29: SearchOptions/catalog/suggestions thêm strict interpret_exclusions; search/catalog thêm exclusion_interpretation và EXCLUSION_QUERY_AMBIGUOUS/EXCLUSION_FILTER_CONFLICT theo [29](29_SEARCH_EXCLUSIONS.md).
 
 POST admin/products/Pnnn/draft/publish `{version}` thêm theo [28](28_CATALOG_PUBLICATION.md): explicit admin intent, bounded staging, atomic activation và publication fingerprints. Không deploy public.

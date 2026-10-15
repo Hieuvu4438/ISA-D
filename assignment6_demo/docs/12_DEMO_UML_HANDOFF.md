@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+Sequence scope và code mapping tại [30](30_SEARCH_SCOPE.md): price/exclusion→scope→hard filtering→ranking. Demo query “giày chạy bộ Nike; dưới 1 triệu; không màu đỏ”, thêm manual brand Adidas để thấy conflict/recovery. VP editable vẫn pending.
+
 Sequence loại trừ metadata và conflict recovery tại [29](29_SEARCH_EXCLUSIONS.md): price→exclusion parsing→hard filtering→rank. Code mapping ExclusionInterpreter/ExclusionPlan → CatalogSearch/SearchService → catalog/SearchPage/BrowsePage. Mermaid không thay file VP editable.
 
 Sequence publication + code mapping tại [28](28_CATALOG_PUBLICATION.md): prepare/build→drain→DB pointer/audit→replace refs; không vẽ lưu draft như publication. VP editable vẫn pending.

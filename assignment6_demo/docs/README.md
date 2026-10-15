@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Phạm vi hãng/category trong mô tả, union/intersection và recovery: [30_SEARCH_SCOPE.md](30_SEARCH_SCOPE.md).
+
 Loại trừ metadata dùng chung search/catalog/suggestions: [29_SEARCH_EXCLUSIONS.md](29_SEARCH_EXCLUSIONS.md).
 
 Xuất bản catalog/ảnh/index đồng bộ, durable pointer và restart: [28_CATALOG_PUBLICATION.md](28_CATALOG_PUBLICATION.md).

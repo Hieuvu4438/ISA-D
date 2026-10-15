@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+E2 amendment30: exact hãng/category scope, union cùng trường/intersection khác trường, conflict và ambiguity recovery theo [30](30_SEARCH_SCOPE.md). Frozen independent relevance, dữ liệu/ảnh còn lỗi và các gate toàn hệ thống vẫn pending; không đánh dấu E2 hoặc ecommerce complete. Thanh toán COD/demo.
+
 E2 amendment29: hard metadata exclusions trước ranking, catalog facets/suggestions/URL opt-out, search notice và evidence riêng tại [29](29_SEARCH_EXCLUSIONS.md). Positive intent/frozen independent relevance/catalog repairs vẫn pending; không đánh dấu E2 hoặc hệ thống complete. Thanh toán giữ COD/demo.
 
 Mốc publication28: immutable catalog/photo release + incremental realCPU index build + durable SQLite pointer/audit + reader drain/references/restart. Admin create/update/photo/publish đã có, archive/restore/color variants và search quality/data review vẫn cần làm. Thanh toán giữ COD/demo theo ưu tiên mới.

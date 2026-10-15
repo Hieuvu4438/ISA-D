@@ -22,6 +22,7 @@ export interface SearchOptions {
   sort?: 'relevance' | 'price_asc' | 'price_desc' | 'name'
   interpret_price?: boolean
   interpret_exclusions?: boolean
+  interpret_scope?: boolean
 }
 
 export interface PriceInterpretation {
@@ -33,6 +34,11 @@ export interface PriceInterpretation {
 export interface ExclusionInterpretation {
   enabled: boolean; parser_version: string; applied: boolean; lexical_text: string
   clauses: { text: string; field: 'category' | 'brand' | 'color'; value: string }[]
+}
+
+export interface ScopeInterpretation {
+  enabled: boolean; parser_version: string; applied: boolean; lexical_text: string; warnings: string[]
+  clauses: { text: string; field: 'category' | 'brand'; value: string }[]
 }
 
 export interface ProductSummary {
@@ -110,6 +116,7 @@ export interface SearchResponse {
     corrections?: { input: string; matched: string }[]
     price_interpretation?: PriceInterpretation
     exclusion_interpretation?: ExclusionInterpretation
+    scope_interpretation?: ScopeInterpretation
     timing_ms: Record<'validation' | 'encoding' | 'retrieval' | 'filtering' | 'threshold' | 'ranking' | 'hydration' | 'total', number>
     trace: { step: string; status: 'ok' | 'skipped'; input_count: number; output_count: number }[]
   }
@@ -213,6 +220,7 @@ export interface ProductsResponse { request_id: string; products: ProductSummary
 export interface BrowseResponse extends ProductsResponse {
   price_interpretation?: PriceInterpretation
   exclusion_interpretation?: ExclusionInterpretation
+  scope_interpretation?: ScopeInterpretation
   query: { text: string; sort: string; filters: Filters }
   facets: Record<'category' | 'brand' | 'color', { value: string; count: number }[]> & { size?: { value: string; count: number }[] }
   corrections: { input: string; matched: string }[]

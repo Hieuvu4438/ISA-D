@@ -62,6 +62,7 @@ class SearchOptions(StrictModel):
     filters: Filters = Field(default_factory=Filters)
     interpret_price: StrictBool = True
     interpret_exclusions: StrictBool = True
+    interpret_scope: StrictBool = True
 
 
 class TextRequest(StrictModel):

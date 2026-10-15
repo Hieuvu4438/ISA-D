@@ -90,8 +90,10 @@ class SearchService:
             plan.merge(options.filters)
             exclusions = self.lexical.exclusions.interpret(plan.lexical_text, options.interpret_exclusions)
             exclusions.validate_filters(options.filters)
+            scope = self.lexical.scopes.interpret(exclusions.lexical_text, options.interpret_scope)
+            scope.validate(options.filters, exclusions)
             if options.search_strategy == "hybrid":
-                self.lexical.prepare(exclusions.lexical_text)
+                self.lexical.prepare(scope.lexical_text)
         if options.result_policy == "relevant":
             self._policy(SimpleNamespace(mode=mode, text_weight=text_weight))
 
@@ -123,11 +125,13 @@ class SearchService:
         filters = price_plan.merge(options.filters)
         exclusion_plan = self.lexical.exclusions.interpret(price_plan.lexical_text, options.interpret_exclusions and text is not None)
         exclusion_plan.validate_filters(filters)
+        scope_plan = self.lexical.scopes.interpret(exclusion_plan.lexical_text, options.interpret_scope and text is not None)
+        scope_plan.validate(filters, exclusion_plan)
         self.lexical.validate_filters(filters)
         eligible = []
         for candidate in candidates:
             p = products[candidate["product_id"]]
-            if not matches(p, filters) or not exclusion_plan.matches(p):
+            if not matches(p, filters) or not exclusion_plan.matches(p) or not scope_plan.matches(p):
                 continue
             eligible.append(candidate)
         timings["filtering"] = (perf_counter() - mark) * 1000
@@ -154,7 +158,7 @@ class SearchService:
         hybrid = options.search_strategy == "hybrid" and query.input_summary.get("text") is not None
         plan = None
         if hybrid:
-            eligible, plan = self.lexical.fuse(eligible, exclusion_plan.lexical_text)
+            eligible, plan = self.lexical.fuse(eligible, scope_plan.lexical_text)
             if before and not eligible:
                 empty_reason = "no_matches" if plan.exact_id else empty_reason
         if options.sort != "relevance":
@@ -212,5 +216,6 @@ class SearchService:
                 "inventory_revision": inventory_revision,
                 "price_interpretation": price_plan.public(filters),
                 "exclusion_interpretation": exclusion_plan.public(),
+                "scope_interpretation": scope_plan.public(),
             },
         }

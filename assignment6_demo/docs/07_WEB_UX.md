@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+Checkbox/notice hãng-category, ambiguity warning, URL opt-out và giữ draft khi conflict theo [30](30_SEARCH_SCOPE.md). Không âm thầm nới scope khi kết quả rỗng; bỏ scope mơ hồ phải có warning.
+
 Checkbox/notice loại trừ màu-hãng-category, URL opt-out và recovery theo [29](29_SEARCH_EXCLUSIONS.md). Không âm thầm tăng hạng entity đã loại; các câu chưa rõ trả lỗi giữ query/filter.
 
 Publication28 thêm nút/xác nhận inline, loading, conflict recovery và thông báo reload cửa hàng. Product mới stock0; ngưỡng relevant cần hiệu chỉnh index mới. [28](28_CATALOG_PUBLICATION.md) là contract hiện tại.

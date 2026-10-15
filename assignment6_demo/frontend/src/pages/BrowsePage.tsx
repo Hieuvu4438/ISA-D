@@ -7,6 +7,7 @@ import { categoryLabels, ErrorPanel } from '../ui'
 import { ProductCard } from './SearchPage'
 import { PriceInterpretationNotice } from '../components/PriceInterpretationNotice'
 import { ExclusionInterpretationNotice } from '../components/ExclusionInterpretationNotice'
+import { ScopeInterpretationNotice } from '../components/ScopeInterpretationNotice'
 
 export function BrowsePage() {
   const [params, setParams] = useSearchParams()
@@ -24,6 +25,8 @@ export function BrowsePage() {
   const [filtersOpen, setFiltersOpen] = useState(false)
   const parsePrice = params.get('interpret_price') !== 'false'
   const parseExclusions = params.get('interpret_exclusions') !== 'false'
+  const parseScope = params.get('interpret_scope') !== 'false'
+  const [scopeChecked, setScopeChecked] = useState(parseScope)
   const [exclusionsChecked, setExclusionsChecked] = useState(parseExclusions)
   const [priceChecked, setPriceChecked] = useState(parsePrice)
   const [stockChecked, setStockChecked] = useState(params.get('in_stock') === 'true')
@@ -34,6 +37,7 @@ export function BrowsePage() {
     setLoading(true); setError(''); setPriceError(''); setInvalidRequest(false); setQuery(current.get('q') ?? '')
     setPriceChecked(current.get('interpret_price') !== 'false'); setStockChecked(current.get('in_stock') === 'true')
     setExclusionsChecked(current.get('interpret_exclusions') !== 'false')
+    setScopeChecked(current.get('interpret_scope') !== 'false')
     getCatalogPage(new URLSearchParams(key), controller.signal).then(result => {
       if (!controller.signal.aborted) setData(result)
     }).catch(reason => { if (!controller.signal.aborted) { setError(reason instanceof Error ? reason.message : 'Chưa tải được sản phẩm.'); setInvalidRequest(reason instanceof ApiError && reason.status === 422) } })
@@ -44,12 +48,12 @@ export function BrowsePage() {
     const controller = new AbortController()
     setSuggestions([]); setSelected(-1)
     const timer = window.setTimeout(() => {
-      if (query.trim().length >= 2) getSuggestions(query, controller.signal, parsePrice, parseExclusions).then(result => {
+      if (query.trim().length >= 2) getSuggestions(query, controller.signal, parsePrice, parseExclusions, parseScope).then(result => {
         if (!controller.signal.aborted) setSuggestions(result.products)
       }).catch(() => { /* Suggestions are optional; the search form stays available. */ })
     }, 250)
     return () => { window.clearTimeout(timer); controller.abort() }
-  }, [query, parsePrice, parseExclusions])
+  }, [query, parsePrice, parseExclusions, parseScope])
   function change(name: string, value: string) {
     const next = new URLSearchParams(params)
     if (value) next.set(name, value); else next.delete(name)
@@ -95,6 +99,7 @@ export function BrowsePage() {
           <label className="checkbox-label"><input type="checkbox" checked={stockChecked} onChange={event => { setStockChecked(event.target.checked); change('in_stock', event.target.checked ? 'true' : '') }} />Chỉ còn hàng</label>
           <label className="checkbox-label"><input type="checkbox" checked={priceChecked} onChange={event => { setPriceChecked(event.target.checked); change('interpret_price', event.target.checked ? '' : 'false') }} />Tự hiểu điều kiện giá trong mô tả</label>
           <label className="checkbox-label"><input type="checkbox" checked={exclusionsChecked} onChange={event => { setExclusionsChecked(event.target.checked); change('interpret_exclusions', event.target.checked ? '' : 'false') }} />Tự hiểu loại trừ màu, hãng, danh mục</label>
+          <label className="checkbox-label"><input type="checkbox" checked={scopeChecked} onChange={event => { setScopeChecked(event.target.checked); change('interpret_scope', event.target.checked ? '' : 'false') }} />Tự hiểu hãng và loại sản phẩm</label>
         </div>
       </aside>
       <section className="catalog-content" aria-label="Sản phẩm trong bộ sưu tập" aria-busy={loading}>
@@ -104,6 +109,7 @@ export function BrowsePage() {
         {!!shown?.corrections.length && <p className="draft-notice">Đã tìm thêm từ gần đúng: {shown.corrections.map(item => `${item.input} → ${item.matched}`).join(', ')}.</p>}
         <PriceInterpretationNotice plan={shown?.price_interpretation} />
         <ExclusionInterpretationNotice plan={shown?.exclusion_interpretation} />
+        <ScopeInterpretationNotice plan={shown?.scope_interpretation} />
         {error && <ErrorPanel message={error} onRetry={() => setAttempt(value => value + 1)} />}
         {invalidRequest && <button className="secondary-button" onClick={() => setParams({})}>Đặt lại tìm kiếm</button>}
         {loading && <p className="page-loading" role="status">Đang cập nhật bộ sưu tập…</p>}
