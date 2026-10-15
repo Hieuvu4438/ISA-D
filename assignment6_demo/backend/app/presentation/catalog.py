@@ -16,7 +16,7 @@ def mount_catalog(application, query_fields):
         if not suggestions:
             properties.update({"offset": {"type": "integer", "minimum": 0, "maximum": 1_000_000, "default": 0},
                                "sort": {"type": "string", "enum": ["relevance", "price_asc", "price_desc", "name"], "default": "relevance"},
-                               "category": {"type": "string"}, "brand": {"type": "string"}, "color": {"type": "string"},
+                               "category": {"type": "string"}, "brand": {"type": "string"}, "color": {"type": "string"}, "size": {"type": "string", "maxLength": 8},
                                "min_price": {"type": "integer", "minimum": 0, "maximum": 1_000_000_000},
                                "max_price": {"type": "integer", "minimum": 0, "maximum": 1_000_000_000},
                                "in_stock": {"type": "boolean", "default": False}})
@@ -34,11 +34,11 @@ def mount_catalog(application, query_fields):
 
     @router.get("/catalog", openapi_extra=query_schema())
     def browse(request: Request):
-        query_fields(request, ("q", "category", "brand", "color", "min_price", "max_price", "in_stock", "sort", "offset", "limit", "interpret_price"))
+        query_fields(request, ("q", "category", "brand", "color", "size", "min_price", "max_price", "in_stock", "sort", "offset", "limit", "interpret_price"))
         parse_price = request.query_params.get("interpret_price", "true")
         if parse_price not in ("true", "false"):
             raise AppError(422, "VALIDATION_ERROR", "Tự hiểu giá phải là true/false.", "interpret_price")
-        values = {name: request.query_params[name] for name in ("category", "brand", "color") if name in request.query_params}
+        values = {name: request.query_params[name] for name in ("category", "brand", "color", "size") if name in request.query_params}
         if any(not v.strip() for v in values.values()):
             raise AppError(422, "VALIDATION_ERROR", "Bộ lọc không được rỗng.")
         for name in ("min_price", "max_price"):

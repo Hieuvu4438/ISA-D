@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+Size amendment: product size selector, wishlist→detail khi cần chọn size, SKU keys/labels xuyên cart/checkout/order/return, admin phân kho và size filter URL theo [26](26_PRODUCT_VARIANTS.md). Size demo chưa có số đo; không hứa tư vấn độ vừa vặn.
+
 Price query amendment: search/catalog hiển thị span giá đã hiểu và giới hạn kết hợp, checkbox opt-out, giữ draft khi lỗi; URL/history/checkbox synchronization và evidence responsive theo [25](25_PRICE_QUERY.md). Không tự gọi STT để phân tích giá.
 
 Access amendment: admin users có filter/status/lock-unlock/self guard, stale recovery giữ reason; unlock yêu cầu login mới. [24](24_ACCOUNT_ACCESS.md) ghi browser evidence và phạm vi riêng với returns visual pending.

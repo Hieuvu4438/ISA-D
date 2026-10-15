@@ -30,6 +30,10 @@ class RoleChange(ChangeReason):
     version: StrictInt = Field(ge=0, le=1_000_000_000)
 
 
+class VariantCreate(StockChange):
+    size: str = Field(strict=True, pattern=r"^[A-Z0-9]{1,8}$")
+
+
 class OrderChange(ChangeReason):
     status: Literal["shipped", "delivered", "cancelled"]
     version: StrictInt = Field(ge=0, le=1_000_000_000)
@@ -87,9 +91,17 @@ def mount_admin(application, query_fields):
     @router.post("/inventory/{product_id}")
     def stock(product_id: str, body: StockChange, request: Request):
         admin = actor(request, True)
-        if not re.fullmatch(r"P[0-9]{3}", product_id):
+        if not re.fullmatch(r"P[0-9]{3}(?:-[A-Z0-9]{1,8})?", product_id):
             raise AppError(422, "VALIDATION_ERROR", "Mã sản phẩm không hợp lệ.")
         return {"request_id": request.state.request_id, "inventory": request.app.state.admin.stock(admin["user_id"], product_id, body.quantity, body.revision, body.reason, expected_epoch=admin["auth_epoch"])}
+
+    @router.post("/products/{product_id}/variants", status_code=201)
+    def allocate_variant(product_id: str, body: VariantCreate, request: Request):
+        admin = actor(request, True)
+        if not re.fullmatch(r"P[0-9]{3}", product_id):
+            raise AppError(422, "VALIDATION_ERROR", "Mã sản phẩm không hợp lệ.")
+        value = request.app.state.admin.allocate_variant(admin["user_id"], product_id, body.size, body.quantity, body.revision, body.reason, expected_epoch=admin["auth_epoch"])
+        return {"request_id": request.state.request_id, "variant": value}
 
     @router.get("/users", openapi_extra=page_schema("users"))
     def users(request: Request):

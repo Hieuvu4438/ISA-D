@@ -1,0 +1,10 @@
+{
+  "privileged_reserved_accounts": 0,
+  "reserved_sessions": 0,
+  "demo_variant_count": 2,
+  "demo_stock": {
+    "P041": 6,
+    "P041-L": 2,
+    "P041-M": 3
+  }
+}

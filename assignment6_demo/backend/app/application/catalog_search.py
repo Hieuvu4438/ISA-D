@@ -70,6 +70,7 @@ def matches(product, filters):
             and (filters.color is None or product["color"] == filters.color)
             and (filters.min_price is None or product["price_vnd"] >= filters.min_price)
             and (filters.max_price is None or product["price_vnd"] <= filters.max_price)
+            and (filters.size is None or any(v["size"] == filters.size and (not filters.in_stock or v["stock_quantity"] > 0) for v in product.get("_variants", [])))
             and (not filters.in_stock or product["stock_quantity"] > 0))
 
 
@@ -145,9 +146,9 @@ class CatalogSearch:
         filters = price_plan.merge(filters, "filters")
         plan = self.prepare(price_plan.lexical_text)
         scores = self.scores(plan)
-        stock, revision = self.inventory.snapshot() if self.inventory else ({}, None)
+        stock, revision, sizes = self.inventory.snapshot_with_variants() if self.inventory else ({}, None, {})
         price_only = bool(price_plan.clauses) and not plan.terms
-        universe = [dict(p, stock_quantity=stock.get(p["product_id"], 0)) if self.inventory else p for p in self.products if price_only or not price_plan.lexical_text.strip() or p["product_id"] in scores]
+        universe = [dict(p, stock_quantity=stock.get(p["product_id"], 0), _variants=sizes.get(p["product_id"], [])) if self.inventory else p for p in self.products if price_only or not price_plan.lexical_text.strip() or p["product_id"] in scores]
         eligible = [p for p in universe if matches(p, filters)]
         # Disjunctive facets: all other active filters remain applied, counts before pagination.
         facets = {}
@@ -156,6 +157,9 @@ class CatalogSearch:
             counts = Counter(p[field] for p in universe if matches(p, relaxed))
             all_values = sorted({p[field] for p in self.products})
             facets[field] = [{"value": value, "count": counts[value]} for value in all_values]
+        relaxed = filters.model_copy(update={"size": None})
+        size_counts = Counter(v["size"] for p in universe if matches(p, relaxed) for v in p.get("_variants", []) if not filters.in_stock or v["stock_quantity"] > 0)
+        facets["size"] = [{"value": value, "count": size_counts[value]} for value in sorted({v["size"] for rows in sizes.values() for v in rows})]
         eligible.sort(key=lambda p: self.sort_key(p, sort, scores))
         return {"products": [self.repository.summary(p) for p in eligible[offset:offset + limit]],
                 "total": len(eligible), "offset": offset, "limit": limit,
@@ -193,8 +197,8 @@ class CatalogSearch:
             if prefix or p["product_id"] in scores:
                 rows.append((not prefix, -scores.get(p["product_id"], 0), p["product_id"], p))
         rows.sort(key=lambda row: row[:3])
-        stock = self.inventory.snapshot()[0] if self.inventory else {}
-        return [self.repository.summary(dict(row[3], stock_quantity=stock.get(row[3]["product_id"], 0)) if self.inventory else row[3]) for row in rows[:limit]]
+        stock, _, sizes = self.inventory.snapshot_with_variants() if self.inventory else ({}, None, {})
+        return [self.repository.summary(dict(row[3], stock_quantity=stock.get(row[3]["product_id"], 0), _variants=sizes.get(row[3]["product_id"], [])) if self.inventory else row[3]) for row in rows[:limit]]
 
     def fuse(self, candidates, text):
         plan = self.prepare(text)

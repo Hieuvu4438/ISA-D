@@ -7,6 +7,7 @@ import time
 from uuid import uuid4
 
 from app.domain import AppError
+from app.data.variant_repository import VariantRepository, choose, line_key, product_key, stock_snapshot
 
 
 def canonical(value):
@@ -16,6 +17,7 @@ def canonical(value):
 class PurchaseRepository:
     def __init__(self, accounts, products):
         self.accounts = accounts
+        self.variants = VariantRepository(accounts)
         with accounts.connection() as db:
             db.executescript("""
                 CREATE TABLE IF NOT EXISTS inventory (
@@ -43,10 +45,17 @@ class PurchaseRepository:
                            [(p["product_id"], p["stock_quantity"]) for p in products])
 
     def snapshot(self):
+        stock, revision, _ = self.snapshot_with_variants()
+        return stock, revision
+
+    def snapshot_with_variants(self):
         with self.accounts.connection() as db:
             db.execute("BEGIN")
             revision = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
-            return {row[0]: row[1] for row in db.execute("SELECT product_id,quantity FROM inventory")}, revision
+            sizes = {}
+            for row in db.execute("SELECT v.product_id,v.size,i.quantity AS stock_quantity FROM product_variants v JOIN inventory i ON i.product_id=v.variant_id"):
+                sizes.setdefault(row["product_id"], []).append({"size": row["size"], "stock_quantity": row["stock_quantity"]})
+            return stock_snapshot(db), revision, sizes
 
     @staticmethod
     def quote_hash(token):
@@ -67,15 +76,19 @@ class PurchaseRepository:
                 raise AppError(409, "CART_EMPTY", "Giỏ hàng đang trống. Hãy chọn sản phẩm trước khi đặt đơn.")
             items = []
             for row in rows:
-                pid, quantity = row
-                product = products.get(pid)
-                stock = db.execute("SELECT quantity FROM inventory WHERE product_id=?", (pid,)).fetchone()
+                sku, quantity = row
+                pid = product_key(sku)
+                product = products.get(sku)
+                selected = choose(db, pid, sku)
+                stock = db.execute("SELECT quantity FROM inventory WHERE product_id=?", (sku,)).fetchone()
                 if not product:
                     raise AppError(409, "PRODUCT_UNAVAILABLE", "Sản phẩm không còn khả dụng. Hãy cập nhật giỏ hàng.")
                 if not stock or stock[0] < quantity:
                     raise AppError(409, "INSUFFICIENT_STOCK", "Tồn kho đã thay đổi. Hãy cập nhật giỏ hàng.")
                 items.append({"product_id": pid, "product_name": product["name"], "quantity": quantity,
                               "unit_price_vnd": product["price_vnd"], "line_total_vnd": product["price_vnd"] * quantity})
+                if selected["size"] is not None:
+                    items[-1].update(variant_id=sku, size=selected["size"], color=product["color"])
             subtotal = sum(row["line_total_vnd"] for row in items)
             shipping = 0 if subtotal >= 2_000_000 else 30_000
             payload = {"items": items, "subtotal_vnd": subtotal, "shipping_fee_vnd": shipping,
@@ -108,14 +121,18 @@ class PurchaseRepository:
                 raise AppError(409, "CART_CHANGED", "Giỏ hàng đã thay đổi. Hãy kiểm tra báo giá mới.")
             payload = json.loads(quote["payload"])
             cart = {row[0]: row[1] for row in db.execute("SELECT product_id,quantity FROM cart_items WHERE user_id=?", (user_id,))}
-            if cart != {row["product_id"]: row["quantity"] for row in payload["items"]}:
+            if cart != {line_key(row): row["quantity"] for row in payload["items"]}:
                 raise AppError(409, "CART_CHANGED", "Giỏ hàng đã thay đổi. Hãy kiểm tra báo giá mới.")
             for item in payload["items"]:
-                product = products.get(item["product_id"])
+                sku = line_key(item)
+                selected = choose(db, item["product_id"], sku)
+                product = products.get(sku)
                 if not product or product["price_vnd"] != item["unit_price_vnd"] or product["name"] != item["product_name"]:
                     raise AppError(409, "PRICE_CHANGED", "Thông tin hoặc giá đã thay đổi. Hãy kiểm tra báo giá mới.")
+                if item.get("size") != selected["size"] or (item.get("size") is not None and item.get("color") != product["color"]):
+                    raise AppError(409, "PRICE_CHANGED", "Thông tin biến thể đã thay đổi. Hãy kiểm tra báo giá mới.")
                 changed = db.execute("UPDATE inventory SET quantity=quantity-? WHERE product_id=? AND quantity>=?",
-                                     (item["quantity"], item["product_id"], item["quantity"])).rowcount
+                                     (item["quantity"], sku, item["quantity"])).rowcount
                 if not changed:
                     raise AppError(409, "INSUFFICIENT_STOCK", "Sản phẩm vừa hết hàng. Hãy cập nhật giỏ hàng.")
             order_id = "ORD-" + uuid4().hex[:16].upper()
@@ -157,7 +174,7 @@ class PurchaseRepository:
             if row["version"] != version:
                 raise AppError(409, "ORDER_CHANGED", "Đơn hàng đã thay đổi. Hãy tải lại chi tiết.")
             for item in json.loads(row["payload"])["items"]:
-                db.execute("UPDATE inventory SET quantity=quantity+? WHERE product_id=?", (item["quantity"], item["product_id"]))
+                db.execute("UPDATE inventory SET quantity=quantity+? WHERE product_id=?", (item["quantity"], line_key(item)))
             db.execute("UPDATE purchases SET status='cancelled',version=version+1 WHERE order_id=?", (order_id,))
             db.execute("UPDATE inventory_state SET revision=revision+1 WHERE singleton=1")
             return self.public(db.execute("SELECT * FROM purchases WHERE order_id=?", (order_id,)).fetchone())

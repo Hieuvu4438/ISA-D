@@ -152,6 +152,8 @@ class ProductRepository:
         return {
             **{f: product[f] for f in ("product_id", "name", "category", "brand", "color", "price_vnd")},
             "in_stock": product["stock_quantity"] > 0,
+            "sizes": [v["size"] for v in product.get("_variants", []) if v["size"] is not None],
+            "available_sizes": [v["size"] for v in product.get("_variants", []) if v["size"] is not None and v["stock_quantity"] > 0],
             "image_url": f"/api/v1/media/products/{product['product_id']}",
         }
 

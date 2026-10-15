@@ -8,6 +8,7 @@ export interface Filters {
   category?: Category | null
   brand?: string | null
   color?: string | null
+  size?: string | null
   min_price?: number | null
   max_price?: number | null
   in_stock?: boolean
@@ -36,6 +37,8 @@ export interface ProductSummary {
   color: string
   price_vnd: number
   in_stock: boolean
+  sizes?: string[]
+  available_sizes?: string[]
   image_url: string
 }
 
@@ -51,7 +54,10 @@ export interface ProductDetail extends ProductSummary {
   description: string
   stock_quantity: number
   image_credit: ImageCredit
+  variants?: ProductVariant[]
 }
+export interface ProductVariant { variant_id: string; size: string | null; color: string; stock_quantity: number; price_vnd: number; in_stock: boolean }
+export interface VariantLine { variant_id?: string; size?: string | null; color?: string }
 
 export interface Credit extends ImageCredit {
   asset_id: string
@@ -156,7 +162,7 @@ export interface OrderSummary {
 }
 
 export interface OrderDetail extends OrderSummary {
-  items: { product_id: string; product_name: string; quantity: number; unit_price_vnd: number; line_total_vnd: number }[]
+  items: (VariantLine & { product_id: string; product_name: string; quantity: number; unit_price_vnd: number; line_total_vnd: number })[]
   version?: number
   subtotal_vnd?: number
   shipping_fee_vnd?: number
@@ -169,17 +175,17 @@ export interface ShippingAddress { recipient: string; phone: string; address_lin
 export type ReturnStatus = 'requested' | 'approved' | 'rejected' | 'withdrawn' | 'received' | 'closed'
 export interface ReturnCase {
   return_id: string; order_id: string; status: ReturnStatus; version: number
-  items: { product_id: string; product_name: string; quantity: number; unit_price_vnd: number }[]
+  items: (VariantLine & { product_id: string; product_name: string; quantity: number; unit_price_vnd: number })[]
   reason: string; created_at: string; updated_at: string; merchandise_value_vnd: number
   refund_status: 'not_processed' | 'demo_recorded'; refund_amount_vnd: number
-  operator_note?: string; receipt?: { product_id: string; restock_quantity: number }[]
+  operator_note?: string; receipt?: (VariantLine & { product_id: string; restock_quantity: number })[]
 }
 export interface OrderReturns {
   request_id: string; returns: ReturnCase[]; order_version: number
   eligibility: { eligible: boolean; ineligible_reason: string | null; deadline: string | null; window_days: number; policy: string
     items: (OrderDetail['items'][number] & { remaining_quantity: number })[] }
 }
-export interface CreateReturnRequest { version: number; idempotency_key: string; reason: string; items: { product_id: string; quantity: number }[] }
+export interface CreateReturnRequest { version: number; idempotency_key: string; reason: string; items: (VariantLine & { product_id: string; quantity: number })[] }
 export interface CheckoutQuote { quote_id: string; cart_version: number; expires_at: number; items: OrderDetail['items']; subtotal_vnd: number; shipping_fee_vnd: number; total_vnd: number; currency: 'VND'; payment_method: 'cod' }
 export interface PurchaseRequest { quote_id: string; idempotency_key: string; shipping_address: ShippingAddress }
 
@@ -200,17 +206,17 @@ export interface ProductsResponse { request_id: string; products: ProductSummary
 export interface BrowseResponse extends ProductsResponse {
   price_interpretation?: PriceInterpretation
   query: { text: string; sort: string; filters: Filters }
-  facets: Record<'category' | 'brand' | 'color', { value: string; count: number }[]>
+  facets: Record<'category' | 'brand' | 'color', { value: string; count: number }[]> & { size?: { value: string; count: number }[] }
   corrections: { input: string; matched: string }[]
   empty_reason: 'catalog_empty' | 'filters' | 'no_matches' | null
   catalog_fingerprint: string
   lexical_fingerprint: string
   retrieval: 'catalog' | 'bm25' | 'exact_sku'
 }
-export interface CartItem {
+export interface CartItem extends VariantLine {
   product_id: string; product: ProductSummary | null; quantity: number
   unit_price_vnd: number; line_total_vnd: number; available_quantity: number
-  issue: 'PRODUCT_UNAVAILABLE' | 'OUT_OF_STOCK' | 'INSUFFICIENT_STOCK' | null
+  issue: 'PRODUCT_UNAVAILABLE' | 'OUT_OF_STOCK' | 'INSUFFICIENT_STOCK' | 'VARIANT_REQUIRED' | null
 }
 export interface Cart {
   version: number; items: CartItem[]; item_count: number; subtotal_vnd: number
@@ -220,7 +226,7 @@ export interface CartResponse { request_id: string; cart: Cart }
 export interface WishlistResponse { request_id: string; items: { product_id: string; product: ProductSummary | null }[]; total: number }
 export interface AdminPageData {
   request_id: string; total: number; offset: number; limit: number; revision?: number
-  items?: { product_id: string; quantity: number; product: ProductSummary | null }[]
+  items?: { product_id: string; size?: string | null; quantity: number; product: ProductSummary | null }[]
   users?: { user_id: string; email: string; display_name: string; role: 'user' | 'admin'; access_state: 'active' | 'locked'; version: number }[]
   orders?: (OrderDetail & { version: number })[]
   events?: { audit_id: number; actor_id: string; action: string; subject_id: string; before: Record<string, unknown>; after: Record<string, unknown>; reason: string; created_at: string }[]

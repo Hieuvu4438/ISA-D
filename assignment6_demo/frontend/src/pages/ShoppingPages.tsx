@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Heart, ShoppingBag, Trash2 } from 'lucide-react'
-import { ApiError, getCart, getWishlist, saveWishlist, setCartQuantity } from '../lib/api'
+import { ApiError, getCart, getProduct, getWishlist, saveWishlist, setCartQuantity } from '../lib/api'
 import type { Cart, WishlistResponse } from '../lib/types'
 import { ErrorPanel, ProductImage, formatMoney } from '../ui'
 
-const issues = { PRODUCT_UNAVAILABLE: 'Sản phẩm không còn trong danh mục. Hãy xóa khỏi giỏ.', OUT_OF_STOCK: 'Sản phẩm đã hết hàng. Hãy xóa hoặc quay lại sau.', INSUFFICIENT_STOCK: 'Tồn kho hiện tại thấp hơn số lượng đã chọn. Hãy giảm số lượng.' }
+const issues = { VARIANT_REQUIRED: 'Hãy xóa dòng này và mở sản phẩm để chọn kích cỡ.', PRODUCT_UNAVAILABLE: 'Sản phẩm không còn trong danh mục. Hãy xóa khỏi giỏ.', OUT_OF_STOCK: 'Sản phẩm đã hết hàng. Hãy xóa hoặc quay lại sau.', INSUFFICIENT_STOCK: 'Tồn kho hiện tại thấp hơn số lượng đã chọn. Hãy giảm số lượng.' }
 
 export function CartPage() {
   const [cart, setCart] = useState<Cart | null>(null)
@@ -25,11 +25,11 @@ export function CartPage() {
       .finally(() => { if (!controller.signal.aborted) setLoading(false) })
     return () => { alive.current = false; controller.abort() }
   }, [attempt])
-  async function change(productId: string, quantity: number) {
+  async function change(productId: string, quantity: number, variantId?: string) {
     if (!cart || locked.current) return
     locked.current = true; setBusy(true); setError(''); setNotice('')
     try {
-      const result = await setCartQuantity(productId, quantity, cart.version)
+      const result = await setCartQuantity(productId, quantity, cart.version, variantId)
       if (alive.current) { setCart(result.cart); setNotice(quantity ? 'Đã cập nhật số lượng.' : 'Đã xóa sản phẩm khỏi giỏ.') }
     } catch (reason) {
       if (alive.current) {
@@ -41,10 +41,10 @@ export function CartPage() {
       }
     } finally { locked.current = false; if (alive.current) setBusy(false) }
   }
-  function submit(event: FormEvent<HTMLFormElement>, productId: string) {
+  function submit(event: FormEvent<HTMLFormElement>, productId: string, variantId?: string) {
     event.preventDefault(); const quantity = Number(new FormData(event.currentTarget).get('quantity'))
     if (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) { setError('Chọn số lượng nguyên từ 1 đến 99.'); return }
-    void change(productId, quantity)
+    void change(productId, quantity, variantId)
   }
   return <div className="page-shell shopping-page" aria-busy={busy || loading}><header className="page-heading"><h1>Giỏ hàng của bạn.</h1><p>Kiểm tra món đồ và số lượng trước khi đặt hàng.</p></header>
     {loading && <p role="status">Đang tải giỏ hàng…</p>}
@@ -52,10 +52,10 @@ export function CartPage() {
     {authRequired && <Link className="primary-button" to="/account">Đăng nhập để xem giỏ hàng</Link>}
     {notice && <p role="status" className="account-notice">{notice}</p>}
     {!loading && cart && (cart.items.length === 0 ? <section className="empty-state"><ShoppingBag size={32} aria-hidden="true" /><h2>Giỏ hàng đang trống</h2><p>Khám phá bộ sưu tập hoặc chọn từ danh sách yêu thích.</p><Link className="primary-button" to="/catalog">Khám phá bộ sưu tập</Link><Link className="text-link" to="/wishlist">Xem món đã lưu</Link></section> : <div className="shopping-layout">
-      <section aria-label="Sản phẩm trong giỏ" className="shopping-list">{cart.items.map(item => <article key={`${item.product_id}:${cart.version}`} className="shopping-row" data-testid="cart-item">
+      <section aria-label="Sản phẩm trong giỏ" className="shopping-list">{cart.items.map(item => <article key={`${item.variant_id ?? item.product_id}:${cart.version}`} className="shopping-row" data-testid="cart-item">
         {item.product && <Link className="shopping-photo" to={`/products/${item.product_id}`}><ProductImage src={item.product.image_url} alt={item.product.name} /></Link>}
-        <div className="shopping-copy"><h2>{item.product ? <Link to={`/products/${item.product_id}`}>{item.product.name}</Link> : `Sản phẩm ${item.product_id} không còn khả dụng`}</h2><p>{item.product?.color}</p><p>{formatMoney(item.unit_price_vnd)} / sản phẩm</p>{item.issue && <p className="field-error" role="status">{issues[item.issue]}</p>}
-          <form className="cart-quantity" onSubmit={event => submit(event, item.product_id)}><label htmlFor={`quantity-${item.product_id}`}>Số lượng<input id={`quantity-${item.product_id}`} name="quantity" type="number" min="1" max="99" step="1" defaultValue={item.quantity} required disabled={busy || !item.product} /></label><button className="secondary-button" type="submit" disabled={busy || !item.product}>Cập nhật</button><button className="text-link" type="button" disabled={busy} onClick={() => { void change(item.product_id, 0) }}><Trash2 size={16} aria-hidden="true" />Xóa<span className="visually-hidden"> {item.product?.name ?? item.product_id}</span></button></form>
+        <div className="shopping-copy"><h2>{item.product ? <Link to={`/products/${item.product_id}`}>{item.product.name}</Link> : `Sản phẩm ${item.product_id} không còn khả dụng`}</h2><p>{item.product?.color}{item.size ? ` · ${item.size}` : ''}</p><p>{formatMoney(item.unit_price_vnd)} / sản phẩm</p>{item.issue && <p className="field-error" role="status">{issues[item.issue]}</p>}
+          <form className="cart-quantity" onSubmit={event => submit(event, item.product_id, item.variant_id)}><label htmlFor={`quantity-${item.variant_id ?? item.product_id}`}>Số lượng<input id={`quantity-${item.variant_id ?? item.product_id}`} name="quantity" type="number" min="1" max="99" step="1" defaultValue={item.quantity} required disabled={busy || !item.product} /></label><button className="secondary-button" type="submit" disabled={busy || !item.product}>Cập nhật</button><button className="text-link" type="button" disabled={busy} onClick={() => { void change(item.product_id, 0, item.variant_id) }}><Trash2 size={16} aria-hidden="true" />Xóa<span className="visually-hidden"> {item.product?.name ?? item.product_id}</span></button></form>
         </div><strong className="shopping-line-total">{formatMoney(item.line_total_vnd)}</strong>
       </article>)}</section>
       <aside className="shopping-summary"><h2>Tạm tính</h2><p>{cart.item_count} sản phẩm</p><strong>{formatMoney(cart.subtotal_vnd)}</strong><p>Giá và tồn kho là dữ liệu demo. Giỏ hàng chưa giữ hàng; giá và tồn kho được kiểm tra lại khi đặt đơn.</p>{cart.has_issues ? <p>Hãy xử lý các sản phẩm không còn đủ hàng trước khi đặt đơn.</p> : <Link className="primary-button" to="/checkout">Tiếp tục đặt hàng</Link>}<Link className="secondary-button" to="/catalog">Tiếp tục chọn sản phẩm</Link></aside>
@@ -64,6 +64,7 @@ export function CartPage() {
 }
 
 export function WishlistPage() {
+  const navigate = useNavigate()
   const [data, setData] = useState<WishlistResponse | null>(null)
   const [error, setError] = useState(''), [notice, setNotice] = useState('')
   const [loading, setLoading] = useState(true), [busy, setBusy] = useState(false), [authRequired, setAuthRequired] = useState(false)
@@ -89,6 +90,8 @@ export function WishlistPage() {
       {item.product && <Link className="shopping-photo" to={`/products/${item.product_id}`}><ProductImage src={item.product.image_url} alt={item.product.name} /></Link>}
       <div className="shopping-copy"><h2>{item.product ? <Link to={`/products/${item.product_id}`}>{item.product.name}</Link> : `Sản phẩm ${item.product_id} không còn khả dụng`}</h2><p>{item.product?.color}</p>{item.product && <strong>{formatMoney(item.product.price_vnd)}</strong>}
         <div className="shopping-actions"><button className="primary-button" disabled={busy || !item.product?.in_stock} onClick={() => { void action(async () => {
+          const detail = await getProduct(item.product_id)
+          if (detail.product.variants?.some(v => v.size != null)) { if (alive.current) navigate(`/products/${item.product_id}`); return }
           const current = await getCart(); const old = current.cart.items.find(row => row.product_id === item.product_id)?.quantity ?? 0
           await setCartQuantity(item.product_id, old + 1, current.cart.version)
           if (alive.current) setNotice('Đã thêm một sản phẩm vào giỏ. Món đồ vẫn được giữ trong danh sách yêu thích.')

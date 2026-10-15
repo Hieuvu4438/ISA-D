@@ -51,7 +51,7 @@ export function OrderPage() {
           <thead><tr><th scope="col">Sản phẩm</th><th scope="col">Số lượng</th><th scope="col">Đơn giá</th><th scope="col">Thành tiền</th></tr></thead>
           <tbody>{order.items.map((item, index) => <tr key={`${item.product_id}-${index}`}>
             <th scope="row"><Link className="text-link" to={`/products/${item.product_id}`}>{item.product_name}</Link>
-              <span className="order-reference">{item.product_id}</span></th>
+              <span className="order-reference">{item.variant_id ?? item.product_id}{item.size ? ` · Cỡ ${item.size} · ${item.color}` : ''}</span></th>
             <td>{item.quantity}</td><td>{formatMoney(item.unit_price_vnd)}</td><td>{formatMoney(item.line_total_vnd)}</td>
           </tr>)}</tbody>
           <tfoot>{order.shipping_fee_vnd != null && <tr><th scope="row" colSpan={3}>Phí vận chuyển</th><td>{formatMoney(order.shipping_fee_vnd)}</td></tr>}<tr><th scope="row" colSpan={3}>Tổng giá trị đơn hàng</th><td className="order-total">{formatMoney(order.total_vnd)}</td></tr></tfoot>

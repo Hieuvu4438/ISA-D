@@ -1,5 +1,6 @@
 from app.domain import AppError
 from app.application.catalog_search import fold
+from app.data.variant_repository import product_key
 
 
 class AdminService:
@@ -15,7 +16,7 @@ class AdminService:
         rows = []
         text = fold(query)
         for row in snapshot["rows"]:
-            product = products.get(row["product_id"])
+            product = products.get(product_key(row["product_id"]))
             if text and text not in fold(f"{row['product_id']} {product['name'] if product else ''}"):
                 continue
             if product:
@@ -26,6 +27,15 @@ class AdminService:
     def stock(self, actor, product_id, quantity, revision, reason, expected_epoch=None):
         if not self.products:
             raise AppError(503, "CATALOG_UNAVAILABLE", "Danh mục chưa sẵn sàng.")
-        if not self.products.get_by_id(product_id):
+        if not self.products.get_by_id(product_key(product_id)):
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm trong danh mục hiện tại.")
         return self.repository.stock(actor, product_id, quantity, revision, reason, expected_epoch=expected_epoch)
+
+    def allocate_variant(self, actor, product_id, size, quantity, revision, reason, expected_epoch=None):
+        product = self.products.get_by_id(product_id) if self.products else None
+        if not product:
+            raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm trong danh mục hiện tại.")
+        allowed = {"XS", "S", "M", "L", "XL", "XXL", "3XL"} if product["category"] in {"t_shirt", "jacket"} else {str(i) for i in range(34, 49)} if product["category"] in {"running_shoes", "trail_shoes", "casual_shoes", "boots", "sandals"} else {"ONE"}
+        if size not in allowed:
+            raise AppError(422, "SIZE_UNSUPPORTED", "Kích cỡ không phù hợp danh mục: " + ", ".join(sorted(allowed)), "size")
+        return self.repository.allocate_variant(actor, product_id, size, quantity, revision, reason, expected_epoch=expected_epoch)

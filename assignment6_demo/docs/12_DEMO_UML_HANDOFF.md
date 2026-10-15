@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+Size sequence/code mapping: [26](26_PRODUCT_VARIANTS.md). Tái dựng VP phải dùng SKU variant_id cho cart/quote/order/return/restock, giữ product_id cha cho detail/media; default SKU lịch sử không bị gán size tự động. Mermaid ở26 chưa thay project `.vpp` editable.
+
 Price query amendment: [25](25_PRICE_QUERY.md) có sequence interpret→validate/intersect→original encoder→filter/rank→visible conditions/error recovery. Không thay .vpp editable gate còn thiếu.
 
 Access amendment: [24](24_ACCOUNT_ACCESS.md) có sequence lock/unlock xen request cũ, transaction auth_epoch/version/audit và nguyên tắc không restore session. Mermaid không thay .vpp editable pending.

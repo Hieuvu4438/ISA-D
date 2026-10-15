@@ -414,9 +414,10 @@ def create_app(settings=None, container=None):
             values[name] = int(raw)
         repo = services(request).require("products")
         rows = repo.products
-        stock, inventory_revision = request.app.state.purchases.repository.snapshot()
+        stock, inventory_revision, sizes = request.app.state.purchases.repository.snapshot_with_variants()
         for p in rows:
             p["stock_quantity"] = stock.get(p["product_id"], 0)
+            p["_variants"] = sizes.get(p["product_id"], [])
         return {
             "request_id": request.state.request_id,
             "products": [repo.summary(p) for p in rows[values["offset"] : values["offset"] + values["limit"]]],
@@ -432,9 +433,12 @@ def create_app(settings=None, container=None):
         product = repo.get_by_id(identifier(product_id, "P"))
         if product is None:
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm.")
-        stock, revision = request.app.state.purchases.repository.snapshot()
-        product["stock_quantity"] = stock.get(product_id, 0)
-        return {"request_id": request.state.request_id, "product": repo.detail(product), "inventory_revision": revision}
+        variants, revision = request.app.state.purchases.repository.variants.detail(product_id)
+        product["stock_quantity"] = sum(v["stock_quantity"] for v in variants)
+        product["_variants"] = variants
+        detail = repo.detail(product)
+        detail["variants"] = [{**v, "color": product["color"], "price_vnd": product["price_vnd"], "in_stock": v["stock_quantity"] > 0} for v in variants]
+        return {"request_id": request.state.request_id, "product": detail, "inventory_revision": revision}
 
     @application.get("/api/v1/credits")
     async def credits(request: Request):

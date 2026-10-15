@@ -99,7 +99,7 @@ export const getWishlist = (signal?: AbortSignal) => request<WishlistResponse>('
 function shoppingWrite<T>(path: string, body: object): Promise<T> {
   return request(path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Cortis-Intent': 'commerce' }, body: JSON.stringify(body) })
 }
-export const setCartQuantity = (product_id: string, quantity: number, version: number) => shoppingWrite<CartResponse>('/cart/items', { product_id, quantity, version })
+export const setCartQuantity = (product_id: string, quantity: number, version: number, variant_id?: string) => shoppingWrite<CartResponse>('/cart/items', { product_id, quantity, version, ...(variant_id ? { variant_id } : {}) })
 export const saveWishlist = (product_id: string, saved: boolean) => shoppingWrite<WishlistResponse>('/wishlist/items', { product_id, saved })
 export const createQuote = () => shoppingWrite<{ quote: CheckoutQuote }>('/checkout/quote', {})
 export const placePurchase = (body: PurchaseRequest) => shoppingWrite<OrderResponse & { replayed: boolean }>('/purchases', body)

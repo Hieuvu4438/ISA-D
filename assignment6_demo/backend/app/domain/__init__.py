@@ -32,6 +32,7 @@ class Filters(StrictModel):
     category: CategoryCode | None = None
     brand: str | None = None
     color: str | None = None
+    size: str | None = Field(default=None, strict=True, pattern=r"^(?:XS|S|M|L|XL|XXL|3XL|ONE|3[4-9]|4[0-8])$")
     min_price: StrictInt | None = Field(default=None, ge=0, le=1_000_000_000)
     max_price: StrictInt | None = Field(default=None, ge=0, le=1_000_000_000)
     in_stock: StrictBool = False

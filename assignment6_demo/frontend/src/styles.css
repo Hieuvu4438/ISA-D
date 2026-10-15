@@ -77,6 +77,8 @@
   .shopping-summary > strong { display: block; font-size: 28px; margin: 18px 0; }
   .shopping-summary p { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
   .product-shopping { padding: 24px 0; border-top: 1px solid var(--line); }
+  .product-shopping > label { margin-bottom: 16px; }
+  .product-shopping select { max-width: 280px; }
   .shopping-line-total { font-variant-numeric: tabular-nums; }
   .browse-page { padding-top: 22px; padding-bottom: 64px; }
   .browse-page .page-heading p { margin-bottom: 16px; }

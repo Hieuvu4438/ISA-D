@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Biến thể kích cỡ, phân kho SKU, cart/order/return identity và lọc size: [26_PRODUCT_VARIANTS.md](26_PRODUCT_VARIANTS.md). Phần màu/asset CRUD và size guide vẫn pending.
+
 Hiểu điều kiện giá VND trong câu, giao bộ lọc và evidence encoder thật: [25_PRICE_QUERY.md](25_PRICE_QUERY.md).
 
 Khóa/mở khóa, session revocation và transaction epoch guards: [24_ACCOUNT_ACCESS.md](24_ACCOUNT_ACCESS.md).

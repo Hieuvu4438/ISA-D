@@ -5,6 +5,7 @@ import json
 from app.domain import AppError
 from app.data.purchase_repository import PurchaseRepository
 from app.data.account_repository import AccountRepository
+from app.data.variant_repository import line_key
 
 
 class AdminRepository:
@@ -40,7 +41,26 @@ class AdminRepository:
         with self.accounts.connection() as db:
             db.execute("BEGIN")
             revision = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
-            return {"rows": [dict(row) for row in db.execute("SELECT product_id,quantity FROM inventory ORDER BY product_id")], "revision": revision}
+            return {"rows": [dict(row) for row in db.execute("SELECT i.product_id,i.quantity,v.size FROM inventory i LEFT JOIN product_variants v ON v.variant_id=i.product_id ORDER BY i.product_id")], "revision": revision}
+
+    def allocate_variant(self, actor, product_id, size, quantity, revision, reason, expected_epoch=None):
+        with self.accounts.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            self.require_admin(db, actor, expected_epoch)
+            current = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
+            if revision != current:
+                raise AppError(409, "INVENTORY_CHANGED", "Tồn kho đã thay đổi. Hãy tải lại trước khi phân cỡ.")
+            sku = f"{product_id}-{size}"
+            if db.execute("SELECT 1 FROM product_variants WHERE variant_id=?", (sku,)).fetchone():
+                raise AppError(409, "VARIANT_EXISTS", "Kích cỡ đã tồn tại. Hãy dùng điều chỉnh tồn kho của biến thể.")
+            moved = db.execute("UPDATE inventory SET quantity=quantity-? WHERE product_id=? AND quantity>=?", (quantity, product_id, quantity)).rowcount
+            if not moved:
+                raise AppError(409, "INSUFFICIENT_STOCK", "Kho chưa phân cỡ không đủ số lượng để chuyển.")
+            db.execute("INSERT INTO product_variants VALUES(?,?,?)", (sku, product_id, size))
+            db.execute("INSERT INTO inventory VALUES(?,?)", (sku, quantity))
+            db.execute("UPDATE inventory_state SET revision=revision+1 WHERE singleton=1")
+            self.audit(db, actor, "variant.allocate", sku, {}, {"product_id": product_id, "size": size, "quantity": quantity}, reason)
+            return {"product_id": product_id, "variant_id": sku, "size": size, "quantity": quantity, "revision": current + 1}
 
     def stock(self, actor, product_id, quantity, revision, reason, expected_epoch=None):
         with self.accounts.connection() as db:
@@ -162,7 +182,7 @@ class AdminRepository:
                 raise AppError(409, "ORDER_TRANSITION_INVALID", "Không thể chuyển trạng thái đơn hàng theo yêu cầu này.")
             if status == "cancelled":
                 for item in json.loads(row["payload"])["items"]:
-                    db.execute("UPDATE inventory SET quantity=quantity+? WHERE product_id=?", (item["quantity"], item["product_id"]))
+                    db.execute("UPDATE inventory SET quantity=quantity+? WHERE product_id=?", (item["quantity"], line_key(item)))
                 db.execute("UPDATE inventory_state SET revision=revision+1 WHERE singleton=1")
             db.execute("UPDATE purchases SET status=?,version=version+1 WHERE order_id=?", (status, order_id))
             if status == "delivered":

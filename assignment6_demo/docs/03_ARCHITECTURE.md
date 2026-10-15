@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+Size amendment: VariantRepository/helpers và PurchaseRepository quản lý SKU inventory; Application nối product cha/size, cart/quote/order/return dùng line_key variant_id fallback product_id; stock/size snapshot và sequence theo [26](26_PRODUCT_VARIANTS.md). Không encode lại khi phân kho.
+
 Price query amendment: Application price_query.py tạo numeric bounds/lexical spans, SearchService/CatalogSearch giao với manual filters; encoder vẫn nguyên câu và Data không thực hiện parser/inference. [25](25_PRICE_QUERY.md) ghi sequence và giới hạn.
 
 Access amendment: identity snapshot chứa auth_epoch server-only, truyền Presentation→Application→Data để kiểm active/epoch dưới write lock cho mọi mutation được bảo vệ; [24](24_ACCOUNT_ACCESS.md) ghi phạm vi và sequence. Không dùng ContextVar ngầm hay nhận epoch từ browser.

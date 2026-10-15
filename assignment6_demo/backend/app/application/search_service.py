@@ -108,10 +108,11 @@ class SearchService:
         timings["retrieval"] = (perf_counter() - mark) * 1000
         trace.append({"step": "retrieval", "status": "ok", "input_count": 1, "output_count": len(candidates)})
         products = {p["product_id"]: p for p in self.repository.products}
-        stock, inventory_revision = self.inventory.snapshot() if self.inventory else ({}, None)
+        stock, inventory_revision, sizes = self.inventory.snapshot_with_variants() if self.inventory else ({}, None, {})
         if self.inventory:
             for p in products.values():
                 p["stock_quantity"] = stock.get(p["product_id"], 0)
+                p["_variants"] = sizes.get(p["product_id"], [])
         if any(c["product_id"] not in products for c in candidates):
             raise AppError(503, "INDEX_OUT_OF_SYNC", "Chỉ mục không khớp dữ liệu sản phẩm.")
         mark = perf_counter()

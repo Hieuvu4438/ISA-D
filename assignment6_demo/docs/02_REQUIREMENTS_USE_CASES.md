@@ -1,5 +1,7 @@
 # Yêu cầu và use case website
 
+E3/E5 size amendment: [26](26_PRODUCT_VARIANTS.md) thêm chọn size, kho từng SKU, snapshot size xuyên checkout/hủy/trả và filter size ở mọi search mode; yêu cầu cũ về product-only cart/stock được thay theo contract này. Không suy size/fit từ ảnh hoặc câu tự nhiên.
+
 **E1 amendment:** [15](15_ECOMMERCE_EXPANSION.md) mở rộng account/admin/cart/checkout. UC-05/07 cần login và ownership account DB; C001 map explicit bằng CLI. Giữ FR-01–13, thay scope giới hạn cũ theo yêu cầu mới.
 
 Revision 1. Các từ **phải** là điều kiện bắt buộc để nghiệm thu website; **đề xuất** là giả định có thể điều chỉnh bằng evidence và cập nhật đặc tả.

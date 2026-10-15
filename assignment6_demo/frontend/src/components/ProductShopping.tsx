@@ -10,6 +10,10 @@ export function ProductShopping({ product }: { product: ProductDetail }) {
   const [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState(''), [auth, setAuth] = useState(false)
   const alive = useRef(true), locked = useRef(false)
   const generation = useRef(0)
+  const sized = product.variants?.some(v => v.size != null) ?? false
+  const [sku, setSku] = useState(sized ? '' : product.product_id)
+  const selected = product.variants?.find(v => v.variant_id === sku)
+  const available = selected?.stock_quantity ?? (sized ? 0 : product.stock_quantity)
   useEffect(() => {
     alive.current = true; const controller = new AbortController()
     const token = ++generation.current
@@ -24,10 +28,11 @@ export function ProductShopping({ product }: { product: ProductDetail }) {
     finally { locked.current = false; if (alive.current) setBusy(false) }
   }
   return <section className="product-shopping" aria-label="Chọn và lưu sản phẩm">
-    <label htmlFor="purchase-quantity">Số lượng<input id="purchase-quantity" type="number" min="1" max={Math.min(99, product.stock_quantity) || 1} step="1" value={quantity} disabled={busy || !product.in_stock} onChange={event => setQuantity(Number(event.target.value))} /></label>
-    <div className="shopping-actions"><button className="primary-button" disabled={busy || !product.in_stock} onClick={() => {
+    {sized && <><label htmlFor="purchase-size">Kích cỡ<select id="purchase-size" aria-label="Kích cỡ" value={sku} disabled={busy} onChange={event => { setSku(event.target.value); setQuantity(1); setNotice(''); setError('') }}><option value="">Chọn kích cỡ</option>{product.variants?.map(v => <option value={v.variant_id} key={v.variant_id} disabled={!v.in_stock}>{v.size} · {v.in_stock ? `còn ${v.stock_quantity}` : 'hết hàng'}</option>)}</select></label><p className="demo-note">Kích cỡ và tồn kho minh họa, chưa có số đo để tư vấn độ vừa vặn.</p></>}
+    <label htmlFor="purchase-quantity">Số lượng<input id="purchase-quantity" type="number" min="1" max={Math.min(99, available) || 1} step="1" value={quantity} disabled={busy || !available} onChange={event => setQuantity(Number(event.target.value))} /></label>
+    <div className="shopping-actions"><button className="primary-button" disabled={busy || !product.in_stock || (sized && !sku)} onClick={() => {
       if (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) { setError('Chọn số lượng nguyên từ 1 đến 99.'); return }
-      void action(async () => { const current = await getCart(); const old = current.cart.items.find(row => row.product_id === product.product_id)?.quantity ?? 0; await setCartQuantity(product.product_id, old + quantity, current.cart.version); if (alive.current) setNotice('Đã thêm sản phẩm vào giỏ hàng.') })
+      void action(async () => { const current = await getCart(); const old = current.cart.items.find(row => (row.variant_id ?? row.product_id) === sku)?.quantity ?? 0; await setCartQuantity(product.product_id, old + quantity, current.cart.version, sku); if (alive.current) setNotice('Đã thêm sản phẩm vào giỏ hàng.') })
     }}><ShoppingBag size={17} aria-hidden="true" />{busy ? 'Đang cập nhật…' : product.in_stock ? 'Thêm vào giỏ' : 'Tạm hết hàng'}</button>
       <button className="secondary-button" aria-pressed={saved} disabled={busy} onClick={() => { void action(async () => { const result = await saveWishlist(product.product_id, !saved); if (alive.current) { setSaved(result.items.some(row => row.product_id === product.product_id)); setNotice(saved ? 'Đã bỏ lưu món đồ.' : 'Đã lưu món đồ yêu thích.') } }) }}><Heart size={17} aria-hidden="true" />{saved ? 'Bỏ lưu' : 'Lưu yêu thích'}</button></div>
     {error && <ErrorPanel message={error} />}{auth && <Link className="text-link" to="/account">Đăng nhập để lưu hoặc thêm sản phẩm</Link>}

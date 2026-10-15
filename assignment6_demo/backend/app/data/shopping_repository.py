@@ -1,5 +1,6 @@
 """Account-scoped shopping lists and optimistic cart updates in SQLite."""
 from app.domain import AppError
+from app.data.variant_repository import choose
 
 
 class ShoppingRepository:
@@ -29,10 +30,17 @@ class ShoppingRepository:
             rows = db.execute("SELECT product_id,quantity FROM cart_items WHERE user_id=? ORDER BY product_id", (user_id,)).fetchall()
             return version[0] if version else 0, [dict(row) for row in rows]
 
-    def set_quantity(self, user_id, product_id, quantity, version, expected_epoch=None):
+    def set_quantity(self, user_id, product_id, quantity, version, expected_epoch=None, variant_id=None):
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
             self.accounts.require_active(db, user_id, expected_epoch)
+            sku = variant_id or product_id
+            if quantity and db.execute("SELECT 1 FROM sqlite_master WHERE name='product_variants'").fetchone():
+                selected = choose(db, product_id, variant_id)
+                if selected["stock_quantity"] < quantity:
+                    raise AppError(409, "INSUFFICIENT_STOCK", "Số lượng vượt tồn kho của kích cỡ đã chọn.", "quantity")
+                sku = selected["variant_id"]
+            product_id = sku
             db.execute("INSERT OR IGNORE INTO cart_versions(user_id) VALUES (?)", (user_id,))
             current = db.execute("SELECT version FROM cart_versions WHERE user_id=?", (user_id,)).fetchone()[0]
             if current != version:

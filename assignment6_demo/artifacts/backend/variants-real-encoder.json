@@ -1,0 +1,5797 @@
+{
+  "scope": "Exploratory hard size/stock filter and unchanged cosine checks with real CPU encoder, not independent relevance quality",
+  "speech_calls": 0,
+  "voice_evidence": "manual transcript only",
+  "checks": 24,
+  "passed": true,
+  "query_image_sha256": "fa52a0ddfa9f172fb93481063cdd932f3683cc557b28f7ba0b03007ded0d0b7e",
+  "product_snapshot": {
+    "product_id": "P041",
+    "name": "Áo thun trơn màu đen",
+    "category": "t_shirt",
+    "brand": "Không xác định",
+    "color": "đen",
+    "price_vnd": 1735000,
+    "in_stock": true,
+    "sizes": [
+      "M",
+      "L"
+    ],
+    "available_sizes": [
+      "M",
+      "L"
+    ],
+    "image_url": "/api/v1/media/products/P041",
+    "description": "Áo thun đen trơn cổ tròn, dáng rộng, được treo trên móc trước nền gỗ; ảnh thể hiện một mặt áo.",
+    "stock_quantity": 5,
+    "image_credit": {
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_black_T-shirt_(003).JPG",
+      "author": "Juan de Vojníkov",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "transformations": [
+        "Wikimedia thumbnail when available; no local visual edits"
+      ]
+    },
+    "variants": [
+      {
+        "variant_id": "P041-M",
+        "size": "M",
+        "stock_quantity": 3,
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true
+      },
+      {
+        "variant_id": "P041-L",
+        "size": "L",
+        "stock_quantity": 2,
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true
+      }
+    ]
+  },
+  "rows": [
+    {
+      "mode": "text",
+      "strategy": "semantic",
+      "size": null,
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "23c4feaa-9565-425c-b89e-c99576bb1ad9",
+        "query": {
+          "mode": "text",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.7632529735565186,
+            "component_scores": {
+              "text": 0.7632530331611633,
+              "image": null
+            },
+            "rank_score": 0.7632529735565186,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.7603050470352173,
+            "component_scores": {
+              "text": 0.7603049874305725,
+              "image": null
+            },
+            "rank_score": 0.7603050470352173,
+            "lexical_score": null
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7602718472480774,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": null
+            },
+            "rank_score": 0.7602718472480774,
+            "lexical_score": null
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.7501800656318665,
+            "component_scores": {
+              "text": 0.7501800656318665,
+              "image": null
+            },
+            "rank_score": 0.7501800656318665,
+            "lexical_score": null
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7481960654258728,
+            "component_scores": {
+              "text": 0.7481960654258728,
+              "image": null
+            },
+            "rank_score": 0.7481960654258728,
+            "lexical_score": null
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7467679381370544,
+            "component_scores": {
+              "text": 0.7467679381370544,
+              "image": null
+            },
+            "rank_score": 0.7467679381370544,
+            "lexical_score": null
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.742865264415741,
+            "component_scores": {
+              "text": 0.7428654432296753,
+              "image": null
+            },
+            "rank_score": 0.742865264415741,
+            "lexical_score": null
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7412593364715576,
+            "component_scores": {
+              "text": 0.7412593364715576,
+              "image": null
+            },
+            "rank_score": 0.7412593364715576,
+            "lexical_score": null
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.7391538023948669,
+            "component_scores": {
+              "text": 0.7391537427902222,
+              "image": null
+            },
+            "rank_score": 0.7391538023948669,
+            "lexical_score": null
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.7347539067268372,
+            "component_scores": {
+              "text": 0.7347539067268372,
+              "image": null
+            },
+            "rank_score": 0.7347539067268372,
+            "lexical_score": null
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.7321110963821411,
+            "component_scores": {
+              "text": 0.7321110367774963,
+              "image": null
+            },
+            "rank_score": 0.7321110963821411,
+            "lexical_score": null
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.7318821549415588,
+            "component_scores": {
+              "text": 0.7318822145462036,
+              "image": null
+            },
+            "rank_score": 0.7318821549415588,
+            "lexical_score": null
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P148",
+              "name": "Áo thun loang màu cam đỏ vàng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "cam, đỏ và vàng",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P148"
+            },
+            "score": 0.7076543569564819,
+            "component_scores": {
+              "text": 0.7076543569564819,
+              "image": null
+            },
+            "rank_score": 0.7076543569564819,
+            "lexical_score": null
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P042",
+              "name": "Áo thun Nike Jordan màu trắng",
+              "category": "t_shirt",
+              "brand": "Nike",
+              "color": "trắng, đen và đỏ",
+              "price_vnd": 1770000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P042"
+            },
+            "score": 0.6840652823448181,
+            "component_scores": {
+              "text": 0.6840653419494629,
+              "image": null
+            },
+            "rank_score": 0.6840652823448181,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.48289999904227443,
+            "encoding": 11.59199999892735,
+            "retrieval": 1.5562000007776078,
+            "filtering": 0.07750000077066943,
+            "threshold": 0,
+            "ranking": 0.006100002792663872,
+            "hydration": 0.09510000018053688,
+            "total": 16.425199999503093
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 14
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "semantic",
+      "size": "M",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "a93be1a8-a089-4abe-9107-40e6bf1281aa",
+        "query": {
+          "mode": "text",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7602718472480774,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": null
+            },
+            "rank_score": 0.7602718472480774,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.14509999891743064,
+            "encoding": 11.297499997453997,
+            "retrieval": 0.8538999973097816,
+            "filtering": 0.12109999806853011,
+            "threshold": 0,
+            "ranking": 0.006099999154685065,
+            "hydration": 0.045599997974932194,
+            "total": 15.076400002726587
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "semantic",
+      "size": "XS",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "70e36dae-7f6c-42e0-bbdf-37caee111fdd",
+        "query": {
+          "mode": "text",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 0.1277999981539324,
+            "encoding": 11.093500001152279,
+            "retrieval": 0.47420000191777945,
+            "filtering": 0.0776999986555893,
+            "threshold": 0,
+            "ranking": 0.0021000014385208488,
+            "hydration": 0.0005000001692678779,
+            "total": 13.450300000840798
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "semantic",
+      "size": null,
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "27519eb9-34c1-4090-a0ed-3ecaab44d150",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.7632529735565186,
+            "component_scores": {
+              "text": 0.7632530331611633,
+              "image": null
+            },
+            "rank_score": 0.7632529735565186,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.7603050470352173,
+            "component_scores": {
+              "text": 0.7603049874305725,
+              "image": null
+            },
+            "rank_score": 0.7603050470352173,
+            "lexical_score": null
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7602718472480774,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": null
+            },
+            "rank_score": 0.7602718472480774,
+            "lexical_score": null
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.7501800656318665,
+            "component_scores": {
+              "text": 0.7501800656318665,
+              "image": null
+            },
+            "rank_score": 0.7501800656318665,
+            "lexical_score": null
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7481960654258728,
+            "component_scores": {
+              "text": 0.7481960654258728,
+              "image": null
+            },
+            "rank_score": 0.7481960654258728,
+            "lexical_score": null
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7467679381370544,
+            "component_scores": {
+              "text": 0.7467679381370544,
+              "image": null
+            },
+            "rank_score": 0.7467679381370544,
+            "lexical_score": null
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.742865264415741,
+            "component_scores": {
+              "text": 0.7428654432296753,
+              "image": null
+            },
+            "rank_score": 0.742865264415741,
+            "lexical_score": null
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7412593364715576,
+            "component_scores": {
+              "text": 0.7412593364715576,
+              "image": null
+            },
+            "rank_score": 0.7412593364715576,
+            "lexical_score": null
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.7391538023948669,
+            "component_scores": {
+              "text": 0.7391537427902222,
+              "image": null
+            },
+            "rank_score": 0.7391538023948669,
+            "lexical_score": null
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.7347539067268372,
+            "component_scores": {
+              "text": 0.7347539067268372,
+              "image": null
+            },
+            "rank_score": 0.7347539067268372,
+            "lexical_score": null
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.7321110963821411,
+            "component_scores": {
+              "text": 0.7321110367774963,
+              "image": null
+            },
+            "rank_score": 0.7321110963821411,
+            "lexical_score": null
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.7318821549415588,
+            "component_scores": {
+              "text": 0.7318822145462036,
+              "image": null
+            },
+            "rank_score": 0.7318821549415588,
+            "lexical_score": null
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P148",
+              "name": "Áo thun loang màu cam đỏ vàng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "cam, đỏ và vàng",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P148"
+            },
+            "score": 0.7076543569564819,
+            "component_scores": {
+              "text": 0.7076543569564819,
+              "image": null
+            },
+            "rank_score": 0.7076543569564819,
+            "lexical_score": null
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P042",
+              "name": "Áo thun Nike Jordan màu trắng",
+              "category": "t_shirt",
+              "brand": "Nike",
+              "color": "trắng, đen và đỏ",
+              "price_vnd": 1770000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P042"
+            },
+            "score": 0.6840652823448181,
+            "component_scores": {
+              "text": 0.6840653419494629,
+              "image": null
+            },
+            "rank_score": 0.6840652823448181,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.11610000001383014,
+            "encoding": 12.003800002275966,
+            "retrieval": 0.7212000018625986,
+            "filtering": 0.06450000000768341,
+            "threshold": 0,
+            "ranking": 0.005099998816149309,
+            "hydration": 0.08769999840296805,
+            "total": 14.548600000125589
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 14
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "semantic",
+      "size": "M",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "7d4cb95b-fca6-4771-99c8-76fee9b9e9ec",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7602718472480774,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": null
+            },
+            "rank_score": 0.7602718472480774,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.1748000031511765,
+            "encoding": 13.125399997079512,
+            "retrieval": 0.6100999999034684,
+            "filtering": 0.08760000127949752,
+            "threshold": 0,
+            "ranking": 0.004400000761961564,
+            "hydration": 0.035000000934815034,
+            "total": 16.16469999862602
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "semantic",
+      "size": "XS",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "042de195-5879-4eb8-9c54-aa9c47c3096e",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 0.1511999980721157,
+            "encoding": 12.740499998471932,
+            "retrieval": 0.6919000006746501,
+            "filtering": 0.08850000085658394,
+            "threshold": 0,
+            "ranking": 0.0026999987312592566,
+            "hydration": 0.00039999940781854093,
+            "total": 15.922300000966061
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "image",
+      "strategy": "semantic",
+      "size": null,
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "db5a0e6d-f663-485a-ace8-dd25d077ff31",
+        "query": {
+          "mode": "image",
+          "text": null,
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7988875508308411,
+            "component_scores": {
+              "text": null,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 0.7988875508308411,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.748744010925293,
+            "component_scores": {
+              "text": null,
+              "image": 0.748744010925293
+            },
+            "rank_score": 0.748744010925293,
+            "lexical_score": null
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.7475266456604004,
+            "component_scores": {
+              "text": null,
+              "image": 0.7475266456604004
+            },
+            "rank_score": 0.7475266456604004,
+            "lexical_score": null
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7383506298065186,
+            "component_scores": {
+              "text": null,
+              "image": 0.7383506298065186
+            },
+            "rank_score": 0.7383506298065186,
+            "lexical_score": null
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7370152473449707,
+            "component_scores": {
+              "text": null,
+              "image": 0.7370151281356812
+            },
+            "rank_score": 0.7370152473449707,
+            "lexical_score": null
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.696851909160614,
+            "component_scores": {
+              "text": null,
+              "image": 0.696851909160614
+            },
+            "rank_score": 0.696851909160614,
+            "lexical_score": null
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P148",
+              "name": "Áo thun loang màu cam đỏ vàng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "cam, đỏ và vàng",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P148"
+            },
+            "score": 0.6225826740264893,
+            "component_scores": {
+              "text": null,
+              "image": 0.6225826144218445
+            },
+            "rank_score": 0.6225826740264893,
+            "lexical_score": null
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.6114112734794617,
+            "component_scores": {
+              "text": null,
+              "image": 0.6114112734794617
+            },
+            "rank_score": 0.6114112734794617,
+            "lexical_score": null
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.5841399431228638,
+            "component_scores": {
+              "text": null,
+              "image": 0.5841398239135742
+            },
+            "rank_score": 0.5841399431228638,
+            "lexical_score": null
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.5802807807922363,
+            "component_scores": {
+              "text": null,
+              "image": 0.5802806615829468
+            },
+            "rank_score": 0.5802807807922363,
+            "lexical_score": null
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.550240159034729,
+            "component_scores": {
+              "text": null,
+              "image": 0.5502400994300842
+            },
+            "rank_score": 0.550240159034729,
+            "lexical_score": null
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P042",
+              "name": "Áo thun Nike Jordan màu trắng",
+              "category": "t_shirt",
+              "brand": "Nike",
+              "color": "trắng, đen và đỏ",
+              "price_vnd": 1770000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P042"
+            },
+            "score": 0.5077009201049805,
+            "component_scores": {
+              "text": null,
+              "image": 0.5077008008956909
+            },
+            "rank_score": 0.5077009201049805,
+            "lexical_score": null
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.49048367142677307,
+            "component_scores": {
+              "text": null,
+              "image": 0.4904835820198059
+            },
+            "rank_score": 0.49048367142677307,
+            "lexical_score": null
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.4625808596611023,
+            "component_scores": {
+              "text": null,
+              "image": 0.4625808000564575
+            },
+            "rank_score": 0.4625808596611023,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 9.397500001796288,
+            "encoding": 53.95720000160509,
+            "retrieval": 0.5190000010770746,
+            "filtering": 0.06749999738531187,
+            "threshold": 0,
+            "ranking": 0.005199999577598646,
+            "hydration": 0.0911999995878432,
+            "total": 65.81519999963348
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 14
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": false,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": ""
+          }
+        }
+      }
+    },
+    {
+      "mode": "image",
+      "strategy": "semantic",
+      "size": "M",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "59f40ce7-5ae9-4d22-b0fa-83c34f0cb38e",
+        "query": {
+          "mode": "image",
+          "text": null,
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7988875508308411,
+            "component_scores": {
+              "text": null,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 0.7988875508308411,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 7.365699999354547,
+            "encoding": 54.11950000052457,
+            "retrieval": 0.49959999887505546,
+            "filtering": 0.05270000110613182,
+            "threshold": 0,
+            "ranking": 0.0028000031306874007,
+            "hydration": 0.02599999788799323,
+            "total": 63.76580000141985
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": false,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": ""
+          }
+        }
+      }
+    },
+    {
+      "mode": "image",
+      "strategy": "semantic",
+      "size": "XS",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "52b08edf-89b5-4f39-9bd9-793ba2b930e0",
+        "query": {
+          "mode": "image",
+          "text": null,
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 5.618999999569496,
+            "encoding": 58.37280000196188,
+            "retrieval": 0.46949999887146987,
+            "filtering": 0.04059999992023222,
+            "threshold": 0,
+            "ranking": 0.0024000000848900527,
+            "hydration": 0.0006999980541877449,
+            "total": 66.21540000196546
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": false,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": ""
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "semantic",
+      "size": null,
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "25853e2d-4759-49df-beb6-da7f0dd1e812",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.9768721461296082,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 0.9768721461296082,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.939132571220398,
+            "component_scores": {
+              "text": 0.7501800656318665,
+              "image": 0.748744010925293
+            },
+            "rank_score": 0.939132571220398,
+            "lexical_score": null
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.9337868094444275,
+            "component_scores": {
+              "text": 0.7428654432296753,
+              "image": 0.7475266456604004
+            },
+            "rank_score": 0.9337868094444275,
+            "lexical_score": null
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.9304829239845276,
+            "component_scores": {
+              "text": 0.7467679381370544,
+              "image": 0.7383506298065186
+            },
+            "rank_score": 0.9304829239845276,
+            "lexical_score": null
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.9261948466300964,
+            "component_scores": {
+              "text": 0.7412593364715576,
+              "image": 0.7370151281356812
+            },
+            "rank_score": 0.9261948466300964,
+            "lexical_score": null
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.9148108959197998,
+            "component_scores": {
+              "text": 0.7632530331611633,
+              "image": 0.696851909160614
+            },
+            "rank_score": 0.9148108959197998,
+            "lexical_score": null
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.8594321012496948,
+            "component_scores": {
+              "text": 0.7603049874305725,
+              "image": 0.6114112734794617
+            },
+            "rank_score": 0.8594321012496948,
+            "lexical_score": null
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P148",
+              "name": "Áo thun loang màu cam đỏ vàng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "cam, đỏ và vàng",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P148"
+            },
+            "score": 0.8334436416625977,
+            "component_scores": {
+              "text": 0.7076543569564819,
+              "image": 0.6225826144218445
+            },
+            "rank_score": 0.8334436416625977,
+            "lexical_score": null
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.8245373964309692,
+            "component_scores": {
+              "text": 0.7318822145462036,
+              "image": 0.5841398239135742
+            },
+            "rank_score": 0.8245373964309692,
+            "lexical_score": null
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.8239188194274902,
+            "component_scores": {
+              "text": 0.7347539067268372,
+              "image": 0.5802806615829468
+            },
+            "rank_score": 0.8239188194274902,
+            "lexical_score": null
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.8034412860870361,
+            "component_scores": {
+              "text": 0.7321110367774963,
+              "image": 0.5502400994300842
+            },
+            "rank_score": 0.8034412860870361,
+            "lexical_score": null
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.7704142928123474,
+            "component_scores": {
+              "text": 0.7391537427902222,
+              "image": 0.4904835820198059
+            },
+            "rank_score": 0.7704142928123474,
+            "lexical_score": null
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7585974931716919,
+            "component_scores": {
+              "text": 0.7481960654258728,
+              "image": 0.4625808000564575
+            },
+            "rank_score": 0.7585974931716919,
+            "lexical_score": null
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P042",
+              "name": "Áo thun Nike Jordan màu trắng",
+              "category": "t_shirt",
+              "brand": "Nike",
+              "color": "trắng, đen và đỏ",
+              "price_vnd": 1770000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P042"
+            },
+            "score": 0.7466865181922913,
+            "component_scores": {
+              "text": 0.6840653419494629,
+              "image": 0.5077008008956909
+            },
+            "rank_score": 0.7466865181922913,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 6.284700000833254,
+            "encoding": 59.29459999970277,
+            "retrieval": 0.4680999991251156,
+            "filtering": 0.0655999974696897,
+            "threshold": 0,
+            "ranking": 0.004999998054699972,
+            "hydration": 0.14910000027157366,
+            "total": 68.0058000034478
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 14
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "semantic",
+      "size": "M",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "b62d5510-c1e5-4b13-94b7-db6aca53b869",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.9768721461296082,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 0.9768721461296082,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 6.345500001771143,
+            "encoding": 63.7602999995579,
+            "retrieval": 0.5963999974483158,
+            "filtering": 0.07720000212430023,
+            "threshold": 0,
+            "ranking": 0.0035999983083456755,
+            "hydration": 0.04640000042854808,
+            "total": 73.12609999644337
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "semantic",
+      "size": "XS",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "0fe8c349-e2b0-47dd-b47d-2b4acd44816d",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 5.830799997056602,
+            "encoding": 67.28040000234614,
+            "retrieval": 0.4939999998896383,
+            "filtering": 0.09710000085760839,
+            "threshold": 0,
+            "ranking": 0.0040000013541430235,
+            "hydration": 0.000700001692166552,
+            "total": 76.84549999976298
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "hybrid",
+      "size": null,
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "19bcc3ea-a052-4089-b0db-6f4dd071951d",
+        "query": {
+          "mode": "text",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7602718472480774,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": null
+            },
+            "rank_score": 0.03149801587301587,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7412593364715576,
+            "component_scores": {
+              "text": 0.7412593364715576,
+              "image": null
+            },
+            "rank_score": 0.031099324975891997,
+            "lexical_score": 4.583243300290219
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7467679381370544,
+            "component_scores": {
+              "text": 0.7467679381370544,
+              "image": null
+            },
+            "rank_score": 0.031024531024531024,
+            "lexical_score": 4.5281097459082575
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.7347539067268372,
+            "component_scores": {
+              "text": 0.7347539067268372,
+              "image": null
+            },
+            "rank_score": 0.0304147465437788,
+            "lexical_score": 4.564716874609543
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.742865264415741,
+            "component_scores": {
+              "text": 0.7428654432296753,
+              "image": null
+            },
+            "rank_score": 0.030309988518943745,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.7603050470352173,
+            "component_scores": {
+              "text": 0.7603049874305725,
+              "image": null
+            },
+            "rank_score": 0.030017921146953404,
+            "lexical_score": 4.43911020709018
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.7632529735565186,
+            "component_scores": {
+              "text": 0.7632530331611633,
+              "image": null
+            },
+            "rank_score": 0.029906956136464335,
+            "lexical_score": 4.289333610520816
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7481960654258728,
+            "component_scores": {
+              "text": 0.7481960654258728,
+              "image": null
+            },
+            "rank_score": 0.02946912242686891,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.7501800656318665,
+            "component_scores": {
+              "text": 0.7501800656318665,
+              "image": null
+            },
+            "rank_score": 0.0293236301369863,
+            "lexical_score": 4.43911020709018
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P148",
+              "name": "Áo thun loang màu cam đỏ vàng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "cam, đỏ và vàng",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P148"
+            },
+            "score": 0.7076543569564819,
+            "component_scores": {
+              "text": 0.7076543569564819,
+              "image": null
+            },
+            "rank_score": 0.028850145288501453,
+            "lexical_score": 4.492085093846648
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.7318821549415588,
+            "component_scores": {
+              "text": 0.7318822145462036,
+              "image": null
+            },
+            "rank_score": 0.028814262023217248,
+            "lexical_score": 4.474286869340553
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.7391538023948669,
+            "component_scores": {
+              "text": 0.7391537427902222,
+              "image": null
+            },
+            "rank_score": 0.02877846790890269,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.7321110963821411,
+            "component_scores": {
+              "text": 0.7321110367774963,
+              "image": null
+            },
+            "rank_score": 0.028577260665441927,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P042",
+              "name": "Áo thun Nike Jordan màu trắng",
+              "category": "t_shirt",
+              "brand": "Nike",
+              "color": "trắng, đen và đỏ",
+              "price_vnd": 1770000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P042"
+            },
+            "score": 0.6840652823448181,
+            "component_scores": {
+              "text": 0.6840653419494629,
+              "image": null
+            },
+            "rank_score": 0.02821939586645469,
+            "lexical_score": 4.456629125983618
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.10550000297371298,
+            "encoding": 11.817299997346709,
+            "retrieval": 0.45559999853139743,
+            "filtering": 0.06930000017746352,
+            "threshold": 0,
+            "ranking": 0.18789999739965424,
+            "hydration": 0.09109999882639386,
+            "total": 14.762300001166295
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 14
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "hybrid",
+      "size": "M",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "5b24e6d9-ca51-4927-946e-78ac7e7f48c8",
+        "query": {
+          "mode": "text",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7602718472480774,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": null
+            },
+            "rank_score": 0.03278688524590164,
+            "lexical_score": 4.510025482653301
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.10860000111279078,
+            "encoding": 8.490500000334578,
+            "retrieval": 0.45619999946211465,
+            "filtering": 0.10029999975813553,
+            "threshold": 0,
+            "ranking": 0.18000000272877514,
+            "hydration": 0.040899998566601425,
+            "total": 11.540499999682652
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "hybrid",
+      "size": "XS",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "e2b6e41e-f329-4be0-82da-5871f63c201a",
+        "query": {
+          "mode": "text",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 0.09520000094198622,
+            "encoding": 11.024399998859735,
+            "retrieval": 0.4518999994616024,
+            "filtering": 0.09230000068782829,
+            "threshold": 0,
+            "ranking": 0.21570000171777792,
+            "hydration": 0.000300002284348011,
+            "total": 13.676899998245062
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "hybrid",
+      "size": null,
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "25650024-f8c6-48ea-a4b2-458f04e0b8cf",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7602718472480774,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": null
+            },
+            "rank_score": 0.03149801587301587,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7412593364715576,
+            "component_scores": {
+              "text": 0.7412593364715576,
+              "image": null
+            },
+            "rank_score": 0.031099324975891997,
+            "lexical_score": 4.583243300290219
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7467679381370544,
+            "component_scores": {
+              "text": 0.7467679381370544,
+              "image": null
+            },
+            "rank_score": 0.031024531024531024,
+            "lexical_score": 4.5281097459082575
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.7347539067268372,
+            "component_scores": {
+              "text": 0.7347539067268372,
+              "image": null
+            },
+            "rank_score": 0.0304147465437788,
+            "lexical_score": 4.564716874609543
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.742865264415741,
+            "component_scores": {
+              "text": 0.7428654432296753,
+              "image": null
+            },
+            "rank_score": 0.030309988518943745,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.7603050470352173,
+            "component_scores": {
+              "text": 0.7603049874305725,
+              "image": null
+            },
+            "rank_score": 0.030017921146953404,
+            "lexical_score": 4.43911020709018
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.7632529735565186,
+            "component_scores": {
+              "text": 0.7632530331611633,
+              "image": null
+            },
+            "rank_score": 0.029906956136464335,
+            "lexical_score": 4.289333610520816
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7481960654258728,
+            "component_scores": {
+              "text": 0.7481960654258728,
+              "image": null
+            },
+            "rank_score": 0.02946912242686891,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.7501800656318665,
+            "component_scores": {
+              "text": 0.7501800656318665,
+              "image": null
+            },
+            "rank_score": 0.0293236301369863,
+            "lexical_score": 4.43911020709018
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P148",
+              "name": "Áo thun loang màu cam đỏ vàng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "cam, đỏ và vàng",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P148"
+            },
+            "score": 0.7076543569564819,
+            "component_scores": {
+              "text": 0.7076543569564819,
+              "image": null
+            },
+            "rank_score": 0.028850145288501453,
+            "lexical_score": 4.492085093846648
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.7318821549415588,
+            "component_scores": {
+              "text": 0.7318822145462036,
+              "image": null
+            },
+            "rank_score": 0.028814262023217248,
+            "lexical_score": 4.474286869340553
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.7391538023948669,
+            "component_scores": {
+              "text": 0.7391537427902222,
+              "image": null
+            },
+            "rank_score": 0.02877846790890269,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.7321110963821411,
+            "component_scores": {
+              "text": 0.7321110367774963,
+              "image": null
+            },
+            "rank_score": 0.028577260665441927,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P042",
+              "name": "Áo thun Nike Jordan màu trắng",
+              "category": "t_shirt",
+              "brand": "Nike",
+              "color": "trắng, đen và đỏ",
+              "price_vnd": 1770000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P042"
+            },
+            "score": 0.6840652823448181,
+            "component_scores": {
+              "text": 0.6840653419494629,
+              "image": null
+            },
+            "rank_score": 0.02821939586645469,
+            "lexical_score": 4.456629125983618
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.10739999925135635,
+            "encoding": 10.607899999740766,
+            "retrieval": 0.4650999981095083,
+            "filtering": 0.06769999890821055,
+            "threshold": 0,
+            "ranking": 0.17289999959757552,
+            "hydration": 0.09019999924930744,
+            "total": 13.442999999824679
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 14
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "hybrid",
+      "size": "M",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "d6c8b4e9-eaf1-491e-81a0-d12eae5a7e07",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7602718472480774,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": null
+            },
+            "rank_score": 0.03278688524590164,
+            "lexical_score": 4.510025482653301
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.10540000221226364,
+            "encoding": 10.766299998067552,
+            "retrieval": 0.46780000047874637,
+            "filtering": 0.06290000237640925,
+            "threshold": 0,
+            "ranking": 0.15140000323299319,
+            "hydration": 0.02769999991869554,
+            "total": 13.18409999657888
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "hybrid",
+      "size": "XS",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "063bf57c-47a6-4321-89db-d52b2c457ee4",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 0.08650000017951243,
+            "encoding": 8.752400000958005,
+            "retrieval": 0.45529999988502823,
+            "filtering": 0.06679999933112413,
+            "threshold": 0,
+            "ranking": 0.15700000221841037,
+            "hydration": 0.000200001522898674,
+            "total": 11.276000001089415
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "image",
+      "strategy": "hybrid",
+      "size": null,
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "f0874b6d-0c67-432d-9f62-4ac96a6aaeaf",
+        "query": {
+          "mode": "image",
+          "text": null,
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7988875508308411,
+            "component_scores": {
+              "text": null,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 0.7988875508308411,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.748744010925293,
+            "component_scores": {
+              "text": null,
+              "image": 0.748744010925293
+            },
+            "rank_score": 0.748744010925293,
+            "lexical_score": null
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.7475266456604004,
+            "component_scores": {
+              "text": null,
+              "image": 0.7475266456604004
+            },
+            "rank_score": 0.7475266456604004,
+            "lexical_score": null
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.7383506298065186,
+            "component_scores": {
+              "text": null,
+              "image": 0.7383506298065186
+            },
+            "rank_score": 0.7383506298065186,
+            "lexical_score": null
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.7370152473449707,
+            "component_scores": {
+              "text": null,
+              "image": 0.7370151281356812
+            },
+            "rank_score": 0.7370152473449707,
+            "lexical_score": null
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.696851909160614,
+            "component_scores": {
+              "text": null,
+              "image": 0.696851909160614
+            },
+            "rank_score": 0.696851909160614,
+            "lexical_score": null
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P148",
+              "name": "Áo thun loang màu cam đỏ vàng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "cam, đỏ và vàng",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P148"
+            },
+            "score": 0.6225826740264893,
+            "component_scores": {
+              "text": null,
+              "image": 0.6225826144218445
+            },
+            "rank_score": 0.6225826740264893,
+            "lexical_score": null
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.6114112734794617,
+            "component_scores": {
+              "text": null,
+              "image": 0.6114112734794617
+            },
+            "rank_score": 0.6114112734794617,
+            "lexical_score": null
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.5841399431228638,
+            "component_scores": {
+              "text": null,
+              "image": 0.5841398239135742
+            },
+            "rank_score": 0.5841399431228638,
+            "lexical_score": null
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.5802807807922363,
+            "component_scores": {
+              "text": null,
+              "image": 0.5802806615829468
+            },
+            "rank_score": 0.5802807807922363,
+            "lexical_score": null
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.550240159034729,
+            "component_scores": {
+              "text": null,
+              "image": 0.5502400994300842
+            },
+            "rank_score": 0.550240159034729,
+            "lexical_score": null
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P042",
+              "name": "Áo thun Nike Jordan màu trắng",
+              "category": "t_shirt",
+              "brand": "Nike",
+              "color": "trắng, đen và đỏ",
+              "price_vnd": 1770000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P042"
+            },
+            "score": 0.5077009201049805,
+            "component_scores": {
+              "text": null,
+              "image": 0.5077008008956909
+            },
+            "rank_score": 0.5077009201049805,
+            "lexical_score": null
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.49048367142677307,
+            "component_scores": {
+              "text": null,
+              "image": 0.4904835820198059
+            },
+            "rank_score": 0.49048367142677307,
+            "lexical_score": null
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.4625808596611023,
+            "component_scores": {
+              "text": null,
+              "image": 0.4625808000564575
+            },
+            "rank_score": 0.4625808596611023,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 6.422200000088196,
+            "encoding": 58.2754000024579,
+            "retrieval": 0.4747000020870473,
+            "filtering": 0.03840000135824084,
+            "threshold": 0,
+            "ranking": 0.00540000110049732,
+            "hydration": 0.08510000043315813,
+            "total": 67.16589999996359
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 14
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": false,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": ""
+          }
+        }
+      }
+    },
+    {
+      "mode": "image",
+      "strategy": "hybrid",
+      "size": "M",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "75737a66-572a-4c0b-ae20-6ca20eb239e9",
+        "query": {
+          "mode": "image",
+          "text": null,
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7988875508308411,
+            "component_scores": {
+              "text": null,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 0.7988875508308411,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 6.095600001572166,
+            "encoding": 63.6902000005648,
+            "retrieval": 0.531600002432242,
+            "filtering": 0.04329999865149148,
+            "threshold": 0,
+            "ranking": 0.0031999989005271345,
+            "hydration": 0.02710000262595713,
+            "total": 72.14819999717292
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": false,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": ""
+          }
+        }
+      }
+    },
+    {
+      "mode": "image",
+      "strategy": "hybrid",
+      "size": "XS",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "c5b499fb-4a79-42f1-aa83-59f0352c024c",
+        "query": {
+          "mode": "image",
+          "text": null,
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 5.711099998734426,
+            "encoding": 50.92580000200542,
+            "retrieval": 0.6339000028674491,
+            "filtering": 0.0562999994144775,
+            "threshold": 0,
+            "ranking": 0.005300000339047983,
+            "hydration": 0.0008999995770864189,
+            "total": 59.72670000119251
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": false,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": ""
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "hybrid",
+      "size": null,
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "2210ae00-5dea-4370-8146-64b882d6fabc",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.9768721461296082,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 0.032018442622950824,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P146",
+              "name": "Áo thun xanh dương cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P146"
+            },
+            "score": 0.9261948466300964,
+            "component_scores": {
+              "text": 0.7412593364715576,
+              "image": 0.7370151281356812
+            },
+            "rank_score": 0.03177805800756621,
+            "lexical_score": 4.583243300290219
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P144",
+              "name": "Áo thun xanh ô liu cổ tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P144"
+            },
+            "score": 0.9304829239845276,
+            "component_scores": {
+              "text": 0.7467679381370544,
+              "image": 0.7383506298065186
+            },
+            "rank_score": 0.03149801587301587,
+            "lexical_score": 4.5281097459082575
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P145",
+              "name": "Áo thun xanh dương nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh dương",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P145"
+            },
+            "score": 0.9337868094444275,
+            "component_scores": {
+              "text": 0.7428654432296753,
+              "image": 0.7475266456604004
+            },
+            "rank_score": 0.03125763125763126,
+            "lexical_score": 4.510025482653301
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P142",
+              "name": "Áo thun vàng in họa tiết tròn",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "vàng",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P142"
+            },
+            "score": 0.8239188194274902,
+            "component_scores": {
+              "text": 0.7347539067268372,
+              "image": 0.5802806615829468
+            },
+            "rank_score": 0.0304147465437788,
+            "lexical_score": 4.564716874609543
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P148",
+              "name": "Áo thun loang màu cam đỏ vàng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "cam, đỏ và vàng",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P148"
+            },
+            "score": 0.8334436416625977,
+            "component_scores": {
+              "text": 0.7076543569564819,
+              "image": 0.6225826144218445
+            },
+            "rank_score": 0.029857397504456328,
+            "lexical_score": 4.492085093846648
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P143",
+              "name": "Áo thun xanh ô liu nhìn từ phía sau",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P143"
+            },
+            "score": 0.939132571220398,
+            "component_scores": {
+              "text": 0.7501800656318665,
+              "image": 0.748744010925293
+            },
+            "rank_score": 0.029827662395050816,
+            "lexical_score": 4.43911020709018
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P150",
+              "name": "Áo thun xanh lá in bảng ký tự",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P150"
+            },
+            "score": 0.8245373964309692,
+            "component_scores": {
+              "text": 0.7318822145462036,
+              "image": 0.5841398239135742
+            },
+            "rank_score": 0.029418126757516764,
+            "lexical_score": 4.474286869340553
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P043",
+              "name": "Áo thun tay dài màu xanh đậm",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh đậm",
+              "price_vnd": 1805000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P043"
+            },
+            "score": 0.8594321012496948,
+            "component_scores": {
+              "text": 0.7603049874305725,
+              "image": 0.6114112734794617
+            },
+            "rank_score": 0.028814262023217248,
+            "lexical_score": 4.43911020709018
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P045",
+              "name": "Áo thun polo trắng cổ bẻ",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1875000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P045"
+            },
+            "score": 0.9148108959197998,
+            "component_scores": {
+              "text": 0.7632530331611633,
+              "image": 0.696851909160614
+            },
+            "rank_score": 0.028665028665028666,
+            "lexical_score": 4.289333610520816
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P141",
+              "name": "Áo thun xanh ô liu in chữ Ideal",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "xanh ô liu",
+              "price_vnd": 495000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P141"
+            },
+            "score": 0.8034412860870361,
+            "component_scores": {
+              "text": 0.7321110367774963,
+              "image": 0.5502400994300842
+            },
+            "rank_score": 0.028577260665441927,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P042",
+              "name": "Áo thun Nike Jordan màu trắng",
+              "category": "t_shirt",
+              "brand": "Nike",
+              "color": "trắng, đen và đỏ",
+              "price_vnd": 1770000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P042"
+            },
+            "score": 0.7466865181922913,
+            "component_scores": {
+              "text": 0.6840653419494629,
+              "image": 0.5077008008956909
+            },
+            "rank_score": 0.02821939586645469,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P147",
+              "name": "Áo thun trắng in hình làm tạp chí",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 520000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P147"
+            },
+            "score": 0.7704142928123474,
+            "component_scores": {
+              "text": 0.7391537427902222,
+              "image": 0.4904835820198059
+            },
+            "rank_score": 0.02817460317460317,
+            "lexical_score": 4.456629125983618
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P149",
+              "name": "Áo thun đen in chữ trắng và hồng",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 545000,
+              "in_stock": true,
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P149"
+            },
+            "score": 0.7585974931716919,
+            "component_scores": {
+              "text": 0.7481960654258728,
+              "image": 0.4625808000564575
+            },
+            "rank_score": 0.027783137179239824,
+            "lexical_score": 4.456629125983618
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 5.770100000518141,
+            "encoding": 65.23980000201846,
+            "retrieval": 0.7158000007621013,
+            "filtering": 0.10320000001229346,
+            "threshold": 0,
+            "ranking": 0.30699999842909165,
+            "hydration": 0.21660000129486434,
+            "total": 75.47060000069905
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 14
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 14,
+              "output_count": 14
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "hybrid",
+      "size": "M",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "a7c0d81f-a201-4bc9-8cb0-bb9c5b9d1175",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "M",
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.9768721461296082,
+            "component_scores": {
+              "text": 0.7602717280387878,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 0.03278688524590164,
+            "lexical_score": 4.510025482653301
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 5.824200001370627,
+            "encoding": 66.31790000028559,
+            "retrieval": 0.49049999870476313,
+            "filtering": 0.07349999941652641,
+            "threshold": 0,
+            "ranking": 0.17870000010589138,
+            "hydration": 0.0382999969588127,
+            "total": 74.95600000038394
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "M",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "hybrid",
+      "size": "XS",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "request_id": "90f88a88-8049-48f3-937d-b7b645510c2d",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "491a74808967f07cfa4c85df2c5636abaf810ef05b5bceeee209a28d883cf03e",
+          "catalog_fingerprint": "5f8be9f5eea8af06a30e5212bf7f345d8385c49623e37194953fab64ac0da58c",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 6.706399999529822,
+            "encoding": 58.883700003207196,
+            "retrieval": 0.47249999988707714,
+            "filtering": 0.0743000018701423,
+            "threshold": 0,
+            "ranking": 0.15970000094966963,
+            "hydration": 0.0002999986463692039,
+            "total": 68.33520000145654
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 180
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "rrf",
+          "sort": "relevance",
+          "lexical_fingerprint": "0e9f23c8354b984c6ac1bffd8a91d2bb17169a2697148535a68f04bad261520a",
+          "corrections": [],
+          "inventory_revision": 57,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "t_shirt",
+              "brand": null,
+              "color": null,
+              "size": "XS",
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun"
+          }
+        }
+      }
+    }
+  ]
+}

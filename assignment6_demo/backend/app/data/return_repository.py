@@ -7,6 +7,7 @@ from uuid import uuid4
 from app.data.admin_repository import AdminRepository
 from app.data.purchase_repository import canonical
 from app.domain import AppError
+from app.data.variant_repository import line_key
 
 RETURN_DAYS = 30
 STATUSES = ("requested", "approved", "rejected", "withdrawn", "received", "closed")
@@ -61,8 +62,8 @@ class ReturnRepository:
         used = {}
         for row in db.execute("SELECT payload FROM purchase_returns WHERE order_id=? AND status NOT IN ('rejected','withdrawn')", (order["order_id"],)):
             for item in json.loads(row[0])["items"]:
-                used[item["product_id"]] = used.get(item["product_id"], 0) + item["quantity"]
-        items = [{**item, "remaining_quantity": max(0, item["quantity"] - used.get(item["product_id"], 0))} for item in payload["items"]]
+                used[line_key(item)] = used.get(line_key(item), 0) + item["quantity"]
+        items = [{**item, "remaining_quantity": max(0, item["quantity"] - used.get(line_key(item), 0))} for item in payload["items"]]
         reason = ("not_delivered" if order["status"] != "delivered" else "delivery_unconfirmed" if not delivery
                   else "window_expired" if not within else "quantity_exhausted" if not any(i["remaining_quantity"] for i in items) else None)
         return {"eligible": reason is None, "ineligible_reason": reason,
@@ -77,7 +78,7 @@ class ReturnRepository:
             return {"eligibility": self.availability(db, order), "returns": [self.public(row) for row in rows], "order_version": order["version"]}
 
     def create(self, user_id, order_id, version, key, items, reason, expected_epoch=None):
-        items = sorted(items, key=lambda item: item["product_id"])
+        items = sorted(items, key=line_key)
         request_hash = hashlib.sha256(canonical({"order_id": order_id, "version": version, "items": items, "reason": reason}).encode()).hexdigest()
         with self.accounts.connection() as db:
             db.execute("BEGIN IMMEDIATE")
@@ -95,16 +96,17 @@ class ReturnRepository:
                 raise AppError(409, "RETURN_INELIGIBLE", "Đơn chưa đủ điều kiện, hết thời hạn hoặc không còn số lượng có thể trả.")
             if db.execute("SELECT COUNT(*) FROM purchase_returns WHERE order_id=?", (order_id,)).fetchone()[0] >= 100:
                 raise AppError(429, "RETURN_LIMIT", "Đơn hàng đã đạt giới hạn yêu cầu trả hàng demo.")
-            purchased = {item["product_id"]: item for item in available["items"]}
+            purchased = {line_key(item): item for item in available["items"]}
             selected = []
-            if len({i["product_id"] for i in items}) != len(items):
+            if len({line_key(i) for i in items}) != len(items):
                 raise AppError(422, "VALIDATION_ERROR", "Không được lặp sản phẩm trong yêu cầu.")
             for item in items:
-                source = purchased.get(item["product_id"])
-                if not source or item["quantity"] > source["remaining_quantity"]:
+                source = purchased.get(line_key(item))
+                if not source or source["product_id"] != item["product_id"] or item["quantity"] > source["remaining_quantity"]:
                     raise AppError(409, "RETURN_QUANTITY_CHANGED", "Số lượng trả vượt số lượng còn có thể yêu cầu. Hãy tải lại.")
                 selected.append({"product_id": item["product_id"], "quantity": item["quantity"],
                                  "product_name": source["product_name"], "unit_price_vnd": source["unit_price_vnd"]})
+                selected[-1].update({k: source[k] for k in ("variant_id", "size", "color") if k in source})
             stamp = self.clock().isoformat().replace("+00:00", "Z")
             payload = {"items": selected, "reason": reason, "created_at": stamp, "updated_at": stamp,
                        "merchandise_value_vnd": sum(i["unit_price_vnd"] * i["quantity"] for i in selected),
@@ -143,7 +145,7 @@ class ReturnRepository:
             if not row:
                 raise AppError(404, "RETURN_NOT_FOUND", "Không tìm thấy yêu cầu trả hàng.")
             payload = json.loads(row["payload"])
-            receipt = sorted(receipt, key=lambda i: i["product_id"]) if receipt is not None else None
+            receipt = sorted(receipt, key=line_key) if receipt is not None else None
             if row["status"] == status:
                 if status == "received" and receipt != payload.get("receipt"):
                     raise AppError(409, "RETURN_RECEIPT_CONFLICT", "Yêu cầu đã nhận hàng với kết quả kiểm tra khác.")
@@ -154,15 +156,16 @@ class ReturnRepository:
             if status not in allowed.get(row["status"], set()):
                 raise AppError(409, "RETURN_TRANSITION_INVALID", "Không thể chuyển trạng thái trả hàng theo yêu cầu này.")
             if status == "received":
-                quantities = {i["product_id"]: i["quantity"] for i in payload["items"]}
-                if receipt is None or len(receipt) != len(quantities) or {i["product_id"] for i in receipt} != set(quantities):
+                quantities = {line_key(i): i["quantity"] for i in payload["items"]}
+                parents = {line_key(i): i["product_id"] for i in payload["items"]}
+                if receipt is None or len(receipt) != len(quantities) or {line_key(i) for i in receipt} != set(quantities) or any(parents.get(line_key(i)) != i["product_id"] for i in receipt):
                     raise AppError(422, "VALIDATION_ERROR", "Cần ghi kết quả kiểm tra cho từng sản phẩm, không lặp hoặc thiếu.")
                 restocked = False
                 for item in receipt:
-                    if item["restock_quantity"] > quantities[item["product_id"]]:
+                    if item["restock_quantity"] > quantities[line_key(item)]:
                         raise AppError(422, "VALIDATION_ERROR", "Số lượng nhập lại kho không được vượt số hàng nhận trả.")
                     if item["restock_quantity"]:
-                        changed = db.execute("UPDATE inventory SET quantity=quantity+? WHERE product_id=?", (item["restock_quantity"], item["product_id"])).rowcount
+                        changed = db.execute("UPDATE inventory SET quantity=quantity+? WHERE product_id=?", (item["restock_quantity"], line_key(item))).rowcount
                         if not changed:
                             raise AppError(409, "INVENTORY_UNAVAILABLE", "Không tìm thấy mã hàng trong sổ kho. Chưa ghi nhận nhận hàng.")
                         restocked = True

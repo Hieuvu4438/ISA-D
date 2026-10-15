@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Kích cỡ có kho riêng, chọn size xuyên giỏ/COD/đơn/trả hàng, admin phân kho và lọc size: [docs/26_PRODUCT_VARIANTS.md](docs/26_PRODUCT_VARIANTS.md), [evidence](artifacts/backend/VARIANTS_REPORT.md). Dữ liệu cũ không tự chia size; admin phân cỡ ở `/admin`. Màu/asset CRUD, giá biến thể và size guide vẫn pending. Các milestone bên dưới ghi lịch sử từng đợt.
+
 Tìm theo điều kiện giá VND trong mô tả/transcript, giao với bộ lọc và opt-out: [docs/25_PRICE_QUERY.md](docs/25_PRICE_QUERY.md), [evidence](artifacts/backend/PRICE_QUERY_REPORT.md). Parser không thay encoder hoặc xác minh STT; broader query intents và independent quality vẫn pending.
 
 Khóa/mở khóa tài khoản, session revocation và transaction epoch guards: [docs/24_ACCOUNT_ACCESS.md](docs/24_ACCOUNT_ACCESS.md), [evidence](artifacts/backend/ACCOUNT_ACCESS_REPORT.md). Các mục milestone bên dưới là lịch sử; bảng hiện trạng tổng hợp tại [docs15](docs/15_ECOMMERCE_EXPANSION.md).

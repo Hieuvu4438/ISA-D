@@ -7,6 +7,7 @@ from app.presentation.accounts import identity
 
 class CartUpdate(StrictModel):
     product_id: str = Field(strict=True, pattern=r"^P[0-9]{3}$")
+    variant_id: str | None = Field(default=None, strict=True, pattern=r"^P[0-9]{3}(?:-[A-Z0-9]{1,8})?$")
     quantity: StrictInt = Field(ge=0, le=99)
     version: StrictInt = Field(ge=0, le=1_000_000_000)
 
@@ -35,7 +36,7 @@ def mount_shopping(application, query_fields):
     @router.post("/cart/items")
     def quantity(body: CartUpdate, request: Request):
         user = account(request, True)
-        value = request.app.state.shopping.set_quantity(user["user_id"], body.product_id, body.quantity, body.version, expected_epoch=user["auth_epoch"])
+        value = request.app.state.shopping.set_quantity(user["user_id"], body.product_id, body.quantity, body.version, expected_epoch=user["auth_epoch"], variant_id=body.variant_id)
         return {"request_id": request.state.request_id, "cart": value}
 
     @router.get("/wishlist")

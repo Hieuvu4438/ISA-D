@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+Size amendment: product_variants SQLite, cột product_id lịch sử trong inventory/cart chứa khóa SKU; API tách parent product_id/variant_id và snapshots size theo [26](26_PRODUCT_VARIANTS.md). Raw catalog/ảnh/index không đổi, size/stock là demo có thao tác admin; kho gốc trở thành unallocated khi có size.
+
 Price query amendment: SearchOptions thêm interpret_price strict bool defaulttrue; response interpretation/effective filters theo [25](25_PRICE_QUERY.md). Không sửa catalog/vector; lexical fingerprint/version đổi, semantic index/model fingerprints giữ nguyên.
 
 Access amendment: account_access(user_id,state,epoch), default row-missing active/0, shared admin_user_versions cho role/access và atomic audit/revocation theo [24](24_ACCOUNT_ACCESS.md). Không đổi7 cột accounts hay vector; auth_epoch chỉ ở identity nội bộ.

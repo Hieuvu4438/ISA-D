@@ -13,6 +13,7 @@ from app.data.return_repository import STATUSES
 
 class ReturnItem(StrictModel):
     product_id: str = Field(strict=True, pattern=r"^P[0-9]{3}$")
+    variant_id: str | None = Field(default=None, strict=True, pattern=r"^P[0-9]{3}-[A-Z0-9]{1,8}$")
     quantity: StrictInt = Field(ge=1, le=99)
 
 
@@ -24,6 +25,7 @@ class ReturnRequest(ChangeReason):
 
 class ReceiptItem(StrictModel):
     product_id: str = Field(strict=True, pattern=r"^P[0-9]{3}$")
+    variant_id: str | None = Field(default=None, strict=True, pattern=r"^P[0-9]{3}-[A-Z0-9]{1,8}$")
     restock_quantity: StrictInt = Field(ge=0, le=99)
 
 
@@ -65,7 +67,7 @@ def mount_returns(application, query_fields):
     def create(purchase_id: str, body: ReturnRequest, request: Request):
         user = actor(request, write=True)
         result, replayed = request.app.state.returns.create(user["user_id"], identifier(purchase_id, "ORD"), body.version,
-                                                          body.idempotency_key, [i.model_dump() for i in body.items], body.reason, expected_epoch=user["auth_epoch"])
+                                                          body.idempotency_key, [i.model_dump(exclude_none=True) for i in body.items], body.reason, expected_epoch=user["auth_epoch"])
         return {"request_id": request.state.request_id, "return": result, "replayed": replayed}
 
     @router.post("/returns/{return_id}/withdraw")
@@ -96,7 +98,7 @@ def mount_returns(application, query_fields):
     def transition(return_id: str, body: ReturnTransition, request: Request):
         user = actor(request, admin=True, write=True)
         result = request.app.state.returns.transition(user["user_id"], identifier(return_id, "RMA"), body.status,
-                                                     body.version, body.reason, [i.model_dump() for i in body.receipt] if body.receipt else None, expected_epoch=user["auth_epoch"])
+                                                     body.version, body.reason, [i.model_dump(exclude_none=True) for i in body.receipt] if body.receipt else None, expected_epoch=user["auth_epoch"])
         return {"request_id": request.state.request_id, "return": result}
 
     application.include_router(router)
