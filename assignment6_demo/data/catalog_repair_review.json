@@ -198,5 +198,135 @@
       "description": "Kính mát gọng đen và mắt kính tối màu, đặt trên mặt đá; ảnh chụp nghiêng với nền núi ở xa."
     },
     "sha256": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d"
+  },
+  {
+    "product_id": "P121",
+    "candidate_id": "R202",
+    "status": "passed",
+    "sha256": "1644adfc649a2478eb5f491aec2c0e439dc278813169e49856799902bd7d53e4",
+    "visual_notes": "Primary agent viewed batch2-candidates.jpg and full R202: complete grey/black backpack on carpet, two shoulder straps and front zip pockets. Brand label not confidently legible; do not keep unsupported On claim. Replaces military-person scene. Photograph bytes unchanged.",
+    "metadata": {
+      "name": "Balo xám đen nhiều ngăn khóa kéo",
+      "brand": "Không xác định",
+      "color": "xám và đen",
+      "description": "Balo màu xám đen đặt trên thảm, có các ngăn khóa kéo phía trước, viền sáng màu và hai quai đeo vai."
+    }
+  },
+  {
+    "product_id": "P122",
+    "candidate_id": "R204",
+    "status": "passed",
+    "sha256": "63ce8caecbaad5afa72c12e56ea5dc8a94177b2440498b4671686b6650406955",
+    "visual_notes": "Primary agent viewed R204 on batch2 contact sheet: one complete navy backpack with black lower panel and visible Adidas emblem; source description explicitly identifies Adidas. Replaces travel-items flat lay where backpack shape was obscured.",
+    "metadata": {
+      "name": "Balo Adidas xanh navy đáy đen",
+      "brand": "Adidas",
+      "color": "xanh navy và đen",
+      "description": "Balo xanh navy với phần đáy màu đen, ngăn khóa kéo phía trước và biểu tượng Adidas sáng màu trên thân túi."
+    }
+  },
+  {
+    "product_id": "P123",
+    "candidate_id": "R205",
+    "status": "passed",
+    "sha256": "5b6ea4dcee0f4c405d1db48ad798d454e63cc4c0f2a17a8c4de58f6d460e1328",
+    "visual_notes": "Primary agent viewed full R205: one Eastpak backpack with dark body, beige base/handle/zip pulls, diamond patch and readable Eastpak badge. Source identifies Sugarbush black; photograph has cool lighting, not a fabricated navy variant. Replaces indoor interview scene.",
+    "metadata": {
+      "name": "Balo Eastpak Sugarbush đen phối be",
+      "brand": "Eastpak",
+      "color": "đen và be",
+      "description": "Balo Eastpak thân đen, phần đáy và chi tiết quai màu be, có nhãn Eastpak phía trước, miếng trang trí hình thoi và nhiều ngăn khóa kéo."
+    }
+  },
+  {
+    "product_id": "P124",
+    "candidate_id": "R207",
+    "status": "passed",
+    "sha256": "b49b23df58c5b8e978aefb24270af9fbf59d2d598ce5ecf5f8b8f883f1e776f1",
+    "visual_notes": "Primary agent viewed R207 on batch2 sheet: real drawstring fabric backpack, yellow emoji print, black shoulder cords, photographed on light textile. No supported brand. Replaces unrelated room/event photograph.",
+    "metadata": {
+      "name": "Balo dây rút vàng họa tiết biểu cảm",
+      "brand": "Không xác định",
+      "color": "vàng, đen và trắng",
+      "description": "Balo dây rút có họa tiết nhiều khuôn mặt biểu cảm màu vàng, xen các mảng đen trắng, hai dây đeo mảnh màu đen trên nền vải sáng."
+    }
+  },
+  {
+    "product_id": "P125",
+    "candidate_id": "R208",
+    "status": "passed",
+    "sha256": "32f04057c705b16e889bfc7d2b4b5447e7fca578362dff80ca4c1290e08c7463",
+    "visual_notes": "Primary agent viewed full R208: complete light-grey Qwstion Zip Pack front with dark top handle, zipper and side fittings on white. Source by QWSTION identifies model; distinct from existing washed-black backpack. Replaces group event photograph.",
+    "metadata": {
+      "name": "Balo Qwstion Zip Pack xám nhạt",
+      "brand": "Qwstion",
+      "color": "xám nhạt và đen",
+      "description": "Balo Qwstion Zip Pack màu xám nhạt, thân dáng chữ nhật bo góc, khóa kéo phía trên, quai xách màu đen và chi tiết móc ở hai bên."
+    }
+  },
+  {
+    "product_id": "P126",
+    "candidate_id": "R209",
+    "status": "passed",
+    "sha256": "bf8e2ca9c2294d8b0b4af3fbbecaf75eb2f081b2ba3d2ba41333c3512af5b8bd",
+    "visual_notes": "Primary agent viewed R209 on batch2 sheet: complete black tall backpack, skeletal-bird logo and Arc'teryx text, front crossed cords. Source identifies Alpha Fast and Light40; no invented performance claims. Replaces unrelated room/event photograph.",
+    "metadata": {
+      "name": "Balo Arc'teryx Alpha Fast and Light 40 đen",
+      "brand": "Arc'teryx",
+      "color": "đen",
+      "description": "Balo Arc'teryx màu đen, thân cao, có dây đan chéo phía trước, quai xách trên đỉnh và biểu tượng cùng tên hãng sáng màu trên thân."
+    }
+  },
+  {
+    "product_id": "P127",
+    "candidate_id": "R210",
+    "status": "passed",
+    "sha256": "d4178cd3e7419aec140ccef6b7208ad57d926de591315070afbde2ff34773558",
+    "visual_notes": "Primary agent viewed R210 on batch2 sheet: one grey backpack with darker blue trim, front zipper and decorative pins; real room lighting gives blue cast. Brand badge not confidently read, source only says grey backpack. Replaces portrait/event poster.",
+    "metadata": {
+      "name": "Balo xám phối xanh đậm gắn huy hiệu",
+      "brand": "Không xác định",
+      "color": "xám và xanh đậm",
+      "description": "Balo màu xám với viền xanh đậm, ngăn khóa kéo phía trước và các huy hiệu nhỏ gắn trên mặt túi, chụp trên nền thảm."
+    }
+  },
+  {
+    "product_id": "P128",
+    "candidate_id": "R211",
+    "status": "passed",
+    "sha256": "11877d2cf18baa908556868608a8e86d579675e8fda16edd82fa783b15b394fd",
+    "visual_notes": "Primary agent viewed R211 on batch2 sheet: complete muted-green VAUDE hiking backpack on white, visible fabric folds, straps and hip belt. Source by VAUDE-Photos identifies Asymmetric. Replaces distant hiking landscape; does not claim synthetic waterproof/performance specifications.",
+    "metadata": {
+      "name": "Balo VAUDE Asymmetric xanh rêu",
+      "brand": "VAUDE",
+      "color": "xanh rêu",
+      "description": "Balo VAUDE Asymmetric màu xanh rêu, thân cao có nắp trên, nhiều dây đai điều chỉnh, túi bên và đai ôm hông, chụp trên nền trắng."
+    }
+  },
+  {
+    "product_id": "P129",
+    "candidate_id": "R215",
+    "status": "passed",
+    "sha256": "b8db638e36d5b474a776bc21711f3086c3aa2124b1195d9b9c77bcf99427c0ad",
+    "visual_notes": "Primary agent viewed R215 on batch2 sheet: complete bright-pink school backpack with black zippers/trim resting on wood. Small badge insufficient to certify brand; no On evidence. Replaces Paris skyline where no product is identifiable.",
+    "metadata": {
+      "name": "Balo hồng viền khóa kéo đen",
+      "brand": "Không xác định",
+      "color": "hồng và đen",
+      "description": "Balo màu hồng có các đường khóa kéo và viền đen, ngăn lớn và ngăn nhỏ phía trước, đặt trên bề mặt gỗ cạnh tường sáng màu."
+    }
+  },
+  {
+    "product_id": "P130",
+    "candidate_id": "R216",
+    "status": "passed",
+    "sha256": "95399ea8da5639043513f3b018e8b4084997702f5440cc35c4fb359226ae5b36",
+    "visual_notes": "Primary agent viewed R216 on batch2 sheet: real black backpack rear with two padded shoulder straps and top handle, on floor beside slippers. Back-only product view is explicitly described; not another angle of any selected backpack. Replaces historical green museum pack with incorrect brown label.",
+    "metadata": {
+      "name": "Balo đen nhìn từ mặt lưng",
+      "brand": "Không xác định",
+      "color": "đen",
+      "description": "Mặt lưng của một balo màu đen, có hai quai đeo vai bản rộng, quai xách ở phía trên và các dây điều chỉnh ở dưới, chụp trên sàn."
+    }
   }
 ]

@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Đợt sửa dữ liệu mới: thay 10 ảnh balo sai P121–P130, kiểm tra seed và runtime release riêng; [chi tiết](docs/32_CATALOG_REPAIR_BATCH2.md), [evidence](artifacts/validation/CATALOG_REPAIR_BATCH2_REPORT.md). 127 backend tests, browser thật và regression CPU sau restart đạt; full independent quality/voice acceptance vẫn pending.
+
 Admin→Sản phẩm hỗ trợ **Tạm ngừng bán/Mở bán lại** có lý do và audit. Ngừng bán ẩn sản phẩm khỏi tìm kiếm/danh mục, chặn cart/quote cũ, giữ kho và lịch sử: [contract31](docs/31_PRODUCT_AVAILABILITY.md), [evidence](artifacts/backend/PRODUCT_AVAILABILITY_REPORT.md).
 
 Tìm “giày chạy bộ Nike; dưới 1 triệu; không màu đỏ” giữ đồng thời hãng, loại, giá và loại trừ. Scope có notice, opt-out và cảnh báo truy vấn mơ hồ: [contract30](docs/30_SEARCH_SCOPE.md), [evidence](artifacts/backend/SCOPE_REPORT.md). Không phải xử lý mọi ngôn ngữ tự nhiên hoặc quality gate độc lập đã đạt.

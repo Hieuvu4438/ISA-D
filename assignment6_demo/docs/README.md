@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Mốc dữ liệu32: [10 ảnh balo thật đã sửa](32_CATALOG_REPAIR_BATCH2.md), kèm kiểm chứng model/browser/restart riêng; không đồng nghĩa whole-catalog hoặc full-system verified.
+
 Tạm ngừng/mở bán lại, giữ kho và đơn hàng, ẩn search/list: [31_PRODUCT_AVAILABILITY.md](31_PRODUCT_AVAILABILITY.md).
 
 Phạm vi hãng/category trong mô tả, union/intersection và recovery: [30_SEARCH_SCOPE.md](30_SEARCH_SCOPE.md).

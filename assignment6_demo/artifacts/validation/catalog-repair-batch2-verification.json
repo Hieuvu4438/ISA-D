@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-10-15T02:38:42.030018+00:00",
+  "changed_seed_ids": [
+    "P121",
+    "P122",
+    "P123",
+    "P124",
+    "P125",
+    "P126",
+    "P127",
+    "P128",
+    "P129",
+    "P130"
+  ],
+  "seed_invariants": [
+    "IDs",
+    "category",
+    "price",
+    "stock",
+    "working order bytes vs saved baseline and normalized bytes vs HEAD"
+  ],
+  "orders_baseline_sha256": "670feac9df8fbe3d69912dab291a1da30d6dfcd91a656afc4a344e4c31722db4",
+  "seed_catalog_fingerprint": "d314b582afc37e4e047d03a25ce0370d291a5db29e8114e1e9499bc1e3462530",
+  "seed_index_fingerprint": "2d30312b1504b13aaef7ea3ae38071e84d8471d6c5cecfa227a2a848d4761ba0",
+  "live_index": {
+    "available": true,
+    "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+    "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+    "product_count": 181
+  },
+  "checks": {
+    "backend_passed": 127,
+    "browser_passed": 1,
+    "real_cpu_publications": 10,
+    "descriptive_queries_top1": 5,
+    "cpu_regression_requests_after_restart": 50,
+    "speech_calls": 0
+  },
+  "full_catalog_visual_gate": false,
+  "independent_full_quality_verified": false,
+  "azure_verified_this_milestone": false,
+  "hashes": {
+    "data/products.json": "f7f3fcffe2699aa4c158db132f7edbb08abeb586c4cc958dd4f8d20825779ec8",
+    "data/orders.json": "670feac9df8fbe3d69912dab291a1da30d6dfcd91a656afc4a344e4c31722db4",
+    "data/image_sources.json": "08a1e5b285201f9a6eb4cb6adde0c410e938ef7b65573eb66edbed093e0c3d33",
+    "data/catalog_repair_batch2_review.json": "fd9c06d1e0baf0b40f40213d9733343f69971f3d5f85f61ce840f4b646395821",
+    "evaluation/catalog_repair_batch2.json": "6b5ff2ec28f4aeb4ec4ba5ed0f978818515320ffb6e2573708b1580ea364b47f",
+    "frontend/e2e/catalog-repair-batch2.spec.ts": "c74c1f9b1529deab13c3aae04958abca66862b65b931d9c227e48ddf38d9acd2",
+    "artifacts/validation/catalog-repair-batch2-browser-model.json": "93b52b49bfd662ba6fa3ec026655053c4afb406486671e675dc6825bf3787c17",
+    "artifacts/validation/catalog-repair-batch2-live.json": "ba98293a40747a05b300455999ca17bdc00eeabb289791e2fca4966db81a05e5",
+    "artifacts/validation/catalog-repair-batch2-restart.json": "fabd2e06c5415eb316f948ff73324addff663cf779fb1772cfe349460f513ba4",
+    "artifacts/validation/catalog-repair-batch2-search-regression.json": "f0a02c195a36999bc9c68ed73c7bf88d2ad7df44f6f5a59e43743ae74108719e",
+    "artifacts/validation/catalog-repair-batch2-tests.xml": "ea3c440110d7d4a6c54905bb8648919ad63e526328b7788a749b662d1d66aeea",
+    "artifacts/frontend/catalog-repair-batch2-initial.json": "9671f0874bd149932efc10d37ff24694916319f0de2a1883f7f1abf4145bd9d4",
+    "artifacts/frontend/catalog-repair-batch2-results.json": "a92383d5fc722c37efa6dc7fbad16111de5e7357799fbb18cac023e7c6b10bae",
+    "data/images/P120.jpg": "e2aa46ca44070c4f2a6c19aac2002f1de34a13ca18d679c35cf21a8775a4f32a",
+    "data/images/P121.jpg": "1644adfc649a2478eb5f491aec2c0e439dc278813169e49856799902bd7d53e4",
+    "data/images/P122.jpg": "63ce8caecbaad5afa72c12e56ea5dc8a94177b2440498b4671686b6650406955",
+    "data/images/P123.jpg": "5b6ea4dcee0f4c405d1db48ad798d454e63cc4c0f2a17a8c4de58f6d460e1328",
+    "data/images/P124.jpg": "b49b23df58c5b8e978aefb24270af9fbf59d2d598ce5ecf5f8b8f883f1e776f1",
+    "data/images/P125.jpg": "32f04057c705b16e889bfc7d2b4b5447e7fca578362dff80ca4c1290e08c7463",
+    "data/images/P126.jpg": "bf8e2ca9c2294d8b0b4af3fbbecaf75eb2f081b2ba3d2ba41333c3512af5b8bd",
+    "data/images/P127.jpg": "d4178cd3e7419aec140ccef6b7208ad57d926de591315070afbde2ff34773558",
+    "data/images/P128.jpg": "11877d2cf18baa908556868608a8e86d579675e8fda16edd82fa783b15b394fd",
+    "data/images/P129.jpg": "b8db638e36d5b474a776bc21711f3086c3aa2124b1195d9b9c77bcf99427c0ad",
+    "data/images/P130.jpg": "95399ea8da5639043513f3b018e8b4084997702f5440cc35c4fb359226ae5b36"
+  }
+}

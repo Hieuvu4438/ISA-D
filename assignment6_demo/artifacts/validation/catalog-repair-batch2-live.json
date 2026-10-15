@@ -1,0 +1,2376 @@
+{
+  "scope": "Ten visually reviewed backpack replacements through actual local admin API and CPU publication",
+  "speech_calls": 0,
+  "products": [
+    {
+      "product_id": "P121",
+      "before": {
+        "product_id": "P121",
+        "name": "Balo On USMC-04375 xám",
+        "category": "backpack",
+        "brand": "On",
+        "color": "xám",
+        "price_vnd": 1525000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P121",
+        "description": "Mẫu balo xám, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Sgt. Michael A. Hauck, a primary marksmanship instructor with Headquarters Company, reaches into his daypack which is covered with the chevrons of Mar.",
+        "stock_quantity": 16,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:USMC-04375.jpg",
+          "author": "Lance Cpl. Ryan C. Heiser",
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/File:USMC-04375.jpg#Licensing",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P121",
+            "size": null,
+            "stock_quantity": 16,
+            "color": "xám",
+            "price_vnd": 1525000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P121",
+        "name": "Balo xám đen nhiều ngăn khóa kéo",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "xám và đen",
+        "price_vnd": 1525000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P121",
+        "description": "Balo màu xám đen đặt trên thảm, có các ngăn khóa kéo phía trước, viền sáng màu và hai quai đeo vai.",
+        "stock_quantity": 16,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Backpack1.JPG",
+          "author": "Trongphu",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P121",
+            "size": null,
+            "stock_quantity": 16,
+            "color": "xám và đen",
+            "price_vnd": 1525000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "1644adfc649a2478eb5f491aec2c0e439dc278813169e49856799902bd7d53e4",
+      "publication": {
+        "published": true,
+        "product_id": "P121",
+        "revision": 3,
+        "catalog_fingerprint": "258035b4a3e381d945f77d0406615eed58f7fc08bb2e4ae33bae0189ebf3f11d",
+        "index_fingerprint": "2d66271e999387ae0c5ca09e0aff250c7a55514db3e79a6ae90f32df4cde783a",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "be44d212-adbf-4a65-b69c-96b0c2f20369",
+        "query": {
+          "mode": "text",
+          "text": "P121",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xám và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P121",
+              "name": "Balo xám đen nhiều ngăn khóa kéo",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "xám và đen",
+              "price_vnd": 1525000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P121"
+            },
+            "score": 0.6825281977653503,
+            "component_scores": {
+              "text": 0.6825280785560608,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2d66271e999387ae0c5ca09e0aff250c7a55514db3e79a6ae90f32df4cde783a",
+          "catalog_fingerprint": "258035b4a3e381d945f77d0406615eed58f7fc08bb2e4ae33bae0189ebf3f11d",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.0884000000951346,
+            "encoding": 8.879199998773402,
+            "retrieval": 0.46459999794024043,
+            "filtering": 0.16029999824240804,
+            "threshold": 0,
+            "ranking": 0.07539999933214858,
+            "hydration": 0.028599999495781958,
+            "total": 11.637300001893891
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 2
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 2,
+              "output_count": 2
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "49d5ecd13b1a4e28f0612365bf669aaca78a123287106cc0c12cfcb8bf289d86",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xám và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P121"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P121"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P121",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P122",
+      "before": {
+        "product_id": "P122",
+        "name": "Balo Không xác định Clothes-travel-voyage-backpack xanh navy",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "xanh navy",
+        "price_vnd": 1525000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P122",
+        "description": "Mẫu balo xanh navy, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: clothes-travel-voyage-backpack.",
+        "stock_quantity": 17,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Clothes-travel-voyage-backpack_(24324553095).jpg",
+          "author": "www.Pixel.la Free Stock Photos",
+          "license": "CC0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P122",
+            "size": null,
+            "stock_quantity": 17,
+            "color": "xanh navy",
+            "price_vnd": 1525000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P122",
+        "name": "Balo Adidas xanh navy đáy đen",
+        "category": "backpack",
+        "brand": "Adidas",
+        "color": "xanh navy và đen",
+        "price_vnd": 1525000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P122",
+        "description": "Balo xanh navy với phần đáy màu đen, ngăn khóa kéo phía trước và biểu tượng Adidas sáng màu trên thân túi.",
+        "stock_quantity": 17,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Adidas_bag,_frong.jpg",
+          "author": "Juandev",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P122",
+            "size": null,
+            "stock_quantity": 17,
+            "color": "xanh navy và đen",
+            "price_vnd": 1525000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "63ce8caecbaad5afa72c12e56ea5dc8a94177b2440498b4671686b6650406955",
+      "publication": {
+        "published": true,
+        "product_id": "P122",
+        "revision": 4,
+        "catalog_fingerprint": "7e66342c3becbeec7bb3ddca9213e64b9b6b3dfe2585dda4de2066ca655e43ca",
+        "index_fingerprint": "519812331557aec86e187ead3df99639b48d17e52e1c26b0777c6516a4f41808",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "50e64da7-3c63-4fc3-b9a9-109006c6f0fd",
+        "query": {
+          "mode": "text",
+          "text": "P122",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xanh navy và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P122",
+              "name": "Balo Adidas xanh navy đáy đen",
+              "category": "backpack",
+              "brand": "Adidas",
+              "color": "xanh navy và đen",
+              "price_vnd": 1525000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P122"
+            },
+            "score": 0.6113113760948181,
+            "component_scores": {
+              "text": 0.6113113164901733,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "519812331557aec86e187ead3df99639b48d17e52e1c26b0777c6516a4f41808",
+          "catalog_fingerprint": "7e66342c3becbeec7bb3ddca9213e64b9b6b3dfe2585dda4de2066ca655e43ca",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.0864000030560419,
+            "encoding": 8.186499999283114,
+            "retrieval": 0.4589000018313527,
+            "filtering": 0.16429999959655106,
+            "threshold": 0,
+            "ranking": 0.076299998909235,
+            "hydration": 0.03190000279573724,
+            "total": 11.248800001339987
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "409d0159dfa5708df1f45d869c06be3107b5cbc5489beebafe450d20fbd991ab",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xanh navy và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P122"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P122"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P122",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P123",
+      "before": {
+        "product_id": "P123",
+        "name": "Balo Không xác định With worn-out backpack and rêu",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "rêu",
+        "price_vnd": 1550000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P123",
+        "description": "Mẫu balo rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+        "stock_quantity": 18,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(4).jpg",
+          "author": "Виктор Пинчук",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P123",
+            "size": null,
+            "stock_quantity": 18,
+            "color": "rêu",
+            "price_vnd": 1550000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P123",
+        "name": "Balo Eastpak Sugarbush đen phối be",
+        "category": "backpack",
+        "brand": "Eastpak",
+        "color": "đen và be",
+        "price_vnd": 1550000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P123",
+        "description": "Balo Eastpak thân đen, phần đáy và chi tiết quai màu be, có nhãn Eastpak phía trước, miếng trang trí hình thoi và nhiều ngăn khóa kéo.",
+        "stock_quantity": 18,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Eastpak_Sugarbush_backpack_black.jpg",
+          "author": "Ubcule",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P123",
+            "size": null,
+            "stock_quantity": 18,
+            "color": "đen và be",
+            "price_vnd": 1550000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "5b6ea4dcee0f4c405d1db48ad798d454e63cc4c0f2a17a8c4de58f6d460e1328",
+      "publication": {
+        "published": true,
+        "product_id": "P123",
+        "revision": 5,
+        "catalog_fingerprint": "bb22ee5d9604a2f60efc1e4e71a67b7f3a6d0c45eb758b040bb8733f7b540a27",
+        "index_fingerprint": "633d4b98afd1b317275869b23da0106361bc4047f8502c77acd41c66d8ca7ab2",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "16f5b192-8bd4-42bc-b203-8b6fd33f1dc2",
+        "query": {
+          "mode": "text",
+          "text": "P123",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "đen và be",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P123",
+              "name": "Balo Eastpak Sugarbush đen phối be",
+              "category": "backpack",
+              "brand": "Eastpak",
+              "color": "đen và be",
+              "price_vnd": 1550000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P123"
+            },
+            "score": 0.6774701476097107,
+            "component_scores": {
+              "text": 0.6774701476097107,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "633d4b98afd1b317275869b23da0106361bc4047f8502c77acd41c66d8ca7ab2",
+          "catalog_fingerprint": "bb22ee5d9604a2f60efc1e4e71a67b7f3a6d0c45eb758b040bb8733f7b540a27",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.09489999865763821,
+            "encoding": 7.194599998911144,
+            "retrieval": 0.45220000174595043,
+            "filtering": 0.16630000027362257,
+            "threshold": 0,
+            "ranking": 0.07599999662488699,
+            "hydration": 0.027900001441594213,
+            "total": 10.255199998937314
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "baa6f4b153272c9f55e85d7da92282422174a35ba0d3436d484971972a8a6daa",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "đen và be",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P123"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P123"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P123",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P124",
+      "before": {
+        "product_id": "P124",
+        "name": "Balo Không xác định With worn-out backpack and nâu",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "nâu",
+        "price_vnd": 1550000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P124",
+        "description": "Mẫu balo nâu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+        "stock_quantity": 19,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(1).jpg",
+          "author": "Виктор Пинчук",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P124",
+            "size": null,
+            "stock_quantity": 19,
+            "color": "nâu",
+            "price_vnd": 1550000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P124",
+        "name": "Balo dây rút vàng họa tiết biểu cảm",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "vàng, đen và trắng",
+        "price_vnd": 1550000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P124",
+        "description": "Balo dây rút có họa tiết nhiều khuôn mặt biểu cảm màu vàng, xen các mảng đen trắng, hai dây đeo mảnh màu đen trên nền vải sáng.",
+        "stock_quantity": 19,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:005Aa._Lightweight_fabric_backpack.jpg",
+          "author": "GAlexandrova",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P124",
+            "size": null,
+            "stock_quantity": 19,
+            "color": "vàng, đen và trắng",
+            "price_vnd": 1550000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "b49b23df58c5b8e978aefb24270af9fbf59d2d598ce5ecf5f8b8f883f1e776f1",
+      "publication": {
+        "published": true,
+        "product_id": "P124",
+        "revision": 6,
+        "catalog_fingerprint": "2cdfa91eb5f74278202c1c99e029344149684a87364d1b890f754ab3284d71e6",
+        "index_fingerprint": "fcbf3aead1a2decdddcd83ba2830581134159a492b48717813d8a43b0dfad790",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "c04250c7-b0cd-4cee-8ff3-e4e1c2310cf4",
+        "query": {
+          "mode": "text",
+          "text": "P124",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "vàng, đen và trắng",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P124",
+              "name": "Balo dây rút vàng họa tiết biểu cảm",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "vàng, đen và trắng",
+              "price_vnd": 1550000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P124"
+            },
+            "score": 0.6544834971427917,
+            "component_scores": {
+              "text": 0.6544833183288574,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "fcbf3aead1a2decdddcd83ba2830581134159a492b48717813d8a43b0dfad790",
+          "catalog_fingerprint": "2cdfa91eb5f74278202c1c99e029344149684a87364d1b890f754ab3284d71e6",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.14260000170907006,
+            "encoding": 11.796899998444133,
+            "retrieval": 1.154800000222167,
+            "filtering": 0.567900002351962,
+            "threshold": 0,
+            "ranking": 0.1176999976451043,
+            "hydration": 0.03999999898951501,
+            "total": 16.89270000133547
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "5a38bcb590817c6cb782f039f854a59f4ebc400f9d0083491af9c24378137d1f",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "vàng, đen và trắng",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P124"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P124"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P124",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P125",
+      "before": {
+        "product_id": "P125",
+        "name": "Balo Không xác định With worn-out backpack and đỏ đậm",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "đỏ đậm",
+        "price_vnd": 1550000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P125",
+        "description": "Mẫu balo đỏ đậm, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: With a worn-out backpack and a notebook, traveling the planet.",
+        "stock_quantity": 20,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(3).jpg",
+          "author": "Виктор Пинчук",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P125",
+            "size": null,
+            "stock_quantity": 20,
+            "color": "đỏ đậm",
+            "price_vnd": 1550000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P125",
+        "name": "Balo Qwstion Zip Pack xám nhạt",
+        "category": "backpack",
+        "brand": "Qwstion",
+        "color": "xám nhạt và đen",
+        "price_vnd": 1550000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P125",
+        "description": "Balo Qwstion Zip Pack màu xám nhạt, thân dáng chữ nhật bo góc, khóa kéo phía trên, quai xách màu đen và chi tiết móc ở hai bên.",
+        "stock_quantity": 20,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:02-QWSTION-ZIP-PACK-LIMESTONE-FRONT.jpg",
+          "author": "QWSTION",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P125",
+            "size": null,
+            "stock_quantity": 20,
+            "color": "xám nhạt và đen",
+            "price_vnd": 1550000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "32f04057c705b16e889bfc7d2b4b5447e7fca578362dff80ca4c1290e08c7463",
+      "publication": {
+        "published": true,
+        "product_id": "P125",
+        "revision": 7,
+        "catalog_fingerprint": "c4fe2189624e6ecbfbc856e859c73dd433c7c1c691af928ccbf94813d437ca06",
+        "index_fingerprint": "96d32711589ea8bd8eab2a1eebc3bf51242e3b03e630e77ec24667d406c332cc",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "ca4fad64-5cf5-4f3b-a2ce-fdc70f039796",
+        "query": {
+          "mode": "text",
+          "text": "P125",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xám nhạt và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P125",
+              "name": "Balo Qwstion Zip Pack xám nhạt",
+              "category": "backpack",
+              "brand": "Qwstion",
+              "color": "xám nhạt và đen",
+              "price_vnd": 1550000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P125"
+            },
+            "score": 0.6722551584243774,
+            "component_scores": {
+              "text": 0.6722550988197327,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "96d32711589ea8bd8eab2a1eebc3bf51242e3b03e630e77ec24667d406c332cc",
+          "catalog_fingerprint": "c4fe2189624e6ecbfbc856e859c73dd433c7c1c691af928ccbf94813d437ca06",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.08749999688006938,
+            "encoding": 7.626300000993069,
+            "retrieval": 0.4417000018293038,
+            "filtering": 0.1807000007829629,
+            "threshold": 0,
+            "ranking": 0.07609999738633633,
+            "hydration": 0.029099999665049836,
+            "total": 10.394400000222959
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "11af18b3cebd1d71e80cee8d382e6d8462c3c9dc800ceb63e0b73714ee16b964",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xám nhạt và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P125"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P125"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P125",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P126",
+      "before": {
+        "product_id": "P126",
+        "name": "Balo Không xác định With worn-out backpack and đen",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "đen",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P126",
+        "description": "Mẫu balo đen, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Авторский вечер в Библиотеке №42 города Москвы.",
+        "stock_quantity": 3,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook_(2).jpg",
+          "author": "Виктор Пинчук",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P126",
+            "size": null,
+            "stock_quantity": 3,
+            "color": "đen",
+            "price_vnd": 1575000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P126",
+        "name": "Balo Arc'teryx Alpha Fast and Light 40 đen",
+        "category": "backpack",
+        "brand": "Arc'teryx",
+        "color": "đen",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P126",
+        "description": "Balo Arc'teryx màu đen, thân cao, có dây đan chéo phía trước, quai xách trên đỉnh và biểu tượng cùng tên hãng sáng màu trên thân.",
+        "stock_quantity": 3,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Arcteryx_Alpha_Fast_light_40_black_backpack.jpg",
+          "author": "Jjanhone",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P126",
+            "size": null,
+            "stock_quantity": 3,
+            "color": "đen",
+            "price_vnd": 1575000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "bf8e2ca9c2294d8b0b4af3fbbecaf75eb2f081b2ba3d2ba41333c3512af5b8bd",
+      "publication": {
+        "published": true,
+        "product_id": "P126",
+        "revision": 8,
+        "catalog_fingerprint": "e195a2c6c2b1075bd839aa1deb21262f56f7715068f46862076073745a0b14cd",
+        "index_fingerprint": "d767821bfb291ffb781ebd9a871b543aff74e47ba53af66ac45a846bfcf2a394",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "03043ddf-d309-4b3d-9ca5-0164eff542d7",
+        "query": {
+          "mode": "text",
+          "text": "P126",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P126",
+              "name": "Balo Arc'teryx Alpha Fast and Light 40 đen",
+              "category": "backpack",
+              "brand": "Arc'teryx",
+              "color": "đen",
+              "price_vnd": 1575000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P126"
+            },
+            "score": 0.6390401721000671,
+            "component_scores": {
+              "text": 0.6390400528907776,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "d767821bfb291ffb781ebd9a871b543aff74e47ba53af66ac45a846bfcf2a394",
+          "catalog_fingerprint": "e195a2c6c2b1075bd839aa1deb21262f56f7715068f46862076073745a0b14cd",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.09480000153416768,
+            "encoding": 8.070600000792183,
+            "retrieval": 0.4659000005631242,
+            "filtering": 0.1596000001882203,
+            "threshold": 0,
+            "ranking": 0.07579999873996712,
+            "hydration": 0.027499998395796865,
+            "total": 10.848799996892922
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 3
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 3,
+              "output_count": 3
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "7b36853a8addbd8a6c8c556004e573f1aeb89bb55c05739ec00a69652b30b849",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P126"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P126"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P126",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P127",
+      "before": {
+        "product_id": "P127",
+        "name": "Balo Không xác định With worn-out backpack and xám",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "xám",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P127",
+        "description": "Mẫu balo xám, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Poster for the author's evening at Library No. 42 in Moscow.",
+        "stock_quantity": 4,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:With_a_worn-out_backpack_and_a_notebook,_traveling_the_planet,_poster.jpg",
+          "author": "Виктор Пинчук",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P127",
+            "size": null,
+            "stock_quantity": 4,
+            "color": "xám",
+            "price_vnd": 1575000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P127",
+        "name": "Balo xám phối xanh đậm gắn huy hiệu",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "xám và xanh đậm",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P127",
+        "description": "Balo màu xám với viền xanh đậm, ngăn khóa kéo phía trước và các huy hiệu nhỏ gắn trên mặt túi, chụp trên nền thảm.",
+        "stock_quantity": 4,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Gray_Backpack.jpg",
+          "author": "Tylerskipworth64",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P127",
+            "size": null,
+            "stock_quantity": 4,
+            "color": "xám và xanh đậm",
+            "price_vnd": 1575000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "d4178cd3e7419aec140ccef6b7208ad57d926de591315070afbde2ff34773558",
+      "publication": {
+        "published": true,
+        "product_id": "P127",
+        "revision": 9,
+        "catalog_fingerprint": "1464b01e289219abad39bf279b997291ff05dc18771b83484d870866c5f2f384",
+        "index_fingerprint": "0383906fc613794bea80ae6bbdecd77ce0b2da055a09836270ae149deaf5f130",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "20208b10-724e-488c-b9c9-cbc3ef96a252",
+        "query": {
+          "mode": "text",
+          "text": "P127",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xám và xanh đậm",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P127",
+              "name": "Balo xám phối xanh đậm gắn huy hiệu",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "xám và xanh đậm",
+              "price_vnd": 1575000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P127"
+            },
+            "score": 0.6758312582969666,
+            "component_scores": {
+              "text": 0.6758313179016113,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "0383906fc613794bea80ae6bbdecd77ce0b2da055a09836270ae149deaf5f130",
+          "catalog_fingerprint": "1464b01e289219abad39bf279b997291ff05dc18771b83484d870866c5f2f384",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.08729999899514951,
+            "encoding": 7.458399999450194,
+            "retrieval": 0.45870000030845404,
+            "filtering": 0.1598999988345895,
+            "threshold": 0,
+            "ranking": 0.07360000017797574,
+            "hydration": 0.02779999704216607,
+            "total": 10.206300001300406
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "f9bc208dd9a1cc70f58ba37e839c4bd6c96ccf82e7ba180c62be82ea2f222333",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xám và xanh đậm",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P127"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P127"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P127",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P128",
+      "before": {
+        "product_id": "P128",
+        "name": "Balo Không xác định Backpacking in Grand Teton xanh navy",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "xanh navy",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P128",
+        "description": "Mẫu balo xanh navy, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Backpacker in  Grand Teton National Park.",
+        "stock_quantity": 5,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Backpacking_in_Grand_Teton_NP-NPS.jpg",
+          "author": "National Park Service",
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/File:Backpacking_in_Grand_Teton_NP-NPS.jpg#Licensing",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P128",
+            "size": null,
+            "stock_quantity": 5,
+            "color": "xanh navy",
+            "price_vnd": 1575000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P128",
+        "name": "Balo VAUDE Asymmetric xanh rêu",
+        "category": "backpack",
+        "brand": "VAUDE",
+        "color": "xanh rêu",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P128",
+        "description": "Balo VAUDE Asymmetric màu xanh rêu, thân cao có nắp trên, nhiều dây đai điều chỉnh, túi bên và đai ôm hông, chụp trên nền trắng.",
+        "stock_quantity": 5,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:VAUDE_Asymmetric_Backpack.jpg",
+          "author": "VAUDE-Photos",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P128",
+            "size": null,
+            "stock_quantity": 5,
+            "color": "xanh rêu",
+            "price_vnd": 1575000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "11877d2cf18baa908556868608a8e86d579675e8fda16edd82fa783b15b394fd",
+      "publication": {
+        "published": true,
+        "product_id": "P128",
+        "revision": 10,
+        "catalog_fingerprint": "aab1f51b5195da9ca10abfffc08e7614e9a72b2eb2c50785ca5bccbbd9e1d28a",
+        "index_fingerprint": "6c6baa9621b61c1a236e53134fba3455da03ac5cdcdaaaaeafccef75c67375c0",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "f2601fae-6e3b-44df-8e4a-babd9b99a909",
+        "query": {
+          "mode": "text",
+          "text": "P128",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xanh rêu",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P128",
+              "name": "Balo VAUDE Asymmetric xanh rêu",
+              "category": "backpack",
+              "brand": "VAUDE",
+              "color": "xanh rêu",
+              "price_vnd": 1575000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P128"
+            },
+            "score": 0.6612644195556641,
+            "component_scores": {
+              "text": 0.6612644195556641,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "6c6baa9621b61c1a236e53134fba3455da03ac5cdcdaaaaeafccef75c67375c0",
+          "catalog_fingerprint": "aab1f51b5195da9ca10abfffc08e7614e9a72b2eb2c50785ca5bccbbd9e1d28a",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.0867000017024111,
+            "encoding": 8.18059999801335,
+            "retrieval": 0.46189999920898117,
+            "filtering": 0.15970000094966963,
+            "threshold": 0,
+            "ranking": 0.07360000017797574,
+            "hydration": 0.026999998226528987,
+            "total": 10.90470000053756
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "770ee963a21c3651a06a16943d9929a1208883b406badeeef3cfe8154b447818",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "xanh rêu",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P128"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P128"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P128",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P129",
+      "before": {
+        "product_id": "P129",
+        "name": "Balo On backpacking travel to europe rêu",
+        "category": "backpack",
+        "brand": "On",
+        "color": "rêu",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P129",
+        "description": "Mẫu balo rêu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: A photo taken on a backpacking budgeted trip to Europe.",
+        "stock_quantity": 6,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:A_backpacking_travel_to_europe_R002-005.jpg",
+          "author": "kokorowashinjin",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P129",
+            "size": null,
+            "stock_quantity": 6,
+            "color": "rêu",
+            "price_vnd": 1575000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P129",
+        "name": "Balo hồng viền khóa kéo đen",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "hồng và đen",
+        "price_vnd": 1575000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P129",
+        "description": "Balo màu hồng có các đường khóa kéo và viền đen, ngăn lớn và ngăn nhỏ phía trước, đặt trên bề mặt gỗ cạnh tường sáng màu.",
+        "stock_quantity": 6,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Zaino_rosa.jpg",
+          "author": "Carola.Puglia24",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P129",
+            "size": null,
+            "stock_quantity": 6,
+            "color": "hồng và đen",
+            "price_vnd": 1575000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "b8db638e36d5b474a776bc21711f3086c3aa2124b1195d9b9c77bcf99427c0ad",
+      "publication": {
+        "published": true,
+        "product_id": "P129",
+        "revision": 11,
+        "catalog_fingerprint": "9455804d1a4f020632f90c251cdc476ffe90f5cd98a0279454b15f50d3370f6b",
+        "index_fingerprint": "6953ea361f59ad0bfae7d92f68d183b96b5b0d6b0bfa4c75d40d6559b435a37a",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "92f96d38-0ab1-4578-a256-ca1d44574175",
+        "query": {
+          "mode": "text",
+          "text": "P129",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "hồng và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P129",
+              "name": "Balo hồng viền khóa kéo đen",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "hồng và đen",
+              "price_vnd": 1575000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P129"
+            },
+            "score": 0.6580573320388794,
+            "component_scores": {
+              "text": 0.6580573320388794,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "6953ea361f59ad0bfae7d92f68d183b96b5b0d6b0bfa4c75d40d6559b435a37a",
+          "catalog_fingerprint": "9455804d1a4f020632f90c251cdc476ffe90f5cd98a0279454b15f50d3370f6b",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.09280000085709617,
+            "encoding": 7.173300000431482,
+            "retrieval": 0.44350000098347664,
+            "filtering": 0.16599999798927456,
+            "threshold": 0,
+            "ranking": 0.07510000068577938,
+            "hydration": 0.027899997803615406,
+            "total": 9.935199999745237
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "6d98302d7731369f9b8e869578ef1afb567bdb9a11603b025ed1e4e1437b3122",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "hồng và đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P129"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P129"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P129",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "product_id": "P130",
+      "before": {
+        "product_id": "P130",
+        "name": "Balo Không xác định Backpack AM 2014.66.1-1 nâu",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "nâu",
+        "price_vnd": 1600000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P130",
+        "description": "Mẫu balo nâu, thiết kế thời trang ứng dụng cao. Ảnh chụp thực tế: Green canvas backpack with external tubular steel hollow frame; embroidered Alpine Sports Club badge; card tag attached for Newman's travel.",
+        "stock_quantity": 7,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Backpack_(AM_2014.66.1-1).jpg",
+          "author": "Alexto Production",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "transformations": [
+            "resize",
+            "strip_exif"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P130",
+            "size": null,
+            "stock_quantity": 7,
+            "color": "nâu",
+            "price_vnd": 1600000,
+            "in_stock": true
+          }
+        ]
+      },
+      "after": {
+        "product_id": "P130",
+        "name": "Balo đen nhìn từ mặt lưng",
+        "category": "backpack",
+        "brand": "Không xác định",
+        "color": "đen",
+        "price_vnd": 1600000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [],
+        "available_sizes": [],
+        "image_url": "/api/v1/media/products/P130",
+        "description": "Mặt lưng của một balo màu đen, có hai quai đeo vai bản rộng, quai xách ở phía trên và các dây điều chỉnh ở dưới, chụp trên sàn.",
+        "stock_quantity": 7,
+        "image_credit": {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Blackpack-001.jpg",
+          "author": "Kent Madsen",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "transformations": [
+            "Commons server thumbnail; local bytes unmodified"
+          ]
+        },
+        "variants": [
+          {
+            "variant_id": "P130",
+            "size": null,
+            "stock_quantity": 7,
+            "color": "đen",
+            "price_vnd": 1600000,
+            "in_stock": true
+          }
+        ]
+      },
+      "photo_sha256": "95399ea8da5639043513f3b018e8b4084997702f5440cc35c4fb359226ae5b36",
+      "publication": {
+        "published": true,
+        "product_id": "P130",
+        "revision": 12,
+        "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+        "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+        "relevant_available": false
+      },
+      "real_cpu_exact_query": {
+        "request_id": "ca5373e6-f81d-475c-99ac-51e36b2dd3f8",
+        "query": {
+          "mode": "text",
+          "text": "P130",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 1,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P130",
+              "name": "Balo đen nhìn từ mặt lưng",
+              "category": "backpack",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1600000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P130"
+            },
+            "score": 0.6897372603416443,
+            "component_scores": {
+              "text": 0.6897372603416443,
+              "image": null
+            },
+            "rank_score": 1.0,
+            "lexical_score": 1.0
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.08920000254875049,
+            "encoding": 7.952500000101281,
+            "retrieval": 0.5352000007405877,
+            "filtering": 0.16560000221943483,
+            "threshold": 0,
+            "ranking": 0.07700000060140155,
+            "hydration": 0.02800000220304355,
+            "total": 10.821200001373654
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 4
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 4,
+              "output_count": 4
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "2a69c5a793e1283067f71e73ec8a2b6e159580d699b0fa86bf37b7040094d4ae",
+          "corrections": [],
+          "inventory_revision": 103,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": "backpack",
+              "brand": null,
+              "color": "đen",
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P130"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P130"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P130",
+            "warnings": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "Preregistered descriptive-text regression for ten reviewed backpacks; catalog-derived labels, not independent frozen relevance acceptance",
+  "mode": "text",
+  "search_strategy": "hybrid",
+  "top_k": 3,
+  "cases": [
+    {"query": "balo màu hồng", "expected_ids": ["P129"]},
+    {"query": "balo dây rút họa tiết biểu cảm", "expected_ids": ["P124"]},
+    {"query": "balo xám đen nhiều ngăn khóa kéo", "expected_ids": ["P121"]},
+    {"query": "balo đen nhìn mặt lưng", "expected_ids": ["P130"]},
+    {"query": "balo xanh rêu có đai hông", "expected_ids": ["P128"]}
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "e2e/catalog-repair-batch2.spec.ts"
+    ],
+    "configFile": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\playwright.config.ts",
+    "rootDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/PROJECTS/ISA-D/assignment6_demo/artifacts/frontend/playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "",
+        "name": "",
+        "testDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "name": "",
+        "testDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "snapshotDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/frontend/e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "SyntaxError: D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\catalog-repair-batch2.spec.ts: Unexpected token (23:95)\n\n  21 |     expect(media.status()).toBe(200)\n  22 |     expect(createHash('sha256').update(await media.body()).digest('hex')).toBe(row.sha256)\n> 23 |     expect(product.image_credit.source_page).toMatch(/^https://commons.wikimedia.org/wiki/File:/)\n     |                                                                                                ^\n  24 |     expect(product.image_credit.license).toMatch(/^CC BY-SA/)\n  25 |     const photo = page.locator(`a[href=\"/products/${row.product_id}\"] img`)\n  26 |     await photo.scrollIntoViewIfNeeded()",
+      "stack": "SyntaxError: D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\catalog-repair-batch2.spec.ts: Unexpected token (23:95)\n\n  21 |     expect(media.status()).toBe(200)\n  22 |     expect(createHash('sha256').update(await media.body()).digest('hex')).toBe(row.sha256)\n> 23 |     expect(product.image_credit.source_page).toMatch(/^https://commons.wikimedia.org/wiki/File:/)\n     |                                                                                                ^\n  24 |     expect(product.image_credit.license).toMatch(/^CC BY-SA/)\n  25 |     const photo = page.locator(`a[href=\"/products/${row.product_id}\"] img`)\n  26 |     await photo.scrollIntoViewIfNeeded()",
+      "location": {
+        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\catalog-repair-batch2.spec.ts",
+        "line": 23,
+        "column": 95
+      },
+      "snippet": "\u001b[90m   at \u001b[39mcatalog-repair-batch2.spec.ts:23\n\n  21 |     expect(media.status()).toBe(200)\n  22 |     expect(createHash('sha256').update(await media.body()).digest('hex')).toBe(row.sha256)\n> 23 |     expect(product.image_credit.source_page).toMatch(/^https://commons.wikimedia.org/wiki/File:/)\n     |                                                                                               ^\n  24 |     expect(product.image_credit.license).toMatch(/^CC BY-SA/)\n  25 |     const photo = page.locator(`a[href=\"/products/${row.product_id}\"] img`)\n  26 |     await photo.scrollIntoViewIfNeeded()"
+    },
+    {
+      "message": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments.",
+      "stack": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments."
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-15T02:30:20.118Z",
+    "duration": 64.58599999999996,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

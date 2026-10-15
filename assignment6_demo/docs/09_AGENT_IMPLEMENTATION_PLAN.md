@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+Mốc32: đã sửa P121–P130 trong seed và xuất bản riêng vào runtime live, giữ ID/giá/tồn kho/orders; 127 backend tests, một browser test, năm truy vấn mô tả và 50 request CPU regression sau restart. [docs32](32_CATALOG_REPAIR_BATCH2.md). Các nhóm ảnh còn lại, independent relevance/OOD và voice acceptance còn pending. Thanh toán COD/demo.
+
 E5 amendment31: ngừng/mở bán có CAS/audit/epoch, giữ stock/SKU/history, ẩn khỏi public retrieval và chặn stale quote/cart theo [31](31_PRODUCT_AVAILABILITY.md). Không đánh dấu E5/full ecommerce complete; bulk/channel controls, variant màu/giá, catalog repairs và acceptance còn pending. Thanh toán COD/demo.
 
 E2 amendment30: exact hãng/category scope, union cùng trường/intersection khác trường, conflict và ambiguity recovery theo [30](30_SEARCH_SCOPE.md). Frozen independent relevance, dữ liệu/ảnh còn lỗi và các gate toàn hệ thống vẫn pending; không đánh dấu E2 hoặc ecommerce complete. Thanh toán COD/demo.

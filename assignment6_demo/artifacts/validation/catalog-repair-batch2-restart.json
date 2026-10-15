@@ -1,0 +1,238 @@
+{
+  "recorded_at": "2026-10-15T02:36:15.280493+00:00",
+  "scope": "Actual HTTP after backend restart; immutable live release, not seed fallback",
+  "ready": {
+    "request_id": "a99e1c5d-c40f-4b6a-858b-f80e8154a397",
+    "status": "ready",
+    "search_available": true,
+    "reason_codes": []
+  },
+  "meta": {
+    "request_id": "d55fa7f7-47c3-4d1e-946e-cbddcbf8a059",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": false,
+        "reason_code": "RELEVANCE_POLICY_UNAVAILABLE",
+        "modes": [],
+        "multimodal_weights": []
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+      "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+      "product_count": 181
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "backpack",
+        "bag",
+        "boots",
+        "casual_shoes",
+        "jacket",
+        "running_shoes",
+        "sandals",
+        "sunglasses",
+        "t_shirt",
+        "tote_bag",
+        "trail_shoes",
+        "watch"
+      ],
+      "brands": [
+        "Adele Dejak",
+        "Adidas",
+        "Arc'teryx",
+        "Asics",
+        "Birkenstock",
+        "Brooks",
+        "Candino",
+        "Converse",
+        "Eastpak",
+        "Fjällräven",
+        "Hard Rock Cafe",
+        "Hermès",
+        "Junghans",
+        "Không xác định",
+        "Les cuirs d'Agathe",
+        "Marshal",
+        "Minaal",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On",
+        "Opta",
+        "Polo Ralph Lauren",
+        "Prada",
+        "Qwstion",
+        "Ray-Ban",
+        "Salomon",
+        "Seiko",
+        "Skunkfunk",
+        "Timberland",
+        "Uniqlo",
+        "VAUDE",
+        "Vans",
+        "XD Design"
+      ],
+      "min_price": 350000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "azure",
+      "configuration_state": "unconfigured",
+      "region": "southeastasia",
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "catalog_total": 181,
+  "preserved_runtime_product": {
+    "product_id": "P181",
+    "name": "Áo polo Nike trắng viền đỏ rượu",
+    "category": "t_shirt",
+    "brand": "Nike",
+    "color": "trắng, đỏ rượu, xám",
+    "price_vnd": 890000,
+    "in_stock": false,
+    "sale_state": "active",
+    "sizes": [],
+    "available_sizes": [],
+    "image_url": "/api/v1/media/products/P181",
+    "description": "Ảnh nghiêng áo polo trắng, cổ đỏ rượu và vai xám; tay áo có chữ ASB BANK. Thông tin thương hiệu theo hồ sơ Auckland Museum.",
+    "stock_quantity": 0,
+    "image_credit": {
+      "source_page": "https://commons.wikimedia.org/wiki/File:Polo_shirt_(AM_2017.66.47-2).jpg",
+      "author": "Auckland Museum",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "transformations": [
+        "Wikimedia 960px thumbnail; original upload bytes retained locally"
+      ]
+    },
+    "variants": [
+      {
+        "variant_id": "P181",
+        "size": null,
+        "stock_quantity": 0,
+        "color": "trắng, đỏ rượu, xám",
+        "price_vnd": 890000,
+        "in_stock": false
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "P121",
+      "sha256": "1644adfc649a2478eb5f491aec2c0e439dc278813169e49856799902bd7d53e4",
+      "stock_quantity": 16,
+      "price_vnd": 1525000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P122",
+      "sha256": "63ce8caecbaad5afa72c12e56ea5dc8a94177b2440498b4671686b6650406955",
+      "stock_quantity": 17,
+      "price_vnd": 1525000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P123",
+      "sha256": "5b6ea4dcee0f4c405d1db48ad798d454e63cc4c0f2a17a8c4de58f6d460e1328",
+      "stock_quantity": 18,
+      "price_vnd": 1550000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P124",
+      "sha256": "b49b23df58c5b8e978aefb24270af9fbf59d2d598ce5ecf5f8b8f883f1e776f1",
+      "stock_quantity": 19,
+      "price_vnd": 1550000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P125",
+      "sha256": "32f04057c705b16e889bfc7d2b4b5447e7fca578362dff80ca4c1290e08c7463",
+      "stock_quantity": 20,
+      "price_vnd": 1550000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P126",
+      "sha256": "bf8e2ca9c2294d8b0b4af3fbbecaf75eb2f081b2ba3d2ba41333c3512af5b8bd",
+      "stock_quantity": 3,
+      "price_vnd": 1575000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P127",
+      "sha256": "d4178cd3e7419aec140ccef6b7208ad57d926de591315070afbde2ff34773558",
+      "stock_quantity": 4,
+      "price_vnd": 1575000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P128",
+      "sha256": "11877d2cf18baa908556868608a8e86d579675e8fda16edd82fa783b15b394fd",
+      "stock_quantity": 5,
+      "price_vnd": 1575000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P129",
+      "sha256": "b8db638e36d5b474a776bc21711f3086c3aa2124b1195d9b9c77bcf99427c0ad",
+      "stock_quantity": 6,
+      "price_vnd": 1575000,
+      "metadata_match": true
+    },
+    {
+      "product_id": "P130",
+      "sha256": "95399ea8da5639043513f3b018e8b4084997702f5440cc35c4fb359226ae5b36",
+      "stock_quantity": 7,
+      "price_vnd": 1600000,
+      "metadata_match": true
+    }
+  ],
+  "reserved_admins": 0,
+  "reserved_admin_sessions": 0,
+  "speech_calls": 0
+}
