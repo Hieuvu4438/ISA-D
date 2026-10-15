@@ -12,7 +12,7 @@ test('color intent is visible, survives reload and reports filter conflicts', as
   await expect(page.getByTestId('product-card')).toContainText('Balo hồng')
   await page.reload()
   await expect(notice).toContainText('Màu hồng')
-  await page.getByLabel('Tự hiểu hãng, loại và màu sản phẩm').uncheck()
+  await page.getByLabel('Tự hiểu hãng, loại, màu và kích cỡ').uncheck()
   await expect(page).toHaveURL(/interpret_scope=false/)
   await expect(notice).toHaveCount(0)
   await page.goBack()

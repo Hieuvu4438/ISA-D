@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+Mốc34: size có marker được lọc theo SKU/stock snapshot cho browse/suggestions/search; OR, conflict/warning, manual intersection, tồn đúng cỡ và trạng thái cỡ trên card theo [34](34_SIZE_SEARCH_SCOPE.md), [evidence](../artifacts/backend/SIZE_SCOPE_REPORT.md). Đã sửa autocomplete lọc trước hydrate và search ghi snapshot vào repository chung. Không đổi payment COD/demo; còn quality/data/voice acceptance và các phần variant nâng cao.
+
 Mốc33: đã triển khai màu có marker trong mô tả thành điều kiện lọc cho browse/suggestions và mọi search mode có text, OR/intersection, cảnh báo mơ hồ và conflict recovery; [contract33](33_COLOR_SEARCH_SCOPE.md), [evidence](../artifacts/backend/COLOR_SCOPE_REPORT.md). Model/browser và doubles có bằng chứng riêng. Thanh toán COD/demo; toàn catalog, independent quality và live voice acceptance vẫn pending.
 
 Mốc32: đã sửa P121–P130 trong seed và xuất bản riêng vào runtime live, giữ ID/giá/tồn kho/orders; 127 backend tests, một browser test, năm truy vấn mô tả và 50 request CPU regression sau restart. [docs32](32_CATALOG_REPAIR_BATCH2.md). Các nhóm ảnh còn lại, independent relevance/OOD và voice acceptance còn pending. Thanh toán COD/demo.

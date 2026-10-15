@@ -28,18 +28,20 @@ function signature(draft: Draft, mode: QueryMode) {
   return JSON.stringify({ text: mode === 'image' ? null : draft.text.normalize('NFC').trim().replace(/\s+/g, ' '), image: draft.image ? [draft.image.name, draft.image.size, draft.image.lastModified] : null,
     options: draft.options, weight: mode === 'multimodal' ? draft.weight : null, source: mode === 'voice' ? draft.voiceSource : null });
 }
-export function ProductCard({ product, result, onOpen }: { product: ProductSummary; result?: SearchResult; onOpen: () => void }) {
+export function ProductCard({ product, result, onOpen, requestedSizes = [] }: { product: ProductSummary; result?: SearchResult; onOpen: () => void; requestedSizes?: string[] }) {
   const location = useLocation();
+  const matchedSizes = requestedSizes.filter(size => product.sizes?.includes(size));
+  const requestedAvailable = matchedSizes.some(size => product.available_sizes?.includes(size));
   return <article className="product-card" data-testid={result ? 'result-card' : 'product-card'}>
     <Link to={`/products/${product.product_id}`} state={{ from: `${location.pathname}${location.search}` }} className="product-card-link" onClick={onOpen}>
       <div className="product-card-media"><ProductImage src={product.image_url} alt={product.name} retry={false} />
         {result && <span className="rank-label">{String(result.rank).padStart(2, '0')}</span>}
-        {!product.in_stock && <span className="stock-tag">Hết hàng</span>}
+        {(!product.in_stock || matchedSizes.length > 0 && !requestedAvailable) && <span className="stock-tag">{matchedSizes.length ? 'Hết cỡ đã tìm' : 'Hết hàng'}</span>}
         <span className="product-open" aria-hidden="true"><ArrowUpRight size={20} /></span>
       </div>
       <div className="product-card-copy"><div className="product-brand">{product.brand}<span>{categoryLabels[product.category]}</span></div><h3>{product.name}</h3><p className="product-color">{product.color}</p>
         <div className="product-price-row"><strong>{formatMoney(product.price_vnd)}</strong>{result && <span className="cosine-score">Cosine {result.score.toFixed(3)}</span>}</div>
-        <span className="card-stock">{product.in_stock ? 'Còn hàng' : 'Tạm hết hàng'}</span>
+        <span className="card-stock">{matchedSizes.length ? matchedSizes.map(size => `Cỡ ${size}: ${product.available_sizes?.includes(size) ? 'còn hàng' : 'hết hàng'}`).join(' · ') : product.in_stock ? 'Còn hàng' : 'Tạm hết hàng'}</span>
       </div>
     </Link>
   </article>;
@@ -188,6 +190,7 @@ export function SearchPage() {
   });
   const activeFilters = Object.values(draft.options.filters).filter(value => value != null && value !== false).length;
   const effective = response?.meta.price_interpretation?.effective_filters ?? response?.query.options.filters;
+  const requestedSizes = response ? effective?.size ? [effective.size] : response.meta.scope_interpretation?.clauses.filter(c => c.field === 'size').map(c => c.value) ?? [] : draft.options.filters.size ? [draft.options.filters.size] : [];
 
   return <div className="search-page">
     <section className="showroom-hero" aria-labelledby="hero-title"><div className="hero-copy">
@@ -247,7 +250,7 @@ export function SearchPage() {
             {mode !== 'image' && <><label htmlFor="search-strategy">Cách tìm kiếm</label><select id="search-strategy" value={draft.options.search_strategy ?? 'semantic'} onChange={event => updateOptions({ search_strategy: event.target.value as SearchOptions['search_strategy'] })}><option value="hybrid">Mô tả + từ khóa</option><option value="semantic">Chỉ tương đồng AI</option></select></>}
             {mode !== 'image' && <label className="checkbox-label"><input type="checkbox" checked={draft.options.interpret_price !== false} onChange={event => updateOptions({ interpret_price: event.target.checked })} />Tự hiểu điều kiện giá trong mô tả</label>}
             {mode !== 'image' && <label className="checkbox-label"><input type="checkbox" checked={draft.options.interpret_exclusions !== false} onChange={event => updateOptions({ interpret_exclusions: event.target.checked })} />Tự hiểu loại trừ màu, hãng, danh mục</label>}
-            {mode !== 'image' && <label className="checkbox-label"><input type="checkbox" checked={draft.options.interpret_scope !== false} onChange={event => updateOptions({ interpret_scope: event.target.checked })} />Tự hiểu hãng, loại và màu sản phẩm</label>}
+            {mode !== 'image' && <label className="checkbox-label"><input type="checkbox" checked={draft.options.interpret_scope !== false} onChange={event => updateOptions({ interpret_scope: event.target.checked })} />Tự hiểu hãng, loại, màu và kích cỡ</label>}
             <label htmlFor="search-sort">Sắp xếp kết quả</label><select id="search-sort" value={draft.options.sort ?? 'relevance'} onChange={event => updateOptions({ sort: event.target.value as SearchOptions['sort'] })}><option value="relevance">Phù hợp nhất</option><option value="price_asc">Giá tăng dần</option><option value="price_desc">Giá giảm dần</option><option value="name">Tên sản phẩm</option></select>
           </div><button className="secondary-button filter-apply" type="button" disabled={!!pending} onClick={() => void submit()}>Áp dụng và tìm lại<ArrowRight size={15} aria-hidden="true" /></button>
         </div>
@@ -266,7 +269,7 @@ export function SearchPage() {
         {catalog.loading && !response ? <div className="product-grid skeleton-grid" aria-label="Đang tải danh mục">{Array.from({ length: 6 }, (_, index) => <div key={index} className="product-skeleton"><div /><span /><span /></div>)}</div>
           : catalog.error && !response ? <ErrorPanel title="Chưa tải được danh mục" message={catalog.error} onRetry={catalog.reload} />
           : (response ? response.results.length : visibleCatalog.length) === 0 ? <div className="empty-state"><Camera size={32} strokeWidth={1.4} aria-hidden="true" /><h3>{response?.meta.empty_reason === 'threshold' ? 'Chưa có sản phẩm đạt ngưỡng liên quan' : catalog.products.length === 0 ? 'Danh mục chưa có sản phẩm' : 'Không có sản phẩm đáp ứng bộ lọc'}</h3><p>Thử mô tả khác, thay ảnh hoặc điều chỉnh bộ lọc để tiếp tục khám phá.</p><button type="button" className="secondary-button" onClick={() => { update({ options: initialOptions() }); state.setResponse(mode, null); }}>Xóa bộ lọc và xem danh mục<ArrowRight size={16} aria-hidden="true" /></button></div>
-          : <div className="product-grid">{response ? response.results.map(result => <ProductCard key={result.product.product_id} product={result.product} result={result} onOpen={() => state.setScroll(window.scrollY)} />) : visibleCatalog.map(product => <ProductCard key={product.product_id} product={product} onOpen={() => state.setScroll(window.scrollY)} />)}</div>}
+          : <div className="product-grid">{response ? response.results.map(result => <ProductCard key={result.product.product_id} product={result.product} result={result} requestedSizes={requestedSizes} onOpen={() => state.setScroll(window.scrollY)} />) : visibleCatalog.map(product => <ProductCard key={product.product_id} product={product} requestedSizes={requestedSizes} onOpen={() => state.setScroll(window.scrollY)} />)}</div>}
         {response && <details className="processing-panel" data-testid="processing-panel"><summary>Xem cách hệ thống xử lý<ChevronDown size={17} aria-hidden="true" /></summary><div className="processing-content"><p>Điểm cosine biểu thị độ tương đồng, không phải xác suất chính xác.</p><ol>{response.meta.trace.map(step => <li key={step.step}><span>{stepLabels[step.step] ?? step.step}</span><span>{step.status === 'skipped' ? 'Không áp dụng' : `${step.output_count} đầu ra`} · {(response.meta.timing_ms[step.step as keyof SearchResponse['meta']['timing_ms']] ?? 0).toFixed(1)} ms</span></li>)}</ol>
           {response.query.mode === 'multimodal' && <table><caption>Điểm thành phần theo sản phẩm</caption><thead><tr><th scope="col">Sản phẩm</th><th scope="col">Mô tả</th><th scope="col">Ảnh</th><th scope="col">Kết hợp</th></tr></thead><tbody>{response.results.map(result => <tr key={result.product.product_id}><th scope="row">{result.product.name}</th><td>{result.component_scores.text?.toFixed(3)}</td><td>{result.component_scores.image?.toFixed(3)}</td><td>{result.score.toFixed(3)}</td></tr>)}</tbody></table>}
           <dl className="request-info"><dt>Mã lượt tìm</dt><dd>{response.request_id}</dd><dt>Model</dt><dd>{response.meta.model_fingerprint.slice(0, 12)}</dd><dt>Chỉ mục</dt><dd>{response.meta.index_fingerprint.slice(0, 12)}</dd></dl></div></details>}

@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Amendment34: `scope_interpretation.clauses[].field` thêm `size`, canonical theo26, parser `brand_category_color_size_scope_v3`; vẫn dùng `interpret_scope`. Khi `in_stock=true`, chính cỡ yêu cầu phải còn hàng. Scope/filter conflict dùng `field_errors[].field` như hợp đồng lỗi hiện tại. [Quy tắc/API/UML34](34_SIZE_SEARCH_SCOPE.md). Vector/cosine và ProductSummary stock tổng không đổi.
+
 Amendment33: `scope_interpretation.clauses[].field` thêm `color`; parser `brand_category_color_scope_v2`, vẫn dùng `interpret_scope`. Màu rõ trong mô tả là hard constraint, OR trong cùng trường, có conflict/warning và opt-out theo [33](33_COLOR_SEARCH_SCOPE.md). JSON/vector/cosine không đổi.
 
 Amendment31: admin products/Pnnn/sale-state POST, public sale_state, draft inventory_revision và status active/archived; PRODUCT_ARCHIVED khi mua theo [31](31_PRODUCT_AVAILABILITY.md). Detail/media giữ truy cập, public quantities0 khi archived.

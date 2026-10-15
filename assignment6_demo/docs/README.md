@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Mốc tìm kiếm34: [kích cỡ từ mô tả và tồn kho đúng SKU](34_SIZE_SEARCH_SCOPE.md), gồm autocomplete snapshot, OR/conflict, warning và trạng thái cỡ trên card; evidence doubles/fresh SQLite/browser/CPU riêng.
+
 Mốc tìm kiếm33: [màu rõ trong mô tả](33_COLOR_SEARCH_SCOPE.md) trở thành điều kiện lọc, với OR/conflict/warning và opt-out; có evidence doubles/browser/CPU riêng.
 
 Mốc dữ liệu32: [10 ảnh balo thật đã sửa](32_CATALOG_REPAIR_BATCH2.md), kèm kiểm chứng model/browser/restart riêng; không đồng nghĩa whole-catalog hoặc full-system verified.

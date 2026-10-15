@@ -1,0 +1,2105 @@
+{
+  "scope": "Actual browser/API/CPU variant-stock properties; manual voice is not STT",
+  "speech_calls": 0,
+  "before": {
+    "product_id": "P041",
+    "name": "Áo thun trơn màu đen",
+    "category": "t_shirt",
+    "brand": "Không xác định",
+    "color": "đen",
+    "price_vnd": 1735000,
+    "in_stock": true,
+    "sale_state": "active",
+    "sizes": [
+      "M",
+      "L"
+    ],
+    "available_sizes": [
+      "M",
+      "L"
+    ],
+    "image_url": "/api/v1/media/products/P041",
+    "description": "Áo thun đen trơn cổ tròn, dáng rộng, được treo trên móc trước nền gỗ; ảnh thể hiện một mặt áo.",
+    "stock_quantity": 5,
+    "image_credit": {
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_black_T-shirt_(003).JPG",
+      "author": "Juan de Vojníkov",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "transformations": [
+        "Wikimedia thumbnail when available; no local visual edits"
+      ]
+    },
+    "variants": [
+      {
+        "variant_id": "P041-M",
+        "size": "M",
+        "stock_quantity": 3,
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true
+      },
+      {
+        "variant_id": "P041-L",
+        "size": "L",
+        "stock_quantity": 2,
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true
+      }
+    ]
+  },
+  "soldOut": {
+    "request_id": "62dbf236-cf2b-4088-acb7-91f69b423195",
+    "products": [],
+    "total": 0,
+    "offset": 0,
+    "limit": 24,
+    "query": {
+      "text": "áo thun size M P041",
+      "sort": "relevance",
+      "filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": true
+      }
+    },
+    "price_interpretation": {
+      "enabled": true,
+      "parser_version": "vi_vnd_price_v1",
+      "applied": false,
+      "clauses": [],
+      "inferred_filters": {
+        "min_price": null,
+        "max_price": null
+      },
+      "effective_filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": true
+      },
+      "lexical_text": "áo thun size M P041"
+    },
+    "exclusion_interpretation": {
+      "enabled": true,
+      "parser_version": "metadata_exclusions_v1",
+      "applied": false,
+      "clauses": [],
+      "lexical_text": "áo thun size M P041"
+    },
+    "scope_interpretation": {
+      "enabled": true,
+      "parser_version": "brand_category_color_size_scope_v3",
+      "applied": true,
+      "clauses": [
+        {
+          "text": "áo thun",
+          "field": "category",
+          "value": "t_shirt"
+        },
+        {
+          "text": "M",
+          "field": "size",
+          "value": "M"
+        }
+      ],
+      "lexical_text": "P041",
+      "warnings": []
+    },
+    "facets": {
+      "category": [
+        {
+          "value": "backpack",
+          "count": 0
+        },
+        {
+          "value": "bag",
+          "count": 0
+        },
+        {
+          "value": "boots",
+          "count": 0
+        },
+        {
+          "value": "casual_shoes",
+          "count": 0
+        },
+        {
+          "value": "jacket",
+          "count": 0
+        },
+        {
+          "value": "running_shoes",
+          "count": 0
+        },
+        {
+          "value": "sandals",
+          "count": 0
+        },
+        {
+          "value": "sunglasses",
+          "count": 0
+        },
+        {
+          "value": "t_shirt",
+          "count": 0
+        },
+        {
+          "value": "tote_bag",
+          "count": 0
+        },
+        {
+          "value": "trail_shoes",
+          "count": 0
+        },
+        {
+          "value": "watch",
+          "count": 0
+        }
+      ],
+      "brand": [
+        {
+          "value": "Adele Dejak",
+          "count": 0
+        },
+        {
+          "value": "Adidas",
+          "count": 0
+        },
+        {
+          "value": "Arc'teryx",
+          "count": 0
+        },
+        {
+          "value": "Asics",
+          "count": 0
+        },
+        {
+          "value": "Birkenstock",
+          "count": 0
+        },
+        {
+          "value": "Brooks",
+          "count": 0
+        },
+        {
+          "value": "Candino",
+          "count": 0
+        },
+        {
+          "value": "Converse",
+          "count": 0
+        },
+        {
+          "value": "Eastpak",
+          "count": 0
+        },
+        {
+          "value": "Fjällräven",
+          "count": 0
+        },
+        {
+          "value": "Hard Rock Cafe",
+          "count": 0
+        },
+        {
+          "value": "Hermès",
+          "count": 0
+        },
+        {
+          "value": "Junghans",
+          "count": 0
+        },
+        {
+          "value": "Không xác định",
+          "count": 0
+        },
+        {
+          "value": "Les cuirs d'Agathe",
+          "count": 0
+        },
+        {
+          "value": "Marshal",
+          "count": 0
+        },
+        {
+          "value": "Minaal",
+          "count": 0
+        },
+        {
+          "value": "Mizuno",
+          "count": 0
+        },
+        {
+          "value": "New Balance",
+          "count": 0
+        },
+        {
+          "value": "Nike",
+          "count": 0
+        },
+        {
+          "value": "On",
+          "count": 0
+        },
+        {
+          "value": "Opta",
+          "count": 0
+        },
+        {
+          "value": "Polo Ralph Lauren",
+          "count": 0
+        },
+        {
+          "value": "Prada",
+          "count": 0
+        },
+        {
+          "value": "Qwstion",
+          "count": 0
+        },
+        {
+          "value": "Ray-Ban",
+          "count": 0
+        },
+        {
+          "value": "Salomon",
+          "count": 0
+        },
+        {
+          "value": "Seiko",
+          "count": 0
+        },
+        {
+          "value": "Skunkfunk",
+          "count": 0
+        },
+        {
+          "value": "Timberland",
+          "count": 0
+        },
+        {
+          "value": "Uniqlo",
+          "count": 0
+        },
+        {
+          "value": "VAUDE",
+          "count": 0
+        },
+        {
+          "value": "Vans",
+          "count": 0
+        },
+        {
+          "value": "XD Design",
+          "count": 0
+        }
+      ],
+      "color": [
+        {
+          "value": "be",
+          "count": 0
+        },
+        {
+          "value": "cam",
+          "count": 0
+        },
+        {
+          "value": "cam đất",
+          "count": 0
+        },
+        {
+          "value": "cam, đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "cam, đỏ và vàng",
+          "count": 0
+        },
+        {
+          "value": "gọng bạc mắt xám",
+          "count": 0
+        },
+        {
+          "value": "gọng vàng mắt nâu",
+          "count": 0
+        },
+        {
+          "value": "gọng đồi mồi",
+          "count": 0
+        },
+        {
+          "value": "hồng và đen",
+          "count": 0
+        },
+        {
+          "value": "màu kem",
+          "count": 0
+        },
+        {
+          "value": "mặt bạc",
+          "count": 0
+        },
+        {
+          "value": "mặt trắng dây nâu",
+          "count": 0
+        },
+        {
+          "value": "mặt xanh dây thép",
+          "count": 0
+        },
+        {
+          "value": "mặt đen dây da",
+          "count": 0
+        },
+        {
+          "value": "nâu",
+          "count": 0
+        },
+        {
+          "value": "nâu bò",
+          "count": 0
+        },
+        {
+          "value": "nâu và nhiều màu",
+          "count": 0
+        },
+        {
+          "value": "nâu xám",
+          "count": 0
+        },
+        {
+          "value": "nâu đậm",
+          "count": 0
+        },
+        {
+          "value": "nâu, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "rêu",
+          "count": 0
+        },
+        {
+          "value": "trắng",
+          "count": 0
+        },
+        {
+          "value": "trắng ngà và xanh xám",
+          "count": 0
+        },
+        {
+          "value": "trắng và nâu",
+          "count": 0
+        },
+        {
+          "value": "trắng và xanh",
+          "count": 0
+        },
+        {
+          "value": "trắng và đen",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ sẫm",
+          "count": 0
+        },
+        {
+          "value": "trắng, đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng, đỏ rượu, xám",
+          "count": 0
+        },
+        {
+          "value": "tím, hồng và xanh lá",
+          "count": 0
+        },
+        {
+          "value": "vàng",
+          "count": 0
+        },
+        {
+          "value": "vàng nâu và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "vàng, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xanh",
+          "count": 0
+        },
+        {
+          "value": "xanh denim",
+          "count": 0
+        },
+        {
+          "value": "xanh dương",
+          "count": 0
+        },
+        {
+          "value": "xanh lá",
+          "count": 0
+        },
+        {
+          "value": "xanh navy",
+          "count": 0
+        },
+        {
+          "value": "xanh navy và đen",
+          "count": 0
+        },
+        {
+          "value": "xanh nhạt",
+          "count": 0
+        },
+        {
+          "value": "xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xanh tím",
+          "count": 0
+        },
+        {
+          "value": "xanh ô liu",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám",
+          "count": 0
+        },
+        {
+          "value": "xám nhạt và đen",
+          "count": 0
+        },
+        {
+          "value": "xám và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xám và đen",
+          "count": 0
+        },
+        {
+          "value": "xám xanh",
+          "count": 0
+        },
+        {
+          "value": "xám, nâu và vàng",
+          "count": 0
+        },
+        {
+          "value": "xám, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen",
+          "count": 0
+        },
+        {
+          "value": "đen toàn bộ",
+          "count": 0
+        },
+        {
+          "value": "đen và be",
+          "count": 0
+        },
+        {
+          "value": "đen và bạc",
+          "count": 0
+        },
+        {
+          "value": "đen và nâu",
+          "count": 0
+        },
+        {
+          "value": "đen và tím",
+          "count": 0
+        },
+        {
+          "value": "đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh lá đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ rượu",
+          "count": 0
+        },
+        {
+          "value": "đỏ và trắng",
+          "count": 0
+        }
+      ],
+      "size": [
+        {
+          "value": "L",
+          "count": 0
+        },
+        {
+          "value": "M",
+          "count": 0
+        }
+      ]
+    },
+    "corrections": [],
+    "empty_reason": "no_matches",
+    "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+    "lexical_fingerprint": "f98b1f60518ba7483743487627979020d8b667bf467bc54354da5bfee3814cc7",
+    "inventory_revision": 106,
+    "retrieval": "exact_sku"
+  },
+  "suggestions": {
+    "request_id": "6a2d29ba-7135-424b-a0d7-fa76e24444fb",
+    "products": [
+      {
+        "product_id": "P041",
+        "name": "Áo thun trơn màu đen",
+        "category": "t_shirt",
+        "brand": "Không xác định",
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true,
+        "sale_state": "active",
+        "sizes": [
+          "M",
+          "L"
+        ],
+        "available_sizes": [
+          "L"
+        ],
+        "image_url": "/api/v1/media/products/P041"
+      }
+    ],
+    "retrieval": "lexical"
+  },
+  "results": [
+    {
+      "mode": "text",
+      "strategy": "semantic",
+      "in_stock": false,
+      "response": {
+        "request_id": "c2911ac9-1bfb-4a60-bf79-6f797c583072",
+        "query": {
+          "mode": "text",
+          "text": "áo thun size M P041",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7706782221794128,
+            "component_scores": {
+              "text": 0.7706782221794128,
+              "image": null
+            },
+            "rank_score": 0.7706782221794128,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.14210000153980218,
+            "encoding": 12.950599997566314,
+            "retrieval": 0.5118000008224044,
+            "filtering": 1.5383999998448417,
+            "threshold": 0,
+            "ranking": 0.004300000000512227,
+            "hydration": 0.03090000245720148,
+            "total": 17.326599998341408
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 106,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "áo thun size M P041"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "áo thun size M P041"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "áo thun",
+                "field": "category",
+                "value": "t_shirt"
+              },
+              {
+                "text": "M",
+                "field": "size",
+                "value": "M"
+              }
+            ],
+            "lexical_text": "P041",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "hybrid",
+      "in_stock": false,
+      "response": {
+        "request_id": "36ffbdc3-2ee3-49e9-8f85-00098c686cc6",
+        "query": {
+          "mode": "text",
+          "text": "áo thun size M P041",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7706782221794128,
+            "component_scores": {
+              "text": 0.7706782221794128,
+              "image": null
+            },
+            "rank_score": 1,
+            "lexical_score": 1
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.14350000128615648,
+            "encoding": 12.146299999585608,
+            "retrieval": 0.501599999552127,
+            "filtering": 1.5091999994183425,
+            "threshold": 0,
+            "ranking": 0.11190000077476725,
+            "hydration": 0.09750000026542693,
+            "total": 16.729200000554556
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "f98b1f60518ba7483743487627979020d8b667bf467bc54354da5bfee3814cc7",
+          "corrections": [],
+          "inventory_revision": 106,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "áo thun size M P041"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "áo thun size M P041"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "áo thun",
+                "field": "category",
+                "value": "t_shirt"
+              },
+              {
+                "text": "M",
+                "field": "size",
+                "value": "M"
+              }
+            ],
+            "lexical_text": "P041",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "hybrid",
+      "in_stock": false,
+      "response": {
+        "request_id": "56a9a0e0-a154-4028-8c61-07a0f790d3a3",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun size M P041",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.7706782221794128,
+            "component_scores": {
+              "text": 0.7706782221794128,
+              "image": null
+            },
+            "rank_score": 1,
+            "lexical_score": 1
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 0.14840000221738592,
+            "encoding": 12.5012999997125,
+            "retrieval": 0.49650000073597766,
+            "filtering": 1.8192999996244907,
+            "threshold": 0,
+            "ranking": 0.07879999975557439,
+            "hydration": 0.03809999907389283,
+            "total": 17.129399999248562
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "f98b1f60518ba7483743487627979020d8b667bf467bc54354da5bfee3814cc7",
+          "corrections": [],
+          "inventory_revision": 106,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "áo thun size M P041"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "áo thun size M P041"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "áo thun",
+                "field": "category",
+                "value": "t_shirt"
+              },
+              {
+                "text": "M",
+                "field": "size",
+                "value": "M"
+              }
+            ],
+            "lexical_text": "P041",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "hybrid",
+      "in_stock": false,
+      "response": {
+        "request_id": "c5ffcc9a-3f79-4adc-930b-2ad993e44765",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun size M P041",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P041",
+              "name": "Áo thun trơn màu đen",
+              "category": "t_shirt",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1735000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [
+                "M",
+                "L"
+              ],
+              "available_sizes": [
+                "L"
+              ],
+              "image_url": "/api/v1/media/products/P041"
+            },
+            "score": 0.9713146090507507,
+            "component_scores": {
+              "text": 0.7706782221794128,
+              "image": 0.7988874316215515
+            },
+            "rank_score": 1,
+            "lexical_score": 1
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 6.057800001144642,
+            "encoding": 67.51680000161286,
+            "retrieval": 0.6232999985513743,
+            "filtering": 1.488699999754317,
+            "threshold": 0,
+            "ranking": 0.08069999967119657,
+            "hydration": 0.04229999831295572,
+            "total": 77.99039999736124
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 1
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "f98b1f60518ba7483743487627979020d8b667bf467bc54354da5bfee3814cc7",
+          "corrections": [],
+          "inventory_revision": 106,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "áo thun size M P041"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "áo thun size M P041"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "áo thun",
+                "field": "category",
+                "value": "t_shirt"
+              },
+              {
+                "text": "M",
+                "field": "size",
+                "value": "M"
+              }
+            ],
+            "lexical_text": "P041",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "semantic",
+      "in_stock": true,
+      "response": {
+        "request_id": "b631b9ef-152f-4448-9388-cfea8fc5455e",
+        "query": {
+          "mode": "text",
+          "text": "áo thun size M P041",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "semantic",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 0.17350000052829273,
+            "encoding": 12.183599999843864,
+            "retrieval": 0.5055000001448207,
+            "filtering": 1.5124000019568484,
+            "threshold": 0,
+            "ranking": 0.0033000032999552786,
+            "hydration": 0.00039999940781854093,
+            "total": 16.47469999807072
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 106,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun size M P041"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "áo thun size M P041"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "áo thun",
+                "field": "category",
+                "value": "t_shirt"
+              },
+              {
+                "text": "M",
+                "field": "size",
+                "value": "M"
+              }
+            ],
+            "lexical_text": "P041",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "text",
+      "strategy": "hybrid",
+      "in_stock": true,
+      "response": {
+        "request_id": "1efb9823-6adc-4b25-8e30-c1b832d68432",
+        "query": {
+          "mode": "text",
+          "text": "áo thun size M P041",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 0.10909999764407985,
+            "encoding": 9.640099997341167,
+            "retrieval": 0.5057999987911899,
+            "filtering": 1.4639000000897795,
+            "threshold": 0,
+            "ranking": 0.07920000280137174,
+            "hydration": 0.0005000001692678779,
+            "total": 13.988599999720464
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "f98b1f60518ba7483743487627979020d8b667bf467bc54354da5bfee3814cc7",
+          "corrections": [],
+          "inventory_revision": 106,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun size M P041"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "áo thun size M P041"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "áo thun",
+                "field": "category",
+                "value": "t_shirt"
+              },
+              {
+                "text": "M",
+                "field": "size",
+                "value": "M"
+              }
+            ],
+            "lexical_text": "P041",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "strategy": "hybrid",
+      "in_stock": true,
+      "response": {
+        "request_id": "597dd3ea-a991-43bf-9e1c-7e26f4fdd2c8",
+        "query": {
+          "mode": "voice",
+          "text": "áo thun size M P041",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 0.11810000069090165,
+            "encoding": 11.142899998958455,
+            "retrieval": 0.4909000017505605,
+            "filtering": 1.4932999984011985,
+            "threshold": 0,
+            "ranking": 0.08299999899463728,
+            "hydration": 0.0005000001692678779,
+            "total": 15.370199998869793
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "f98b1f60518ba7483743487627979020d8b667bf467bc54354da5bfee3814cc7",
+          "corrections": [],
+          "inventory_revision": 106,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun size M P041"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "áo thun size M P041"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "áo thun",
+                "field": "category",
+                "value": "t_shirt"
+              },
+              {
+                "text": "M",
+                "field": "size",
+                "value": "M"
+              }
+            ],
+            "lexical_text": "P041",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "strategy": "hybrid",
+      "in_stock": true,
+      "response": {
+        "request_id": "9f26328b-6ca0-48ed-95a1-d2b9805bac7d",
+        "query": {
+          "mode": "multimodal",
+          "text": "áo thun size M P041",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 1280,
+            "byte_size": 242914
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+          "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "filters",
+          "timing_ms": {
+            "validation": 6.722800000716234,
+            "encoding": 62.665400000696536,
+            "retrieval": 0.5721000015910249,
+            "filtering": 1.9541000001481734,
+            "threshold": 0,
+            "ranking": 0.09800000043469481,
+            "hydration": 0.00039999940781854093,
+            "total": 75.09760000175447
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 0
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "f98b1f60518ba7483743487627979020d8b667bf467bc54354da5bfee3814cc7",
+          "corrections": [],
+          "inventory_revision": 106,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": true
+            },
+            "lexical_text": "áo thun size M P041"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "áo thun size M P041"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_color_size_scope_v3",
+            "applied": true,
+            "clauses": [
+              {
+                "text": "áo thun",
+                "field": "category",
+                "value": "t_shirt"
+              },
+              {
+                "text": "M",
+                "field": "size",
+                "value": "M"
+              }
+            ],
+            "lexical_text": "P041",
+            "warnings": []
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "request_id": "683efb38-12b3-45ec-9e68-5080470f4dc1",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": false,
+        "reason_code": "RELEVANCE_POLICY_UNAVAILABLE",
+        "modes": [],
+        "multimodal_weights": []
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+      "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+      "product_count": 181
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "backpack",
+        "bag",
+        "boots",
+        "casual_shoes",
+        "jacket",
+        "running_shoes",
+        "sandals",
+        "sunglasses",
+        "t_shirt",
+        "tote_bag",
+        "trail_shoes",
+        "watch"
+      ],
+      "brands": [
+        "Adele Dejak",
+        "Adidas",
+        "Arc'teryx",
+        "Asics",
+        "Birkenstock",
+        "Brooks",
+        "Candino",
+        "Converse",
+        "Eastpak",
+        "Fjällräven",
+        "Hard Rock Cafe",
+        "Hermès",
+        "Junghans",
+        "Không xác định",
+        "Les cuirs d'Agathe",
+        "Marshal",
+        "Minaal",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On",
+        "Opta",
+        "Polo Ralph Lauren",
+        "Prada",
+        "Qwstion",
+        "Ray-Ban",
+        "Salomon",
+        "Seiko",
+        "Skunkfunk",
+        "Timberland",
+        "Uniqlo",
+        "VAUDE",
+        "Vans",
+        "XD Design"
+      ],
+      "min_price": 350000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "azure",
+      "configuration_state": "unconfigured",
+      "region": "southeastasia",
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "after": {
+    "product_id": "P041",
+    "name": "Áo thun trơn màu đen",
+    "category": "t_shirt",
+    "brand": "Không xác định",
+    "color": "đen",
+    "price_vnd": 1735000,
+    "in_stock": true,
+    "sale_state": "active",
+    "sizes": [
+      "M",
+      "L"
+    ],
+    "available_sizes": [
+      "M",
+      "L"
+    ],
+    "image_url": "/api/v1/media/products/P041",
+    "description": "Áo thun đen trơn cổ tròn, dáng rộng, được treo trên móc trước nền gỗ; ảnh thể hiện một mặt áo.",
+    "stock_quantity": 5,
+    "image_credit": {
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_black_T-shirt_(003).JPG",
+      "author": "Juan de Vojníkov",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "transformations": [
+        "Wikimedia thumbnail when available; no local visual edits"
+      ]
+    },
+    "variants": [
+      {
+        "variant_id": "P041-M",
+        "size": "M",
+        "stock_quantity": 3,
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true
+      },
+      {
+        "variant_id": "P041-L",
+        "size": "L",
+        "stock_quantity": 2,
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true
+      }
+    ]
+  },
+  "restored": true
+}

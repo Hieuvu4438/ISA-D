@@ -1,0 +1,65 @@
+{
+  "recorded_at": "2026-10-15T03:02:34.613314+00:00",
+  "base_commit": "40e2de8352e70d60b067edf3e7dd4bdcebacaa15",
+  "parser_version": "brand_category_color_size_scope_v3",
+  "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+  "live_index": {
+    "available": true,
+    "index_fingerprint": "2c9298c7992e02758bfd8e1df0da00d4b9c33e7e1619ba2d9470451f37c465c2",
+    "catalog_fingerprint": "b7443e1ae152504e7e8186f6d14031a2dfeec01ae8841b7b538f62989b9d73df",
+    "product_count": 181
+  },
+  "unchanged_seed_data": [
+    "products",
+    "orders",
+    "image_sources"
+  ],
+  "stock_restored": true,
+  "speech_calls": 0,
+  "full_independent_quality_verified": false,
+  "hash_mode": "UTF-8 text with LF normalization; binary screenshots use raw SHA256",
+  "source_sha256": {
+    "backend/app/application/scope_query.py": "bb45e513ae347c2f362fabaa8ecda074471d47e8c4b27a0c5ec1088c6dc9bf42",
+    "backend/app/application/catalog_search.py": "50967823631034ccfe7ccf5a1f8ee764620ee502427fb9b3f501b4420fcb4f35",
+    "backend/app/application/search_service.py": "63a47483ed7413eee59ab098a2a5fd94fd88607a3227871c220d2e95ea5b95c1",
+    "backend/app/application/admin_service.py": "447fbe1ac92f1ac917e08f111ac7959f6facdc6244410c7f429e3a1d20de9a57",
+    "backend/app/domain/__init__.py": "39ce6c5e54945fb21d9cc0f2fc232b418cd2a1b0dbf439c88cb57567a06a01ff",
+    "backend/tests/test_size_scope.py": "120edb658af38360ffa6ee389b66ebe0a72e0fd97617ca614a3cd4050e667b13",
+    "frontend/src/lib/types.ts": "85fc25737fdd6462b22428249f10b576c24d6f42d7cbf26bc1099f7d98049b9c",
+    "frontend/src/components/ScopeInterpretationNotice.tsx": "07f80a05d678ffffefefa93fc163ab3a4d9470b8dc14cdc20bb5dee97ab2cf42",
+    "frontend/src/pages/BrowsePage.tsx": "c3bcdacea232ed8497674e7e992f428d09b55c59a17bf3e73017d65b019aed1c",
+    "frontend/src/pages/SearchPage.tsx": "4ccffdb8766b3d907a4f63192a70d285cf49b03fbff147baf63854d3c6797679",
+    "frontend/e2e/size-scope.spec.ts": "6f060ae778451fb65c14f032ca3a8419cc62a017b981dd61e3267648d37d9c14",
+    "frontend/e2e/color-scope.spec.ts": "c2ab7dd04f73b2642fc7b0d69e910058814804d4df8fe6ca4c4385a8ae35023a",
+    "frontend/e2e/scope.spec.ts": "e339cc02da3ca44d21f9dba35869b0d94ac4609107e692608ec7adc91118278a"
+  },
+  "checks": {
+    "full_backend_passed": 517,
+    "targeted_backend_passed_before_two_extra_cases": 176,
+    "new_size_cases_in_full_suite": 45,
+    "frontend_unit_passed": 17,
+    "browser_passed": 6,
+    "real_cpu_size_requests": 8,
+    "cpu_search_regression_requests": 50,
+    "build_exit": 0,
+    "lint_exit": 0,
+    "ruff_exit": 0,
+    "stock_restored": true,
+    "reserved_admins": 0,
+    "reserved_sessions": 0
+  },
+  "evidence_sha256": {
+    "artifacts/validation/size-scope-full-tests.xml": "eded668d8045d2327ffaac59997284b92a5b48441566c509928398b00bc82f43",
+    "artifacts/validation/size-scope-initial.xml": "c3c9a91b2db2deff15a981b38550c15f275d895424c7a15e4b3ce4e73055ed28",
+    "artifacts/validation/size-scope-tests.xml": "54057d1d6c7a1f83ae722f8a5cfca19485835d833d3b775910a187272cb15207",
+    "artifacts/validation/size-scope-brand-category-regression.json": "57f68c52c20a703e95c02ed2f89eacfb16514fe3ed1980b11de9da80abd33106",
+    "artifacts/validation/size-scope-cleanup.json": "44f6fa4efa3d3aaebc7275b79a3a1f72bcae51169ee9b44403d7f9e20b2e5f48",
+    "artifacts/validation/size-scope-color-regression.json": "18d1108ea47b346509ba35cc4edc28c074ac0eac589821dd62e791fb3ea90572",
+    "artifacts/validation/size-scope-search-regression.json": "3d6331e749471fe5c1f2d2087f9ede68db7e3b5a0195612b6a6078b0d37e7816",
+    "artifacts/backend/size-scope-real-encoder.json": "0f5edd42c19a4c10cbb0c5e12df4fdd4aa0fa00fab3f30f46d336ad4e5dad571",
+    "artifacts/frontend/size-scope-initial.json": "17704f0cd5387c731024d63c0d61628b41ebdfc3df00f9373db83914c2a07503",
+    "artifacts/frontend/size-scope-results.json": "5ae00057100d83a431d905fe7b0b220f0e3d54169521996f891adae0f6071496",
+    "artifacts/frontend/screenshots/size-scope/search-1440.png": "34a424592c05aa3f04c3df046e692eb36924a4266f57b84f95f05f094fa01cec",
+    "artifacts/frontend/screenshots/size-scope/search-360.png": "7486f274730ce4b251cad9dc368c7ef5700c8b0109fe8741e277f941a9a01e8a"
+  }
+}

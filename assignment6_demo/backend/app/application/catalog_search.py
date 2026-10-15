@@ -156,7 +156,8 @@ class CatalogSearch:
         scores = self.scores(plan)
         stock, revision, sizes, archived = self.inventory.snapshot_catalog() if self.inventory else ({}, None, {}, set())
         constraints_only = bool(price_plan.clauses or exclusion_plan.clauses or scope_plan.clauses) and not plan.terms
-        universe = [dict(p, stock_quantity=stock.get(p["product_id"], 0), _variants=sizes.get(p["product_id"], [])) if self.inventory else p for p in self.products if p["product_id"] not in archived and exclusion_plan.matches(p) and scope_plan.matches(p) and (constraints_only or not scope_plan.lexical_text.strip() or p["product_id"] in scores)]
+        snapshot_products = [dict(p, stock_quantity=stock.get(p["product_id"], 0), _variants=sizes.get(p["product_id"], [])) if self.inventory else p for p in self.products]
+        universe = [p for p in snapshot_products if p["product_id"] not in archived and exclusion_plan.matches(p) and scope_plan.matches(p, filters) and (constraints_only or not scope_plan.lexical_text.strip() or p["product_id"] in scores)]
         eligible = [p for p in universe if matches(p, filters)]
         # Disjunctive facets: all other active filters remain applied, counts before pagination.
         facets = {}
@@ -205,13 +206,14 @@ class CatalogSearch:
         stock, _, sizes, archived = self.inventory.snapshot_catalog() if self.inventory else ({}, None, {}, set())
         rows = []
         for p in self.products:
-            if p["product_id"] in archived or not matches(p, filters) or not exclusion_plan.matches(p) or not scope_plan.matches(p):
+            p = dict(p, stock_quantity=stock.get(p["product_id"], 0), _variants=sizes.get(p["product_id"], [])) if self.inventory else p
+            if p["product_id"] in archived or not matches(p, filters) or not exclusion_plan.matches(p) or not scope_plan.matches(p, filters):
                 continue
             prefix = p["product_id"].casefold().startswith(value) or fold(p["name"]).startswith(value)
             if prefix or p["product_id"] in scores:
                 rows.append((not prefix, -scores.get(p["product_id"], 0), p["product_id"], p))
         rows.sort(key=lambda row: row[:3])
-        return [self.repository.summary(dict(row[3], stock_quantity=stock.get(row[3]["product_id"], 0), _variants=sizes.get(row[3]["product_id"], [])) if self.inventory else row[3]) for row in rows[:limit]]
+        return [self.repository.summary(row[3]) for row in rows[:limit]]
 
     def fuse(self, candidates, text):
         plan = self.prepare(text)

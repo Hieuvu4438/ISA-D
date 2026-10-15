@@ -27,6 +27,11 @@ CategoryCode = Literal[
     "backpack", "tote_bag", "t_shirt", "jacket", "watch", "sunglasses",
 ]
 
+APPAREL_SIZES = frozenset(("XS", "S", "M", "L", "XL", "XXL", "3XL"))
+SHOE_SIZES = frozenset(str(i) for i in range(34, 49))
+ACCESSORY_SIZES = frozenset(("ONE",))
+SUPPORTED_SIZES = APPAREL_SIZES | SHOE_SIZES | ACCESSORY_SIZES
+
 
 class Filters(StrictModel):
     category: CategoryCode | None = None

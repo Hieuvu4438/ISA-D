@@ -1,4 +1,4 @@
-from app.domain import AppError
+from app.domain import ACCESSORY_SIZES, APPAREL_SIZES, SHOE_SIZES, AppError
 from app.application.catalog_search import fold
 from app.data.variant_repository import product_key
 
@@ -41,7 +41,7 @@ class AdminService:
         product = self.products.get_by_id(product_id) if self.products else None
         if not product:
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm trong danh mục hiện tại.")
-        allowed = {"XS", "S", "M", "L", "XL", "XXL", "3XL"} if product["category"] in {"t_shirt", "jacket"} else {str(i) for i in range(34, 49)} if product["category"] in {"running_shoes", "trail_shoes", "casual_shoes", "boots", "sandals"} else {"ONE"}
+        allowed = APPAREL_SIZES if product["category"] in {"t_shirt", "jacket"} else SHOE_SIZES if product["category"] in {"running_shoes", "trail_shoes", "casual_shoes", "boots", "sandals"} else ACCESSORY_SIZES
         if size not in allowed:
             raise AppError(422, "SIZE_UNSUPPORTED", "Kích cỡ không phù hợp danh mục: " + ", ".join(sorted(allowed)), "size")
         return self.repository.allocate_variant(actor, product_id, size, quantity, revision, reason, expected_epoch=expected_epoch)

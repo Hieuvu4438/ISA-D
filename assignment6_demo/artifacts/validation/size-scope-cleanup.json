@@ -1,0 +1,56 @@
+{
+  "recorded_at": "2026-10-15T02:59:56.275906+00:00",
+  "scope": "Actual live HTTP and SQLite after browser fixture retirement",
+  "product": {
+    "product_id": "P041",
+    "name": "Áo thun trơn màu đen",
+    "category": "t_shirt",
+    "brand": "Không xác định",
+    "color": "đen",
+    "price_vnd": 1735000,
+    "in_stock": true,
+    "sale_state": "active",
+    "sizes": [
+      "M",
+      "L"
+    ],
+    "available_sizes": [
+      "M",
+      "L"
+    ],
+    "image_url": "/api/v1/media/products/P041",
+    "description": "Áo thun đen trơn cổ tròn, dáng rộng, được treo trên móc trước nền gỗ; ảnh thể hiện một mặt áo.",
+    "stock_quantity": 5,
+    "image_credit": {
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ironed_black_T-shirt_(003).JPG",
+      "author": "Juan de Vojníkov",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "transformations": [
+        "Wikimedia thumbnail when available; no local visual edits"
+      ]
+    },
+    "variants": [
+      {
+        "variant_id": "P041-M",
+        "size": "M",
+        "stock_quantity": 3,
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true
+      },
+      {
+        "variant_id": "P041-L",
+        "size": "L",
+        "stock_quantity": 2,
+        "color": "đen",
+        "price_vnd": 1735000,
+        "in_stock": true
+      }
+    ]
+  },
+  "stock_restored": true,
+  "reserved_admins": 0,
+  "reserved_admin_sessions": 0,
+  "speech_calls": 0
+}

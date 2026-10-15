@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Tìm kiếm hiểu kích cỡ như “áo thun size M” hoặc “giày cỡ 42”, kiểm tra tồn đúng cỡ khi bật “Chỉ còn hàng”, hiển thị cỡ hết hàng trên card: [contract34](docs/34_SIZE_SEARCH_SCOPE.md), [evidence](artifacts/backend/SIZE_SCOPE_REPORT.md). Cỡ cần được admin khai báo theo luồng phân kho26; không suy size từ ảnh.
+
 Tìm kiếm hiểu màu được nêu rõ như “balo màu hồng”, lọc trước xếp hạng, hỗ trợ lựa chọn “hoặc”, báo mâu thuẫn và cho tắt tự hiểu: [contract33](docs/33_COLOR_SEARCH_SCOPE.md), [evidence](artifacts/backend/COLOR_SCOPE_REPORT.md). Bộ lọc màu phối dựa trên metadata, không nhận diện màu từ ảnh.
 
 Đợt sửa dữ liệu mới: thay 10 ảnh balo sai P121–P130, kiểm tra seed và runtime release riêng; [chi tiết](docs/32_CATALOG_REPAIR_BATCH2.md), [evidence](artifacts/validation/CATALOG_REPAIR_BATCH2_REPORT.md). 127 backend tests, browser thật và regression CPU sau restart đạt; full independent quality/voice acceptance vẫn pending.
