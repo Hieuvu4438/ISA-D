@@ -1,8 +1,8 @@
 {
   "status": "passed",
-  "product_count": 180,
+  "product_count": 181,
   "order_count": 30,
-  "catalog_fingerprint": "ab5cb4b7695fc0d93ab088e071f81551ed8806f9e16f72a55cb36d7968c080e2",
+  "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
   "photos": [
     {
       "product_id": "P001",
@@ -723,6 +723,10 @@
     {
       "product_id": "P180",
       "sha256": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d"
+    },
+    {
+      "product_id": "P181",
+      "sha256": "634cf564c33a40ac842be6275b92c82b949157b94e7c0e7bd1b3e3db747a428a"
     }
   ],
   "query_photo_count": 1

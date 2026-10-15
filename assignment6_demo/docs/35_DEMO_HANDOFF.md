@@ -14,25 +14,21 @@ Theo yêu cầu mới nhất, chốt bản demo có giao diện và các luồng
 Yêu cầu Python3.12 và Node22.12+. Từ thư mục `assignment6_demo`:
 
 ```powershell
-./scripts/setup_backend.ps1
-./backend/.venv/Scripts/python.exe scripts/prepare_demo.py
+./scripts/setup_demo.ps1
 ./scripts/run_backend.ps1
 ```
 
 Terminal thứ hai:
 
 ```powershell
-cd frontend
-npm ci
-npm run build
-npm run preview
+./scripts/run_frontend.ps1 -Preview
 ```
 
 Setup cài application package editable và tạo index CPU thật. Lần đầu cần tải model; mặc định không chạy calibration hoặc gọi speech trả phí. Muốn chạy kiểm định calibration riêng: `./scripts/setup_backend.ps1 -Calibrate`. Demo dùng chế độ “Sản phẩm gần nhất”.
 
 `prepare_demo.py` là thao tác chủ động để tạo hai tài khoản local, sinh mật khẩu ngẫu nhiên và ghi vào file runtime đã ignore. Chạy lại giữ nguyên credentials, không reset tài khoản có sẵn. Không tự tạo admin khi server khởi động. Với máy khác, sao chép `.env.example` thành `.env`, chọn `SPEECH_PROVIDER=groq` và điền khóa trước khi chạy backend; nếu chưa cấu hình, nhập mô tả/transcript vẫn demo được.
 
-Seed Git có **180 sản phẩm / 12 danh mục** và 30 đơn mẫu lịch sử. Máy hiện tại có **181 sản phẩm** vì P181 đã được admin xuất bản từ mốc trước. Đây là khác biệt runtime đã biết, không phải thiếu dữ liệu. Size demo cần được admin phân kho; P041-M/L đã có trên máy hiện tại. Khi có runtime release, sửa sản phẩm qua admin và bấm xuất bản; sửa seed đơn thuần không thay cửa hàng đang chạy.
+**Cập nhật bàn giao máy khác ở mốc36:** seed Git đã đồng bộ **181 sản phẩm / 12 danh mục**, đủ ảnh P181 và 30 đơn mẫu lịch sử; snapshot import có toàn bộ kho và P041-M/L như máy bàn giao. Setup mới tự import SQLite và tạo tài khoản demo C001. Xem [hướng dẫn36](36_RUN_ON_ANOTHER_MACHINE.md) về cài mới, database đã dùng và dữ liệu riêng không đi qua Git. Khi có runtime release, sửa sản phẩm qua admin và bấm xuất bản; sửa seed đơn thuần không thay cửa hàng đang chạy.
 
 ## Kịch bản trình bày 8–10 phút
 

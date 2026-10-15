@@ -4332,6 +4332,26 @@
       "real_photo_review": "passed",
       "review_evidence": "data/catalog_repair_review.json",
       "review_notes": "Reviewed R106: real black sports sunglasses resting on rock, lenses visible. Replaces nineteenth-century portrait with a child."
+    },
+    {
+      "asset_id": "P181",
+      "author": "Auckland Museum",
+      "bytes": 71133,
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Polo_shirt_%28AM_2017.66.47-2%29.jpg/960px-Polo_shirt_%28AM_2017.66.47-2%29.jpg",
+      "format": "JPEG",
+      "height": 1440,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "local_path": "data/images/P181.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Polo_shirt_%28AM_2017.66.47-2%29.jpg",
+      "product_id": "P181",
+      "real_photo_review": "passed",
+      "retrieved_at": "2026-10-15",
+      "review_evidence": "admin_visual_attestation",
+      "sha256": "634cf564c33a40ac842be6275b92c82b949157b94e7c0e7bd1b3e3db747a428a",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Polo_shirt_(AM_2017.66.47-2).jpg",
+      "transformations": "Wikimedia 960px thumbnail; original upload bytes retained locally",
+      "width": 960
     }
   ]
 }

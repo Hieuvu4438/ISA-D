@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "dataset_sha256": "34b9ac1e4d4f5c3b07c791a4d0db22966758116966cf636e2bfe3a6a1467e6c6",
-  "catalog_fingerprint": "ab5cb4b7695fc0d93ab088e071f81551ed8806f9e16f72a55cb36d7968c080e2",
+  "dataset_sha256": "3e29d7a4bcaab28c06e90153ca0305696d494c1953c94cddfba117d8a64b5d37",
+  "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
   "image_sha256_by_id": {
     "P001": "e280ab31c36cdd00aa96afed173ad789c8fc4cc54f2e9ce45b8e32a3b587b8d4",
     "P002": "fdeadc46345aba59e80b4f59e66552adbb78c95fe2dffd5c48a01f43d478ceb1",
@@ -182,7 +182,8 @@
     "P177": "6a5844c5161347f7659cf79cb4e4bce197cdeba4d66b0eef7f425274ba088183",
     "P178": "54924dbec0b8a64f7b906224a821a7f87b6a2040bfb0fd4e4f6a1cb795e1c927",
     "P179": "eab9704094e1af855d977c88a9afffad88d3b9362694a67596c536e5f9910080",
-    "P180": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d"
+    "P180": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d",
+    "P181": "634cf564c33a40ac842be6275b92c82b949157b94e7c0e7bd1b3e3db747a428a"
   },
   "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
   "dimension": 512,
@@ -191,11 +192,11 @@
   "preprocess_version": "image_rgb_exif_white_v1",
   "text_template_version": "product_text_v1_vi",
   "scoring_version": "cosine_fusion_v1",
-  "fingerprint": "0746d23246d058d88c9b7e4f8966beda99f83469f8a9e0960480777a3988cd92",
+  "fingerprint": "1903765b5e724df63aa88b6e58332db58784bea00fa0dd6879e21c9bf4388b17",
   "fingerprint_payload": {
     "schema_version": 1,
-    "dataset_sha256": "34b9ac1e4d4f5c3b07c791a4d0db22966758116966cf636e2bfe3a6a1467e6c6",
-    "catalog_fingerprint": "ab5cb4b7695fc0d93ab088e071f81551ed8806f9e16f72a55cb36d7968c080e2",
+    "dataset_sha256": "3e29d7a4bcaab28c06e90153ca0305696d494c1953c94cddfba117d8a64b5d37",
+    "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
     "image_sha256_by_id": {
       "P001": "e280ab31c36cdd00aa96afed173ad789c8fc4cc54f2e9ce45b8e32a3b587b8d4",
       "P002": "fdeadc46345aba59e80b4f59e66552adbb78c95fe2dffd5c48a01f43d478ceb1",
@@ -376,7 +377,8 @@
       "P177": "6a5844c5161347f7659cf79cb4e4bce197cdeba4d66b0eef7f425274ba088183",
       "P178": "54924dbec0b8a64f7b906224a821a7f87b6a2040bfb0fd4e4f6a1cb795e1c927",
       "P179": "eab9704094e1af855d977c88a9afffad88d3b9362694a67596c536e5f9910080",
-      "P180": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d"
+      "P180": "09de056bdc11d43567739b892a33532ff86b7501dab5d7c5f0be0c8c7312645d",
+      "P181": "634cf564c33a40ac842be6275b92c82b949157b94e7c0e7bd1b3e3db747a428a"
     },
     "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
     "dimension": 512,
@@ -566,8 +568,9 @@
     "P177",
     "P178",
     "P179",
-    "P180"
+    "P180",
+    "P181"
   ],
-  "npz_sha256": "b310a2dd353e3bba3c8fca5ba1457b314b26dfd1f8864f5390e11cd5c716ac0d",
-  "created_at": "2026-10-15T03:08:46.469707+00:00"
+  "npz_sha256": "27031757efa720451d3a49f4d2e4af3ab75b1ceb68d8059bfb068e2bf8e9121d",
+  "created_at": "2026-10-15T03:40:52.664522+00:00"
 }

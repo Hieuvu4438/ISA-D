@@ -2158,5 +2158,17 @@
     "description": "Kính mát gọng đen và mắt kính tối màu, đặt trên mặt đá; ảnh chụp nghiêng với nền núi ở xa.",
     "image_path": "data/images/P180.jpg",
     "image_asset_id": "P180"
+  },
+  {
+    "brand": "Nike",
+    "category": "t_shirt",
+    "color": "trắng, đỏ rượu, xám",
+    "description": "Ảnh nghiêng áo polo trắng, cổ đỏ rượu và vai xám; tay áo có chữ ASB BANK. Thông tin thương hiệu theo hồ sơ Auckland Museum.",
+    "name": "Áo polo Nike trắng viền đỏ rượu",
+    "price_vnd": 890000,
+    "product_id": "P181",
+    "stock_quantity": 0,
+    "image_path": "data/images/P181.jpg",
+    "image_asset_id": "P181"
   }
 ]

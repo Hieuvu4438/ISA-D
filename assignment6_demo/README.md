@@ -2,7 +2,9 @@
 
 **Bản demo khách hàng đã chốt theo phạm vi mới:** giao diện user/admin, tìm kiếm mô tả/ảnh/giọng nói, bộ lọc, sản phẩm và kho, yêu thích, giỏ, COD và đơn hàng. Mở **http://localhost:5173** trên máy hiện tại. [Hướng dẫn chạy, tài khoản và kịch bản demo](docs/35_DEMO_HANDOFF.md).
 
-Tài khoản user/admin local có trong `runtime/demo/access.json`; Groq cấu hình ở `.env`. Hai file được ignore và không đưa vào Git. Trên máy mới chạy `scripts/setup_backend.ps1`, `scripts/prepare_demo.py`, backend và frontend theo docs35. Setup mặc định dùng nearest; `-Calibrate` là kiểm định riêng.
+**Chuyển sang máy khác:** xem [hướng dẫn cài và import đầy đủ](docs/36_RUN_ON_ANOTHER_MACHINE.md). Sau khi pull, tại `assignment6_demo` chạy `powershell -ExecutionPolicy Bypass -File .\scripts\setup_demo.ps1`; setup cả backend/frontend và import **181 sản phẩm, ảnh, 183 dòng kho, 2 size và 30 đơn mẫu lịch sử**. Sau đó chạy `scripts/run_backend.ps1` và `scripts/run_frontend.ps1 -Preview` ở hai terminal.
+
+Tài khoản user/admin mới tạo có trong `runtime/demo/access.json`; điền khóa Groq riêng ở `.env`. Hai file được ignore và không đưa vào Git. Import lặp không reset dữ liệu đã thao tác; database cũ có hoạt động được bảo vệ khỏi ghi đè. [Kiểm chứng database mới và CPU thật](artifacts/validation/PORTABLE_DATABASE_REPORT.md). Setup mặc định dùng nearest; `-Calibrate` là kiểm định riêng.
 
 **Kiểm chứng bàn giao:** 151 tests dữ liệu/search và 20 bài trình duyệt đạt; Groq gọi thật thành công qua API và browser. [Báo cáo](artifacts/validation/DEMO_HANDOFF_REPORT.md). Các mục bên dưới ghi lịch sử từng milestone và tiêu chí mở rộng, không phải phần còn chặn bản demo đã chốt.
 

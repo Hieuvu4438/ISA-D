@@ -1,0 +1,329 @@
+{
+  "scope": "Fresh exported application and SQLite import, real CPU, cached dependencies/models; no original runtime DB or credentials copied",
+  "meta": {
+    "request_id": "72e8f354-f1de-4917-ad7e-225b96d6dbf8",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": false,
+        "reason_code": "RELEVANCE_POLICY_UNAVAILABLE",
+        "modes": [],
+        "multimodal_weights": []
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "1903765b5e724df63aa88b6e58332db58784bea00fa0dd6879e21c9bf4388b17",
+      "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
+      "product_count": 181
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "backpack",
+        "bag",
+        "boots",
+        "casual_shoes",
+        "jacket",
+        "running_shoes",
+        "sandals",
+        "sunglasses",
+        "t_shirt",
+        "tote_bag",
+        "trail_shoes",
+        "watch"
+      ],
+      "brands": [
+        "Adele Dejak",
+        "Adidas",
+        "Arc'teryx",
+        "Asics",
+        "Birkenstock",
+        "Brooks",
+        "Candino",
+        "Citizen",
+        "Converse",
+        "Eastpak",
+        "Fjällräven",
+        "Fossil",
+        "Hard Rock Cafe",
+        "Hermès",
+        "Junghans",
+        "Không xác định",
+        "Les cuirs d'Agathe",
+        "Marshal",
+        "Minaal",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On",
+        "Opta",
+        "Polo Ralph Lauren",
+        "Prada",
+        "Qwstion",
+        "Ray-Ban",
+        "Salomon",
+        "Seiko",
+        "Skunkfunk",
+        "Timberland",
+        "Uniqlo",
+        "VAUDE",
+        "Vans",
+        "World Balance",
+        "XD Design"
+      ],
+      "min_price": 350000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "azure",
+      "configuration_state": "unconfigured",
+      "region": "southeastasia",
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "accounts": [
+    {
+      "role": "admin",
+      "login": 200,
+      "admin_inventory": 200
+    },
+    {
+      "role": "user",
+      "login": 200,
+      "admin_inventory": 403
+    }
+  ],
+  "historical_owned_order": 200,
+  "historical_foreign_order": 404,
+  "p181_photo_verified": true,
+  "size_stock": {
+    "M": 3,
+    "L": 2
+  },
+  "real_size_search": {
+    "request_id": "485d7cf6-7a4f-4017-affa-9604b3932ec1",
+    "query": {
+      "mode": "text",
+      "text": "áo thun size M",
+      "image_summary": null,
+      "voice_source": null,
+      "text_weight": null,
+      "options": {
+        "top_k": 5,
+        "result_policy": "nearest",
+        "search_strategy": "hybrid",
+        "sort": "relevance",
+        "filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": true
+        },
+        "interpret_price": true,
+        "interpret_exclusions": true,
+        "interpret_scope": true
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "product": {
+          "product_id": "P041",
+          "name": "Áo thun trơn màu đen",
+          "category": "t_shirt",
+          "brand": "Không xác định",
+          "color": "đen",
+          "price_vnd": 1735000,
+          "in_stock": true,
+          "sale_state": "active",
+          "sizes": [
+            "L",
+            "M"
+          ],
+          "available_sizes": [
+            "L",
+            "M"
+          ],
+          "image_url": "/api/v1/media/products/P041"
+        },
+        "score": 0.7627712488174438,
+        "component_scores": {
+          "text": 0.7627712488174438,
+          "image": null
+        },
+        "rank_score": 0.01639344262295082,
+        "lexical_score": 0.0
+      }
+    ],
+    "meta": {
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+      "index_fingerprint": "1903765b5e724df63aa88b6e58332db58784bea00fa0dd6879e21c9bf4388b17",
+      "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
+      "result_policy": "nearest",
+      "threshold": null,
+      "policy_fingerprint": null,
+      "empty_reason": null,
+      "timing_ms": {
+        "validation": 0.5565999999816995,
+        "encoding": 11.941699998715194,
+        "retrieval": 0.6706999993184581,
+        "filtering": 1.865000001998851,
+        "threshold": 0,
+        "ranking": 0.16509999841218814,
+        "hydration": 0.05999999848427251,
+        "total": 18.854499998269603
+      },
+      "trace": [
+        {
+          "step": "validation",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "encoding",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "retrieval",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 181
+        },
+        {
+          "step": "filtering",
+          "status": "ok",
+          "input_count": 181,
+          "output_count": 1
+        },
+        {
+          "step": "threshold",
+          "status": "skipped",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "ranking",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        },
+        {
+          "step": "hydration",
+          "status": "ok",
+          "input_count": 1,
+          "output_count": 1
+        }
+      ],
+      "ranking_strategy": "rrf",
+      "sort": "relevance",
+      "lexical_fingerprint": "eb3ee4b9a9b2268df22c44cbd22f272bf1225869920c36b43139300c3a8d5173",
+      "corrections": [],
+      "inventory_revision": 1,
+      "price_interpretation": {
+        "enabled": true,
+        "parser_version": "vi_vnd_price_v1",
+        "applied": false,
+        "clauses": [],
+        "inferred_filters": {
+          "min_price": null,
+          "max_price": null
+        },
+        "effective_filters": {
+          "category": null,
+          "brand": null,
+          "color": null,
+          "size": null,
+          "min_price": null,
+          "max_price": null,
+          "in_stock": true
+        },
+        "lexical_text": "áo thun size M"
+      },
+      "exclusion_interpretation": {
+        "enabled": true,
+        "parser_version": "metadata_exclusions_v1",
+        "applied": false,
+        "clauses": [],
+        "lexical_text": "áo thun size M"
+      },
+      "scope_interpretation": {
+        "enabled": true,
+        "parser_version": "brand_category_color_size_scope_v3",
+        "applied": true,
+        "clauses": [
+          {
+            "text": "áo thun",
+            "field": "category",
+            "value": "t_shirt"
+          },
+          {
+            "text": "M",
+            "field": "size",
+            "value": "M"
+          }
+        ],
+        "lexical_text": "",
+        "warnings": []
+      }
+    }
+  },
+  "variant_cart": 200,
+  "cod_quote": 200,
+  "cod_place": 201,
+  "owned_cod_detail": 200,
+  "cancel": 200,
+  "stock_restored": true,
+  "speech_calls": 0,
+  "seed_counts": {
+    "products": 181,
+    "historical_orders": 30,
+    "inventory": 183,
+    "variants": 2
+  }
+}

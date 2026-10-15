@@ -34,7 +34,8 @@ def main():
     accounts = []
     for email, name, role in specifications:
         password = secrets.token_urlsafe(32)
-        service.register(email, name, password, "explicit-demo-cli", role=role)
+        service.register(email, name, password, "explicit-demo-cli", role=role,
+                         customer_id="C001" if role == "user" else None)
         accounts.append({"email": email, "password": password, "role": role})
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps({"purpose": "Local customer demo only; do not publish or commit", "accounts": accounts}, indent=2) + "\n", encoding="utf-8")

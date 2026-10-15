@@ -1,6 +1,6 @@
 # Nguồn ảnh sản phẩm
 
-Catalog có 180 asset tải từ Wikimedia Commons. Rà trực quan đã phát hiện asset không phù hợp trong đợt import; bảng này là attribution, không phải chứng nhận tất cả ảnh/metadata đã đạt. Xem artifacts/validation/catalog-repair-applied.json và các pending trong docs/17_CATALOG_REPAIR.md. Nguồn, tác giả, giấy phép, checksum và ngày tải được lưu trong [image_sources.json](../data/image_sources.json). Ảnh được phục vụ từ file local; giá, tồn kho và đơn hàng là dữ liệu giả định cho demo. Không sử dụng ảnh sản phẩm tạo bằng AI.
+Catalog có 181 asset tải từ Wikimedia Commons. Rà trực quan đã phát hiện asset không phù hợp trong đợt import; bảng này là attribution, không phải chứng nhận tất cả ảnh/metadata đã đạt. Xem artifacts/validation/catalog-repair-applied.json và các pending trong docs/17_CATALOG_REPAIR.md. Nguồn, tác giả, giấy phép, checksum và ngày tải được lưu trong [image_sources.json](../data/image_sources.json). Ảnh được phục vụ từ file local; giá, tồn kho và đơn hàng là dữ liệu giả định cho demo. Không sử dụng ảnh sản phẩm tạo bằng AI.
 
 | Sản phẩm | Nguồn ảnh | Tác giả | Giấy phép | File local |
 | --- | --- | --- | --- | --- |
@@ -184,6 +184,7 @@ Catalog có 180 asset tải từ Wikimedia Commons. Rà trực quan đã phát h
 | P178 Kính mát On Sunglasses with view of gọng bạc mắt xám | [Nguồn](https://commons.wikimedia.org/wiki/File:Sunglasses_with_view_of_castle.jpg) | Dillal | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Ảnh](../data/images/P178.jpg) |
 | P179 Kính mát Không xác định Junior UV sunglasses đen toàn bộ | [Nguồn](https://commons.wikimedia.org/wiki/File:Junior_UV_sunglasses.jpg) | Popomopo1 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Ảnh](../data/images/P179.jpg) |
 | P180 Kính mát đen trên nền đá | [Nguồn](https://commons.wikimedia.org/wiki/File:Mezmay,_Sports_sunglasses,_Russia.jpg) | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Ảnh](../data/images/P180.jpg) |
+| P181 Áo polo Nike trắng viền đỏ rượu | [Nguồn](https://commons.wikimedia.org/wiki/File:Polo_shirt_(AM_2017.66.47-2).jpg) | Auckland Museum | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Ảnh](../data/images/P181.jpg) |
 
 Dùng thumbnail Wikimedia khi nguồn có sẵn; không chỉnh sửa hình ảnh local. P006 là ảnh chụp thật đã có xử lý màu chọn lọc tại nguồn. Các ảnh CC BY-SA tiếp tục theo giấy phép tương ứng khi phân phối lại.
 
