@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-15T04:30:08.356Z",
+  "checks": [
+    {
+      "name": "ready",
+      "status": 200,
+      "body": {
+        "request_id": "13455981-7fdd-4be6-9d8e-4c6dc9b1b153",
+        "status": "ready",
+        "search_available": true,
+        "reason_codes": []
+      }
+    },
+    {
+      "name": "real-CPU-search",
+      "status": 200,
+      "results": [
+        "P167"
+      ]
+    },
+    {
+      "name": "catalog-browser-desktop-mobile",
+      "passed": true
+    },
+    {
+      "name": "browser-login-admin",
+      "passed": true
+    },
+    {
+      "name": "admin-overview",
+      "status": 200
+    },
+    {
+      "name": "browser-login-user",
+      "passed": true
+    },
+    {
+      "name": "/api/v1/orders/O001",
+      "status": 200
+    },
+    {
+      "name": "/api/v1/cart",
+      "status": 200
+    },
+    {
+      "name": "/api/v1/wishlist",
+      "status": 200
+    },
+    {
+      "name": "/api/v1/purchases",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "speechLiveTested": false,
+  "scope": "Local startup smoke; existing business data preserved, no paid speech calls, no new purchases."
+}
