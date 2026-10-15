@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Admin product drafts API: list/get/save/upload private photo/preflight/discard theo [27](27_CATALOG_AUTHORING.md), strict DTO/OpenAPI/intent/epoch/CAS. published=false luôn; chưa có API publication.
+
 Size amendment: [26](26_PRODUCT_VARIANTS.md) thêm admin allocate variant, SKU inventory, product variants/sizes/available_sizes, cart variant_id, snapshot order/returns/receipt và size filters/facets. Trường mới additive; size phải explicit, không bỏ điều kiện hoặc chọn thay size hết hàng.
 
 Price query amendment: search options.interpret_price=true, catalog/suggestions query interpret_price=true|false; metadata price_interpretation và lỗi PRICE_QUERY_AMBIGUOUS/CONFLICT, PRICE_FILTER_CONFLICT, PRICE_VALUE_UNSUPPORTED, PRICE_CURRENCY_UNSUPPORTED theo [25](25_PRICE_QUERY.md). Original options echo khác effective filters có chủ đích, không âm thầm sửa manual inputs.

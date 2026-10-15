@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Ưu tiên mới: thanh toán giữ COD/demo; tập trung search và quản lý sản phẩm. Admin→Sản phẩm có soạn metadata/ảnh nguồn, bản nháp riêng và kiểm tra encoder CPU; **chưa xuất bản catalog/index**. [Contract27](docs/27_CATALOG_AUTHORING.md), [evidence](artifacts/backend/CATALOG_DRAFTS_REPORT.md).
+
 Kích cỡ có kho riêng, chọn size xuyên giỏ/COD/đơn/trả hàng, admin phân kho và lọc size: [docs/26_PRODUCT_VARIANTS.md](docs/26_PRODUCT_VARIANTS.md), [evidence](artifacts/backend/VARIANTS_REPORT.md). Dữ liệu cũ không tự chia size; admin phân cỡ ở `/admin`. Màu/asset CRUD, giá biến thể và size guide vẫn pending. Các milestone bên dưới ghi lịch sử từng đợt.
 
 Tìm theo điều kiện giá VND trong mô tả/transcript, giao với bộ lọc và opt-out: [docs/25_PRICE_QUERY.md](docs/25_PRICE_QUERY.md), [evidence](artifacts/backend/PRICE_QUERY_REPORT.md). Parser không thay encoder hoặc xác minh STT; broader query intents và independent quality vẫn pending.

@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+Ưu tiên mới15/10: thanh toán đủ COD/demo; dừng mở rộng payment/refund provider và edge cases thương mại nâng cao. Tập trung search và product management để sớm bàn giao. Authoring27 có draft/CAS/private photo/provenance/CPU preflight; publication catalog/index vẫn là việc tiếp theo, chưa complete E5.
+
 Milestone E3/E5 size2026-10-15: SKU stock, explicit size choice, cart/order/cancel/return/receipt identity, size filter/facets và admin allocation theo [26](26_PRODUCT_VARIANTS.md). Evidence tách backend/browser/CPU ở VARIANTS_REPORT; variants màu/asset CRUD, variant price/size guide và các acceptance gate tổng thể vẫn pending. Không đánh dấu E3/E5 complete.
 
 **E5 operations:** Admin inventory adjustment/revision, ORD fulfillment/status/cancel, private address detail, user role/version/session revocation và transactional audit + `/admin` UI implemented theo [20](20_ADMIN_OPERATIONS.md). Evidence riêng `artifacts/backend/ADMIN_OPERATIONS_REPORT.md`. Product metadata/asset CRUD/index publication, variants, account lock/delete, returns và E6 gates pending; không coi toàn E5 complete.

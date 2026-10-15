@@ -1,0 +1,22 @@
+{
+  "product_id": "P181",
+  "local_path": "data/authoring/P181.jpg",
+  "source_page": "https://commons.wikimedia.org/wiki/File:Polo_shirt_(AM_2017.66.47-2).jpg",
+  "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Polo_shirt_%28AM_2017.66.47-2%29.jpg/960px-Polo_shirt_%28AM_2017.66.47-2%29.jpg",
+  "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Polo_shirt_%28AM_2017.66.47-2%29.jpg",
+  "author": "Auckland Museum",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "retrieved_at": "2026-10-15",
+  "sha256": "634cf564c33a40ac842be6275b92c82b949157b94e7c0e7bd1b3e3db747a428a",
+  "bytes": 71133,
+  "format": "JPEG",
+  "width": 960,
+  "height": 1440,
+  "real_photo_review": "passed",
+  "transformations": "Wikimedia 960px thumbnail; original upload bytes retained locally",
+  "credit_line": "Collection of Auckland Museum Tamaki Paenga Hira, 2017.66.47 Gift of Netball New Zealand",
+  "catalog_status": "authoring_fixture_not_published",
+  "review_notes": "Visually inspected downloaded 960x1440 JPEG: real museum photograph, side view of white polo on a fabric mannequin, burgundy collar/hem and grey shoulder, visible ASB BANK lettering. Nike attribution comes from museum source record, not inferred from this side view. No local edits.",
+  "review_evidence": "Agent view_image 2026-10-15; primary Commons/Auckland Museum provenance checked"
+}

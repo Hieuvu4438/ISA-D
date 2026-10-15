@@ -232,6 +232,19 @@ export interface AdminPageData {
   events?: { audit_id: number; actor_id: string; action: string; subject_id: string; before: Record<string, unknown>; after: Record<string, unknown>; reason: string; created_at: string }[]
 }
 export interface ProductResponse { request_id: string; product: ProductDetail }
+export interface DraftMetadata { name: string; brand: string; category: Category; color: string; price_vnd: number; description: string }
+export interface PhotoProvenance { source_page: string; original_url: string; download_url: string; transformations: string; author: string; license: string; license_url: string; retrieved_at: string; real_photo_review: 'passed' }
+export interface ProductDraft {
+  product_id: string; version: number; has_draft: boolean; is_new: boolean; product: DraftMetadata | null
+  base_catalog_fingerprint: string; current_catalog_fingerprint: string; image_url: string | null
+  image: (PhotoProvenance & { sha256: string; bytes: number }) | null
+  validation: { status: string; model_fingerprint: string; checked_version: number; checked_at: string; published: false } | null
+  updated_at: string | null; published: false
+}
+export interface AdminProductList {
+  items: { product_id: string; name: string; category: Category; price_vnd: number; has_draft: boolean; is_new: boolean; version: number }[]
+  total: number; offset: number; limit: number; catalog_fingerprint: string
+}
 export interface CreditsResponse { request_id: string; credits: Credit[] }
 export interface OrderResponse { request_id: string; order: OrderDetail }
 export interface OrderSummaryResponse { request_id: string; order: OrderSummary }

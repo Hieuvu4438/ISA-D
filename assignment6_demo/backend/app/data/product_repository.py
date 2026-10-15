@@ -140,6 +140,10 @@ class ProductRepository:
     def get_by_id(self, product_id):
         return copy.deepcopy(self._by_id.get(product_id))
 
+    def asset_for_product(self, product_id):
+        product = self._by_id.get(product_id)
+        return copy.deepcopy(self._assets[product["image_asset_id"]]) if product else None
+
     def _credit(self, product):
         asset = self._assets[product["image_asset_id"]]
         changes = asset.get("transformations", [])

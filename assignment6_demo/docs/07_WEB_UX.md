@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+Admin→Sản phẩm authoring theo [27](27_CATALOG_AUTHORING.md): list/editor/source/preview/preflight/discard, cảnh báo dirty/stale recovery. Không trình bày bản nháp như sản phẩm đã xuất bản.
+
 Size amendment: product size selector, wishlist→detail khi cần chọn size, SKU keys/labels xuyên cart/checkout/order/return, admin phân kho và size filter URL theo [26](26_PRODUCT_VARIANTS.md). Size demo chưa có số đo; không hứa tư vấn độ vừa vặn.
 
 Price query amendment: search/catalog hiển thị span giá đã hiểu và giới hạn kết hợp, checkbox opt-out, giữ draft khi lỗi; URL/history/checkbox synchronization và evidence responsive theo [25](25_PRICE_QUERY.md). Không tự gọi STT để phân tích giá.

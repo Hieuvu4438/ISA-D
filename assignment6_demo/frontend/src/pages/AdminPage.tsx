@@ -4,6 +4,7 @@ import { ApiError, adminChange, getAccount, getAdminPage, getAdminOrder, type Ad
 import type { AdminPageData, OrderDetail } from '../lib/types'
 import { ErrorPanel, formatMoney } from '../ui'
 import { orderStatusLabels, formatOrderDate } from './OrdersPage'
+import { AdminCatalogPanel } from '../components/AdminCatalogPanel'
 
 const sections: { id: AdminSection; label: string }[] = [{ id: 'inventory', label: 'Tồn kho' }, { id: 'purchases', label: 'Đơn hàng' }, { id: 'users', label: 'Tài khoản' }, { id: 'audit', label: 'Lịch sử thao tác' }]
 const actionLabels: Record<string, string> = { 'inventory.set': 'Điều chỉnh tồn kho', 'order.status': 'Đổi trạng thái đơn', 'account.role': 'Đổi quyền tài khoản', 'account.access': 'Khóa hoặc mở khóa tài khoản', 'return.request': 'Tạo yêu cầu trả hàng', 'return.status': 'Xử lý trả hàng' }
@@ -11,6 +12,7 @@ actionLabels['variant.allocate'] = 'Phân kho theo kích cỡ'
 const sizeOptions = (category?: string) => ['t_shirt', 'jacket'].includes(category ?? '') ? ['XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL'] : ['running_shoes', 'trail_shoes', 'casual_shoes', 'boots', 'sandals'].includes(category ?? '') ? Array.from({ length: 15 }, (_, i) => String(34 + i)) : ['ONE']
 
 export function AdminPage() {
+  const [showCatalog, setShowCatalog] = useState(false), [catalogOpened, setCatalogOpened] = useState(false)
   const [section, setSection] = useState<AdminSection>('inventory')
   const [offset, setOffset] = useState(0), [generation, setGeneration] = useState(0)
   const [query, setQuery] = useState(''), [filter, setFilter] = useState(''), [status, setStatus] = useState('')
@@ -51,7 +53,7 @@ export function AdminPage() {
       }
     } finally { locked.current = false; if (alive.current) setBusy(false) }
   }
-  function switchSection(next: AdminSection) { setSection(next); setOffset(0); setNotice(''); setReason(''); setFilter(''); setQuery(''); setAccessState('') }
+  function switchSection(next: AdminSection) { setShowCatalog(false); setSection(next); setOffset(0); setNotice(''); setReason(''); setFilter(''); setQuery(''); setAccessState('') }
   function stockSubmit(event: FormEvent<HTMLFormElement>, productId: string) {
     event.preventDefault(); const fields = new FormData(event.currentTarget)
     void mutate(`inventory/${productId}`, { quantity: Number(fields.get('quantity')), revision: data?.revision })
@@ -64,9 +66,10 @@ export function AdminPage() {
     finally { locked.current = false; if (alive.current) setBusy(false) }
   }
   return <div className="page-shell shopping-page admin-page" aria-busy={loading || busy}><header className="page-heading"><h1>Quản trị Cortis.</h1><p>Quản lý tồn kho, xử lý đơn và kiểm soát quyền truy cập.</p></header>
-    <nav className="admin-sections" aria-label="Chức năng quản trị">{sections.map(item => <button className={section === item.id ? 'primary-button' : 'secondary-button'} aria-pressed={section === item.id} disabled={busy} key={item.id} onClick={() => switchSection(item.id)}>{item.label}</button>)}<Link className="secondary-button" to="/admin/returns">Trả hàng</Link></nav>
+    <nav className="admin-sections" aria-label="Chức năng quản trị"><button className={showCatalog ? 'primary-button' : 'secondary-button'} aria-pressed={showCatalog} disabled={busy} onClick={() => { setShowCatalog(true); setCatalogOpened(true) }}>Sản phẩm</button>{sections.map(item => <button className={!showCatalog && section === item.id ? 'primary-button' : 'secondary-button'} aria-pressed={!showCatalog && section === item.id} disabled={busy} key={item.id} onClick={() => switchSection(item.id)}>{item.label}</button>)}<Link className="secondary-button" to="/admin/returns">Trả hàng</Link></nav>
     {loading && <p role="status">Đang tải dữ liệu quản trị…</p>}{error && <ErrorPanel message={error} onRetry={busy ? undefined : () => { setDetail(null); setGeneration(value => value + 1) }} />}{denied && <Link className="text-link" to="/account">Đăng nhập bằng tài khoản quản trị</Link>}{notice && <p className="account-notice" role="status">{notice}</p>}
-    {data && !loading && <>
+    {catalogOpened && !denied && <div hidden={!showCatalog}><AdminCatalogPanel /></div>}
+    {data && !loading && !showCatalog && <>
       <div className="admin-toolbar"><p role="status">{data.total} mục</p>{(section === 'inventory' || section === 'users') && <form onSubmit={event => { event.preventDefault(); setFilter(query.trim()); setOffset(0) }}><label htmlFor="admin-search">{section === 'inventory' ? 'Tìm tên hoặc mã sản phẩm' : 'Tìm email tài khoản'}</label><div className="admin-search-row"><input id="admin-search" value={query} disabled={busy} maxLength={120} onChange={event => setQuery(event.target.value)} /><button className="secondary-button" disabled={busy}>Tìm</button></div></form>}
         {section === 'purchases' && <div><label htmlFor="admin-order-status">Trạng thái đơn</label><select id="admin-order-status" value={status} disabled={busy} onChange={event => { setStatus(event.target.value); setOffset(0) }}><option value="">Tất cả</option>{Object.entries(orderStatusLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></div>}
         {section === 'users' && <div><label htmlFor="admin-access-state">Trạng thái tài khoản</label><select id="admin-access-state" value={accessState} disabled={busy} onChange={event => { setAccessState(event.target.value); setOffset(0) }}><option value="">Tất cả</option><option value="active">Đang hoạt động</option><option value="locked">Đã khóa</option></select></div>}
@@ -84,6 +87,6 @@ export function AdminPage() {
       </div>
       <nav className="browse-pagination" aria-label="Phân trang quản trị"><button className="secondary-button" disabled={busy || offset === 0} onClick={() => setOffset(value => Math.max(0, value - 20))}>Trang trước</button><span>Trang {Math.floor(offset / 20) + 1} / {Math.max(1, Math.ceil(data.total / 20))}</span><button className="secondary-button" disabled={busy || offset + 20 >= data.total} onClick={() => setOffset(value => value + 20)}>Trang sau</button></nav>
     </>}
-    {detail && <section className="account-panel admin-order-detail" aria-label="Chi tiết nhận hàng"><h2>{detail.order_id}</h2><p>{detail.shipping_address?.recipient}<br />{detail.shipping_address?.phone}<br />{detail.shipping_address?.address_line}, {detail.shipping_address?.city}</p><ul>{detail.items.map(item => <li key={item.variant_id ?? item.product_id}>{item.product_name}{item.size ? ` (${item.size})` : ''} × {item.quantity}</li>)}</ul><button className="secondary-button" onClick={() => setDetail(null)}>Đóng thông tin nhận hàng</button></section>}
+    {detail && !showCatalog && <section className="account-panel admin-order-detail" aria-label="Chi tiết nhận hàng"><h2>{detail.order_id}</h2><p>{detail.shipping_address?.recipient}<br />{detail.shipping_address?.phone}<br />{detail.shipping_address?.address_line}, {detail.shipping_address?.city}</p><ul>{detail.items.map(item => <li key={item.variant_id ?? item.product_id}>{item.product_name}{item.size ? ` (${item.size})` : ''} × {item.quantity}</li>)}</ul><button className="secondary-button" onClick={() => setDetail(null)}>Đóng thông tin nhận hàng</button></section>}
   </div>
 }

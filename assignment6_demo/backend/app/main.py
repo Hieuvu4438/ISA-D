@@ -31,6 +31,10 @@ from app.application.admin_service import AdminService
 from app.presentation.admin import mount_admin
 from app.data.return_repository import ReturnRepository
 from app.presentation.returns import mount_returns
+from app.presentation.catalog_drafts import mount_catalog_drafts
+from app.application.catalog_draft_service import CatalogDraftService
+from app.data.catalog_draft_repository import CatalogDraftRepository
+from app.data.draft_image_storage import DraftImageStorage
 from app.application.catalog_search import CatalogSearch
 from app.application.query_service import QueryService
 from app.application.search_service import SearchService
@@ -199,6 +203,8 @@ def create_app(settings=None, container=None):
         application.state.purchases = PurchaseService(inventory, application.state.services.products)
         application.state.admin = AdminService(AdminRepository(application.state.accounts.repository), application.state.services.products)
         application.state.returns = ReturnRepository(application.state.accounts.repository)
+        application.state.catalog_drafts = CatalogDraftService(CatalogDraftRepository(application.state.accounts.repository),
+            application.state.services.products, DraftImageStorage(settings.root), application.state.services.encoder)
         application.state.shopping.inventory = inventory
         application.state.services.search.inventory = inventory
         if application.state.services.catalog_search:
@@ -518,6 +524,7 @@ def create_app(settings=None, container=None):
 
     mount_accounts(application, settings, query_fields)
     mount_catalog(application, query_fields)
+    mount_catalog_drafts(application, query_fields, multipart, strict_json)
     mount_shopping(application, query_fields)
     mount_purchases(application, query_fields)
     mount_admin(application, query_fields)

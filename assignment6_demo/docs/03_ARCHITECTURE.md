@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+Authoring amendment: routes catalog_drafts→CatalogDraftService→CatalogDraftRepository/DraftImageStorage, DTO domain/catalog_draft; main DI. Preflight computation bounded/pure, commit sau CAS/epoch recheck, sequence tại [27](27_CATALOG_AUTHORING.md). Publication vẫn pending.
+
 Size amendment: VariantRepository/helpers và PurchaseRepository quản lý SKU inventory; Application nối product cha/size, cart/quote/order/return dùng line_key variant_id fallback product_id; stock/size snapshot và sequence theo [26](26_PRODUCT_VARIANTS.md). Không encode lại khi phân kho.
 
 Price query amendment: Application price_query.py tạo numeric bounds/lexical spans, SearchService/CatalogSearch giao với manual filters; encoder vẫn nguyên câu và Data không thực hiện parser/inference. [25](25_PRICE_QUERY.md) ghi sequence và giới hạn.

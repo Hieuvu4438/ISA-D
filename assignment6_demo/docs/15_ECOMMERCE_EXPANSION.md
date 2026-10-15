@@ -1,5 +1,7 @@
 # Cortis — mở rộng ecommerce
 
+**Ưu tiên người dùng mới:** Thanh toán chỉ cần COD/demo; payment/refund providers và edge cases thương mại nâng cao được hoãn, không còn là điều kiện chặn mốc bàn giao ưu tiên. Tập trung search và quản lý sản phẩm. Draft metadata/private ảnh/preflight27 đã có, **publication catalog/index vẫn pending**; không coi draft là hoàn tất CRUD. Bảng dưới giữ các phạm vi lịch sử để truy vết.
+
 **E2 update:** Search BM25/RRF/facets/server pagination và `/catalog` implemented, evidence/limits ở [16](16_SEARCH_BROWSE.md). Dataset visual gate có lỗi ảnh/metadata ghi trong `artifacts/backend/catalog-review-findings.json`; cần sửa nguồn ảnh và metadata trước nghiệm thu.
 
 Yêu cầu mới ngày 15/10/2026 mở rộng demo tìm kiếm thành ecommerce thời trang đầy đủ: tài khoản, user/admin, giỏ hàng, đặt đơn và quản trị. Thay thế các câu loại trừ những chức năng này trong baseline 01–12. Giữ text/voice/image/multimodal tiếng Việt, CPU, ảnh thật có nguồn, error/recovery. Không triển khai public hoặc tự sửa Azure. Commit/push theo mốc sau kiểm tra diff/ignore/secrets.

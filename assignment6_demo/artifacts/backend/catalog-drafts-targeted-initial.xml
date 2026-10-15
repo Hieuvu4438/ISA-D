@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="19" failures="0" skipped="0" tests="19" time="0.661" timestamp="2026-10-15T08:00:09.151120+07:00" hostname="DESKTOP-AI8MKNC"><testcase classname="tests.test_catalog_drafts" name="test_read_does_not_create_draft_and_save_isolated_from_live" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_cas_discard_tombstone_recreate_and_base_conflicts" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_concurrent_writes_one_winner_and_audit_rollback" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_upload_preserves_bytes_provenance_preview_and_detects_corruption" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_duplicate_catalog_photo_and_invalid_upload_do_not_mutate_draft" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_preflight_requires_actual_capability_and_invalidates_after_edit" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_timed_out_preflight_cannot_commit_late_validation" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_new_draft_creation_listing_discard_and_missing_image" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_strict_metadata[changes0]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_strict_metadata[changes1]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_strict_metadata[changes2]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_strict_metadata[changes3]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_strict_metadata[changes4]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_strict_metadata[changes5]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_strict_metadata[changes6]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_strict_metadata[changes7]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_security_epoch_and_private_image" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_restart_persistence_and_strict_query_contract" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_catalog_drafts" name="test_storage_refuses_paths_outside_workspace" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'&quot;">self = WindowsPath('D:/PROJECTS/ISA-D/assignment6_demo/runtime/tests/catalog-drafts')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\PROJECTS\\ISA-D\\assignment6_demo\\runtime\\tests\\catalog-drafts'
+
+C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase></testsuite></testsuites>

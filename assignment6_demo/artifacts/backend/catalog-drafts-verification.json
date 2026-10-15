@@ -1,0 +1,39 @@
+{
+  "base_commit": "0cd0dc466acc6069a1290029de6a76877becfb02",
+  "scope": "Private authoring; no publication",
+  "source_sha256": {
+    "backend/app/application/catalog_draft_service.py": "d4e928fa9d13880bbd82b12770ff7ae86f7c6623ccae002413d78152ddc5a58f",
+    "backend/app/data/catalog_draft_repository.py": "8978d324fb63a0ec99271d9d848787e3c8a60492e00abc0f5fca2ef6b8f3b5fd",
+    "backend/app/data/draft_image_storage.py": "b9b5617b025d02d5ada9a4859229fd08eaed04dcf688d648fe43dd6c9a5890ee",
+    "backend/app/domain/catalog_draft.py": "500fb3ed9cc12f56a850937d14e4cfc39daea1048a6a9b2dbd7f94000504f8e8",
+    "backend/app/presentation/catalog_drafts.py": "3f0e59c263c7f65081384ffdd65f835b21c7c3178df6c5e5321f3248d6499383",
+    "backend/tests/test_catalog_drafts.py": "14187a3c48bbf62a8b1c06dbf2ea61fe39b904884e5acb86fcdd23c2be825ae8",
+    "backend/app/main.py": "5d9bf6c16c17fd57b42c3bea848b0a70b7e573f160e82e71e4913bb71380b931",
+    "backend/app/data/product_repository.py": "0f68ee07d312b60ff466649a7417e1f804dc2a83ddb1649bc04d016a99733fe4",
+    "frontend/src/components/AdminCatalogPanel.tsx": "01254e386ac34ad81189f18f1779094a36ac22451669fef2fac06c123aa2195a",
+    "frontend/e2e/catalog-drafts.spec.ts": "f8c370e8b9760b5744bd3afa34eeca24331c10750479a5964d34a1cd901b5662",
+    "frontend/src/pages/AdminPage.tsx": "775fad9818cb8963ff2140dc57db02c847daeeac3c2e4292f192fcc9b8968d2d",
+    "frontend/src/styles.css": "4c9aecefc2f33ccf50bc7451a4eb6e5139898092504c4e64ea132cba8d61e87e",
+    "frontend/src/lib/api.ts": "d54af486c773f685ea662bafb02e686a53aa94b6195036e2657ae8ca13874825",
+    "frontend/src/lib/types.ts": "85bbf564ab291784b49f91437c446bbfa4542254537fa60d469ef980995172d8"
+  },
+  "tests": {
+    "full_before_final_extensions": 351,
+    "final_authoring": 22,
+    "browser_real_cpu": 1,
+    "frontend_unit": 17
+  },
+  "speech_calls": 0,
+  "cleanup": {
+    "reserved_admins": 0,
+    "reserved_sessions": 0,
+    "p181_active_draft": 0
+  },
+  "pending": [
+    "publication catalog/index",
+    "search quality/intents",
+    "color variants",
+    "catalog repair",
+    "provider verification"
+  ]
+}
