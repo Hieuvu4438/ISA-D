@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Admin→Sản phẩm hỗ trợ **Tạm ngừng bán/Mở bán lại** có lý do và audit. Ngừng bán ẩn sản phẩm khỏi tìm kiếm/danh mục, chặn cart/quote cũ, giữ kho và lịch sử: [contract31](docs/31_PRODUCT_AVAILABILITY.md), [evidence](artifacts/backend/PRODUCT_AVAILABILITY_REPORT.md).
+
 Tìm “giày chạy bộ Nike; dưới 1 triệu; không màu đỏ” giữ đồng thời hãng, loại, giá và loại trừ. Scope có notice, opt-out và cảnh báo truy vấn mơ hồ: [contract30](docs/30_SEARCH_SCOPE.md), [evidence](artifacts/backend/SCOPE_REPORT.md). Không phải xử lý mọi ngôn ngữ tự nhiên hoặc quality gate độc lập đã đạt.
 
 Search/catalog/suggestions hiểu loại trừ metadata như “áo thun; không màu đỏ và đen; dưới 1 triệu”, có notice, opt-out và conflict recovery theo [contract29](docs/29_SEARCH_EXCLUSIONS.md). Không phải xử lý mọi dạng phủ định tự nhiên; [evidence](artifacts/backend/EXCLUSIONS_REPORT.md) ghi giới hạn và kiểm thử thật.

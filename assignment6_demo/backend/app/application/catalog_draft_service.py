@@ -15,6 +15,7 @@ class CatalogDraftService:
         self.products = products
         self.images = images
         self.encoder = encoder
+        self.inventory = None
 
     def require_catalog(self):
         if not self.products:
@@ -30,7 +31,10 @@ class CatalogDraftService:
         saved = bool(row and row["payload"])
         metadata = row["payload"] if saved else {k: source[k] for k in METADATA_FIELDS} if source else None
         asset = row["asset"] if saved else self.products.asset_for_product(product_id)
+        _, revision, _, archived = self.inventory.snapshot_catalog() if self.inventory else ({}, None, {}, set())
         return {"product_id": product_id, "version": row["version"] if row else 0, "has_draft": saved,
+                "sale_state": ("archived" if product_id in archived else "active") if source else None,
+                "inventory_revision": revision,
                 "is_new": source is None, "product": metadata,
                 "base_catalog_fingerprint": row["base_fingerprint"] if saved else self.products.fingerprint,
                 "current_catalog_fingerprint": self.products.fingerprint,
@@ -47,6 +51,7 @@ class CatalogDraftService:
         self.require_catalog()
         live = {p["product_id"]: p for p in self.products.products}
         drafts = {row["product_id"]: row for row in self.repository.all()}
+        _, revision, _, archived = self.inventory.snapshot_catalog() if self.inventory else ({}, None, {}, set())
         rows = []
         for pid in sorted(set(live) | {pid for pid, row in drafts.items() if row["payload"]}):
             source, draft = live.get(pid), drafts.get(pid)
@@ -54,12 +59,15 @@ class CatalogDraftService:
             metadata = draft["payload"] if saved else source
             if status == "draft" and not saved or status == "live" and source is None:
                 continue
+            if status == "archived" and (source is None or pid not in archived) or status == "active" and (source is None or pid in archived):
+                continue
             if query and fold(query) not in fold(f"{pid} {metadata['name']} {metadata['brand']}"):
                 continue
             rows.append({"product_id": pid, "name": metadata["name"], "category": metadata["category"], "price_vnd": metadata["price_vnd"],
-                         "has_draft": saved, "is_new": source is None, "version": draft["version"] if draft else 0})
+                         "has_draft": saved, "is_new": source is None, "version": draft["version"] if draft else 0,
+                         "sale_state": ("archived" if pid in archived else "active") if source else None})
         return {"items": rows[offset:offset + limit], "total": len(rows), "offset": offset, "limit": limit,
-                "catalog_fingerprint": self.products.fingerprint}
+                "catalog_fingerprint": self.products.fingerprint, "inventory_revision": revision}
 
     def save(self, actor, product_id, body, expected_epoch):
         source, _ = self.state(product_id)

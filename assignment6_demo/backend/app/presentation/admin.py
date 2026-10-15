@@ -44,6 +44,11 @@ class AccessChange(ChangeReason):
     version: StrictInt = Field(ge=0, le=1_000_000_000)
 
 
+class SaleStateChange(ChangeReason):
+    sale_state: Literal["active", "archived"]
+    revision: StrictInt = Field(ge=0, le=1_000_000_000)
+
+
 def mount_admin(application, query_fields):
     router = APIRouter(prefix="/api/v1/admin")
 
@@ -94,6 +99,14 @@ def mount_admin(application, query_fields):
         if not re.fullmatch(r"P[0-9]{3}(?:-[A-Z0-9]{1,8})?", product_id):
             raise AppError(422, "VALIDATION_ERROR", "Mã sản phẩm không hợp lệ.")
         return {"request_id": request.state.request_id, "inventory": request.app.state.admin.stock(admin["user_id"], product_id, body.quantity, body.revision, body.reason, expected_epoch=admin["auth_epoch"])}
+
+    @router.post("/products/{product_id}/sale-state")
+    def sale_state(product_id: str, body: SaleStateChange, request: Request):
+        admin = actor(request, True)
+        if not re.fullmatch(r"P[0-9]{3}", product_id):
+            raise AppError(422, "VALIDATION_ERROR", "Mã sản phẩm không hợp lệ.", "product_id")
+        result = request.app.state.admin.sale_state(admin["user_id"], product_id, body.sale_state, body.revision, body.reason, expected_epoch=admin["auth_epoch"])
+        return {"request_id": request.state.request_id, "availability": result}
 
     @router.post("/products/{product_id}/variants", status_code=201)
     def allocate_variant(product_id: str, body: VariantCreate, request: Request):

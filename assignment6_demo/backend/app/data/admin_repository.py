@@ -41,7 +41,7 @@ class AdminRepository:
         with self.accounts.connection() as db:
             db.execute("BEGIN")
             revision = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
-            return {"rows": [dict(row) for row in db.execute("SELECT i.product_id,i.quantity,v.size FROM inventory i LEFT JOIN product_variants v ON v.variant_id=i.product_id ORDER BY i.product_id")], "revision": revision}
+            return {"rows": [dict(row) for row in db.execute("SELECT i.product_id,i.quantity,v.size,COALESCE(a.sale_state,'active') AS sale_state FROM inventory i LEFT JOIN product_variants v ON v.variant_id=i.product_id LEFT JOIN product_availability a ON a.product_id=COALESCE(v.product_id,i.product_id) ORDER BY i.product_id")], "revision": revision}
 
     def allocate_variant(self, actor, product_id, size, quantity, revision, reason, expected_epoch=None):
         with self.accounts.connection() as db:
@@ -78,6 +78,24 @@ class AdminRepository:
                 self.audit(db, actor, "inventory.set", product_id, {"quantity": row[0]}, {"quantity": quantity}, reason)
                 current += 1
             return {"product_id": product_id, "quantity": quantity, "revision": current}
+
+    def sale_state(self, actor, product_id, sale_state, revision, reason, expected_epoch=None):
+        with self.accounts.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            self.require_admin(db, actor, expected_epoch)
+            current = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
+            if revision != current:
+                raise AppError(409, "INVENTORY_CHANGED", "Trạng thái hoặc tồn kho đã thay đổi. Hãy tải lại trước khi đổi trạng thái bán.")
+            if not db.execute("SELECT 1 FROM inventory WHERE product_id=?", (product_id,)).fetchone():
+                raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm đã xuất bản.")
+            row = db.execute("SELECT sale_state FROM product_availability WHERE product_id=?", (product_id,)).fetchone()
+            before = row[0] if row else "active"
+            if before != sale_state:
+                db.execute("INSERT INTO product_availability VALUES(?,?) ON CONFLICT(product_id) DO UPDATE SET sale_state=excluded.sale_state", (product_id, sale_state))
+                db.execute("UPDATE inventory_state SET revision=revision+1 WHERE singleton=1")
+                self.audit(db, actor, "product.sale_state", product_id, {"sale_state": before}, {"sale_state": sale_state}, reason)
+                current += 1
+            return {"product_id": product_id, "sale_state": sale_state, "revision": current}
 
     def users(self, offset, limit, query="", access_state=None):
         conditions, params = [], []

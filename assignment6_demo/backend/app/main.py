@@ -214,6 +214,7 @@ def create_app(settings=None, container=None):
         application.state.returns = ReturnRepository(application.state.accounts.repository)
         application.state.catalog_drafts = CatalogDraftService(draft_repository,
             application.state.services.products, DraftImageStorage(settings.root), application.state.services.encoder)
+        application.state.catalog_drafts.inventory = inventory
         application.state.catalog_publication = CatalogPublication(settings.root, application.state.catalog_drafts, application.state.services)
         application.state.shopping.inventory = inventory
         application.state.services.search.inventory = inventory
@@ -435,7 +436,8 @@ def create_app(settings=None, container=None):
             values[name] = int(raw)
         repo = services(request).require("products")
         rows = repo.products
-        stock, inventory_revision, sizes = request.app.state.purchases.repository.snapshot_with_variants()
+        stock, inventory_revision, sizes, archived = request.app.state.purchases.repository.snapshot_catalog()
+        rows = [p for p in rows if p["product_id"] not in archived]
         for p in rows:
             p["stock_quantity"] = stock.get(p["product_id"], 0)
             p["_variants"] = sizes.get(p["product_id"], [])
@@ -454,7 +456,10 @@ def create_app(settings=None, container=None):
         product = repo.get_by_id(identifier(product_id, "P"))
         if product is None:
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm.")
-        variants, revision = request.app.state.purchases.repository.variants.detail(product_id)
+        variants, revision, sale_state = request.app.state.purchases.repository.variants.sale_detail(product_id)
+        if sale_state == "archived":
+            variants = [dict(v, stock_quantity=0) for v in variants]
+        product["sale_state"] = sale_state
         product["stock_quantity"] = sum(v["stock_quantity"] for v in variants)
         product["_variants"] = variants
         detail = repo.detail(product)

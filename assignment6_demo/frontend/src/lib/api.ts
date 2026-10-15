@@ -166,3 +166,5 @@ export function transcribe(file: File, signal?: AbortSignal): Promise<Transcript
   body.append('language', 'vi-VN')
   return request('/speech/transcriptions', { method: 'POST', body }, signal, 95_000)
 }
+
+export const changeProductSaleState = (id: string, saleState: 'active' | 'archived', revision: number, reason: string) => adminChange(`products/${encodeURIComponent(id)}/sale-state`, { sale_state: saleState, revision, reason })

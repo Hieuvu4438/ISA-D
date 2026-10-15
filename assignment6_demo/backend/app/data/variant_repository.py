@@ -1,5 +1,6 @@
 """SKU identity and stock views; existing unsized stock is never guessed into sizes."""
 from app.domain import AppError
+from app.data.product_availability import create_availability, require_saleable
 
 
 def line_key(item):
@@ -20,6 +21,7 @@ def variants(db, product_id):
 
 
 def choose(db, product_id, variant_id=None):
+    require_saleable(db, product_id)
     rows = variants(db, product_id)
     if not variant_id:
         if any(row["size"] is not None for row in rows):
@@ -45,13 +47,19 @@ class VariantRepository:
     def __init__(self, accounts):
         self.accounts = accounts
         with accounts.connection() as db:
+            create_availability(db)
             db.execute("""CREATE TABLE IF NOT EXISTS product_variants (
                 variant_id TEXT PRIMARY KEY, product_id TEXT NOT NULL,
                 size TEXT NOT NULL, UNIQUE(product_id,size)
             )""")
 
     def detail(self, product_id):
+        rows, revision, _ = self.sale_detail(product_id)
+        return rows, revision
+
+    def sale_detail(self, product_id):
         with self.accounts.connection() as db:
             db.execute("BEGIN")
             revision = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
-            return variants(db, product_id), revision
+            row = db.execute("SELECT sale_state FROM product_availability WHERE product_id=?", (product_id,)).fetchone()
+            return variants(db, product_id), revision, row[0] if row else "active"

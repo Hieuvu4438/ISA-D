@@ -21,6 +21,7 @@ class AdminService:
                 continue
             if product:
                 product["stock_quantity"] = row["quantity"]
+                product["sale_state"] = row["sale_state"]
             rows.append({**row, "product": self.products.summary(product) if product else None})
         return {"items": rows[offset:offset + limit], "total": len(rows), "offset": offset, "limit": limit, "revision": snapshot["revision"]}
 
@@ -30,6 +31,11 @@ class AdminService:
         if not self.products.get_by_id(product_key(product_id)):
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm trong danh mục hiện tại.")
         return self.repository.stock(actor, product_id, quantity, revision, reason, expected_epoch=expected_epoch)
+
+    def sale_state(self, actor, product_id, sale_state, revision, reason, expected_epoch=None):
+        if not self.products or not self.products.get_by_id(product_id):
+            raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm đã xuất bản.")
+        return self.repository.sale_state(actor, product_id, sale_state, revision, reason, expected_epoch=expected_epoch)
 
     def allocate_variant(self, actor, product_id, size, quantity, revision, reason, expected_epoch=None):
         product = self.products.get_by_id(product_id) if self.products else None

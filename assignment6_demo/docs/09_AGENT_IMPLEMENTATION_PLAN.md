@@ -1,5 +1,7 @@
 # Kế hoạch bàn giao cho AI Agent implement
 
+E5 amendment31: ngừng/mở bán có CAS/audit/epoch, giữ stock/SKU/history, ẩn khỏi public retrieval và chặn stale quote/cart theo [31](31_PRODUCT_AVAILABILITY.md). Không đánh dấu E5/full ecommerce complete; bulk/channel controls, variant màu/giá, catalog repairs và acceptance còn pending. Thanh toán COD/demo.
+
 E2 amendment30: exact hãng/category scope, union cùng trường/intersection khác trường, conflict và ambiguity recovery theo [30](30_SEARCH_SCOPE.md). Frozen independent relevance, dữ liệu/ảnh còn lỗi và các gate toàn hệ thống vẫn pending; không đánh dấu E2 hoặc ecommerce complete. Thanh toán COD/demo.
 
 E2 amendment29: hard metadata exclusions trước ranking, catalog facets/suggestions/URL opt-out, search notice và evidence riêng tại [29](29_SEARCH_EXCLUSIONS.md). Positive intent/frozen independent relevance/catalog repairs vẫn pending; không đánh dấu E2 hoặc hệ thống complete. Thanh toán giữ COD/demo.

@@ -1,5 +1,6 @@
 from app.domain import AppError
 from app.data.variant_repository import variants, product_key, stock_snapshot
+from app.data.product_availability import archived_products
 
 
 class ShoppingService:
@@ -19,7 +20,9 @@ class ShoppingService:
         if product is None:
             raise AppError(404, "PRODUCT_NOT_FOUND", "Không tìm thấy sản phẩm.")
         if self.inventory:
-            product["stock_quantity"] = self.stock_products().get(product_id, 0)
+            stock, _, _, archived = self.inventory.snapshot_catalog()
+            product["stock_quantity"] = stock.get(product_id, 0)
+            product["sale_state"] = "archived" if product_id in archived else "active"
         return product
 
     def cart(self, user_id):
@@ -29,6 +32,7 @@ class ShoppingService:
         with self.repository.accounts.connection() as db:
             db.execute("BEGIN")
             stock = stock_snapshot(db) if self.inventory else {}
+            archived = archived_products(db) if self.inventory else set()
             sku_rows = {row["product_id"]: variants(db, product_key(row["product_id"])) for row in rows} if self.inventory else {}
         items = []
         for row in rows:
@@ -36,11 +40,12 @@ class ShoppingService:
             pid = product_key(sku)
             product = self.products.get_by_id(pid)
             if product and self.inventory:
-                product["stock_quantity"] = stock.get(pid, 0)
+                product["stock_quantity"] = 0 if pid in archived else stock.get(pid, 0)
+                product["sale_state"] = "archived" if pid in archived else "active"
                 product["_variants"] = sku_rows.get(sku, [])
             selected = next((v for v in sku_rows.get(sku, []) if v["variant_id"] == sku), None)
-            available = selected["stock_quantity"] if selected else product["stock_quantity"] if product and not self.inventory else 0
-            issue = "PRODUCT_UNAVAILABLE" if product is None else "VARIANT_REQUIRED" if self.inventory and not selected else "OUT_OF_STOCK" if available == 0 else "INSUFFICIENT_STOCK" if available < row["quantity"] else None
+            available = 0 if pid in archived else selected["stock_quantity"] if selected else product["stock_quantity"] if product and not self.inventory else 0
+            issue = "PRODUCT_UNAVAILABLE" if product is None else "PRODUCT_ARCHIVED" if pid in archived else "VARIANT_REQUIRED" if self.inventory and not selected else "OUT_OF_STOCK" if available == 0 else "INSUFFICIENT_STOCK" if available < row["quantity"] else None
             price = product["price_vnd"] if product else 0
             items.append({**row, "product_id": pid, "variant_id": sku, "size": selected["size"] if selected else None, "product": self.products.summary(product) if product else None,
                           "unit_price_vnd": price, "line_total_vnd": price * row["quantity"],
@@ -52,6 +57,8 @@ class ShoppingService:
     def set_quantity(self, user_id, product_id, quantity, version, expected_epoch=None, variant_id=None):
         if quantity:
             product = self.product(product_id)
+            if product.get("sale_state") == "archived":
+                raise AppError(409, "PRODUCT_ARCHIVED", "Sản phẩm đã tạm ngừng bán. Hãy xóa khỏi giỏ hoặc chọn sản phẩm khác.", "product_id")
             if product["stock_quantity"] < quantity:
                 raise AppError(409, "INSUFFICIENT_STOCK", "Số lượng vượt tồn kho hiện tại. Hãy chọn số lượng thấp hơn.", "quantity")
         # Zero permits removal of a discontinued product.
@@ -62,13 +69,14 @@ class ShoppingService:
 
     def wishlist(self, user_id):
         items = []
-        stock, _, sizes = self.inventory.snapshot_with_variants() if self.inventory else ({}, None, {})
+        stock, _, sizes, archived = self.inventory.snapshot_catalog() if self.inventory else ({}, None, {}, set())
         for product_id in self.repository.wishlist(user_id):
             if not self.products:
                 raise AppError(503, "CATALOG_UNAVAILABLE", "Danh mục chưa sẵn sàng.")
             product = self.products.get_by_id(product_id)
             if product and self.inventory:
                 product["stock_quantity"] = stock.get(product_id, 0)
+                product["sale_state"] = "archived" if product_id in archived else "active"
                 product["_variants"] = sizes.get(product_id, [])
             items.append({"product_id": product_id, "product": self.products.summary(product) if product else None})
         return {"items": items, "total": len(items)}

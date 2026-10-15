@@ -1,0 +1,40 @@
+{
+  "base_commit": "98f093d151d5fa4a68d03b5f1166d389b2ff56db",
+  "source_sha256": {
+    "backend/app/data/product_availability.py": "13a3327645b0656f5253aad7040dc1ca3e400090390e386c47cc297f1625bca3",
+    "backend/app/data/variant_repository.py": "14f97e0266cc2063afe1401992ab37959e90424e0923df57cd15b8982f8a45c2",
+    "backend/app/data/purchase_repository.py": "a68e484a3c79f03dc60590c85c4fd69ab8c95dbd2c958acda266d840b335b355",
+    "backend/app/data/admin_repository.py": "992e84a6fc0306724d013c9ededac8f4c44d216dd587bd145887503478e6ef63",
+    "backend/app/data/product_repository.py": "6aaf948eb970fba4a0275ad096d80beec075b47aec628eda57fb9eebcac74d2d",
+    "backend/app/application/admin_service.py": "b691c97386f19d959eaf66c6988dab7ce938516e36f00ab82569900afc5428ee",
+    "backend/app/application/catalog_draft_service.py": "5fa8d21ec2b95e168560556fba85bf7582bcf4cbd4bd06c897b45b3c5ec95674",
+    "backend/app/application/catalog_search.py": "5099bef92ae96726a9e202802fbf087ccaf0a0328781e58773444da750662f55",
+    "backend/app/application/search_service.py": "c9226264e6bbbb771765c1ef9a95392d821db1880ce6a2909dccfacd4de16d19",
+    "backend/app/application/shopping_service.py": "28daec142a566d1f101069936d9dcc59ab7f05e0f28048aaccf2bc0ac9bbdecf",
+    "backend/app/main.py": "aad510a4db20ac2fbd48132c7684b0dd7e979f177d6ada787f521e68a989ee49",
+    "backend/app/presentation/admin.py": "6ea98830b99699a1f6d6956efcb2388b5cf62ad4edab956e12df9d35a9bab0c5",
+    "backend/app/presentation/catalog_drafts.py": "e3a24d54507eea62a30fd091f03d2573a04c7df7fd01ae44f00372c5f4798f8f",
+    "backend/tests/test_product_availability.py": "7b3b2b6914ac7f9f04ee292dbf716e64cd4751a6cac3a22d92be7ea9337fc670",
+    "backend/tests/test_account_access.py": "1b5c6bdf82fd2cc519dd89075c5b3abe42c99fd92ccdabc8842d4303a4278bd9",
+    "frontend/src/lib/api.ts": "e4b2d2c9b87d55b6d88ca1e5e58f05386759dadbd7ea88c00a835e67b2fa5944",
+    "frontend/src/lib/types.ts": "c74d6e4b3c9d1e3fb542c462bc4812f1956e2af9748171d14f36f4ae88c0dbff",
+    "frontend/src/components/AdminCatalogPanel.tsx": "9a9679ace92179393c52e5f98da8e703aef90d65e027e15ebfbbe1a8b02f5eb2",
+    "frontend/src/components/ProductShopping.tsx": "e6ae8c1e084ebe352929eeb748ad14e57d6c98bed4db690a1608503e1fb7b53d",
+    "frontend/src/pages/ProductPage.tsx": "f1bea2ba217b74edc0afb52be0824611aba7e7a474a8be98f46ab63aab13c21c",
+    "frontend/src/pages/ShoppingPages.tsx": "245187c5106a0a27aadd051fb92fd584502f6ce31338cee67038388c58ef1d02",
+    "frontend/e2e/product-availability.spec.ts": "4e7ed14fa6b6aaae4aff8dd51ab81d30e5b96379e9fd0a1e980c4949c8141068",
+    "docs/31_PRODUCT_AVAILABILITY.md": "b2094ffd139626c36c1239c96ce64489a7e15e197df6daeda49324a60901ceb8"
+  },
+  "checks": {
+    "backend_full": 441,
+    "targeted_with_epoch": 36,
+    "commerce_authoring_regression": 77,
+    "frontend_units": 17,
+    "real_browser": 1,
+    "real_browser_regression": 16,
+    "architecture_modules": 49
+  },
+  "report": "PRODUCT_AVAILABILITY_REPORT.md",
+  "speech_calls": 0,
+  "full_ecommerce_completion": false
+}

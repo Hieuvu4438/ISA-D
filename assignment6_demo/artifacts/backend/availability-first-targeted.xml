@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="13" time="20.733" timestamp="2026-10-15T09:10:19.875532+07:00" hostname="DESKTOP-AI8MKNC"><testcase classname="tests.test_product_availability" name="test_hide_restore_public_lists_facets_detail_and_real_stock" time="1.539" /><testcase classname="tests.test_product_availability" name="test_saved_cart_wishlist_recovery_and_remove_while_archived" time="1.469" /><testcase classname="tests.test_product_availability" name="test_quote_before_archive_cannot_purchase_history_replay_and_cancel_survive" time="1.472"><failure message="AssertionError: assert 201 == 200&#10; +  where 201 = &lt;Response [201 Created]&gt;.status_code&#10; +    where &lt;Response [201 Created]&gt; = post('/api/v1/purchases', headers={'X-Cortis-Intent': 'commerce'}, json={'quote_id': 'kpxW0xDWB0rjOsv2Nd_dVmDz-Gm2YGf7dde8auoaZAw', 'idempotency_key': '9fba52e4-f60e-4fec-9a3f-91a1300b1533',...ping_address': {'recipient': 'Buyer demo', 'phone': '0900000000', 'address_line': 'Test address', 'city': 'Test city'}})&#10; +      where post = &lt;starlette.testclient.TestClient object at 0x00000181848CA270&gt;.post">api = &lt;starlette.testclient.TestClient object at 0x00000181848CA270&gt;
+
+    def test_quote_before_archive_cannot_purchase_history_replay_and_cancel_survive(api):
+        initial = api.get("/api/v1/products/P001").json()["product"]["stock_quantity"]
+        assert add(api).status_code == 200
+        body = quote_body(api)
+        assert change(api).status_code == 200
+        failed = api.post("/api/v1/purchases", headers=SHOP, json=body)
+        assert failed.status_code == 409 and failed.json()["error"]["code"] == "PRODUCT_ARCHIVED"
+        assert change(api, "active").status_code == 200
+        placed = api.post("/api/v1/purchases", headers=SHOP, json=body)
+        assert placed.status_code == 201
+        order = placed.json()["order"]
+        assert change(api).status_code == 200
+        assert api.get(f"/api/v1/purchases/{order['order_id']}").json()["order"] == order
+&gt;       assert api.post("/api/v1/purchases", headers=SHOP, json=body).status_code == 200
+E       AssertionError: assert 201 == 200
+E        +  where 201 = &lt;Response [201 Created]&gt;.status_code
+E        +    where &lt;Response [201 Created]&gt; = post('/api/v1/purchases', headers={'X-Cortis-Intent': 'commerce'}, json={'quote_id': 'kpxW0xDWB0rjOsv2Nd_dVmDz-Gm2YGf7dde8auoaZAw', 'idempotency_key': '9fba52e4-f60e-4fec-9a3f-91a1300b1533',...ping_address': {'recipient': 'Buyer demo', 'phone': '0900000000', 'address_line': 'Test address', 'city': 'Test city'}})
+E        +      where post = &lt;starlette.testclient.TestClient object at 0x00000181848CA270&gt;.post
+
+backend\tests\test_product_availability.py:102: AssertionError</failure></testcase><testcase classname="tests.test_product_availability" name="test_parent_archive_blocks_every_size_and_preserves_allocated_stock" time="1.478" /><testcase classname="tests.test_product_availability" name="test_stale_revision_noop_audit_and_reopen" time="1.443"><failure message="KeyError: 'items'">api = &lt;starlette.testclient.TestClient object at 0x0000018184D753D0&gt;
+
+    def test_stale_revision_noop_audit_and_reopen(api):
+        result = change(api).json()["availability"]
+        again = change(api).json()["availability"]
+        assert again == result
+        assert change(api, "active", revision=0).status_code == 409
+&gt;       audit = api.get("/api/v1/admin/audit").json()["items"]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'items'
+
+backend\tests\test_product_availability.py:128: KeyError</failure></testcase><testcase classname="tests.test_product_availability" name="test_audit_failure_rolls_back_state_and_revision" time="1.422" /><testcase classname="tests.test_product_availability" name="test_archive_after_cart_precheck_is_rechecked_inside_transaction" time="1.598" /><testcase classname="tests.test_product_availability" name="test_admin_epoch_rechecked_and_competing_stock_update_serializes" time="1.661" /><testcase classname="tests.test_product_availability" name="test_archived_high_score_never_reappears_in_ai_results[text]" time="1.685" /><testcase classname="tests.test_product_availability" name="test_archived_high_score_never_reappears_in_ai_results[voice]" time="1.702" /><testcase classname="tests.test_product_availability" name="test_archived_high_score_never_reappears_in_ai_results[image]" time="1.583" /><testcase classname="tests.test_product_availability" name="test_archived_high_score_never_reappears_in_ai_results[multimodal]" time="1.692" /><testcase classname="tests.test_product_availability" name="test_admin_only_strict_state_reason_revision_and_published_parent" time="1.532" /></testsuite></testsuites>

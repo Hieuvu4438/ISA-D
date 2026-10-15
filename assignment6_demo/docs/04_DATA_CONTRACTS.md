@@ -1,5 +1,7 @@
 # Dữ liệu, ảnh thật và schema
 
+product_availability SQLite và DTO sale_state theo [31](31_PRODUCT_AVAILABILITY.md); không đưa state vào seed JSON/NPZ/catalog fingerprint. Kho thật giữ nguyên; archived public quantity0, ảnh/provenance và order snapshots giữ lại.
+
 Amendment30 dùng metadata brand/category và lexical aliases hiện có, response scope plan và lexical fingerprint version mới theo [30](30_SEARCH_SCOPE.md). Không đổi catalog/vector schema, không tự suy metadata từ ảnh.
 
 Amendment29 không đổi schema catalog/vector: exclusion parser dùng metadata hãng/màu/category hiện có, response plan và lexical fingerprint version mới theo [29](29_SEARCH_EXCLUSIONS.md). Không suy màu ảnh thành metadata.

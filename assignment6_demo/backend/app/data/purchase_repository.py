@@ -8,6 +8,7 @@ from uuid import uuid4
 
 from app.domain import AppError
 from app.data.variant_repository import VariantRepository, choose, line_key, product_key, stock_snapshot
+from app.data.product_availability import archived_products
 
 
 def canonical(value):
@@ -49,13 +50,23 @@ class PurchaseRepository:
         return stock, revision
 
     def snapshot_with_variants(self):
+        stock, revision, sizes, _ = self.snapshot_catalog()
+        return stock, revision, sizes
+
+    def snapshot_catalog(self):
         with self.accounts.connection() as db:
             db.execute("BEGIN")
             revision = db.execute("SELECT revision FROM inventory_state WHERE singleton=1").fetchone()[0]
             sizes = {}
             for row in db.execute("SELECT v.product_id,v.size,i.quantity AS stock_quantity FROM product_variants v JOIN inventory i ON i.product_id=v.variant_id"):
                 sizes.setdefault(row["product_id"], []).append({"size": row["size"], "stock_quantity": row["stock_quantity"]})
-            return stock_snapshot(db), revision, sizes
+            archived = archived_products(db)
+            stock = stock_snapshot(db)
+            for pid in archived:
+                stock[pid] = 0
+                for variant in sizes.get(pid, []):
+                    variant["stock_quantity"] = 0
+            return stock, revision, sizes, archived
 
     @staticmethod
     def quote_hash(token):

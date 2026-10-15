@@ -164,7 +164,7 @@ def test_http_write_rejects_identity_captured_before_lock_then_unlock(api, monke
         assert db.execute("SELECT COUNT(*) FROM checkout_quotes").fetchone()[0] == 0
 
 
-@pytest.mark.parametrize("operation", ["stock", "role", "access", "order", "return"])
+@pytest.mark.parametrize("operation", ["stock", "role", "access", "order", "return", "sale_state"])
 def test_admin_write_rejects_identity_captured_before_access_revocation(api, monkeypatch, operation):
     service = api.app.state.accounts
     other = service.register("second@example.test", "Second", PASSWORD, "cli", role="admin")
@@ -178,6 +178,7 @@ def test_admin_write_rejects_identity_captured_before_access_revocation(api, mon
     monkeypatch.setattr(service, "require", capture_then_toggle)
     cases = {
         "stock": ("/api/v1/admin/inventory/P001", {"quantity": 1, "revision": 0}),
+        "sale_state": ("/api/v1/admin/products/P001/sale-state", {"sale_state": "archived", "revision": 0}),
         "role": (f"/api/v1/admin/users/{api.user_id}/role", {"role": "admin", "version": 0}),
         "access": (f"/api/v1/admin/users/{api.user_id}/access", {"access_state": "locked", "version": 0}),
         "order": ("/api/v1/admin/purchases/ORD-0000000000000000/status", {"status": "shipped", "version": 0}),

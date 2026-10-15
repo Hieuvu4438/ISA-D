@@ -155,9 +155,10 @@ class ProductRepository:
     def summary(self, product):
         return {
             **{f: product[f] for f in ("product_id", "name", "category", "brand", "color", "price_vnd")},
-            "in_stock": product["stock_quantity"] > 0,
+            "in_stock": product.get("sale_state", "active") == "active" and product["stock_quantity"] > 0,
+            "sale_state": product.get("sale_state", "active"),
             "sizes": [v["size"] for v in product.get("_variants", []) if v["size"] is not None],
-            "available_sizes": [v["size"] for v in product.get("_variants", []) if v["size"] is not None and v["stock_quantity"] > 0],
+            "available_sizes": [v["size"] for v in product.get("_variants", []) if product.get("sale_state", "active") == "active" and v["size"] is not None and v["stock_quantity"] > 0],
             "image_url": f"/api/v1/media/products/{product['product_id']}",
         }
 

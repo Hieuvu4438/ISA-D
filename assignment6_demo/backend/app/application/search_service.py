@@ -112,7 +112,7 @@ class SearchService:
         timings["retrieval"] = (perf_counter() - mark) * 1000
         trace.append({"step": "retrieval", "status": "ok", "input_count": 1, "output_count": len(candidates)})
         products = {p["product_id"]: p for p in self.repository.products}
-        stock, inventory_revision, sizes = self.inventory.snapshot_with_variants() if self.inventory else ({}, None, {})
+        stock, inventory_revision, sizes, archived = self.inventory.snapshot_catalog() if self.inventory else ({}, None, {}, set())
         if self.inventory:
             for p in products.values():
                 p["stock_quantity"] = stock.get(p["product_id"], 0)
@@ -131,7 +131,7 @@ class SearchService:
         eligible = []
         for candidate in candidates:
             p = products[candidate["product_id"]]
-            if not matches(p, filters) or not exclusion_plan.matches(p) or not scope_plan.matches(p):
+            if p["product_id"] in archived or not matches(p, filters) or not exclusion_plan.matches(p) or not scope_plan.matches(p):
                 continue
             eligible.append(candidate)
         timings["filtering"] = (perf_counter() - mark) * 1000

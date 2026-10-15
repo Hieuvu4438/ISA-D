@@ -42,6 +42,7 @@ export interface ScopeInterpretation {
 }
 
 export interface ProductSummary {
+  sale_state?: 'active' | 'archived'
   product_id: string
   name: string
   category: Category
@@ -232,7 +233,7 @@ export interface BrowseResponse extends ProductsResponse {
 export interface CartItem extends VariantLine {
   product_id: string; product: ProductSummary | null; quantity: number
   unit_price_vnd: number; line_total_vnd: number; available_quantity: number
-  issue: 'PRODUCT_UNAVAILABLE' | 'OUT_OF_STOCK' | 'INSUFFICIENT_STOCK' | 'VARIANT_REQUIRED' | null
+  issue: 'PRODUCT_UNAVAILABLE' | 'PRODUCT_ARCHIVED' | 'OUT_OF_STOCK' | 'INSUFFICIENT_STOCK' | 'VARIANT_REQUIRED' | null
 }
 export interface Cart {
   version: number; items: CartItem[]; item_count: number; subtotal_vnd: number
@@ -251,6 +252,7 @@ export interface ProductResponse { request_id: string; product: ProductDetail }
 export interface DraftMetadata { name: string; brand: string; category: Category; color: string; price_vnd: number; description: string }
 export interface PhotoProvenance { source_page: string; original_url: string; download_url: string; transformations: string; author: string; license: string; license_url: string; retrieved_at: string; real_photo_review: 'passed' }
 export interface ProductDraft {
+  sale_state?: 'active' | 'archived' | null; inventory_revision?: number | null
   product_id: string; version: number; has_draft: boolean; is_new: boolean; product: DraftMetadata | null
   base_catalog_fingerprint: string; current_catalog_fingerprint: string; image_url: string | null
   image: (PhotoProvenance & { sha256: string; bytes: number }) | null
@@ -258,7 +260,7 @@ export interface ProductDraft {
   updated_at: string | null; published: false
 }
 export interface AdminProductList {
-  items: { product_id: string; name: string; category: Category; price_vnd: number; has_draft: boolean; is_new: boolean; version: number }[]
+  items: { product_id: string; name: string; category: Category; price_vnd: number; has_draft: boolean; is_new: boolean; version: number; sale_state?: 'active' | 'archived' | null }[]
   total: number; offset: number; limit: number; catalog_fingerprint: string
 }
 export interface CreditsResponse { request_id: string; credits: Credit[] }

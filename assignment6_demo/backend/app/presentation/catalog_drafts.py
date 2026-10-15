@@ -33,7 +33,7 @@ def mount_catalog_drafts(application, query_fields, multipart, strict_json):
 
     @router.get("/products", openapi_extra={"parameters": [
         {"name": "q", "in": "query", "schema": {"type": "string", "maxLength": 120}},
-        {"name": "status", "in": "query", "schema": {"type": "string", "enum": ["draft", "live"]}},
+        {"name": "status", "in": "query", "schema": {"type": "string", "enum": ["draft", "live", "active", "archived"]}},
         {"name": "offset", "in": "query", "schema": {"type": "integer", "minimum": 0, "maximum": 1_000_000, "default": 0}},
         {"name": "limit", "in": "query", "schema": {"type": "integer", "minimum": 1, "maximum": 100, "default": 20}},
     ]})
@@ -42,7 +42,7 @@ def mount_catalog_drafts(application, query_fields, multipart, strict_json):
         actor(request)
         q = request.query_params.get("q", "")
         status = request.query_params.get("status")
-        if len(q) > 120 or status not in (None, "draft", "live"):
+        if len(q) > 120 or status not in (None, "draft", "live", "active", "archived"):
             raise AppError(422, "VALIDATION_ERROR", "Bộ lọc sản phẩm không hợp lệ.")
         result = request.app.state.catalog_drafts.listing(q, status, number(request.query_params.get("offset", "0"), maximum=1_000_000),
                                                          number(request.query_params.get("limit", "20"), minimum=1, maximum=100))

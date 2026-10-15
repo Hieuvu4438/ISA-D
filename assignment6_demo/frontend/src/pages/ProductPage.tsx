@@ -50,7 +50,7 @@ export function ProductPage() {
         <p className="detail-description">{product.description}</p>
         <p className="detail-price">{formatMoney(product.price_vnd)}</p>
         <p className="stock-status"><span className={`status-label ${product.in_stock ? 'in-stock' : 'out-of-stock'}`}>
-          {product.in_stock ? `Còn hàng · ${product.stock_quantity} sản phẩm` : 'Tạm hết hàng'}
+          {product.sale_state === 'archived' ? 'Sản phẩm tạm ngừng bán' : product.in_stock ? `Còn hàng · ${product.stock_quantity} sản phẩm` : 'Tạm hết hàng'}
         </span></p>
         <dl className="detail-metadata">
           <div><dt>Thương hiệu</dt><dd>{product.brand}</dd></div>

@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+Sequence sale state ở [31](31_PRODUCT_AVAILABILITY.md): admin CAS/audit commit→public snapshot filtering→stale cart/quote PRODUCT_ARCHIVED; mở bán lại giữ kho thật. Không vẽ archive như xóa product/order hoặc rebuild vectors; VP editable vẫn pending.
+
 Sequence scope và code mapping tại [30](30_SEARCH_SCOPE.md): price/exclusion→scope→hard filtering→ranking. Demo query “giày chạy bộ Nike; dưới 1 triệu; không màu đỏ”, thêm manual brand Adidas để thấy conflict/recovery. VP editable vẫn pending.
 
 Sequence loại trừ metadata và conflict recovery tại [29](29_SEARCH_EXCLUSIONS.md): price→exclusion parsing→hard filtering→rank. Code mapping ExclusionInterpreter/ExclusionPlan → CatalogSearch/SearchService → catalog/SearchPage/BrowsePage. Mermaid không thay file VP editable.

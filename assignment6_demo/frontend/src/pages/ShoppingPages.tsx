@@ -5,7 +5,7 @@ import { ApiError, getCart, getProduct, getWishlist, saveWishlist, setCartQuanti
 import type { Cart, WishlistResponse } from '../lib/types'
 import { ErrorPanel, ProductImage, formatMoney } from '../ui'
 
-const issues = { VARIANT_REQUIRED: 'Hãy xóa dòng này và mở sản phẩm để chọn kích cỡ.', PRODUCT_UNAVAILABLE: 'Sản phẩm không còn trong danh mục. Hãy xóa khỏi giỏ.', OUT_OF_STOCK: 'Sản phẩm đã hết hàng. Hãy xóa hoặc quay lại sau.', INSUFFICIENT_STOCK: 'Tồn kho hiện tại thấp hơn số lượng đã chọn. Hãy giảm số lượng.' }
+const issues = { PRODUCT_ARCHIVED: 'Sản phẩm đã tạm ngừng bán. Hãy xóa khỏi giỏ hoặc chọn sản phẩm khác.', VARIANT_REQUIRED: 'Hãy xóa dòng này và mở sản phẩm để chọn kích cỡ.', PRODUCT_UNAVAILABLE: 'Sản phẩm không còn trong danh mục. Hãy xóa khỏi giỏ.', OUT_OF_STOCK: 'Sản phẩm đã hết hàng. Hãy xóa hoặc quay lại sau.', INSUFFICIENT_STOCK: 'Tồn kho hiện tại thấp hơn số lượng đã chọn. Hãy giảm số lượng.' }
 
 export function CartPage() {
   const [cart, setCart] = useState<Cart | null>(null)
@@ -95,7 +95,7 @@ export function WishlistPage() {
           const current = await getCart(); const old = current.cart.items.find(row => row.product_id === item.product_id)?.quantity ?? 0
           await setCartQuantity(item.product_id, old + 1, current.cart.version)
           if (alive.current) setNotice('Đã thêm một sản phẩm vào giỏ. Món đồ vẫn được giữ trong danh sách yêu thích.')
-        }) }}><ShoppingBag size={16} aria-hidden="true" />{item.product?.in_stock ? 'Thêm vào giỏ' : 'Tạm hết hàng'}</button>
+        }) }}><ShoppingBag size={16} aria-hidden="true" />{item.product?.sale_state === 'archived' ? 'Tạm ngừng bán' : item.product?.in_stock ? 'Thêm vào giỏ' : 'Tạm hết hàng'}</button>
         <button className="secondary-button" disabled={busy} onClick={() => { void action(async () => { const result = await saveWishlist(item.product_id, false); if (alive.current) { setData(result); setNotice('Đã bỏ lưu món đồ.') } }) }}>Bỏ lưu<span className="visually-hidden"> {item.product?.name ?? item.product_id}</span></button></div>
       </div>
     </article>)}</section>)}

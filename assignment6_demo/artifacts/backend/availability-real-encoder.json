@@ -1,0 +1,1708 @@
+{
+  "scope": "Actual admin and CPU availability properties; image self-match input is not independent relevance, manual voice not STT",
+  "speech_calls": 0,
+  "before": {
+    "product_id": "P013",
+    "name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+    "category": "running_shoes",
+    "brand": "Nike",
+    "color": "đen và xanh đậm",
+    "price_vnd": 755000,
+    "in_stock": true,
+    "sale_state": "active",
+    "sizes": [],
+    "available_sizes": [],
+    "image_url": "/api/v1/media/products/P013",
+    "description": "Đôi giày Nike dáng thấp đặt trên sàn, thân tối màu, dây đen và chi tiết đế sáng màu.",
+    "stock_quantity": 15,
+    "image_credit": {
+      "source_page": "https://commons.wikimedia.org/wiki/File:Nike_Running_Shoes.jpg",
+      "author": "GautamSudhanshu",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "transformations": [
+        "Wikimedia thumbnail when available; no local visual edits"
+      ]
+    },
+    "variants": [
+      {
+        "variant_id": "P013",
+        "size": null,
+        "stock_quantity": 15,
+        "color": "đen và xanh đậm",
+        "price_vnd": 755000,
+        "in_stock": true
+      }
+    ]
+  },
+  "after": {
+    "product_id": "P013",
+    "name": "Giày chạy bộ Nike Pegasus 37 đen xanh",
+    "category": "running_shoes",
+    "brand": "Nike",
+    "color": "đen và xanh đậm",
+    "price_vnd": 755000,
+    "in_stock": true,
+    "sale_state": "active",
+    "sizes": [],
+    "available_sizes": [],
+    "image_url": "/api/v1/media/products/P013",
+    "description": "Đôi giày Nike dáng thấp đặt trên sàn, thân tối màu, dây đen và chi tiết đế sáng màu.",
+    "stock_quantity": 15,
+    "image_credit": {
+      "source_page": "https://commons.wikimedia.org/wiki/File:Nike_Running_Shoes.jpg",
+      "author": "GautamSudhanshu",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "transformations": [
+        "Wikimedia thumbnail when available; no local visual edits"
+      ]
+    },
+    "variants": [
+      {
+        "variant_id": "P013",
+        "size": null,
+        "stock_quantity": 15,
+        "color": "đen và xanh đậm",
+        "price_vnd": 755000,
+        "in_stock": true
+      }
+    ]
+  },
+  "meta": {
+    "request_id": "1c60c6e9-e76b-46bf-ab86-c581f3013434",
+    "api_version": "v1",
+    "capabilities": {
+      "catalog": {
+        "available": true,
+        "reason_code": null
+      },
+      "orders": {
+        "available": true,
+        "reason_code": null
+      },
+      "search": {
+        "available": true,
+        "reason_code": null
+      },
+      "manual_transcript": {
+        "available": true,
+        "reason_code": null
+      },
+      "relevant": {
+        "available": false,
+        "reason_code": "RELEVANCE_POLICY_UNAVAILABLE",
+        "modes": [],
+        "multimodal_weights": []
+      }
+    },
+    "model": {
+      "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "image_model_id": "sentence-transformers/clip-ViT-B-32",
+      "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+      "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+      "dimension": 512,
+      "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+    },
+    "index": {
+      "available": true,
+      "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+      "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+      "product_count": 181
+    },
+    "filters": {
+      "available": true,
+      "categories": [
+        "backpack",
+        "bag",
+        "boots",
+        "casual_shoes",
+        "jacket",
+        "running_shoes",
+        "sandals",
+        "sunglasses",
+        "t_shirt",
+        "tote_bag",
+        "trail_shoes",
+        "watch"
+      ],
+      "brands": [
+        "Adele Dejak",
+        "Adidas",
+        "Asics",
+        "Birkenstock",
+        "Brooks",
+        "Candino",
+        "Converse",
+        "Fjällräven",
+        "Hard Rock Cafe",
+        "Hermès",
+        "Junghans",
+        "Không xác định",
+        "Les cuirs d'Agathe",
+        "Marshal",
+        "Minaal",
+        "Mizuno",
+        "New Balance",
+        "Nike",
+        "On",
+        "Opta",
+        "Polo Ralph Lauren",
+        "Prada",
+        "Qwstion",
+        "Ray-Ban",
+        "Salomon",
+        "Seiko",
+        "Skunkfunk",
+        "Timberland",
+        "Uniqlo",
+        "Vans",
+        "XD Design"
+      ],
+      "min_price": 350000,
+      "max_price": 3000000
+    },
+    "limits": {
+      "text_max_characters": 500,
+      "text_max_tokens": 128,
+      "top_k_max": 20,
+      "image_max_bytes": 5242880,
+      "image_max_pixels": 16000000,
+      "image_max_dimension": 8192,
+      "text_weight_min": 0.1,
+      "text_weight_max": 0.9
+    },
+    "speech": {
+      "provider": "azure",
+      "configuration_state": "unconfigured",
+      "region": "southeastasia",
+      "language": "vi-VN",
+      "accepted_formats": [
+        "wav_pcm16_mono_16000"
+      ],
+      "max_duration_seconds": 15,
+      "max_bytes": 1048576
+    }
+  },
+  "hidden": {
+    "request_id": "4e4cd463-086e-4674-a8ff-a8401e5027d6",
+    "products": [],
+    "total": 0,
+    "offset": 0,
+    "limit": 24,
+    "query": {
+      "text": "P013",
+      "sort": "relevance",
+      "filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      }
+    },
+    "price_interpretation": {
+      "enabled": true,
+      "parser_version": "vi_vnd_price_v1",
+      "applied": false,
+      "clauses": [],
+      "inferred_filters": {
+        "min_price": null,
+        "max_price": null
+      },
+      "effective_filters": {
+        "category": null,
+        "brand": null,
+        "color": null,
+        "size": null,
+        "min_price": null,
+        "max_price": null,
+        "in_stock": false
+      },
+      "lexical_text": "P013"
+    },
+    "exclusion_interpretation": {
+      "enabled": true,
+      "parser_version": "metadata_exclusions_v1",
+      "applied": false,
+      "clauses": [],
+      "lexical_text": "P013"
+    },
+    "scope_interpretation": {
+      "enabled": true,
+      "parser_version": "brand_category_scope_v1",
+      "applied": false,
+      "clauses": [],
+      "lexical_text": "P013",
+      "warnings": []
+    },
+    "facets": {
+      "category": [
+        {
+          "value": "backpack",
+          "count": 0
+        },
+        {
+          "value": "bag",
+          "count": 0
+        },
+        {
+          "value": "boots",
+          "count": 0
+        },
+        {
+          "value": "casual_shoes",
+          "count": 0
+        },
+        {
+          "value": "jacket",
+          "count": 0
+        },
+        {
+          "value": "running_shoes",
+          "count": 0
+        },
+        {
+          "value": "sandals",
+          "count": 0
+        },
+        {
+          "value": "sunglasses",
+          "count": 0
+        },
+        {
+          "value": "t_shirt",
+          "count": 0
+        },
+        {
+          "value": "tote_bag",
+          "count": 0
+        },
+        {
+          "value": "trail_shoes",
+          "count": 0
+        },
+        {
+          "value": "watch",
+          "count": 0
+        }
+      ],
+      "brand": [
+        {
+          "value": "Adele Dejak",
+          "count": 0
+        },
+        {
+          "value": "Adidas",
+          "count": 0
+        },
+        {
+          "value": "Asics",
+          "count": 0
+        },
+        {
+          "value": "Birkenstock",
+          "count": 0
+        },
+        {
+          "value": "Brooks",
+          "count": 0
+        },
+        {
+          "value": "Candino",
+          "count": 0
+        },
+        {
+          "value": "Converse",
+          "count": 0
+        },
+        {
+          "value": "Fjällräven",
+          "count": 0
+        },
+        {
+          "value": "Hard Rock Cafe",
+          "count": 0
+        },
+        {
+          "value": "Hermès",
+          "count": 0
+        },
+        {
+          "value": "Junghans",
+          "count": 0
+        },
+        {
+          "value": "Không xác định",
+          "count": 0
+        },
+        {
+          "value": "Les cuirs d'Agathe",
+          "count": 0
+        },
+        {
+          "value": "Marshal",
+          "count": 0
+        },
+        {
+          "value": "Minaal",
+          "count": 0
+        },
+        {
+          "value": "Mizuno",
+          "count": 0
+        },
+        {
+          "value": "New Balance",
+          "count": 0
+        },
+        {
+          "value": "Nike",
+          "count": 0
+        },
+        {
+          "value": "On",
+          "count": 0
+        },
+        {
+          "value": "Opta",
+          "count": 0
+        },
+        {
+          "value": "Polo Ralph Lauren",
+          "count": 0
+        },
+        {
+          "value": "Prada",
+          "count": 0
+        },
+        {
+          "value": "Qwstion",
+          "count": 0
+        },
+        {
+          "value": "Ray-Ban",
+          "count": 0
+        },
+        {
+          "value": "Salomon",
+          "count": 0
+        },
+        {
+          "value": "Seiko",
+          "count": 0
+        },
+        {
+          "value": "Skunkfunk",
+          "count": 0
+        },
+        {
+          "value": "Timberland",
+          "count": 0
+        },
+        {
+          "value": "Uniqlo",
+          "count": 0
+        },
+        {
+          "value": "Vans",
+          "count": 0
+        },
+        {
+          "value": "XD Design",
+          "count": 0
+        }
+      ],
+      "color": [
+        {
+          "value": "be",
+          "count": 0
+        },
+        {
+          "value": "cam",
+          "count": 0
+        },
+        {
+          "value": "cam đất",
+          "count": 0
+        },
+        {
+          "value": "cam, đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "cam, đỏ và vàng",
+          "count": 0
+        },
+        {
+          "value": "gọng bạc mắt xám",
+          "count": 0
+        },
+        {
+          "value": "gọng vàng mắt nâu",
+          "count": 0
+        },
+        {
+          "value": "gọng đồi mồi",
+          "count": 0
+        },
+        {
+          "value": "màu kem",
+          "count": 0
+        },
+        {
+          "value": "mặt bạc",
+          "count": 0
+        },
+        {
+          "value": "mặt trắng dây nâu",
+          "count": 0
+        },
+        {
+          "value": "mặt xanh dây thép",
+          "count": 0
+        },
+        {
+          "value": "mặt đen dây da",
+          "count": 0
+        },
+        {
+          "value": "nâu",
+          "count": 0
+        },
+        {
+          "value": "nâu bò",
+          "count": 0
+        },
+        {
+          "value": "nâu và nhiều màu",
+          "count": 0
+        },
+        {
+          "value": "nâu xám",
+          "count": 0
+        },
+        {
+          "value": "nâu đậm",
+          "count": 0
+        },
+        {
+          "value": "nâu, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "rêu",
+          "count": 0
+        },
+        {
+          "value": "trắng",
+          "count": 0
+        },
+        {
+          "value": "trắng ngà và xanh xám",
+          "count": 0
+        },
+        {
+          "value": "trắng và nâu",
+          "count": 0
+        },
+        {
+          "value": "trắng và xanh",
+          "count": 0
+        },
+        {
+          "value": "trắng và đen",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng và đỏ sẫm",
+          "count": 0
+        },
+        {
+          "value": "trắng, đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "trắng, đỏ rượu, xám",
+          "count": 0
+        },
+        {
+          "value": "tím, hồng và xanh lá",
+          "count": 0
+        },
+        {
+          "value": "vàng",
+          "count": 0
+        },
+        {
+          "value": "vàng nâu và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xanh",
+          "count": 0
+        },
+        {
+          "value": "xanh denim",
+          "count": 0
+        },
+        {
+          "value": "xanh dương",
+          "count": 0
+        },
+        {
+          "value": "xanh lá",
+          "count": 0
+        },
+        {
+          "value": "xanh navy",
+          "count": 0
+        },
+        {
+          "value": "xanh nhạt",
+          "count": 0
+        },
+        {
+          "value": "xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xanh tím",
+          "count": 0
+        },
+        {
+          "value": "xanh ô liu",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "xanh đậm, đen và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám",
+          "count": 0
+        },
+        {
+          "value": "xám và trắng",
+          "count": 0
+        },
+        {
+          "value": "xám và xanh rêu",
+          "count": 0
+        },
+        {
+          "value": "xám và đen",
+          "count": 0
+        },
+        {
+          "value": "xám xanh",
+          "count": 0
+        },
+        {
+          "value": "xám, nâu và vàng",
+          "count": 0
+        },
+        {
+          "value": "xám, xanh và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen",
+          "count": 0
+        },
+        {
+          "value": "đen toàn bộ",
+          "count": 0
+        },
+        {
+          "value": "đen và bạc",
+          "count": 0
+        },
+        {
+          "value": "đen và nâu",
+          "count": 0
+        },
+        {
+          "value": "đen và tím",
+          "count": 0
+        },
+        {
+          "value": "đen và vàng",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh lá đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và xanh đậm",
+          "count": 0
+        },
+        {
+          "value": "đen và đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ",
+          "count": 0
+        },
+        {
+          "value": "đỏ rượu",
+          "count": 0
+        },
+        {
+          "value": "đỏ và trắng",
+          "count": 0
+        },
+        {
+          "value": "đỏ đậm",
+          "count": 0
+        }
+      ],
+      "size": [
+        {
+          "value": "L",
+          "count": 0
+        },
+        {
+          "value": "M",
+          "count": 0
+        }
+      ]
+    },
+    "corrections": [],
+    "empty_reason": "no_matches",
+    "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+    "lexical_fingerprint": "268c9f6567e751f96f2abd9d396a7ace1a583c341ae489fcc00d10fc64913868",
+    "inventory_revision": 91,
+    "retrieval": "exact_sku"
+  },
+  "archived_cart_issue": "PRODUCT_ARCHIVED",
+  "results": [
+    {
+      "mode": "text",
+      "response": {
+        "request_id": "c3fda54a-3c7c-4c43-8941-3482627e39e2",
+        "query": {
+          "mode": "text",
+          "text": "P013",
+          "image_summary": null,
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+          "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "no_matches",
+          "timing_ms": {
+            "validation": 0.43000000005122274,
+            "encoding": 10.024999999586726,
+            "retrieval": 0.487600002088584,
+            "filtering": 0.2679999997781124,
+            "threshold": 0,
+            "ranking": 0.08299999899463728,
+            "hydration": 0.0005999972927384079,
+            "total": 13.557400001445785
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 180
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 180,
+              "output_count": 180
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "268c9f6567e751f96f2abd9d396a7ace1a583c341ae489fcc00d10fc64913868",
+          "corrections": [],
+          "inventory_revision": 91,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P013"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P013"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P013",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "voice",
+      "response": {
+        "request_id": "b17018fa-e970-4de8-9180-17696f984381",
+        "query": {
+          "mode": "voice",
+          "text": "P013",
+          "image_summary": null,
+          "voice_source": "manual_transcript",
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+          "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "no_matches",
+          "timing_ms": {
+            "validation": 0.15239999993355013,
+            "encoding": 9.54009999986738,
+            "retrieval": 0.4757999995490536,
+            "filtering": 0.3145000009681098,
+            "threshold": 0,
+            "ranking": 0.09549999958835542,
+            "hydration": 0.0006999980541877449,
+            "total": 12.819699997635325
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 180
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 180,
+              "output_count": 180
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "268c9f6567e751f96f2abd9d396a7ace1a583c341ae489fcc00d10fc64913868",
+          "corrections": [],
+          "inventory_revision": 91,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P013"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P013"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P013",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "image",
+      "response": {
+        "request_id": "f7c51004-86c5-4f5d-9c6a-9fc5cb330163",
+        "query": {
+          "mode": "image",
+          "text": null,
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 443,
+            "byte_size": 86899
+          },
+          "voice_source": null,
+          "text_weight": null,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [
+          {
+            "rank": 1,
+            "product": {
+              "product_id": "P078",
+              "name": "Giày địa hình Không xác định New Balance Trail More đen",
+              "category": "trail_shoes",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1500000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P078"
+            },
+            "score": 0.6853140592575073,
+            "component_scores": {
+              "text": null,
+              "image": 0.6853140592575073
+            },
+            "rank_score": 0.6853140592575073,
+            "lexical_score": null
+          },
+          {
+            "rank": 2,
+            "product": {
+              "product_id": "P003",
+              "name": "Giày chạy bộ Asics Gel-Cumulus 22 xanh",
+              "category": "running_shoes",
+              "brand": "Asics",
+              "color": "xanh đậm",
+              "price_vnd": 1900000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P003"
+            },
+            "score": 0.6739988327026367,
+            "component_scores": {
+              "text": null,
+              "image": 0.6739987730979919
+            },
+            "rank_score": 0.6739988327026367,
+            "lexical_score": null
+          },
+          {
+            "rank": 3,
+            "product": {
+              "product_id": "P017",
+              "name": "Giày địa hình Asics Gel-Trabuco 9 xám xanh vàng",
+              "category": "trail_shoes",
+              "brand": "Asics",
+              "color": "xám, xanh và vàng",
+              "price_vnd": 895000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P017"
+            },
+            "score": 0.6661455631256104,
+            "component_scores": {
+              "text": null,
+              "image": 0.6661455631256104
+            },
+            "rank_score": 0.6661455631256104,
+            "lexical_score": null
+          },
+          {
+            "rank": 4,
+            "product": {
+              "product_id": "P074",
+              "name": "Giày địa hình Không xác định Altra trail running shoe, xanh rêu",
+              "category": "trail_shoes",
+              "brand": "Không xác định",
+              "color": "xanh rêu",
+              "price_vnd": 1475000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P074"
+            },
+            "score": 0.6645088195800781,
+            "component_scores": {
+              "text": null,
+              "image": 0.6645088195800781
+            },
+            "rank_score": 0.6645088195800781,
+            "lexical_score": null
+          },
+          {
+            "rank": 5,
+            "product": {
+              "product_id": "P072",
+              "name": "Giày địa hình Không xác định ECCO BIOM running shoe đen",
+              "category": "trail_shoes",
+              "brand": "Không xác định",
+              "color": "đen",
+              "price_vnd": 1475000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P072"
+            },
+            "score": 0.6582828760147095,
+            "component_scores": {
+              "text": null,
+              "image": 0.6582829356193542
+            },
+            "rank_score": 0.6582828760147095,
+            "lexical_score": null
+          },
+          {
+            "rank": 6,
+            "product": {
+              "product_id": "P064",
+              "name": "Giày chạy bộ Salomon Salomon trail running shoes trắng",
+              "category": "running_shoes",
+              "brand": "Salomon",
+              "color": "trắng",
+              "price_vnd": 1300000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P064"
+            },
+            "score": 0.6561475992202759,
+            "component_scores": {
+              "text": null,
+              "image": 0.6561477184295654
+            },
+            "rank_score": 0.6561475992202759,
+            "lexical_score": null
+          },
+          {
+            "rank": 7,
+            "product": {
+              "product_id": "P014",
+              "name": "Giày chạy bộ Asics Hyperspeed tím xanh lá",
+              "category": "running_shoes",
+              "brand": "Asics",
+              "color": "tím, hồng và xanh lá",
+              "price_vnd": 790000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P014"
+            },
+            "score": 0.652256429195404,
+            "component_scores": {
+              "text": null,
+              "image": 0.6522564888000488
+            },
+            "rank_score": 0.652256429195404,
+            "lexical_score": null
+          },
+          {
+            "rank": 8,
+            "product": {
+              "product_id": "P068",
+              "name": "Giày chạy bộ Không xác định Koyo Bear Running Shoe xanh lá",
+              "category": "running_shoes",
+              "brand": "Không xác định",
+              "color": "xanh lá",
+              "price_vnd": 1325000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P068"
+            },
+            "score": 0.6474733352661133,
+            "component_scores": {
+              "text": null,
+              "image": 0.6474733352661133
+            },
+            "rank_score": 0.6474733352661133,
+            "lexical_score": null
+          },
+          {
+            "rank": 9,
+            "product": {
+              "product_id": "P063",
+              "name": "Giày chạy bộ Brooks Brooks Adrenaline GTS đen",
+              "category": "running_shoes",
+              "brand": "Brooks",
+              "color": "đen",
+              "price_vnd": 1300000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P063"
+            },
+            "score": 0.6432446241378784,
+            "component_scores": {
+              "text": null,
+              "image": 0.6432445645332336
+            },
+            "rank_score": 0.6432446241378784,
+            "lexical_score": null
+          },
+          {
+            "rank": 10,
+            "product": {
+              "product_id": "P066",
+              "name": "Giày chạy bộ On On Cloud Running Shoes xám",
+              "category": "running_shoes",
+              "brand": "On",
+              "color": "xám",
+              "price_vnd": 1325000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P066"
+            },
+            "score": 0.6422861814498901,
+            "component_scores": {
+              "text": null,
+              "image": 0.6422861814498901
+            },
+            "rank_score": 0.6422861814498901,
+            "lexical_score": null
+          },
+          {
+            "rank": 11,
+            "product": {
+              "product_id": "P073",
+              "name": "Giày địa hình Không xác định Altra trail running shoe, xám",
+              "category": "trail_shoes",
+              "brand": "Không xác định",
+              "color": "xám",
+              "price_vnd": 1475000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P073"
+            },
+            "score": 0.6369971632957458,
+            "component_scores": {
+              "text": null,
+              "image": 0.6369971036911011
+            },
+            "rank_score": 0.6369971632957458,
+            "lexical_score": null
+          },
+          {
+            "rank": 12,
+            "product": {
+              "product_id": "P016",
+              "name": "Giày địa hình Salomon XA PRO 3D màu đen",
+              "category": "trail_shoes",
+              "brand": "Salomon",
+              "color": "đen",
+              "price_vnd": 860000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P016"
+            },
+            "score": 0.6361150741577148,
+            "component_scores": {
+              "text": null,
+              "image": 0.6361150741577148
+            },
+            "rank_score": 0.6361150741577148,
+            "lexical_score": null
+          },
+          {
+            "rank": 13,
+            "product": {
+              "product_id": "P071",
+              "name": "Giày địa hình Asics Trail Running Shoes Asics xanh dương",
+              "category": "trail_shoes",
+              "brand": "Asics",
+              "color": "xanh dương",
+              "price_vnd": 1450000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P071"
+            },
+            "score": 0.6356319189071655,
+            "component_scores": {
+              "text": null,
+              "image": 0.6356319785118103
+            },
+            "rank_score": 0.6356319189071655,
+            "lexical_score": null
+          },
+          {
+            "rank": 14,
+            "product": {
+              "product_id": "P002",
+              "name": "Giày Adidas Stan Smith trắng đen",
+              "category": "casual_shoes",
+              "brand": "Adidas",
+              "color": "trắng và đen",
+              "price_vnd": 1600000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P002"
+            },
+            "score": 0.628753125667572,
+            "component_scores": {
+              "text": null,
+              "image": 0.6287531852722168
+            },
+            "rank_score": 0.628753125667572,
+            "lexical_score": null
+          },
+          {
+            "rank": 15,
+            "product": {
+              "product_id": "P004",
+              "name": "Giày chạy địa hình Mizuno Wave Ibuki 2",
+              "category": "trail_shoes",
+              "brand": "Mizuno",
+              "color": "xám và xanh rêu",
+              "price_vnd": 1700000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P004"
+            },
+            "score": 0.6282593011856079,
+            "component_scores": {
+              "text": null,
+              "image": 0.6282593011856079
+            },
+            "rank_score": 0.6282593011856079,
+            "lexical_score": null
+          },
+          {
+            "rank": 16,
+            "product": {
+              "product_id": "P080",
+              "name": "Giày địa hình Adidas Adidas Response Trail xanh rêu",
+              "category": "trail_shoes",
+              "brand": "Adidas",
+              "color": "xanh rêu",
+              "price_vnd": 1525000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P080"
+            },
+            "score": 0.6268759965896606,
+            "component_scores": {
+              "text": null,
+              "image": 0.6268759369850159
+            },
+            "rank_score": 0.6268759965896606,
+            "lexical_score": null
+          },
+          {
+            "rank": 17,
+            "product": {
+              "product_id": "P062",
+              "name": "Giày chạy bộ On OutDoor 2018, Friedrichshafen 1X7A0305 cam",
+              "category": "running_shoes",
+              "brand": "On",
+              "color": "cam",
+              "price_vnd": 1300000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P062"
+            },
+            "score": 0.6195381879806519,
+            "component_scores": {
+              "text": null,
+              "image": 0.6195380687713623
+            },
+            "rank_score": 0.6195381879806519,
+            "lexical_score": null
+          },
+          {
+            "rank": 18,
+            "product": {
+              "product_id": "P015",
+              "name": "Giày địa hình Asics Gel-Sonoma 6 GTX đen tím",
+              "category": "trail_shoes",
+              "brand": "Asics",
+              "color": "đen và tím",
+              "price_vnd": 825000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P015"
+            },
+            "score": 0.6157485842704773,
+            "component_scores": {
+              "text": null,
+              "image": 0.6157485246658325
+            },
+            "rank_score": 0.6157485842704773,
+            "lexical_score": null
+          },
+          {
+            "rank": 19,
+            "product": {
+              "product_id": "P084",
+              "name": "Giày thường ngày Không xác định Street dance sneakers Fuego trắng",
+              "category": "casual_shoes",
+              "brand": "Không xác định",
+              "color": "trắng",
+              "price_vnd": 1350000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P084"
+            },
+            "score": 0.6151198148727417,
+            "component_scores": {
+              "text": null,
+              "image": 0.6151198744773865
+            },
+            "rank_score": 0.6151198148727417,
+            "lexical_score": null
+          },
+          {
+            "rank": 20,
+            "product": {
+              "product_id": "P024",
+              "name": "Giày bốt buộc dây màu nâu",
+              "category": "boots",
+              "brand": "Không xác định",
+              "color": "nâu",
+              "price_vnd": 1140000,
+              "in_stock": true,
+              "sale_state": "active",
+              "sizes": [],
+              "available_sizes": [],
+              "image_url": "/api/v1/media/products/P024"
+            },
+            "score": 0.6118470430374146,
+            "component_scores": {
+              "text": null,
+              "image": 0.6118471026420593
+            },
+            "rank_score": 0.6118470430374146,
+            "lexical_score": null
+          }
+        ],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+          "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": null,
+          "timing_ms": {
+            "validation": 5.887700001039775,
+            "encoding": 48.89729999922565,
+            "retrieval": 0.49589999980526045,
+            "filtering": 0.16510000205016695,
+            "threshold": 0,
+            "ranking": 0.02970000059576705,
+            "hydration": 0.1269999993382953,
+            "total": 57.53819999881671
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 180
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 180,
+              "output_count": 180
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 180,
+              "output_count": 20
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 20,
+              "output_count": 20
+            }
+          ],
+          "ranking_strategy": "semantic",
+          "sort": "relevance",
+          "lexical_fingerprint": null,
+          "corrections": [],
+          "inventory_revision": 91,
+          "price_interpretation": {
+            "enabled": false,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": ""
+          },
+          "exclusion_interpretation": {
+            "enabled": false,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": ""
+          },
+          "scope_interpretation": {
+            "enabled": false,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "",
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "mode": "multimodal",
+      "response": {
+        "request_id": "8fbe7495-0d33-46a5-ac6f-f72f684974b8",
+        "query": {
+          "mode": "multimodal",
+          "text": "P013",
+          "image_summary": {
+            "format": "JPEG",
+            "width": 960,
+            "height": 443,
+            "byte_size": 86899
+          },
+          "voice_source": null,
+          "text_weight": 0.5,
+          "options": {
+            "top_k": 20,
+            "result_policy": "nearest",
+            "search_strategy": "hybrid",
+            "sort": "relevance",
+            "filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "interpret_price": true,
+            "interpret_exclusions": true,
+            "interpret_scope": true
+          }
+        },
+        "results": [],
+        "meta": {
+          "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2",
+          "index_fingerprint": "3aec53d0e728a346e7e53705f3a431052e04388996041f8462ca3f92424bf9e0",
+          "catalog_fingerprint": "e3ee101b5ef3e643ae2b2b38f356ee621e694c0f45a727b1f4c9126e97a0a0bd",
+          "result_policy": "nearest",
+          "threshold": null,
+          "policy_fingerprint": null,
+          "empty_reason": "no_matches",
+          "timing_ms": {
+            "validation": 2.25259999933769,
+            "encoding": 52.28669999996782,
+            "retrieval": 0.6050999982107896,
+            "filtering": 0.32669999927747995,
+            "threshold": 0,
+            "ranking": 0.09850000060396269,
+            "hydration": 0.00039999940781854093,
+            "total": 57.848300002660835
+          },
+          "trace": [
+            {
+              "step": "validation",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "encoding",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 1
+            },
+            {
+              "step": "retrieval",
+              "status": "ok",
+              "input_count": 1,
+              "output_count": 181
+            },
+            {
+              "step": "filtering",
+              "status": "ok",
+              "input_count": 181,
+              "output_count": 180
+            },
+            {
+              "step": "threshold",
+              "status": "skipped",
+              "input_count": 180,
+              "output_count": 180
+            },
+            {
+              "step": "ranking",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            },
+            {
+              "step": "hydration",
+              "status": "ok",
+              "input_count": 0,
+              "output_count": 0
+            }
+          ],
+          "ranking_strategy": "exact_sku",
+          "sort": "relevance",
+          "lexical_fingerprint": "268c9f6567e751f96f2abd9d396a7ace1a583c341ae489fcc00d10fc64913868",
+          "corrections": [],
+          "inventory_revision": 91,
+          "price_interpretation": {
+            "enabled": true,
+            "parser_version": "vi_vnd_price_v1",
+            "applied": false,
+            "clauses": [],
+            "inferred_filters": {
+              "min_price": null,
+              "max_price": null
+            },
+            "effective_filters": {
+              "category": null,
+              "brand": null,
+              "color": null,
+              "size": null,
+              "min_price": null,
+              "max_price": null,
+              "in_stock": false
+            },
+            "lexical_text": "P013"
+          },
+          "exclusion_interpretation": {
+            "enabled": true,
+            "parser_version": "metadata_exclusions_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P013"
+          },
+          "scope_interpretation": {
+            "enabled": true,
+            "parser_version": "brand_category_scope_v1",
+            "applied": false,
+            "clauses": [],
+            "lexical_text": "P013",
+            "warnings": []
+          }
+        }
+      }
+    }
+  ]
+}

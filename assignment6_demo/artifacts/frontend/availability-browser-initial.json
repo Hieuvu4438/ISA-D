@@ -1,0 +1,191 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "e2e/product-availability.spec.ts"
+    ],
+    "configFile": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\playwright.config.ts",
+    "rootDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/PROJECTS/ISA-D/assignment6_demo/artifacts/frontend/playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/PROJECTS/ISA-D/assignment6_demo/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "snapshotDir": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/frontend/e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "product-availability.spec.ts",
+      "file": "product-availability.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real admin archive and restore: private audit, search visibility, cart and stale quote",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2852,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m422\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\product-availability.spec.ts:63:36",
+                    "location": {
+                      "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\product-availability.spec.ts",
+                      "column": 36,
+                      "line": 63
+                    },
+                    "snippet": "  61 |   const pending = page.waitForResponse(r => new URL(r.url()).pathname.endsWith('/sale-state'))\n  62 |   await region.getByRole('button', { name: 'Xác nhận ngừng bán', exact: true }).click()\n> 63 |   expect((await pending).status()).toBe(200)\n     |                                    ^\n  64 |   await expect(region).toContainText('Đang tạm ngừng bán')\n  65 |   const hidden = await (await page.request.get(`/api/v1/catalog?q=${pid}`)).json()\n  66 |   expect(hidden.total).toBe(0)"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\product-availability.spec.ts",
+                        "column": 36,
+                        "line": 63
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n\n  61 |   const pending = page.waitForResponse(r => new URL(r.url()).pathname.endsWith('/sale-state'))\n  62 |   await region.getByRole('button', { name: 'Xác nhận ngừng bán', exact: true }).click()\n> 63 |   expect((await pending).status()).toBe(200)\n     |                                    ^\n  64 |   await expect(region).toContainText('Đang tạm ngừng bán')\n  65 |   const hidden = await (await page.request.get(`/api/v1/catalog?q=${pid}`)).json()\n  66 |   expect(hidden.total).toBe(0)\n    at D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\product-availability.spec.ts:63:36"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T02:14:03.645Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\product-availability-real--be56f-bility-cart-and-stale-quote\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\product-availability-real--be56f-bility-cart-and-stale-quote\\error-context.md"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\product-availability-real--be56f-bility-cart-and-stale-quote\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\artifacts\\frontend\\playwright\\product-availability-real--be56f-bility-cart-and-stale-quote\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PROJECTS\\ISA-D\\assignment6_demo\\frontend\\e2e\\product-availability.spec.ts",
+                    "column": 36,
+                    "line": 63
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a92c627f22594233e604-ebea1078334f09aa42cf",
+          "file": "product-availability.spec.ts",
+          "line": 33,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-15T02:14:03.058Z",
+    "duration": 5944.272,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

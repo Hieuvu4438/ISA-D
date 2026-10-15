@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+Admin xác nhận ngừng/mở bán có lý do và conflict recovery; chi tiết/cart/wishlist phân biệt ngừng bán với hết hàng theo [31](31_PRODUCT_AVAILABILITY.md). Dirty draft không bị mất do thao tác trạng thái.
+
 Checkbox/notice hãng-category, ambiguity warning, URL opt-out và giữ draft khi conflict theo [30](30_SEARCH_SCOPE.md). Không âm thầm nới scope khi kết quả rỗng; bỏ scope mơ hồ phải có warning.
 
 Checkbox/notice loại trừ màu-hãng-category, URL opt-out và recovery theo [29](29_SEARCH_EXCLUSIONS.md). Không âm thầm tăng hạng entity đã loại; các câu chưa rõ trả lỗi giữ query/filter.

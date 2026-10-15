@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+Sale state là operational SQLite state, tách catalog/vector và số lượng kho: snapshot_catalog/read filtering + transactional choose guard theo [31](31_PRODUCT_AVAILABILITY.md). Không gọi encoder khi archive/restore.
+
 ScopeInterpreter/ScopePlan ở Application nhận metadata, chạy sau price/exclusion và trước hard filtering/ranking theo [30](30_SEARCH_SCOPE.md). Không gọi encoder hoặc Data inference.
 
 Application ExclusionInterpreter/ExclusionPlan tách metadata negatives khỏi lexical score, dùng chung catalog/suggestions/semantic/hybrid theo [29](29_SEARCH_EXCLUSIONS.md); không gọi Data inference/provider.

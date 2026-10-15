@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Tạm ngừng/mở bán lại, giữ kho và đơn hàng, ẩn search/list: [31_PRODUCT_AVAILABILITY.md](31_PRODUCT_AVAILABILITY.md).
+
 Phạm vi hãng/category trong mô tả, union/intersection và recovery: [30_SEARCH_SCOPE.md](30_SEARCH_SCOPE.md).
 
 Loại trừ metadata dùng chung search/catalog/suggestions: [29_SEARCH_EXCLUSIONS.md](29_SEARCH_EXCLUSIONS.md).

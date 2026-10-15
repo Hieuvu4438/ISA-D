@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Amendment31: admin products/Pnnn/sale-state POST, public sale_state, draft inventory_revision và status active/archived; PRODUCT_ARCHIVED khi mua theo [31](31_PRODUCT_AVAILABILITY.md). Detail/media giữ truy cập, public quantities0 khi archived.
+
 Amendment30: strict interpret_scope và scope_interpretation cho SearchOptions/catalog/suggestions, SCOPE_FILTER_CONFLICT/SCOPE_EXCLUSION_CONFLICT theo [30](30_SEARCH_SCOPE.md). Không đổi JSON vector/cosine contract.
 
 Amendment29: SearchOptions/catalog/suggestions thêm strict interpret_exclusions; search/catalog thêm exclusion_interpretation và EXCLUSION_QUERY_AMBIGUOUS/EXCLUSION_FILTER_CONFLICT theo [29](29_SEARCH_EXCLUSIONS.md).
