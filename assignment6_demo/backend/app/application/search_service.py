@@ -10,6 +10,7 @@ from app.data.product_repository import digest
 from app.data.vector_index import SCORING_VERSION
 from app.application.ranking_service import RankingService
 from app.application.catalog_search import CatalogSearch, matches
+from app.application.price_query import interpret_price
 
 
 class SearchService:
@@ -84,8 +85,11 @@ class SearchService:
         except AppError as exc:
             exc.field = f"options.{exc.field}" if exc.field else None
             raise
-        if options.search_strategy == "hybrid" and text is not None:
-            self.lexical.prepare(text)
+        if text is not None:
+            plan = interpret_price(text, options.interpret_price)
+            plan.merge(options.filters)
+            if options.search_strategy == "hybrid":
+                self.lexical.prepare(plan.lexical_text)
         if options.result_policy == "relevant":
             self._policy(SimpleNamespace(mode=mode, text_weight=text_weight))
 
@@ -111,7 +115,9 @@ class SearchService:
         if any(c["product_id"] not in products for c in candidates):
             raise AppError(503, "INDEX_OUT_OF_SYNC", "Chỉ mục không khớp dữ liệu sản phẩm.")
         mark = perf_counter()
-        filters = options.filters
+        text = query.input_summary.get("text")
+        price_plan = interpret_price(text, options.interpret_price and text is not None)
+        filters = price_plan.merge(options.filters)
         self.lexical.validate_filters(filters)
         eligible = []
         for candidate in candidates:
@@ -143,7 +149,7 @@ class SearchService:
         hybrid = options.search_strategy == "hybrid" and query.input_summary.get("text") is not None
         plan = None
         if hybrid:
-            eligible, plan = self.lexical.fuse(eligible, query.input_summary["text"])
+            eligible, plan = self.lexical.fuse(eligible, price_plan.lexical_text)
             if before and not eligible:
                 empty_reason = "no_matches" if plan.exact_id else empty_reason
         if options.sort != "relevance":
@@ -199,5 +205,6 @@ class SearchService:
                 "lexical_fingerprint": self.lexical.fingerprint if hybrid else None,
                 "corrections": plan.corrections if plan else [],
                 "inventory_revision": inventory_revision,
+                "price_interpretation": price_plan.public(filters),
             },
         }

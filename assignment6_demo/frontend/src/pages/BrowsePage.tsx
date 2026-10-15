@@ -5,6 +5,7 @@ import { ApiError, getCatalogPage, getSuggestions } from '../lib/api'
 import type { BrowseResponse, Category, ProductSummary } from '../lib/types'
 import { categoryLabels, ErrorPanel } from '../ui'
 import { ProductCard } from './SearchPage'
+import { PriceInterpretationNotice } from '../components/PriceInterpretationNotice'
 
 export function BrowsePage() {
   const [params, setParams] = useSearchParams()
@@ -20,10 +21,15 @@ export function BrowsePage() {
   const [selected, setSelected] = useState(-1)
   const [focused, setFocused] = useState(false)
   const [filtersOpen, setFiltersOpen] = useState(false)
+  const parsePrice = params.get('interpret_price') !== 'false'
+  const [priceChecked, setPriceChecked] = useState(parsePrice)
+  const [stockChecked, setStockChecked] = useState(params.get('in_stock') === 'true')
   const navigate = useNavigate()
   useEffect(() => {
     const controller = new AbortController()
-    setLoading(true); setError(''); setPriceError(''); setInvalidRequest(false); setQuery(new URLSearchParams(key).get('q') ?? '')
+    const current = new URLSearchParams(key)
+    setLoading(true); setError(''); setPriceError(''); setInvalidRequest(false); setQuery(current.get('q') ?? '')
+    setPriceChecked(current.get('interpret_price') !== 'false'); setStockChecked(current.get('in_stock') === 'true')
     getCatalogPage(new URLSearchParams(key), controller.signal).then(result => {
       if (!controller.signal.aborted) setData(result)
     }).catch(reason => { if (!controller.signal.aborted) { setError(reason instanceof Error ? reason.message : 'Chưa tải được sản phẩm.'); setInvalidRequest(reason instanceof ApiError && reason.status === 422) } })
@@ -34,12 +40,12 @@ export function BrowsePage() {
     const controller = new AbortController()
     setSuggestions([]); setSelected(-1)
     const timer = window.setTimeout(() => {
-      if (query.trim().length >= 2) getSuggestions(query, controller.signal).then(result => {
+      if (query.trim().length >= 2) getSuggestions(query, controller.signal, parsePrice).then(result => {
         if (!controller.signal.aborted) setSuggestions(result.products)
       }).catch(() => { /* Suggestions are optional; the search form stays available. */ })
     }, 250)
     return () => { window.clearTimeout(timer); controller.abort() }
-  }, [query])
+  }, [query, parsePrice])
   function change(name: string, value: string) {
     const next = new URLSearchParams(params)
     if (value) next.set(name, value); else next.delete(name)
@@ -82,7 +88,8 @@ export function BrowsePage() {
         <div className="filter-content" id="browse-filter-content">
           {(['category', 'brand', 'color'] as const).map(field => <div className="browse-filter" key={field}><label htmlFor={`browse-${field}`}>{field === 'category' ? 'Loại sản phẩm' : field === 'brand' ? 'Thương hiệu' : 'Màu sắc'}</label><select id={`browse-${field}`} value={params.get(field) ?? ''} onChange={event => change(field, event.target.value)}><option value="">Tất cả</option>{data?.facets[field].map(facet => <option value={facet.value} key={facet.value}>{field === 'category' ? categoryLabels[facet.value as Category] : facet.value} ({facet.count})</option>)}</select></div>)}
           <form className="browse-price" key={key} onSubmit={applyPrice} onChange={() => setPriceError('')}><fieldset><legend>Khoảng giá (VND)</legend><label htmlFor="browse-min">Thấp nhất</label><input name="min_price" id="browse-min" type="number" min="0" max="1000000000" step="1" defaultValue={params.get('min_price') ?? ''} placeholder="Không giới hạn" aria-invalid={!!priceError} aria-describedby={priceError ? 'browse-price-error' : undefined} /><label htmlFor="browse-max">Cao nhất</label><input name="max_price" id="browse-max" type="number" min="0" max="1000000000" step="1" defaultValue={params.get('max_price') ?? ''} placeholder="Không giới hạn" aria-invalid={!!priceError} aria-describedby={priceError ? 'browse-price-error' : undefined} /></fieldset>{priceError && <p id="browse-price-error" role="alert">{priceError}</p>}<button className="secondary-button" type="submit">Áp dụng khoảng giá</button></form>
-          <label className="checkbox-label"><input type="checkbox" checked={params.get('in_stock') === 'true'} onChange={event => change('in_stock', event.target.checked ? 'true' : '')} />Chỉ còn hàng</label>
+          <label className="checkbox-label"><input type="checkbox" checked={stockChecked} onChange={event => { setStockChecked(event.target.checked); change('in_stock', event.target.checked ? 'true' : '') }} />Chỉ còn hàng</label>
+          <label className="checkbox-label"><input type="checkbox" checked={priceChecked} onChange={event => { setPriceChecked(event.target.checked); change('interpret_price', event.target.checked ? '' : 'false') }} />Tự hiểu điều kiện giá trong mô tả</label>
         </div>
       </aside>
       <section className="catalog-content" aria-label="Sản phẩm trong bộ sưu tập" aria-busy={loading}>
@@ -90,6 +97,7 @@ export function BrowsePage() {
         <div className="results-toolbar"><span role="status">{loading ? 'Đang tải sản phẩm…' : shown ? `${shown.total} sản phẩm` : 'Chưa tải được sản phẩm'}</span><div className="browse-sort"><label htmlFor="browse-sort">Sắp xếp</label><select id="browse-sort" value={params.get('sort') ?? 'relevance'} onChange={event => change('sort', event.target.value)}><option value="relevance">Phù hợp nhất</option><option value="price_asc">Giá tăng dần</option><option value="price_desc">Giá giảm dần</option><option value="name">Tên sản phẩm</option></select></div></div>
         {!!activeFilters.length && <div className="browse-active" aria-label="Bộ lọc đang áp dụng">{activeFilters.map(name => <button className="secondary-button" type="button" key={name} onClick={() => change(name, '')}>{name === 'category' ? categoryLabels[params.get(name) as Category] ?? params.get(name) : name === 'in_stock' ? 'Còn hàng' : name === 'min_price' ? `Từ ${params.get(name)} VND` : name === 'max_price' ? `Đến ${params.get(name)} VND` : params.get(name)}<X size={14} aria-hidden="true" /><span className="visually-hidden">Xóa bộ lọc {name}</span></button>)}</div>}
         {!!shown?.corrections.length && <p className="draft-notice">Đã tìm thêm từ gần đúng: {shown.corrections.map(item => `${item.input} → ${item.matched}`).join(', ')}.</p>}
+        <PriceInterpretationNotice plan={shown?.price_interpretation} />
         {error && <ErrorPanel message={error} onRetry={() => setAttempt(value => value + 1)} />}
         {invalidRequest && <button className="secondary-button" onClick={() => setParams({})}>Đặt lại tìm kiếm</button>}
         {loading && <p className="page-loading" role="status">Đang cập nhật bộ sưu tập…</p>}

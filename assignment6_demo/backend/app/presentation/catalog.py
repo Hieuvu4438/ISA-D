@@ -12,6 +12,7 @@ def mount_catalog(application, query_fields):
     def query_schema(suggestions=False):
         properties = {"q": {"type": "string", "maxLength": 500},
                       "limit": {"type": "integer", "minimum": 1, "maximum": 10 if suggestions else 100, "default": 6 if suggestions else 24}}
+        properties["interpret_price"] = {"type": "boolean", "default": True}
         if not suggestions:
             properties.update({"offset": {"type": "integer", "minimum": 0, "maximum": 1_000_000, "default": 0},
                                "sort": {"type": "string", "enum": ["relevance", "price_asc", "price_desc", "name"], "default": "relevance"},
@@ -33,7 +34,10 @@ def mount_catalog(application, query_fields):
 
     @router.get("/catalog", openapi_extra=query_schema())
     def browse(request: Request):
-        query_fields(request, ("q", "category", "brand", "color", "min_price", "max_price", "in_stock", "sort", "offset", "limit"))
+        query_fields(request, ("q", "category", "brand", "color", "min_price", "max_price", "in_stock", "sort", "offset", "limit", "interpret_price"))
+        parse_price = request.query_params.get("interpret_price", "true")
+        if parse_price not in ("true", "false"):
+            raise AppError(422, "VALIDATION_ERROR", "Tự hiểu giá phải là true/false.", "interpret_price")
         values = {name: request.query_params[name] for name in ("category", "brand", "color") if name in request.query_params}
         if any(not v.strip() for v in values.values()):
             raise AppError(422, "VALIDATION_ERROR", "Bộ lọc không được rỗng.")
@@ -53,16 +57,19 @@ def mount_catalog(application, query_fields):
         if sort not in ("relevance", "price_asc", "price_desc", "name"):
             raise AppError(422, "VALIDATION_ERROR", "Cách sắp xếp không hợp lệ.", "sort")
         result = service(request).browse(request.query_params.get("q", ""), filters, sort,
-                                         number(request, "offset", 0, 0, 1_000_000), number(request, "limit", 24, 1, 100))
+                                         number(request, "offset", 0, 0, 1_000_000), number(request, "limit", 24, 1, 100), parse_price=parse_price == "true")
         return {"request_id": request.state.request_id, **result}
 
     @router.get("/suggestions", openapi_extra=query_schema(True))
     def suggestions(request: Request):
-        query_fields(request, ("q", "limit"))
+        query_fields(request, ("q", "limit", "interpret_price"))
+        parse_price = request.query_params.get("interpret_price", "true")
+        if parse_price not in ("true", "false"):
+            raise AppError(422, "VALIDATION_ERROR", "Tự hiểu giá phải là true/false.", "interpret_price")
         text = request.query_params.get("q", "")
         if len(text) > 500:
             raise AppError(422, "TEXT_TOO_LONG", "Mô tả tối đa 500 ký tự.", "q")
         return {"request_id": request.state.request_id,
-                "products": service(request).suggestions(text, number(request, "limit", 6, 1, 10)), "retrieval": "lexical"}
+                "products": service(request).suggestions(text, number(request, "limit", 6, 1, 10), parse_price=parse_price == "true"), "retrieval": "lexical"}
 
     application.include_router(router)

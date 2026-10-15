@@ -1,5 +1,7 @@
 # Kiến trúc và hợp đồng service
 
+Price query amendment: Application price_query.py tạo numeric bounds/lexical spans, SearchService/CatalogSearch giao với manual filters; encoder vẫn nguyên câu và Data không thực hiện parser/inference. [25](25_PRICE_QUERY.md) ghi sequence và giới hạn.
+
 Access amendment: identity snapshot chứa auth_epoch server-only, truyền Presentation→Application→Data để kiểm active/epoch dưới write lock cho mọi mutation được bảo vệ; [24](24_ACCOUNT_ACCESS.md) ghi phạm vi và sequence. Không dùng ContextVar ngầm hay nhận epoch từ browser.
 
 Returns amendment2026-10-15: presentation returns.py→ReturnRepository SQLite qua main DI, state machine/quantity/window/atomic stock/audit theo [23](23_RETURNS.md). Không thêm inference vào Data, không thay vector/model.

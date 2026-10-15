@@ -19,6 +19,13 @@ export interface SearchOptions {
   filters: Filters
   search_strategy?: 'semantic' | 'hybrid'
   sort?: 'relevance' | 'price_asc' | 'price_desc' | 'name'
+  interpret_price?: boolean
+}
+
+export interface PriceInterpretation {
+  enabled: boolean; parser_version: string; applied: boolean; lexical_text: string
+  clauses: { text: string; min_price: number | null; max_price: number | null }[]
+  inferred_filters: { min_price: number | null; max_price: number | null }; effective_filters: Filters
 }
 
 export interface ProductSummary {
@@ -89,6 +96,7 @@ export interface SearchResponse {
     ranking_strategy?: 'semantic' | 'rrf' | 'exact_sku'
     sort?: string
     corrections?: { input: string; matched: string }[]
+    price_interpretation?: PriceInterpretation
     timing_ms: Record<'validation' | 'encoding' | 'retrieval' | 'filtering' | 'threshold' | 'ranking' | 'hydration' | 'total', number>
     trace: { step: string; status: 'ok' | 'skipped'; input_count: number; output_count: number }[]
   }
@@ -190,6 +198,7 @@ export type TextSearchRequest =
 
 export interface ProductsResponse { request_id: string; products: ProductSummary[]; total: number; offset: number; limit: number }
 export interface BrowseResponse extends ProductsResponse {
+  price_interpretation?: PriceInterpretation
   query: { text: string; sort: string; filters: Filters }
   facets: Record<'category' | 'brand' | 'color', { value: string; count: number }[]>
   corrections: { input: string; matched: string }[]

@@ -93,7 +93,7 @@ export const getCredits = (signal?: AbortSignal) => request<CreditsResponse>('/c
 export const getOrder = (id: string, signal?: AbortSignal) => request<OrderResponse>(`${id.trim().toUpperCase().startsWith('ORD-') ? '/purchases' : '/orders'}/${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
 export const getOrderSummary = (id: string, signal?: AbortSignal) => request<OrderSummaryResponse>(id.trim().toUpperCase().startsWith('ORD-') ? `/purchases/${encodeURIComponent(id.trim().toUpperCase())}` : `/orders?order_id=${encodeURIComponent(id.trim().toUpperCase())}`, {}, signal)
 export const getCatalogPage = (params: URLSearchParams, signal?: AbortSignal) => request<BrowseResponse>(`/catalog?${params}`, {}, signal)
-export const getSuggestions = (q: string, signal?: AbortSignal) => request<{ products: ProductSummary[] }>(`/suggestions?q=${encodeURIComponent(q)}`, {}, signal)
+export const getSuggestions = (q: string, signal?: AbortSignal, interpretPrice = true) => request<{ products: ProductSummary[] }>(`/suggestions?q=${encodeURIComponent(q)}&interpret_price=${interpretPrice}`, {}, signal)
 export const getCart = (signal?: AbortSignal) => request<CartResponse>('/cart', {}, signal)
 export const getWishlist = (signal?: AbortSignal) => request<WishlistResponse>('/wishlist', {}, signal)
 function shoppingWrite<T>(path: string, body: object): Promise<T> {

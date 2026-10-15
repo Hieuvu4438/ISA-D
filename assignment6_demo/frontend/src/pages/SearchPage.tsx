@@ -7,6 +7,7 @@ import { ApiError, searchText, searchImage, searchMultimodal, transcribe } from 
 import { MicrophoneRecorder } from '../lib/voice';
 import type { Category, ProductSummary, QueryMode, SearchOptions, SearchResponse, SearchResult } from '../lib/types';
 import { categoryLabels, ErrorPanel, formatMoney, ProductImage } from '../ui';
+import { PriceInterpretationNotice } from '../components/PriceInterpretationNotice';
 
 const modes = [
   { id: 'text' as const, label: 'Mô tả', icon: Type },
@@ -184,7 +185,7 @@ export function SearchPage() {
       && (!filters.in_stock || product.in_stock);
   });
   const activeFilters = Object.values(draft.options.filters).filter(value => value != null && value !== false).length;
-  const effective = response?.query.options.filters;
+  const effective = response?.meta.price_interpretation?.effective_filters ?? response?.query.options.filters;
 
   return <div className="search-page">
     <section className="showroom-hero" aria-labelledby="hero-title"><div className="hero-copy">
@@ -233,7 +234,7 @@ export function SearchPage() {
       <a className="catalog-jump" href="#catalog-title"><ArrowDown size={15} aria-hidden="true" />Khám phá sản phẩm</a></div>
       <div className="catalog-layout"><aside className={`filter-sidebar ${filtersOpen ? 'is-open' : ''}`} aria-label="Bộ lọc sản phẩm"><button type="button" className="filter-toggle" onClick={() => setFiltersOpen(value => !value)} aria-expanded={filtersOpen}><SlidersHorizontal size={18} aria-hidden="true" />Bộ lọc{activeFilters ? ` (${activeFilters})` : ''}<ChevronDown size={16} aria-hidden="true" /></button>
         <div className="filter-content"><div className="filter-title"><h3>Bộ lọc</h3><button type="button" className="text-link" onClick={() => { update({ options: initialOptions() }); setError(''); }}>Đặt lại</button></div>
-          <p className="filter-help">Giới hạn giá và thương hiệu bằng bộ lọc. Thay đổi sẽ áp dụng khi bạn tìm lại.</p>
+          <p className="filter-help">Giới hạn giá và thương hiệu bằng bộ lọc. Mô tả có thể ghi “dưới 1 triệu” hoặc “từ 500 nghìn đến 1,5 triệu”. Thay đổi sẽ áp dụng khi bạn tìm lại.</p>
           <label htmlFor="filter-category">Loại sản phẩm</label><select id="filter-category" data-testid="filter-category" value={draft.options.filters.category ?? ''} onChange={event => updateFilters({ category: event.target.value as Category || null })}><option value="">Tất cả sản phẩm</option>{(catalog.meta?.filters.categories ?? Object.keys(categoryLabels) as Category[]).map(category => <option key={category} value={category}>{categoryLabels[category]}</option>)}</select>
           <label htmlFor="filter-brand">Thương hiệu</label><select id="filter-brand" data-testid="filter-brand" value={draft.options.filters.brand ?? ''} onChange={event => updateFilters({ brand: event.target.value || null })}><option value="">Tất cả thương hiệu</option>{catalog.meta?.filters.brands.map(brand => <option key={brand}>{brand}</option>)}</select>
           <fieldset className="price-filter"><legend>Khoảng giá (VND)</legend><label htmlFor="min-price">Thấp nhất</label><input id="min-price" data-testid="min-price" type="number" min="0" max="1000000000" step="1" placeholder="Không giới hạn" value={draft.options.filters.min_price ?? ''} aria-invalid={field === 'price'} onChange={event => updateFilters({ min_price: event.target.value === '' ? null : Number(event.target.value) })} /><label htmlFor="max-price">Cao nhất</label><input id="max-price" data-testid="max-price" type="number" min="0" max="1000000000" step="1" placeholder="Không giới hạn" value={draft.options.filters.max_price ?? ''} onChange={event => updateFilters({ max_price: event.target.value === '' ? null : Number(event.target.value) })} /></fieldset>
@@ -241,6 +242,7 @@ export function SearchPage() {
           <div className="advanced-options"><label htmlFor="top-k">Số kết quả</label><select id="top-k" data-testid="top-k" value={draft.options.top_k} onChange={event => updateOptions({ top_k: Number(event.target.value) })}>{[1, 3, 5, 10, 20].map(value => <option key={value} value={value}>{value} sản phẩm</option>)}</select>
             <label htmlFor="result-policy">Cách hiển thị</label><select id="result-policy" data-testid="result-policy" value={draft.options.result_policy} onChange={event => updateOptions({ result_policy: event.target.value as SearchOptions['result_policy'] })}><option value="nearest">Sản phẩm gần nhất</option><option value="relevant" disabled={!relevantAvailable}>Chỉ sản phẩm liên quan</option></select><p>{relevantAvailable ? 'Liên quan: chỉ giữ sản phẩm đạt ngưỡng đã hiệu chỉnh.' : 'Chưa có ngưỡng liên quan cho lựa chọn này.'}</p>
             {mode !== 'image' && <><label htmlFor="search-strategy">Cách tìm kiếm</label><select id="search-strategy" value={draft.options.search_strategy ?? 'semantic'} onChange={event => updateOptions({ search_strategy: event.target.value as SearchOptions['search_strategy'] })}><option value="hybrid">Mô tả + từ khóa</option><option value="semantic">Chỉ tương đồng AI</option></select></>}
+            {mode !== 'image' && <label className="checkbox-label"><input type="checkbox" checked={draft.options.interpret_price !== false} onChange={event => updateOptions({ interpret_price: event.target.checked })} />Tự hiểu điều kiện giá trong mô tả</label>}
             <label htmlFor="search-sort">Sắp xếp kết quả</label><select id="search-sort" value={draft.options.sort ?? 'relevance'} onChange={event => updateOptions({ sort: event.target.value as SearchOptions['sort'] })}><option value="relevance">Phù hợp nhất</option><option value="price_asc">Giá tăng dần</option><option value="price_desc">Giá giảm dần</option><option value="name">Tên sản phẩm</option></select>
           </div><button className="secondary-button filter-apply" type="button" disabled={!!pending} onClick={() => void submit()}>Áp dụng và tìm lại<ArrowRight size={15} aria-hidden="true" /></button>
         </div>
@@ -249,6 +251,7 @@ export function SearchPage() {
         {response && <div className="submitted-context"><span>{modes.find(item => item.id === response.query.mode)?.label} · {response.meta.result_policy === 'nearest' ? 'Các sản phẩm gần nhất · chưa lọc mức liên quan' : 'Chỉ giữ kết quả đạt ngưỡng đã hiệu chỉnh'}</span>
           {response.meta.ranking_strategy === 'rrf' && <p>Thứ hạng kết hợp mô tả AI và từ khóa. Điểm cosine chỉ thể hiện độ tương đồng AI.</p>}
           {!!response.meta.corrections?.length && <p>Từ khóa gần đúng: {response.meta.corrections.map(item => `${item.input} → ${item.matched}`).join(', ')}.</p>}
+          <PriceInterpretationNotice plan={response.meta.price_interpretation} showBounds={false} />
           <div className="effective-filters">{effective?.category && <span>{categoryLabels[effective.category]}</span>}{effective?.brand && <span>{effective.brand}</span>}{effective?.min_price != null && <span>Từ {formatMoney(effective.min_price)}</span>}{effective?.max_price != null && <span>Đến {formatMoney(effective.max_price)}</span>}{effective?.in_stock && <span>Chỉ còn hàng</span>}{response.query.text_weight != null && <span>Mô tả {Math.round(response.query.text_weight * 100)}% / ảnh {Math.round((1 - response.query.text_weight) * 100)}%</span>}</div>
           {dirty && <p className="draft-notice" role="status">Đã đổi điều kiện, hãy tìm lại. Kết quả bên dưới vẫn thuộc lượt tìm trước.</p>}
           <button type="button" className="text-link" onClick={() => { state.setResponse(mode, null); setError(''); }}>Về danh mục sản phẩm</button>

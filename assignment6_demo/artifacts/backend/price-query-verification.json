@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "8435660",
+  "scope": "explicit VND price constraints; not complete natural language understanding",
+  "source_sha256": {
+    "backend/app/application/price_query.py": "38dfd2ee2daf1c6c7568fba98cb8382914959359473cc404d0f6be0ded4481dd",
+    "backend/app/application/catalog_search.py": "c08d4438e5656b5125af5f41aba88b16975fcbc9ae893060cd0216207cd846f3",
+    "backend/app/application/search_service.py": "d93b10011d2b8fabbf34a2c66fc806f3b145fc087f6526954268ae1022b9722b",
+    "backend/app/domain/__init__.py": "5f05a27eba9e275ec3bf04c8b716fde742241fe7f8777dff8b7bd8e5e17c4ff4",
+    "backend/app/presentation/catalog.py": "159f5a78c95c041b6e9f866bc118b52ff1601487ba2711cb1825462d25382771",
+    "backend/tests/test_price_query.py": "c09cbc0ab5f26542b0373cbd18ae62887ff31be3a3d8acbc9f4e49a2be4da338",
+    "backend/tests/test_catalog_search.py": "3c7254b727235f99e38b9e36c6f094b63b3f725626753c87f379b97c73e8c855",
+    "scripts/verify_price_queries.py": "3c219a10aba4ee651e889e0ccf7696bd25bed3c0f365f448967daff660198b9d",
+    "frontend/src/components/PriceInterpretationNotice.tsx": "18b0dc47f39bda87d9eda6e0b4217a0e152f4e774143a8c26d231454058132b9",
+    "frontend/src/pages/SearchPage.tsx": "bc02f6246e83d008ac2743d5ba4d86e857ab4546c72ec2c0ac2262381ec507f9",
+    "frontend/src/pages/BrowsePage.tsx": "4543d2f1bb85a86a8ceede8f613956ab08b4dd534050c6b10e9747e4624d0a0d",
+    "frontend/src/lib/types.ts": "1ba656d4027ea9570eb7c07840aabe540c99dd66b4eee62f14342e0b95ef176c",
+    "frontend/src/lib/api.ts": "dd2364438806039d170f54ea86a997c053a623c22521f28ed8b6b26923a3941d",
+    "frontend/src/state.tsx": "e477f643b06b838c5b7d80f715841bbd419c8126c0eb337c60fec63333743b55",
+    "frontend/e2e/price-query.spec.ts": "ecfd68d777518ec46f7d653754de385e28a5428db9ba6c75276cb88f9056dcf8"
+  },
+  "full_backend_before_spoken_word_extension": {
+    "tests": 308,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "final_search_regression_after_spoken_word_extension": {
+    "tests": 144,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "targeted_before_extension": {
+    "tests": 98,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "real_cpu_encoder": {
+    "checks": 39,
+    "passed": true,
+    "speech_calls": 0,
+    "scope": "Exploratory real CPU encoder/HTTP price constraint properties, not frozen independent Hit@K quality"
+  },
+  "browser": {
+    "final_price": {
+      "startTime": "2026-10-15T00:19:25.024Z",
+      "duration": 6526.886,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "spoken_transcript": {
+      "startTime": "2026-10-15T00:23:17.339Z",
+      "duration": 1224.497,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "catalog_regression": {
+      "startTime": "2026-10-15T00:20:18.074Z",
+      "duration": 7514.844999999999,
+      "expected": 13,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "frontend_unit_passed": 17,
+  "exit_codes": {
+    "full_backend": 0,
+    "final_search_regression": 0,
+    "real_encoder": 0,
+    "build": 0,
+    "lint": 0,
+    "unit": 0,
+    "browser_final_price": 0,
+    "browser_spoken": 0,
+    "browser_regression": 0
+  },
+  "responsive": {
+    "surfaces": [
+      "search",
+      "catalog"
+    ],
+    "viewports": [
+      360,
+      768,
+      1440
+    ],
+    "axe_violations": 0,
+    "horizontal_overflow": false,
+    "batched_rounds": 2
+  },
+  "speech_evidence": "Manual-transcript search only, not STT/provider evidence",
+  "pending": [
+    "negation of product attributes and broader ambiguous query intents",
+    "frozen independent search quality",
+    "variants and product metadata/assets CRUD/index publication",
+    "catalog photo/data repair",
+    "exchange/refund integration",
+    "provider-specific live speech regression",
+    "returns final visual confirmation, editable UML and clean checkout acceptance"
+  ]
+}

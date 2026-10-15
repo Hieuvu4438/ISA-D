@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+Tìm theo điều kiện giá VND trong mô tả/transcript, giao với bộ lọc và opt-out: [docs/25_PRICE_QUERY.md](docs/25_PRICE_QUERY.md), [evidence](artifacts/backend/PRICE_QUERY_REPORT.md). Parser không thay encoder hoặc xác minh STT; broader query intents và independent quality vẫn pending.
+
 Khóa/mở khóa tài khoản, session revocation và transaction epoch guards: [docs/24_ACCOUNT_ACCESS.md](docs/24_ACCOUNT_ACCESS.md), [evidence](artifacts/backend/ACCOUNT_ACCESS_REPORT.md). Các mục milestone bên dưới là lịch sử; bảng hiện trạng tổng hợp tại [docs15](docs/15_ECOMMERCE_EXPANSION.md).
 
 Trả hàng demo từng phần và xử lý admin có tại [docs/23_RETURNS.md](docs/23_RETURNS.md); [bằng chứng](artifacts/backend/RETURNS_REPORT.md) ghi backend224/browser2 và giới hạn. Đổi hàng, hoàn tiền thật và final visual confirmation vẫn pending.

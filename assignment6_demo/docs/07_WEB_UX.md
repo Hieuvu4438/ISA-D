@@ -1,5 +1,7 @@
 # Đặc tả giao diện website tiếng Việt
 
+Price query amendment: search/catalog hiển thị span giá đã hiểu và giới hạn kết hợp, checkbox opt-out, giữ draft khi lỗi; URL/history/checkbox synchronization và evidence responsive theo [25](25_PRICE_QUERY.md). Không tự gọi STT để phân tích giá.
+
 Access amendment: admin users có filter/status/lock-unlock/self guard, stale recovery giữ reason; unlock yêu cầu login mới. [24](24_ACCOUNT_ACCESS.md) ghi browser evidence và phạm vi riêng với returns visual pending.
 
 Returns amendment: ReturnPanel trong đơn demo delivered và `/admin/returns` cho duyệt/kiểm nhận/cách ly/đóng hồ sơ. Recovery mất phản hồi giữ nguyên key/body; UI không xác nhận hoàn tiền thật. Evidence và final visual confirmation pending sau CSS tại [23](23_RETURNS.md).

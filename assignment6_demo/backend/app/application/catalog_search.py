@@ -5,10 +5,11 @@ import math
 import re
 import unicodedata
 
-from app.domain import AppError, normalize_text
+from app.domain import AppError, Filters, normalize_text
 from app.data.product_repository import CATEGORIES, digest
+from app.application.price_query import interpret_price, PARSER_VERSION
 
-LEXICAL_VERSION = "bm25_vi_alias_typo_v1"
+LEXICAL_VERSION = "bm25_vi_alias_typo_v2_price"
 STOPWORDS = frozenset("toi can tim muon mot chiec cai san pham co cho va la de voi ban minh".split())
 ALIASES = {
     "running_shoes": ("giay chay bo", "running shoes", "running shoe"),
@@ -91,6 +92,7 @@ class CatalogSearch:
         self.fingerprint = digest({"catalog": repository.fingerprint, "version": LEXICAL_VERSION,
                                    "aliases": ALIASES, "colors": COLORS, "stopwords": sorted(STOPWORDS),
                                    "k1": 1.2, "b": 0.75, "rrf_constant": 60})
+        self.fingerprint = digest({"lexical": self.fingerprint, "price_parser": PARSER_VERSION})
 
     def prepare(self, text):
         text = normalize_text(text)
@@ -136,12 +138,16 @@ class CatalogSearch:
             if value is not None and value not in {p[name] for p in self.products}:
                 raise AppError(422, "VALIDATION_ERROR", "Giá trị lọc không thuộc danh mục.", f"filters.{name}")
 
-    def browse(self, text, filters, sort, offset, limit):
+    def browse(self, text, filters, sort, offset, limit, parse_price=True):
         self.validate_filters(filters)
-        plan = self.prepare(text)
+        requested_filters = filters
+        price_plan = interpret_price(text, parse_price, "q")
+        filters = price_plan.merge(filters, "filters")
+        plan = self.prepare(price_plan.lexical_text)
         scores = self.scores(plan)
         stock, revision = self.inventory.snapshot() if self.inventory else ({}, None)
-        universe = [dict(p, stock_quantity=stock.get(p["product_id"], 0)) if self.inventory else p for p in self.products if not text.strip() or p["product_id"] in scores]
+        price_only = bool(price_plan.clauses) and not plan.terms
+        universe = [dict(p, stock_quantity=stock.get(p["product_id"], 0)) if self.inventory else p for p in self.products if price_only or not price_plan.lexical_text.strip() or p["product_id"] in scores]
         eligible = [p for p in universe if matches(p, filters)]
         # Disjunctive facets: all other active filters remain applied, counts before pagination.
         facets = {}
@@ -153,7 +159,8 @@ class CatalogSearch:
         eligible.sort(key=lambda p: self.sort_key(p, sort, scores))
         return {"products": [self.repository.summary(p) for p in eligible[offset:offset + limit]],
                 "total": len(eligible), "offset": offset, "limit": limit,
-                "query": {"text": normalize_text(text), "sort": sort, "filters": filters.model_dump()},
+                "query": {"text": normalize_text(text), "sort": sort, "filters": requested_filters.model_dump()},
+                "price_interpretation": price_plan.public(filters),
                 "facets": facets, "corrections": plan.corrections,
                 "empty_reason": None if eligible else "catalog_empty" if not self.products else "filters" if universe else "no_matches",
                 "catalog_fingerprint": self.repository.fingerprint, "lexical_fingerprint": self.fingerprint,
@@ -170,14 +177,18 @@ class CatalogSearch:
             return fold(p["name"]), p["product_id"]
         return -scores.get(p["product_id"], 0), p["product_id"]
 
-    def suggestions(self, text, limit=6):
+    def suggestions(self, text, limit=6, parse_price=True):
         if len(normalize_text(text)) < 2:
             return []
-        plan = self.prepare(text)
+        price_plan = interpret_price(text, parse_price, "q")
+        filters = price_plan.merge(Filters(), "filters")
+        plan = self.prepare(price_plan.lexical_text)
         scores = self.scores(plan)
-        value = fold(text)
+        value = fold(price_plan.lexical_text)
         rows = []
         for p in self.products:
+            if not matches(p, filters):
+                continue
             prefix = p["product_id"].casefold().startswith(value) or fold(p["name"]).startswith(value)
             if prefix or p["product_id"] in scores:
                 rows.append((not prefix, -scores.get(p["product_id"], 0), p["product_id"], p))

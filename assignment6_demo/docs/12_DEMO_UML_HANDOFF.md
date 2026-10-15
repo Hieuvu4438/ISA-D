@@ -1,5 +1,7 @@
 # Kịch bản demo và bàn giao UML
 
+Price query amendment: [25](25_PRICE_QUERY.md) có sequence interpret→validate/intersect→original encoder→filter/rank→visible conditions/error recovery. Không thay .vpp editable gate còn thiếu.
+
 Access amendment: [24](24_ACCOUNT_ACCESS.md) có sequence lock/unlock xen request cũ, transaction auth_epoch/version/audit và nguyên tắc không restore session. Mermaid không thay .vpp editable pending.
 
 Returns amendment: [23](23_RETURNS.md) có state diagram và sequence owner request→approval→receipt/restock/quarantine→demo closure, cùng lỗi/recovery/concurrency. Mermaid không thay editable .vpp; chưa claim bàn giao UML complete.

@@ -1,5 +1,7 @@
 # Hợp đồng HTTP API
 
+Price query amendment: search options.interpret_price=true, catalog/suggestions query interpret_price=true|false; metadata price_interpretation và lỗi PRICE_QUERY_AMBIGUOUS/CONFLICT, PRICE_FILTER_CONFLICT, PRICE_VALUE_UNSUPPORTED, PRICE_CURRENCY_UNSUPPORTED theo [25](25_PRICE_QUERY.md). Original options echo khác effective filters có chủ đích, không âm thầm sửa manual inputs.
+
 Access amendment: GET admin/users thêm filter/DTO access_state; POST admin/users/{uuid}/access nhận state/version/reason. Auth DTO giữ4 trường, locked login cùng401 INVALID_CREDENTIALS; guards/errors/compatibility tại [24](24_ACCOUNT_ACCESS.md).
 
 Returns amendment: customer GET/POST purchases/{ORD-id}/returns, POST returns/{RMA-id}/withdraw; admin GET returns và POST returns/{RMA-id}/status với role/intent/version/strict receipt. Hợp đồng/error/idempotency/privacy tại [23](23_RETURNS.md); API trả hàng không tiết lộ owner/address/key.

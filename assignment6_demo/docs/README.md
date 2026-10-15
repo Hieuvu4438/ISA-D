@@ -1,5 +1,7 @@
 # Chỉ mục đặc tả kỹ thuật
 
+Hiểu điều kiện giá VND trong câu, giao bộ lọc và evidence encoder thật: [25_PRICE_QUERY.md](25_PRICE_QUERY.md).
+
 Khóa/mở khóa, session revocation và transaction epoch guards: [24_ACCOUNT_ACCESS.md](24_ACCOUNT_ACCESS.md).
 
 Trả hàng từng phần, kiểm nhận/cách ly, demo đối soát và evidence: [23_RETURNS.md](23_RETURNS.md).
