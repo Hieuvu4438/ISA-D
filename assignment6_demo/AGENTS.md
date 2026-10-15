@@ -26,7 +26,7 @@ Chỉ tạo/chỉnh sửa file trong `assignment6_demo`. Không sửa `assignmen
 - Không hardcode/in khóa Azure từ hội thoại vào code, Markdown, fixtures, artifacts hoặc bundle frontend. `.env.example` chỉ có giá trị rỗng/placeholder.
 - Region canonical `southeastasia`; language `vi-VN`. Không gọi dịch vụ trả phí tự động từ CI hoặc lúc khởi động.
 - Không cho browser truy cập JSON nội bộ/NPZ; chỉ gọi application API. Không trả `customer_id` của đơn hàng khác.
-- Commit và push được người dùng cho phép. Publish, triển khai public và sửa tài nguyên Azure chưa được cho phép.
+- Commit và push được người dùng cho phép. Ngày 15/10/2026 người dùng cho phép triển khai public lên Vercel, backend local qua đường hầm HTTPS để mọi người dùng demo. Dùng database demo riêng; không đưa credentials/key lên frontend hoặc Git. Sửa tài nguyên Azure chưa được cho phép.
 - Không làm giỏ hàng, thanh toán, đăng ký hoặc admin CRUD nếu chưa có yêu cầu mới.
 
 ## Điều kiện kết thúc

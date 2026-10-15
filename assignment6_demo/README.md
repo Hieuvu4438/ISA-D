@@ -1,5 +1,7 @@
 # Cortis — demo tìm kiếm thời trang đa phương thức
 
+**Demo online:** https://cortis-demo.vercel.app — frontend Vercel, backend CPU local qua HTTPS. Máy host cần bật và giữ backend/tunnel chạy. [Vận hành, tài khoản public và khởi động lại](docs/37_VERCEL_LOCAL_BACKEND.md).
+
 **Bản demo khách hàng đã chốt theo phạm vi mới:** giao diện user/admin, tìm kiếm mô tả/ảnh/giọng nói, bộ lọc, sản phẩm và kho, yêu thích, giỏ, COD và đơn hàng. Mở **http://localhost:5173** trên máy hiện tại. [Hướng dẫn chạy, tài khoản và kịch bản demo](docs/35_DEMO_HANDOFF.md).
 
 **Chuyển sang máy khác:** xem [hướng dẫn cài và import đầy đủ](docs/36_RUN_ON_ANOTHER_MACHINE.md). Sau khi pull, tại `assignment6_demo` chạy `powershell -ExecutionPolicy Bypass -File .\scripts\setup_demo.ps1`; setup cả backend/frontend và import **181 sản phẩm, ảnh, 183 dòng kho, 2 size và 30 đơn mẫu lịch sử**. Sau đó chạy `scripts/run_backend.ps1` và `scripts/run_frontend.ps1 -Preview` ở hai terminal.

@@ -1,0 +1,30 @@
+{
+  "frontend": "https://cortis-demo.vercel.app",
+  "deployment_id": "dpl_vEuFEgFJ6YAPki72qvJzzfub2nkF",
+  "deployment_state": "READY",
+  "backend": "local port 8003 via Cloudflare HTTPS tunnel",
+  "database": "isolated public-demo SQLite; no local private DB copied",
+  "homepage_status": 200,
+  "deep_link_status": 200,
+  "api_status": 200,
+  "photo_status": 200,
+  "cross_origin_write_status": 403,
+  "private_file_request_returns": "SPA HTML, not credentials",
+  "index": {
+    "available": true,
+    "index_fingerprint": "1903765b5e724df63aa88b6e58332db58784bea00fa0dd6879e21c9bf4388b17",
+    "catalog_fingerprint": "d63667407ac0faba690181f90b47f528aad6594a4cdbd30634c0e0ba909ba45f",
+    "product_count": 181
+  },
+  "model": {
+    "text_model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+    "image_model_id": "sentence-transformers/clip-ViT-B-32",
+    "text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+    "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+    "dimension": 512,
+    "model_fingerprint": "8079066fd176407685d890a0d3ecf86c795ab8256019c955ad70e1cbea986ab2"
+  },
+  "api_cache_control": "no-store",
+  "browser_tests_passed": 5,
+  "speech_calls": 0
+}
